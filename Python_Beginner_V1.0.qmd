@@ -33,6 +33,7 @@ format:
 
 ## IDE 설치(PyCharm)
 
+## IDE 설치(Visual Studio Code)
 
 ## IDE 설치(Jupyter Notebook)
 
