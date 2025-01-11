@@ -1,0 +1,65 @@
+---
+title: "파이썬 초급"
+# author: "박연규"
+format: 
+  revealjs:
+    smaller: true
+    scrollable: true
+    css: style.css
+    slideNumber: true
+    width: 100%
+---
+
+# 프로그래밍 언어
+
+## 언어
+
+
+
+## 인터프린터
+
+
+## 프로그래밍 언어
+
+
+## 코딩
+
+
+## 개발환경 구축
+
+
+## 파이썬 설치
+
+
+## IDE 설치(PyCharm)
+
+
+## IDE 설치(Jupyter Notebook)
+
+
+## 패키지
+
+
+## 가상환경
+
+
+# 파이썬 입문
+
+## 자료형
+
+
+## 변수
+
+
+## 연산자
+
+
+## 함수
+
+
+## 객체지향(클래스)
+
+### 객체지향을 위한 구조
+
+매써드, 함수, 기능 + 데이터, 변수, 속성
+

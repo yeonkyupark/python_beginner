@@ -1,0 +1,28 @@
+.reveal h1.title {
+  text-align: center;
+  color: white;
+  background: darkorange;
+  border-radius: 15px 0px 15px 0px;
+  padding: 40px 15px 15px 15px;
+}
+
+.reveal h1 {
+  text-align: center;
+  color: navy;
+  background: powderblue;
+  border-radius: 15px 0px 15px 0px;
+  padding: 40px 15px 15px 15px;
+}
+
+.reveal h2 {
+  color: navy;
+  background: white;
+  border: 1px solid navy;
+  border-width: 1px 1px 1px 20px;
+  padding: 10px 0px 0px 20px;
+  margin: 0px 0px 40px 0px;
+}
+
+.reveal h3 {
+  color: steelblue;
+}
