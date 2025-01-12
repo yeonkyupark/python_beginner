@@ -205,22 +205,191 @@ print(d)
 
 ## 반복문
 
-![https://namu.wiki/w/나우누리](https://i.namu.wiki/i/Vv9HFK1m3Am9U1lxAEIK22gWWkynXHvGu_rUHyhmtIt84n-9_BYF_O-6yZzyvyiExrVl4cPWFaBl3CnmIF6P1abJTAYbd9it7Z1tqzxN3gy4LYCoxgLejuW2p7FaQILZpAxUDujlJcgB60wGLXvuTg.gif)
 ---
 
 ### while
 
 #### 기본구조
 
-#### 형식
+---
 
+#### while 문법
 
+:::{.callout-note icon=false title="문법"}
+```
+while expression:
+    statement(s)
+```
+:::
 
 ---
 
 ### for
 
+#### 기본구조
 
+
+----
+
+#### 문법
+
+:::{.callout-note icon=false title="문법"}
+```
+for var in iterable:
+
+    # statements
+
+    pass
+```
+:::
+
+# 함수
+
+## 함수 정의
+
+
+## 함수 구조
+
+```
+def 함수_이름(매개변수)
+  <수행할 문장>
+  <수행할 문장>
+  ...
+  
+  return 반환값
+```
+
+## 함수 형태
+
+## 변수 범위
+
+
+# 입출력
+
+## 화면 입력
+- input()
+
+## 화면 출력
+- print()
+
+## 파일 입출력
+- open()
+  - mode: `w`, `r`, `a`
+- 경로
+  - 작업경로
+  - 상대경로
+  - 절대경로
+- readline(), readlines()
+- close()
+
+## 프로그램 입출력
+
+- 명령어 인수1, 인수2, ...
+
+# 클래스
+
+## 클래스 개념
+
+1. **클래스 (붕어빵 틀)**  
+   - 클래스는 **설계도**입니다.  
+   - 붕어빵 틀처럼, 특정 모양과 속성을 가진 붕어빵(객체)을 만들어내기 위한 청사진 역할을 합니다.  
+   - 예를 들어, 붕어빵 틀은 "모양", "속 재료"와 같은 공통된 구조를 정의합니다.
+
+2. **객체 (붕어빵)**  
+   - 객체는 클래스(붕어빵 틀)를 기반으로 만들어진 **실체**입니다.  
+   - 붕어빵 틀에서 찍어낸 각각의 붕어빵이 객체에 해당합니다.  
+   - 각 붕어빵은 같은 틀에서 만들어졌지만, 속 재료(팥, 슈크림 등)가 다를 수 있습니다.
+
+---
+
+### 속성과 메서드
+- **속성 (팥, 슈크림 등 재료)**  
+  - 객체가 가지는 **특성**입니다.  
+  - 예를 들어, 붕어빵 속 재료(팥, 슈크림 등)는 객체의 속성입니다.
+
+- **메서드 (붕어빵을 굽는 행동)**  
+  - 클래스가 수행할 수 있는 **행동**입니다.  
+  - 붕어빵을 굽거나, 붕어빵 속을 확인하는 행동은 메서드에 해당합니다.
+
+---
+
+### 파이썬 코드로 설명
+
+```python
+# 붕어빵 틀 (클래스)
+class FishBread:
+    def __init__(self, filling, size):  # 붕어빵 속성과 크기를 정의
+        self.filling = filling  # 속 재료
+        self.size = size        # 크기
+    
+    def describe(self):  # 붕어빵 설명 메서드
+        return f"이 붕어빵은 {self.size} 크기의 {self.filling} 붕어빵입니다."
+
+# 붕어빵 (객체) 만들기
+bread1 = FishBread("팥", "작은")
+bread2 = FishBread("슈크림", "큰")
+
+# 붕어빵 정보 출력
+print(bread1.describe())  # 출력: 이 붕어빵은 작은 크기의 팥 붕어빵입니다.
+print(bread2.describe())  # 출력: 이 붕어빵은 큰 크기의 슈크림 붕어빵입니다.
+```
+
+---
+
+### 요약
+- **클래스**는 설계도(붕어빵 틀)입니다.
+- **객체**는 설계도에서 만들어진 실체(붕어빵)입니다.
+- **속성**은 붕어빵의 재료와 크기 같은 특성입니다.
+- **메서드**는 붕어빵을 굽거나 설명하는 행동입니다.
+
+## 클래스 예제
+
+- 계산기
+
+## 생성자
+
+## 클래스 상속
+
+## 매서드 오버라이딩
+
+## 클래스 변수
+
+# 모듈과 패키지
+
+## 모듈
+import 모듈
+
+모듈.내용
+
+## 패키지
+
+# 예외 처리
+```
+try:
+  #오류가 발생할 수 있는 구문
+except Exception as e:
+  # 오류 발생
+else:
+  # 오류 발생하지 않음
+finally:
+  # 무조건 마지막에 실행
+```
+
+## try-except
+
+
+## try-finally
+
+
+## try-else
+
+https://youtu.be/ftQZo7XaTOA?t=23936 
+
+# 내장 함수
+
+# 표준 라이브러리
+
+# 외부 라이브러리
 
 
 
