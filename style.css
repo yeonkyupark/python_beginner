@@ -1,17 +1,16 @@
-.reveal h1.title {
-  text-align: center;
-  color: white;
-  background: darkorange;
-  border-radius: 15px 0px 15px 0px;
-  padding: 40px 15px 15px 15px;
-}
-
 .reveal h1 {
   text-align: center;
+  font-size: 64px !important;
   color: navy;
   background: powderblue;
   border-radius: 15px 0px 15px 0px;
   padding: 40px 15px 15px 15px;
+}
+.reveal h1.title {
+  text-align: center;
+  font-size: 96px !important;
+  color: white;
+  background-color: #1E415E;
 }
 
 .reveal h2 {
