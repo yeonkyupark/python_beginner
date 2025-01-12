@@ -5,15 +5,19 @@ format:
   revealjs:
     smaller: true
     scrollable: true
-    css: style.css
+    css: style.css 
     slideNumber: true
     width: 100%
+title-slide-attributes: 
+  data-background-image: python-logo.png
+  data-background-size: 290px 82px
+  data-background-position: 10px 10px
+  data-background-color: "#1E415E"
 ---
 
 # 프로그래밍 언어
 
 ## 언어
-
 
 
 ## 인터프린터
@@ -100,7 +104,7 @@ format:
 
 ## 문자열
 
-- "", '', 
+- `""`, `''` 
 - 문장 내 따옴표
 - 줄바꿈
 - 이스케이프 코드
@@ -159,8 +163,70 @@ format:
 
 - 참(True), 거짓(False)
 
+## 변수 심화
+
+```python
+print(a)
+print(id(a))
+```
+
+```python
+a = [1,2,3]
+b = a
+a[1] = 4
+print(a)
+print(b)
+
+c = [1,2,3]
+d = c[:]
+c[1] = 4
+print(c)
+print(d)
+```
+
+# 제어문
+
+## 조건문
+
+### if
+
+### 기본구조
+
+### 형식
+
+---
+
+### 비교연산자
+
+---
+
+### 논리연산자
+
+
+## 반복문
+
+![https://namu.wiki/w/나우누리](https://i.namu.wiki/i/Vv9HFK1m3Am9U1lxAEIK22gWWkynXHvGu_rUHyhmtIt84n-9_BYF_O-6yZzyvyiExrVl4cPWFaBl3CnmIF6P1abJTAYbd9it7Z1tqzxN3gy4LYCoxgLejuW2p7FaQILZpAxUDujlJcgB60wGLXvuTg.gif)
+---
+
+### while
+
+#### 기본구조
+
+#### 형식
+
+
+
+---
+
+### for
+
+
+
+
+
 ## 참고자료
 1. 코드 시각화
+  - https://pythontutor.com/c.html#mode=edit 
   - https://jgirl.ddns.net/VisualCode/live.html#mode=edit 
 1. 점프 투 파이썬
   - https://wikidocs.net/book/1
