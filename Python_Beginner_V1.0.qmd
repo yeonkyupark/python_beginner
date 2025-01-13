@@ -409,6 +409,10 @@ finally:
 - Faker
 - ...
 
+# 코딩
+
+# 실습
+
 ## 참고자료
 1. 코드 시각화
   - https://pythontutor.com/c.html#mode=edit 
