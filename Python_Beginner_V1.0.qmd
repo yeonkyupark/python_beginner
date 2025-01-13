@@ -383,15 +383,31 @@ finally:
 
 ## try-else
 
-https://youtu.be/ftQZo7XaTOA?t=23936 
 
 # 내장 함수
 
+## 주요 내장 함수
+
+- print()
+- del()
+- type()
+...
+
+
 # 표준 라이브러리
+
+## 주요 표준 라이브러리
+
+- datetime
+- time
+...
 
 # 외부 라이브러리
 
-
+- pip install / uninstall
+- numpy, pandas
+- Faker
+- ...
 
 ## 참고자료
 1. 코드 시각화
