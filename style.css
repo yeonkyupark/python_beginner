@@ -1,8 +1,8 @@
 .reveal h1 {
   text-align: center;
   font-size: 64px !important;
-  color: navy;
-  background: powderblue;
+  color: white;
+  background: #1E415E;
   border-radius: 15px 0px 15px 0px;
   padding: 40px 15px 15px 15px;
 }
@@ -14,14 +14,21 @@
 }
 
 .reveal h2 {
+  font-size: 48px !important;
   color: white;
-  background: navy;
-  border: 1px solid navy;
-  padding: 10px 0px 0px 20px;
+  background: #1E415E;
+  border: 1px solid #1E415E;
+  padding: 15px 0px 5px 20px;
   margin: 0px 0px 40px 0px;
-  border-radius: 15px 0px 0px 0px;
+  border-radius: 15px 0px 15px 0px;
 }
 
 .reveal h3 {
-  color: steelblue;
+  font-size: 40px !important;
+  color: #1E415E;
+  background: white;
+  border: 1px solid #1E415E;
+  border-width: 0px 0px 0px 15px;
+  padding: 5px 0px 0px 10px;
+  margin: 0px 0px 40px 0px;
 }
