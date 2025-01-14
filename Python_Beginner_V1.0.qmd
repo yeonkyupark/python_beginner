@@ -19,11 +19,15 @@ title-slide-attributes:
 
 ## 언어
 
-![](images/clipboard-119192641.png)
+![](images/language.png)
 
 ## 인터프린터
 
+![](images/xlator.png)
+
 ## 프로그래밍 언어
+
+![](images/interpreter.png)
 
 ## 코딩
 
