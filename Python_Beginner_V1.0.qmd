@@ -19,9 +19,14 @@ title-slide-attributes:
 
 ## 언어
 
+언어란?
+: 인간이 의사소통을 위해 사용하는 체계적인 기호 및 규칙의 집합
+
 ![](images/language.png)
 
-## 인터프린터
+소통을 하려면?
+
+## 인터프리터
 
 ![](images/xlator.png)
 
@@ -34,6 +39,8 @@ title-slide-attributes:
 ## 개발환경 구축
 
 ## 파이썬 설치
+
+![https://www.python.org/downloads/](images/python.png)
 
 ## IDE 설치(PyCharm)
 
