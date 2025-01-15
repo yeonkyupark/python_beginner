@@ -166,6 +166,8 @@ title-slide-attributes:
 
 --- 
 
+### PyCharm 설치 
+
 :::: {.columns}
 
 ::: {.column width="50%"}
