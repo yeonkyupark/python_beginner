@@ -157,6 +157,35 @@ title-slide-attributes:
 
 ## IDE 설치(PyCharm)
 
+<center>
+![](images/pycharm_download.png)
+</center>
+
+- https://www.jetbrains.com/pycharm/download/?section=windows
+- PyCharm Community Edition
+
+--- 
+
+:::: {.columns}
+
+::: {.column width="50%"}
+<center>
+![](images/pycharm_install.png)
+</center>
+
+:::
+
+::: {.column width="50%"}
+<center>
+![](images/pycharm_install.png)
+</center>
+:::
+
+::::
+
+
+
+
 ## IDE 설치(Visual Studio Code)
 
 ## IDE 설치(Jupyter Notebook)
