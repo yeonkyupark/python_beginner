@@ -179,7 +179,7 @@ title-slide-attributes:
 
 ::: {.column width="50%"}
 <center>
-![](images/pycharm_install.png)
+![](images/pycharm_install_options.png)
 </center>
 :::
 
