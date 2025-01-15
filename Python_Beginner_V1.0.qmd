@@ -120,6 +120,8 @@ title-slide-attributes:
 
 ### 에디터
 
+-   메모장, Notepad++ 등으로 코드 작성 후 확장자 `".py"`로 저장 
+
 :::: {.columns}
 
 ::: {.column width="50%"}
