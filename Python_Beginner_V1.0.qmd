@@ -138,6 +138,22 @@ title-slide-attributes:
 
 ::::
 
+## 환경 변수
+
+-   파이썬 코드를 정상적으로 실행하지 못하는 경우
+- 환경 변수에서 `Path`가 설정되어 있는지 확인 
+
+<center>
+![](images/no_path.png)
+</center>
+
+---
+
+### Path 설정
+
+<center>
+![](images/environment_path.png)
+</center>
 
 ## IDE 설치(PyCharm)
 
