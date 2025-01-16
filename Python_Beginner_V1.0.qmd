@@ -7,6 +7,7 @@ format:
     scrollable: true
     css: style.css 
     slideNumber: true
+    margin: 0.02
     width: 100%
     logo: python-logo.png
 title-slide-attributes: 
@@ -243,19 +244,23 @@ title-slide-attributes:
 
 ### Welcome 화면
 
+:::: {.columns}
+
+::: {.column width="50%"}
 <center>
-![](images/vscode_welcome.png)
+![](images/vscode_welcome.png){width=480px}
 </center>
+:::
 
-- [Tutorial: Get started with Visual Studio Code](https://code.visualstudio.com/docs/getstarted/getting-started){target="_blank"}
-
----
-
-### 화면 구성
-
+::: {.column width="50%"}
 <center>
 ![](images/vscode_open.png)
 </center>
+:::
+
+::::
+
+- [Tutorial: Get started with Visual Studio Code](https://code.visualstudio.com/docs/getstarted/getting-started){target="_blank"}
 
 ---
 
@@ -267,13 +272,20 @@ title-slide-attributes:
 
 ---
 
-### 코드 실행
+### 화면 구성과 코드 실행
 
 <center>
 ![](images/vscode_layout.png)
 </center>
 
 ## IDE 설치(Jupyter Notebook)
+
+<center>
+![](images/jupyter_install.png)
+</center>
+
+-   `C:\>pip install jupyter`
+
 
 ## 주피터 노트북북 환경설정
 
