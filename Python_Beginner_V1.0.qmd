@@ -264,6 +264,8 @@ title-slide-attributes:
 ![](images/vscode_extension.png)
 </center>
 
+---
+
 ### 코드 실행
 
 <center>
