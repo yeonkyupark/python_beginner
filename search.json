@@ -25,7 +25,7 @@
     "href": "20_sentence.html",
     "title": "2  문장",
     "section": "",
-    "text": "3 문장\n익힌 단어를 이용하여 문장을 만들어 본다.",
+    "text": "2.1 자료형\n파이썬에서 사용하는 자료형(Data-type)은 다음과 같다.",
     "crumbs": [
       "문장",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>문장</span>"
@@ -65,14 +65,14 @@
     ]
   },
   {
-    "objectID": "60_contribution.html",
-    "href": "60_contribution.html",
-    "title": "6  기고",
+    "objectID": "60_reference_book.html",
+    "href": "60_reference_book.html",
+    "title": "6  참고서",
     "section": "",
     "text": "널리 알려진 책을 읽어 보자.",
     "crumbs": [
       "참고서",
-      "<span class='chapter-number'>6</span>  <span class='chapter-title'>기고</span>"
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>참고서</span>"
     ]
   },
   {
