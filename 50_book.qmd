@@ -1,5 +1,5 @@
 ---
-title: "글쓰기"
+title: "입출력"
 format: html
 ---
 
