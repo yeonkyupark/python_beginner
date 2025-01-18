@@ -1,0 +1,25 @@
+---
+title: "Python_Beginner"
+format:
+  revealjs:
+    smaller: true
+    scrollable: true
+    css: style.css 
+    slideNumber: true
+    margin: 0.02
+    width: 100%
+---
+
+
+## slide 1
+This is a Quarto website.
+
+To learn more about Quarto websites visit <https://quarto.org/docs/websites>.
+
+```{r}
+1 + 1
+```
+
+## slide 2
+
+empty
