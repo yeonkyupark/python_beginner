@@ -19,8 +19,8 @@ format: html
 
 다운로드 받은 파일을 실행하여 설치를 진행합니다. 개발 편의를 위해 다음 옵션을 체크합니다.
 
-- **Add <u>p</u>ython.exe to PATH
+- **Add <u>p</u>ython.exe to PATH**
 
-![](images/install_python_path.png)
+    ![](images/install_python_path.png)
 
 
