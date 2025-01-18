@@ -1,20 +1,20 @@
 <!DOCTYPE html>
 <html lang="en"><head>
-<script src="site_libs/clipboard/clipboard.min.js"></script>
-<script src="site_libs/quarto-html/tabby.min.js"></script>
-<script src="site_libs/quarto-html/popper.min.js"></script>
-<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/light-border.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
+<script src="Python_Beginner_V1.0_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Python_Beginner_V1.0_files/libs/quarto-html/tabby.min.js"></script>
+<script src="Python_Beginner_V1.0_files/libs/quarto-html/popper.min.js"></script>
+<script src="Python_Beginner_V1.0_files/libs/quarto-html/tippy.umd.min.js"></script>
+<link href="Python_Beginner_V1.0_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Python_Beginner_V1.0_files/libs/quarto-html/light-border.css" rel="stylesheet">
+<link href="Python_Beginner_V1.0_files/libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
   <meta name="generator" content="quarto-1.6.40">
 
   <title>파이썬 초급</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reset.css">
-  <link rel="stylesheet" href="site_libs/revealjs/dist/reveal.css">
+  <link rel="stylesheet" href="Python_Beginner_V1.0_files/libs/revealjs/dist/reset.css">
+  <link rel="stylesheet" href="Python_Beginner_V1.0_files/libs/revealjs/dist/reveal.css">
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -93,12 +93,12 @@
     code span.vs { color: #20794d; } /* VerbatimString */
     code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
-  <link rel="stylesheet" href="site_libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
+  <link rel="stylesheet" href="Python_Beginner_V1.0_files/libs/revealjs/dist/theme/quarto-bbe7401fe57d4b791b917637bb662036.css">
   <link rel="stylesheet" href="style.css">
-  <link href="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
-  <link href="site_libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
+  <link href="Python_Beginner_V1.0_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.css" rel="stylesheet">
+  <link href="Python_Beginner_V1.0_files/libs/revealjs/plugin/reveal-menu/menu.css" rel="stylesheet">
+  <link href="Python_Beginner_V1.0_files/libs/revealjs/plugin/reveal-menu/quarto-menu.css" rel="stylesheet">
+  <link href="Python_Beginner_V1.0_files/libs/revealjs/plugin/quarto-support/footer.css" rel="stylesheet">
   <style type="text/css">
     .reveal div.sourceCode {
       margin: 0;
@@ -192,7 +192,7 @@
   <div class="reveal">
     <div class="slides">
 
-<section id="title-slide" data-background-color="#1E415E" data-background-image="python-logo.png" data-background-position="10px 10px" data-background-size="290px 82px" class="quarto-title-block center">
+<section id="title-slide" data-background-color="#1E415E" data-background-image="python_logo.png" data-background-position="10px 10px" data-background-size="290px 82px" class="quarto-title-block center">
   <h1 class="title">파이썬 초급</h1>
 
 <div class="quarto-title-authors">
@@ -636,19 +636,19 @@
 </section>
 <section id="변수-심화" class="slide level2">
 <h2>변수 심화</h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a></a><span class="bu">print</span>(a)</span>
-<span id="cb1-2"><a></a><span class="bu">print</span>(<span class="bu">id</span>(a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a></a>a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
-<span id="cb2-2"><a></a>b <span class="op">=</span> a</span>
-<span id="cb2-3"><a></a>a[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb2-4"><a></a><span class="bu">print</span>(a)</span>
-<span id="cb2-5"><a></a><span class="bu">print</span>(b)</span>
-<span id="cb2-6"><a></a></span>
-<span id="cb2-7"><a></a>c <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
-<span id="cb2-8"><a></a>d <span class="op">=</span> c[:]</span>
-<span id="cb2-9"><a></a>c[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">4</span></span>
-<span id="cb2-10"><a></a><span class="bu">print</span>(c)</span>
-<span id="cb2-11"><a></a><span class="bu">print</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href=""></a><span class="bu">print</span>(a)</span>
+<span id="cb1-2"><a href=""></a><span class="bu">print</span>(<span class="bu">id</span>(a))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href=""></a>a <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb2-2"><a href=""></a>b <span class="op">=</span> a</span>
+<span id="cb2-3"><a href=""></a>a[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb2-4"><a href=""></a><span class="bu">print</span>(a)</span>
+<span id="cb2-5"><a href=""></a><span class="bu">print</span>(b)</span>
+<span id="cb2-6"><a href=""></a></span>
+<span id="cb2-7"><a href=""></a>c <span class="op">=</span> [<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>]</span>
+<span id="cb2-8"><a href=""></a>d <span class="op">=</span> c[:]</span>
+<span id="cb2-9"><a href=""></a>c[<span class="dv">1</span>] <span class="op">=</span> <span class="dv">4</span></span>
+<span id="cb2-10"><a href=""></a><span class="bu">print</span>(c)</span>
+<span id="cb2-11"><a href=""></a><span class="bu">print</span>(d)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section></section>
 <section>
 <section id="제어문" class="title-slide slide level1 center">
@@ -829,22 +829,22 @@
 <section class="slide level2">
 
 <h3 id="파이썬-코드로-설명">파이썬 코드로 설명</h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a></a><span class="co"># 붕어빵 틀 (클래스)</span></span>
-<span id="cb6-2"><a></a><span class="kw">class</span> FishBread:</span>
-<span id="cb6-3"><a></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, filling, size):  <span class="co"># 붕어빵 속성과 크기를 정의</span></span>
-<span id="cb6-4"><a></a>        <span class="va">self</span>.filling <span class="op">=</span> filling  <span class="co"># 속 재료</span></span>
-<span id="cb6-5"><a></a>        <span class="va">self</span>.size <span class="op">=</span> size        <span class="co"># 크기</span></span>
-<span id="cb6-6"><a></a>    </span>
-<span id="cb6-7"><a></a>    <span class="kw">def</span> describe(<span class="va">self</span>):  <span class="co"># 붕어빵 설명 메서드</span></span>
-<span id="cb6-8"><a></a>        <span class="cf">return</span> <span class="ss">f"이 붕어빵은 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>size<span class="sc">}</span><span class="ss"> 크기의 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>filling<span class="sc">}</span><span class="ss"> 붕어빵입니다."</span></span>
-<span id="cb6-9"><a></a></span>
-<span id="cb6-10"><a></a><span class="co"># 붕어빵 (객체) 만들기</span></span>
-<span id="cb6-11"><a></a>bread1 <span class="op">=</span> FishBread(<span class="st">"팥"</span>, <span class="st">"작은"</span>)</span>
-<span id="cb6-12"><a></a>bread2 <span class="op">=</span> FishBread(<span class="st">"슈크림"</span>, <span class="st">"큰"</span>)</span>
-<span id="cb6-13"><a></a></span>
-<span id="cb6-14"><a></a><span class="co"># 붕어빵 정보 출력</span></span>
-<span id="cb6-15"><a></a><span class="bu">print</span>(bread1.describe())  <span class="co"># 출력: 이 붕어빵은 작은 크기의 팥 붕어빵입니다.</span></span>
-<span id="cb6-16"><a></a><span class="bu">print</span>(bread2.describe())  <span class="co"># 출력: 이 붕어빵은 큰 크기의 슈크림 붕어빵입니다.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href=""></a><span class="co"># 붕어빵 틀 (클래스)</span></span>
+<span id="cb6-2"><a href=""></a><span class="kw">class</span> FishBread:</span>
+<span id="cb6-3"><a href=""></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, filling, size):  <span class="co"># 붕어빵 속성과 크기를 정의</span></span>
+<span id="cb6-4"><a href=""></a>        <span class="va">self</span>.filling <span class="op">=</span> filling  <span class="co"># 속 재료</span></span>
+<span id="cb6-5"><a href=""></a>        <span class="va">self</span>.size <span class="op">=</span> size        <span class="co"># 크기</span></span>
+<span id="cb6-6"><a href=""></a>    </span>
+<span id="cb6-7"><a href=""></a>    <span class="kw">def</span> describe(<span class="va">self</span>):  <span class="co"># 붕어빵 설명 메서드</span></span>
+<span id="cb6-8"><a href=""></a>        <span class="cf">return</span> <span class="ss">f"이 붕어빵은 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>size<span class="sc">}</span><span class="ss"> 크기의 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>filling<span class="sc">}</span><span class="ss"> 붕어빵입니다."</span></span>
+<span id="cb6-9"><a href=""></a></span>
+<span id="cb6-10"><a href=""></a><span class="co"># 붕어빵 (객체) 만들기</span></span>
+<span id="cb6-11"><a href=""></a>bread1 <span class="op">=</span> FishBread(<span class="st">"팥"</span>, <span class="st">"작은"</span>)</span>
+<span id="cb6-12"><a href=""></a>bread2 <span class="op">=</span> FishBread(<span class="st">"슈크림"</span>, <span class="st">"큰"</span>)</span>
+<span id="cb6-13"><a href=""></a></span>
+<span id="cb6-14"><a href=""></a><span class="co"># 붕어빵 정보 출력</span></span>
+<span id="cb6-15"><a href=""></a><span class="bu">print</span>(bread1.describe())  <span class="co"># 출력: 이 붕어빵은 작은 크기의 팥 붕어빵입니다.</span></span>
+<span id="cb6-16"><a href=""></a><span class="bu">print</span>(bread2.describe())  <span class="co"># 출력: 이 붕어빵은 큰 크기의 슈크림 붕어빵입니다.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section class="slide level2">
 
@@ -975,30 +975,28 @@ finally:
 </ul></li>
 </ol>
 
-
 </section></section>
     </div>
   <div class="quarto-auto-generated-content" style="display: none;">
-<p><img src="python-logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
 
 </div>
 </div></div>
 
   <script>window.backupDefine = window.define; window.define = undefined;</script>
-  <script src="site_libs/revealjs/dist/reveal.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/dist/reveal.js"></script>
   <!-- reveal.js plugins -->
-  <script src="site_libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
-  <script src="site_libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/menu.js"></script>
-  <script src="site_libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
-  <script src="site_libs/revealjs/plugin/quarto-support/support.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/quarto-line-highlight/line-highlight.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/pdf-export/pdfexport.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/reveal-menu/menu.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/reveal-menu/quarto-menu.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/quarto-support/support.js"></script>
   
 
-  <script src="site_libs/revealjs/plugin/notes/notes.js"></script>
-  <script src="site_libs/revealjs/plugin/search/search.js"></script>
-  <script src="site_libs/revealjs/plugin/zoom/zoom.js"></script>
-  <script src="site_libs/revealjs/plugin/math/math.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/notes/notes.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/search/search.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/zoom/zoom.js"></script>
+  <script src="Python_Beginner_V1.0_files/libs/revealjs/plugin/math/math.js"></script>
   <script>window.define = window.backupDefine; window.backupDefine = undefined;</script>
 
   <script>
@@ -1280,7 +1278,7 @@ finally:
       }
         var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
         var mailtoRegex = new RegExp(/^mailto:/);
-          var filterRegex = new RegExp("https:\/\/yeonkyupark\.github\.io\/python_beginner\/");
+          var filterRegex = new RegExp('/' + window.location.host + '/');
         var isInternal = (href) => {
             return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
         }
