@@ -29,6 +29,8 @@ format: html
 
 ## 프로그래밍 언어
 
+{{< video "https://www.youtube.com/embed/3VG2OgkRJK0">}}
+
 <iframe width="640" height="480"  src="https://www.youtube.com/embed/3VG2OgkRJK0" title="샌드위치 코딩: 자녀 코딩교육 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
 사람과 컴퓨터 사이에서 같은 상황이 발생합니다. 사람이 하는 말을 컴퓨터가 이해할 수 없기 때문에 누군가 컴퓨터가 알 수 있도록 번역이 필요합니다.
