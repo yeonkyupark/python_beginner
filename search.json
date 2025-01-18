@@ -1,16 +1,72 @@
 [
   {
-    "objectID": "index.html#slide-1",
-    "href": "index.html#slide-1",
+    "objectID": "index.html",
+    "href": "index.html",
     "title": "파이썬 기초",
-    "section": "slide 1",
-    "text": "slide 1\nThis is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites."
+    "section": "",
+    "text": "들어가기\n파이썬(Python) 기초 학습을 위한 글입니다. 프로그래밍 언어인 파이썬 또한 하나의 언어로 외국어를 배우듯 단어부터 하나하나 익혀서 글을 쓰는 순서로 학습하면 좋을 듯 합니다.",
+    "crumbs": [
+      "들어가기"
+    ]
   },
   {
-    "objectID": "index.html#slide-2",
-    "href": "index.html#slide-2",
-    "title": "파이썬 기초",
-    "section": "slide 2",
-    "text": "slide 2\nempty"
+    "objectID": "10_word.html",
+    "href": "10_word.html",
+    "title": "1  단어",
+    "section": "",
+    "text": "말을 하기 위해서는 먼저 사용할 단어를 익혀야 한다.",
+    "crumbs": [
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>단어</span>"
+    ]
+  },
+  {
+    "objectID": "20_sentence.html",
+    "href": "20_sentence.html",
+    "title": "2  문장",
+    "section": "",
+    "text": "3 문장\n익힌 단어를 이용하여 문장을 만들어 본다.",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문장</span>"
+    ]
+  },
+  {
+    "objectID": "30_structure.html",
+    "href": "30_structure.html",
+    "title": "3  단락",
+    "section": "",
+    "text": "문장을 이용하여 구조적인 단락을 작성한다.",
+    "crumbs": [
+      "<span class='chapter-number'>3</span>  <span class='chapter-title'>단락</span>"
+    ]
+  },
+  {
+    "objectID": "40_writing.html",
+    "href": "40_writing.html",
+    "title": "4  글쓰기",
+    "section": "",
+    "text": "단락을 모아 글을 써 본다.",
+    "crumbs": [
+      "<span class='chapter-number'>4</span>  <span class='chapter-title'>글쓰기</span>"
+    ]
+  },
+  {
+    "objectID": "50_book.html",
+    "href": "50_book.html",
+    "title": "5  글쓰기",
+    "section": "",
+    "text": "작성한 글을 책으로 엮어 본다.",
+    "crumbs": [
+      "<span class='chapter-number'>5</span>  <span class='chapter-title'>글쓰기</span>"
+    ]
+  },
+  {
+    "objectID": "60_contribution.html",
+    "href": "60_contribution.html",
+    "title": "6  기고",
+    "section": "",
+    "text": "널리 알려진 책을 읽어 보자.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>기고</span>"
+    ]
   }
 ]
