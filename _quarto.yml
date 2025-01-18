@@ -8,6 +8,9 @@ book:
   date: "2025. 1. 18."
   chapters:
     - index.qmd
+    - part: "언어"
+      chapters:
+        - 00_language.qmd
     - part: "단어"
       chapters:
         - 10_word.qmd
