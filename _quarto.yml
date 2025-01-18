@@ -30,7 +30,7 @@ book:
             
     - part: "참고서"
       chapters:
-        - 60_contribution.qmd
+        - 60_reference_book.qmd
             
     - part: "참고자료"
       chapters:
