@@ -8,38 +8,16 @@ book:
   date: "2025. 1. 18."
   chapters:
     - index.qmd
-    - part: "언어"
-      chapters:
-        - 00_language.qmd
-    - part: "단어"
-      chapters:
-        - 10_word.qmd
-            
-    - part: "문장"
-      chapters:
-        - 20_sentence.qmd
-            
-    - part: "글쓰기"
-      chapters:
-        - 30_structure.qmd
-    
-    - part: "책쓰기"
-      chapters:
-        - 40_writing.qmd
-    
-    - part: "저장하기"
-      chapters:
-        - 50_book.qmd
-            
-    - part: "참고서"
-      chapters:
-        - 60_reference_book.qmd
-            
-    - part: "참고자료"
-      chapters:
-        - 90_install_python.qmd
-        - 90_install_ide.qmd
-        - references.qmd
+    - 00_language.qmd
+    - 10_word.qmd
+    - 20_sentence.qmd
+    - 30_structure.qmd
+    - 40_writing.qmd
+    - 50_book.qmd
+    - 60_reference_book.qmd
+    - 90_install_python.qmd
+    - 90_install_ide.qmd
+    - references.qmd
 
 bibliography: references.bib
 
