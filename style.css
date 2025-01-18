@@ -19,8 +19,9 @@
   background: #1E415E;
   border: 1px solid #1E415E;
   padding: 15px 0px 5px 20px;
-  margin: 0px 0px 10px 0px;
+  margin: 0px 5px 10px 0px;
   border-radius: 15px 0px 0px 0px;
+  box-shadow: 3px 3px 3px 0px rgba(0,0,0,0.3);
 }
 
 .reveal h3 {
