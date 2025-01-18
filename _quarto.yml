@@ -9,32 +9,32 @@ book:
   chapters:
     - index.qmd
     - part: "1. 단어"
-        chapters:
-            - 10_word.qmd
+      chapters:
+        - 10_word.qmd
             
     - part: "2. 문장"
-        chapters:
-            - 20_sentence.qmd
+      chapters:
+        - 20_sentence.qmd
             
     - part: "3. 단락"
-        chapters:
-            - 30_structure.qmd
+      chapters:
+        - 30_structure.qmd
     
     - part: "4. 글쓰기"
-        chapters:
-            - 40_writing.qmd
+      chapters:
+        - 40_writing.qmd
     
     - part: "5. 책쓰기"
-        chapters:
-            - 50_book.qmd
+      chapters:
+        - 50_book.qmd
             
     - part: "6. 참고서"
-        chapters:
-            - 60_contribution.qmd
+      chapters:
+        - 60_contribution.qmd
             
     - part: "참고자료"
-        chapters:
-            - references.qmd
+      chapters:
+        - references.qmd
 
 bibliography: references.bib
 
