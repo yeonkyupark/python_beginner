@@ -10,8 +10,8 @@ project:
 #         text: Home
 #       - about.qmd
 
-execute:
-  freeze: auto
+# execute:
+#   freeze: auto
 # 
 #   html:
 #     theme: cosmo
