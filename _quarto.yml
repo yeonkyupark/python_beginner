@@ -1,5 +1,0 @@
-project:
-  type: website
-  output-dir: docs
-execute:
-  freeze: false  # re-render only when source changes
