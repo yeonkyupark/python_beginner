@@ -1,5 +1,5 @@
 project:
   type: website
   output-dir: docs
-# execute:
-#   freeze: auto  # re-render only when source changes
+execute:
+  freeze: false  # re-render only when source changes
