@@ -9,12 +9,12 @@ format: html
 
 -   [https://www.python.org/downloads/windows/](https://www.python.org/downloads/windows/){target="_blank"}
 
-![](images/install_python.png)
+    ![](images/install_python.png)
 
 운영중인 시스템 또는 패키지 호환성을 위해 특정 버전을 다운로드해야 할 경우가 있습니다. 이런 경우는 전체 릴리즈 메뉴에서 필요한 버전을 검색 후 설치할 수 있습니다.
 
 -   <https://www.python.org/downloads/>
 
-![](images/python_all_release.png){target="_blank"}
+    ![](images/python_all_release.png){target="_blank"}
 
 
