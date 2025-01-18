@@ -1,0 +1,27 @@
+project:
+  type: book
+
+book:
+  title: "파이썬 기초"
+  author: "YK"
+  date: "2025. 1. 18."
+  chapters:
+    - index.qmd
+    - 10_word.qmd
+    - 20_sentence.qmd
+    - 30_structure.qmd
+    - 40_writing.qmd
+    - 50_book.qmd
+    - 60_contribution.qmd
+    - references.qmd
+
+bibliography: references.bib
+
+format:
+  html:
+    theme: cosmo
+  pdf:
+    documentclass: scrreprt
+
+editor: visual
+
