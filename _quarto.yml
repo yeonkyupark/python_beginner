@@ -46,8 +46,8 @@ format:
   # pdf:
   #   documentclass: scrreprt
 
-# execute:
-#   freeze: true
+execute:
+  freeze: true
 
 editor: visual
 

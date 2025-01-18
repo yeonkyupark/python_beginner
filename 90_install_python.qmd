@@ -4,4 +4,3 @@ format: html
 ---
 
 파이썬(Pytyon)을 설치합니다.
-
