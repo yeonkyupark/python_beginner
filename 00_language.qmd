@@ -31,8 +31,6 @@ format: html
 
 {{< video "https://www.youtube.com/embed/3VG2OgkRJK0">}}
 
-<iframe width="640" height="480"  src="https://www.youtube.com/embed/3VG2OgkRJK0" title="샌드위치 코딩: 자녀 코딩교육 영상" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-
 사람과 컴퓨터 사이에서 같은 상황이 발생합니다. 사람이 하는 말을 컴퓨터가 이해할 수 없기 때문에 누군가 컴퓨터가 알 수 있도록 번역이 필요합니다.
 
 ![](images/interpreter.png)
@@ -66,9 +64,9 @@ format: html
 
 ![https://www.python.org/](https://www.python.org/static/img/python-logo.png)
 
-[^python]: [https://www.python.org/](https://www.python.org/){target="_blank"}
+Python(파이썬)[^python]은 1991년에 **귀도 반 로섬(Guido van Rossum)**에 의해 처음 개발된 고급 프로그래밍 언어입니다. Python은 그 문법이 간단하고, 읽기 쉽고, 학습하기 쉬운 특징을 가지고 있어 초보자부터 전문가까지 폭넓게 사용됩니다. 다양한 분야에서 사용되며, 특히 데이터 과학, 웹 개발, 자동화, 인공지능 등의 분야에서 인기가 많습니다.
 
-Python(파이썬)은 1991년에 **귀도 반 로섬(Guido van Rossum)**에 의해 처음 개발된 고급 프로그래밍 언어입니다. Python은 그 문법이 간단하고, 읽기 쉽고, 학습하기 쉬운 특징을 가지고 있어 초보자부터 전문가까지 폭넓게 사용됩니다. 다양한 분야에서 사용되며, 특히 데이터 과학, 웹 개발, 자동화, 인공지능 등의 분야에서 인기가 많습니다.
+[^python]: [https://www.python.org/](https://www.python.org/){target="_blank"}
 
 ### Python의 특징
 
