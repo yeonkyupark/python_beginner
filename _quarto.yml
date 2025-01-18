@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: docs
 
 book:
   title: "파이썬 기초"
@@ -7,13 +8,33 @@ book:
   date: "2025. 1. 18."
   chapters:
     - index.qmd
-    - 10_word.qmd
-    - 20_sentence.qmd
-    - 30_structure.qmd
-    - 40_writing.qmd
-    - 50_book.qmd
-    - 60_contribution.qmd
-    - references.qmd
+    - part: "1. 단어"
+        chapters:
+            - 10_word.qmd
+            
+    - part: "2. 문장"
+        chapters:
+            - 20_sentence.qmd
+            
+    - part: "3. 단락"
+        chapters:
+            - 30_structure.qmd
+    
+    - part: "4. 글쓰기"
+        chapters:
+            - 40_writing.qmd
+    
+    - part: "5. 책쓰기"
+        chapters:
+            - 50_book.qmd
+            
+    - part: "6. 참고서"
+        chapters:
+            - 60_contribution.qmd
+            
+    - part: "참고자료"
+        chapters:
+            - references.qmd
 
 bibliography: references.bib
 
