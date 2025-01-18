@@ -74,5 +74,16 @@
       "6. 참고서",
       "<span class='chapter-number'>6</span>  <span class='chapter-title'>기고</span>"
     ]
+  },
+  {
+    "objectID": "90_install_python.html",
+    "href": "90_install_python.html",
+    "title": "7  파이썬(Pytyon) 설치",
+    "section": "",
+    "text": "파이썬(Pytyon)을 설치합니다.",
+    "crumbs": [
+      "참고자료",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>파이썬(Pytyon) 설치</span>"
+    ]
   }
 ]
