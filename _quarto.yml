@@ -8,23 +8,23 @@ book:
   date: "2025. 1. 18."
   chapters:
     - index.qmd
-    - part: "단어 익히기"
+    - part: "단어"
       chapters:
         - 10_word.qmd
             
-    - part: "문장 만들기"
+    - part: "문장"
       chapters:
         - 20_sentence.qmd
             
-    - part: "단락 만들기"
+    - part: "글쓰기"
       chapters:
         - 30_structure.qmd
     
-    - part: "말 하기"
+    - part: "책쓰기"
       chapters:
         - 40_writing.qmd
     
-    - part: "글 쓰기"
+    - part: "저장하기"
       chapters:
         - 50_book.qmd
             
@@ -42,7 +42,7 @@ bibliography: references.bib
 
 format:
   html:
-    theme: cosmo
+    theme: flaty
   # pdf:
   #   documentclass: scrreprt
 
