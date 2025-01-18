@@ -56,4 +56,4 @@ format: html
 
 프로그래밍 언어 순위는 티오베 지수(TIOBE Index)로 제공되고 있습니다.
 
-![\[https://www.tiobe.com/tiobe-index/\](https://www.tiobe.com/tiobe-index/)](images/tiobe.png)
+![[https://www.tiobe.com/tiobe-index/](https://www.tiobe.com/tiobe-index/){target="_blank"}](images/tiobe.png)
