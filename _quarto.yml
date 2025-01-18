@@ -34,6 +34,7 @@ book:
             
     - part: "참고자료"
       chapters:
+        - 90_install_python.qmd
         - references.qmd
 
 bibliography: references.bib
