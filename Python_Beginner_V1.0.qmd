@@ -9,9 +9,9 @@ format:
     slideNumber: true
     margin: 0.02
     width: 100%
-    logo: python-logo.png
+    # logo: python_logo.png
 title-slide-attributes: 
-  data-background-image: python-logo.png
+  data-background-image: python_logo.png
   data-background-size: 290px 82px
   data-background-position: 10px 10px
   data-background-color: "#1E415E"
