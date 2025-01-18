@@ -124,7 +124,17 @@
     "href": "90_install_python.html",
     "title": "8  파이썬(Pytyon) 설치",
     "section": "",
-    "text": "파이썬(Pytyon)을 설치합니다.",
+    "text": "8.1 설치파일 다운로드\n파이썬 홈페이지에서 최신 버전을 다운로드 합니다.\n운영중인 시스템 또는 패키지 호환성을 위해 특정 버전을 다운로드해야 할 경우가 있습니다. 이런 경우는 전체 릴리즈 메뉴에서 필요한 버전을 검색 후 설치할 수 있습니다.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>파이썬(Pytyon) 설치</span>"
+    ]
+  },
+  {
+    "objectID": "90_install_python.html#설치파일-다운로드",
+    "href": "90_install_python.html#설치파일-다운로드",
+    "title": "8  파이썬(Pytyon) 설치",
+    "section": "",
+    "text": "https://www.python.org/downloads/windows/\n\n\n\n\nhttps://www.python.org/downloads/",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>파이썬(Pytyon) 설치</span>"
     ]
