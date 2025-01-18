@@ -8,27 +8,27 @@ book:
   date: "2025. 1. 18."
   chapters:
     - index.qmd
-    - part: "1. 단어"
+    - part: "단어 익히기"
       chapters:
         - 10_word.qmd
             
-    - part: "2. 문장"
+    - part: "문장 만들기"
       chapters:
         - 20_sentence.qmd
             
-    - part: "3. 단락"
+    - part: "단락 만들기"
       chapters:
         - 30_structure.qmd
     
-    - part: "4. 글쓰기"
+    - part: "말 하기"
       chapters:
         - 40_writing.qmd
     
-    - part: "5. 책쓰기"
+    - part: "글 쓰기"
       chapters:
         - 50_book.qmd
             
-    - part: "6. 참고서"
+    - part: "참고서"
       chapters:
         - 60_contribution.qmd
             
