@@ -1,3 +1,31 @@
 # 단어
 
-말을 하기 위해서는 먼저 사용할 단어를 익혀야 한다.
+## 자료형
+
+파이썬에서 사용하는 **자료형**(Data type)은 아래 그림과 같습니다.
+
+```{mermaid}
+flowchart TD
+
+10[Numeric]
+20[Dictionary]
+30[Boolean]  
+40[Set]
+50[Sequence Type]
+
+11[Integer]
+12[Float]
+13[Complex]
+
+51[String]
+52[List]
+53[Tuple]
+
+00[Python Data Types] --- 10
+00 --- 20
+00 --- 30
+00 --- 40
+00 --- 50
+10 ----- 11 & 12 & 13
+50 ----- 51 & 52 & 53
+```
