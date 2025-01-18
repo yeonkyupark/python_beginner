@@ -14,7 +14,7 @@
     "href": "10_word.html",
     "title": "1  단어",
     "section": "",
-    "text": "말을 하기 위해서는 먼저 사용할 단어를 익혀야 한다.",
+    "text": "1.1 자료형\n파이썬에서 사용하는 자료형(Data type)은 아래 그림과 같습니다.\nflowchart TD\n\n10[Numeric]\n20[Dictionary]\n30[Boolean]  \n40[Set]\n50[Sequence Type]\n\n11[Integer]\n12[Float]\n13[Complex]\n\n51[String]\n52[List]\n53[Tuple]\n\n00[Python Data Types] --- 10\n00 --- 20\n00 --- 30\n00 --- 40\n00 --- 50\n10 ----- 11 & 12 & 13\n50 ----- 51 & 52 & 53",
     "crumbs": [
       "단어",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>단어</span>"
