@@ -12,9 +12,9 @@
   {
     "objectID": "00_language.html",
     "href": "00_language.html",
-    "title": "언어",
+    "title": "1  언어",
     "section": "",
-    "text": "언어\n언어(言語, Language)1에 대한 정의는 여러 가지 시도가 있었다. 아래는 그러한 예의 일부이다.\n만약 두 대상이 사용하는 언어가 다르다면 어떻게 의사소통을 할 수 있을까요? 공통 언어를 사용하거나 한쪽에서 다른 쪽 언어를 배워 이야기 나눌 수 있을 듯 합니다.\n또 다른 방법은 누군가 말을 번역해 줄 수도 있습니다.",
+    "text": "1.1 언어\n언어(言語, Language)1에 대한 정의는 여러 가지 시도가 있었다. 아래는 그러한 예의 일부이다.\n만약 두 대상이 사용하는 언어가 다르다면 어떻게 의사소통을 할 수 있을까요? 공통 언어를 사용하거나 한쪽에서 다른 쪽 언어를 배워 이야기 나눌 수 있을 듯 합니다.\n또 다른 방법은 누군가 말을 번역해 줄 수도 있습니다.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>언어</span>"
     ]
@@ -22,7 +22,7 @@
   {
     "objectID": "00_language.html#언어",
     "href": "00_language.html#언어",
-    "title": "언어",
+    "title": "1  언어",
     "section": "",
     "text": "사람들이 자신의 생각을 다른 사람들에게 나타내고 전달하기 위해 사용하는 체계.\n사물, 행동, 생각, 그리고 상태를 나타내는 체계.\n사람들 사이에 공유되는 의미들의 체계.\n문법적으로 맞는 말의 집합.\n언어 공동체 내에서 이해될 수 있는 말의 집합.",
     "crumbs": [
@@ -32,9 +32,9 @@
   {
     "objectID": "00_language.html#프로그래밍-언어",
     "href": "00_language.html#프로그래밍-언어",
-    "title": "언어",
-    "section": "프로그래밍 언어",
-    "text": "프로그래밍 언어\n\n사람과 컴퓨터 사이에서 같은 상황이 발생합니다. 사람이 하는 말을 컴퓨터가 이해할 수 없기 때문에 누군가 컴퓨터가 알 수 있도록 번역이 필요합니다.\n\n이렇게 사람이 요청한 내용을 번역해서 컴퓨터에게 전달하는, 즉 번역가 역할을 하는 것이 인터프리터, 컴파일러입니다. 개발자가 프로그래밍 언어를 이용하여 코딩을 하게 되면 인터프리터나 컴파일러가 컴퓨터가 이해할 수 있는 기계어로 번역합니다.\n\n\n\n\n\n\n인터프리터와 컴파일러 비교\n\n\n\n\n\n\n\n\n\n\n\n특징\n인터프리터 (Interpreter)\n컴파일러 (Compiler)\n\n\n\n\n작동 방식\n코드를 한 줄씩 읽고 실행한다.\n전체 소스 코드를 한번에 번역하여 실행 파일을 만든다.\n\n\n실행 속도\n느리다. (실시간으로 코드를 해석하므로)\n빠르다. (한 번 번역된 코드가 실행됨)\n\n\n에러 발생 위치\n실행 중에 에러가 발생한다.\n컴파일 중에 모든 에러가 발견된다.\n\n\n디버깅\n디버깅이 상대적으로 쉬움.\n디버깅이 더 어려울 수 있음 (번역 후 실행되므로)\n\n\n실행 환경\n소스 코드가 실행될 때마다 해석되므로 별도의 실행 파일이 필요 없다.\n실행 파일이 생성되어 실행된다.\n\n\n메모리 사용\n코드 실행 시마다 메모리를 소모한다.\n실행 파일이 메모리를 한번만 소모한다.\n\n\n출력 파일\n없음. (코드는 해석 후 즉시 실행된다.)\n실행 파일이나 중간 코드가 생성된다.\n\n\n언어 예시\nPython, JavaScript, Ruby\nC, C++, Java, Go\n\n\n성능\n낮다. (매번 해석해야 하므로)\n높다. (미리 번역된 코드가 빠르게 실행됨)\n\n\n개발 시간\n빠르게 실행할 수 있어 개발이 더 빠를 수 있음.\n코드를 컴파일해야 하므로 시간이 더 걸릴 수 있음.\n\n\n\n\n\n\n프로그래밍 언어 순위\n프로그래밍 언어 순위는 티오베 지수(TIOBE Index)2로 확인할 수 있습니다.",
+    "title": "1  언어",
+    "section": "1.2 프로그래밍 언어",
+    "text": "1.2 프로그래밍 언어\n\n사람과 컴퓨터 사이에서 같은 상황이 발생합니다. 사람이 하는 말을 컴퓨터가 이해할 수 없기 때문에 누군가 컴퓨터가 알 수 있도록 번역이 필요합니다.\n\n이렇게 사람이 요청한 내용을 번역해서 컴퓨터에게 전달하는, 즉 번역가 역할을 하는 것이 인터프리터, 컴파일러입니다. 개발자가 프로그래밍 언어를 이용하여 코딩을 하게 되면 인터프리터나 컴파일러가 컴퓨터가 이해할 수 있는 기계어로 번역합니다.\n\n\n\n\n\n\n인터프리터와 컴파일러 비교\n\n\n\n\n\n\n\n\n\n\n\n특징\n인터프리터 (Interpreter)\n컴파일러 (Compiler)\n\n\n\n\n작동 방식\n코드를 한 줄씩 읽고 실행한다.\n전체 소스 코드를 한번에 번역하여 실행 파일을 만든다.\n\n\n실행 속도\n느리다. (실시간으로 코드를 해석하므로)\n빠르다. (한 번 번역된 코드가 실행됨)\n\n\n에러 발생 위치\n실행 중에 에러가 발생한다.\n컴파일 중에 모든 에러가 발견된다.\n\n\n디버깅\n디버깅이 상대적으로 쉬움.\n디버깅이 더 어려울 수 있음 (번역 후 실행되므로)\n\n\n실행 환경\n소스 코드가 실행될 때마다 해석되므로 별도의 실행 파일이 필요 없다.\n실행 파일이 생성되어 실행된다.\n\n\n메모리 사용\n코드 실행 시마다 메모리를 소모한다.\n실행 파일이 메모리를 한번만 소모한다.\n\n\n출력 파일\n없음. (코드는 해석 후 즉시 실행된다.)\n실행 파일이나 중간 코드가 생성된다.\n\n\n언어 예시\nPython, JavaScript, Ruby\nC, C++, Java, Go\n\n\n성능\n낮다. (매번 해석해야 하므로)\n높다. (미리 번역된 코드가 빠르게 실행됨)\n\n\n개발 시간\n빠르게 실행할 수 있어 개발이 더 빠를 수 있음.\n코드를 컴파일해야 하므로 시간이 더 걸릴 수 있음.\n\n\n\n\n\n\n1.2.1 프로그래밍 언어 순위\n프로그래밍 언어 순위는 티오베 지수(TIOBE Index)2로 확인할 수 있습니다.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>언어</span>"
     ]
@@ -42,9 +42,9 @@
   {
     "objectID": "00_language.html#파이썬",
     "href": "00_language.html#파이썬",
-    "title": "언어",
-    "section": "파이썬",
-    "text": "파이썬\n\n\n\nhttps://www.python.org/\n\n\nPython(파이썬)3은 1991년에 귀도 반 로섬(Guido van Rossum)에 의해 처음 개발된 고급 프로그래밍 언어입니다. Python은 그 문법이 간단하고, 읽기 쉽고, 학습하기 쉬운 특징을 가지고 있어 초보자부터 전문가까지 폭넓게 사용됩니다. 다양한 분야에서 사용되며, 특히 데이터 과학, 웹 개발, 자동화, 인공지능 등의 분야에서 인기가 많습니다.\n\nPython의 특징\n파이썬 주요 특징은 다음과 같습니다.\n\n간결하고 읽기 쉬운 문법\n\nPython은 코드가 직관적이고 가독성이 뛰어납니다. 이는 Python이 첫 프로그래밍 언어를 배우려는 사람들에게 인기가 있는 이유 중 하나입니다.\n코드 블록은 중괄호 {} 대신 들여쓰기로 구분됩니다.\n\n동적 타이핑(Dynamically Typed)\n\n변수의 데이터 타입을 명시하지 않아도 됩니다. 예를 들어, x = 10과 같은 방식으로 변수에 값을 할당할 수 있으며, 이후 다른 타입의 값도 할당 가능합니다.\n\nx = 10     # 정수\nx = \"Hello\"  # 문자열\n객체 지향(OOP) 지원\n\nPython은 객체 지향 프로그래밍을 지원합니다. 클래스와 객체를 사용해 코드의 재사용성과 유지보수성을 높일 수 있습니다.\n\n다양한 라이브러리와 프레임워크\n\nPython은 수많은 라이브러리와 프레임워크가 존재하여, 다양한 작업을 쉽게 처리할 수 있습니다.\n예: NumPy, Pandas (데이터 분석), Django, Flask (웹 개발), TensorFlow, PyTorch (머신러닝), Matplotlib (그래프 작성)\n\n인터프리터 언어\n\nPython은 인터프리터 언어로, 코드를 실행하기 위해 별도의 컴파일 과정이 필요하지 않습니다. 코드가 실행될 때마다 바로 해석되어 실행됩니다.\n\n크로스 플랫폼\n\nPython은 여러 운영 체제(Windows, macOS, Linux 등)에서 실행할 수 있습니다. 이는 Python이 크로스 플랫폼 언어로 설계되었기 때문입니다.\n\n동시성(Concurrency) 지원\n\nPython은 멀티스레딩, 멀티프로세싱 등 동시성 처리를 위한 다양한 방법을 제공합니다.\n\n대화형 인터프리터\n\nPython은 대화형 인터프리터(REPL)를 제공하여, 코드를 작성하면서 바로 실행 결과를 확인할 수 있습니다.\n\n\n\n\nPython의 주요 용도\n파이썬 주요 용도는 다음과 같으며 모바일 응용프로그램 개발에 한계가 있습니다.\n\n웹 개발\n\nDjango, Flask와 같은 프레임워크를 사용하여 서버 사이드 웹 애플리케이션을 개발할 수 있습니다.\n\n데이터 분석 및 과학\n\nPandas, NumPy, SciPy와 같은 라이브러리를 사용하여 데이터를 처리하고 분석할 수 있습니다.\nMatplotlib, Seaborn 등을 사용해 시각화를 할 수 있습니다.\n\n인공지능 및 머신러닝\n\nTensorFlow, Keras, PyTorch와 같은 라이브러리를 통해 머신러닝 및 딥러닝 모델을 구축할 수 있습니다.\n\n자동화 및 스크립팅\n\nPython은 시스템 관리 작업, 파일 처리, 웹 스크래핑 등 자동화 작업을 매우 쉽게 할 수 있는 언어입니다.\n\n게임 개발\n\nPygame과 같은 라이브러리를 사용하여 간단한 2D 게임을 개발할 수 있습니다.\n\n네트워크 프로그래밍\n\nPython은 소켓 프로그래밍을 통해 네트워크 애플리케이션을 만들 수 있습니다.\n\n\n\n\nPython의 장단점\n파이썬 주요 장단점은 다음과 같습니다.\n\n장점\n\n\n배우기 쉬움: Python은 매우 직관적이고 간단한 문법을 제공하여 초보자에게 적합합니다.\n광범위한 커뮤니티와 지원: 전 세계적으로 많은 개발자들이 사용하고 있어, 다양한 질문과 답변을 찾을 수 있는 큰 커뮤니티가 있습니다.\n빠른 개발 속도: 라이브러리와 도구들이 풍부해 많은 일을 빠르게 처리할 수 있습니다.\n\n\n단점\n\n\n속도: Python은 인터프리터 언어이기 때문에 컴파일된 언어보다 실행 속도가 느릴 수 있습니다. 하지만 성능이 중요한 부분에서는 C, C++와 같은 언어와 연동하여 사용하거나, Cython, PyPy 같은 최적화 도구를 사용할 수 있습니다.\n멀티스레딩: Python은 Global Interpreter Lock(GIL)로 인해 진정한 멀티스레딩을 지원하지 않습니다. 멀티스레딩을 많이 사용하는 경우 다른 방법을 찾아야 할 수 있습니다.\n\n\n\n파이썬 설치는 설치파일 다운로드 내용을 참고한다.",
+    "title": "1  언어",
+    "section": "1.3 파이썬",
+    "text": "1.3 파이썬\n\n\n\nhttps://www.python.org/\n\n\nPython(파이썬)3은 1991년에 귀도 반 로섬(Guido van Rossum)에 의해 처음 개발된 고급 프로그래밍 언어입니다. Python은 그 문법이 간단하고, 읽기 쉽고, 학습하기 쉬운 특징을 가지고 있어 초보자부터 전문가까지 폭넓게 사용됩니다. 다양한 분야에서 사용되며, 특히 데이터 과학, 웹 개발, 자동화, 인공지능 등의 분야에서 인기가 많습니다.\n\n1.3.1 Python의 특징\n파이썬 주요 특징은 다음과 같습니다.\n\n간결하고 읽기 쉬운 문법\n\nPython은 코드가 직관적이고 가독성이 뛰어납니다. 이는 Python이 첫 프로그래밍 언어를 배우려는 사람들에게 인기가 있는 이유 중 하나입니다.\n코드 블록은 중괄호 {} 대신 들여쓰기로 구분됩니다.\n\n동적 타이핑(Dynamically Typed)\n\n변수의 데이터 타입을 명시하지 않아도 됩니다. 예를 들어, x = 10과 같은 방식으로 변수에 값을 할당할 수 있으며, 이후 다른 타입의 값도 할당 가능합니다.\n\nx = 10     # 정수\nx = \"Hello\"  # 문자열\n객체 지향(OOP) 지원\n\nPython은 객체 지향 프로그래밍을 지원합니다. 클래스와 객체를 사용해 코드의 재사용성과 유지보수성을 높일 수 있습니다.\n\n다양한 라이브러리와 프레임워크\n\nPython은 수많은 라이브러리와 프레임워크가 존재하여, 다양한 작업을 쉽게 처리할 수 있습니다.\n예: NumPy, Pandas (데이터 분석), Django, Flask (웹 개발), TensorFlow, PyTorch (머신러닝), Matplotlib (그래프 작성)\n\n인터프리터 언어\n\nPython은 인터프리터 언어로, 코드를 실행하기 위해 별도의 컴파일 과정이 필요하지 않습니다. 코드가 실행될 때마다 바로 해석되어 실행됩니다.\n\n크로스 플랫폼\n\nPython은 여러 운영 체제(Windows, macOS, Linux 등)에서 실행할 수 있습니다. 이는 Python이 크로스 플랫폼 언어로 설계되었기 때문입니다.\n\n동시성(Concurrency) 지원\n\nPython은 멀티스레딩, 멀티프로세싱 등 동시성 처리를 위한 다양한 방법을 제공합니다.\n\n대화형 인터프리터\n\nPython은 대화형 인터프리터(REPL)를 제공하여, 코드를 작성하면서 바로 실행 결과를 확인할 수 있습니다.\n\n\n\n\n1.3.2 Python의 주요 용도\n파이썬 주요 용도는 다음과 같으며 모바일 응용프로그램 개발에 한계가 있습니다.\n\n웹 개발\n\nDjango, Flask와 같은 프레임워크를 사용하여 서버 사이드 웹 애플리케이션을 개발할 수 있습니다.\n\n데이터 분석 및 과학\n\nPandas, NumPy, SciPy와 같은 라이브러리를 사용하여 데이터를 처리하고 분석할 수 있습니다.\nMatplotlib, Seaborn 등을 사용해 시각화를 할 수 있습니다.\n\n인공지능 및 머신러닝\n\nTensorFlow, Keras, PyTorch와 같은 라이브러리를 통해 머신러닝 및 딥러닝 모델을 구축할 수 있습니다.\n\n자동화 및 스크립팅\n\nPython은 시스템 관리 작업, 파일 처리, 웹 스크래핑 등 자동화 작업을 매우 쉽게 할 수 있는 언어입니다.\n\n게임 개발\n\nPygame과 같은 라이브러리를 사용하여 간단한 2D 게임을 개발할 수 있습니다.\n\n네트워크 프로그래밍\n\nPython은 소켓 프로그래밍을 통해 네트워크 애플리케이션을 만들 수 있습니다.\n\n\n\n\n1.3.3 Python의 장단점\n파이썬 주요 장단점은 다음과 같습니다.\n\n장점\n\n\n배우기 쉬움: Python은 매우 직관적이고 간단한 문법을 제공하여 초보자에게 적합합니다.\n광범위한 커뮤니티와 지원: 전 세계적으로 많은 개발자들이 사용하고 있어, 다양한 질문과 답변을 찾을 수 있는 큰 커뮤니티가 있습니다.\n빠른 개발 속도: 라이브러리와 도구들이 풍부해 많은 일을 빠르게 처리할 수 있습니다.\n\n\n단점\n\n\n속도: Python은 인터프리터 언어이기 때문에 컴파일된 언어보다 실행 속도가 느릴 수 있습니다. 하지만 성능이 중요한 부분에서는 C, C++와 같은 언어와 연동하여 사용하거나, Cython, PyPy 같은 최적화 도구를 사용할 수 있습니다.\n멀티스레딩: Python은 Global Interpreter Lock(GIL)로 인해 진정한 멀티스레딩을 지원하지 않습니다. 멀티스레딩을 많이 사용하는 경우 다른 방법을 찾아야 할 수 있습니다.\n\n\n\n파이썬 설치는 Section 8.1 내용을 참고한다.",
     "crumbs": [
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>언어</span>"
     ]
@@ -52,7 +52,7 @@
   {
     "objectID": "00_language.html#footnotes",
     "href": "00_language.html#footnotes",
-    "title": "언어",
+    "title": "1  언어",
     "section": "",
     "text": "https://ko.wikipedia.org/wiki/언어↩︎\nhttps://www.tiobe.com/tiobe-index/↩︎\nhttps://www.python.org/↩︎",
     "crumbs": [
@@ -62,9 +62,9 @@
   {
     "objectID": "10_word.html",
     "href": "10_word.html",
-    "title": "자료형",
+    "title": "2  자료형",
     "section": "",
-    "text": "자료형\n파이썬에서 사용하는 자료형(Data type)은 아래 그림과 같습니다.\nflowchart TD\n\n10[Numeric]\n20[Dictionary]\n30[Boolean]  \n40[Set]\n50[Sequence Type]\n\n11[Integer]\n12[Float]\n13[Complex]\n\n51[String]\n52[List]\n53[Tuple]\n\n00[Python Data Types] --- 10\n00 --- 20\n00 --- 30\n00 --- 40\n00 --- 50\n10 ----- 11 & 12 & 13\n50 ----- 51 & 52 & 53",
+    "text": "2.1 자료형\n파이썬에서 사용하는 자료형(Data type)은 아래 그림과 같습니다.\nflowchart TD\n\n10[Numeric]\n20[Dictionary]\n30[Boolean]  \n40[Set]\n50[Sequence Type]\n\n11[Integer]\n12[Float]\n13[Complex]\n\n51[String]\n52[List]\n53[Tuple]\n\n00[Python Data Types] --- 10\n00 --- 20\n00 --- 30\n00 --- 40\n00 --- 50\n10 ----- 11 & 12 & 13\n50 ----- 51 & 52 & 53",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>자료형</span>"
     ]
@@ -72,9 +72,9 @@
   {
     "objectID": "20_sentence.html",
     "href": "20_sentence.html",
-    "title": "연산",
+    "title": "3  연산",
     "section": "",
-    "text": "자료형\n파이썬에서 사용하는 자료형(Data-type)은 다음과 같다.",
+    "text": "3.1 자료형\n파이썬에서 사용하는 자료형(Data-type)은 다음과 같다.",
     "crumbs": [
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>연산</span>"
     ]
@@ -82,7 +82,7 @@
   {
     "objectID": "30_structure.html",
     "href": "30_structure.html",
-    "title": "제어문",
+    "title": "4  제어문",
     "section": "",
     "text": "문장을 이용하여 구조적인 단락을 작성한다.",
     "crumbs": [
@@ -92,7 +92,7 @@
   {
     "objectID": "40_writing.html",
     "href": "40_writing.html",
-    "title": "함수",
+    "title": "5  함수",
     "section": "",
     "text": "단락을 모아 글을 써 본다.",
     "crumbs": [
@@ -102,7 +102,7 @@
   {
     "objectID": "50_book.html",
     "href": "50_book.html",
-    "title": "입출력",
+    "title": "6  입출력",
     "section": "",
     "text": "작성한 글을 책으로 엮어 본다.",
     "crumbs": [
@@ -112,7 +112,7 @@
   {
     "objectID": "60_reference_book.html",
     "href": "60_reference_book.html",
-    "title": "패키지",
+    "title": "7  패키지",
     "section": "",
     "text": "널리 알려진 책을 읽어 보자.",
     "crumbs": [
@@ -122,9 +122,9 @@
   {
     "objectID": "90_install_python.html",
     "href": "90_install_python.html",
-    "title": "파이썬 설치",
+    "title": "8  파이썬 설치",
     "section": "",
-    "text": "설치파일 다운로드\n파이썬 홈페이지에서 최신 버전을 다운로드 합니다.\n운영중인 시스템 또는 패키지 호환성을 위해 특정 버전을 다운로드해야 할 경우가 있습니다. 이런 경우는 전체 릴리즈 메뉴에서 필요한 버전을 검색 후 설치할 수 있습니다.\n다운로드 받은 파일을 실행하여 설치를 진행합니다. 개발 편의를 위해 다음 옵션을 체크합니다.\n설치가 완료 되었다면 앱 목록에 등록되었는지 확인합니다.\nCMD 창에서 python을 입력하여 REPL이 동작하는지 확인합니다.",
+    "text": "8.1 설치파일 다운로드\n파이썬 홈페이지에서 최신 버전을 다운로드 합니다.\n운영중인 시스템 또는 패키지 호환성을 위해 특정 버전을 다운로드해야 할 경우가 있습니다. 이런 경우는 전체 릴리즈 메뉴에서 필요한 버전을 검색 후 설치할 수 있습니다.\n다운로드 받은 파일을 실행하여 설치를 진행합니다. 개발 편의를 위해 다음 옵션을 체크합니다.\n설치가 완료 되었다면 앱 목록에 등록되었는지 확인합니다.\nCMD 창에서 python을 입력하여 REPL이 동작하는지 확인합니다.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>파이썬 설치</span>"
     ]
@@ -132,7 +132,7 @@
   {
     "objectID": "90_install_python.html#sec-download-python",
     "href": "90_install_python.html#sec-download-python",
-    "title": "파이썬 설치",
+    "title": "8  파이썬 설치",
     "section": "",
     "text": "https://www.python.org/downloads/windows/\n\n\n\n\nhttps://www.python.org/downloads/\n\n\n\n\nAdd python.exe to PATH\n\n\n\n\n\n\n\n\n\n\n\n\nREPL\n\n\n\nREPL은 “Read-Eval-Print Loop”의 약자로, 코드 실행 환경을 의미합니다. 파이썬에서는 REPL이 다음과 같은 과정을 거쳐 동작합니다.\n\nRead (읽기): 사용자가 입력한 코드를 읽습니다.\nEval (평가): 입력된 코드를 실행하여 결과를 계산합니다.\nPrint (출력): 실행된 결과를 출력합니다.\nLoop (반복): 위의 과정을 반복하여 사용자가 코드를 계속해서 입력하고 실행할 수 있게 합니다.\n\n파이썬의 REPL은 파이썬 인터프리터에서 제공되며, 보통 터미널에서 python 명령어를 입력하면 활성화됩니다. 사용자는 한 줄씩 파이썬 코드를 입력하고 즉시 결과를 확인할 수 있습니다. 이를 통해 실시간으로 코드 실험이나 디버깅을 할 수 있어 매우 유용합니다.\n\n예시\n\n&gt;&gt;&gt; 2 + 3\n5\n&gt;&gt;&gt; print(\"Hello, World!\")\nHello, World!\n\n\n위와 같은 방식으로 REPL에서 코드를 실행하고 바로 결과를 확인할 수 있습니다.",
     "crumbs": [
@@ -142,9 +142,9 @@
   {
     "objectID": "90_install_python.html#idle",
     "href": "90_install_python.html#idle",
-    "title": "파이썬 설치",
-    "section": "IDLE",
-    "text": "IDLE\n\n파이썬에서 제공하는 IDE(Iegegrated Development Environment, 통합 개발 환경)로 IDLE(Integrated Development and Learning Environment)1이 있다. 소스코드를 파일로 작성하여 실행하거나 프롬프트 &gt;&gt;&gt; 상에서 코드를 직접 작성하여 실행할 수도 있습니다.\n먼저 File &gt; New File(Ctrl+N) 메뉴를 통해 새 소스파일을 작성합니다.\n\nRun &gt; Run Module(F5) 메뉴를 통해 작성된 소스코드를 실행할 수 있습니다.\n\n파이썬에서 주로 사용하는 주요 IDE는 파이썬을 위한 주요 IDE 내용을 참고한다.",
+    "title": "8  파이썬 설치",
+    "section": "8.2 IDLE",
+    "text": "8.2 IDLE\n\n파이썬에서 제공하는 IDE(Iegegrated Development Environment, 통합 개발 환경)로 IDLE(Integrated Development and Learning Environment)1이 있다. 소스코드를 파일로 작성하여 실행하거나 프롬프트 &gt;&gt;&gt; 상에서 코드를 직접 작성하여 실행할 수도 있습니다.\n먼저 File &gt; New File(Ctrl+N) 메뉴를 통해 새 소스파일을 작성합니다.\n\nRun &gt; Run Module(F5) 메뉴를 통해 작성된 소스코드를 실행할 수 있습니다.\n\n파이썬에서 주로 사용하는 주요 IDE는 Section 9.1 내용을 참고한다.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>파이썬 설치</span>"
     ]
@@ -152,7 +152,7 @@
   {
     "objectID": "90_install_python.html#footnotes",
     "href": "90_install_python.html#footnotes",
-    "title": "파이썬 설치",
+    "title": "8  파이썬 설치",
     "section": "",
     "text": "https://en.wikipedia.org/wiki/IDLE↩︎",
     "crumbs": [
@@ -162,9 +162,9 @@
   {
     "objectID": "90_install_ide.html",
     "href": "90_install_ide.html",
-    "title": "IDE 설치",
+    "title": "9  IDE 설치",
     "section": "",
-    "text": "파이썬을 위한 주요 IDE\n파이썬 개발에 주로 사용하는 IDE를 필요에 따라 적절히 설치합니다.",
+    "text": "9.1 파이썬을 위한 주요 IDE\n파이썬 개발에 주로 사용하는 IDE를 필요에 따라 적절히 설치합니다.",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>IDE 설치</span>"
     ]
@@ -172,7 +172,7 @@
   {
     "objectID": "90_install_ide.html#sec-python-ide",
     "href": "90_install_ide.html#sec-python-ide",
-    "title": "IDE 설치",
+    "title": "9  IDE 설치",
     "section": "",
     "text": "주요 IDE\n\n\n주피터 노트북(Jupyter Notebook)\n파이참(Pycharm)\nVSCode(Visual Stuido Code)",
     "crumbs": [
