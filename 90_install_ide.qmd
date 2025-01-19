@@ -9,7 +9,7 @@ format: html
 
 주요 IDE
 
-:   -   주피터 노트북(Jupyter Notebook)
+:   -   주피터 노트북(Jupyter Notebook) (-@sec-jupyter-notebook 참고)
     -   파이참(Pycharm) (-@sec-pycharm 참고)
     -   VSCode(Visual Stuido Code) (-@sec-vscode 참고)
 
@@ -36,6 +36,14 @@ jupyter notebook
 ```
 
 ![](images/jupyter_notebook.png)
+
+### 시작 디렉토리 변경
+
+주피터 노트북을 설치하면 시작 디렉토리가 사용자 홈 디렉토리(`C:\Users\사용자계정`)로 설정됩니다. 만약 다른 디렉토리로 변경하고 싶다면 다음과 같은 방법으로 변경할 수 있습니다.
+
+``` cmd
+jupyter notebook --generate-config
+```
 
 
 ## 파이참 {#sec-pycharm}
