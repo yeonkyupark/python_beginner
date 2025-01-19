@@ -36,5 +36,5 @@ format:
 # execute:
 #   freeze: true
 
-editor: visual
+# editor: visual
 
