@@ -3,7 +3,7 @@ title: "파이썬 설치"
 format: html
 ---
 
-## 설치파일 다운로드
+## 설치파일 다운로드 {#sec-download-python}
 
 파이썬 홈페이지에서 최신 버전을 다운로드 합니다.
 
