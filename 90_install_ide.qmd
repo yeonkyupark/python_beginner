@@ -16,7 +16,7 @@ format: html
 ## 주피터 노트북 {#sec-jupyter-notebook}
 
 <p align="left">
-![https://jupyter.org/](https://jupyter.org/)](https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg)
+![[https://jupyter.org/](https://jupyter.org/){target="_blank"}](https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg)
 </p>
 
 **주피터 노트북**(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python's package manager)[^90_install_ide-1] 명령어를 이용하여 설치 합니다.[^90_install_ide-2]
