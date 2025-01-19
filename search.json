@@ -184,7 +184,7 @@
     "href": "90_install_ide.html#sec-jupyter-notebook",
     "title": "9  IDE 설치",
     "section": "9.2 주피터 노트북",
-    "text": "9.2 주피터 노트북\n\n\n\nhttps://jupyter.org/\n\n\n주피터 노트북(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python’s package manager)1 명령어를 이용하여 설치 합니다.2\npip install notebook\n설치가 완료되면 다음 명령어를 통해 실행할 수 있습니다.\njupyter notebook",
+    "text": "9.2 주피터 노트북\n\n](https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg)\n\n주피터 노트북(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python’s package manager)1 명령어를 이용하여 설치 합니다.2\npip install notebook\n설치가 완료되면 다음 명령어를 통해 실행할 수 있습니다.\njupyter notebook",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>IDE 설치</span>"
     ]
