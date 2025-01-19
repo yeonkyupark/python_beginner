@@ -23,13 +23,13 @@ format: html
 
 [^90_install_ide-2]: [https://jupyter.org/install](https://jupyter.org/install){target="_blank"}
 
-```         
+``` python        
 pip install notebook
 ```
 
 설치가 완료되면 다음 명령어를 통해 실행할 수 있습니다.
 
-```         
+``` python        
 jupyter notebook
 ```
 
