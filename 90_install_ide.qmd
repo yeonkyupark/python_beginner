@@ -12,3 +12,27 @@ format: html
 :   -   주피터 노트북(Jupyter Notebook)
     -   파이참(Pycharm)
     -   VSCode(Visual Stuido Code)
+
+## 주피터 노트북 {#sec-jupyter-notebook}
+
+![https://jupyter.org/](https://jupyter.org/assets/homepage/main-logo.svg)
+
+**주피터 노트북**(Jupyter Notebook)은 pip 명령어를 이용하여 설치 합니다.[^install_jupyter]
+
+[^install_jupyter]: [https://jupyter.org/install](https://jupyter.org/install){target="_blank"}
+
+```
+pip install notebook
+```
+
+설치가 완료되면 다음 명령어를 통해 실행할 수  있습니다.
+
+```
+jupyter notebook
+```
+
+
+## 파이참 (#sec-pycharm)
+
+## vSCode {#sec-vscode}
+
