@@ -69,3 +69,5 @@ Hello, World!
 
 ![](images/idle_run.png)
 
+파이썬에서 주로 사용하는 주요 IDE는 [@sec-python-ide] 내용을 참고한다.
+
