@@ -174,7 +174,7 @@
     "href": "90_install_ide.html#sec-python-ide",
     "title": "9  IDE 설치",
     "section": "",
-    "text": "주요 IDE\n\n\n주피터 노트북(Jupyter Notebook)\n파이참(Pycharm) (9.3 참고)\nVSCode(Visual Stuido Code) (9.4 참고)",
+    "text": "주요 IDE\n\n\n주피터 노트북(Jupyter Notebook) (9.2 참고)\n파이참(Pycharm) (9.3 참고)\nVSCode(Visual Stuido Code) (9.4 참고)",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>IDE 설치</span>"
     ]
@@ -184,7 +184,7 @@
     "href": "90_install_ide.html#sec-jupyter-notebook",
     "title": "9  IDE 설치",
     "section": "9.2 주피터 노트북",
-    "text": "9.2 주피터 노트북\n\n\n\n\nhttps://jupyter.org/\n\n\n\n주피터 노트북(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python’s package manager)1 명령어를 이용하여 설치 합니다.2\npip install notebook\n설치가 완료되면 CMD 창에서 다음 명령어를 통해 실행할 수 있습니다.\njupyter notebook",
+    "text": "9.2 주피터 노트북\n\n\n\n\nhttps://jupyter.org/\n\n\n\n주피터 노트북(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python’s package manager)1 명령어를 이용하여 설치 합니다.2\npip install notebook\n설치가 완료되면 CMD 창에서 다음 명령어를 통해 실행할 수 있습니다.\njupyter notebook\n\n\n9.2.1 시작 디렉토리 변경\n주피터 노트북을 설치하면 시작 디렉토리가 사용자 홈 디렉토리(C:\\Users\\사용자계정)로 설정됩니다. 만약 다른 디렉토리로 변경하고 싶다면 다음과 같은 방법으로 변경할 수 있습니다.\njupyter notebook --generate-config",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>IDE 설치</span>"
     ]
