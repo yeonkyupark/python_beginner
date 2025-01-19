@@ -10,8 +10,8 @@ format: html
 주요 IDE
 
 :   -   주피터 노트북(Jupyter Notebook)
-    -   파이참(Pycharm)
-    -   VSCode(Visual Stuido Code)
+    -   파이참(Pycharm) (-@sec-pycharm 참고)
+    -   VSCode(Visual Stuido Code) (-@sec-vscode 참고)
 
 ## 주피터 노트북 {#sec-jupyter-notebook}
 
@@ -38,6 +38,6 @@ jupyter notebook
 ![](images/jupyter_notebook.png)
 
 
-## 파이참 (#sec-pycharm)
+## 파이참 {#sec-pycharm}
 
 ## VSCode {#sec-vscode}
