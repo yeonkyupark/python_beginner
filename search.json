@@ -140,6 +140,26 @@
     ]
   },
   {
+    "objectID": "90_install_python.html#idle",
+    "href": "90_install_python.html#idle",
+    "title": "8  파이썬 설치",
+    "section": "8.2 IDLE",
+    "text": "8.2 IDLE\n\n파이썬에서 제공하는 IDE(Iegegrated Development Environment, 통합 개발 환경)로 IDLE(Integrated Development and Learning Environment)1이 있다. 소스코드를 파일로 작성하여 실행하거나 프롬프트 &gt;&gt;&gt; 상에서 코드를 직접 작성하여 실행할 수도 있다.",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>파이썬 설치</span>"
+    ]
+  },
+  {
+    "objectID": "90_install_python.html#footnotes",
+    "href": "90_install_python.html#footnotes",
+    "title": "8  파이썬 설치",
+    "section": "",
+    "text": "https://en.wikipedia.org/wiki/IDLE↩︎",
+    "crumbs": [
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>파이썬 설치</span>"
+    ]
+  },
+  {
     "objectID": "90_install_ide.html",
     "href": "90_install_ide.html",
     "title": "9  IDE 설치",
