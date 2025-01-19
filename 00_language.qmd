@@ -138,6 +138,6 @@ Python(파이썬)[^python]은 1991년에 **귀도 반 로섬(Guido van Rossum)**
 : - **속도**: Python은 인터프리터 언어이기 때문에 컴파일된 언어보다 실행 속도가 느릴 수 있습니다. 하지만 성능이 중요한 부분에서는 C, C++와 같은 언어와 연동하여 사용하거나, Cython, PyPy 같은 최적화 도구를 사용할 수 있습니다.
 - **멀티스레딩**: Python은 Global Interpreter Lock(GIL)로 인해 진정한 멀티스레딩을 지원하지 않습니다. 멀티스레딩을 많이 사용하는 경우 다른 방법을 찾아야 할 수 있습니다.
 
-파이썬 설치는 [-@sec-download-python 장] 내용을 참고한다.
+파이썬 설치는 [-@sec-download-python] 내용을 참고한다.
 
 
