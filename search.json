@@ -144,7 +144,7 @@
     "href": "90_install_python.html#idle",
     "title": "8  파이썬 설치",
     "section": "8.2 IDLE",
-    "text": "8.2 IDLE\n\n파이썬에서 제공하는 IDE(Iegegrated Development Environment, 통합 개발 환경)로 IDLE(Integrated Development and Learning Environment)1이 있다. 소스코드를 파일로 작성하여 실행하거나 프롬프트 &gt;&gt;&gt; 상에서 코드를 직접 작성하여 실행할 수도 있다.",
+    "text": "8.2 IDLE\n\n파이썬에서 제공하는 IDE(Iegegrated Development Environment, 통합 개발 환경)로 IDLE(Integrated Development and Learning Environment)1이 있다. 소스코드를 파일로 작성하여 실행하거나 프롬프트 &gt;&gt;&gt; 상에서 코드를 직접 작성하여 실행할 수도 있습니다.\n먼저 File &gt; New File(Ctrl+N) 메뉴를 통해 새 소스파일을 작성합니다.\n\nRun &gt; Run Module(F5) 메뉴를 통해 작성된 소스코드를 실행할 수 있습니다.",
     "crumbs": [
       "<span class='chapter-number'>8</span>  <span class='chapter-title'>파이썬 설치</span>"
     ]
