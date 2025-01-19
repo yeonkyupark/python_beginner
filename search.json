@@ -184,7 +184,7 @@
     "href": "90_install_ide.html#sec-jupyter-notebook",
     "title": "9  IDE 설치",
     "section": "9.2 주피터 노트북",
-    "text": "9.2 주피터 노트북\n\n\n\n\nhttps://jupyter.org/\n\n\n\n주피터 노트북(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python’s package manager)1 명령어를 이용하여 설치 합니다.2\npip install notebook\n설치가 완료되면 CMD 창에서 다음 명령어를 통해 실행할 수 있습니다.\njupyter notebook\n\n\n9.2.1 시작 디렉토리 변경\n주피터 노트북을 설치하면 시작 디렉토리가 사용자 홈 디렉토리(C:\\Users\\사용자계정)로 설정됩니다. 만약 다른 디렉토리로 변경하고 싶다면 다음과 같은 방법으로 변경할 수 있습니다.\njupyter notebook --generate-config",
+    "text": "9.2 주피터 노트북\n\n\n\n\nhttps://jupyter.org/\n\n\n\n주피터 노트북(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python’s package manager)1 명령어를 이용하여 설치 합니다.2\npip install notebook\n설치가 완료되면 CMD 창에서 다음 명령어를 통해 실행할 수 있습니다.\njupyter notebook\n\n\n9.2.1 시작 디렉토리 변경\n주피터 노트북을 설치하면 시작 디렉토리가 사용자 홈 디렉토리(C:\\Users\\사용자계정)로 설정됩니다. 만약 다른 디렉토리로 변경하고 싶다면 다음과 같은 방법으로 변경할 수 있습니다.\njupyter notebook --generate-config\n\n생성된 jupyter_notebook_config.py 파일을 열어 다음 부분(c.ServerApp.root_dir =)을 찾아 #을 제거하고 원하는 경로로 변경합니다.\n## The directory to use for notebooks and kernels.\n#  Default: ''\nc.ServerApp.root_dir = 'C:\\Python\\Practice'\n\n\n9.2.2 사용법\n자세한 사용법은 아래 문서를 참고한다.\n\nhttps://jupyter-notebook.readthedocs.io/en/latest/notebook.html",
     "crumbs": [
       "<span class='chapter-number'>9</span>  <span class='chapter-title'>IDE 설치</span>"
     ]
