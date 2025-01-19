@@ -5,7 +5,7 @@ project:
 book:
   title: "파이썬 기초"
   author: "YK"
-  date: "2025. 1. 18."
+  date: last-modified
   chapters:
     - index.qmd
     - 00_language.qmd
@@ -21,9 +21,14 @@ book:
 
 bibliography: references.bib
 
+number-sections: false
+
 format:
   html:
     theme: flaty
+    mermaid:
+      theme: neutral
+
   # pdf:
   #   documentclass: scrreprt
 
