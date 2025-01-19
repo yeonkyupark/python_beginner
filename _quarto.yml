@@ -15,6 +15,7 @@ book:
     - 40_writing.qmd
     - 50_book.qmd
     - 60_reference_book.qmd
+  appendices:
     - 90_install_python.qmd
     - 90_install_ide.qmd
     - references.qmd
