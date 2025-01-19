@@ -4,15 +4,14 @@
 
 ![](images/how-to-learn-language.png)
 
-
-:::{.callout-tip icon=false title="참고자료"}
+::: {.callout-tip icon="false" title="참고자료"}
 2.  점프 투 파이썬
     -   [https://wikidocs.net/book/1](https://wikidocs.net/book/1){target="_blank"}
     -   [https://www.youtube.com/watch?v=ftQZo7XaTOA](https://www.youtube.com/watch?v=ftQZo7XaTOA){target="_blank"}
-1.  코드 시각화
+3.  코드 시각화
     -   [https://jgirl.ddns.net/VisualCode/live.html#mode=edit](https://jgirl.ddns.net/VisualCode/live.html#mode=edit){target="_blank"}
-3.  공유 게시판
+4.  공유 게시판
     -   [https://www.excalidraw.com](https://www.excalidraw.com){target="_blank"}
-1.  D2 Coding 글꼴
-    -   [https://github.com/naver/d2codingfont](https://github.com/naver/d2codingfont){target="_blank"} 
+5.  D2 Coding 글꼴
+    -   [https://github.com/naver/d2codingfont](https://github.com/naver/d2codingfont){target="_blank"}
 :::
