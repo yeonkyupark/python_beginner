@@ -126,7 +126,7 @@ list((1,2,3))
 ```
 
 ```{python}
-[x for in "abc"]
+[x for x in "abc"]
 ```
 
 #### 튜플
