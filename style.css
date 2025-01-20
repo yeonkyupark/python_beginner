@@ -1,4 +1,4 @@
-.cell-out pre {
+div.cell-output-cell-output-display {
   margin-left: 1em;
   margin-tip: 0;
   background: none;
@@ -6,7 +6,7 @@
   border-top-left-radius: 0;
   border-top-right-radius: 0;
   font-size: 0.75em;
-  dapping-left: 0.2em;
+  dapping-left: 1.2em;
   padding-top: 0.2em;
 }
 
