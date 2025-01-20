@@ -6,6 +6,7 @@ book:
   title: "파이썬 기초"
   author: "YK"
   date: last-modified
+  css: style.css
   chapters:
     - index.qmd
     - 00_language.qmd
