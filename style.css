@@ -1,0 +1,21 @@
+.cell-out pre {
+  margin-left: 1em;
+  margin-tip: 0;
+  background: none;
+  border-left: 3px solid rgba(233,236,239,.65);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 0.8em;
+  dapping-left: 0.2em;
+  padding-top: 0.2em;
+}
+
+.cell-out .sourceCode {
+  background: none;
+  margin-top; 0;
+}
+
+.cell > .sourceCode {
+  margin-bottom: 0;
+  font-size: 0.875em;
+}
