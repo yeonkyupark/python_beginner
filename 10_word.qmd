@@ -264,7 +264,76 @@ str = str("apple")
 
 ### 집합형
 
+집합형으로는 `set`과 `frozenset`이 있으며, 데이터를 중복 및 순서없이 모아 저장하기 위해 사용한다. 합집합, 교집합, 차집합 등 수학적 연산을 지원한다.
+
+```python
+class set([iterable])
+class frozenset([iterable)]
+```
+
+집합을 생성하는 방법은 다음과 같다.
+
+- 중괄호 안에 쉽표로 구분하여 요소 나열하기: {'apple', 'banana'}
+- 집합 컴프리헨션(문법) 사용하기: {c for c in 'abracadabra' if c not in 'abc'}
+- 생성자 사용하기: set(), set('foobar'), set(['a', 'b', 'foo'])
+
+```{python}
+{'apple', 'banana', 'apple'}
+```
+```{python}
+{c for c in 'abracadabra' if c not in 'abc'}
+```
+```{python}
+set(['a', 'b', 'foo'])
+```
+
+요소 가변성 여부에 따라 set과 frozenset으로 구분된다. 
+
+공통점
+: - 중복을 허용하지 않음
+- 순서가 없음
+- 해시 가능
+- 집합 연산 지원
+
+차이점
+: - 변경 가능 여부: set은 가변(mutable) 집합, frozenset은 불변(immutable) 집합
+- 사용 목적: set은 동적으로 변화하는 데이터, frozenset은 고정된 데이터나 딕셔너리 키로 사용
+- 성능: frozenset이 조금 빠름
+
 ### 맵핑형
+
+맵핑형은 (key:value) 쌍으로 이루어진 요소를 저장하기 위해 사용하는 자료형으로 `dict`(dictionary, 딕셔너리)가 있다. 
+
+```python
+class dict(**kwargs)
+class dict(mapping, **kwargs)
+class dict(iterable, **kwargs)
+```
+
+딕셔너리를 생성하는 방법은 다음과 같다.
+
+- 중괄호 안에 쉽표로 구분된 `key:value` 쌍 나열: {"one":1, "two":2}, {1:"서울", 2:"부산"}
+- 딕셔너리 컴프리헨션 사용: {}, {x: x**2 for x in range(10)}
+- 생성자 사용: dict(), dict([1:'one',2:'two']), dict(서울='02',부산='051')
+
+```{python}
+dict(one=1, two=2, there=3)
+```
+```{python}
+{'one':1, 'two':2, 'three':3}
+```
+```{python}
+dic(zip[(['one', 'two', 'three'], [1,2,3])])
+```
+```{python}
+dict([('two',2), ('one',1), ('three',3)])
+```
+```{python}
+dict({'three':3, 'two':2, 'one':1})
+```
+```{python}
+dict({'three':3, 'one':1}, two=2)
+```
 
 ## 변수와 상수
 
