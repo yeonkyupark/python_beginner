@@ -38,12 +38,34 @@ flowchart TD
 - 실수형(float): 3.14, 2.1828, ...
 - 복소수형(complex), 1.23, -4.5j, 1.23+4.5j, ...
 
+정수형
+:  
 ```python
 int(0)
 int(1.23)
 int(1.23+4.5j)
 ```
 
+실수형
+:  
+```python
+float(0)
+float(1.23)
+float(1.23+4.5j)
+```
+
+복소수형
+:  
+```python
+complex(0)
+complex(1.23)
+complex(1.23+4.5j)
+complex(1, 4.5)
+```
+
+```{python}
+int(complex(1,2))
+```
 ### 논리형
 
 ### 시퀀스형
