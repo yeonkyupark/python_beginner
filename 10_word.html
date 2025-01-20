@@ -304,35 +304,62 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl>
 <dt>정수형</dt>
 <dd>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="dv">0</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="fl">1.23</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="fl">1.23</span><span class="op">+</span><span class="ot">4.5j</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</dd>
-<dt>실수형</dt>
-<dd>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="dv">0</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="fl">1.23</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="fl">1.23</span><span class="op">+</span><span class="ot">4.5j</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</dd>
-<dt>복소수형</dt>
-<dd>
-<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="dv">0</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="fl">1.23</span>)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="fl">1.23</span><span class="op">+</span><span class="ot">4.5j</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="dv">1</span>, <span class="fl">4.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+
 </dd>
 </dl>
-<div id="9bcada20" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="bu">complex</span>(<span class="dv">1</span>,<span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="8187fcef" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="dv">0</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="fl">1.23</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="fl">1.23</span><span class="op">+</span><span class="ot">4.5j</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
 <pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
 <span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
-Cell <span class="ansi-green-fg">In[1], line 1</span>
-<span class="ansi-green-fg">----&gt; 1</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">int</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(0,135,0)" class="ansi-yellow-bg">complex</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">1</span><span class="ansi-yellow-bg">,</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">2</span><span class="ansi-yellow-bg">)</span><span class="ansi-yellow-bg">)</span>
+Cell <span class="ansi-green-fg">In[1], line 3</span>
+<span class="ansi-green-fg ansi-bold">      1</span> <span style="color:rgb(0,135,0)">int</span>(<span style="color:rgb(98,98,98)">0</span>)
+<span class="ansi-green-fg ansi-bold">      2</span> <span style="color:rgb(0,135,0)">int</span>(<span style="color:rgb(98,98,98)">1.23</span>)
+<span class="ansi-green-fg">----&gt; 3</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">int</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">1.23</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">+</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">4.5</span><span class="ansi-yellow-bg">j</span><span class="ansi-yellow-bg">)</span>
 
 <span class="ansi-red-fg">TypeError</span>: int() argument must be a string, a bytes-like object or a real number, not 'complex'</pre>
 </div>
+</div>
+</div>
+<dl>
+<dt>실수형</dt>
+<dd>
+
+</dd>
+</dl>
+<div id="1075670a" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="dv">0</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="fl">1.23</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="bu">float</span>(<span class="fl">1.23</span><span class="op">+</span><span class="ot">4.5j</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-error">
+<div class="ansi-escaped-output">
+<pre><span class="ansi-red-fg">---------------------------------------------------------------------------</span>
+<span class="ansi-red-fg">TypeError</span>                                 Traceback (most recent call last)
+Cell <span class="ansi-green-fg">In[2], line 3</span>
+<span class="ansi-green-fg ansi-bold">      1</span> <span style="color:rgb(0,135,0)">float</span>(<span style="color:rgb(98,98,98)">0</span>)
+<span class="ansi-green-fg ansi-bold">      2</span> <span style="color:rgb(0,135,0)">float</span>(<span style="color:rgb(98,98,98)">1.23</span>)
+<span class="ansi-green-fg">----&gt; 3</span> <span style="color:rgb(0,135,0)" class="ansi-yellow-bg">float</span><span class="ansi-yellow-bg">(</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">1.23</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">+</span><span style="color:rgb(98,98,98)" class="ansi-yellow-bg">4.5</span><span class="ansi-yellow-bg">j</span><span class="ansi-yellow-bg">)</span>
+
+<span class="ansi-red-fg">TypeError</span>: float() argument must be a string or a real number, not 'complex'</pre>
+</div>
+</div>
+</div>
+<dl>
+<dt>복소수형</dt>
+<dd>
+
+</dd>
+</dl>
+<div id="8b0fdb18" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="dv">0</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="fl">1.23</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="fl">1.23</span><span class="op">+</span><span class="ot">4.5j</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="bu">complex</span>(<span class="dv">1</span>, <span class="fl">4.5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-display" data-execution_count="3">
+<pre><code>(1+4.5j)</code></pre>
 </div>
 </div>
 </section>
