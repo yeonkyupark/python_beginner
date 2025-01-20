@@ -102,7 +102,36 @@ complex(1, 4.5)
 
 **시퀀스형**(Sequence Type)은 연속된 값을 표현하기 위해 사용한다. 기본 형태로 `list`, `tuple`, `range` 자료형이 있다.
 
+#### 리스트
 
+**리스트**(list)는 가변 시퀀스로 일반적으로동질 항목 모음을 저장하는데 사용한다.
+
+```python
+class list([iterable])
+```
+
+리스트를 생성하는 방식은 다음과 같다.
+
+- 대괄호를 사용하여 빈 리스트를 표시: `[ ]`
+- 대괄호를 사용하여 쉼표로 항목 구분: `[a]`, `[a, b, c]`
+- 리스트 컴프리헨션(Comprehension, 문법): `[x for x in iterable]`
+- 생성자를 사용하기: `list()`, `list(iterable)`
+
+```python
+list("abc")
+```
+
+```python
+list((1,2,3)
+```
+
+```python
+[x for in "abc"]
+```
+
+#### 튜플
+
+#### range
 
 
 ### 집합형
