@@ -34,9 +34,9 @@ flowchart TD
 
 숫자형 자료형은 다음과 같다.
 
-- 정수형(int): -1, 0, 1024, ...
-- 실수형(float): 3.14, 2.1828, ...
-- 복소수형(complex), 1.23, -4.5j, 1.23+4.5j, ...
+-   정수형(int): -1, 0, 1024, ...
+-   실수형(float): 3.14, 2.1828, ...
+-   복소수형(complex), 1.23, -4.5j, 1.23+4.5j, ...
 
 #### 정수형
 
@@ -44,44 +44,51 @@ flowchart TD
 #| error: true
 int(0)
 ```
+
 ```{python}
 #| error: true
 int(1.23)
 ```
+
 ```{python}
 #| error: true
 int(1.23+4.5j)
 ```
 
 #### 실수형
-  
+
 ```{python}
 #| error: true
 float(0)
 ```
+
 ```{python}
 #| error: true
 float(1.23)
 ```
+
 ```{python}
 #| error: true
 float(1.23+4.5j)
 ```
 
 #### 복소수형
-  
+
 ```{python}
 #| error: true
 complex(0)
 ```
+
 ```{python}
 #| error: true
 complex(1.23)
 ```
+
 ```{python}
 #| error: true
 complex(1.23+4.5j)
 ```
+
 ```{python}
 #| error: true
 complex(1, 4.5)
@@ -94,6 +101,7 @@ complex(1, 4.5)
 ```{python}
 1 != 2
 ```
+
 ```{python}
 1 == 2
 ```
@@ -106,16 +114,16 @@ complex(1, 4.5)
 
 **리스트**(list)는 가변 시퀀스로 일반적으로동질 항목 모음을 저장하는데 사용한다.
 
-```python
+``` python
 class list([iterable])
 ```
 
 리스트를 생성하는 방식은 다음과 같다.
 
-- 대괄호를 사용하여 빈 리스트를 표시: `[ ]`
-- 대괄호를 사용하여 쉼표로 항목 구분: `[a]`, `[a, b, c]`
-- 리스트 컴프리헨션(Comprehension, 문법): `[x for x in iterable]`
-- 생성자를 사용하기: `list()`, `list(iterable)`
+-   대괄호를 사용하여 빈 리스트를 표시: `[ ]`
+-   대괄호를 사용하여 쉼표로 항목 구분: `[a]`, `[a, b, c]`
+-   리스트 컴프리헨션(Comprehension, 문법): `[x for x in iterable]`
+-   생성자를 사용하기: `list()`, `list(iterable)`
 
 ```{python}
 list("abc")
@@ -131,18 +139,18 @@ list((1,2,3))
 
 #### 튜플
 
-**튜플**(tuple)은 불편 시퀀스로 이질적 또는 동질적 데이터 모음을 저장하는 데 사용된다. 
+**튜플**(tuple)은 불편 시퀀스로 이질적 또는 동질적 데이터 모음을 저장하는 데 사용된다.
 
-```python
+``` python
 class tuple([iterable])
 ```
 
 튜플을 생성하는 방식은 다음과 같다.
 
-- 괄호를 사용하여 빈 리스트를 표시: `( )`
-- 단일 항목 튜플을 쉼표로 항목 구분: `a,`, `(a,)`
-- 항목을 쉼표로 구분하기: `a,b,c`, `(a,b,c)`
-- 생성자를 사용하기: `tuple()`, `tuple(iterable)`
+-   괄호를 사용하여 빈 리스트를 표시: `( )`
+-   단일 항목 튜플을 쉼표로 항목 구분: `a,`, `(a,)`
+-   항목을 쉼표로 구분하기: `a,b,c`, `(a,b,c)`
+-   생성자를 사용하기: `tuple()`, `tuple(iterable)`
 
 ```{python}
 tuple("abc")
@@ -167,22 +175,23 @@ tuple(1,2,3)
 
 **range**는 숫자 불변 시퀀스를 나타내며 `for` 반복문에서 특정 횟수만큼 반복하는 데 흔히 사용된다.
 
-```python
+``` python
 class range(stop)
 class range(start, stop[, step])
 ```
 
 인자
-: - start: 시작 위치 (값을 지정하지 않으면 기본값 `0`을 가짐)
-- end: 종료 위치
-- step: 간격 (값을 지정하지 않으면 기본값 `1`을 가짐)
+
+:   -   start: 시작 위치 (값을 지정하지 않으면 기본값 `0`을 가짐)
+    -   end: 종료 위치
+    -   step: 간격 (값을 지정하지 않으면 기본값 `1`을 가짐)
 
 `stop` 인자만 갖는 경우 0부터 `stop - 1`까지 연속된 정수를 생성한다. `start`와 `stop`이 있는 경우 $start \le r < (end-1)$ 범위를 갖는 정수를 생성한다.
 
 `step` 인자가 포함된 경우 다음과 같이 계산된다.
 
-- 양수 `step`인 경우, $r[i] = start + step \times i, \quad i \ge 0, r[i] > stop$
-- 음수 `step`인 경우, $r[i] = start + step \times i, \quad i \le 0, r[i] > stop$
+-   양수 `step`인 경우, $r[i] = start + step \times i, \quad i \ge 0, r[i] > stop$
+-   음수 `step`인 경우, $r[i] = start + step \times i, \quad i \le 0, r[i] > stop$
 
 ```{python}
 list(range(10))
@@ -212,9 +221,9 @@ list(range(0, 2, -1))
 
 파이썬에선 문자열 처리를 `str` 또는 문자열(string), 객체를 사용하여 처리한다. 문자열은 유니코드 불변 시퀀스이다. 문자열 리터럴은 다은과 같은 방법으로 작성된다.
 
-- 작은 따옴표: '문자열'
-- 큰 따옴표: "문자열"
-- 삼중 따옴표: '''문자열''', """문자열"""
+-   작은 따옴표: '문자열'
+-   큰 따옴표: "문자열"
+-   삼중 따옴표: '''문자열''', """문자열"""
 
 작은 따옴표 안에 큰 따옴표를, 큰 따옴표 안에 작은 따옴표를 사용할 수 있다. 또흔 삼중 따옴표는 여러 줄에 걸쳐 작성이 가능하다.
 
@@ -236,7 +245,7 @@ list(range(0, 2, -1))
 
 `str()` 생성자를 통해 문자열을 만들 수도 있다.
 
-```python
+``` python
 class str(object='')
 class str(object=b'', encoding='utf-8', errors='strict')
 ```
@@ -250,43 +259,15 @@ str('삼성')
 str = str("samsung")
 str = str("apple")
 ```
-`str()` 함수에 'samsung' 문자열을 덮어 써서 정상적으로 동작하지 않는 것이다. 이런 경우 `del str` 명령을 실행하거나 jupyter notebook을 재실행한다.
+
+`str()` 함수에 'samsung' 문자열을 덮어 써서 정상적으로 동작하지 않는 것이다. 이런 경우 `del str` 명령을 실행하거나 `jupyter notebook`을 재실행한다.
 
 ### 집합형
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 ### 맵핑형
-
-
 
 ## 변수와 상수
 
 어떤 값이 있을 때 이 값을 저장할 수 있는 메모리 공간이 있다고 하자. 이 공간에 저장된 값을 바꿀 수 있다면 변수라고 하고 바꿀 수 없다면, 즉 고정된 값이라면 상수라고 한다. 이 때 저장하는 값을 리터럴이라고 한다.
 
 곰 인형을 상자에 담는 경우를 생각해 보자. 이 때 상자는 메모리 공간이 되고 곰 인형을 담으면 변수가 된다. 만약 상자를 봉인하여 내용물을 바꿀 수 없게 된다면 이 상자를 상수라고 부르게 되고 곰 인형은 리터럴이 된다.
-
-
-
-
-
-
-
-
-
-
-
-
-

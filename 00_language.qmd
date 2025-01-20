@@ -1,13 +1,10 @@
----
-title: "언어"
-format: html
----
+# 언어 {#sec-language}
 
-## 언어
+## 언어 개요 {#sec-language-concept}
 
 **언어**(言語, Language)[^00_language-1]에 대한 정의는 여러 가지 시도가 있었다. 아래는 그러한 예의 일부이다.
 
-[^00_language-1]: [https://ko.wikipedia.org/wiki/언어](https://ko.wikipedia.org/wiki/언어){target="_blank"}
+[^00_language-1]: https://ko.wikipedia.org/wiki/언어
 
 1.  사람들이 자신의 생각을 다른 사람들에게 나타내고 전달하기 위해 사용하는 체계.
 
@@ -146,4 +143,4 @@ Python(파이썬)[^00_language-3]은 1991년에 **귀도 반 로섬(Guido van Ro
 :   -   **속도**: Python은 인터프리터 언어이기 때문에 컴파일된 언어보다 실행 속도가 느릴 수 있다. 하지만 성능이 중요한 부분에서는 C, C++와 같은 언어와 연동하여 사용하거나, Cython, PyPy 같은 최적화 도구를 사용할 수 있다.
     -   **멀티스레딩**: Python은 Global Interpreter Lock(GIL)로 인해 진정한 멀티스레딩을 지원하지 않는다. 멀티스레딩을 많이 사용하는 경우 다른 방법을 찾아야 할 수 있다.
 
-파이썬 설치는 [-@sec-download-python] 내용을 참고한다.
+파이썬 설치는 [-@sec-python-installation] 내용을 참고한다.

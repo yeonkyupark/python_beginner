@@ -8,13 +8,18 @@ book:
   date: last-modified
   chapters:
     - index.qmd
-    - 00_language.qmd
-    - 10_word.qmd
-    - 20_sentence.qmd
-    - 30_structure.qmd
-    - 40_writing.qmd
-    - 50_book.qmd
-    - 60_reference_book.qmd
+    - part: "파이썬 기본"
+      chapters:
+        - 00_language.qmd
+        - 10_word.qmd
+        - 20_sentence.qmd
+        - 30_structure.qmd
+        - 40_writing.qmd
+        - 50_book.qmd
+        - 60_reference_book.qmd
+    - part: "파이썬 패키지"
+      chapters:
+        - numpy.qmd
   appendices:
     - 90_install_python.qmd
     - 90_install_ide.qmd
@@ -38,8 +43,9 @@ toc: true
 toc-depth: 4
 toc-title: 목차
 
-# execute:
-#   freeze: true
+execute:
+  freeze: auto
+  
 jupyter: python3
 
 # editor: visual

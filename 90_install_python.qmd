@@ -1,7 +1,4 @@
----
-title: "파이썬 설치"
-format: html
----
+# 파이썬 설치 {#sec-python-installation}
 
 ## 설치파일 다운로드 {#sec-download-python}
 
