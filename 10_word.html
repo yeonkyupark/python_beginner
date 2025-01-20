@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -188,7 +222,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#자료형" id="toc-자료형" class="nav-link active" data-scroll-target="#자료형">자료형</a></li>
+  <li><a href="#표준-자료형" id="toc-표준-자료형" class="nav-link active" data-scroll-target="#표준-자료형">표준 자료형</a>
+  <ul class="collapse">
+  <li><a href="#숫자형" id="toc-숫자형" class="nav-link" data-scroll-target="#숫자형">숫자형</a></li>
+  <li><a href="#논리형" id="toc-논리형" class="nav-link" data-scroll-target="#논리형">논리형</a></li>
+  <li><a href="#시퀀스형" id="toc-시퀀스형" class="nav-link" data-scroll-target="#시퀀스형">시퀀스형</a></li>
+  <li><a href="#집합형" id="toc-집합형" class="nav-link" data-scroll-target="#집합형">집합형</a></li>
+  <li><a href="#맵핑형" id="toc-맵핑형" class="nav-link" data-scroll-target="#맵핑형">맵핑형</a></li>
+  </ul></li>
+  <li><a href="#변수와-상수" id="toc-변수와-상수" class="nav-link" data-scroll-target="#변수와-상수">변수와 상수</a></li>
   </ul>
 </nav>
     </div>
@@ -197,7 +239,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">자료형</span></h1>
+<h1 class="title"><span id="sec-data-type" class="quarto-section-identifier"><span class="chapter-title">자료형</span></span></h1>
 </div>
 
 
@@ -214,9 +256,9 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="자료형" class="level2">
-<h2 class="anchored" data-anchor-id="자료형">자료형</h2>
-<p>파이썬에서 사용하는 <strong>자료형</strong>(Data type)은 아래 그림과 같습니다.</p>
+<section id="표준-자료형" class="level2">
+<h2 class="anchored" data-anchor-id="표준-자료형">표준 자료형</h2>
+<p>파이썬에서 내장된 표준 <strong>자료형</strong>(Data type)은 아래 그림과 같다.</p>
 <div class="cell" data-layout-align="default">
 <div class="cell-output-display">
 <div>
@@ -251,6 +293,35 @@ ul.task-list li input[type="checkbox"] {
 </div>
 </div>
 </div>
+<section id="숫자형" class="level3">
+<h3 class="anchored" data-anchor-id="숫자형">숫자형</h3>
+<p>숫자형 자료형은 다음과 같다.</p>
+<ul>
+<li>정수형(int): -1, 0, 1024, …</li>
+<li>실수형(float): 3.14, 2.1828, …</li>
+<li>복소수형(complex), 1.23, -4.5j, 1.23+4.5j, …</li>
+</ul>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="dv">0</span>)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="fl">1.23</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="bu">int</span>(<span class="fl">1.23</span><span class="op">+</span><span class="ot">4.5j</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="논리형" class="level3">
+<h3 class="anchored" data-anchor-id="논리형">논리형</h3>
+</section>
+<section id="시퀀스형" class="level3">
+<h3 class="anchored" data-anchor-id="시퀀스형">시퀀스형</h3>
+</section>
+<section id="집합형" class="level3">
+<h3 class="anchored" data-anchor-id="집합형">집합형</h3>
+</section>
+<section id="맵핑형" class="level3">
+<h3 class="anchored" data-anchor-id="맵핑형">맵핑형</h3>
+</section>
+</section>
+<section id="변수와-상수" class="level2">
+<h2 class="anchored" data-anchor-id="변수와-상수">변수와 상수</h2>
+<p>어떤 값이 있을 때 이 값을 저장할 수 있는 메모리 공간이 있다고 하자. 이 공간에 저장된 값을 바꿀 수 있다면 변수라고 하고 바꿀 수 없다면, 즉 고정된 값이라면 상수라고 한다. 이 때 저장하는 값을 리터럴이라고 한다.</p>
+<p>곰 인형을 상자에 담는 경우를 생각해 보자. 이 때 상자는 메모리 공간이 되고 곰 인형을 담으면 변수가 된다. 만약 상자를 봉인하여 내용물을 바꿀 수 없게 된다면 이 상자를 상수라고 부르게 되고 곰 인형은 리터럴이 된다.</p>
 
 
 </section>

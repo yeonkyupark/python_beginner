@@ -64,7 +64,27 @@
     "href": "10_word.html",
     "title": "자료형",
     "section": "",
-    "text": "자료형\n파이썬에서 사용하는 자료형(Data type)은 아래 그림과 같습니다.\nflowchart TD\n\n10[Numeric]\n20[Dictionary]\n30[Boolean]  \n40[Set]\n50[Sequence Type]\n\n11[Integer]\n12[Float]\n13[Complex]\n\n51[String]\n52[List]\n53[Tuple]\n\n00[Python Data Types] --- 10\n00 --- 20\n00 --- 30\n00 --- 40\n00 --- 50\n10 ----- 11 & 12 & 13\n50 ----- 51 & 52 & 53",
+    "text": "표준 자료형\n파이썬에서 내장된 표준 자료형(Data type)은 아래 그림과 같다.\nflowchart TD\n\n10[Numeric]\n20[Dictionary]\n30[Boolean]  \n40[Set]\n50[Sequence Type]\n\n11[Integer]\n12[Float]\n13[Complex]\n\n51[String]\n52[List]\n53[Tuple]\n\n00[Python Data Types] --- 10\n00 --- 20\n00 --- 30\n00 --- 40\n00 --- 50\n10 ----- 11 & 12 & 13\n50 ----- 51 & 52 & 53",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>자료형</span>"
+    ]
+  },
+  {
+    "objectID": "10_word.html#표준-자료형",
+    "href": "10_word.html#표준-자료형",
+    "title": "자료형",
+    "section": "",
+    "text": "숫자형\n숫자형 자료형은 다음과 같다.\n\n정수형(int): -1, 0, 1024, …\n실수형(float): 3.14, 2.1828, …\n복소수형(complex), 1.23, -4.5j, 1.23+4.5j, …\n\nint(0)\nint(1.23)\nint(1.23+4.5j)\n\n\n논리형\n\n\n시퀀스형\n\n\n집합형\n\n\n맵핑형",
+    "crumbs": [
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>자료형</span>"
+    ]
+  },
+  {
+    "objectID": "10_word.html#변수와-상수",
+    "href": "10_word.html#변수와-상수",
+    "title": "자료형",
+    "section": "변수와 상수",
+    "text": "변수와 상수\n어떤 값이 있을 때 이 값을 저장할 수 있는 메모리 공간이 있다고 하자. 이 공간에 저장된 값을 바꿀 수 있다면 변수라고 하고 바꿀 수 없다면, 즉 고정된 값이라면 상수라고 한다. 이 때 저장하는 값을 리터럴이라고 한다.\n곰 인형을 상자에 담는 경우를 생각해 보자. 이 때 상자는 메모리 공간이 되고 곰 인형을 담으면 변수가 된다. 만약 상자를 봉인하여 내용물을 바꿀 수 없게 된다면 이 상자를 상수라고 부르게 되고 곰 인형은 리터럴이 된다.",
     "crumbs": [
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>자료형</span>"
     ]
