@@ -35,6 +35,7 @@ format:
 
 # execute:
 #   freeze: true
+jupyter: python3
 
 # editor: visual
 
