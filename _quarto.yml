@@ -34,6 +34,10 @@ format:
   # pdf:
   #   documentclass: scrreprt
 
+toc: true
+toc-depth: 2
+toc-title: 목차
+
 # execute:
 #   freeze: true
 jupyter: python3
