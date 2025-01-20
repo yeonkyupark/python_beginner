@@ -2,6 +2,18 @@
   margin-left: 1em;
   margin-tip: 0;
   background: none;
+  border-left: 3px solid rgba(0,0,255,.65);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 0.8em;
+  dapping-left: 0.2em;
+  padding-top: 0.2em;
+}
+
+div.cell-output.cell-output-error {
+  margin-left: 1em;
+  margin-tip: 0;
+  background: none;
   border-left: 3px solid rgba(233,236,239,.65);
   border-top-left-radius: 0;
   border-top-right-radius: 0;
