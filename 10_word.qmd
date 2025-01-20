@@ -64,6 +64,7 @@ complex(1, 4.5)
 ```
 
 ```{python}
+#| error: true
 int(complex(1,2))
 ```
 ### 논리형
