@@ -40,7 +40,8 @@ flowchart TD
 
 정수형
 :  
-```python
+```{python}
+#| error: true
 int(0)
 int(1.23)
 int(1.23+4.5j)
@@ -48,7 +49,8 @@ int(1.23+4.5j)
 
 실수형
 :  
-```python
+```{python}
+#| error: true
 float(0)
 float(1.23)
 float(1.23+4.5j)
@@ -56,17 +58,14 @@ float(1.23+4.5j)
 
 복소수형
 :  
-```python
+```{python}
+#| error: true
 complex(0)
 complex(1.23)
 complex(1.23+4.5j)
 complex(1, 4.5)
 ```
 
-```{python}
-#| error: true
-int(complex(1,2))
-```
 ### 논리형
 
 ### 시퀀스형
