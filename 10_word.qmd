@@ -43,7 +43,13 @@ flowchart TD
 ```{python}
 #| error: true
 int(0)
+```
+```{python}
+#| error: true
 int(1.23)
+```
+```{python}
+#| error: true
 int(1.23+4.5j)
 ```
 
