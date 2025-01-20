@@ -131,10 +131,77 @@ list((1,2,3))
 
 #### 튜플
 
+**튜플**(tuple)은 불편 시퀀스로 이질적 또는 동질적 데이터 모음을 저장하는 데 사용된다. 
 
+```python
+class tuple([iterable])
+```
+
+튜플을 생성하는 방식은 다음과 같다.
+
+- 괄호를 사용하여 빈 리스트를 표시: `( )`
+- 단일 항목 튜플을 쉼표로 항목 구분: `a,`, `(a,)`
+- 항목을 쉼표로 구분하기: `a,b,c`, `(a,b,c)`
+- 생성자를 사용하기: `tuple()`, `tuple(iterable)`
+
+```{python}
+tuple("abc")
+```
+
+```{python}
+tuple((1,2,3))
+```
+
+```{python}
+tuple([1,2,3])
+```
+
+```{python}
+#| error: true
+tuple(1,2,3)
+```
+
+`tuple()` 함수는 인자를 하나만 갖는다. 위 예제에서는 튜플 3개를 인자로 넘겨 에러가 발생하였다.
 
 #### range
 
+**range**는 숫자 불변 시퀀스를 나타내며 `for` 반복문에서 특정 횟수만큼 반복하는 데 흔히 사용된다.
+
+```python
+class range(stop)
+class range(start, stop[, step])
+```
+
+`stop` 인자만 갖는 경우 0부터 `stop - 1`까지 연속된 정수를 생성한다. `start`와 `stop`이 있는 경우 `$start \ge 정수 \g (end-1)$` 범위를 갖는 정수를 생성한다.
+
+`step` 인자가 포함된 경우 다음과 같이 계산된다.
+
+- 양수 `step`인 경우, $r[i] = start + step \times i, \quad i \le 0, r[i] > stop$
+- 음수 `step`인 경우, $r[i] = start + step \times i, \quad i \ge 0, r[i] > stop$
+
+```{python}
+list(range(10))
+```
+
+```{python}
+list(range(1,11))
+```
+
+```{python}
+list(range(0, 10, 3))
+```
+
+```{python}
+list(range(0, 10, -1))
+```
+
+```{python}
+list(range(0))
+```
+
+```{python}
+list(range(0, 2, -1))
+```
 
 ### 집합형
 
