@@ -35,7 +35,7 @@ format:
   #   documentclass: scrreprt
 
 toc: true
-toc-depth: 2
+toc-depth: 4
 toc-title: 목차
 
 # execute:
