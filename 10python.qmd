@@ -75,6 +75,18 @@ format: html
 
 설치 후에는 @sec-idle, VS Code, Jupyter Notebook 등의 개발 환경을 설정하여 코딩을 시작할 수 있다.
 
+## 개발 환경 설정
+
+### VS Code
+
+### Jupyter Notebook
+
+## 첫 번째 프로그램
+
+```{python}
+print("Hello World")
+```
+
 ## 참고자료
 
 ### IDLE {#sec-idle} 
