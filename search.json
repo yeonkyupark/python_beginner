@@ -14,7 +14,7 @@
     "href": "index.html#파이썬-소개",
     "title": "파이썬 다루기",
     "section": "1. 파이썬 소개",
-    "text": "1. 파이썬 소개\n\n파이썬이란?\n\n\n파이썬의 특징과 장점\n\n\n설치 및 개발 환경 설정(VS Code, Jupyter Notebook)\n\n\n첫 번째 프로그램: “Hello, World!” 출력",
+    "text": "1. 파이썬 소개\n\n파이썬이란?\n\n파이썬의 특징과 장점\n\n설치 및 개발 환경 설정(VS Code, Jupyter Notebook)\n\n첫 번째 프로그램: “Hello, World!” 출력",
     "crumbs": [
       "들어가기"
     ]
@@ -24,7 +24,7 @@
     "href": "index.html#기본-문법",
     "title": "파이썬 다루기",
     "section": "2. 기본 문법",
-    "text": "2. 기본 문법\n\n변수와 데이터 타입(숫자, 문자열, 불리언)\n\n\n연산자(산술, 비교, 논리, 대입 연산자)\n\n\n주석 사용법",
+    "text": "2. 기본 문법\n\n변수와 데이터 타입(숫자, 문자열, 불리언)\n\n연산자(산술, 비교, 논리, 대입 연산자)\n\n주석 사용법",
     "crumbs": [
       "들어가기"
     ]
@@ -34,7 +34,7 @@
     "href": "index.html#자료형과-자료-구조",
     "title": "파이썬 다루기",
     "section": "3. 자료형과 자료 구조",
-    "text": "3. 자료형과 자료 구조\n\n리스트(List)\n\n\n튜플(Tuple)\n\n\n딕셔너리(Dictionary)\n\n\n집합(Set)\n\n\n문자열(String) 다루기",
+    "text": "3. 자료형과 자료 구조\n\n리스트(List)\n\n튜플(Tuple)\n\n딕셔너리(Dictionary)\n\n집합(Set)\n\n문자열(String) 다루기",
     "crumbs": [
       "들어가기"
     ]
@@ -44,7 +44,7 @@
     "href": "index.html#제어문",
     "title": "파이썬 다루기",
     "section": "4. 제어문",
-    "text": "4. 제어문\n\n조건문(if-elif-else)\n\n\n반복문(for, while)\n\n\n반복문 제어문(break, continue)",
+    "text": "4. 제어문\n\n조건문(if-elif-else)\n\n반복문(for, while)\n\n반복문 제어문(break, continue)",
     "crumbs": [
       "들어가기"
     ]
@@ -54,7 +54,7 @@
     "href": "index.html#함수와-모듈",
     "title": "파이썬 다루기",
     "section": "5. 함수와 모듈",
-    "text": "5. 함수와 모듈\n\n함수 정의 및 호출\n\n\n매개변수와 반환값\n\n\n내장 함수 활용\n\n\n모듈과 패키지(import 사용법)",
+    "text": "5. 함수와 모듈\n\n함수 정의 및 호출\n\n매개변수와 반환값\n\n내장 함수 활용\n\n모듈과 패키지(import 사용법)",
     "crumbs": [
       "들어가기"
     ]
@@ -64,7 +64,7 @@
     "href": "index.html#파일-입출력",
     "title": "파이썬 다루기",
     "section": "6. 파일 입출력",
-    "text": "6. 파일 입출력\n\n파일 열기와 닫기(open, close)\n\n\n파일 읽기(read, readline, readlines)\n\n\n파일 쓰기(write)",
+    "text": "6. 파일 입출력\n\n파일 열기와 닫기(open, close)\n\n파일 읽기(read, readline, readlines)\n\n파일 쓰기(write)",
     "crumbs": [
       "들어가기"
     ]
@@ -74,7 +74,7 @@
     "href": "index.html#예외-처리",
     "title": "파이썬 다루기",
     "section": "7. 예외 처리",
-    "text": "7. 예외 처리\n\n예외 발생과 처리(try-except)\n\n\n다양한 예외 종류",
+    "text": "7. 예외 처리\n\n예외 발생과 처리(try-except)\n\n다양한 예외 종류",
     "crumbs": [
       "들어가기"
     ]
@@ -84,7 +84,7 @@
     "href": "index.html#객체-지향-프로그래밍oop-기초",
     "title": "파이썬 다루기",
     "section": "8. 객체 지향 프로그래밍(OOP) 기초",
-    "text": "8. 객체 지향 프로그래밍(OOP) 기초\n\n클래스와 객체 개념\n\n\n생성자(__init__)와 속성\n\n\n메서드 정의 및 호출",
+    "text": "8. 객체 지향 프로그래밍(OOP) 기초\n\n클래스와 객체 개념\n\n생성자(__init__)와 속성\n\n메서드 정의 및 호출",
     "crumbs": [
       "들어가기"
     ]
@@ -94,7 +94,7 @@
     "href": "index.html#라이브러리-활용",
     "title": "파이썬 다루기",
     "section": "9. 라이브러리 활용",
-    "text": "9. 라이브러리 활용\n\n유용한 표준 라이브러리(os, datetime, random 등)\n\n\n데이터 분석 기초(pandas, numpy 간단 사용법)",
+    "text": "9. 라이브러리 활용\n\n유용한 표준 라이브러리(os, datetime, random 등)\n\n데이터 분석 기초(pandas, numpy 간단 사용법)",
     "crumbs": [
       "들어가기"
     ]
@@ -104,7 +104,7 @@
     "href": "index.html#프로젝트-실습",
     "title": "파이썬 다루기",
     "section": "10. 프로젝트 실습",
-    "text": "10. 프로젝트 실습\n\n간단한 계산기 만들기\n\n\n파일 데이터를 읽고 가공하는 프로그램\n\n\n웹 크롤링 기초(BeautifulSoup 활용)",
+    "text": "10. 프로젝트 실습\n\n간단한 계산기 만들기\n\n파일 데이터를 읽고 가공하는 프로그램\n\n웹 크롤링 기초(BeautifulSoup 활용)",
     "crumbs": [
       "들어가기"
     ]
