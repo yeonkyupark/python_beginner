@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -231,6 +265,12 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#linux에서-설치-ubuntu-기준" id="toc-linux에서-설치-ubuntu-기준" class="nav-link" data-scroll-target="#linux에서-설치-ubuntu-기준">4. Linux에서 설치 (Ubuntu 기준)</a></li>
   <li><a href="#설치-확인" id="toc-설치-확인" class="nav-link" data-scroll-target="#설치-확인">5. 설치 확인</a></li>
   </ul></li>
+  <li><a href="#개발-환경-설정" id="toc-개발-환경-설정" class="nav-link" data-scroll-target="#개발-환경-설정">개발 환경 설정</a>
+  <ul>
+  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
+  <li><a href="#jupyter-notebook" id="toc-jupyter-notebook" class="nav-link" data-scroll-target="#jupyter-notebook">Jupyter Notebook</a></li>
+  </ul></li>
+  <li><a href="#첫-번째-프로그램" id="toc-첫-번째-프로그램" class="nav-link" data-scroll-target="#첫-번째-프로그램">첫 번째 프로그램</a></li>
   <li><a href="#참고자료" id="toc-참고자료" class="nav-link" data-scroll-target="#참고자료">참고자료</a>
   <ul>
   <li><a href="#sec-idle" id="toc-sec-idle" class="nav-link" data-scroll-target="#sec-idle">IDLE</a>
@@ -391,6 +431,24 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>설치 후에는 <a href="#sec-idle" class="quarto-xref"><span>IDLE</span></a>, VS Code, Jupyter Notebook 등의 개발 환경을 설정하여 코딩을 시작할 수 있다.</p>
 </section>
+</section>
+<section id="개발-환경-설정" class="level2">
+<h2 class="anchored" data-anchor-id="개발-환경-설정">개발 환경 설정</h2>
+<section id="vs-code" class="level3">
+<h3 class="anchored" data-anchor-id="vs-code">VS Code</h3>
+</section>
+<section id="jupyter-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="jupyter-notebook">Jupyter Notebook</h3>
+</section>
+</section>
+<section id="첫-번째-프로그램" class="level2">
+<h2 class="anchored" data-anchor-id="첫-번째-프로그램">첫 번째 프로그램</h2>
+<div id="f7aebbae" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hello World</code></pre>
+</div>
+</div>
 </section>
 <section id="참고자료" class="level2">
 <h2 class="anchored" data-anchor-id="참고자료">참고자료</h2>

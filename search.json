@@ -143,6 +143,28 @@
     ]
   },
   {
+    "objectID": "10python.html#개발-환경-설정",
+    "href": "10python.html#개발-환경-설정",
+    "title": "파이썬 소개",
+    "section": "개발 환경 설정",
+    "text": "개발 환경 설정\n\nVS Code\n\n\nJupyter Notebook",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>파이썬 소개</span>"
+    ]
+  },
+  {
+    "objectID": "10python.html#첫-번째-프로그램",
+    "href": "10python.html#첫-번째-프로그램",
+    "title": "파이썬 소개",
+    "section": "첫 번째 프로그램",
+    "text": "첫 번째 프로그램\n\nprint(\"Hello World\")\n\nHello World",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>1</span>  <span class='chapter-title'>파이썬 소개</span>"
+    ]
+  },
+  {
     "objectID": "10python.html#참고자료",
     "href": "10python.html#참고자료",
     "title": "파이썬 소개",
