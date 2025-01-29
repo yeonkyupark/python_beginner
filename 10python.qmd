@@ -58,7 +58,7 @@ format: html
 -   설치 마법사의 안내에 따라 진행한다.\
 -   설치가 완료되면 터미널을 열어 아래 명령어를 실행하여 설치를 확인한다.
 
-    ``` shell
+    ```python
     python3 --version
     ```
 
@@ -72,7 +72,7 @@ format: html
     ```
 -   설치가 완료되면 아래 명령어로 버전을 확인한다.
 
-    ```shell
+    ```python
     python3 --version
     ```
 
@@ -80,7 +80,7 @@ format: html
 
 -   터미널(또는 명령 프롬프트, PowerShell)을 열고 아래 명령어를 입력한다.
 
-    ``` shell
+    ```python
     python --version
     ```
 
@@ -104,7 +104,7 @@ print("Hello World")
 
 ### IDLE {#sec-idle}
 
-<center>![](images/idle_run.png)</center>
+<center>![IDLE](images/idle_run.png)</center>
 
 IDLE(Integrated Development and Learning Environment)은 파이썬에 기본적으로 포함된 통합 개발 환경(IDE)으로, 초보자가 쉽게 파이썬을 실행하고 학습할 수 있도록 설계된 프로그램이다.
 
@@ -125,12 +125,12 @@ IDLE(Integrated Development and Learning Environment)은 파이썬에 기본적�
 #### IDLE 사용 방법
 
 -   **대화형 셸(Interactive Shell)**:\
-    실행 후 나타나는 창에서 바로 파이썬 코드를 입력하고 실행할 수 있다.\
+    실행 후 나타나는 창에서 바로 파이썬 코드를 입력하고 실행할 수 있다.
 
-``` python
->>> print("Hello, Python!")
-Hello, Python!
-```
+    ```python
+    >>> print("Hello, Python!")
+    Hello, Python!
+    ```
 
 -   **스크립트 작성 및 실행**:\
     `File > New File`을 선택하여 새 파일을 만들고 코드를 작성한 후, `F5` 키를 눌러 실행할 수 있다.
