@@ -267,8 +267,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#개발-환경-설정" id="toc-개발-환경-설정" class="nav-link" data-scroll-target="#개발-환경-설정">개발 환경 설정</a>
   <ul>
-  <li><a href="#vs-code" id="toc-vs-code" class="nav-link" data-scroll-target="#vs-code">VS Code</a></li>
-  <li><a href="#jupyter-notebook" id="toc-jupyter-notebook" class="nav-link" data-scroll-target="#jupyter-notebook">Jupyter Notebook</a></li>
+  <li><a href="#sec-vsc" id="toc-sec-vsc" class="nav-link" data-scroll-target="#sec-vsc">VS Code</a></li>
+  <li><a href="#sec-jupyter-notebook" id="toc-sec-jupyter-notebook" class="nav-link" data-scroll-target="#sec-jupyter-notebook">Jupyter Notebook</a></li>
   </ul></li>
   <li><a href="#첫-번째-프로그램" id="toc-첫-번째-프로그램" class="nav-link" data-scroll-target="#첫-번째-프로그램">첫 번째 프로그램</a></li>
   <li><a href="#참고자료" id="toc-참고자료" class="nav-link" data-scroll-target="#참고자료">참고자료</a>
@@ -410,40 +410,40 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>설치 마법사의 안내에 따라 진행한다.<br>
 </li>
 <li>설치가 완료되면 터미널을 열어 아래 명령어를 실행하여 설치를 확인한다.<br>
-<code>sh     python3 --version</code></li>
+<code>shell     python3 --version</code></li>
 </ul>
 </section>
 <section id="linux에서-설치-ubuntu-기준" class="level3">
 <h3 class="anchored" data-anchor-id="linux에서-설치-ubuntu-기준">4. Linux에서 설치 (Ubuntu 기준)</h3>
 <ul>
 <li>터미널을 열고 다음 명령어를 실행한다.<br>
-<code>sh     sudo apt update     sudo apt install python3</code></li>
+<code>shell     sudo apt update     sudo apt install python3</code></li>
 <li>설치가 완료되면 아래 명령어로 버전을 확인한다.<br>
-<code>sh     python3 --version</code></li>
+<code>shell     python3 --version</code></li>
 </ul>
 </section>
 <section id="설치-확인" class="level3">
 <h3 class="anchored" data-anchor-id="설치-확인">5. 설치 확인</h3>
 <ul>
 <li>터미널(또는 명령 프롬프트, PowerShell)을 열고 아래 명령어를 입력한다.<br>
-<code>sh     python --version</code></li>
+<code>shell     python --version</code></li>
 <li>설치된 파이썬 버전이 출력되면 정상적으로 설치된 것이다.</li>
 </ul>
-<p>설치 후에는 <a href="#sec-idle" class="quarto-xref"><span>IDLE</span></a>, VS Code, Jupyter Notebook 등의 개발 환경을 설정하여 코딩을 시작할 수 있다.</p>
+<p>설치 후에는 <a href="#sec-idle" class="quarto-xref"><span>IDLE</span></a>, <a href="#sec-vsc" class="quarto-xref"><span>VS Code</span></a>, <a href="#sec-jupyter-notebook" class="quarto-xref"><span>Jupyter Notebook</span></a> 등의 개발 환경을 설정하여 코딩을 시작할 수 있다.</p>
 </section>
 </section>
 <section id="개발-환경-설정" class="level2">
 <h2 class="anchored" data-anchor-id="개발-환경-설정">개발 환경 설정</h2>
-<section id="vs-code" class="level3">
-<h3 class="anchored" data-anchor-id="vs-code">VS Code</h3>
+<section id="sec-vsc" class="level3">
+<h3 class="anchored" data-anchor-id="sec-vsc">VS Code</h3>
 </section>
-<section id="jupyter-notebook" class="level3">
-<h3 class="anchored" data-anchor-id="jupyter-notebook">Jupyter Notebook</h3>
+<section id="sec-jupyter-notebook" class="level3">
+<h3 class="anchored" data-anchor-id="sec-jupyter-notebook">Jupyter Notebook</h3>
 </section>
 </section>
 <section id="첫-번째-프로그램" class="level2">
 <h2 class="anchored" data-anchor-id="첫-번째-프로그램">첫 번째 프로그램</h2>
-<div id="7a34420f" class="cell" data-execution_count="1">
+<div id="e2825b28" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello World</code></pre>
@@ -487,7 +487,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><strong>대화형 셸(Interactive Shell)</strong>:<br>
 실행 후 나타나는 창에서 바로 파이썬 코드를 입력하고 실행할 수 있다.<br>
-<code>python     &gt;&gt;&gt; print("Hello, Python!")     Hello, Python!</code></li>
+</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hello, Python!"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>Hello, Python<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
 <li><strong>스크립트 작성 및 실행</strong>:<br>
 <code>File &gt; New File</code>을 선택하여 새 파일을 만들고 코드를 작성한 후, <code>F5</code> 키를 눌러 실행할 수 있다.</li>
 </ul>
