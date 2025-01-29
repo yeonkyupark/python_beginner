@@ -51,15 +51,15 @@ format: html
   - 다운로드한 `python-버전번호.pkg` 파일을 실행한다.  
   - 설치 마법사의 안내에 따라 진행한다.  
   - 설치가 완료되면 터미널을 열어 아래 명령어를 실행하여 설치를 확인한다.  
-    ```shell
-    python3 --version
-    ```
+```shell
+python3 --version
+```
 
 ### 4. Linux에서 설치 (Ubuntu 기준)  
   - 터미널을 열고 다음 명령어를 실행한다.  
-    ```shell
-    sudo apt update
-    sudo apt install python3
+```shell
+sudo apt update
+sudo apt install python3
     ```
   - 설치가 완료되면 아래 명령어로 버전을 확인한다.  
 ```shell
@@ -68,9 +68,9 @@ python3 --version
 
 ### 5. 설치 확인  
   - 터미널(또는 명령 프롬프트, PowerShell)을 열고 아래 명령어를 입력한다.  
-    ```shell
-    python --version
-    ```
+```shell
+python --version
+```
   - 설치된 파이썬 버전이 출력되면 정상적으로 설치된 것이다.  
 
 설치 후에는 @sec-idle, @sec-vsc, @sec-jupyter-notebook 등의 개발 환경을 설정하여 코딩을 시작할 수 있다.
