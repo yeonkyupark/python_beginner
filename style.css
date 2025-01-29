@@ -1,6 +1,6 @@
 div.cell-output.cell-output-display {
   margin-left: 0.8em;
-  margin-tip: 0;
+  margin-top: 0;
   background: none;
   border-left: 3px solid rgba(233,236,239,.65);
   border-top-left-radius: 0;
@@ -12,7 +12,7 @@ div.cell-output.cell-output-display {
 
 div.cell-output.cell-output-error {
   margin-left: 0.8em;
-  margin-tip: 0;
+  margin-top: 0;
   background: none;
   border-left: 3px solid rgba(255,128,128,.65);
   border-top-left-radius: 0;
