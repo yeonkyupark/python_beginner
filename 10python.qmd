@@ -57,10 +57,10 @@ python3 --version
 
 ### 4. Linux에서 설치 (Ubuntu 기준)  
   - 터미널을 열고 다음 명령어를 실행한다.  
-```shell
+```
 sudo apt update
 sudo apt install python3
-    ```
+```
   - 설치가 완료되면 아래 명령어로 버전을 확인한다.  
 ```shell
 python3 --version
