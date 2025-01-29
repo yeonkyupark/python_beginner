@@ -32,7 +32,7 @@ number-sections: false
 
 format:
   html:
-    theme: flaty
+    theme: cosmo
     css: style.css
     mermaid:
       theme: neutral
