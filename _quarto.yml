@@ -3,26 +3,27 @@ project:
   output-dir: docs
 
 book:
-  title: "파이썬 기초"
+  title: "파이썬 다루기"
   author: "YK"
   date: last-modified
   chapters:
     - index.qmd
-    - part: "파이썬 기본"
+    - part: "파이썬 기초"
       chapters:
-        - 00_language.qmd
-        - 10_word.qmd
-        - 20_sentence.qmd
-        - 30_structure.qmd
-        - 40_writing.qmd
-        - 50_book.qmd
-        - 60_reference_book.qmd
+        - 10python.qmd
+        - 20syntax.qmd
+        - 30datatype.qmd
+        - 40controlflow.qmd
+        - 50function.qmd
+        - 60file.qmd
+        - 70exception.qmd
+        - 80oop.qmd
+        - 90library.qmd
     - part: "파이썬 패키지"
       chapters:
-        - numpy.qmd
+        - pkg_numpy.qmd
   appendices:
-    - 90_install_python.qmd
-    - 90_install_ide.qmd
+    - app_markdown.qmd
     - references.qmd
 
 bibliography: references.bib
