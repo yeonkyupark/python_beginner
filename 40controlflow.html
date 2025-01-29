@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix B — IDE 설치 – 파이썬 기초</title>
+<title>40controlflow – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./references.html" rel="next">
-<link href="./90_install_python.html" rel="prev">
+<link href="./50function.html" rel="next">
+<link href="./30datatype.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -116,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./90_install_python.html">Appendices</a></li><li class="breadcrumb-item"><a href="./90_install_ide.html"><span class="chapter-title">IDE 설치</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./40controlflow.html"><span class="chapter-title">40controlflow</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">파이썬 기초</a> 
+      <a href="./">파이썬 다루기</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -150,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">파이썬 기본</span></a>
+ <span class="menu-text">파이썬 기초</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -158,37 +124,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00_language.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">언어</span></a>
+  <a href="./10python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파이썬 소개</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_word.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">자료형</span></a>
+  <a href="./20syntax.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20syntax</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20_sentence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">연산</span></a>
+  <a href="./30datatype.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">30datatype</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30_structure.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">제어문</span></a>
+  <a href="./40controlflow.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">40controlflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40_writing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">함수</span></a>
+  <a href="./50function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">50function</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50_book.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">입출력</span></a>
+  <a href="./60file.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">60file</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60_reference_book.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">70exception</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./80oop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">80oop</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">90library</span></a>
   </div>
 </li>
       </ul>
@@ -204,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Numpy</span></a>
+  <a href="./pkg_numpy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Numpy</span></a>
   </div>
 </li>
       </ul>
@@ -220,12 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90_install_python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파이썬 설치</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./90_install_ide.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">IDE 설치</span></a>
+  <a href="./app_markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">app_markdown</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -241,28 +212,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
-   
-  <ul>
-  <li><a href="#sec-python-ide" id="toc-sec-python-ide" class="nav-link active" data-scroll-target="#sec-python-ide">파이썬을 위한 주요 IDE</a></li>
-  <li><a href="#sec-jupyter-notebook" id="toc-sec-jupyter-notebook" class="nav-link" data-scroll-target="#sec-jupyter-notebook">주피터 노트북</a>
-  <ul>
-  <li><a href="#시작-디렉토리-변경" id="toc-시작-디렉토리-변경" class="nav-link" data-scroll-target="#시작-디렉토리-변경">시작 디렉토리 변경</a></li>
-  <li><a href="#사용법" id="toc-사용법" class="nav-link" data-scroll-target="#사용법">사용법</a></li>
-  </ul></li>
-  <li><a href="#sec-pycharm" id="toc-sec-pycharm" class="nav-link" data-scroll-target="#sec-pycharm">파이참</a></li>
-  <li><a href="#sec-vscode" id="toc-sec-vscode" class="nav-link" data-scroll-target="#sec-vscode">VSCode</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./90_install_python.html">Appendices</a></li><li class="breadcrumb-item"><a href="./90_install_ide.html"><span class="chapter-title">IDE 설치</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./40controlflow.html"><span class="chapter-title">40controlflow</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix B — IDE 설치</h1>
+<h1 class="title"><span class="chapter-title">40controlflow</span></h1>
 </div>
 
 
@@ -279,68 +237,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="sec-python-ide" class="level2">
-<h2 class="anchored" data-anchor-id="sec-python-ide">파이썬을 위한 주요 IDE</h2>
-<p>파이썬 개발에 주로 사용하는 IDE를 필요에 따라 적절히 설치합니다.</p>
-<dl>
-<dt>주요 IDE</dt>
-<dd>
-<ul>
-<li>주피터 노트북(Jupyter Notebook) (<a href="#sec-jupyter-notebook" class="quarto-xref"><span>주피터 노트북</span></a> 참고)</li>
-<li>파이참(Pycharm) (<a href="#sec-pycharm" class="quarto-xref"><span>파이참</span></a> 참고)</li>
-<li>VSCode(Visual Stuido Code) (<a href="#sec-vscode" class="quarto-xref"><span>VSCode</span></a> 참고)</li>
-</ul>
-</dd>
-</dl>
-</section>
-<section id="sec-jupyter-notebook" class="level2">
-<h2 class="anchored" data-anchor-id="sec-jupyter-notebook">주피터 노트북</h2>
-<center>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://jupyter.org/assets/logos/rectanglelogo-greytext-orangebody-greymoons.svg" class="img-fluid figure-img"></p>
-<figcaption>https://jupyter.org/</figcaption>
-</figure>
-</div>
-</center>
-<p><strong>주피터 노트북</strong>(Jupyter Notebook)은 Python 설치 시 제공되는 pip(Python’s package manager)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 명령어를 이용하여 설치 합니다.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>pip install notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>설치가 완료되면 <code>CMD</code> 창에서 다음 명령어를 통해 실행할 수 있습니다.</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>jupyter notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="images/jupyter_notebook.png" class="img-fluid"></p>
-<section id="시작-디렉토리-변경" class="level3">
-<h3 class="anchored" data-anchor-id="시작-디렉토리-변경">시작 디렉토리 변경</h3>
-<p>주피터 노트북을 설치하면 시작 디렉토리가 사용자 홈 디렉토리(<code>C:\Users\사용자계정</code>)로 설정됩니다. 만약 다른 디렉토리로 변경하고 싶다면 다음과 같은 방법으로 변경할 수 있습니다.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode cmd code-with-copy"><code class="sourceCode dosbat"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>jupyter notebook -<span class="at">-generate-config</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p><img src="images/jupyter_config.png" class="img-fluid"></p>
-<p>생성된 <code>jupyter_notebook_config.py</code> 파일을 열어 다음 부분(<code>c.ServerApp.root_dir =</code>)을 찾아 <code>#</code>을 제거하고 원하는 경로로 변경합니다.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">## The directory to use for notebooks and kernels.</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co">#  Default: ''</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>c.ServerApp.root_dir <span class="op">=</span> <span class="st">'C:\Python\Practice'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="사용법" class="level3">
-<h3 class="anchored" data-anchor-id="사용법">사용법</h3>
-<p>자세한 사용법은 아래 문서를 참고한다.</p>
-<ul>
-<li><a href="https://jupyter-notebook.readthedocs.io/en/latest/notebook.html" target="_blank">https://jupyter-notebook.readthedocs.io/en/latest/notebook.html</a></li>
-</ul>
-</section>
-</section>
-<section id="sec-pycharm" class="level2">
-<h2 class="anchored" data-anchor-id="sec-pycharm">파이참</h2>
-</section>
-<section id="sec-vscode" class="level2">
-<h2 class="anchored" data-anchor-id="sec-vscode">VSCode</h2>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p>https://docs.jupyter.org/en/latest/glossary.html#term-pip<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>https://jupyter.org/install<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -762,13 +660,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./90_install_python.html" class="pagination-link" aria-label="파이썬 설치">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">파이썬 설치</span></span>
+      <a href="./30datatype.html" class="pagination-link" aria-label="30datatype">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">30datatype</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./references.html" class="pagination-link" aria-label="References">
-        <span class="nav-page-text">References</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./50function.html" class="pagination-link" aria-label="50function">
+        <span class="nav-page-text"><span class="chapter-title">50function</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix A — 파이썬 설치 – 파이썬 기초</title>
+<title>Numpy – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,40 +20,6 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
 </style>
 
 
@@ -64,8 +30,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./90_install_ide.html" rel="next">
-<link href="./numpy.html" rel="prev">
+<link href="./app_markdown.html" rel="next">
+<link href="./90library.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -116,7 +82,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./90_install_python.html">Appendices</a></li><li class="breadcrumb-item"><a href="./90_install_python.html"><span class="chapter-title">파이썬 설치</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkg_numpy.html">파이썬 패키지</a></li><li class="breadcrumb-item"><a href="./pkg_numpy.html"><span class="chapter-title">Numpy</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -131,7 +97,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">파이썬 기초</a> 
+      <a href="./">파이썬 다루기</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -150,7 +116,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
- <span class="menu-text">파이썬 기본</span></a>
+ <span class="menu-text">파이썬 기초</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
@@ -158,37 +124,47 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./00_language.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">언어</span></a>
+  <a href="./10python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파이썬 소개</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10_word.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">자료형</span></a>
+  <a href="./20syntax.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">20syntax</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./20_sentence.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">연산</span></a>
+  <a href="./30datatype.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">30datatype</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./30_structure.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">제어문</span></a>
+  <a href="./40controlflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">40controlflow</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40_writing.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">함수</span></a>
+  <a href="./50function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">50function</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50_book.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">입출력</span></a>
+  <a href="./60file.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">60file</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60_reference_book.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">70exception</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./80oop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">80oop</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">90library</span></a>
   </div>
 </li>
       </ul>
@@ -204,7 +180,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./numpy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Numpy</span></a>
+  <a href="./pkg_numpy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Numpy</span></a>
   </div>
 </li>
       </ul>
@@ -220,12 +196,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90_install_python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">파이썬 설치</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./90_install_ide.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">IDE 설치</span></a>
+  <a href="./app_markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">app_markdown</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -241,22 +212,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
-   
-  <ul>
-  <li><a href="#sec-download-python" id="toc-sec-download-python" class="nav-link active" data-scroll-target="#sec-download-python">설치파일 다운로드</a></li>
-  <li><a href="#idle" id="toc-idle" class="nav-link" data-scroll-target="#idle">IDLE</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./90_install_python.html">Appendices</a></li><li class="breadcrumb-item"><a href="./90_install_python.html"><span class="chapter-title">파이썬 설치</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkg_numpy.html">파이썬 패키지</a></li><li class="breadcrumb-item"><a href="./pkg_numpy.html"><span class="chapter-title">Numpy</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-python-installation" class="quarto-section-identifier">Appendix A — 파이썬 설치</span></h1>
+<h1 class="title"><span id="sec-numpy" class="quarto-section-identifier"><span class="chapter-title">Numpy</span></span></h1>
 </div>
 
 
@@ -273,79 +237,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="sec-download-python" class="level2">
-<h2 class="anchored" data-anchor-id="sec-download-python">설치파일 다운로드</h2>
-<p>파이썬 홈페이지에서 최신 버전을 다운로드 합니다.</p>
-<ul>
-<li><p><a href="https://www.python.org/downloads/windows/" target="_blank">https://www.python.org/downloads/windows/</a></p>
-<p><img src="images/install_python.png" class="img-fluid"></p></li>
-</ul>
-<p>운영중인 시스템 또는 패키지 호환성을 위해 특정 버전을 다운로드해야 할 경우가 있습니다. 이런 경우는 전체 릴리즈 메뉴에서 필요한 버전을 검색 후 설치할 수 있습니다.</p>
-<ul>
-<li><p><a href="https://www.python.org/downloads/" class="uri">https://www.python.org/downloads/</a></p>
-<p><img src="images/python_all_release.png" class="img-fluid" target="_blank"></p></li>
-</ul>
-<p>다운로드 받은 파일을 실행하여 설치를 진행합니다. 개발 편의를 위해 다음 옵션을 체크합니다.</p>
-<ul>
-<li><p><strong>Add</strong> <u>p</u>ython.exe to PATH</p>
-<p><img src="images/install_python_path.png" class="img-fluid"></p></li>
-</ul>
-<p>설치가 완료 되었다면 앱 목록에 등록되었는지 확인합니다.</p>
-<p><img src="images/python_installed_01.png" class="img-fluid"></p>
-<p><code>CMD</code> 창에서 <code>python</code>을 입력하여 <code>REPL</code>이 동작하는지 확인합니다.</p>
-<p><img src="images/python_repl.png" class="img-fluid"></p>
-<p>REPL에서 빠져 나오기 위해서는 <code>exit()</code>나 <code>quit()</code>를 입력합니다.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="REPL">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-REPL
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>REPL</strong>은 “Read-Eval-Print Loop”의 약자로, 코드 실행 환경을 의미합니다. 파이썬에서는 REPL이 다음과 같은 과정을 거쳐 동작합니다.</p>
-<ol type="1">
-<li><strong>Read (읽기)</strong>: 사용자가 입력한 코드를 읽습니다.</li>
-<li><strong>Eval (평가)</strong>: 입력된 코드를 실행하여 결과를 계산합니다.</li>
-<li><strong>Print (출력)</strong>: 실행된 결과를 출력합니다.</li>
-<li><strong>Loop (반복)</strong>: 위의 과정을 반복하여 사용자가 코드를 계속해서 입력하고 실행할 수 있게 합니다.</li>
-</ol>
-<p>파이썬의 REPL은 파이썬 인터프리터에서 제공되며, 보통 터미널에서 <code>python</code> 명령어를 입력하면 활성화됩니다. 사용자는 한 줄씩 파이썬 코드를 입력하고 즉시 결과를 확인할 수 있습니다. 이를 통해 실시간으로 코드 실험이나 디버깅을 할 수 있어 매우 유용합니다.</p>
-<dl>
-<dt>예시</dt>
-<dd>
-<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="dv">2</span> <span class="op">+</span> <span class="dv">3</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dv">5</span></span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hello, World!"</span>)</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>Hello, World<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</dd>
-</dl>
-<p>위와 같은 방식으로 REPL에서 코드를 실행하고 바로 결과를 확인할 수 있습니다.</p>
-</div>
-</div>
-<p>만약 REPL이 정상적으로 동작하지 않면 환경 변수에 <code>Path</code>가 정상적으로 설정되어 있는지 확인해 봐야 합니다.</p>
-<p><img src="images/environment_path.png" class="img-fluid"></p>
-</section>
-<section id="idle" class="level2">
-<h2 class="anchored" data-anchor-id="idle">IDLE</h2>
-<p><img src="images/python_idle.png" class="img-fluid"></p>
-<p>파이썬에서 제공하는 IDE(Iegegrated Development Environment, 통합 개발 환경)로 <code>IDLE</code>(Integrated Development and Learning Environment)<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>이 있다. 소스코드를 파일로 작성하여 실행하거나 프롬프트 <code>&gt;&gt;&gt;</code> 상에서 코드를 직접 작성하여 실행할 수도 있습니다.</p>
-<p>먼저 <code>File &gt; New File(Ctrl+N)</code> 메뉴를 통해 새 소스파일을 작성합니다.</p>
-<p><img src="images/idle_new_file.png" class="img-fluid"></p>
-<p><code>Run &gt; Run Module(F5)</code> 메뉴를 통해 작성된 소스코드를 실행할 수 있습니다.</p>
-<p><img src="images/idle_run.png" class="img-fluid"></p>
-<p>파이썬에서 주로 사용하는 주요 IDE는 <a href="90_install_ide.html#sec-python-ide" class="quarto-xref"><span>파이썬을 위한 주요 IDE</span></a> 내용을 참고합니다.</p>
 
 
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p><a href="https://en.wikipedia.org/wiki/IDLE" target="_blank">https://en.wikipedia.org/wiki/IDLE</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -767,13 +660,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./numpy.html" class="pagination-link" aria-label="Numpy">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">Numpy</span></span>
+      <a href="./90library.html" class="pagination-link" aria-label="90library">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">90library</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./90_install_ide.html" class="pagination-link" aria-label="IDE 설치">
-        <span class="nav-page-text"><span class="chapter-title">IDE 설치</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./app_markdown.html" class="pagination-link" aria-label="app_markdown">
+        <span class="nav-page-text"><span class="chapter-title">app_markdown</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

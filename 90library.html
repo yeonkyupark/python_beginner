@@ -6,10 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="YK">
-<meta name="dcterms.date" content="2025-01-29">
 
-<title>파이썬 다루기</title>
+<title>90library – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -32,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./10python.html" rel="next">
+<link href="./pkg_numpy.html" rel="next">
+<link href="./80oop.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -83,7 +82,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">들어가기</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./90library.html"><span class="chapter-title">90library</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -110,7 +109,7 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">들어가기</span></a>
   </div>
 </li>
@@ -165,7 +164,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">90library</span></a>
+  <a href="./90library.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">90library</span></a>
   </div>
 </li>
       </ul>
@@ -213,104 +212,22 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">목차</h2>
-   
-  <ul>
-  <li><a href="#들어가기" id="toc-들어가기" class="nav-link active" data-scroll-target="#들어가기">들어가기</a>
-  <ul>
-  <li><a href="#파이썬-소개" id="toc-파이썬-소개" class="nav-link" data-scroll-target="#파이썬-소개">1. 파이썬 소개</a>
-  <ul class="collapse">
-  <li><a href="#파이썬이란" id="toc-파이썬이란" class="nav-link" data-scroll-target="#파이썬이란">파이썬이란?</a></li>
-  <li><a href="#파이썬의-특징과-장점" id="toc-파이썬의-특징과-장점" class="nav-link" data-scroll-target="#파이썬의-특징과-장점">파이썬의 특징과 장점</a></li>
-  <li><a href="#설치-및-개발-환경-설정vs-code-jupyter-notebook" id="toc-설치-및-개발-환경-설정vs-code-jupyter-notebook" class="nav-link" data-scroll-target="#설치-및-개발-환경-설정vs-code-jupyter-notebook">설치 및 개발 환경 설정(VS Code, Jupyter Notebook)</a></li>
-  <li><a href="#첫-번째-프로그램-hello-world-출력" id="toc-첫-번째-프로그램-hello-world-출력" class="nav-link" data-scroll-target="#첫-번째-프로그램-hello-world-출력">첫 번째 프로그램: “Hello, World!” 출력</a></li>
-  </ul></li>
-  <li><a href="#기본-문법" id="toc-기본-문법" class="nav-link" data-scroll-target="#기본-문법">2. 기본 문법</a>
-  <ul class="collapse">
-  <li><a href="#변수와-데이터-타입숫자-문자열-불리언" id="toc-변수와-데이터-타입숫자-문자열-불리언" class="nav-link" data-scroll-target="#변수와-데이터-타입숫자-문자열-불리언">변수와 데이터 타입(숫자, 문자열, 불리언)</a></li>
-  <li><a href="#연산자산술-비교-논리-대입-연산자" id="toc-연산자산술-비교-논리-대입-연산자" class="nav-link" data-scroll-target="#연산자산술-비교-논리-대입-연산자">연산자(산술, 비교, 논리, 대입 연산자)</a></li>
-  <li><a href="#주석-사용법" id="toc-주석-사용법" class="nav-link" data-scroll-target="#주석-사용법">주석 사용법</a></li>
-  </ul></li>
-  <li><a href="#자료형과-자료-구조" id="toc-자료형과-자료-구조" class="nav-link" data-scroll-target="#자료형과-자료-구조">3. 자료형과 자료 구조</a>
-  <ul class="collapse">
-  <li><a href="#리스트list" id="toc-리스트list" class="nav-link" data-scroll-target="#리스트list">리스트(List)</a></li>
-  <li><a href="#튜플tuple" id="toc-튜플tuple" class="nav-link" data-scroll-target="#튜플tuple">튜플(Tuple)</a></li>
-  <li><a href="#딕셔너리dictionary" id="toc-딕셔너리dictionary" class="nav-link" data-scroll-target="#딕셔너리dictionary">딕셔너리(Dictionary)</a></li>
-  <li><a href="#집합set" id="toc-집합set" class="nav-link" data-scroll-target="#집합set">집합(Set)</a></li>
-  <li><a href="#문자열string-다루기" id="toc-문자열string-다루기" class="nav-link" data-scroll-target="#문자열string-다루기">문자열(String) 다루기</a></li>
-  </ul></li>
-  <li><a href="#제어문" id="toc-제어문" class="nav-link" data-scroll-target="#제어문">4. 제어문</a>
-  <ul class="collapse">
-  <li><a href="#조건문if-elif-else" id="toc-조건문if-elif-else" class="nav-link" data-scroll-target="#조건문if-elif-else">조건문(if-elif-else)</a></li>
-  <li><a href="#반복문for-while" id="toc-반복문for-while" class="nav-link" data-scroll-target="#반복문for-while">반복문(for, while)</a></li>
-  <li><a href="#반복문-제어문break-continue" id="toc-반복문-제어문break-continue" class="nav-link" data-scroll-target="#반복문-제어문break-continue">반복문 제어문(break, continue)</a></li>
-  </ul></li>
-  <li><a href="#함수와-모듈" id="toc-함수와-모듈" class="nav-link" data-scroll-target="#함수와-모듈">5. 함수와 모듈</a>
-  <ul class="collapse">
-  <li><a href="#함수-정의-및-호출" id="toc-함수-정의-및-호출" class="nav-link" data-scroll-target="#함수-정의-및-호출">함수 정의 및 호출</a></li>
-  <li><a href="#매개변수와-반환값" id="toc-매개변수와-반환값" class="nav-link" data-scroll-target="#매개변수와-반환값">매개변수와 반환값</a></li>
-  <li><a href="#내장-함수-활용" id="toc-내장-함수-활용" class="nav-link" data-scroll-target="#내장-함수-활용">내장 함수 활용</a></li>
-  <li><a href="#모듈과-패키지import-사용법" id="toc-모듈과-패키지import-사용법" class="nav-link" data-scroll-target="#모듈과-패키지import-사용법">모듈과 패키지(import 사용법)</a></li>
-  </ul></li>
-  <li><a href="#파일-입출력" id="toc-파일-입출력" class="nav-link" data-scroll-target="#파일-입출력">6. 파일 입출력</a>
-  <ul class="collapse">
-  <li><a href="#파일-열기와-닫기open-close" id="toc-파일-열기와-닫기open-close" class="nav-link" data-scroll-target="#파일-열기와-닫기open-close">파일 열기와 닫기(<code>open</code>, <code>close</code>)</a></li>
-  <li><a href="#파일-읽기read-readline-readlines" id="toc-파일-읽기read-readline-readlines" class="nav-link" data-scroll-target="#파일-읽기read-readline-readlines">파일 읽기(<code>read</code>, <code>readline</code>, <code>readlines</code>)</a></li>
-  <li><a href="#파일-쓰기write" id="toc-파일-쓰기write" class="nav-link" data-scroll-target="#파일-쓰기write">파일 쓰기(<code>write</code>)</a></li>
-  </ul></li>
-  <li><a href="#예외-처리" id="toc-예외-처리" class="nav-link" data-scroll-target="#예외-처리">7. 예외 처리</a>
-  <ul class="collapse">
-  <li><a href="#예외-발생과-처리try-except" id="toc-예외-발생과-처리try-except" class="nav-link" data-scroll-target="#예외-발생과-처리try-except">예외 발생과 처리(<code>try-except</code>)</a></li>
-  <li><a href="#다양한-예외-종류" id="toc-다양한-예외-종류" class="nav-link" data-scroll-target="#다양한-예외-종류">다양한 예외 종류</a></li>
-  </ul></li>
-  <li><a href="#객체-지향-프로그래밍oop-기초" id="toc-객체-지향-프로그래밍oop-기초" class="nav-link" data-scroll-target="#객체-지향-프로그래밍oop-기초">8. 객체 지향 프로그래밍(OOP) 기초</a>
-  <ul class="collapse">
-  <li><a href="#클래스와-객체-개념" id="toc-클래스와-객체-개념" class="nav-link" data-scroll-target="#클래스와-객체-개념">클래스와 객체 개념</a></li>
-  <li><a href="#생성자__init__와-속성" id="toc-생성자__init__와-속성" class="nav-link" data-scroll-target="#생성자__init__와-속성">생성자(<code>__init__</code>)와 속성</a></li>
-  <li><a href="#메서드-정의-및-호출" id="toc-메서드-정의-및-호출" class="nav-link" data-scroll-target="#메서드-정의-및-호출">메서드 정의 및 호출</a></li>
-  </ul></li>
-  <li><a href="#라이브러리-활용" id="toc-라이브러리-활용" class="nav-link" data-scroll-target="#라이브러리-활용">9. 라이브러리 활용</a>
-  <ul class="collapse">
-  <li><a href="#유용한-표준-라이브러리os-datetime-random-등" id="toc-유용한-표준-라이브러리os-datetime-random-등" class="nav-link" data-scroll-target="#유용한-표준-라이브러리os-datetime-random-등">유용한 표준 라이브러리(os, datetime, random 등)</a></li>
-  <li><a href="#데이터-분석-기초pandas-numpy-간단-사용법" id="toc-데이터-분석-기초pandas-numpy-간단-사용법" class="nav-link" data-scroll-target="#데이터-분석-기초pandas-numpy-간단-사용법">데이터 분석 기초(pandas, numpy 간단 사용법)</a></li>
-  </ul></li>
-  <li><a href="#프로젝트-실습" id="toc-프로젝트-실습" class="nav-link" data-scroll-target="#프로젝트-실습">10. 프로젝트 실습</a>
-  <ul class="collapse">
-  <li><a href="#간단한-계산기-만들기" id="toc-간단한-계산기-만들기" class="nav-link" data-scroll-target="#간단한-계산기-만들기">간단한 계산기 만들기</a></li>
-  <li><a href="#파일-데이터를-읽고-가공하는-프로그램" id="toc-파일-데이터를-읽고-가공하는-프로그램" class="nav-link" data-scroll-target="#파일-데이터를-읽고-가공하는-프로그램">파일 데이터를 읽고 가공하는 프로그램</a></li>
-  <li><a href="#웹-크롤링-기초beautifulsoup-활용" id="toc-웹-크롤링-기초beautifulsoup-활용" class="nav-link" data-scroll-target="#웹-크롤링-기초beautifulsoup-활용">웹 크롤링 기초(BeautifulSoup 활용)</a></li>
-  </ul></li>
-  </ul></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./90library.html"><span class="chapter-title">90library</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">파이썬 다루기</h1>
+<h1 class="title"><span class="chapter-title">90library</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>YK </p>
-          </div>
-  </div>
     
-    <div>
-    <div class="quarto-title-meta-heading">Published</div>
-    <div class="quarto-title-meta-contents">
-      <p class="date">January 29, 2025</p>
-    </div>
-  </div>
   
     
   </div>
@@ -320,137 +237,8 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="들어가기" class="level1 unnumbered">
-<h1 class="unnumbered">들어가기</h1>
-<section id="파이썬-소개" class="level2">
-<h2 class="anchored" data-anchor-id="파이썬-소개">1. 파이썬 소개</h2>
-<section id="파이썬이란" class="level3">
-<h3 class="anchored" data-anchor-id="파이썬이란">파이썬이란?</h3>
-</section>
-<section id="파이썬의-특징과-장점" class="level3">
-<h3 class="anchored" data-anchor-id="파이썬의-특징과-장점">파이썬의 특징과 장점</h3>
-</section>
-<section id="설치-및-개발-환경-설정vs-code-jupyter-notebook" class="level3">
-<h3 class="anchored" data-anchor-id="설치-및-개발-환경-설정vs-code-jupyter-notebook">설치 및 개발 환경 설정(VS Code, Jupyter Notebook)</h3>
-</section>
-<section id="첫-번째-프로그램-hello-world-출력" class="level3">
-<h3 class="anchored" data-anchor-id="첫-번째-프로그램-hello-world-출력">첫 번째 프로그램: “Hello, World!” 출력</h3>
-</section>
-</section>
-<section id="기본-문법" class="level2">
-<h2 class="anchored" data-anchor-id="기본-문법">2. 기본 문법</h2>
-<section id="변수와-데이터-타입숫자-문자열-불리언" class="level3">
-<h3 class="anchored" data-anchor-id="변수와-데이터-타입숫자-문자열-불리언">변수와 데이터 타입(숫자, 문자열, 불리언)</h3>
-</section>
-<section id="연산자산술-비교-논리-대입-연산자" class="level3">
-<h3 class="anchored" data-anchor-id="연산자산술-비교-논리-대입-연산자">연산자(산술, 비교, 논리, 대입 연산자)</h3>
-</section>
-<section id="주석-사용법" class="level3">
-<h3 class="anchored" data-anchor-id="주석-사용법">주석 사용법</h3>
-</section>
-</section>
-<section id="자료형과-자료-구조" class="level2">
-<h2 class="anchored" data-anchor-id="자료형과-자료-구조">3. 자료형과 자료 구조</h2>
-<section id="리스트list" class="level3">
-<h3 class="anchored" data-anchor-id="리스트list">리스트(List)</h3>
-</section>
-<section id="튜플tuple" class="level3">
-<h3 class="anchored" data-anchor-id="튜플tuple">튜플(Tuple)</h3>
-</section>
-<section id="딕셔너리dictionary" class="level3">
-<h3 class="anchored" data-anchor-id="딕셔너리dictionary">딕셔너리(Dictionary)</h3>
-</section>
-<section id="집합set" class="level3">
-<h3 class="anchored" data-anchor-id="집합set">집합(Set)</h3>
-</section>
-<section id="문자열string-다루기" class="level3">
-<h3 class="anchored" data-anchor-id="문자열string-다루기">문자열(String) 다루기</h3>
-</section>
-</section>
-<section id="제어문" class="level2">
-<h2 class="anchored" data-anchor-id="제어문">4. 제어문</h2>
-<section id="조건문if-elif-else" class="level3">
-<h3 class="anchored" data-anchor-id="조건문if-elif-else">조건문(if-elif-else)</h3>
-</section>
-<section id="반복문for-while" class="level3">
-<h3 class="anchored" data-anchor-id="반복문for-while">반복문(for, while)</h3>
-</section>
-<section id="반복문-제어문break-continue" class="level3">
-<h3 class="anchored" data-anchor-id="반복문-제어문break-continue">반복문 제어문(break, continue)</h3>
-</section>
-</section>
-<section id="함수와-모듈" class="level2">
-<h2 class="anchored" data-anchor-id="함수와-모듈">5. 함수와 모듈</h2>
-<section id="함수-정의-및-호출" class="level3">
-<h3 class="anchored" data-anchor-id="함수-정의-및-호출">함수 정의 및 호출</h3>
-</section>
-<section id="매개변수와-반환값" class="level3">
-<h3 class="anchored" data-anchor-id="매개변수와-반환값">매개변수와 반환값</h3>
-</section>
-<section id="내장-함수-활용" class="level3">
-<h3 class="anchored" data-anchor-id="내장-함수-활용">내장 함수 활용</h3>
-</section>
-<section id="모듈과-패키지import-사용법" class="level3">
-<h3 class="anchored" data-anchor-id="모듈과-패키지import-사용법">모듈과 패키지(import 사용법)</h3>
-</section>
-</section>
-<section id="파일-입출력" class="level2">
-<h2 class="anchored" data-anchor-id="파일-입출력">6. 파일 입출력</h2>
-<section id="파일-열기와-닫기open-close" class="level3">
-<h3 class="anchored" data-anchor-id="파일-열기와-닫기open-close">파일 열기와 닫기(<code>open</code>, <code>close</code>)</h3>
-</section>
-<section id="파일-읽기read-readline-readlines" class="level3">
-<h3 class="anchored" data-anchor-id="파일-읽기read-readline-readlines">파일 읽기(<code>read</code>, <code>readline</code>, <code>readlines</code>)</h3>
-</section>
-<section id="파일-쓰기write" class="level3">
-<h3 class="anchored" data-anchor-id="파일-쓰기write">파일 쓰기(<code>write</code>)</h3>
-</section>
-</section>
-<section id="예외-처리" class="level2">
-<h2 class="anchored" data-anchor-id="예외-처리">7. 예외 처리</h2>
-<section id="예외-발생과-처리try-except" class="level3">
-<h3 class="anchored" data-anchor-id="예외-발생과-처리try-except">예외 발생과 처리(<code>try-except</code>)</h3>
-</section>
-<section id="다양한-예외-종류" class="level3">
-<h3 class="anchored" data-anchor-id="다양한-예외-종류">다양한 예외 종류</h3>
-</section>
-</section>
-<section id="객체-지향-프로그래밍oop-기초" class="level2">
-<h2 class="anchored" data-anchor-id="객체-지향-프로그래밍oop-기초">8. 객체 지향 프로그래밍(OOP) 기초</h2>
-<section id="클래스와-객체-개념" class="level3">
-<h3 class="anchored" data-anchor-id="클래스와-객체-개념">클래스와 객체 개념</h3>
-</section>
-<section id="생성자__init__와-속성" class="level3">
-<h3 class="anchored" data-anchor-id="생성자__init__와-속성">생성자(<code>__init__</code>)와 속성</h3>
-</section>
-<section id="메서드-정의-및-호출" class="level3">
-<h3 class="anchored" data-anchor-id="메서드-정의-및-호출">메서드 정의 및 호출</h3>
-</section>
-</section>
-<section id="라이브러리-활용" class="level2">
-<h2 class="anchored" data-anchor-id="라이브러리-활용">9. 라이브러리 활용</h2>
-<section id="유용한-표준-라이브러리os-datetime-random-등" class="level3">
-<h3 class="anchored" data-anchor-id="유용한-표준-라이브러리os-datetime-random-등">유용한 표준 라이브러리(os, datetime, random 등)</h3>
-</section>
-<section id="데이터-분석-기초pandas-numpy-간단-사용법" class="level3">
-<h3 class="anchored" data-anchor-id="데이터-분석-기초pandas-numpy-간단-사용법">데이터 분석 기초(pandas, numpy 간단 사용법)</h3>
-</section>
-</section>
-<section id="프로젝트-실습" class="level2">
-<h2 class="anchored" data-anchor-id="프로젝트-실습">10. 프로젝트 실습</h2>
-<section id="간단한-계산기-만들기" class="level3">
-<h3 class="anchored" data-anchor-id="간단한-계산기-만들기">간단한 계산기 만들기</h3>
-</section>
-<section id="파일-데이터를-읽고-가공하는-프로그램" class="level3">
-<h3 class="anchored" data-anchor-id="파일-데이터를-읽고-가공하는-프로그램">파일 데이터를 읽고 가공하는 프로그램</h3>
-</section>
-<section id="웹-크롤링-기초beautifulsoup-활용" class="level3">
-<h3 class="anchored" data-anchor-id="웹-크롤링-기초beautifulsoup-활용">웹 크롤링 기초(BeautifulSoup 활용)</h3>
 
 
-</section>
-</section>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -872,10 +660,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./80oop.html" class="pagination-link" aria-label="80oop">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">80oop</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./10python.html" class="pagination-link" aria-label="파이썬 소개">
-        <span class="nav-page-text"><span class="chapter-title">파이썬 소개</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./pkg_numpy.html" class="pagination-link" aria-label="Numpy">
+        <span class="nav-page-text"><span class="chapter-title">Numpy</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
