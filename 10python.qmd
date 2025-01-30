@@ -5,6 +5,11 @@ format: html
 
 ## 파이쎤 소개
 
+<center>
+![python](https://www.python.org/static/img/python-logo.png)
+</center>
+
+
 파이썬(Python)은 배우기 쉽고 강력한 기능을 갖춘 프로그래밍 언어이다. 문법이 간결하고 가독성이 높아 초보자부터 전문가까지 폭넓게 사용하고 있다.
 
 ### 파이썬의 특징
@@ -85,6 +90,11 @@ format: html
 
 VS Code(Visual Studio Code)는 마이크로소프트에서 제공하는 무료 코드 편집기로, 파이썬 개발 환경으로 많이 사용된다. 가벼우면서도 확장성이 뛰어나 초보자부터 전문가까지 널리 활용된다.  
 
+<center>
+![Visual Studio Code](https://code.visualstudio.com/assets/docs/getstarted/getting-started/open-folder.png)
+</center>
+
+
 #### VS Code 다운로드  
   - [VS Code 공식 웹사이트](https://code.visualstudio.com/)에 접속한다.  
   - 사용 중인 운영 체제(Windows, macOS, Linux)에 맞는 설치 파일을 다운로드한다.  
@@ -141,16 +151,18 @@ VS Code(Visual Studio Code)는 마이크로소프트에서 제공하는 무료 �
     python --version
     ```
 
-설치가 완료되면 VS Code를 활용하여 편리하게 파이썬 프로그래밍을 진행할 수 있다.
+설치가 완료되면 VS Code를 활용하여 편리하게 파이썬 프로그래밍을 진행할 수 있다. 자세한 사용법은 VS Code 튜토리얼을 참고한다.
+
+- [https://code.visualstudio.com/docs/getstarted/getting-started](https://code.visualstudio.com/docs/getstarted/getting-started){target="_blank"}
 
 ### Jupyter Notebook {#sec-jupyter-notebook}
 
+Jupyter Notebook은 웹 기반의 대화형 개발 환경으로, 파이썬 코드 실행과 문서화를 동시에 할 수 있어 데이터 분석 및 머신러닝 작업에 많이 사용된다.  
+
 <center>
-![](images/jupyter_notebook.png)
+![https://jupyter-notebook.readthedocs.io/en/latest/](https://jupyter-notebook.readthedocs.io/en/latest/_images/notebook-running-code.png)
 </center>
 
-
-Jupyter Notebook은 웹 기반의 대화형 개발 환경으로, 파이썬 코드 실행과 문서화를 동시에 할 수 있어 데이터 분석 및 머신러닝 작업에 많이 사용된다.  
 
 #### Jupyter Notebook 설치 전 준비  
 Jupyter Notebook을 사용하려면 먼저 파이썬이 설치되어 있어야 한다.  
@@ -209,7 +221,9 @@ Jupyter Notebook을 사용하려면 먼저 파이썬이 설치되어 있어야 �
   - **파일 > Save and Checkpoint**를 선택하여 작업을 저장한다.  
   - Jupyter Notebook을 종료하려면 터미널에서 `Ctrl + C`를 누르고 `y`를 입력한다.  
 
-설치가 완료되면 Jupyter Notebook을 활용하여 데이터 분석, 머신러닝, 문서 작성 등을 편리하게 수행할 수 있다.
+설치가 완료되면 Jupyter Notebook을 활용하여 데이터 분석, 머신러닝, 문서 작성 등을 편리하게 수행할 수 있다. 자세한 사용법은 Jupyter Notebook 튜토리얼을 참고한다.
+
+- [https://docs.jupyter.org/en/latest/start/index.html](https://docs.jupyter.org/en/latest/start/index.html){target="_blank"}
 
 ## 첫 번째 프로그램
 
@@ -231,9 +245,9 @@ print("Hello, World")
 
 ### IDLE {#sec-idle}
 
-<center>![IDLE](images/idle_run.png)</center>
-
 IDLE(Integrated Development and Learning Environment)은 파이썬에 기본적으로 포함된 통합 개발 환경(IDE)으로, 초보자가 쉽게 파이썬을 실행하고 학습할 수 있도록 설계된 프로그램이다.
+
+<center>![IDLE](images/idle_run.png)</center>
 
 #### IDLE의 특징
 
