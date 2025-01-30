@@ -11,8 +11,8 @@ book:
   repo-actions: [edit]
   favicon: logo.png
   page-footer: 
-  left: "Copyright(c) 2025 YK" 
-  right: "Python Handling"
+    left: "Copyright(c) 2025 YK" 
+    right: "Python Handling"
   sidebar: 
     tools:
       - icon: instagram
