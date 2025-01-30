@@ -214,7 +214,7 @@ Jupyter Notebook을 사용하려면 먼저 파이썬이 설치되어 있어야 �
 ## 첫 번째 프로그램
 
 <center>
-![Hello, World[^ageekisborn]](http://s3.media.squarespace.com/production/2129687/19317774/.a/6a00d8341d3df553ef0147e2876bcc970b-pi)
+![Hello, World[^ageekisborn]](images/ageekisborn.png)
 </center>
 
 [^ageekisborn]: https://geek-and-poke.com/geekandpoke/2011/2/11/a-geek-is-born.html
