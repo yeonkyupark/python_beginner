@@ -83,6 +83,66 @@ format: html
 
 ### VS Code {#sec-vsc}
 
+VS Code(Visual Studio Code)는 마이크로소프트에서 제공하는 무료 코드 편집기로, 파이썬 개발 환경으로 많이 사용된다. 가벼우면서도 확장성이 뛰어나 초보자부터 전문가까지 널리 활용된다.  
+
+### VS Code 다운로드  
+  - [VS Code 공식 웹사이트](https://code.visualstudio.com/)에 접속한다.  
+  - 사용 중인 운영 체제(Windows, macOS, Linux)에 맞는 설치 파일을 다운로드한다.  
+
+### Windows에서 설치  
+  - 다운로드한 `VSCodeUserSetup.exe` 파일을 실행한다.  
+  - 설치 마법사가 실행되면 **"Next"**를 눌러 진행한다.  
+  - 설치 옵션에서 **"Add to PATH"** 항목을 체크한다.  
+  - **"Install"** 버튼을 클릭하여 설치를 완료한 후, **"Finish"**를 눌러 실행한다.  
+
+### macOS에서 설치  
+  - 다운로드한 `VSCode-darwin.zip` 파일을 압축 해제한다.  
+  - `Visual Studio Code.app`을 **응용 프로그램(Applications) 폴더**로 이동한다.  
+  - 터미널에서 VS Code를 쉽게 실행하려면 아래 명령어를 입력하여 `code` 명령어를 등록한다.  
+  
+    ```sh
+    sudo ln -s /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code
+    ```
+
+### Linux(Ubuntu)에서 설치  
+  - 터미널을 열고 다음 명령어를 실행하여 설치한다.  
+  
+    ```sh
+    sudo apt update
+    sudo apt install code
+    ```
+    
+  - 설치가 완료되면 아래 명령어를 입력하여 실행한다. 
+  
+    ```sh
+    code
+    ```
+
+### VS Code에서 파이썬 개발 환경 설정  
+
+#### 1) 파이썬 확장 프로그램 설치  
+  - VS Code를 실행하고 **확장(Extensions)** 메뉴(`Ctrl + Shift + X`)를 연다.  
+  - 검색창에 **"Python"**을 입력하고 **Microsoft 제공 Python 확장 프로그램**을 설치한다.  
+
+#### 2) 기본 인터프리터 설정  
+  - `Ctrl + Shift + P`를 눌러 **명령 팔레트(Command Palette)**를 연다.  
+  - **"Python: Select Interpreter"**를 선택한 후 설치된 파이썬 경로를 선택한다.  
+  - 터미널에서 `python --version`을 실행하여 정상적으로 설정되었는지 확인한다.  
+
+#### 3) 실행 및 디버깅  
+  - `.py` 파일을 만들고 파이썬 코드를 작성한다.  
+  - `F5` 키를 눌러 실행하고 결과를 확인한다.  
+
+### 설치 확인  
+  - VS Code에서 `Ctrl + \`` 키를 눌러 터미널을 연다.  
+  - 아래 명령어를 입력하여 파이썬이 정상적으로 동작하는지 확인한다.  
+  
+    ```sh
+    python --version
+    ```
+
+설치가 완료되면 VS Code를 활용하여 편리하게 파이썬 프로그래밍을 진행할 수 있다.
+
 ### Jupyter Notebook {#sec-jupyter-notebook}
 
 ## 첫 번째 프로그램
