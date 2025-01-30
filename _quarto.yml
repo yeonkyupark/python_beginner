@@ -6,6 +6,20 @@ book:
   title: "파이썬 다루기"
   author: "YK"
   date: last-modified
+  repo-url: https://github.com/yeonkyupark/pepc2e 
+  repo-branch: main
+  repo-actions: [edit]
+  favicon: logo.png
+  page-footer: 
+  left: "Copyright(c) 2025 YK" 
+  right: "Python Handling"
+  sidebar: 
+    tools:
+      - icon: instagram
+        href: https://www.instagram.com/yeonkyu.park/
+      - icon: globe
+        href: https://yeonkyupark.github.io/
+    collapse-level: 1
   chapters:
     - index.qmd
     - part: "파이썬 기초"
