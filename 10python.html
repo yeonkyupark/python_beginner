@@ -257,7 +257,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#파이썬의-활용-분야" id="toc-파이썬의-활용-분야" class="nav-link" data-scroll-target="#파이썬의-활용-분야">파이썬의 활용 분야</a></li>
   <li><a href="#파이썬의-장점과-단점" id="toc-파이썬의-장점과-단점" class="nav-link" data-scroll-target="#파이썬의-장점과-단점">파이썬의 장점과 단점</a></li>
   </ul></li>
-  <li><a href="#파이썬-설치" id="toc-파이썬-설치" class="nav-link" data-scroll-target="#파이썬-설치">파이썬 설치</a>
+  <li><a href="#sec-install-python" id="toc-sec-install-python" class="nav-link" data-scroll-target="#sec-install-python">파이썬 설치</a>
   <ul>
   <li><a href="#파이썬-다운로드" id="toc-파이썬-다운로드" class="nav-link" data-scroll-target="#파이썬-다운로드">파이썬 다운로드</a></li>
   <li><a href="#windows에서-설치" id="toc-windows에서-설치" class="nav-link" data-scroll-target="#windows에서-설치">Windows에서 설치</a></li>
@@ -267,19 +267,23 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </ul></li>
   <li><a href="#개발-환경-설정" id="toc-개발-환경-설정" class="nav-link" data-scroll-target="#개발-환경-설정">개발 환경 설정</a>
   <ul>
-  <li><a href="#sec-vsc" id="toc-sec-vsc" class="nav-link" data-scroll-target="#sec-vsc">VS Code</a></li>
+  <li><a href="#sec-vsc" id="toc-sec-vsc" class="nav-link" data-scroll-target="#sec-vsc">VS Code</a>
+  <ul class="collapse">
   <li><a href="#vs-code-다운로드" id="toc-vs-code-다운로드" class="nav-link" data-scroll-target="#vs-code-다운로드">VS Code 다운로드</a></li>
   <li><a href="#windows에서-설치-1" id="toc-windows에서-설치-1" class="nav-link" data-scroll-target="#windows에서-설치-1">Windows에서 설치</a></li>
   <li><a href="#macos에서-설치-1" id="toc-macos에서-설치-1" class="nav-link" data-scroll-target="#macos에서-설치-1">macOS에서 설치</a></li>
   <li><a href="#linuxubuntu에서-설치-1" id="toc-linuxubuntu에서-설치-1" class="nav-link" data-scroll-target="#linuxubuntu에서-설치-1">Linux(Ubuntu)에서 설치</a></li>
-  <li><a href="#vs-code에서-파이썬-개발-환경-설정" id="toc-vs-code에서-파이썬-개발-환경-설정" class="nav-link" data-scroll-target="#vs-code에서-파이썬-개발-환경-설정">VS Code에서 파이썬 개발 환경 설정</a>
-  <ul class="collapse">
-  <li><a href="#파이썬-확장-프로그램-설치" id="toc-파이썬-확장-프로그램-설치" class="nav-link" data-scroll-target="#파이썬-확장-프로그램-설치">1) 파이썬 확장 프로그램 설치</a></li>
+  <li><a href="#vs-code에서-파이썬-개발-환경-설정" id="toc-vs-code에서-파이썬-개발-환경-설정" class="nav-link" data-scroll-target="#vs-code에서-파이썬-개발-환경-설정">VS Code에서 파이썬 개발 환경 설정</a></li>
   <li><a href="#기본-인터프리터-설정" id="toc-기본-인터프리터-설정" class="nav-link" data-scroll-target="#기본-인터프리터-설정">2) 기본 인터프리터 설정</a></li>
-  <li><a href="#실행-및-디버깅" id="toc-실행-및-디버깅" class="nav-link" data-scroll-target="#실행-및-디버깅">3) 실행 및 디버깅</a></li>
-  </ul></li>
   <li><a href="#설치-확인-1" id="toc-설치-확인-1" class="nav-link" data-scroll-target="#설치-확인-1">설치 확인</a></li>
-  <li><a href="#sec-jupyter-notebook" id="toc-sec-jupyter-notebook" class="nav-link" data-scroll-target="#sec-jupyter-notebook">Jupyter Notebook</a></li>
+  </ul></li>
+  <li><a href="#sec-jupyter-notebook" id="toc-sec-jupyter-notebook" class="nav-link" data-scroll-target="#sec-jupyter-notebook">Jupyter Notebook</a>
+  <ul class="collapse">
+  <li><a href="#jupyter-notebook-설치-전-준비" id="toc-jupyter-notebook-설치-전-준비" class="nav-link" data-scroll-target="#jupyter-notebook-설치-전-준비">Jupyter Notebook 설치 전 준비</a></li>
+  <li><a href="#jupyter-notebook-설치" id="toc-jupyter-notebook-설치" class="nav-link" data-scroll-target="#jupyter-notebook-설치">Jupyter Notebook 설치</a></li>
+  <li><a href="#jupyter-notebook-실행" id="toc-jupyter-notebook-실행" class="nav-link" data-scroll-target="#jupyter-notebook-실행">Jupyter Notebook 실행</a></li>
+  <li><a href="#jupyter-notebook-사용-방법" id="toc-jupyter-notebook-사용-방법" class="nav-link" data-scroll-target="#jupyter-notebook-사용-방법">4. Jupyter Notebook 사용 방법</a></li>
+  </ul></li>
   </ul></li>
   <li><a href="#첫-번째-프로그램" id="toc-첫-번째-프로그램" class="nav-link" data-scroll-target="#첫-번째-프로그램">첫 번째 프로그램</a></li>
   <li><a href="#참고자료" id="toc-참고자료" class="nav-link" data-scroll-target="#참고자료">참고자료</a>
@@ -392,8 +396,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>파이썬은 배우기 쉽고 다양한 활용이 가능하다는 점에서 강력한 언어지만, 실행 속도나 멀티스레딩 제한과 같은 단점도 존재한다. 따라서 사용 목적에 따라 적절한 언어를 선택하는 것이 중요하다.</p>
 </section>
 </section>
-<section id="파이썬-설치" class="level2">
-<h2 class="anchored" data-anchor-id="파이썬-설치">파이썬 설치</h2>
+<section id="sec-install-python" class="level2">
+<h2 class="anchored" data-anchor-id="sec-install-python">파이썬 설치</h2>
 <p>파이썬을 설치하는 방법은 운영 체제에 따라 다를 수 있지만, 일반적으로 공식 웹사이트에서 설치 파일을 다운로드하여 설치하는 방식이 가장 쉽다.</p>
 <section id="파이썬-다운로드" class="level3">
 <h3 class="anchored" data-anchor-id="파이썬-다운로드">파이썬 다운로드</h3>
@@ -446,17 +450,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-vsc" class="level3">
 <h3 class="anchored" data-anchor-id="sec-vsc">VS Code</h3>
 <p>VS Code(Visual Studio Code)는 마이크로소프트에서 제공하는 무료 코드 편집기로, 파이썬 개발 환경으로 많이 사용된다. 가벼우면서도 확장성이 뛰어나 초보자부터 전문가까지 널리 활용된다.</p>
-</section>
-<section id="vs-code-다운로드" class="level3">
-<h3 class="anchored" data-anchor-id="vs-code-다운로드">VS Code 다운로드</h3>
+<section id="vs-code-다운로드" class="level4">
+<h4 class="anchored" data-anchor-id="vs-code-다운로드">VS Code 다운로드</h4>
 <ul>
 <li><a href="https://code.visualstudio.com/">VS Code 공식 웹사이트</a>에 접속한다.<br>
 </li>
 <li>사용 중인 운영 체제(Windows, macOS, Linux)에 맞는 설치 파일을 다운로드한다.</li>
 </ul>
 </section>
-<section id="windows에서-설치-1" class="level3">
-<h3 class="anchored" data-anchor-id="windows에서-설치-1">Windows에서 설치</h3>
+<section id="windows에서-설치-1" class="level4">
+<h4 class="anchored" data-anchor-id="windows에서-설치-1">Windows에서 설치</h4>
 <ul>
 <li>다운로드한 <code>VSCodeUserSetup.exe</code> 파일을 실행한다.<br>
 </li>
@@ -467,8 +470,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong>“Install”</strong> 버튼을 클릭하여 설치를 완료한 후, <strong>“Finish”</strong>를 눌러 실행한다.</li>
 </ul>
 </section>
-<section id="macos에서-설치-1" class="level3">
-<h3 class="anchored" data-anchor-id="macos에서-설치-1">macOS에서 설치</h3>
+<section id="macos에서-설치-1" class="level4">
+<h4 class="anchored" data-anchor-id="macos에서-설치-1">macOS에서 설치</h4>
 <ul>
 <li><p>다운로드한 <code>VSCode-darwin.zip</code> 파일을 압축 해제한다.<br>
 </p></li>
@@ -478,8 +481,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb3"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ln <span class="at">-s</span> /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
-<section id="linuxubuntu에서-설치-1" class="level3">
-<h3 class="anchored" data-anchor-id="linuxubuntu에서-설치-1">Linux(Ubuntu)에서 설치</h3>
+<section id="linuxubuntu에서-설치-1" class="level4">
+<h4 class="anchored" data-anchor-id="linuxubuntu에서-설치-1">Linux(Ubuntu)에서 설치</h4>
 <ul>
 <li><p>터미널을 열고 다음 명령어를 실행하여 설치한다.</p>
 <div class="sourceCode" id="cb4"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
@@ -488,15 +491,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode" id="cb5"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
 </section>
-<section id="vs-code에서-파이썬-개발-환경-설정" class="level3">
-<h3 class="anchored" data-anchor-id="vs-code에서-파이썬-개발-환경-설정">VS Code에서 파이썬 개발 환경 설정</h3>
-<section id="파이썬-확장-프로그램-설치" class="level4">
-<h4 class="anchored" data-anchor-id="파이썬-확장-프로그램-설치">1) 파이썬 확장 프로그램 설치</h4>
+<section id="vs-code에서-파이썬-개발-환경-설정" class="level4">
+<h4 class="anchored" data-anchor-id="vs-code에서-파이썬-개발-환경-설정">VS Code에서 파이썬 개발 환경 설정</h4>
+<section id="파이썬-확장-프로그램-설치" class="level5">
+<h5 class="anchored" data-anchor-id="파이썬-확장-프로그램-설치">1) 파이썬 확장 프로그램 설치</h5>
 <ul>
 <li>VS Code를 실행하고 <strong>확장(Extensions)</strong> 메뉴(<code>Ctrl + Shift + X</code>)를 연다.<br>
 </li>
 <li>검색창에 <strong>“Python”</strong>을 입력하고 <strong>Microsoft 제공 Python 확장 프로그램</strong>을 설치한다.</li>
 </ul>
+</section>
 </section>
 <section id="기본-인터프리터-설정" class="level4">
 <h4 class="anchored" data-anchor-id="기본-인터프리터-설정">2) 기본 인터프리터 설정</h4>
@@ -507,9 +511,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li>터미널에서 <code>python --version</code>을 실행하여 정상적으로 설정되었는지 확인한다.</li>
 </ul>
-</section>
-<section id="실행-및-디버깅" class="level4">
-<h4 class="anchored" data-anchor-id="실행-및-디버깅">3) 실행 및 디버깅</h4>
+<section id="실행-및-디버깅" class="level5">
+<h5 class="anchored" data-anchor-id="실행-및-디버깅">3) 실행 및 디버깅</h5>
 <ul>
 <li><code>.py</code> 파일을 만들고 파이썬 코드를 작성한다.<br>
 </li>
@@ -517,8 +520,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 </section>
-<section id="설치-확인-1" class="level3">
-<h3 class="anchored" data-anchor-id="설치-확인-1">설치 확인</h3>
+<section id="설치-확인-1" class="level4">
+<h4 class="anchored" data-anchor-id="설치-확인-1">설치 확인</h4>
 <ul>
 <li><p>VS Code에서 `Ctrl + `` 키를 눌러 터미널을 연다.<br>
 </p></li>
@@ -527,14 +530,84 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <p>설치가 완료되면 VS Code를 활용하여 편리하게 파이썬 프로그래밍을 진행할 수 있다.</p>
 </section>
+</section>
 <section id="sec-jupyter-notebook" class="level3">
 <h3 class="anchored" data-anchor-id="sec-jupyter-notebook">Jupyter Notebook</h3>
+<center>
+<img src="images/jupyter_notebook.png" class="img-fluid">
+</center>
+<p>Jupyter Notebook은 웹 기반의 대화형 개발 환경으로, 파이썬 코드 실행과 문서화를 동시에 할 수 있어 데이터 분석 및 머신러닝 작업에 많이 사용된다.</p>
+<section id="jupyter-notebook-설치-전-준비" class="level4">
+<h4 class="anchored" data-anchor-id="jupyter-notebook-설치-전-준비">Jupyter Notebook 설치 전 준비</h4>
+<p>Jupyter Notebook을 사용하려면 먼저 파이썬이 설치되어 있어야 한다.<br>
+- 아래 명령어를 실행하여 파이썬이 설치되어 있는지 확인한다.</p>
+<pre><code>```sh
+python --version
+```</code></pre>
+<ul>
+<li>설치되어 있지 않다면 <a href="https://www.python.org/">파이썬 공식 사이트</a>에서 설치한다(<a href="#sec-install-python" class="quarto-xref"><span>파이썬 설치</span></a> 참고).</li>
+</ul>
+</section>
+<section id="jupyter-notebook-설치" class="level4">
+<h4 class="anchored" data-anchor-id="jupyter-notebook-설치">Jupyter Notebook 설치</h4>
+<section id="pip을-이용한-설치" class="level5">
+<h5 class="anchored" data-anchor-id="pip을-이용한-설치">1) pip을 이용한 설치</h5>
+<ul>
+<li><p>터미널(또는 명령 프롬프트)을 열고 아래 명령어를 입력한다.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>설치가 완료되면 <code>jupyter --version</code>을 실행하여 정상적으로 설치되었는지 확인한다.</p></li>
+</ul>
+</section>
+<section id="anaconda를-이용한-설치" class="level5">
+<h5 class="anchored" data-anchor-id="anaconda를-이용한-설치">2) Anaconda를 이용한 설치</h5>
+<ul>
+<li><p><a href="https://www.anaconda.com/">Anaconda 공식 사이트</a>에서 설치 파일을 다운로드한다.<br>
+</p></li>
+<li><p>설치 후, 터미널(또는 Anaconda Prompt)에서 아래 명령어를 입력한다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyter</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>설치가 완료되면 <code>jupyter --version</code>을 실행하여 확인한다.</p></li>
+</ul>
+</section>
+</section>
+<section id="jupyter-notebook-실행" class="level4">
+<h4 class="anchored" data-anchor-id="jupyter-notebook-실행">Jupyter Notebook 실행</h4>
+<ul>
+<li><p>터미널 또는 명령 프롬프트에서 아래 명령어를 입력한다.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p>자동으로 웹 브라우저가 열리며 Jupyter Notebook 인터페이스가 실행된다.</p></li>
+</ul>
+</section>
+<section id="jupyter-notebook-사용-방법" class="level4">
+<h4 class="anchored" data-anchor-id="jupyter-notebook-사용-방법">4. Jupyter Notebook 사용 방법</h4>
+<section id="새-노트북-생성" class="level5">
+<h5 class="anchored" data-anchor-id="새-노트북-생성">1) 새 노트북 생성</h5>
+<ul>
+<li>Jupyter Notebook 실행 후, <strong>New &gt; Python 3</strong>을 클릭하여 새로운 노트북을 만든다.</li>
+</ul>
+</section>
+<section id="코드-실행" class="level5">
+<h5 class="anchored" data-anchor-id="코드-실행">2) 코드 실행</h5>
+<ul>
+<li><p>코드 셀에 파이썬 코드를 입력한 후, <code>Shift + Enter</code>를 눌러 실행한다.</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, Jupyter Notebook!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul>
+</section>
+<section id="저장-및-종료" class="level5">
+<h5 class="anchored" data-anchor-id="저장-및-종료">3) 저장 및 종료</h5>
+<ul>
+<li><strong>파일 &gt; Save and Checkpoint</strong>를 선택하여 작업을 저장한다.<br>
+</li>
+<li>Jupyter Notebook을 종료하려면 터미널에서 <code>Ctrl + C</code>를 누르고 <code>y</code>를 입력한다.</li>
+</ul>
+<p>설치가 완료되면 Jupyter Notebook을 활용하여 데이터 분석, 머신러닝, 문서 작성 등을 편리하게 수행할 수 있다.</p>
+</section>
+</section>
 </section>
 </section>
 <section id="첫-번째-프로그램" class="level2">
 <h2 class="anchored" data-anchor-id="첫-번째-프로그램">첫 번째 프로그램</h2>
-<div id="ca006295" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="860a8807" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello World</code></pre>
 </div>
@@ -582,8 +655,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p><strong>대화형 셸(Interactive Shell)</strong>:<br>
 실행 후 나타나는 창에서 바로 파이썬 코드를 입력하고 실행할 수 있다.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hello, Python!"</span>)</span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>Hello, Python<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hello, Python!"</span>)</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>Hello, Python<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>스크립트 작성 및 실행</strong>:<br>
 <code>File &gt; New File</code>을 선택하여 새 파일을 만들고 코드를 작성한 후, <code>F5</code> 키를 눌러 실행할 수 있다.</p></li>
 </ul>
