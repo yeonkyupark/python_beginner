@@ -185,5 +185,93 @@
       "파이썬 기초",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>파이썬 소개</span>"
     ]
+  },
+  {
+    "objectID": "20syntax.html",
+    "href": "20syntax.html",
+    "title": "문법",
+    "section": "",
+    "text": "변수와 상수\n변수, 상수, 리터럴은 프로그래밍에서 데이터를 저장하고 관리하는 개념이다.",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
+  },
+  {
+    "objectID": "20syntax.html#변수와-상수",
+    "href": "20syntax.html#변수와-상수",
+    "title": "문법",
+    "section": "",
+    "text": "변수\n변수란 값을 변경할 수 있는 저장 공간을 말한다.\n\n프로그램에서 데이터를 저장하고 변경할 수 있는 공간\n\n특정한 값이 할당되며, 필요에 따라 변경할 수 있음\n\n선언 시 변수명을 사용하여 값을 저장하고 참조함\n\n\n\n상수\n상수란 값을 변경할 수 없는 저장 공간을 말한다.\n\n한 번 할당되면 변경할 수 없는 값\n\n프로그램이 실행되는 동안 값이 유지됨\n\n일반적으로 const, final 등의 키워드를 사용하여 선언함\n\n\n\n리터럴\n저장 공간에 실제 저장하는 값을 말한다.\n\n프로그램에서 직접 사용하는 고정된 값\n\n변수나 상수에 할당되는 실제 데이터 값\n\n숫자, 문자열, 불리언, 배열 등 다양한 형태가 있음\n\n아래는 파이썬 예제이다.\n# 변수\nx = 10  \ny = \"Hello\"\n\n# 상수 (Python에서는 관례적으로 대문자로 작성)\nPI = 3.14159  \n\n# 리터럴\nprint(100)       # 정수 리터럴\nprint(3.14)      # 실수 리터럴\nprint(\"Python\")  # 문자열 리터럴\n파이썬에서는 상수를 만드는 “const”와 같은 키워드를 제공하지 않는다. 관례적으로 상수인 경우 변수명을 대문자로 작성한다(개발자간 암묵적인 규칙).",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
+  },
+  {
+    "objectID": "20syntax.html#sec-datatype",
+    "href": "20syntax.html#sec-datatype",
+    "title": "문법",
+    "section": "자료형",
+    "text": "자료형\n자료형은 데이터의 종류를 나타내는 것이다. 프로그래밍에서 데이터를 다룰 때, 컴퓨터가 그 데이터의 성격을 이해할 수 있도록 자료형을 사용한다.\n\n자료형의 역할\n\n데이터를 어떻게 저장하고 처리할지 결정한다.\n허용되는 연산을 정의한다.\n\n\n\n파이썬에서 주요 자료형\n\n숫자형 (Number)\n\n정수, 실수, 복소수를 포함한다.\n예: 10(정수), 3.14(실수)\n\n문자열 (String)\n\n문자나 단어를 묶어놓은 데이터.\n예: \"안녕하세요\", 'Python'\n\n불리언 (Boolean)\n\n참(True)과 거짓(False)만을 표현하는 자료형.\n예: True, False\n\n리스트 (List)\n\n여러 개의 값을 순서대로 저장하는 자료형.\n예: [1, 2, 3], [\"a\", \"b\", \"c\"]\n\n튜플 (Tuple)\n\n리스트와 비슷하지만, 값이 변경되지 않는다.\n예: (1, 2, 3)\n\n딕셔너리 (Dictionary)\n\n키(key)와 값(value)을 쌍으로 저장하는 자료형.\n예: {\"이름\": \"철수\", \"나이\": 20}\n\n집합 (Set)\n\n중복 없는 값을 저장하는 자료형.\n예: {1, 2, 3}\n\n\n\n\n자료형의 예제\n# 숫자형\nx = 10\ny = 3.14\n\n# 문자열\nname = \"Python\"\n\n# 논리값(불리언)\nis_valid = True\n\n# 리스트\nnumbers = [1, 2, 3]\n\n# 튜플\ncoordinates = (10, 20)\n\n# 딕셔너리\nperson = {\"name\": \"Alice\", \"age\": 25}\n\n# 집합\nunique_numbers = {1, 2, 3, 4}\n\n\n쉽게 기억하는 법\n\n숫자: 계산할 수 있는 데이터\n\n문자열: 글자나 단어를 표현\n\n리스트/튜플: 여러 개의 데이터를 하나로 묶기\n\n딕셔너리: “단어: 뜻”처럼 짝지어진 데이터\n\n불리언: 맞다/틀리다(True/False)로 답하는 데이터",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
+  },
+  {
+    "objectID": "20syntax.html#sec-numeric",
+    "href": "20syntax.html#sec-numeric",
+    "title": "문법",
+    "section": "숫자형",
+    "text": "숫자형\n파이썬에서 숫자형 자료형은 숫자를 저장하고 연산할 수 있는 데이터 타입이다. 크게 정수형, 실수형, 복소수형으로 나뉜다.\n\n정수형 (Integer, int)\n\n소수점이 없는 정수 값을 저장하는 자료형\n\n크기의 제한 없이 매우 큰 정수도 표현 가능\n\n양수, 음수, 0을 포함\n\n예제\n\na = 10   # 양의 정수\nb = -5   # 음의 정수\nc = 0    # 0도 정수\nd = 999999999999999999999  # 매우 큰 정수도 가능\nprint(type(a))  # &lt;class 'int'&gt;\n\n&lt;class 'int'&gt;\n\n\n\n\n\n실수형 (Floating Point, float)\n\n소수점이 있는 숫자를 표현하는 자료형\n\n부동소수점(floating point) 방식으로 저장됨\n\n지수 표현(e 표기법)을 사용하여 매우 큰 숫자나 매우 작은 숫자도 표현 가능\n\n예제\n\nx = 3.14   # 일반적인 실수\ny = -2.71  # 음수 실수\nz = 1.2e3  # 1.2 × 10³ = 1200.0\nw = 5e-4   # 5 × 10⁻⁴ = 0.0005\nprint(type(x))  # &lt;class 'float'&gt;\n\n&lt;class 'float'&gt;\n\n\n\n\n\n복소수형 (Complex Number, complex)\n\n수학에서 사용하는 복소수를 표현하는 자료형\n\n실수부(real)와 허수부(imag)로 구성됨\n\n허수부는 j를 사용하여 표현\n\n예제\n\nnum1 = 3 + 4j  # 3 + 4i (수학에서의 허수 i를 j로 표현)\nnum2 = -2 - 5j\nprint(num1.real)  # 실수부: 3.0\nprint(num1.imag)  # 허수부: 4.0\nprint(type(num1)) # &lt;class 'complex'&gt;\n\n3.0\n4.0\n&lt;class 'complex'&gt;\n\n\n\n\n\n형 변환 (Type Conversion)\n\n숫자형 간 변환이 가능하며, int(), float(), complex()를 사용함\n\n예제\n\nprint(int(3.14))     # 3 (실수를 정수로 변환)\nprint(float(5))      # 5.0 (정수를 실수로 변환)\nprint(complex(2))    # (2+0j) (정수를 복소수로 변환)\n\n3\n5.0\n(2+0j)\n\n\n\n\n\n숫자형과 관련된 내장 함수\n\n\n\n\n\n\n\n\n함수\n설명\n예제\n\n\n\n\nabs(x)\n절댓값 반환\nabs(-5) → 5\n\n\nround(x, n)\n반올림 (소수점 n자리까지)\nround(3.14159, 2) → 3.14\n\n\npow(x, y)\nx의 y제곱 (거듭제곱)\npow(2, 3) → 8\n\n\ndivmod(x, y)\n(몫, 나머지) 튜플 반환\ndivmod(10, 3) → (3, 1)\n\n\n\n\nprint(abs(-7))        # 7\nprint(round(3.14159, 2)) # 3.14\nprint(pow(2, 3))      # 8\nprint(divmod(10, 3))  # (3, 1)\n\n7\n3.14\n8\n(3, 1)",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
+  },
+  {
+    "objectID": "20syntax.html#sec-string",
+    "href": "20syntax.html#sec-string",
+    "title": "문법",
+    "section": "문자형",
+    "text": "문자형\n파이썬에서 문자열(String, str)은 문자들의 연속된 집합으로, 텍스트 데이터를 저장하는 자료형이다. 작은따옴표(')나 큰따옴표(\")로 감싸서 표현한다.\n\n문자열 생성\n\ntext1 = 'Hello'       # 작은따옴표 사용\ntext2 = \"Python\"      # 큰따옴표 사용\ntext3 = '''Hello'''   # 작은따옴표 세 개 사용\ntext4 = \"\"\"Python\"\"\"  # 큰따옴표 세 개 사용\n\nprint(type(text1))  # &lt;class 'str'&gt;\n\n&lt;class 'str'&gt;\n\n\n\n작은따옴표와 큰따옴표는 동일하게 작동한다.\n세 개의 따옴표(''' 또는 \"\"\")는 여러 줄 문자열을 만들 때 사용한다.\n\n\nmulti_line = \"\"\"이것은\n    여러 줄의\n문자열입니다.\"\"\"\nprint(multi_line)\n\n이것은\n    여러 줄의\n문자열입니다.\n\n\n\n\n문자열 인덱싱(Indexing)과 슬라이싱(Slicing)\n문자열은 인덱스를 사용하여 개별 문자에 접근할 수 있다. 인덱스는 0부터 시작하며, 음수 인덱스를 사용하면 뒤에서부터 접근 가능하다.\n\n인덱싱\n\ntext = \"Python\"\nprint(text[0])   # 'P'\nprint(text[-1])  # 'n' (뒤에서 첫 번째 문자)\n\nP\nn\n\n\n\n\n슬라이싱\n\ntext = \"Python\"\nprint(text[0:4])  # 'Pyth' (0부터 3까지)\nprint(text[:3])   # 'Pyt' (처음부터 2까지)\nprint(text[2:])   # 'thon' (2부터 끝까지)\nprint(text[-4:-1])# 'tho' (뒤에서 4번째부터 뒤에서 2번째까지)\nprint(text[::-1]) # 'nohtyP' (문자열 뒤집기)\n\nPyth\nPyt\nthon\ntho\nnohtyP\n\n\n\n\n\n문자열 연산\n파이썬의 문자열은 더하기(+)와 곱하기(*) 연산을 지원한다.\n\n\n\n연산자\n설명\n예제\n\n\n\n\n+\n문자열 연결\n'Hello' + 'World' → 'HelloWorld'\n\n\n*\n문자열 반복\n'Python' * 3 → 'PythonPythonPython'\n\n\n\n\na = \"Hello\"\nb = \"World\"\nprint(a + \" \" + b)  # \"Hello World\"\n\nc = \"Python\"\nprint(c * 3)  # \"PythonPythonPython\"\n\nHello World\nPythonPythonPython\n\n\n\n\n문자열 길이 확인\nlen() 함수를 사용하면 문자열의 길이를 확인할 수 있다.\n\ntext = \"Hello Python\"\nprint(len(text))  # 12\n\n12\n\n\n\n\n문자열 내장 함수\n문자열 조작을 위한 다양한 함수가 제공된다.\n\n\n\n\n\n\n\n\n함수\n설명\n예제\n\n\n\n\nupper()\n대문자로 변환\n\"hello\".upper() → \"HELLO\"\n\n\nlower()\n소문자로 변환\n\"PYTHON\".lower() → \"python\"\n\n\nstrip()\n공백 제거\n\" hello \".strip() → \"hello\"\n\n\nreplace(a, b)\n문자열 치환\n\"Hello\".replace(\"H\", \"J\") → \"Jello\"\n\n\nsplit(sep)\n문자열 분할\n\"a,b,c\".split(\",\") → ['a', 'b', 'c']\n\n\njoin(iterable)\n문자열 합치기\n\" \".join(['Hello', 'World']) → \"Hello World\"\n\n\nfind(sub)\n문자열 찾기 (인덱스 반환)\n\"Python\".find(\"y\") → 1\n\n\ncount(sub)\n특정 문자 개수 세기\n\"banana\".count(\"a\") → 3\n\n\nstartswith(sub)\n특정 문자열로 시작하는지 확인\n\"Python\".startswith(\"Py\") → True\n\n\nendswith(sub)\n특정 문자열로 끝나는지 확인\n\"Python\".endswith(\"on\") → True\n\n\n\n\ntext = \" hello python \"\nprint(text.upper())    # \" HELLO PYTHON \"\nprint(text.strip())    # \"hello python\"\nprint(text.replace(\"python\", \"world\"))  # \" hello world \"\nprint(\"apple,banana,grape\".split(\",\"))  # ['apple', 'banana', 'grape']\nprint(\"-\".join([\"2025\", \"01\", \"30\"]))   # \"2025-01-30\"\nprint(\"banana\".count(\"a\"))  # 3\n\n HELLO PYTHON \nhello python\n hello world \n['apple', 'banana', 'grape']\n2025-01-30\n3\n\n\n\n\n문자열 포맷팅 (Formatting)\n문자열 안에 변수를 삽입하는 방법으로 f-문자열, format(), % 기법이 있다.\n\nf-문자열 (Python 3.6 이상)\n\nname = \"Alice\"\nage = 25\nprint(f\"이름: {name}, 나이: {age}\")  # \"이름: Alice, 나이: 25\"\n\n이름: Alice, 나이: 25\n\n\n\n\nformat() 사용\n\nname = \"Alice\"\nage = 25\nprint(\"이름: {}, 나이: {}\".format(name, age))  # \"이름: Alice, 나이: 25\"\nprint(\"이름: {0}, 나이: {1}\".format(name, age))  # \"이름: Alice, 나이: 25\"\n\n이름: Alice, 나이: 25\n이름: Alice, 나이: 25\n\n\n\n\n% 기법 (옛날 방식)\n\nname = \"Alice\"\nage = 25\nprint(\"이름: %s, 나이: %d\" % (name, age))  # \"이름: Alice, 나이: 25\"\n\n이름: Alice, 나이: 25\n\n\n\n\n\n문자열 비교\n파이썬에서는 문자열을 사전 순서(ASCII 값 기준)로 비교한다.\n\n\n\n연산자\n설명\n예제\n\n\n\n\n==\n문자열이 같은지 비교\n\"apple\" == \"apple\" → True\n\n\n!=\n문자열이 다른지 비교\n\"apple\" != \"banana\" → True\n\n\n&lt;, &gt;\n사전순 비교\n\"apple\" &lt; \"banana\" → True\n\n\n\n\nprint(\"apple\" == \"apple\")  # True\nprint(\"apple\" != \"banana\") # True\nprint(\"apple\" &lt; \"banana\")  # True (사전순 비교)\nprint(\"Zebra\" &gt; \"apple\")   # False ('Z'의 ASCII 값이 'a'보다 작음)\n\nTrue\nTrue\nTrue\nFalse\n\n\n\n\n문자열을 숫자로 변환\nint(), float()를 사용하면 문자열을 숫자로 변환할 수 있다.\n\nnum_str = \"100\"\nprint(int(num_str) + 5)  # 105 (문자열 → 정수)\n\nfloat_str = \"3.14\"\nprint(float(float_str) * 2)  # 6.28 (문자열 → 실수)\n\n105\n6.28\n\n\n문자열 관련 내용을 정리하면 다음과 같다.\n\n\n\n\n\n\n\n\n개념\n설명\n예제\n\n\n\n\n문자열 생성\n작은따옴표 또는 큰따옴표 사용\n'Hello', \"Python\"\n\n\n인덱싱\n특정 문자 접근\n\"Python\"[0] → 'P'\n\n\n슬라이싱\n문자열 일부 가져오기\n\"Python\"[1:4] → 'yth'\n\n\n연산\n+ (연결), * (반복)\n\"Hello\" + \"World\", \"Hi\" * 3\n\n\n내장 함수\n문자열 조작\n\"hello\".upper(), \"text\".replace(\"t\", \"T\")\n\n\n포맷팅\n변수 포함\nf\"이름: {name}\", \"이름: {}\".format(name)\n\n\n비교\n문자열 비교\n\"apple\" &lt; \"banana\" → True\n\n\n\n파이썬의 문자열은 변경할 수 없는(Immutable) 객체이지만, 다양한 함수와 연산을 활용하여 쉽게 다룰 수 있다.",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
+  },
+  {
+    "objectID": "20syntax.html#sec-boolean",
+    "href": "20syntax.html#sec-boolean",
+    "title": "문법",
+    "section": "논리형",
+    "text": "논리형\n파이썬에서 불리언(Boolean, bool) 자료형은 참(True)과 거짓(False)을 표현하는 데이터 타입이다.\n\n불리언 값과 생성\nTrue 또는 False 값을 가지며, 첫 글자는 반드시 대문자로 작성한다(true, false는 오류 발생) .\n\na = True\nb = False\nprint(type(a))  # &lt;class 'bool'&gt;\nprint(type(b))  # &lt;class 'bool'&gt;\n\n&lt;class 'bool'&gt;\n&lt;class 'bool'&gt;\n\n\n\n\n불리언 연산\n논리 연산자(and, or, not)를 사용하여 조합 가능하다.\n\n\n\n연산자\n설명\n예제\n\n\n\n\nand\n두 값이 모두 참이면 True\nTrue and True → True\n\n\nor\n하나라도 참이면 True\nTrue or False → True\n\n\nnot\n값을 반대로 변환\nnot True → False\n\n\n\n\nprint(True and False)  # False\nprint(True or False)   # True\nprint(not True)        # False\n\nFalse\nTrue\nFalse\n\n\n\n\n불리언과 숫자 변환\nTrue는 1, False는 0과 동일하게 동작한다. int()와 bool()을 사용하여 변환 가능하다.\n\nprint(int(True))   # 1\nprint(int(False))  # 0\nprint(bool(1))     # True\nprint(bool(0))     # False\n\n1\n0\nTrue\nFalse\n\n\n\n\nbool()을 사용한 참/거짓 판별\n아래 값들은 False로 간주된다.\n\n0\n0.0\n'' (빈 문자열)\nNone\n[] (빈 리스트)\n{} (빈 딕셔너리)\nset() (빈 집합)\n\n\nprint(bool(0))       # False\nprint(bool(0.0))     # False\nprint(bool(\"\"))      # False\nprint(bool([]))      # False\nprint(bool(None))    # False\nprint(bool(\"Python\"))  # True (문자가 있으면 True)\nprint(bool([1, 2, 3]))  # True (리스트에 요소가 있으면 True)\n\nFalse\nFalse\nFalse\nFalse\nFalse\nTrue\nTrue\n\n\n불리언 자료형은 조건문 (if), 반복문 (while), 논리 연산 등에 널리 사용된다.",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
+  },
+  {
+    "objectID": "20syntax.html#연산자",
+    "href": "20syntax.html#연산자",
+    "title": "문법",
+    "section": "연산자",
+    "text": "연산자\n파이썬에서는 산술, 비교, 논리, 대입 등과 같은 연산자를 제공한다.\n\n산술\n파이썬에서 산술 연산자는 숫자 값을 계산하는 연산자이다. 기본적인 사칙연산뿐만 아니라 나머지 연산, 거듭제곱 연산, 몫 연산도 제공한다.\n\n산술 연산자 종류\n\n\n\n연산자\n설명\n예제\n결과\n\n\n\n\n+\n덧셈\n10 + 5\n15\n\n\n-\n뺄셈\n10 - 5\n5\n\n\n*\n곱셈\n10 * 5\n50\n\n\n/\n나눗셈 (소수점 포함)\n10 / 3\n3.3333\n\n\n//\n몫 연산 (정수 나눗셈)\n10 // 3\n3\n\n\n%\n나머지 연산\n10 % 3\n1\n\n\n**\n거듭제곱\n2 ** 3\n8\n\n\n\n\n\n덧셈(+)과 뺄셈(-)\n\na = 10\nb = 5\nprint(a + b)  # 15\nprint(a - b)  # 5\n\n15\n5\n\n\n\n\n곱셈(*)과 나눗셈(/)\n\nx = 10\ny = 3\nprint(x * y)  # 30\nprint(x / y)  # 3.3333333333333335 (소수 포함)\n\n30\n3.3333333333333335\n\n\n\nx = 10\ny = 0\nprint(x / y)  # ZeroDivisionError\n\n\n---------------------------------------------------------------------------\nZeroDivisionError                         Traceback (most recent call last)\nCell In[24], line 3\n      1 x = 10\n      2 y = 0\n----&gt; 3 print(x / y)  # ZeroDivisionError\n\nZeroDivisionError: division by zero\n\n\n\n\n\n몫 연산(//)\n결과값이 정수로 반환된다(소수점 이하 버림).\n\nprint(10 // 3)  # 3\nprint(-10 // 3) # -4 (음수는 반올림이 아니라 내림)\n\n3\n-4\n\n\n\n\n연산(%)\n\nprint(10 % 3)  # 1\nprint(15 % 4)  # 3\n\n1\n3\n\n\n\n\n거듭제곱(**)\n\nprint(2 ** 3)  # 8 (2의 3제곱)\nprint(5 ** 2)  # 25 (5의 제곱)\nprint(9 ** 0.5) # 3.0 (제곱근)\n\n8\n25\n3.0\n\n\n\n\n\n산술 연산과 자료형\nint와 float이 함께 연산되면 결과는 float이 된다.\n\nprint(5 + 2.5)  # 7.5 (int + float = float)\nprint(10 / 2)   # 5.0 (나눗셈 결과는 항상 float)\n\n7.5\n5.0\n\n\n\n\n연산자 우선순위\n파이썬의 산술 연산자는 수학과 동일한 우선순위를 따른다. 우선순위가 높을수록 먼저 계산된다.\n\n\n\n연산자\n우선순위 (높음 → 낮음)\n\n\n\n\n**\n거듭제곱\n\n\n*, /, //, %\n곱셈, 나눗셈, 몫, 나머지\n\n\n+, -\n덧셈, 뺄셈\n\n\n\n\nprint(2 + 3 * 4)     # 14 (* 먼저 계산)\nprint((2 + 3) * 4)   # 20 (괄호 안 먼저 계산)\nprint(2 ** 3 * 4)    # 32 (** 먼저 계산)\n\n14\n20\n32\n\n\n우선 순위가 있는 연산시 혼동을 피하기 위해 괄로로 묶어 계산한다.\n\n\n\n비교\n파이썬에서 비교 연산자는 두 값을 비교하고 True 또는 False를 반환하는 연산자이다.\n\n\n비교 연산자 종류\n\n\n\n\n\n\n\n\n\n\n연산자\n의미\n설명\n예제\n결과\n\n\n\n\n==\n같음\n두 값이 같으면 True, 다르면 False\n5 == 5\nTrue\n\n\n!=\n다름\n두 값이 다르면 True, 같으면 False\n5 != 3\nTrue\n\n\n&lt;\n작음\n왼쪽 값이 오른쪽 값보다 작으면 True\n3 &lt; 5\nTrue\n\n\n&gt;\n큼\n왼쪽 값이 오른쪽 값보다 크면 True\n5 &gt; 3\nTrue\n\n\n&lt;=\n작거나 같음\n왼쪽 값이 오른쪽 값보다 작거나 같으면 True\n5 &lt;= 5\nTrue\n\n\n&gt;=\n크거나 같음\n왼쪽 값이 오른쪽 값보다 크거나 같으면 True\n5 &gt;= 3\nTrue\n\n\n\n\n\n== (같음)\n\n두 값이 같으면 True, 다르면 False를 반환한다.\n\n\n\nprint(5 == 5)  # True\nprint(5 == 3)  # False\n\nTrue\nFalse\n\n\n\n!= (다름)\n\n두 값이 다르면 True, 같으면 False를 반환한다.\n\n\n\nprint(5 != 3)  # True\nprint(5 != 5)  # False\n\nTrue\nFalse\n\n\n\n&lt; (작음)\n\n왼쪽 값이 오른쪽 값보다 작으면 True, 크거나 같으면 False를 반환한다.\n\n\n\nprint(3 &lt; 5)  # True\nprint(5 &lt; 5)  # False\n\nTrue\nFalse\n\n\n\n&gt; (큼)\n\n왼쪽 값이 오른쪽 값보다 크면 True, 작거나 같으면 False를 반환한다.\n\n\n\nprint(5 &gt; 3)  # True\nprint(5 &gt; 5)  # False\n\nTrue\nFalse\n\n\n\n&lt;= (작거나 같음)\n\n왼쪽 값이 오른쪽 값보다 작거나 같으면 True, 크면 False를 반환한다.\n\n\n\nprint(3 &lt;= 5)  # True\nprint(5 &lt;= 5)  # True\nprint(6 &lt;= 5)  # False\n\nTrue\nTrue\nFalse\n\n\n\n&gt;= (크거나 같음)\n\n왼쪽 값이 오른쪽 값보다 크거나 같으면 True, 작으면 False를 반환한다.\n\n\n\nprint(5 &gt;= 3)  # True\nprint(5 &gt;= 5)  # True\nprint(3 &gt;= 5)  # False\n\nTrue\nTrue\nFalse\n\n\n\n\n\n비교 연산자의 특징\n\n\n문자열 비교\n\n문자열도 비교 연산자로 비교할 수 있으며, 사전 순서(ASCII 코드 값) 에 따라 결과가 결정된다.\n\n\n\nprint(\"apple\" &lt; \"banana\")  # True (\"a\"가 \"b\"보다 앞에 있음)\nprint(\"abc\" &lt; \"abcd\")  # True (문자 수가 적은 것이 더 작음)\n\nTrue\nTrue\n\n\n\n논리값 비교\n\nTrue는 1, False는 0과 동등하게 취급된다.\n\n\n\nprint(True == 1)  # True\nprint(False == 0)  # True\nprint(True &gt; False)  # True (1 &gt; 0)\n\nTrue\nTrue\nTrue\n\n\n\n비교 연산자 연쇄 사용 (Chaining)\n\n여러 개의 비교 연산자를 연결하여 사용할 수 있다.\n\n\n\nx = 5\nprint(3 &lt; x &lt; 10)  # True (3 &lt; 5 and 5 &lt; 10)\nprint(3 &lt; x &gt; 2)  # True (3 &lt; 5 and 5 &gt; 2)\n\nTrue\nTrue\n\n\n\n비교 연산자는 조건문, 반복문, 필터링 등의 다양한 상황에서 활용된다.\n\n\n논리\n\n\n대입\n\n\n기타 연산자\n\n멤버 연산자",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
+  },
+  {
+    "objectID": "20syntax.html#주석-사용법",
+    "href": "20syntax.html#주석-사용법",
+    "title": "문법",
+    "section": "주석 사용법",
+    "text": "주석 사용법\n\n한줄 주석\n\n\n여러 줄 주석",
+    "crumbs": [
+      "파이썬 기초",
+      "<span class='chapter-number'>2</span>  <span class='chapter-title'>문법</span>"
+    ]
   }
 ]
