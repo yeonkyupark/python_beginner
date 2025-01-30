@@ -61,7 +61,7 @@ toc-title: 목차
 execute:
   freeze: auto
   
-jupyter: python3
+# jupyter: python3
 
 # editor: visual
 
