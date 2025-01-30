@@ -213,8 +213,18 @@ Jupyter Notebook을 사용하려면 먼저 파이썬이 설치되어 있어야 �
 
 ## 첫 번째 프로그램
 
+<center>
+![Hello, World[^ageekisborn]](http://s3.media.squarespace.com/production/2129687/19317774/.a/6a00d8341d3df553ef0147e2876bcc970b-pi)
+</center>
+
+[^ageekisborn]: https://geek-and-poke.com/geekandpoke/2011/2/11/a-geek-is-born.html
+
+화면에 "Hello, World"를 출력하는 프로그램을 작성한다.[^helloworld]
+
+[^helloworld]: [https://namu.wiki/w/Hello%2C%20world%21](https://namu.wiki/w/Hello%2C%20world%21){target="_blank"}
+
 ```{python}
-print("Hello World")
+print("Hello, World")
 ```
 
 ## 참고자료
