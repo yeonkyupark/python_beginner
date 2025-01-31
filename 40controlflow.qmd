@@ -202,14 +202,210 @@ else:
     print("0입니다.")
 ```
 
-
-
-
 ## 반복문
+
+반복문(iteration)은 제어문중 하나로, 프로그램 소스 코드내에서 특정한 부분의 코드가 반복적으로 수행될 수 있도록 하는 구문이다. 대표적인 구문으로 for문과 while문이 있다.
 
 ### for문
 
-### while문문
+`for` 문은 **반복 가능한(iterable) 객체(리스트, 튜플, 문자열, 딕셔너리, range 등)**의 요소를 **순차적으로 순회**하면서 실행되는 반복문이다.
+
+| 사용 방식 | 예제 |
+|----------|------|
+| 리스트 순회 | `for x in [1, 2, 3]: print(x)` |
+| `range()` 사용 | `for i in range(5): print(i)` |
+| 문자열 순회 | `for char in "hello": print(char)` |
+| 딕셔너리 순회 | `for key, value in dict.items(): print(key, value)` |
+| `enumerate()` 사용 | `for i, v in enumerate(lst): print(i, v)` |
+| `zip()` 사용 | `for x, y in zip(lst1, lst2): print(x, y)` |
+| 중첩 반복문 | `for i in range(3): for j in range(2): print(i, j)` |
+
+`for` 문을 활용하면 데이터를 **효율적으로 반복 처리**할 수 있다.
+
+#### 기본 `for` 문
+
+리스트의 각 요소를 하나씩 가져와서 변수에 할당한 후, 코드 블록을 실행한다.
+
+```{python}
+fruits = ["apple", "banana", "cherry"]
+
+for fruit in fruits:
+    print(fruit)
+```
+
+- `for 변수 in iterable:` 형식으로 작성된다.
+- `iterable`의 각 요소가 `변수`에 차례대로 할당되면서 반복 실행된다.
+
+#### `range()` 함수와 함께 사용
+
+`range()` 함수는 일정 범위의 숫자를 생성하며, `for` 문과 함께 자주 사용된다.
+
+```{python}
+for i in range(5):  # 0부터 4까지 반복
+    print(i)
+```
+
+##### `range(start, end, step)` 사용
+- `range(시작, 끝, 증가값)` 형식으로 사용하면 특정 범위에서 일정 간격으로 값을 생성할 수 있다.
+
+```{python}
+for i in range(1, 10, 2):  # 1부터 9까지 2씩 증가
+    print(i)
+```
+
+##### 문자열 순회
+
+문자열도 `for` 문을 사용하여 한 글자씩 순회할 수 있다.
+
+```{python}
+word = "Python"
+
+for char in word:
+    print(char)
+```
+
+#### 튜플 순회
+
+튜플도 `for` 문을 사용하여 요소를 순회할 수 있다.
+
+```{python}
+numbers = (10, 20, 30)
+
+for num in numbers:
+    print(num)
+```
+
+#### 딕셔너리 순회
+
+딕셔너리는 기본적으로 **키를 순회**하며, `keys()`, `values()`, `items()` 메서드를 활용하여 다양한 방식으로 순회할 수 있다.
+
+##### 키(key) 순회
+```{python}
+person = {"name": "Alice", "age": 25, "city": "Seoul"}
+
+for key in person:
+    print(key)  # 키만 출력
+```
+
+###### 값(value) 순회
+```{python}
+for value in person.values():
+    print(value)  # 값만 출력
+```
+
+##### 키-값(key-value) 쌍 순회
+```{python}
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
+#### `enumerate()`를 사용하여 인덱스와 함께 순회
+
+`enumerate()` 함수는 반복 가능한 객체를 순회하면서 **인덱스와 요소를 함께 제공**한다.
+
+```{python}
+fruits = ["apple", "banana", "cherry"]
+
+for index, fruit in enumerate(fruits):
+    print(f"{index}: {fruit}")
+```
+
+#### `zip()`을 사용하여 여러 리스트 동시에 순회
+
+`zip()` 함수는 여러 리스트를 묶어서 동시에 순회할 때 사용한다.
+
+```{python}
+names = ["Alice", "Bob", "Charlie"]
+ages = [25, 30, 35]
+
+for name, age in zip(names, ages):
+    print(f"{name}의 나이는 {age}살입니다.")
+```
+
+#### 중첩 `for` 문
+
+`for` 문 안에 또 다른 `for` 문을 넣어서 **이중 반복문**을 만들 수 있다.
+
+```{python}
+for i in range(3):  # 0, 1, 2
+    for j in range(2):  # 0, 1
+        print(f"i={i}, j={j}")
+```
+
+#### 반복문 제어문 (`break`, `continue`, `pass`)
+
+##### `break` 문
+`break` 문은 반복문을 즉시 종료한다.
+
+```{python}
+for i in range(5):
+    if i == 3:
+        break  # 3이 되면 반복 종료
+    print(i)
+```
+
+##### `continue` 문
+`continue` 문은 현재 반복을 건너뛰고 다음 반복을 수행한다.
+
+```{python}
+for i in range(5):
+    if i == 2:
+        continue  # 2일 때 건너뛰기
+    print(i)
+```
+
+##### `pass` 문
+`pass` 문은 실행할 코드가 없을 때 사용하며, 문법적으로 오류가 발생하지 않도록 한다.
+
+```{python}
+for i in range(5):
+    if i == 2:
+        pass  # 아무 동작도 하지 않음
+    else:
+        print(i)
+```
+
+#### 반복문과 `else`
+
+반복문에 `else`를 추가하면, **반복문이 정상적으로 끝났을 때** 실행된다. (`break`로 종료되면 실행되지 않음)
+
+```{python}
+for i in range(5):
+    print(i)
+else:
+    print("반복이 끝났습니다.")  # 정상 종료되면 실행
+```
+
+```{python}
+for i in range(5):
+    if i == 3:
+        break  # 반복 중단
+    print(i)
+else:
+    print("반복이 끝났습니다.")  # 실행되지 않음
+```
+
+#### 리스트 내포 (List Comprehension)
+
+`for` 문을 사용하여 **리스트를 간결하게 생성**할 수 있다.
+
+```{python}
+# 기존 방식
+squares = []
+for i in range(1, 6):
+    squares.append(i * i)
+
+print(squares)
+```
+
+```{python}
+# 리스트 내포 방식
+squares = [i * i for i in range(1, 6)]
+print(squares)  
+```
+
+
+### while문
 
 ## 기타 제어문
 
