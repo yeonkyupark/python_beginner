@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>50function – 파이썬 다루기</title>
+<title>함수 및 모듈 – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -83,7 +83,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./50function.html"><span class="chapter-title">50function</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./50function.html"><span class="chapter-title">함수 및 모듈</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,32 +145,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40controlflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">40controlflow</span></a>
+  <a href="./40controlflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">제어문</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50function.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">50function</span></a>
+  <a href="./50function.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">함수 및 모듈</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60file.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">60file</span></a>
+  <a href="./60file.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파일입출력</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">70exception</span></a>
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./80oop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">80oop</span></a>
+  <a href="./80oop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">클래스</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">90library</span></a>
+  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
   </div>
 </li>
       </ul>
@@ -202,7 +202,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app_markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">app_markdown</span></a>
+  <a href="./app_markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">마크다운</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -224,9 +224,9 @@ ul.task-list li input[type="checkbox"] {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./50function.html"><span class="chapter-title">50function</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./50function.html"><span class="chapter-title">함수 및 모듈</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">50function</span></h1>
+<h1 class="title"><span class="chapter-title">함수 및 모듈</span></h1>
 </div>
 
 
@@ -666,13 +666,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./40controlflow.html" class="pagination-link" aria-label="40controlflow">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">40controlflow</span></span>
+      <a href="./40controlflow.html" class="pagination-link" aria-label="제어문">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">제어문</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./60file.html" class="pagination-link" aria-label="60file">
-        <span class="nav-page-text"><span class="chapter-title">60file</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./60file.html" class="pagination-link" aria-label="파일입출력">
+        <span class="nav-page-text"><span class="chapter-title">파일입출력</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

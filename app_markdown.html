@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Appendix A — app_markdown – 파이썬 다루기</title>
+<title>Appendix A — 마크다운 – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -83,7 +117,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app_markdown.html"><span class="chapter-title">app_markdown</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app_markdown.html"><span class="chapter-title">마크다운</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -145,32 +179,32 @@ ul.task-list li input[type="checkbox"] {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./40controlflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">40controlflow</span></a>
+  <a href="./40controlflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">제어문</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./50function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">50function</span></a>
+  <a href="./50function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">함수 및 모듈</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./60file.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">60file</span></a>
+  <a href="./60file.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파일입출력</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">70exception</span></a>
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./80oop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">80oop</span></a>
+  <a href="./80oop.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">클래스</span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">90library</span></a>
+  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
   </div>
 </li>
       </ul>
@@ -202,7 +236,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app_markdown.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">app_markdown</span></a>
+  <a href="./app_markdown.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">마크다운</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -218,15 +252,30 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#주요-특징" id="toc-주요-특징" class="nav-link active" data-scroll-target="#주요-특징">주요 특징</a></li>
+  <li><a href="#헤더headers" id="toc-헤더headers" class="nav-link" data-scroll-target="#헤더headers">1. <strong>헤더(Headers)</strong></a></li>
+  <li><a href="#강조emphasis" id="toc-강조emphasis" class="nav-link" data-scroll-target="#강조emphasis">2. <strong>강조(Emphasis)</strong></a></li>
+  <li><a href="#목록list" id="toc-목록list" class="nav-link" data-scroll-target="#목록list">3. <strong>목록(List)</strong></a></li>
+  <li><a href="#링크links" id="toc-링크links" class="nav-link" data-scroll-target="#링크links">4. <strong>링크(Links)</strong></a></li>
+  <li><a href="#이미지images" id="toc-이미지images" class="nav-link" data-scroll-target="#이미지images">5. <strong>이미지(Images)</strong></a></li>
+  <li><a href="#인용quote" id="toc-인용quote" class="nav-link" data-scroll-target="#인용quote">6. <strong>인용(Quote)</strong></a></li>
+  <li><a href="#코드code" id="toc-코드code" class="nav-link" data-scroll-target="#코드code">7. <strong>코드(Code)</strong></a></li>
+  <li><a href="#수평선horizontal-rule" id="toc-수평선horizontal-rule" class="nav-link" data-scroll-target="#수평선horizontal-rule">8. <strong>수평선(Horizontal Rule)</strong></a></li>
+  <li><a href="#참고자료" id="toc-참고자료" class="nav-link" data-scroll-target="#참고자료">참고자료</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/app_markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app_markdown.html"><span class="chapter-title">app_markdown</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">Appendices</a></li><li class="breadcrumb-item"><a href="./app_markdown.html"><span class="chapter-title">마크다운</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Appendix A — app_markdown</h1>
+<h1 class="title">Appendix A — 마크다운</h1>
 </div>
 
 
@@ -243,8 +292,235 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<p>마크다운(Markdown)은 <strong>간단한 텍스트 형식</strong>으로, HTML과 같은 복잡한 문법 없이도 <strong>서식 있는 문서</strong>를 작성할 수 있게 해주는 <strong>경량 마크업 언어</strong>입니다. 주로 <strong>문서화</strong>나 <strong>블로그</strong>에서 많이 사용되며, <strong>읽기 쉽고 쓰기 쉬운</strong> 특성이 있습니다.</p>
+<section id="주요-특징" class="level3">
+<h3 class="anchored" data-anchor-id="주요-특징">주요 특징</h3>
+<ol type="1">
+<li><strong>간결하고 직관적</strong>: 텍스트 파일로 쉽게 작성할 수 있고, 복잡한 코드나 태그 없이도 다양한 서식을 적용할 수 있습니다.</li>
+<li><strong>HTML로 변환 가능</strong>: 마크다운 문서는 HTML로 변환할 수 있어, 웹페이지 등에서 사용하기에 적합합니다.</li>
+<li><strong>포터블</strong>: 마크다운 문서는 다양한 플랫폼에서 지원되며, 대부분의 텍스트 편집기나 블로그 플랫폼에서 사용할 수 있습니다.</li>
+</ol>
+</section>
+<section id="헤더headers" class="level3">
+<h3 class="anchored" data-anchor-id="헤더headers">1. <strong>헤더(Headers)</strong></h3>
+<p>헤더는 텍스트의 제목을 만들 때 사용합니다. <code>#</code>을 사용해서 헤더의 수준을 나타낼 수 있습니다.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu"># 헤더 1</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">## 헤더 2</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">### 헤더 3</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">#### 헤더 4</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div style="font-size:32px;font-weight:bold;">
+헤더 1
+</div>
+<div style="font-size:28px;font-weight:bold;">
+헤더 2
+</div>
+<div style="font-size:24px;font-weight:bold;">
+헤더 3
+</div>
+<div style="font-size:20px;font-weight:bold;">
+헤더 4
+</div>
+</div>
+</div>
+</section>
+<section id="강조emphasis" class="level3">
+<h3 class="anchored" data-anchor-id="강조emphasis">2. <strong>강조(Emphasis)</strong></h3>
+<p>텍스트를 강조할 때 사용합니다.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>**굵은 텍스트**</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>*기울임 텍스트*</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>***굵고 기울인 텍스트***</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>굵은 텍스트</strong><br>
+<em>기울임 텍스트</em><br>
+<em><strong>굵고 기울인 텍스트</strong></em></p>
+</div>
+</div>
+</section>
+<section id="목록list" class="level3">
+<h3 class="anchored" data-anchor-id="목록list">3. <strong>목록(List)</strong></h3>
+<ul>
+<li><strong>순서 없는 목록(Unordered List)</strong>: <code>-</code>, <code>*</code>, <code>+</code>을 사용해서 항목을 만듭니다.</li>
+<li><strong>순서 있는 목록(Ordered List)</strong>: 숫자와 점(<code>1.</code>)을 사용합니다.</li>
+</ul>
+<div class="sourceCode" id="cb3"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>항목 2</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>항목 1</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>하위 항목 1</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="ss">    - </span>하위 항목 2</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="ss">1. </span>첫 번째 항목</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="ss">    1. </span>하위 항목 1</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="ss">    1. </span>하위 항목 2</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="ss">3. </span>두 번째 항목</span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="ss">    2. </span>하위 항목 1</span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="ss">    1. </span>하위 항목 2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>항목 2</li>
+<li>항목 1
+<ul>
+<li>하위 항목 1</li>
+<li>하위 항목 2</li>
+</ul></li>
+</ul>
+<ol type="1">
+<li>첫 번째 항목
+<ol type="1">
+<li>하위 항목 1</li>
+<li>하위 항목 2</li>
+</ol></li>
+<li>두 번째 항목
+<ol start="2" type="1">
+<li>하위 항목 1</li>
+<li>하위 항목 2</li>
+</ol></li>
+</ol>
+</div>
+</div>
+</section>
+<section id="링크links" class="level3">
+<h3 class="anchored" data-anchor-id="링크links">4. <strong>링크(Links)</strong></h3>
+<p>링크는 대괄호 <code>[]</code>와 소괄호 <code>()</code>로 만듭니다.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co">[</span><span class="ot">구글</span><span class="co">](https://www.google.com)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><a href="https://www.google.com/">구글</a></p>
+</div>
+</div>
+</section>
+<section id="이미지images" class="level3">
+<h3 class="anchored" data-anchor-id="이미지images">5. <strong>이미지(Images)</strong></h3>
+<p>이미지도 링크와 비슷하지만 앞에 <code>!</code>를 추가합니다.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="al">![Python Logo](https://www.python.org/static/img/python-logo.png)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://www.python.org/static/img/python-logo.png" class="img-fluid figure-img"></p>
+<figcaption>Python Logo</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="인용quote" class="level3">
+<h3 class="anchored" data-anchor-id="인용quote">6. <strong>인용(Quote)</strong></h3>
+<p><code>&gt;</code> 기호를 사용하여 텍스트를 인용할 수 있습니다.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="at">&gt; 이것은 인용된 텍스트입니다.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><br></p>
+<blockquote class="blockquote">
+<p>이것은 인용된 텍스트입니다.</p>
+</blockquote>
+<p><br></p>
+</div>
+</div>
+</section>
+<section id="코드code" class="level3">
+<h3 class="anchored" data-anchor-id="코드code">7. <strong>코드(Code)</strong></h3>
+<ul>
+<li><strong>인라인 코드</strong>: 백틱(`) 한 개로 감싸면 됩니다.</li>
+<li><strong>블록 코드</strong>: 백틱(```) 3개로 코드 블록을 만듭니다.</li>
+</ul>
+<div class="sourceCode" id="cb7"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>이것이 <span class="in">`인라인 코드`</span>입니다.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="in">코드블록 코드</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>이것이 <code>인라인 코드</code>입니다.</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>코드블록 코드</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+</section>
+<section id="수평선horizontal-rule" class="level3">
+<h3 class="anchored" data-anchor-id="수평선horizontal-rule">8. <strong>수평선(Horizontal Rule)</strong></h3>
+<p><code>---</code>, <code>***</code>, 또는 <code>___</code>을 사용하여 수평선을 만들 수 있습니다.</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="결과">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+결과
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><br></p>
+<hr>
+<p><br></p>
+</div>
+</div>
+</section>
+<section id="참고자료" class="level2">
+<h2 class="anchored" data-anchor-id="참고자료">참고자료</h2>
+<ol type="1">
+<li>https://ko.wikipedia.org/wiki/마크다운</li>
+</ol>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -684,7 +960,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/app_markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/app_markdown.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Python Handling</p>
 </div>
