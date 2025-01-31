@@ -1,5 +1,5 @@
 ---
-title: "70exception"
+title: "예외처리"
 format: html
 ---
 

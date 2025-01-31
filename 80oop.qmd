@@ -1,5 +1,5 @@
 ---
-title: "80oop"
+title: "클래스"
 format: html
 ---
 

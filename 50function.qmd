@@ -1,5 +1,5 @@
 ---
-title: "50function"
+title: "함수 및 모듈"
 format: html
 ---
 
