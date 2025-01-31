@@ -1317,6 +1317,133 @@ squares = {x: x**2 for x in range(5)}
 print(squares)
 ```
 
+### 딕셔너리 원소 접근
+
+딕셔너리(dictionary)는 **키(key)**를 사용하여 값(value)에 접근하는 **키-값(key-value) 쌍**의 자료구조이다. 딕셔너리의 원소를 접근하는 방법에는 여러 가지가 있다.
+
+
+| 접근 방법 | 코드 예제 | 설명 |
+|----------|---------|------|
+| 키를 이용한 접근 | `person["name"]` | 키로 직접 값에 접근 |
+| `get()` 사용 | `person.get("name", "기본값")` | 기본값을 설정하여 안전하게 접근 |
+| 키 목록 가져오기 | `person.keys()` | 모든 키 반환 |
+| 값 목록 가져오기 | `person.values()` | 모든 값 반환 |
+| 키-값 쌍 가져오기 | `person.items()` | (키, 값) 튜플 목록 반환 |
+| 키 존재 여부 확인 | `"name" in person` | 키가 존재하는지 확인 |
+| 반복문에서 활용 | `for key, value in person.items():` | 모든 키-값 순회 |
+
+딕셔너리는 키를 사용하여 데이터를 빠르게 조회할 수 있으며, `get()`을 사용하면 **KeyError를 방지**할 수 있다.
+
+#### 기본적인 키를 이용한 접근
+
+딕셔너리는 **키를 사용하여 값에 접근**한다. 
+
+```{python}
+person = {"name": "Alice", "age": 25, "city": "Seoul"}
+
+print(person["name"])  # Alice
+print(person["age"])   # 25
+print(person["city"])  # Seoul
+```
+
+주의할 점
+: - 존재하지 않는 키를 접근하면 **KeyError**가 발생한다.
+
+```{python}
+#| error: true
+print(person["job"])  # KeyError 발생
+```
+
+#### `get()` 메서드를 이용한 접근
+
+`get()` 메서드는 키가 존재하지 않을 경우 **기본값(default value)을 반환**할 수 있어 안전하게 값을 가져올 수 있다.
+
+```{python}
+print(person.get("name"))     # Alice
+print(person.get("job"))      # None (KeyError 발생하지 않음)
+print(person.get("job", "N/A"))  # 기본값 "N/A" 반환
+```
+
+- `get("키", "기본값")` 형식으로 사용하며, 키가 없을 경우 기본값을 반환한다.
+- `get()`을 사용하면 **KeyError를 방지**할 수 있다.
+
+#### `keys()`를 이용한 키 목록 접근
+
+`keys()` 메서드는 **딕셔너리의 모든 키 목록**을 반환한다.
+
+```{python}
+print(person.keys())  # dict_keys(['name', 'age', 'city'])
+```
+
+- `list()`를 사용하면 리스트로 변환할 수 있다.
+
+```{python}
+keys_list = list(person.keys())
+print(keys_list)  # ['name', 'age', 'city']
+```
+
+#### `values()`를 이용한 값 목록 접근
+
+`values()` 메서드는 **딕셔너리의 모든 값 목록**을 반환한다.
+
+```{python}
+print(person.values())  # dict_values(['Alice', 25, 'Seoul'])
+```
+
+- 리스트로 변환할 수도 있다.
+
+```{python}
+values_list = list(person.values())
+print(values_list)  # ['Alice', 25, 'Seoul']
+```
+
+#### `items()`를 이용한 키-값 쌍 접근
+
+`items()` 메서드는 **딕셔너리의 모든 (키, 값) 쌍을 튜플로 반환**한다.
+
+```{python}
+print(person.items())  # dict_items([('name', 'Alice'), ('age', 25), ('city', 'Seoul')])
+```
+
+**반복문에서 활용 가능**하다.
+
+```{python}
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
+#### `in` 연산자를 이용한 키 존재 여부 확인
+
+딕셔너리에 특정 키가 존재하는지 확인하려면 `in` 연산자를 사용한다.
+
+```{python}
+if "name" in person:
+    print("name 키가 존재합니다.")  # 출력됨
+
+if "job" not in person:
+    print("job 키가 존재하지 않습니다.")  # 출력됨
+```
+
+#### 딕셔너리를 이용한 반복문(`for` 문)
+
+##### 키를 반복
+```{python}
+for key in person:
+    print(key)  # name, age, city
+```
+
+##### 값만 반복
+```{python}
+for value in person.values():
+    print(value)  # Alice, 25, Seoul
+```
+
+##### 키와 값을 동시에 반복
+```{python}
+for key, value in person.items():
+    print(f"{key}: {value}")
+```
+
 ### 딕셔너리 원소 수정
 
 딕셔너리에서 원소를 **업데이트(update)** 하려면 **키**를 통해 **값을 수정하거나 추가**하는 방식으로 진행할 수 있다. **기존 키의 값을 수정**하거나 **새로운 키-값 쌍을 추가**할 수 있다.
@@ -1700,6 +1827,74 @@ my_set = {1, [2, 3]}  # TypeError: unhashable type: 'list'
 #| error: true
 # 딕셔너리도 집합의 원소로 사용할 수 없음
 my_set = {1, {"a": 1}}  # TypeError: unhashable type: 'dict'
+```
+
+### 집합 원소 접근
+
+집합(set)은 **순서가 없는(unordered) 자료형**이므로 **인덱싱(indexing)이나 키(key)로 직접 접근할 수 없다**. 하지만 다음과 같은 방법을 사용하여 원소를 확인할 수 있다.
+
+| 접근 방법 | 코드 예제 | 설명 |
+|----------|---------|------|
+| 반복문으로 접근 | `for item in my_set:` | 모든 원소를 순회 |
+| 특정 원소 확인 | `10 in my_set` | 존재 여부 확인 (`True` 또는 `False`) |
+| `pop()` 사용 | `item = my_set.pop()` | 임의의 원소를 가져오면서 제거 |
+| 리스트 변환 후 접근 | `list(my_set)[0]` | 리스트로 변환 후 인덱싱 |
+| 정렬 후 접근 | `sorted(my_set)[0]` | 정렬된 리스트에서 특정 원소 접근 |
+
+집합은 순서가 없기 때문에 **인덱싱이 불가능**하며, 원소 접근이 필요할 경우 반복문이나 `list()` 변환을 활용해야 한다.
+
+#### 반복문을 이용한 원소 접근
+집합의 원소를 하나씩 접근하려면 `for` 문을 사용한다.
+
+```{python}
+my_set = {10, 20, 30, 40, 50}
+
+for item in my_set:
+    print(item)
+```
+
+집합은 **순서가 없기 때문에** 출력 순서가 매번 달라질 수 있다.
+
+#### `in` 연산자를 이용한 특정 원소 존재 여부 확인
+집합 내 특정 원소가 존재하는지 확인할 때 `in` 연산자를 사용할 수 있다.
+
+```{python}
+my_set = {10, 20, 30}
+
+print(10 in my_set)  # True
+print(50 in my_set)  # False
+```
+
+`in` 연산자는 **O(1)**의 시간 복잡도로 매우 빠르게 원소를 검색할 수 있다.
+
+#### `pop()`을 사용하여 원소 가져오기
+`pop()` 메서드는 집합에서 **임의의 원소를 제거하고 반환**한다.
+
+```{python}
+my_set = {100, 200, 300}
+
+item = my_set.pop()
+print(item)  # 어떤 값이 출력될지 알 수 없음
+print(my_set)  # 원소 하나가 제거된 집합 출력
+```
+
+집합은 **순서가 없기 때문에** 어떤 원소가 제거될지 예측할 수 없다.
+
+#### 리스트 변환 후 인덱싱으로 접근
+집합을 리스트로 변환하면 인덱싱을 사용할 수 있다.
+
+```{python}
+my_set = {1, 2, 3, 4, 5}
+
+my_list = list(my_set)  # 리스트로 변환
+print(my_list[0])  # 첫 번째 원소 출력 (순서는 보장되지 않음)
+```
+
+집합을 리스트로 변환하면 **순서가 랜덤하게 정해진다**. 원소를 특정 순서로 접근해야 한다면, `sorted()`를 사용하여 정렬할 수 있다.
+
+```{python}
+sorted_list = sorted(my_set)
+print(sorted_list[0])  # 가장 작은 값 출력
 ```
 
 ### 집합 원소 수정
