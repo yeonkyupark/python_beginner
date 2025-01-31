@@ -61,3 +61,7 @@
 -   간단한 계산기 만들기\
 -   파일 데이터를 읽고 가공하는 프로그램\
 -   웹 크롤링 기초(BeautifulSoup 활용)
+
+## 참고자료 {.unlist}
+
+1. 코드 시각화 - [https://pythontutor.com/visualize.html#mode=edit](https://pythontutor.com/visualize.html#mode=edit){target="_blank"}
