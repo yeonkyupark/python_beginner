@@ -10,3 +10,4 @@
 /site_libs
 /.obsidian
 /_freeze
+*.quarto_ipynb
