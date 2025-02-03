@@ -684,7 +684,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">"새로운 파일입니다.</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
-<p>파일이 이미 존재할 경우</p>
+<p>파일이 이미 존재할 경우 :</p>
 <div class="sourceCode" id="cb14"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="ex">FileExistsError:</span> [Errno 17] File exists: <span class="st">'new_file.txt'</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <section id="with-문을-사용한-파일-쓰기" class="level4">
 <h4 class="anchored" data-anchor-id="with-문을-사용한-파일-쓰기">with 문을 사용한 파일 쓰기</h4>
@@ -708,9 +708,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl>
 <dt>파일 내용 (<code>example.txt</code>)</dt>
 <dd>
-<pre><code>첫 번째 줄
-두 번째 줄
-세 번째 줄</code></pre>
+<div class="sourceCode" id="cb17"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="ex">첫</span> 번째 줄</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="ex">두</span> 번째 줄</span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a><span class="ex">세</span> 번째 줄</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </dd>
 </dl>
 </section>
@@ -724,11 +724,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl>
 <dt>파일 내용 (<code>numbers.txt</code>)</dt>
 <dd>
-<pre><code>숫자: 1
-숫자: 2
-숫자: 3
-숫자: 4
-숫자: 5</code></pre>
+<div class="sourceCode" id="cb19"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">숫자:</span> 1</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="ex">숫자:</span> 2</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a><span class="ex">숫자:</span> 3</span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a><span class="ex">숫자:</span> 4</span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a><span class="ex">숫자:</span> 5</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </dd>
 </dl>
 </section>
@@ -750,7 +750,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl>
 <dt>파일 내용 (<code>data.csv</code>)</dt>
 <dd>
-<pre><code>이름,나이,직업
+<pre class="csv"><code>이름,나이,직업
 철수,25,개발자
 영희,30,디자이너</code></pre>
 </dd>
