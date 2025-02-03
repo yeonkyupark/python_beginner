@@ -311,24 +311,253 @@ print(result)  # 120 (1 * 2 * 3 * 4 * 5)
 하지만, **복잡한 연산이나 여러 줄의 코드가 필요한 경우에는 `def` 함수가 더 적합**하다.
 
 ### 함수 반환값
-`return` 키워드를 사용하여 값을 반환할 수 있으며, 여러 개의 값을 반환할 수도 있다.
-```{python}
-def get_numbers():
-    return 1, 2, 3
 
-a, b, c = get_numbers()
-print(a, b, c)  # 1 2 3
+Python에서 함수는 `return` 키워드를 사용하여 값을 반환할 수 있다. 반환값을 이용하면 함수의 실행 결과를 저장하고, 다른 연산에 활용할 수 있다.  
+
+| 개념 | 설명 |
+|------|------|
+| **기본 반환값** | `return 값`을 사용해 특정 값을 반환 |
+| **여러 개 반환** | `return a, b`를 사용하면 튜플로 반환 |
+| **조건부 반환** | `if` 문을 사용해 특정 조건에서만 반환 가능 |
+| **리스트/딕셔너리 반환** | 여러 데이터를 리스트나 딕셔너리 형태로 반환 가능 |
+| **return 없음** | `None`을 반환 |
+| **제너레이터 반환** | `yield`를 사용하면 값들을 순차적으로 생성 |
+: 함수 반환값
+
+Python의 `return` 문은 함수의 종료를 의미하며, 다양한 형태의 데이터를 반환할 수 있다.
+
+#### 기본적인 반환값  
+
+```{python}
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result)  # 8
+```
+- `return a + b`: 두 숫자의 합을 반환한다.
+- 함수 호출 결과 `result` 변수에 저장된다.
+
+#### 여러 개의 반환값  
+
+Python에서는 **여러 개의 값을 반환**할 수 있으며, 이는 **튜플(tuple)**로 반환된다.  
+
+```{python}
+def get_info():
+    name = "철수"
+    age = 25
+    return name, age
+
+info = get_info()
+print(info)       # ('철수', 25)
+print(info[0])    # 철수
+print(info[1])    # 25
+```
+- `return name, age`는 `(name, age)` 형태의 튜플을 반환한다.
+- 반환값을 여러 변수에 **언패킹(unpacking)**하여 받을 수도 있다.
+
+```{python}
+name, age = get_info()
+print(name)  # 철수
+print(age)   # 25
 ```
 
-### 재귀 함수(Recursive Function)
-함수 내부에서 자기 자신을 호출하는 방식으로 사용되며, 대표적으로 팩토리얼 계산에 활용된다.
+#### `return`이 없는 함수  
+
+- `return` 문이 없거나, `return` 키워드만 사용하면 **`None`이 반환**된다.  
+
+```{python}
+def greet():
+    print("안녕하세요!")
+
+result = greet()
+print(result)  # None
+```
+- `print()` 함수는 값을 반환하지 않으므로 `None`이 저장된다.
+
+#### 조건에 따른 반환값  
+
+- 함수 내에서 특정 조건을 만족할 때만 값을 반환할 수 있다.  
+
+```{python}
+def check_even(n):
+    if n % 2 == 0:
+        return "짝수"
+    return "홀수"
+
+print(check_even(4))  # 짝수
+print(check_even(7))  # 홀수
+```
+- `return "짝수"` 실행 후 함수가 종료되므로, 이후 코드는 실행되지 않는다.
+
+## 5. 리스트나 딕셔너리 반환  
+
+먼저 **리스트 반환**이다.  
+
+```{python}
+def get_numbers():
+    return [1, 2, 3, 4, 5]
+
+print(get_numbers())  # [1, 2, 3, 4, 5]
+```
+
+**딕셔너리 반환**이다.  
+
+```{python}
+def get_student():
+    return {"name": "영희", "age": 22}
+
+print(get_student())  # {'name': '영희', 'age': 22}
+```
+
+#### `return`과 `None` 비교  
+
+| 상황 | 반환값 |
+|------|--------|
+| `return 값` 사용 | 해당 값 반환 |
+| `return`만 사용 | `None` 반환 |
+| `return`이 없는 함수 | `None` 반환 |
+
+```{python}
+def example():
+    return
+
+print(example())  # None
+```
+
+#### `yield`를 사용한 제너레이터 반환  
+
+- `return` 대신 `yield`를 사용하면 **제너레이터(generator)**를 반환한다.  
+
+```{python}
+def count_up(n):
+    for i in range(n):
+        yield i
+
+gen = count_up(3)
+print(list(gen))  # [0, 1, 2]
+```
+- `yield`는 값을 하나씩 생성하며, `return`과 달리 **함수를 종료하지 않는다**.
+
+### 재귀함수 {#sec-recursive-function}  
+
+Python에서 **재귀함수(recursive function)**는 **자기 자신을 호출하는 함수**를 의미한다. 반복문 없이 특정 작업을 반복할 수 있으며, **분할 정복(Divide and Conquer)** 같은 알고리즘에서 자주 사용된다.  
+
+#### 재귀함수의 기본 구조  
+
+```python
+def recursive():
+    print("재귀 호출")
+    recursive()  # 자기 자신을 호출
+
+recursive()  # 실행하면 무한 루프 발생
+```
+- 함수 `recursive()` 내부에서 다시 `recursive()`를 호출한다.
+- 종료 조건이 없으면 무한 루프에 빠지므로, **반드시 종료 조건(base case)**을 설정해야 한다.
+
+#### 종료 조건을 포함한 재귀함수  
+
+```{python}
+def countdown(n):
+    if n <= 0:  # 종료 조건
+        print("끝!")
+        return
+    print(n)
+    countdown(n - 1)  # 자기 자신을 호출 (n 감소)
+
+countdown(5)
+```
+
+- `n`이 0 이하가 되면 `return`하여 종료된다.
+- 종료 조건이 없다면 **무한 재귀**(infinite recursion)가 발생한다.
+
+#### 재귀함수를 이용한 팩토리얼 계산  
+
 ```{python}
 def factorial(n):
-    if n == 1:
+    if n == 0 or n == 1:  # 종료 조건
         return 1
-    return n * factorial(n - 1)
+    return n * factorial(n - 1)  # 자기 자신을 호출
 
 print(factorial(5))  # 120
+```
+- `factorial(5) = 5 * 4 * 3 * 2 * 1 = 120`
+- 종료 조건 `if n == 0 or n == 1`을 설정하여 재귀를 멈춘다.
+
+---
+
+#### 재귀함수를 이용한 피보나치 수열  
+
+피보나치 수열:  
+$$F(n) = F(n-1) + F(n-2), \quad F(0) = 0, \quad F(1) = 1$$  
+
+```{python}
+def fibonacci(n):
+    if n == 0:
+        return 0
+    elif n == 1:
+        return 1
+    return fibonacci(n - 1) + fibonacci(n - 2)  # 재귀 호출
+
+print(fibonacci(6))  # 8
+```
+- `fibonacci(6) = fibonacci(5) + fibonacci(4) = 8`
+- 종료 조건을 설정하지 않으면 무한 루프에 빠질 수 있다.
+
+#### 재귀 깊이 제한 (Recursion Limit)  
+
+Python은 기본적으로 **재귀 호출 가능 횟수(깊이)를 제한**한다.  
+기본 최대 깊이: **1,000번**  
+
+```python
+import sys
+print(sys.getrecursionlimit())  # 1000
+```
+- 너무 깊이 재귀 호출하면 `RecursionError` 발생  
+
+**재귀 깊이 제한 변경 가능**  
+
+```python
+sys.setrecursionlimit(2000)  # 최대 재귀 깊이를 2000으로 설정
+```
+- 하지만 **너무 높은 값으로 설정하면 메모리 부족 오류 발생 가능**  
+
+#### 재귀와 반복문의 비교  
+
+| 비교 항목 | 재귀함수 | 반복문 |
+|----------|--------|------|
+| **사용 방식** | 자기 자신을 호출 | `for` 또는 `while` 사용 |
+| **메모리 사용** | 호출마다 스택 메모리 사용 | 상대적으로 적은 메모리 사용 |
+| **속도** | 함수 호출 오버헤드로 느릴 수 있음 | 일반적으로 빠름 |
+| **코드 가독성** | 일부 문제에서 직관적 | 대부분의 경우 더 명확 |
+| **종료 필요** | 종료 조건(base case) 필수 | `break`나 조건문 사용 |
+: 재귀함수와 반복문 비교
+
+#### 꼬리 재귀(Tail Recursion)  
+
+- **꼬리 재귀(Tail Recursion)**: 함수의 마지막 동작이 **자기 자신을 호출하는 형태**  
+- 일반적으로 **반복문으로 변환 가능**하며, 일부 언어에서는 **최적화(Tail Call Optimization, TCO)**를 지원하지만, Python은 지원하지 않는다.
+
+```{python}
+def tail_recursive(n, result=1):
+    if n == 0:
+        return result
+    return tail_recursive(n - 1, n * result)  # 변수로 결과 유지
+
+print(tail_recursive(5))  # 120
+```
+
+---
+
+## 8. 재귀함수 사용이 적절한 경우  
+
+- **문제를 작은 부분으로 나눌 수 있는 경우**  
+- **이진 탐색(Binary Search)**
+- **분할 정복 알고리즘 (Merge Sort, Quick Sort)**
+- **트리(Tree) 또는 그래프(Graph) 탐색 (DFS)**
+- **하노이 탑(Tower of Hanoi) 문제**
+
+하지만, **일반적인 반복문으로 해결 가능한 경우에는 재귀보다 반복문을 사용하는 것이 성능상 유리**하다.
 ```
 
 ### 함수 범위
