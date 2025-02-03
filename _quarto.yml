@@ -38,6 +38,7 @@ book:
         - pkg_numpy.qmd
   appendices:
     - app_markdown.qmd
+    - app_csv_json.qmd
     - references.qmd
 
 bibliography: references.bib
