@@ -3,3 +3,310 @@ title: "함수 및 모듈"
 format: html
 ---
 
+## 함수 {#sec-function}
+
+함수는(Function) 특정 작업을 수행하는 코드 블록으로, 코드의 재사용성을 높이고 가독성을 개선하는 역할을 한다. Python에서 함수는 `def` 키워드를 사용하여 정의한다.
+
+::: {#nte-function .callout-note icon=false title="함수 문법"}
+```python
+def function_name(parameters):
+  # statement
+  return expression
+
+# function call
+function_names(parameters)
+```
+:::
+
+### 함수 정의 및 호출
+
+함수 정의 및 호출 문법 [@nte-function]에 따라 수행한다.
+
+```{python}
+def add(a, b):
+    return a + b
+
+result = add(3, 5)
+print(result) 
+```
+- `def` 키워드로 함수를 정의한다.
+- `add(a, b)`: 두 개의 매개변수(`a`, `b`)를 받아 더한 값을 반환한다.
+- `return` 문을 사용하여 결과를 반환한다.
+- `add(3, 5)`와 같이 호출하면 8이 출력된다.
+
+### 매개변수와 반환값
+
+Python에서 함수 매개변수는 함수를 호출할 때 전달되는 값(인자, argument)을 받는 변수이다. 매개변수를 설정하는 방식에 따라 다양한 형태로 사용할 수 있다.  
+
+| 매개변수 유형 | 설명 | 예시 |
+|-------------|------|------|
+| 기본 매개변수 | 필수 인자를 받아야 하는 매개변수 | `def func(a, b):` |
+| 기본값 매개변수 | 기본값을 설정할 수 있는 매개변수 | `def func(a, b=10):` |
+| 위치 인자 | 순서에 따라 전달되는 인자 | `func(1, 2)` |
+| 키워드 인자 | `매개변수명=값` 형식으로 전달되는 인자 | `func(a=1, b=2)` |
+| 가변 위치 인자(*args) | 여러 개의 위치 인자를 튜플로 받을 수 있음 | `def func(*args):` |
+| 가변 키워드 인자(**kwargs) | 여러 개의 키워드 인자를 딕셔너리로 받을 수 있음 | `def func(**kwargs):` |
+| 위치 전용 매개변수 | `/` 앞의 매개변수는 위치 인자로만 사용 가능 | `def func(a, b, /):` |
+| 키워드 전용 매개변수 | `*` 뒤의 매개변수는 키워드 인자로만 사용 가능 | `def func(*, a, b):` |
+: 함수 매개변수 유형
+
+이러한 매개변수 방식을 조합하여 다양한 형태의 함수를 정의할 수 있다.
+
+#### 기본 매개변수(Required Parameters)  
+함수를 정의할 때 매개변수를 지정하면, 해당 함수는 반드시 인자를 전달받아야 한다.  
+
+```{python}
+#| error: true
+
+def greet(name):
+    print(f"안녕하세요, {name}님!")
+
+greet("철수") 
+
+greet()  # 오류 발생 (TypeError)
+```
+- `greet(name)` 함수는 `name` 매개변수를 필수로 요구한다.
+- `greet()` 호출 시 인자를 전달하지 않으면 `TypeError`가 발생한다.  
+
+#### 기본값 매개변수(Default Parameters)  
+매개변수에 기본값을 설정하면, 호출 시 인자를 전달하지 않아도 된다.  
+
+```{python}
+#| error: true
+
+def greet(name="손님"):
+    print(f"안녕하세요, {name}님!")
+
+greet("철수")  
+
+greet()  
+```
+- `name="손님"`과 같이 기본값을 설정하면, 인자를 전달하지 않을 경우 기본값이 사용된다.
+
+
+#### 위치 인자(Positional Arguments)  
+함수 호출 시 인자의 순서에 따라 매개변수에 값이 할당된다.  
+
+```{python}
+def introduce(name, age):
+    print(f"제 이름은 {name}이고, {age}살입니다.")
+
+introduce("영희", 25) 
+
+introduce(25, "영희") 
+```
+- 인자의 순서가 중요하므로, 잘못된 순서로 전달하면 예상치 못한 결과가 나올 수 있다.
+
+
+#### 키워드 인자(Keyword Arguments)  
+함수 호출 시 `매개변수명=값` 형식으로 지정하여 순서를 무시할 수 있다.  
+
+```{python}
+introduce(age=30, name="민수")  
+# 출력: 제 이름은 민수이고, 30살입니다.
+```
+- 키워드 인자를 사용하면 가독성이 좋아지고, 인자 순서에 의존하지 않는다.
+
+
+#### 가변 인자(*args)  
+여러 개의 위치 인자를 튜플(tuple) 형태로 받을 수 있다.  
+
+```{python}
+def sum_numbers(*args):
+    total = sum(args)
+    print(f"합계: {total}")
+
+sum_numbers(1, 2, 3)  
+
+sum_numbers(10, 20, 30, 40, 50) 
+```
+- `*args`는 여러 개의 인자를 받을 수 있으며, `튜플` 형태로 저장된다.
+- 매개변수명이 `args`가 아니어도 되지만, **관례적으로 `args`**를 사용한다.
+
+
+#### 키워드 가변 인자(**kwargs)  
+여러 개의 키워드 인자를 딕셔너리(dict) 형태로 받을 수 있다.  
+
+```{python}
+def print_info(**kwargs):
+    for key, value in kwargs.items():
+        print(f"{key}: {value}")
+
+print_info(name="철수", age=25, city="서울")
+```
+- `**kwargs`는 키워드 인자를 받을 수 있으며, 딕셔너리 형태로 저장된다.
+- `kwargs.items()`를 사용하여 키와 값을 출력할 수 있다.
+
+#### 위치 전용 매개변수(Positional-Only Parameters)  
+Python 3.8부터 `/` 기호를 사용하여 특정 매개변수를 위치 인자로만 받을 수 있다.  
+
+```{python}
+#| error: true
+
+def multiply(a, b, /):
+    return a * b
+
+print(multiply(3, 4))  
+# 출력: 12
+
+print(multiply(a=3, b=4))  
+# 오류 발생 (TypeError)
+```
+- `/` 이전의 매개변수들은 위치 인자로만 전달해야 하며, 키워드 인자로 사용할 수 없다.
+
+
+#### 키워드 전용 매개변수(Keyword-Only Parameters)  
+`*` 기호 이후에 정의된 매개변수는 키워드 인자로만 전달해야 한다.  
+
+```{python}
+#| error: true
+
+def divide(*, x, y):
+    return x / y
+
+print(divide(x=10, y=2))  
+# 출력: 5.0
+
+print(divide(10, 2))  
+# 오류 발생 (TypeError)
+```
+- `*` 이후의 매개변수들은 반드시 `키워드 인자`로 전달해야 한다.
+
+---
+
+#### 위치 및 키워드 혼합  
+`/`와 `*`를 함께 사용하여 위치 인자, 키워드 인자, 일반 매개변수를 조합할 수 있다.  
+
+```{python}
+#| error: true
+
+def function(a, b, /, c, *, d):
+    print(a, b, c, d)
+
+function(1, 2, 3, d=4)  
+
+function(1, 2, c=3, d=4)  
+
+function(a=1, b=2, c=3, d=4)  
+# 오류 발생 (TypeError)
+```
+- `a`와 `b`는 위치 인자로만 사용 가능하다.
+- `c`는 위치 또는 키워드 인자로 사용할 수 있다.
+- `d`는 키워드 인자로만 사용할 수 있다.
+
+
+#### 매개변수의 기본값과 가변 인자 조합  
+기본값이 있는 매개변수와 `*args`, `**kwargs`를 함께 사용할 수 있다.  
+
+```{python}
+def example(a, b=10, *args, c=20, **kwargs):
+    print(f"a: {a}, b: {b}, c: {c}")
+    print(f"args: {args}")
+    print(f"kwargs: {kwargs}")
+
+example(1, 2, 3, 4, c=5, d=6, e=7)
+```
+- `b`와 `c`는 기본값을 가진다.
+- `*args`는 위치 인자를 추가적으로 받을 수 있다.
+- `**kwargs`는 키워드 인자를 추가적으로 받을 수 있다.
+
+### 익명 함수(lambda)
+`lambda` 키워드를 사용하여 한 줄짜리 익명 함수를 만들 수 있다.
+```{python}
+add = lambda a, b: a + b
+print(add(3, 5))  # 8
+```
+- `lambda a, b: a + b`는 `def`로 정의한 함수와 동일한 역할을 한다.
+
+### 함수 반환값
+`return` 키워드를 사용하여 값을 반환할 수 있으며, 여러 개의 값을 반환할 수도 있다.
+```{python}
+def get_numbers():
+    return 1, 2, 3
+
+a, b, c = get_numbers()
+print(a, b, c)  # 1 2 3
+```
+
+### 재귀 함수(Recursive Function)
+함수 내부에서 자기 자신을 호출하는 방식으로 사용되며, 대표적으로 팩토리얼 계산에 활용된다.
+```{python}
+def factorial(n):
+    if n == 1:
+        return 1
+    return n * factorial(n - 1)
+
+print(factorial(5))  # 120
+```
+
+### 함수 범위
+
+변수는 호출 위치와 키워드 사용 여부에 따라 그 범위가 결정된다.
+
+- **지역 변수(Local Variable)**: 함수 내부에서 정의된 변수로, 함수 내부에서만 접근 가능하다.
+- **전역 변수(Global Variable)**: 함수 외부에서 정의된 변수로, 프로그램 전체에서 접근 가능하다.
+
+```{python}
+x = 10  # 전역 변수
+
+def func():
+    x = 5  # 지역 변수
+    print(x)
+
+func()  # 5
+print(x)  # 10
+```
+
+전역 변수 값을 함수 내부에서 변경하려면 `global` 키워드를 사용해야 한다.
+
+```{python}
+x = 10
+
+def change_x():
+    global x
+    x = 20
+
+change_x()
+print(x)  # 20
+```
+
+### 함수 데코레이터
+함수를 감싸는 래퍼(wrapper) 역할을 하며, 실행 전후에 특정 동작을 추가할 수 있다.
+```{python}
+def decorator(func):
+    def wrapper():
+        print("함수 실행 전")
+        func()
+        print("함수 실행 후")
+    return wrapper
+
+@decorator
+def hello():
+    print("안녕하세요!")
+
+hello()
+```
+
+### 함수형 프로그래밍 개념
+
+**map 함수**: 리스트의 각 요소에 함수를 적용한다.
+
+```{python}
+numbers = [1, 2, 3, 4]
+squared = list(map(lambda x: x ** 2, numbers))
+print(squared)
+```
+
+**filter 함수**: 리스트의 요소를 조건에 맞게 필터링한다.
+
+```{python}
+even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
+print(even_numbers)  # [2, 4]
+```
+
+**reduce 함수**: 리스트의 요소를 누적하여 하나의 결과를 만든다.
+```{python}
+from functools import reduce
+total = reduce(lambda x, y: x + y, numbers)
+print(total)  # 10
+```
