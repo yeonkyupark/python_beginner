@@ -19,7 +19,7 @@ Python의 `csv` 모듈을 활용하면 **엑셀 파일을 다루듯이** 데이�
 
 ### CSV 파일 형식  
 
-```csv
+```sh
 이름,나이,직업
 철수,25,학생
 영희,30,개발자
@@ -33,10 +33,9 @@ Python의 `csv` 모듈을 활용하면 **엑셀 파일을 다루듯이** 데이�
 
 Python에서 CSV 파일을 저장할 때는 **`csv` 모듈**을 사용한다.  
 
-CSV 파일 저장 (`writerow()`)  
-: 
-```python 
+**CSV 파일 저장 (`writerow()`)**  
 
+```python
 import csv
 
 # 저장할 데이터
@@ -57,7 +56,7 @@ with open("data.csv", "w", newline="", encoding="utf-8") as file:
 
 출력 (`data.csv` 파일)
 : 
-```csv
+```sh
 이름,나이,직업
 철수,25,학생
 영희,30,개발자
@@ -74,10 +73,9 @@ with open("data.csv", "w", newline="", encoding="utf-8") as file:
 
 CSV 파일을 읽을 때는 `csv.reader()`를 사용하여 데이터를 리스트로 변환할 수 있다.  
 
-CSV 파일 읽기 (`reader()`)  
-: 
+**CSV 파일 읽기 (`reader()`)**  
+ 
 ```python
-
 import csv
 
 # CSV 파일 읽기
@@ -91,7 +89,7 @@ with open("data.csv", "r", encoding="utf-8") as file:
 
 출력
 : 
-```
+```sh
 ['이름', '나이', '직업']
 ['철수', '25', '학생']
 ['영희', '30', '개발자']
@@ -109,7 +107,6 @@ with open("data.csv", "r", encoding="utf-8") as file:
 - 딕셔너리(`dict`) 데이터를 CSV 파일로 저장할 수도 있다.  
 
 ```python
-
 import csv
 
 # 딕셔너리 데이터
@@ -132,7 +129,7 @@ with open("data_dict.csv", "w", newline="", encoding="utf-8") as file:
 
 출력 (`data_dict.csv` 파일)
 : 
-```csv
+```sh
 이름,나이,직업
 철수,25,학생
 영희,30,개발자
@@ -146,7 +143,6 @@ with open("data_dict.csv", "w", newline="", encoding="utf-8") as file:
 **(2) CSV 파일을 딕셔너리로 읽기 (`DictReader`)**  
 
 ```python
-
 import csv
 
 # CSV 파일 읽기
@@ -172,7 +168,6 @@ with open("data_dict.csv", "r", encoding="utf-8") as file:
 ### CSV 파일 존재 여부 확인 후 읽기  
 
 ```python
-
 import os
 import csv
 
@@ -193,7 +188,6 @@ else:
 CSV 파일에서 특정 열(column)만 선택하여 읽을 수도 있다.  
 
 ```python
-
 import csv
 
 with open("data.csv", "r", encoding="utf-8") as file:
@@ -211,7 +205,6 @@ with open("data.csv", "r", encoding="utf-8") as file:
 **(1) 세미콜론(`;`)으로 구분**  
 
 ```python
-
 with open("data_semicolon.csv", "w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file, delimiter=";")  # 구분자 변경
     writer.writerows(data)
@@ -220,7 +213,6 @@ with open("data_semicolon.csv", "w", newline="", encoding="utf-8") as file:
 **(2) 탭(`\t`)으로 구분**  
 
 ```python
-
 with open("data_tab.csv", "w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file, delimiter="\t")
     writer.writerows(data)
@@ -244,7 +236,7 @@ JSON(**JavaScript Object Notation**)은 데이터를 저장하고 전송하기 �
 
 JSON 파일은 아래와 같은 형태로 구성된다.  
 
-```json
+```sh
 {
     "이름": "철수",
     "나이": 25,
@@ -266,8 +258,8 @@ JSON 파일은 아래와 같은 형태로 구성된다.
 
 Python 객체(딕셔너리, 리스트 등)를 JSON 파일로 저장할 수 있다.  
 
-JSON 파일 저장  
-: 
+**JSON 파일 저장**  
+ 
 ```python
 
 import json
@@ -316,10 +308,9 @@ with open("data.json", "w", encoding="utf-8") as file:
 
 JSON 파일을 읽어서 Python 객체로 변환할 수 있다.  
 
-JSON 파일 읽기  
-: 
+**JSON 파일 읽기**  
+ 
 ```python
-
 import json
 
 # JSON 파일 열기
@@ -343,7 +334,6 @@ print(data["취미"])  # ['축구', '독서', '영화 감상']
 **(1) Python 객체 → JSON 문자열 (`dumps()`)**  
 
 ```{python}
-
 import json
 
 data = {"이름": "영희", "나이": 30}
@@ -356,7 +346,6 @@ print(json_str)
 **(2) JSON 문자열 → Python 객체 (`loads()`)**  
 
 ```{python}
-
 import json
 
 json_str = '{"이름": "영희", "나이": 30}'
@@ -371,7 +360,6 @@ print(data["이름"])  # '영희'
 **(1) 리스트 데이터를 JSON으로 저장하고 읽기**  
 
 ```python
-
 import json
 
 # 리스트 데이터
@@ -393,7 +381,6 @@ print(fruits_list)  # ['사과', '바나나', '포도']
 파일이 존재하는지 확인한 후 JSON을 읽으면 **오류를 방지할 수 있다.**  
 
 ```python
-
 import os
 import json
 
