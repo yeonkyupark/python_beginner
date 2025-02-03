@@ -55,7 +55,7 @@ except ZeroDivisionError:
 
 try:
     # num = int(input("숫자를 입력하세요: "))  # 문자를 입력하면 예외 발생
-    num = 'abc'
+    num = int('abc')
     print("입력한 숫자:", num)
 except ValueError:
     print("올바른 숫자를 입력하세요.")
