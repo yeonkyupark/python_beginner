@@ -186,7 +186,7 @@ file.close()
 ----
 
 **파일 내용 (`example.txt`)**  
-```
+```text
 Hello, Python!
 파일 쓰기 예제입니다.
 ```
@@ -195,19 +195,13 @@ Hello, Python!
 
 
 **파일 내용 (`example.txt`)**  
-
-```
+: 
+```text
 Hello, Python!
 파일 쓰기 예제입니다.
 ```
 
 ----
-
-    **파일 내용 (`example.txt`)**  
-    ```
-    Hello, Python!
-    파일 쓰기 예제입니다.
-    ```
 
 
 **(2) 추가 모드 (`"a"`)**
