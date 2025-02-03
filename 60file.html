@@ -517,8 +517,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <caption>파일 모드</caption>
 <colgroup>
-<col style="width: 20%">
-<col style="width: 80%">
+<col style="width: 15%">
+<col style="width: 85%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -605,8 +605,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <caption>파일 쓰기 모드</caption>
 <colgroup>
-<col style="width: 25%">
-<col style="width: 75%">
+<col style="width: 15%">
+<col style="width: 85%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -629,19 +629,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tr>
 </tbody>
 </table>
-<ol type="1">
-<li><dl>
-<dt>쓰기 모드 (<code>"w"</code>)</dt>
+<dl>
+<dt><strong>(1) 쓰기 모드 (<code>"w"</code>)</strong></dt>
 <dd>
 <ul>
-<li>기존 파일이 있으면 <strong>덮어쓰기(기존 내용 삭제)</strong></li>
-</ul>
-</dd>
-</dl></li>
-</ol>
-<ul>
+<li>기존 파일이 있으면 <strong>덮어쓰기(기존 내용 삭제)</strong><br>
+</li>
 <li>파일이 없으면 새로 생성</li>
 </ul>
+</dd>
+</dl>
 <div class="sourceCode" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일 열기 (쓰기 모드, 기존 내용 삭제)</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"w"</span>)</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -652,52 +649,43 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일 닫기</span></span>
 <span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>파일 내용 (`example.txt`)
-: 
 ```
 Hello, Python!
 파일 쓰기 예제입니다.
 ```</code></pre>
-<ol start="2" type="1">
-<li><dl>
-<dt>추가 모드 (<code>"a"</code>)</dt>
+<dl>
+<dt><strong>(2) 추가 모드 (<code>"a"</code>)</strong></dt>
 <dd>
 <ul>
-<li>기존 파일이 있으면 <strong>기존 내용 유지 + 새로운 내용 추가</strong></li>
-</ul>
-</dd>
-</dl></li>
-</ol>
-<ul>
+<li>기존 파일이 있으면 <strong>기존 내용 유지 + 새로운 내용 추가</strong><br>
+</li>
 <li>파일이 없으면 새로 생성됨</li>
 </ul>
+</dd>
+</dl>
 <div class="sourceCode" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"a"</span>)  <span class="co"># 추가 모드로 열기</span></span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">"추가된 내용입니다.</span><span class="ch">\n</span><span class="st">"</span>)  <span class="co"># 기존 내용 유지</span></span>
 <span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>파일 내용 (`example.txt`)
-: 
-```
+: ```
 Hello, Python!
 파일 쓰기 예제입니다.
 추가된 내용입니다.
 ```</code></pre>
-<ol start="3" type="1">
-<li><dl>
-<dt>파일 생성 모드 (<code>"x"</code>)</dt>
+<dl>
+<dt><strong>(3) 파일 생성 모드 (<code>"x"</code>)</strong></dt>
 <dd>
 <ul>
-<li>새로운 파일을 생성</li>
-</ul>
-</dd>
-</dl></li>
-</ol>
-<ul>
+<li>새로운 파일을 생성<br>
+</li>
 <li><strong>파일이 이미 존재하면 오류 발생</strong></li>
 </ul>
+</dd>
+</dl>
 <div class="sourceCode" id="cb13"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"new_file.txt"</span>, <span class="st">"x"</span>)  <span class="co"># 새 파일 생성</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.write(<span class="st">"새로운 파일입니다.</span><span class="ch">\n</span><span class="st">"</span>)</span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <pre><code>파일이 이미 존재할 경우
-: 
 ```
 FileExistsError: [Errno 17] File exists: 'new_file.txt'
 ```</code></pre>
