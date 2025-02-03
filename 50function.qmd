@@ -56,7 +56,8 @@ Python에서 함수 매개변수는 함수를 호출할 때 전달되는 값(인
 
 이러한 매개변수 방식을 조합하여 다양한 형태의 함수를 정의할 수 있다.
 
-#### 기본 매개변수(Required Parameters)  
+#### 기본 매개변수
+
 함수를 정의할 때 매개변수를 지정하면, 해당 함수는 반드시 인자를 전달받아야 한다.  
 
 ```{python}
@@ -69,6 +70,7 @@ greet("철수")
 
 greet()  # 오류 발생 (TypeError)
 ```
+
 - `greet(name)` 함수는 `name` 매개변수를 필수로 요구한다.
 - `greet()` 호출 시 인자를 전달하지 않으면 `TypeError`가 발생한다.  
 
@@ -88,8 +90,8 @@ greet()
 - `name="손님"`과 같이 기본값을 설정하면, 인자를 전달하지 않을 경우 기본값이 사용된다.
 
 
-#### 위치 인자(Positional Arguments)  
-함수 호출 시 인자의 순서에 따라 매개변수에 값이 할당된다.  
+#### 위치 인자  
+함수 호출 시 인자의 순서(Positional Arguments)에 따라 매개변수에 값이 할당된다.  
 
 ```{python}
 def introduce(name, age):
@@ -102,8 +104,8 @@ introduce(25, "영희")
 - 인자의 순서가 중요하므로, 잘못된 순서로 전달하면 예상치 못한 결과가 나올 수 있다.
 
 
-#### 키워드 인자(Keyword Arguments)  
-함수 호출 시 `매개변수명=값` 형식으로 지정하여 순서를 무시할 수 있다.  
+#### 키워드 인자  
+함수 호출 시 `매개변수명=값` 형식(Keyword Arguments)으로 지정하여 순서를 무시할 수 있다.  
 
 ```{python}
 introduce(age=30, name="민수")  
@@ -112,8 +114,8 @@ introduce(age=30, name="민수")
 - 키워드 인자를 사용하면 가독성이 좋아지고, 인자 순서에 의존하지 않는다.
 
 
-#### 가변 인자(*args)  
-여러 개의 위치 인자를 튜플(tuple) 형태로 받을 수 있다.  
+#### 가변 인자  
+여러 개의 위치 인자(*args)를 튜플(tuple) 형태로 받을 수 있다.  
 
 ```{python}
 def sum_numbers(*args):
@@ -128,8 +130,8 @@ sum_numbers(10, 20, 30, 40, 50)
 - 매개변수명이 `args`가 아니어도 되지만, **관례적으로 `args`**를 사용한다.
 
 
-#### 키워드 가변 인자(**kwargs)  
-여러 개의 키워드 인자를 딕셔너리(dict) 형태로 받을 수 있다.  
+#### 키워드 가변 인자  
+여러 개의 키워드 인자(**kwargs)를 딕셔너리(dict) 형태로 받을 수 있다.  
 
 ```{python}
 def print_info(**kwargs):
@@ -141,8 +143,8 @@ print_info(name="철수", age=25, city="서울")
 - `**kwargs`는 키워드 인자를 받을 수 있으며, 딕셔너리 형태로 저장된다.
 - `kwargs.items()`를 사용하여 키와 값을 출력할 수 있다.
 
-#### 위치 전용 매개변수(Positional-Only Parameters)  
-Python 3.8부터 `/` 기호를 사용하여 특정 매개변수를 위치 인자로만 받을 수 있다.  
+#### 위치 전용 매개변수  
+Python 3.8부터 `/` 기호를 사용하여 특정 매개변수를 위치 인자(Positional-Only Parameters)로만 받을 수 있다.  
 
 ```{python}
 #| error: true
@@ -223,6 +225,7 @@ Python에서 **익명 함수(lambda)**는 `lambda` 키워드를 사용하여 정
 ```python
 lambda 매개변수1, 매개변수2, ... : 표현식
 ```
+
 - `lambda` 키워드로 함수를 정의한다.
 - `매개변수`는 여러 개 입력받을 수 있다.
 - `:` 이후에 오는 **표현식(expression)**이 반환값이 된다.
@@ -246,16 +249,16 @@ print(add_lambda(3, 5)) # 8
 
 #### lambda 함수 활용 예시  
 
-##### 변수에 할당하여 사용  
-
+변수에 할당하여 사용  
+: 
 ```{python}
 multiply = lambda x, y: x * y
 print(multiply(4, 5))  # 20
 ```
 - `lambda x, y: x * y`는 두 숫자의 곱을 반환하는 함수이다.
 
-##### lambda와 `map()` 함수  
-
+lambda와 `map()` 함수  
+: 
 ```{python}
 numbers = [1, 2, 3, 4, 5]
 squared = list(map(lambda x: x ** 2, numbers))
@@ -263,8 +266,8 @@ print(squared)  # [1, 4, 9, 16, 25]
 ```
 - `map(lambda x: x ** 2, numbers)`는 리스트의 각 요소를 제곱한다.
 
-##### lambda와 `filter()` 함수  
-
+lambda와 `filter()` 함수  
+: 
 ```{python}
 numbers = [1, 2, 3, 4, 5, 6]
 even_numbers = list(filter(lambda x: x % 2 == 0, numbers))
@@ -272,8 +275,8 @@ print(even_numbers)  # [2, 4, 6]
 ```
 - `filter(lambda x: x % 2 == 0, numbers)`는 리스트에서 짝수만 필터링한다.
 
-##### lambda와 `sorted()` 함수  
-
+lambda와 `sorted()` 함수  
+: 
 ```{python}
 students = [("철수", 90), ("영희", 85), ("민수", 95)]
 sorted_students = sorted(students, key=lambda x: x[1], reverse=True)
@@ -281,8 +284,8 @@ print(sorted_students)
 ```
 - `key=lambda x: x[1]`을 사용하여 두 번째 요소(점수)를 기준으로 정렬한다.
 
-##### lambda와 `reduce()` 함수  
-
+lambda와 `reduce()` 함수  
+: 
 ```{python}
 from functools import reduce
 
@@ -301,6 +304,7 @@ print(result)  # 120 (1 * 2 * 3 * 4 * 5)
 | **코드 길이** | 한 줄로 작성 | 여러 줄 작성 가능 |
 | **반환값** | 자동으로 표현식의 결과 반환 | `return`을 사용해야 함 |
 | **사용 용도** | 간단한 연산 | 복잡한 로직 구현 |
+: lambda와 일반함수 비교 
 
 #### lambda 함수 사용이 적절한 경우  
 
@@ -410,13 +414,14 @@ def get_student():
 print(get_student())  # {'name': '영희', 'age': 22}
 ```
 
-#### `return`과 `None` 비교  
+#### return과 None 비교  
 
 | 상황 | 반환값 |
 |------|--------|
 | `return 값` 사용 | 해당 값 반환 |
 | `return`만 사용 | `None` 반환 |
 | `return`이 없는 함수 | `None` 반환 |
+: return과 None 비교
 
 ```{python}
 def example():
@@ -425,7 +430,7 @@ def example():
 print(example())  # None
 ```
 
-#### `yield`를 사용한 제너레이터 반환  
+#### yield를 사용한 제너레이터 반환  
 
 - `return` 대신 `yield`를 사용하면 **제너레이터(generator)**를 반환한다.  
 
@@ -502,9 +507,9 @@ print(fibonacci(6))  # 8
 - `fibonacci(6) = fibonacci(5) + fibonacci(4) = 8`
 - 종료 조건을 설정하지 않으면 무한 루프에 빠질 수 있다.
 
-#### 재귀 깊이 제한 (Recursion Limit)  
+#### 재귀 깊이 제한   
 
-Python은 기본적으로 **재귀 호출 가능 횟수(깊이)를 제한**한다.  
+Python은 기본적으로 **재귀 호출 가능 횟수(깊이)를 제한**(Recursion Limit)한다.  
 기본 최대 깊이: **1,000번**  
 
 ```python
@@ -531,10 +536,9 @@ sys.setrecursionlimit(2000)  # 최대 재귀 깊이를 2000으로 설정
 | **종료 필요** | 종료 조건(base case) 필수 | `break`나 조건문 사용 |
 : 재귀함수와 반복문 비교
 
-#### 꼬리 재귀(Tail Recursion)  
+#### 꼬리 재귀  
 
-- **꼬리 재귀(Tail Recursion)**: 함수의 마지막 동작이 **자기 자신을 호출하는 형태**  
-- 일반적으로 **반복문으로 변환 가능**하며, 일부 언어에서는 **최적화(Tail Call Optimization, TCO)**를 지원하지만, Python은 지원하지 않는다.
+**꼬리 재귀(Tail Recursion)**: 함수의 마지막 동작이 **자기 자신을 호출하는 형태**, 일반적으로 **반복문으로 변환 가능**하며, 일부 언어에서는 **최적화(Tail Call Optimization, TCO)**를 지원하지만, Python은 지원하지 않는다.
 
 ```{python}
 def tail_recursive(n, result=1):
@@ -610,7 +614,7 @@ my_function()  # 20
 ```
 - `y`는 함수 내부에서도 접근할 수 있다.
 
-#### `global` 키워드 (전역 변수 변경)  
+#### global 키워드 (전역 변수 변경)  
 
 함수 내부에서 전역 변수를 변경하려면 **`global` 키워드**를 사용해야 한다.  
 
@@ -664,7 +668,7 @@ outer()
 - `nonlocal a`를 사용하면 `a`의 값을 변경할 수 있다.
 - `nonlocal`이 없으면 `a`는 지역 변수로 새롭게 생성된다.
 
-#### `LEGB` 규칙 적용 예시  
+#### LEGB 규칙 적용 예시  
 
 ```{python}
 x = 100  # 전역 변수
@@ -764,7 +768,7 @@ print(add(3, 5))
 
 - `wrapper(*args, **kwargs)`를 사용하여 `add(a, b)`의 인자를 받을 수 있도록 함.
 
-#### `functools.wraps`를 사용한 데코레이터  
+#### functools.wraps를 사용한 데코레이터  
 
 데코레이터를 사용하면 **원래 함수의 이름(name)과 문서(docstring)가 변경될 수 있다**. 이를 방지하려면 **`functools.wraps()`**를 사용한다.  
 
@@ -839,7 +843,7 @@ greet()
 
 - `repeat(n)`이 먼저 실행된 후 `@decorator`가 `greet()`을 감싼다.
 
-#### 내장 데코레이터 (`@staticmethod`, `@classmethod`, `@property`)  
+#### 내장 데코레이터 
 
 Python에는 **기본 제공 데코레이터**가 있다.
 
@@ -927,9 +931,9 @@ Python에서 **모듈(Module)**은 **관련된 코드(함수, 클래스, 변수 
 
 Python의 **모듈과 패키지를 활용하면 코드 재사용성을 높이고, 프로그램을 체계적으로 관리**할 수 있다.
 
-#### 모듈 생성과 사용  
+### 모듈 생성과 사용  
 
-##### 모듈 생성  
+#### 모듈 생성  
 모듈 생성은 다음과 같다.
 
 1. Python 파일(`.py`)을 생성한다.
@@ -943,7 +947,7 @@ def greet(name):
 pi = 3.14159
 ```
 
-##### 모듈 가져오기 (`import`)  
+#### 모듈 가져오기 (`import`)  
 `import 모듈명`을 사용하여 모듈을 가져올 수 있다.
 
 ```python
@@ -984,7 +988,7 @@ print(pi)  # 3.14159
 
 - `from 모듈명 import *`는 **네임스페이스 충돌 위험**이 있어 권장되지 않는다.
 
-#### `__name__` 변수 (`if __name__ == "__main__"`)  
+### __name__ 변수 
 
 모듈이 **직접 실행될 때와 import될 때를 구분**하기 위해 `__name__` 변수를 사용한다.  
 
@@ -1001,7 +1005,7 @@ if __name__ == "__main__":
 - `__name__ == "__main__"` 조건을 사용하면 **import될 때 실행되지 않음**.
 - 직접 실행 시 `__name__`은 `"__main__"`이지만, import되면 `"my_module"`이 된다.
 
-#### 4. 표준 모듈 (Built-in Modules)  
+### 표준 모듈  
 
 Python은 기본적으로 제공하는 표준 라이브러리 모듈이 많다.  
 
@@ -1025,7 +1029,7 @@ print(random.randint(1, 10))  # 1~10 사이의 난수
 print(datetime.datetime.now())  # 현재 날짜 및 시간 출력
 ```
 
-#### 사용자 정의 모듈 저장 경로  
+### 사용자 정의 모듈 저장 경로  
 
 Python은 **모듈을 특정 디렉토리에서 찾는다**.  
 모듈이 저장된 경로를 확인하려면 `sys.path`를 사용한다.  
@@ -1043,11 +1047,11 @@ sys.path.append("C:/my_modules")  # 해당 경로 추가
 print(sys.path)
 ```
 
-#### 패키지(Package)  
+## 패키지  
 
 패키지는 **여러 모듈을 포함하는 디렉토리(폴더)**로 패키지 **폴더 안에는 `__init__.py` 파일**이 있어야 한다.  
 
-##### **패키지 구조 예시**  
+### 패키지 구조 예시  
 
 ```
 mypackage/        # 패키지 폴더
@@ -1056,7 +1060,7 @@ mypackage/        # 패키지 폴더
 │── module2.py    # 모듈 2
 ```
 
-##### **패키지 가져오기**  
+### 패키지 가져오기  
 
 ```python
 from mypackage import module1
@@ -1066,9 +1070,7 @@ print(module1.greet("철수"))
 print(m2.pi)
 ```
 
----
-
-#### 모듈 리로드 (`importlib.reload`)  
+### 모듈 리로드   
 
 Python은 **모듈을 한 번만 로드**하므로, 수정된 모듈을 다시 가져오려면 `importlib.reload()`를 사용한다.  
 
