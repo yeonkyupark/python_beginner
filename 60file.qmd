@@ -185,8 +185,9 @@ file.close()
 ```
 ----
 
-**파일 내용 (`example.txt`)**  
-```text
+파일 내용 (`example.txt`)  
+: 
+```sh
 Hello, Python!
 파일 쓰기 예제입니다.
 ```
