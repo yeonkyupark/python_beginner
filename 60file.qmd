@@ -226,6 +226,7 @@ file.close()
 ----
 
 파일이 이미 존재할 경우
+:
 ```sh
 FileExistsError: [Errno 17] File exists: 'new_file.txt'
 ```
@@ -257,7 +258,7 @@ with open("example.txt", "w") as file:
 
 파일 내용 (`example.txt`)
 : 
-```
+```sh
 첫 번째 줄
 두 번째 줄
 세 번째 줄
@@ -277,7 +278,7 @@ with open("numbers.txt", "w") as file:
 
 파일 내용 (`numbers.txt`)
 : 
-```
+```sh
 숫자: 1
 숫자: 2
 숫자: 3
@@ -306,7 +307,7 @@ with open("data.csv", "w", newline="", encoding="utf-8") as file:
 
 파일 내용 (`data.csv`)
 : 
-```
+```csv
 이름,나이,직업
 철수,25,개발자
 영희,30,디자이너
