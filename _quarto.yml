@@ -40,6 +40,10 @@ book:
     - app_markdown.qmd
     - app_csv_json.qmd
 
+language:
+  crossref-apx-prefix: 참고자료
+  section-title-appendices: 참고자료
+
 bibliography: references.bib
 
 number-sections: false
