@@ -36,10 +36,9 @@ book:
     - part: "파이썬 패키지"
       chapters:
         - pkg_numpy.qmd
-  appendices: 
-    title: "참고자료"
-      - app_markdown.qmd
-      - app_csv_json.qmd
+  appendices: "참고자료"
+    - app_markdown.qmd
+    - app_csv_json.qmd
 
 bibliography: references.bib
 
@@ -59,6 +58,10 @@ toc: true
 toc-depth: 4
 toc-title: 목차
 
+crossref:
+  appendix-title: "참고"
+  appendix-delim: ":"
+  
 execute:
   freeze: auto
   
