@@ -19,7 +19,7 @@ book:
         href: https://www.instagram.com/yeonkyu.park/
       - icon: globe
         href: https://yeonkyupark.github.io/
-    collapse-level: 1
+    collapse-level: 2
   chapters:
     - index.qmd
     - part: "파이썬 기초"
@@ -37,6 +37,7 @@ book:
       chapters:
         - pkg_numpy.qmd
   appendices:
+    title: "참고자료"
     - app_markdown.qmd
     - app_csv_json.qmd
     - references.qmd
