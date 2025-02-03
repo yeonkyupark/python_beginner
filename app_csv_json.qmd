@@ -254,7 +254,7 @@ JSON 파일은 아래와 같은 형태로 구성된다.
 - **객체(Object, 딕셔너리와 유사)**: `{}`로 감싸서 키-값 쌍을 사용한다.  
 
 
-### JSON 파일 쓰기 (`json.dump()`)  
+### JSON 파일 쓰기
 
 Python 객체(딕셔너리, 리스트 등)를 JSON 파일로 저장할 수 있다.  
 
@@ -302,7 +302,7 @@ with open("data.json", "w", encoding="utf-8") as file:
 - `indent=4`: **JSON 파일을 보기 좋게 정렬**  
 
 
-### JSON 파일 읽기 (`json.load()`)  
+### JSON 파일 읽기  
 
 JSON 파일을 읽어서 Python 객체로 변환할 수 있다.  
 
