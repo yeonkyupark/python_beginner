@@ -75,7 +75,7 @@ CSV 파일을 읽을 때는 `csv.reader()`를 사용하여 데이터를 리스�
 
 **CSV 파일 읽기 (`reader()`)**  
 : 
-```{python}
+```python
 import csv
 
 # CSV 파일 읽기
@@ -142,7 +142,7 @@ with open("data_dict.csv", "w", newline="", encoding="utf-8") as file:
 
 **(2) CSV 파일을 딕셔너리로 읽기 (`DictReader`)**  
 
-```{python}
+```python
 import csv
 
 # CSV 파일 읽기
