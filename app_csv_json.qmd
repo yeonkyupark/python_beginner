@@ -261,7 +261,6 @@ Python 객체(딕셔너리, 리스트 등)를 JSON 파일로 저장할 수 있�
 **JSON 파일 저장**  
  
 ```python
-
 import json
 
 # 저장할 데이터 (Python 딕셔너리)
@@ -280,7 +279,7 @@ with open("data.json", "w", encoding="utf-8") as file:
     json.dump(data, file, ensure_ascii=False, indent=4)
 ```
 
-출력 (`data.json` 파일 내용)
+출력 (`data.json` 파일 내용)  
 : 
 ```json
 
