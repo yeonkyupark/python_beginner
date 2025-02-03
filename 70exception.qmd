@@ -38,10 +38,10 @@ except 예외_타입:
 
 ```{python}
 #| error: true
-# num = int(input("숫자를 입력하세요: "))
-num = 0
 
 try:
+    # num = int(input("숫자를 입력하세요: "))
+    num = 0
     result = 10 / num  # 0 입력 시 예외 발생
     print("결과:", result)
 except ZeroDivisionError:
@@ -53,9 +53,9 @@ except ZeroDivisionError:
 ```{python}
 #| error: true
 
-# num = int(input("숫자를 입력하세요: "))  # 문자를 입력하면 예외 발생
-num = 'abc'
 try:
+    # num = int(input("숫자를 입력하세요: "))  # 문자를 입력하면 예외 발생
+    num = 'abc'
     print("입력한 숫자:", num)
 except ValueError:
     print("올바른 숫자를 입력하세요.")
@@ -66,10 +66,10 @@ except ValueError:
 ```{python}
 #| error: true
 
-# num = int(input("숫자를 입력하세요: "))
-num = 0 # num = 'abc'
 
 try:
+    # num = int(input("숫자를 입력하세요: "))
+    num = 0 # num = 'abc'
     result = 10 / num
 except ZeroDivisionError:
     print("0으로 나눌 수 없습니다.")
@@ -85,10 +85,10 @@ except Exception as e:
 ```{python}
 #| error: true
 
-# num = int(input("숫자를 입력하세요: "))
-num = 0
 
 try:
+    # num = int(input("숫자를 입력하세요: "))
+    num = 0
     result = 10 / num
 except ZeroDivisionError:
     print("0으로 나눌 수 없습니다.")
@@ -112,10 +112,10 @@ finally:
 class NegativeNumberError(Exception):
     pass
 
-# num = int(input("양수를 입력하세요: "))
-num = -1
 
 try:
+    # num = int(input("양수를 입력하세요: "))
+    num = -1
     if num < 0:
         raise NegativeNumberError("음수는 입력할 수 없습니다.")
     print("입력한 숫자:", num)
