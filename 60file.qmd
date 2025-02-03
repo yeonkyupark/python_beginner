@@ -183,6 +183,7 @@ file.write("파일 쓰기 예제입니다.\n")
 # 파일 닫기
 file.close()
 ```
+
 ----
 
 파일 내용 (`example.txt`)  
@@ -201,7 +202,9 @@ file = open("example.txt", "a")  # 추가 모드로 열기
 file.write("추가된 내용입니다.\n")  # 기존 내용 유지
 file.close()
 ```
+
 ----
+
 파일 내용 (`example.txt`)
 : 
 ```sh
@@ -219,7 +222,9 @@ file = open("new_file.txt", "x")  # 새 파일 생성
 file.write("새로운 파일입니다.\n")
 file.close()
 ```
+
 ----
+
 파일이 이미 존재할 경우
 ```sh
 FileExistsError: [Errno 17] File exists: 'new_file.txt'
@@ -247,7 +252,9 @@ lines = ["첫 번째 줄\n", "두 번째 줄\n", "세 번째 줄\n"]
 with open("example.txt", "w") as file:
     file.writelines(lines)
 ```
+
 ----
+
 파일 내용 (`example.txt`)
 : 
 ```
@@ -265,7 +272,9 @@ with open("numbers.txt", "w") as file:
     for i in range(1, 6):
         file.write(f"숫자: {i}\n")
 ```
+
 ----
+
 파일 내용 (`numbers.txt`)
 : 
 ```
@@ -292,7 +301,9 @@ with open("data.csv", "w", newline="", encoding="utf-8") as file:
     writer = csv.writer(file)
     writer.writerows(data)  # 여러 줄 쓰기
 ```
+
 ----
+
 파일 내용 (`data.csv`)
 : 
 ```
@@ -313,7 +324,9 @@ data = {"이름": "철수", "나이": 25, "직업": "개발자"}
 with open("data.json", "w", encoding="utf-8") as file:
     json.dump(data, file, ensure_ascii=False, indent=4)
 ```
+
 ----
+
 파일 내용 (`data.json`)
 : 
 ```json
@@ -324,38 +337,26 @@ with open("data.json", "w", encoding="utf-8") as file:
 }
 ```
 
-
-
 ## 4. 파일 읽기 (`read()`, `readline()`, `readlines()`)  
 
-```python
-file = open("example.txt", "r")  # 읽기 모드로 파일 열기
-content = file.read()  # 파일 전체 읽기
-print(content)
-file.close()  # 파일 닫기
-```
 
-### `readline()`  
-- 한 줄씩 읽기  
 
-```python
-file = open("example.txt", "r")
-print(file.readline())  # 첫 번째 줄 읽기
-print(file.readline())  # 두 번째 줄 읽기
-file.close()
-```
 
-### `readlines()`  
-- 모든 줄을 리스트로 반환  
 
-```python
-file = open("example.txt", "r")
-lines = file.readlines()  # 리스트로 저장
-print(lines)
-file.close()
-```
 
----
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 5. `with` 문을 사용한 파일 열기  
 
