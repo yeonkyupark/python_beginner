@@ -33,7 +33,7 @@ Python의 `csv` 모듈을 활용하면 **엑셀 파일을 다루듯이** 데이�
 
 Python에서 CSV 파일을 저장할 때는 **`csv` 모듈**을 사용한다.  
 
-**CSV 파일 저장 (`writerow()`)**  
+CSV 파일 저장 (`writerow()`)  
 : 
 ```python 
 
@@ -74,7 +74,7 @@ with open("data.csv", "w", newline="", encoding="utf-8") as file:
 
 CSV 파일을 읽을 때는 `csv.reader()`를 사용하여 데이터를 리스트로 변환할 수 있다.  
 
-**CSV 파일 읽기 (`reader()`)**  
+CSV 파일 읽기 (`reader()`)  
 : 
 ```python
 
