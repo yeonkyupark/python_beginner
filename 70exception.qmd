@@ -3,3 +3,138 @@ title: "예외처리"
 format: html
 ---
 
+## 예외 처리 (Exception Handling)  
+
+예외(Exception)는 **프로그램 실행 중 발생하는 오류**로, 이를 적절히 처리하지 않으면 프로그램이 **강제 종료**될 수 있다. Python에서는 `try-except` 문을 사용하여 예외를 처리하고, 프로그램이 중단되지 않도록 만들 수 있다.  
+
+| 기능 | 설명 |
+|------|------|
+| `try` | 예외가 발생할 가능성이 있는 코드 실행 |
+| `except 예외_타입` | 특정 예외가 발생했을 때 실행 |
+| `except Exception as e` | 모든 예외를 처리하고 오류 메시지 출력 |
+| `else` | 예외가 발생하지 않았을 때 실행 |
+| `finally` | 예외 발생 여부와 관계없이 항상 실행 |
+| `raise 예외_타입("메시지")` | 직접 예외 발생 |
+
+예외 처리를 활용하면 프로그램이 **예상치 못한 오류에도 안전하게 실행**될 수 있다.
+
+### 예외 처리 기본 구조  
+
+```python
+try:
+    # 예외가 발생할 가능성이 있는 코드
+except 예외_타입:
+    # 예외가 발생했을 때 실행할 코드
+```
+
+- **`try`**: 예외가 발생할 가능성이 있는 코드를 작성  
+- **`except`**: 예외가 발생하면 실행할 코드 작성  
+
+---
+
+### 기본 예제  
+
+**1. 0으로 나누기 예외 (`ZeroDivisionError`)**  
+
+```{python}
+#| error: true
+# num = int(input("숫자를 입력하세요: "))
+num = 0
+
+try:
+    result = 10 / num  # 0 입력 시 예외 발생
+    print("결과:", result)
+except ZeroDivisionError:
+    print("0으로 나눌 수 없습니다.")
+```
+
+**2. 입력값이 숫자가 아닐 때 예외 (`ValueError`)**  
+
+```{python}
+#| error: true
+
+# num = int(input("숫자를 입력하세요: "))  # 문자를 입력하면 예외 발생
+num = 'abc'
+try:
+    print("입력한 숫자:", num)
+except ValueError:
+    print("올바른 숫자를 입력하세요.")
+```
+
+**3. 여러 개의 예외 처리**  
+
+```{python}
+#| error: true
+
+# num = int(input("숫자를 입력하세요: "))
+num = 0 # num = 'abc'
+
+try:
+    result = 10 / num
+except ZeroDivisionError:
+    print("0으로 나눌 수 없습니다.")
+except ValueError:
+    print("올바른 숫자를 입력하세요.")
+except Exception as e:
+    print("예외 발생:", e)
+```
+
+
+**4. `else`와 `finally` 사용**  
+
+```{python}
+#| error: true
+
+# num = int(input("숫자를 입력하세요: "))
+num = 0
+
+try:
+    result = 10 / num
+except ZeroDivisionError:
+    print("0으로 나눌 수 없습니다.")
+except ValueError:
+    print("올바른 숫자를 입력하세요.")
+else:
+    print("연산 결과:", result)
+finally:
+    print("프로그램 종료")
+```
+
+- **`else`**: 예외가 발생하지 않으면 실행  
+- **`finally`**: 예외 발생 여부와 관계없이 항상 실행  
+
+
+**5. 사용자 정의 예외 (`raise`)**  
+
+```{python}
+#| error: true
+
+class NegativeNumberError(Exception):
+    pass
+
+# num = int(input("양수를 입력하세요: "))
+num = -1
+
+try:
+    if num < 0:
+        raise NegativeNumberError("음수는 입력할 수 없습니다.")
+    print("입력한 숫자:", num)
+except NegativeNumberError as e:
+    print(e)
+except ValueError:
+    print("올바른 숫자를 입력하세요.")
+```
+
+**6. 파일 읽기 예외 (`FileNotFoundError`)**  
+
+```{python}
+#| error: true
+
+try:
+    with open("nonexistent.txt", "r") as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    print("파일을 찾을 수 없습니다.")
+```
+
