@@ -275,8 +275,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#csv-파일-쓰기" id="toc-csv-파일-쓰기" class="nav-link" data-scroll-target="#csv-파일-쓰기">CSV 파일 쓰기</a></li>
   <li><a href="#json-파일-쓰기" id="toc-json-파일-쓰기" class="nav-link" data-scroll-target="#json-파일-쓰기">JSON 파일 쓰기</a></li>
   </ul></li>
+  <li><a href="#파일-읽기" id="toc-파일-읽기" class="nav-link" data-scroll-target="#파일-읽기">파일 읽기</a>
+  <ul class="collapse">
+  <li><a href="#파일-열기-모드-1" id="toc-파일-열기-모드-1" class="nav-link" data-scroll-target="#파일-열기-모드-1">파일 열기 모드</a></li>
+  <li><a href="#파일-읽기-방법" id="toc-파일-읽기-방법" class="nav-link" data-scroll-target="#파일-읽기-방법">파일 읽기 방법</a></li>
+  <li><a href="#바이너리-파일-읽기" id="toc-바이너리-파일-읽기" class="nav-link" data-scroll-target="#바이너리-파일-읽기">바이너리 파일 읽기</a></li>
+  <li><a href="#파일에서-일부만-읽기" id="toc-파일에서-일부만-읽기" class="nav-link" data-scroll-target="#파일에서-일부만-읽기">파일에서 일부만 읽기</a></li>
+  <li><a href="#파일-존재-여부-확인-1" id="toc-파일-존재-여부-확인-1" class="nav-link" data-scroll-target="#파일-존재-여부-확인-1">파일 존재 여부 확인</a></li>
   </ul></li>
-  <li><a href="#파일-읽기-read-readline-readlines" id="toc-파일-읽기-read-readline-readlines" class="nav-link" data-scroll-target="#파일-읽기-read-readline-readlines">4. 파일 읽기 (<code>read()</code>, <code>readline()</code>, <code>readlines()</code>)</a></li>
+  </ul></li>
   <li><a href="#with-문을-사용한-파일-열기-1" id="toc-with-문을-사용한-파일-열기-1" class="nav-link" data-scroll-target="#with-문을-사용한-파일-열기-1">5. <code>with</code> 문을 사용한 파일 열기</a></li>
   <li><a href="#파일에-데이터-추가-append" id="toc-파일에-데이터-추가-append" class="nav-link" data-scroll-target="#파일에-데이터-추가-append">6. 파일에 데이터 추가 (<code>append</code>)</a></li>
   <li><a href="#바이너리-파일-처리-rb-wb" id="toc-바이너리-파일-처리-rb-wb" class="nav-link" data-scroll-target="#바이너리-파일-처리-rb-wb">7. 바이너리 파일 처리 (<code>"rb"</code>, <code>"wb"</code>)</a></li>
@@ -750,9 +757,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <dl>
 <dt>파일 내용 (<code>data.csv</code>)</dt>
 <dd>
-<pre class="csv"><code>이름,나이,직업
-철수,25,개발자
-영희,30,디자이너</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="ex">이름,나이,직업</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="ex">철수,25,개발자</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="ex">영희,30,디자이너</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </dd>
 </dl>
 </section>
@@ -778,16 +785,236 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dl>
 </section>
 </section>
+<section id="파일-읽기" class="level3">
+<h3 class="anchored" data-anchor-id="파일-읽기">파일 읽기</h3>
+<p>Python에서 파일을 읽을 때는 <strong><code>open()</code> 함수</strong>로 파일을 연 후, 다양한 방법으로 파일을 읽을 수 있다.<br>
+파일을 읽은 후에는 반드시 <strong><code>close()</code></strong>를 호출하거나 <strong><code>with open()</code></strong>을 사용해 자동으로 파일을 닫아야 한다.</p>
+<table class="caption-top table">
+<caption>파일 읽기</caption>
+<colgroup>
+<col style="width: 30%">
+<col style="width: 70%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>방법</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>전체 내용 읽기</strong></td>
+<td><code>file.read()</code></td>
+</tr>
+<tr class="even">
+<td><strong>한 줄씩 읽기</strong></td>
+<td><code>file.readline()</code></td>
+</tr>
+<tr class="odd">
+<td><strong>여러 줄 읽기</strong></td>
+<td><code>file.readlines()</code></td>
+</tr>
+<tr class="even">
+<td><strong>자동 닫기</strong></td>
+<td><code>with open("파일명") as file:</code> 사용</td>
+</tr>
+<tr class="odd">
+<td><strong>바이너리 파일 읽기</strong></td>
+<td><code>open("파일명", "rb")</code> 사용</td>
+</tr>
+<tr class="even">
+<td><strong>파일 일부 읽기</strong></td>
+<td><code>file.read(size)</code></td>
+</tr>
+</tbody>
+</table>
+<p>파일을 읽을 때는 필요한 방식에 맞게 <strong><code>read()</code></strong>, <strong><code>readline()</code></strong>, <strong><code>readlines()</code></strong>를 사용하여 효율적으로 파일 내용을 처리할 수 있다.</p>
+<section id="파일-열기-모드-1" class="level4">
+<h4 class="anchored" data-anchor-id="파일-열기-모드-1">파일 열기 모드</h4>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>모드</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>"r"</code></td>
+<td><strong>읽기 모드</strong> (파일이 존재해야 함)</td>
+</tr>
+<tr class="even">
+<td><code>"rb"</code></td>
+<td><strong>바이너리 읽기 모드</strong> (이미지, 오디오 파일 등)</td>
+</tr>
+</tbody>
+</table>
 </section>
-<section id="파일-읽기-read-readline-readlines" class="level2">
-<h2 class="anchored" data-anchor-id="파일-읽기-read-readline-readlines">4. 파일 읽기 (<code>read()</code>, <code>readline()</code>, <code>readlines()</code>)</h2>
+<section id="파일-읽기-방법" class="level4">
+<h4 class="anchored" data-anchor-id="파일-읽기-방법">파일 읽기 방법</h4>
+<p><strong>(1) 전체 내용 읽기 (<code>read()</code>)</strong></p>
+<ul>
+<li><code>read()</code>는 파일의 <strong>전체 내용</strong>을 하나의 문자열로 반환한다.</li>
+</ul>
+<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일을 읽기 모드로 열기</span></span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>)</span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 전체 내용 읽기</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>content <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 읽은 내용 출력</span></span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(content)</span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일 닫기</span></span>
+<span id="cb24-11"><a href="#cb24-11" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<dl>
+<dt>파일 내용 (<code>example.txt</code>)</dt>
+<dd>
+<div class="sourceCode" id="cb25"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> Python!</span>
+<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a><span class="ex">파일</span> 읽기 예제입니다.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</dd>
+</dl>
+<hr>
+<dl>
+<dt>출력 결과</dt>
+<dd>
+<div class="sourceCode" id="cb26"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> Python!</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="ex">파일</span> 읽기 예제입니다.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</dd>
+</dl>
+<p><strong>(2) 한 줄씩 읽기 (<code>readline()</code>)</strong></p>
+<ul>
+<li><code>readline()</code>은 파일에서 <strong>한 줄씩</strong> 읽어서 문자열로 반환한다.<br>
+</li>
+<li><strong>줄바꿈 문자</strong>(<code>\n</code>)가 포함된 채로 반환된다.</li>
+</ul>
+<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일을 읽기 모드로 열기</span></span>
+<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>)</span>
+<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 첫 번째 줄 읽기</span></span>
+<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a>line1 <span class="op">=</span> <span class="bu">file</span>.readline()</span>
+<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(line1)</span>
+<span id="cb27-7"><a href="#cb27-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-8"><a href="#cb27-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 두 번째 줄 읽기</span></span>
+<span id="cb27-9"><a href="#cb27-9" aria-hidden="true" tabindex="-1"></a>line2 <span class="op">=</span> <span class="bu">file</span>.readline()</span>
+<span id="cb27-10"><a href="#cb27-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(line2)</span>
+<span id="cb27-11"><a href="#cb27-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb27-12"><a href="#cb27-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일 닫기</span></span>
+<span id="cb27-13"><a href="#cb27-13" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<dl>
+<dt>파일 내용 (<code>example.txt</code>)</dt>
+<dd>
+<div class="sourceCode" id="cb28"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> Python!</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a><span class="ex">파일</span> 읽기 예제입니다.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</dd>
+</dl>
+<hr>
+<dl>
+<dt>출력 결과</dt>
+<dd>
+<div class="sourceCode" id="cb29"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> Python!</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="ex">파일</span> 읽기 예제입니다.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</dd>
+</dl>
+<p><strong>(3) 여러 줄 읽기 (<code>readlines()</code>)</strong></p>
+<ul>
+<li><code>readlines()</code>는 파일을 <strong>전체 줄을 리스트</strong>로 반환한다.<br>
+</li>
+<li>각 줄은 <strong>줄바꿈 문자</strong>(<code>\n</code>)와 함께 리스트의 항목으로 저장된다.</li>
+</ul>
+<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일을 읽기 모드로 열기</span></span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span> <span class="op">=</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 모든 줄을 리스트로 읽기</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>lines <span class="op">=</span> <span class="bu">file</span>.readlines()</span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 리스트 내용 출력</span></span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(lines)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 파일 닫기</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a><span class="bu">file</span>.close()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<dl>
+<dt>파일 내용 (<code>example.txt</code>)</dt>
+<dd>
+<div class="sourceCode" id="cb31"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello,</span> Python!</span>
+<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a><span class="ex">파일</span> 읽기 예제입니다.</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</dd>
+</dl>
+<hr>
+<dl>
+<dt>출력 결과</dt>
+<dd>
+<div class="sourceCode" id="cb32"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="ex">[</span><span class="st">'Hello, Python!\n'</span><span class="ex">,</span> <span class="st">'파일 읽기 예제입니다.\n'</span>]</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</dd>
+</dl>
+<p><strong>(4) <code>with</code> 문을 사용한 파일 읽기</strong></p>
+<ul>
+<li><code>with open()</code> 구문을 사용하면 파일을 자동으로 닫을 수 있어 <strong>파일 관리</strong>가 편리하다.</li>
+</ul>
+<div class="sourceCode" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()  <span class="co"># 전체 내용 읽기</span></span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><strong><code>with</code> 문을 사용하면 <code>close()</code>를 명시적으로 호출할 필요가 없으며</strong>, 예외가 발생해도 파일이 안전하게 닫힌다.</li>
+</ul>
+</section>
+<section id="바이너리-파일-읽기" class="level4">
+<h4 class="anchored" data-anchor-id="바이너리-파일-읽기">바이너리 파일 읽기</h4>
+<ul>
+<li>바이너리 파일을 읽을 때는 <strong><code>"rb"</code> 모드를 사용</strong>한다.<br>
+</li>
+<li>읽은 데이터는 <strong>바이트 객체</strong>로 반환된다.</li>
+</ul>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"image.jpg"</span>, <span class="st">"rb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    binary_data <span class="op">=</span> <span class="bu">file</span>.read()  <span class="co"># 이미지 파일을 바이트로 읽기</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(binary_data[:<span class="dv">10</span>])  <span class="co"># 바이트 일부 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li>바이너리 파일을 읽은 후에는 <strong>바이트 객체</strong>로 처리되며, 일반적인 문자열 처리 방법과는 다르다.</li>
+</ul>
+</section>
+<section id="파일에서-일부만-읽기" class="level4">
+<h4 class="anchored" data-anchor-id="파일에서-일부만-읽기">파일에서 일부만 읽기</h4>
+<ul>
+<li><code>read(size)</code>를 사용하면 파일에서 <strong>지정한 크기만큼</strong> 데이터를 읽을 수 있다.</li>
+</ul>
+<div class="sourceCode" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 첫 5글자만 읽기</span></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read(<span class="dv">5</span>)</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(content)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<hr>
+<dl>
+<dt>출력 결과</dt>
+<dd>
+<div class="sourceCode" id="cb36"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="ex">Hello</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</dd>
+</dl>
+<ul>
+<li><code>read(size)</code>는 <strong>파일의 처음부터</strong> 지정된 바이트 수만큼 읽고, 이후 <strong>다음 호출에서</strong> 나머지를 읽는다.</li>
+</ul>
+</section>
+<section id="파일-존재-여부-확인-1" class="level4">
+<h4 class="anchored" data-anchor-id="파일-존재-여부-확인-1">파일 존재 여부 확인</h4>
+<p>파일을 읽기 전에 파일이 존재하는지 확인하려면 <strong><code>os.path.exists()</code></strong>를 사용할 수 있다.</p>
+<div class="sourceCode" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(<span class="st">"example.txt"</span>):</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>        content <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(content)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"파일이 존재하지 않습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+</section>
 </section>
 <section id="with-문을-사용한-파일-열기-1" class="level2">
 <h2 class="anchored" data-anchor-id="with-문을-사용한-파일-열기-1">5. <code>with</code> 문을 사용한 파일 열기</h2>
 <p>파일을 열고 닫는 작업을 자동으로 처리하기 위해 <strong><code>with open()</code> 구문을 사용</strong>하면 편리하다.</p>
-<div class="sourceCode" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()</span>
-<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(content)  <span class="co"># 파일 자동으로 닫힘</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(content)  <span class="co"># 파일 자동으로 닫힘</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="파일에-데이터-추가-append" class="level2">
@@ -795,8 +1022,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><code>"a"</code> 모드를 사용하면 기존 내용 유지 + 새로운 내용 추가됨.</li>
 </ul>
-<div class="sourceCode" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"a"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb25-2"><a href="#cb25-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">"추가된 내용입니다.</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"example.txt"</span>, <span class="st">"a"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(<span class="st">"추가된 내용입니다.</span><span class="ch">\n</span><span class="st">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="바이너리-파일-처리-rb-wb" class="level2">
@@ -804,44 +1031,44 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li>이미지, 오디오, 동영상 같은 <strong>바이너리 파일</strong>을 처리할 때 사용.</li>
 </ul>
-<div class="sourceCode" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 바이너리 파일 읽기</span></span>
-<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"image.jpg"</span>, <span class="st">"rb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    binary_data <span class="op">=</span> <span class="bu">file</span>.read()</span>
-<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 바이너리 파일 쓰기</span></span>
-<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"copy.jpg"</span>, <span class="st">"wb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(binary_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 바이너리 파일 읽기</span></span>
+<span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"image.jpg"</span>, <span class="st">"rb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a>    binary_data <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb40-4"><a href="#cb40-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb40-5"><a href="#cb40-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 바이너리 파일 쓰기</span></span>
+<span id="cb40-6"><a href="#cb40-6" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"copy.jpg"</span>, <span class="st">"wb"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb40-7"><a href="#cb40-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">file</span>.write(binary_data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="파일-존재-여부-확인-os.path.exists" class="level2">
 <h2 class="anchored" data-anchor-id="파일-존재-여부-확인-os.path.exists">8. 파일 존재 여부 확인 (<code>os.path.exists</code>)</h2>
 <p>파일이 존재하는지 확인하려면 <code>os.path.exists()</code>를 사용한다.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
-<span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb27-3"><a href="#cb27-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(<span class="st">"example.txt"</span>):</span>
-<span id="cb27-4"><a href="#cb27-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"파일이 존재합니다."</span>)</span>
-<span id="cb27-5"><a href="#cb27-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
-<span id="cb27-6"><a href="#cb27-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"파일이 없습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> os</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> os.path.exists(<span class="st">"example.txt"</span>):</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"파일이 존재합니다."</span>)</span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="cf">else</span>:</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"파일이 없습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 <section id="csv-파일-읽고-쓰기-csv-모듈" class="level2">
 <h2 class="anchored" data-anchor-id="csv-파일-읽고-쓰기-csv-모듈">9. CSV 파일 읽고 쓰기 (<code>csv</code> 모듈)</h2>
 <section id="csv-파일-쓰기-1" class="level3">
 <h3 class="anchored" data-anchor-id="csv-파일-쓰기-1">CSV 파일 쓰기</h3>
-<div class="sourceCode" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
-<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.csv"</span>, <span class="st">"w"</span>, newline<span class="op">=</span><span class="st">""</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
-<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">"이름"</span>, <span class="st">"나이"</span>, <span class="st">"직업"</span>])  <span class="co"># 헤더 작성</span></span>
-<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">"철수"</span>, <span class="dv">25</span>, <span class="st">"개발자"</span>])</span>
-<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">"영희"</span>, <span class="dv">30</span>, <span class="st">"디자이너"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> csv</span>
+<span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.csv"</span>, <span class="st">"w"</span>, newline<span class="op">=</span><span class="st">""</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb42-4"><a href="#cb42-4" aria-hidden="true" tabindex="-1"></a>    writer <span class="op">=</span> csv.writer(<span class="bu">file</span>)</span>
+<span id="cb42-5"><a href="#cb42-5" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">"이름"</span>, <span class="st">"나이"</span>, <span class="st">"직업"</span>])  <span class="co"># 헤더 작성</span></span>
+<span id="cb42-6"><a href="#cb42-6" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">"철수"</span>, <span class="dv">25</span>, <span class="st">"개발자"</span>])</span>
+<span id="cb42-7"><a href="#cb42-7" aria-hidden="true" tabindex="-1"></a>    writer.writerow([<span class="st">"영희"</span>, <span class="dv">30</span>, <span class="st">"디자이너"</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="csv-파일-읽기" class="level3">
 <h3 class="anchored" data-anchor-id="csv-파일-읽기">CSV 파일 읽기</h3>
-<div class="sourceCode" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.csv"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a>    reader <span class="op">=</span> csv.reader(<span class="bu">file</span>)</span>
-<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> reader:</span>
-<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.csv"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    reader <span class="op">=</span> csv.reader(<span class="bu">file</span>)</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> row <span class="kw">in</span> reader:</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(row)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <hr>
 </section>
 </section>
@@ -849,18 +1076,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 class="anchored" data-anchor-id="json-파일-읽고-쓰기-json-모듈">10. JSON 파일 읽고 쓰기 (<code>json</code> 모듈)</h2>
 <section id="json-파일-쓰기-1" class="level3">
 <h3 class="anchored" data-anchor-id="json-파일-쓰기-1">JSON 파일 쓰기</h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
-<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">"이름"</span>: <span class="st">"철수"</span>, <span class="st">"나이"</span>: <span class="dv">25</span>, <span class="st">"직업"</span>: <span class="st">"개발자"</span>}</span>
-<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.json"</span>, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a>    json.dump(data, <span class="bu">file</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>)  <span class="co"># JSON 저장</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
+<span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">"이름"</span>: <span class="st">"철수"</span>, <span class="st">"나이"</span>: <span class="dv">25</span>, <span class="st">"직업"</span>: <span class="st">"개발자"</span>}</span>
+<span id="cb44-4"><a href="#cb44-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb44-5"><a href="#cb44-5" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.json"</span>, <span class="st">"w"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb44-6"><a href="#cb44-6" aria-hidden="true" tabindex="-1"></a>    json.dump(data, <span class="bu">file</span>, ensure_ascii<span class="op">=</span><span class="va">False</span>, indent<span class="op">=</span><span class="dv">4</span>)  <span class="co"># JSON 저장</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="json-파일-읽기" class="level3">
 <h3 class="anchored" data-anchor-id="json-파일-읽기">JSON 파일 읽기</h3>
-<div class="sourceCode" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.json"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
-<span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> json.load(<span class="bu">file</span>)</span>
-<span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"data.json"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    data <span class="op">=</span> json.load(<span class="bu">file</span>)</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 
 
 </section>
