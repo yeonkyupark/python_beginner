@@ -324,8 +324,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <table class="caption-top table">
 <caption>CSV 관련 함수</caption>
 <colgroup>
-<col style="width: 50%">
-<col style="width: 50%">
+<col style="width: 40%">
+<col style="width: 60%">
 </colgroup>
 <thead>
 <tr class="header">
@@ -675,7 +675,7 @@ with open("data_dict.csv", "w", newline="", encoding="utf-8") as file:
 
 **(1) Python 객체 → JSON 문자열 (`dumps()`)**  
 
-::: {#9f83c23e .cell execution_count=1}
+::: {#d446f289 .cell execution_count=1}
 ``` {.python .cell-code}
 import json
 
@@ -692,7 +692,7 @@ print(json_str)</code></pre>
 </div>
 <p>:::</p>
 <p><strong>(2) JSON 문자열 → Python 객체 (<code>loads()</code>)</strong></p>
-<div id="2467cdf1" class="cell" data-execution_count="2">
+<div id="3580811d" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>json_str <span class="op">=</span> <span class="st">'{"이름": "영희", "나이": 30}'</span></span>
