@@ -54,3 +54,12 @@ div.cell-output.cell-output-error {
   margin-bottom: 0;
   font-size: 0.9em;
 }
+
+figcaption {
+  text-align: center;
+}
+
+table.caption-top.table {
+  margin-bottom: 24px;
+}
+
