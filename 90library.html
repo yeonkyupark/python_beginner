@@ -217,8 +217,14 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#파이썬에서-사용하는-주요-패키지" id="toc-파이썬에서-사용하는-주요-패키지" class="nav-link active" data-scroll-target="#파이썬에서-사용하는-주요-패키지">파이썬에서 사용하는 주요 패키지</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/90library.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
@@ -242,8 +248,86 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
+<section id="파이썬에서-사용하는-주요-패키지" class="level2">
+<h2 class="anchored" data-anchor-id="파이썬에서-사용하는-주요-패키지">파이썬에서 사용하는 주요 패키지</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 21%">
+<col style="width: 78%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>패키지</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>NumPy</strong></td>
+<td>수치 계산을 위한 패키지로, <strong>다차원 배열</strong> 객체인 <code>ndarray</code>를 제공하며, 고속의 배열 연산을 지원한다. 과학 및 수학 연산에서 필수적인 패키지다.</td>
+</tr>
+<tr class="even">
+<td><strong>Pandas</strong></td>
+<td><strong>데이터 분석</strong>을 위한 패키지로, <code>DataFrame</code>과 <code>Series</code>와 같은 자료구조를 사용해 데이터를 효율적으로 처리하고 분석할 수 있다. 데이터 정제와 탐색에 유용하다.</td>
+</tr>
+<tr class="odd">
+<td><strong>Matplotlib</strong></td>
+<td><strong>데이터 시각화</strong>를 위한 패키지로, 다양한 종류의 그래프(라인, 막대, 히스토그램 등)를 그릴 수 있다. 데이터 분석 결과를 시각적으로 표현할 때 사용된다.</td>
+</tr>
+<tr class="even">
+<td><strong>Seaborn</strong></td>
+<td><strong>Matplotlib</strong>을 기반으로 하는 시각화 패키지로, 통계적 시각화와 복잡한 그래프를 간편하게 만들 수 있다. 데이터 분포 및 관계를 시각화하는 데 유용하다.</td>
+</tr>
+<tr class="odd">
+<td><strong>SciPy</strong></td>
+<td><strong>과학적 계산</strong>을 위한 패키지로, 수학, 공학, 통계, 신호 처리 등을 위한 여러 기능을 제공한다. <code>NumPy</code>의 기능을 확장하는 역할을 한다.</td>
+</tr>
+<tr class="even">
+<td><strong>Scikit-learn</strong></td>
+<td><strong>기계 학습</strong>을 위한 패키지로, 분류, 회귀, 클러스터링 등 다양한 모델을 손쉽게 사용할 수 있게 해준다. 데이터 전처리와 모델 평가 기능도 제공한다.</td>
+</tr>
+<tr class="odd">
+<td><strong>TensorFlow</strong></td>
+<td><strong>딥러닝</strong>을 위한 오픈소스 라이브러리로, 신경망 모델을 구현하고 학습시킬 수 있는 강력한 기능을 제공한다. 구글에서 개발하였다.</td>
+</tr>
+<tr class="even">
+<td><strong>Keras</strong></td>
+<td><strong>딥러닝</strong> 모델을 빠르게 설계하고 학습시킬 수 있는 고수준 API로, <code>TensorFlow</code> 위에서 작동한다. 간단한 인터페이스로 딥러닝을 쉽게 다룰 수 있다.</td>
+</tr>
+<tr class="odd">
+<td><strong>Flask</strong></td>
+<td><strong>웹 개발</strong>을 위한 마이크로 웹 프레임워크로, 간단한 API 서버를 구축할 때 사용된다. 경량화된 구조로 빠르게 웹 애플리케이션을 만들 수 있다.</td>
+</tr>
+<tr class="even">
+<td><strong>Django</strong></td>
+<td><strong>웹 개발</strong>을 위한 풀스택 웹 프레임워크로, 강력한 ORM, 인증, 관리자 인터페이스 등을 제공하며 대규모 웹 애플리케이션 개발에 유용하다.</td>
+</tr>
+<tr class="odd">
+<td><strong>Requests</strong></td>
+<td><strong>HTTP 요청</strong>을 처리하는 간단한 라이브러리로, REST API와의 통신 시 자주 사용된다. URL 요청, 응답 처리 등을 쉽게 할 수 있다.</td>
+</tr>
+<tr class="even">
+<td><strong>BeautifulSoup</strong></td>
+<td><strong>웹 스크래핑</strong>을 위한 패키지로, HTML 및 XML 문서를 파싱하고, 데이터를 추출하는 데 사용된다. 웹 페이지에서 정보를 쉽게 가져올 수 있다.</td>
+</tr>
+<tr class="odd">
+<td><strong>OpenCV</strong></td>
+<td><strong>컴퓨터 비전</strong>을 위한 라이브러리로, 이미지 및 비디오 처리, 객체 인식, 얼굴 인식 등 다양한 기능을 제공한다.</td>
+</tr>
+<tr class="even">
+<td><strong>SQLAlchemy</strong></td>
+<td><strong>데이터베이스 ORM</strong> 라이브러리로, 관계형 데이터베이스와 객체지향 프로그래밍을 연결해주는 도구이다. SQL을 객체처럼 다룰 수 있다.</td>
+</tr>
+<tr class="odd">
+<td><strong>Pillow</strong></td>
+<td><strong>이미지 처리</strong>를 위한 패키지로, 다양한 이미지 파일 형식을 읽고 쓰며, 이미지 편집 작업(자르기, 회전, 크기 조정 등)을 할 수 있다.</td>
+</tr>
+</tbody>
+</table>
+<p>이 외에도 파이썬에는 다양한 패키지가 있어, 특정 용도에 맞는 패키지를 선택하여 활용할 수 있다.</p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -683,7 +767,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/90library.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/90library.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Python Handling</p>
 </div>
