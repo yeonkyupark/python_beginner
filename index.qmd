@@ -45,23 +45,17 @@
 -   예외 발생과 처리(`try-except`)\
 -   다양한 예외 종류
 
-## 8. 객체 지향 프로그래밍(OOP) 기초
+## 8. 클래스 기초
 
 -   클래스와 객체 개념\
 -   생성자(`__init__`)와 속성\
 -   메서드 정의 및 호출
 
-## 9. 라이브러리 활용
+## 9. 주요 패키지 
 
 -   유용한 표준 라이브러리(os, datetime, random 등)\
 -   데이터 분석 기초(pandas, numpy 간단 사용법)
 
-## 10. 프로젝트 실습
-
--   간단한 계산기 만들기\
--   파일 데이터를 읽고 가공하는 프로그램\
--   웹 크롤링 기초(BeautifulSoup 활용)
-
-## 참고자료 {.unlist}
+## 참고자료 {.unlisted}
 
 1. 코드 시각화 - [https://pythontutor.com/visualize.html#mode=edit](https://pythontutor.com/visualize.html#mode=edit){target="_blank"}
