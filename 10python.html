@@ -266,6 +266,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#파이쎤-소개" id="toc-파이쎤-소개" class="nav-link" data-scroll-target="#파이쎤-소개">파이쎤 소개</a>
   <ul>
   <li><a href="#파이썬의-특징" id="toc-파이썬의-특징" class="nav-link" data-scroll-target="#파이썬의-특징">파이썬의 특징</a></li>
+  <li><a href="#비교-요점" id="toc-비교-요점" class="nav-link" data-scroll-target="#비교-요점"><strong>비교 요점</strong></a></li>
   <li><a href="#파이썬의-활용-분야" id="toc-파이썬의-활용-분야" class="nav-link" data-scroll-target="#파이썬의-활용-분야">파이썬의 활용 분야</a></li>
   <li><a href="#파이썬의-장점과-단점" id="toc-파이썬의-장점과-단점" class="nav-link" data-scroll-target="#파이썬의-장점과-단점">파이썬의 장점과 단점</a></li>
   </ul></li>
@@ -425,8 +426,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>프로그래밍 언어는 목적에 따라 선택해야 하며, 특정 분야(웹 개발, 데이터 분석, 시스템 프로그래밍 등)에 적합한 언어를 배우는 것이 중요하다.</p>
 <p>2025년 1월 기준, Python이 TIOBE 순위<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 1위를 차지 하였다.</p>
-<p><img src="images/tiobe_01.png" class="img-fluid"></p>
-<p><img src="images/tiobe_02.png" class="img-fluid"></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tiobe_01.jpg" class="img-fluid figure-img"></p>
+<figcaption>프로그래밍 언어 순위</figcaption>
+</figure>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/tiobe_02.jpg" class="img-fluid figure-img"></p>
+<figcaption>년도별 언어 순위 추이</figcaption>
+</figure>
+</div>
 </section>
 </section>
 <section id="파이쎤-소개" class="level2">
@@ -440,6 +451,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>파이썬(Python)은 배우기 쉽고 강력한 기능을 갖춘 프로그래밍 언어이다. 문법이 간결하고 가독성이 높아 초보자부터 전문가까지 폭넓게 사용하고 있다.</p>
 <section id="파이썬의-특징" class="level3">
 <h3 class="anchored" data-anchor-id="파이썬의-특징">파이썬의 특징</h3>
+<p>## C 코드 vs.&nbsp;Python 코드 비교</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 23%">
+<col style="width: 30%">
+<col style="width: 46%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>동작</th>
+<th>C 코드</th>
+<th>Python 코드</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>“Hello, World!” 출력</strong></td>
+<td><code>c #include &lt;stdio.h&gt; int main() { printf("Hello, World!\n"); return 0; }</code></td>
+<td><code>python print("Hello, World!")</code></td>
+</tr>
+<tr class="even">
+<td><strong>파일에서 문자열 읽기</strong></td>
+<td><code>c #include &lt;stdio.h&gt; int main() { FILE *file = fopen("text.txt", "r"); char line[100]; if (file) { while (fgets(line, sizeof(line), file)) { printf("%s", line); } fclose(file); } return 0; }</code></td>
+<td><code>python with open("text.txt", "r") as file: print(file.read())</code></td>
+</tr>
+<tr class="odd">
+<td><strong>숫자의 제곱 계산</strong></td>
+<td><code>c #include &lt;stdio.h&gt; int square(int x) { return x * x; } int main() { int num = 5; printf("Square: %d\n", square(num)); return 0; }</code></td>
+<td><code>python def square(x): return x * x print("Square:", square(5))</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="비교-요점" class="level3">
+<h3 class="anchored" data-anchor-id="비교-요점"><strong>비교 요점</strong></h3>
+<ul>
+<li><strong>C 코드</strong>는 변수를 선언하고, 루프 및 파일 입출력에서 명시적으로 처리해야 하며, 포인터 및 메모리 관리를 고려해야 한다.<br>
+</li>
+<li><strong>Python 코드</strong>는 직관적이고 간결하여 코드 작성이 쉽고, 내장 함수 및 고수준 라이브러리를 활용할 수 있다.</li>
+</ul>
 <p>파이썬은 다음과 같은 특징을 갖는다.</p>
 <ul>
 <li><strong>쉬운 문법</strong>: 영어와 비슷한 구문 구조를 가지고 있어 처음 배우는 사람도 쉽게 익힐 수 있다.<br>
@@ -748,7 +799,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </center>
 <p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div id="e4717e21" class="cell" data-execution_count="1">
+<div id="e7afe0d5" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World</code></pre>
