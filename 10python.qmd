@@ -67,17 +67,7 @@ format: html
 
 ### 파이썬의 특징
 
- ## C 코드 vs. Python 코드 비교  
-
-| 동작 | C 코드 | Python 코드 |
-|------|--------|------------|
-| **"Hello, World!" 출력** | ```c #include <stdio.h> int main() { printf("Hello, World!\n"); return 0; } ``` | ```python print("Hello, World!") ``` |
-| **파일에서 문자열 읽기** | ```c #include <stdio.h> int main() { FILE *file = fopen("text.txt", "r"); char line[100]; if (file) { while (fgets(line, sizeof(line), file)) { printf("%s", line); } fclose(file); } return 0; } ``` | ```python with open("text.txt", "r") as file: print(file.read()) ``` |
-| **숫자의 제곱 계산** | ```c #include <stdio.h> int square(int x) { return x * x; } int main() { int num = 5; printf("Square: %d\n", square(num)); return 0; } ``` | ```python def square(x): return x * x print("Square:", square(5)) ``` |
-
-### **비교 요점**
-- **C 코드**는 변수를 선언하고, 루프 및 파일 입출력에서 명시적으로 처리해야 하며, 포인터 및 메모리 관리를 고려해야 한다.  
-- **Python 코드**는 직관적이고 간결하여 코드 작성이 쉽고, 내장 함수 및 고수준 라이브러리를 활용할 수 있다.
+![https://xkcd.com/353/](https://i.namu.wiki/i/kNTQp1L2D8Zw3mLh2pFXd0htUjDB9soWo8HzZaLjDWVDhp_i_Rdf9fp05DqvVn1Lw3f1lPqdzCixvlpgoqulH3Ou9eygp0dklGR0YdUfbAolhj33si8G_Fv9FrcxNYjreSjUdviyeEYttegmslNmSdFy7ONyLzNxafQe0Pp4W6Y.webp)
 
 파이썬은 다음과 같은 특징을 갖는다.
 
