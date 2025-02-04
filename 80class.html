@@ -1,0 +1,2454 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.6.40">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>클래스 – 파이썬 다루기</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./90library.html" rel="next">
+<link href="./70exception.html" rel="prev">
+<link href="./logo.png" rel="icon" type="image/png">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-549806ee2085284f45b00abea8c6df48.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-72c93205fb41c15e2e398b4f9a505ee2.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+<link rel="stylesheet" href="style.css">
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./80class.html"><span class="chapter-title">클래스</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">파이썬 다루기</a> 
+        <div class="sidebar-tools-main tools-wide">
+    <a href="https://www.instagram.com/yeonkyu.park/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-instagram"></i></a>
+    <a href="https://yeonkyupark.github.io/" title="" class="quarto-navigation-tool px-1" aria-label=""><i class="bi bi-globe"></i></a>
+    <a href="https://github.com/yeonkyupark/python_beginner" title="Source Code" class="quarto-navigation-tool px-1" aria-label="Source Code"><i class="bi bi-github"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">들어가기</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">파이썬 기초</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./10python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파이썬 소개</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./20syntax.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">문법</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./30datatype.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">자료형</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./40controlflow.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">제어문</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./50function.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">함수 및 모듈</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./60file.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파일 입출력</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./80class.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">클래스</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">파이썬 패키지</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./pkg_numpy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Numpy</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">참고자료</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./app_markdown.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">마크다운</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./app_csv_json.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">CSV 파일과 JSON 파일</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#클래스-개념-이해" id="toc-클래스-개념-이해" class="nav-link active" data-scroll-target="#클래스-개념-이해">클래스 개념 이해</a>
+  <ul>
+  <li><a href="#객체지향-프로그래밍oop-개념" id="toc-객체지향-프로그래밍oop-개념" class="nav-link" data-scroll-target="#객체지향-프로그래밍oop-개념">객체지향 프로그래밍(OOP) 개념</a></li>
+  <li><a href="#클래스와-객체의-정의" id="toc-클래스와-객체의-정의" class="nav-link" data-scroll-target="#클래스와-객체의-정의">클래스와 객체의 정의</a></li>
+  <li><a href="#클래스와-인스턴스의-차이" id="toc-클래스와-인스턴스의-차이" class="nav-link" data-scroll-target="#클래스와-인스턴스의-차이">클래스와 인스턴스의 차이</a></li>
+  </ul></li>
+  <li><a href="#클래스-정의와-객체-생성" id="toc-클래스-정의와-객체-생성" class="nav-link" data-scroll-target="#클래스-정의와-객체-생성">클래스 정의와 객체 생성</a>
+  <ul>
+  <li><a href="#클래스-정의" id="toc-클래스-정의" class="nav-link" data-scroll-target="#클래스-정의">클래스 정의</a></li>
+  <li><a href="#객체인스턴스-생성" id="toc-객체인스턴스-생성" class="nav-link" data-scroll-target="#객체인스턴스-생성">객체(인스턴스) 생성</a></li>
+  <li><a href="#self-키워드-이해" id="toc-self-키워드-이해" class="nav-link" data-scroll-target="#self-키워드-이해">self 키워드 이해</a></li>
+  <li><a href="#여러-개의-객체-생성-가능" id="toc-여러-개의-객체-생성-가능" class="nav-link" data-scroll-target="#여러-개의-객체-생성-가능">여러 개의 객체 생성 가능</a></li>
+  </ul></li>
+  <li><a href="#생성자와-소멸자" id="toc-생성자와-소멸자" class="nav-link" data-scroll-target="#생성자와-소멸자">생성자와 소멸자</a>
+  <ul>
+  <li><a href="#생성자-init" id="toc-생성자-init" class="nav-link" data-scroll-target="#생성자-init">생성자 <strong>init</strong>()</a></li>
+  <li><a href="#소멸자-del" id="toc-소멸자-del" class="nav-link" data-scroll-target="#소멸자-del">소멸자 <strong>del</strong>()</a></li>
+  </ul></li>
+  <li><a href="#클래스-변수와-인스턴스-변수" id="toc-클래스-변수와-인스턴스-변수" class="nav-link" data-scroll-target="#클래스-변수와-인스턴스-변수">클래스 변수와 인스턴스 변수</a>
+  <ul>
+  <li><a href="#클래스-변수와-인스턴스-변수-1" id="toc-클래스-변수와-인스턴스-변수-1" class="nav-link" data-scroll-target="#클래스-변수와-인스턴스-변수-1">클래스 변수와 인스턴스 변수</a></li>
+  <li><a href="#클래스-변수" id="toc-클래스-변수" class="nav-link" data-scroll-target="#클래스-변수">클래스 변수</a></li>
+  <li><a href="#인스턴스-변수" id="toc-인스턴스-변수" class="nav-link" data-scroll-target="#인스턴스-변수">인스턴스 변수</a></li>
+  <li><a href="#클래스-변수와-인스턴스-변수의-차이" id="toc-클래스-변수와-인스턴스-변수의-차이" class="nav-link" data-scroll-target="#클래스-변수와-인스턴스-변수의-차이">클래스 변수와 인스턴스 변수의 차이</a></li>
+  </ul></li>
+  <li><a href="#메서드의-종류" id="toc-메서드의-종류" class="nav-link" data-scroll-target="#메서드의-종류">메서드의 종류</a>
+  <ul>
+  <li><a href="#인스턴스-메서드" id="toc-인스턴스-메서드" class="nav-link" data-scroll-target="#인스턴스-메서드">인스턴스 메서드</a></li>
+  <li><a href="#클래스-메서드" id="toc-클래스-메서드" class="nav-link" data-scroll-target="#클래스-메서드">클래스 메서드</a></li>
+  <li><a href="#정적-메서드" id="toc-정적-메서드" class="nav-link" data-scroll-target="#정적-메서드">정적 메서드</a></li>
+  </ul></li>
+  <li><a href="#접근-제어자와-캡슐화" id="toc-접근-제어자와-캡슐화" class="nav-link" data-scroll-target="#접근-제어자와-캡슐화">접근 제어자와 캡슐화</a>
+  <ul>
+  <li><a href="#접근-제어자" id="toc-접근-제어자" class="nav-link" data-scroll-target="#접근-제어자">접근 제어자</a></li>
+  <li><a href="#캡슐화" id="toc-캡슐화" class="nav-link" data-scroll-target="#캡슐화">캡슐화</a></li>
+  <li><a href="#캡슐화를-활용한-getter-setter" id="toc-캡슐화를-활용한-getter-setter" class="nav-link" data-scroll-target="#캡슐화를-활용한-getter-setter">캡슐화를 활용한 Getter / Setter</a></li>
+  </ul></li>
+  <li><a href="#상속-개념과-활용" id="toc-상속-개념과-활용" class="nav-link" data-scroll-target="#상속-개념과-활용">상속 개념과 활용</a>
+  <ul>
+  <li><a href="#상속-개념" id="toc-상속-개념" class="nav-link" data-scroll-target="#상속-개념">상속 개념</a></li>
+  <li><a href="#상속-기본-문법-sec-inheritance-syntax" id="toc-상속-기본-문법-sec-inheritance-syntax" class="nav-link" data-scroll-target="#상속-기본-문법-sec-inheritance-syntax">상속 기본 문법 {#sec-inheritance-syntax)</a></li>
+  <li><a href="#super를-사용한-부모-클래스-접근" id="toc-super를-사용한-부모-클래스-접근" class="nav-link" data-scroll-target="#super를-사용한-부모-클래스-접근"><code>super()</code>를 사용한 부모 클래스 접근</a></li>
+  <li><a href="#다중-상속" id="toc-다중-상속" class="nav-link" data-scroll-target="#다중-상속">다중 상속</a></li>
+  <li><a href="#메서드-오버라이딩과-오버로딩" id="toc-메서드-오버라이딩과-오버로딩" class="nav-link" data-scroll-target="#메서드-오버라이딩과-오버로딩">메서드 오버라이딩과 오버로딩</a></li>
+  <li><a href="#상속-활용-예제" id="toc-상속-활용-예제" class="nav-link" data-scroll-target="#상속-활용-예제">상속 활용 예제</a></li>
+  <li><a href="#상속-장점과-단점" id="toc-상속-장점과-단점" class="nav-link" data-scroll-target="#상속-장점과-단점">상속 장점과 단점</a></li>
+  <li><a href="#상속과-캡슐화-결합" id="toc-상속과-캡슐화-결합" class="nav-link" data-scroll-target="#상속과-캡슐화-결합">상속과 캡슐화 결합</a></li>
+  </ul></li>
+  <li><a href="#다형성과-추상-클래스" id="toc-다형성과-추상-클래스" class="nav-link" data-scroll-target="#다형성과-추상-클래스">다형성과 추상 클래스</a>
+  <ul>
+  <li><a href="#sec-polymorhpism" id="toc-sec-polymorhpism" class="nav-link" data-scroll-target="#sec-polymorhpism">다형성 개념</a></li>
+  <li><a href="#추상-클래스-개념" id="toc-추상-클래스-개념" class="nav-link" data-scroll-target="#추상-클래스-개념">추상 클래스 개념</a></li>
+  <li><a href="#추상-클래스와-인스턴스화" id="toc-추상-클래스와-인스턴스화" class="nav-link" data-scroll-target="#추상-클래스와-인스턴스화">추상 클래스와 인스턴스화</a></li>
+  <li><a href="#다형성과-추상-클래스의-결합" id="toc-다형성과-추상-클래스의-결합" class="nav-link" data-scroll-target="#다형성과-추상-클래스의-결합">다형성과 추상 클래스의 결합</a></li>
+  <li><a href="#다형성-추상-클래스-상속-결합" id="toc-다형성-추상-클래스-상속-결합" class="nav-link" data-scroll-target="#다형성-추상-클래스-상속-결합">다형성, 추상 클래스, 상속 결합</a></li>
+  </ul></li>
+  <li><a href="#연산자-오버로딩" id="toc-연산자-오버로딩" class="nav-link" data-scroll-target="#연산자-오버로딩">연산자 오버로딩</a>
+  <ul>
+  <li><a href="#연산자-오버로딩-개념" id="toc-연산자-오버로딩-개념" class="nav-link" data-scroll-target="#연산자-오버로딩-개념">연산자 오버로딩 개념</a></li>
+  <li><a href="#연산자-오버로딩의-예시" id="toc-연산자-오버로딩의-예시" class="nav-link" data-scroll-target="#연산자-오버로딩의-예시">연산자 오버로딩의 예시</a></li>
+  <li><a href="#연산자-오버로딩-예제" id="toc-연산자-오버로딩-예제" class="nav-link" data-scroll-target="#연산자-오버로딩-예제">연산자 오버로딩 예제</a></li>
+  <li><a href="#다양한-연산자-오버로딩-예제" id="toc-다양한-연산자-오버로딩-예제" class="nav-link" data-scroll-target="#다양한-연산자-오버로딩-예제">다양한 연산자 오버로딩 예제</a></li>
+  <li><a href="#연산자-오버로딩-시-주의사항" id="toc-연산자-오버로딩-시-주의사항" class="nav-link" data-scroll-target="#연산자-오버로딩-시-주의사항">연산자 오버로딩 시 주의사항</a></li>
+  <li><a href="#연산자-오버로딩-장단점" id="toc-연산자-오버로딩-장단점" class="nav-link" data-scroll-target="#연산자-오버로딩-장단점">연산자 오버로딩 장단점</a></li>
+  </ul></li>
+  <li><a href="#클래스-활용-및-실전-예제" id="toc-클래스-활용-및-실전-예제" class="nav-link" data-scroll-target="#클래스-활용-및-실전-예제">클래스 활용 및 실전 예제</a>
+  <ul>
+  <li><a href="#클래스-활용-개념" id="toc-클래스-활용-개념" class="nav-link" data-scroll-target="#클래스-활용-개념">클래스 활용 개념</a></li>
+  <li><a href="#클래스-활용-중요성" id="toc-클래스-활용-중요성" class="nav-link" data-scroll-target="#클래스-활용-중요성">클래스 활용 중요성</a></li>
+  <li><a href="#실전-예제-1-은행-계좌-관리-시스템" id="toc-실전-예제-1-은행-계좌-관리-시스템" class="nav-link" data-scroll-target="#실전-예제-1-은행-계좌-관리-시스템"><strong>3. 실전 예제 1: 은행 계좌 관리 시스템</strong></a></li>
+  <li><a href="#실전-예제-2-쇼핑몰-제품-관리-시스템" id="toc-실전-예제-2-쇼핑몰-제품-관리-시스템" class="nav-link" data-scroll-target="#실전-예제-2-쇼핑몰-제품-관리-시스템">실전 예제 2: 쇼핑몰 제품 관리 시스템</a></li>
+  <li><a href="#실전-예제-3-학생-성적-관리-시스템" id="toc-실전-예제-3-학생-성적-관리-시스템" class="nav-link" data-scroll-target="#실전-예제-3-학생-성적-관리-시스템">실전 예제 3: 학생 성적 관리 시스템</a></li>
+  <li><a href="#클래스-활용-시-주의사항" id="toc-클래스-활용-시-주의사항" class="nav-link" data-scroll-target="#클래스-활용-시-주의사항">클래스 활용 시 주의사항</a></li>
+  </ul></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/80class.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./80class.html"><span class="chapter-title">클래스</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-title">클래스</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="클래스-개념-이해" class="level2">
+<h2 class="anchored" data-anchor-id="클래스-개념-이해">클래스 개념 이해</h2>
+<section id="객체지향-프로그래밍oop-개념" class="level3">
+<h3 class="anchored" data-anchor-id="객체지향-프로그래밍oop-개념">객체지향 프로그래밍(OOP) 개념</h3>
+<p><strong>객체지향 프로그래밍(OOP, Object-Oriented Programming)</strong>은 현실 세계를 객체(Object) 단위로 나누어 프로그램을 설계하는 방식이다. OOP의 주요 특징은 다음과 같다.</p>
+<ul>
+<li><strong>캡슐화(Encapsulation)</strong>: 데이터와 기능(메서드)을 하나로 묶어 보호하는 개념<br>
+</li>
+<li><strong>상속(Inheritance)</strong>: 기존 클래스(부모)에서 기능을 물려받아 새로운 클래스(자식)를 만드는 개념<br>
+</li>
+<li><strong>다형성(Polymorphism)</strong>: 같은 이름의 메서드가 다른 기능을 할 수 있는 개념<br>
+</li>
+<li><strong>추상화(Abstraction)</strong>: 객체의 중요한 속성만 표현하여 단순화하는 개념</li>
+</ul>
+</section>
+<section id="클래스와-객체의-정의" class="level3">
+<h3 class="anchored" data-anchor-id="클래스와-객체의-정의">클래스와 객체의 정의</h3>
+<ul>
+<li><strong>클래스(Class)</strong>: 객체를 만들기 위한 설계도<br>
+</li>
+<li><strong>객체(Object)</strong>: 클래스에서 생성된 실체(인스턴스)</li>
+</ul>
+<p><strong>클래스와 객체</strong></p>
+<div id="0c722d6e" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># 속성(변수)</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> drive(<span class="va">self</span>):  <span class="co"># 메서드(함수)</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">가 주행 중입니다."</span>)</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>my_car <span class="op">=</span> Car(<span class="st">"Hyundai"</span>, <span class="st">"Red"</span>)</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 사용</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(my_car.brand)  <span class="co"># Hyundai 출력</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a>my_car.drive()       <span class="co"># "Red Hyundai가 주행 중입니다." 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hyundai
+Red Hyundai가 주행 중입니다.</code></pre>
+</div>
+</div>
+</section>
+<section id="클래스와-인스턴스의-차이" class="level3">
+<h3 class="anchored" data-anchor-id="클래스와-인스턴스의-차이">클래스와 인스턴스의 차이</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>구분</th>
+<th>설명</th>
+<th>예제</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>클래스</strong></td>
+<td>객체를 만들기 위한 설계도</td>
+<td><code>class Car:</code></td>
+</tr>
+<tr class="even">
+<td><strong>인스턴스(객체)</strong></td>
+<td>클래스로부터 생성된 개별 실체</td>
+<td><code>my_car = Car("Hyundai", "Red")</code></td>
+</tr>
+</tbody>
+</table>
+<p><strong>클래스와 인스턴스의 관계 예제</strong></p>
+<div id="4972a19f" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog:</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># 인스턴스 생성</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dog1 <span class="op">=</span> Dog(<span class="st">"Buddy"</span>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>dog2 <span class="op">=</span> Dog(<span class="st">"Charlie"</span>)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog1.name)  <span class="co"># Buddy 출력</span></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog2.name)  <span class="co"># Charlie 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Buddy
+Charlie</code></pre>
+</div>
+</div>
+<ul>
+<li><code>Dog</code> 클래스는 하나지만, <code>dog1</code>, <code>dog2</code>처럼 여러 개의 인스턴스를 생성할 수 있다.<br>
+</li>
+<li>각 인스턴스는 독립적으로 동작한다.</li>
+</ul>
+<p>이 개념을 이해하면 <strong>객체지향 프로그래밍(OOP)</strong>을 기반으로 한 클래스 설계를 할 수 있다.</p>
+</section>
+</section>
+<section id="클래스-정의와-객체-생성" class="level2">
+<h2 class="anchored" data-anchor-id="클래스-정의와-객체-생성">클래스 정의와 객체 생성</h2>
+<p>객체지향 프로그래밍(OOP)의 기본이 되는 <strong>클래스와 객체 개념</strong>을 이해하면 더욱 효율적인 프로그램을 작성할 수 있다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>개념</th>
+<th>설명</th>
+<th>예제</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>클래스</strong></td>
+<td>객체를 만들기 위한 설계도</td>
+<td><code>class Car:</code></td>
+</tr>
+<tr class="even">
+<td><strong>객체(인스턴스)</strong></td>
+<td>클래스로부터 생성된 실체</td>
+<td><code>my_car = Car("Hyundai", "Red")</code></td>
+</tr>
+<tr class="odd">
+<td><strong>속성(변수)</strong></td>
+<td>객체가 가지는 데이터</td>
+<td><code>self.brand = brand</code></td>
+</tr>
+<tr class="even">
+<td><strong>메서드(함수)</strong></td>
+<td>객체가 수행할 동작</td>
+<td><code>def drive(self):</code></td>
+</tr>
+</tbody>
+</table>
+<section id="클래스-정의" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-정의">클래스 정의</h3>
+<p>클래스는 <code>class</code> 키워드를 사용하여 정의하며, 객체의 속성(변수)과 동작(메서드)을 포함할 수 있다.</p>
+<div id="1d9c0567" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> 클래스이름:</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, 속성<span class="dv">1</span>, 속성<span class="dv">2</span>):</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.속성<span class="dv">1</span> <span class="op">=</span> 속성<span class="dv">1</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.속성<span class="dv">2</span> <span class="op">=</span> 속성<span class="dv">2</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> 메서드(<span class="va">self</span>):</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"이것은 클래스의 메서드입니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</section>
+<section id="객체인스턴스-생성" class="level3">
+<h3 class="anchored" data-anchor-id="객체인스턴스-생성">객체(인스턴스) 생성</h3>
+<p>클래스를 정의한 후, 인스턴스를 만들어 사용할 수 있다.</p>
+<p><strong>클래스 정의와 객체 생성 </strong></p>
+<div id="3a6e9b3a" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):  <span class="co"># 생성자</span></span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># 속성</span></span>
+<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> drive(<span class="va">self</span>):  <span class="co"># 메서드</span></span>
+<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">가 주행 중입니다."</span>)</span>
+<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Hyundai"</span>, <span class="st">"Red"</span>)  <span class="co"># Car 클래스의 인스턴스 생성</span></span>
+<span id="cb6-11"><a href="#cb6-11" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Blue"</span>)</span>
+<span id="cb6-12"><a href="#cb6-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-13"><a href="#cb6-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 사용</span></span>
+<span id="cb6-14"><a href="#cb6-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.brand)  <span class="co"># Hyundai 출력</span></span>
+<span id="cb6-15"><a href="#cb6-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.color)  <span class="co"># Blue 출력</span></span>
+<span id="cb6-16"><a href="#cb6-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb6-17"><a href="#cb6-17" aria-hidden="true" tabindex="-1"></a>car1.drive()  <span class="co"># "Red Hyundai가 주행 중입니다." 출력</span></span>
+<span id="cb6-18"><a href="#cb6-18" aria-hidden="true" tabindex="-1"></a>car2.drive()  <span class="co"># "Blue Toyota가 주행 중입니다." 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hyundai
+Blue
+Red Hyundai가 주행 중입니다.
+Blue Toyota가 주행 중입니다.</code></pre>
+</div>
+</div>
+</section>
+<section id="self-키워드-이해" class="level3">
+<h3 class="anchored" data-anchor-id="self-키워드-이해">self 키워드 이해</h3>
+<p><code>self</code>는 <strong>현재 인스턴스를 가리키는 변수</strong>이고, 메서드에서 <code>self</code>를 사용하여 <strong>인스턴스 변수에 접근</strong>할 수 있다.</p>
+<div id="0dfca861" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Person:</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># self.name은 인스턴스 변수</span></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> greet(<span class="va">self</span>):</span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"안녕하세요, 저는 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">입니다."</span>)</span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>p1 <span class="op">=</span> Person(<span class="st">"철수"</span>)</span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>p2 <span class="op">=</span> Person(<span class="st">"영희"</span>)</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 메서드 호출</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>p1.greet()  <span class="co"># "안녕하세요, 저는 철수입니다." 출력</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>p2.greet()  <span class="co"># "안녕하세요, 저는 영희입니다." 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>안녕하세요, 저는 철수입니다.
+안녕하세요, 저는 영희입니다.</code></pre>
+</div>
+</div>
+</section>
+<section id="여러-개의-객체-생성-가능" class="level3">
+<h3 class="anchored" data-anchor-id="여러-개의-객체-생성-가능">여러 개의 객체 생성 가능</h3>
+<p>클래스를 한 번 정의하면 <strong>여러 개의 객체(인스턴스)를 생성</strong>할 수 있다.</p>
+<div id="dd37a503" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, species, sound):</span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.species <span class="op">=</span> species</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.sound <span class="op">=</span> sound</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> make_sound(<span class="va">self</span>):</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>species<span class="sc">}</span><span class="ss">가 '</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>sound<span class="sc">}</span><span class="ss">' 소리를 냅니다."</span>)</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>dog <span class="op">=</span> Animal(<span class="st">"강아지"</span>, <span class="st">"멍멍"</span>)</span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>cat <span class="op">=</span> Animal(<span class="st">"고양이"</span>, <span class="st">"야옹"</span>)</span>
+<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-13"><a href="#cb10-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 메서드 호출</span></span>
+<span id="cb10-14"><a href="#cb10-14" aria-hidden="true" tabindex="-1"></a>dog.make_sound()  <span class="co"># "강아지가 '멍멍' 소리를 냅니다." 출력</span></span>
+<span id="cb10-15"><a href="#cb10-15" aria-hidden="true" tabindex="-1"></a>cat.make_sound()  <span class="co"># "고양이가 '야옹' 소리를 냅니다." 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>강아지가 '멍멍' 소리를 냅니다.
+고양이가 '야옹' 소리를 냅니다.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="생성자와-소멸자" class="level2">
+<h2 class="anchored" data-anchor-id="생성자와-소멸자">생성자와 소멸자</h2>
+<table class="caption-top table">
+<caption>생성자와 소멸자</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>개념</th>
+<th>설명</th>
+<th>예제</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>생성자 (<code>__init__</code>)</strong></td>
+<td>객체가 생성될 때 자동 실행</td>
+<td><code>car1 = Car("Hyundai", "Red")</code></td>
+</tr>
+<tr class="even">
+<td><strong>소멸자 (<code>__del__</code>)</strong></td>
+<td>객체가 삭제될 때 자동 실행</td>
+<td><code>del car1</code> 또는 프로그램 종료 시</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>생성자는 객체가 생성될 때 호출</strong>되며, 속성을 초기화하는 역할을 한다.<br>
+</li>
+<li><strong>소멸자는 객체가 삭제되거나 프로그램이 종료될 때 호출</strong>되며, 메모리에서 해제될 때 필요한 작업을 수행할 수 있다.</li>
+</ul>
+<p>소멸자는 직접 호출하는 경우는 드물지만, <strong>파일을 닫거나 리소스를 정리하는 용도로 활용</strong>될 수 있다.</p>
+<section id="생성자-init" class="level3">
+<h3 class="anchored" data-anchor-id="생성자-init">생성자 <strong>init</strong>()</h3>
+<p><strong>생성자(Constructor)</strong>는 객체가 생성될 때 자동으로 실행되는 특별한 메서드이다.<br>
+- <code>__init__()</code> 메서드를 사용하여 정의한다.<br>
+- 객체의 속성을 초기화하는 역할을 한다.</p>
+<p><strong>생성자 예제</strong></p>
+<div id="70dca159" class="cell" data-execution_count="7">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):  <span class="co"># 생성자</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># 속성 초기화</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> 자동차가 생성되었습니다."</span>)</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Hyundai"</span>, <span class="st">"Red"</span>)  </span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Blue"</span>)  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Red Hyundai 자동차가 생성되었습니다.
+Blue Toyota 자동차가 생성되었습니다.</code></pre>
+</div>
+</div>
+</section>
+<section id="소멸자-del" class="level3">
+<h3 class="anchored" data-anchor-id="소멸자-del">소멸자 <strong>del</strong>()</h3>
+<p><strong>소멸자(Destructor)</strong>는 객체가 삭제될 때 자동으로 호출되는 특별한 메서드이다.<br>
+- <code>__del__()</code> 메서드를 사용하여 정의한다.<br>
+- 객체가 메모리에서 제거될 때 수행할 동작을 정의할 수 있다.</p>
+<p><strong>소멸자 예제</strong></p>
+<div id="535bbdd9" class="cell" data-execution_count="8">
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
+<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand</span>
+<span id="cb14-4"><a href="#cb14-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb14-5"><a href="#cb14-5" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> 자동차가 생성되었습니다."</span>)</span>
+<span id="cb14-6"><a href="#cb14-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-7"><a href="#cb14-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__del__</span>(<span class="va">self</span>):  <span class="co"># 소멸자</span></span>
+<span id="cb14-8"><a href="#cb14-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss"> 자동차가 삭제되었습니다."</span>)</span>
+<span id="cb14-9"><a href="#cb14-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-10"><a href="#cb14-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb14-11"><a href="#cb14-11" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Hyundai"</span>, <span class="st">"Red"</span>)  </span>
+<span id="cb14-12"><a href="#cb14-12" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Blue"</span>)  </span>
+<span id="cb14-13"><a href="#cb14-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb14-14"><a href="#cb14-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 삭제</span></span>
+<span id="cb14-15"><a href="#cb14-15" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> car1  </span>
+<span id="cb14-16"><a href="#cb14-16" aria-hidden="true" tabindex="-1"></a><span class="kw">del</span> car2  </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Red Hyundai 자동차가 생성되었습니다.
+Blue Toyota 자동차가 생성되었습니다.
+Red Hyundai 자동차가 삭제되었습니다.
+Blue Toyota 자동차가 삭제되었습니다.</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="클래스-변수와-인스턴스-변수" class="level2">
+<h2 class="anchored" data-anchor-id="클래스-변수와-인스턴스-변수">클래스 변수와 인스턴스 변수</h2>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 37%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>구분</th>
+<th>클래스 변수</th>
+<th>인스턴스 변수</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>정의 위치</strong></td>
+<td>클래스 내부에서 <code>self</code> 없이 선언</td>
+<td><code>__init__()</code> 내부에서 <code>self.변수명</code> 형태로 선언</td>
+</tr>
+<tr class="even">
+<td><strong>공유 여부</strong></td>
+<td>모든 인스턴스가 공유</td>
+<td>각 인스턴스마다 독립적</td>
+</tr>
+<tr class="odd">
+<td><strong>접근 방법</strong></td>
+<td><code>클래스명.변수명</code> 또는 <code>self.변수명</code></td>
+<td><code>self.변수명</code></td>
+</tr>
+<tr class="even">
+<td><strong>변경 시 영향</strong></td>
+<td>모든 인스턴스에 적용</td>
+<td>해당 인스턴스에만 적용</td>
+</tr>
+</tbody>
+</table>
+<p>클래스 변수는 <strong>공통 속성</strong>을 저장하는 데 사용하고, 인스턴스 변수는 <strong>개별 속성</strong>을 저장하는 데 사용하면 된다.</p>
+<section id="클래스-변수와-인스턴스-변수-1" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-변수와-인스턴스-변수-1">클래스 변수와 인스턴스 변수</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 18%">
+<col style="width: 37%">
+<col style="width: 43%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>구분</th>
+<th>클래스 변수 (Class Variable)</th>
+<th>인스턴스 변수 (Instance Variable)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>정의 위치</strong></td>
+<td>클래스 내부, <code>self</code> 없이 선언</td>
+<td>클래스 내부, <code>self</code>를 사용하여 선언</td>
+</tr>
+<tr class="even">
+<td><strong>공유 여부</strong></td>
+<td>모든 인스턴스가 공유</td>
+<td>각 인스턴스마다 개별적으로 존재</td>
+</tr>
+<tr class="odd">
+<td><strong>접근 방법</strong></td>
+<td><code>클래스명.변수명</code> 또는 <code>self.변수명</code></td>
+<td><code>self.변수명</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="클래스-변수" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-변수">클래스 변수</h3>
+<p>클래스 변수(Class Variable)는 <strong>모든 인스턴스가 공유하는 변수</strong>로 클래스 내부에서 <code>self</code> 없이 선언하며, <code>클래스명.변수명</code>으로 접근할 수 있다.</p>
+<p><strong>클래스 변수 예제</strong></p>
+<div id="4ca6c8d5" class="cell" data-execution_count="9">
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    wheels <span class="op">=</span> <span class="dv">4</span>  <span class="co"># 클래스 변수 (모든 자동차가 공유)</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># 인스턴스 변수</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Hyundai"</span>, <span class="st">"Red"</span>)</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Blue"</span>)</span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-12"><a href="#cb16-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 클래스 변수 접근</span></span>
+<span id="cb16-13"><a href="#cb16-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(Car.wheels)   <span class="co"># 4 출력 (클래스 변수 직접 접근)</span></span>
+<span id="cb16-14"><a href="#cb16-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.wheels)  <span class="co"># 4 출력 (인스턴스를 통해 접근)</span></span>
+<span id="cb16-15"><a href="#cb16-15" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.wheels)  <span class="co"># 4 출력</span></span>
+<span id="cb16-16"><a href="#cb16-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-17"><a href="#cb16-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 클래스 변수 변경</span></span>
+<span id="cb16-18"><a href="#cb16-18" aria-hidden="true" tabindex="-1"></a>Car.wheels <span class="op">=</span> <span class="dv">6</span></span>
+<span id="cb16-19"><a href="#cb16-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.wheels)  <span class="co"># 6 출력</span></span>
+<span id="cb16-20"><a href="#cb16-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.wheels)  <span class="co"># 6 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>4
+4
+4
+6
+6</code></pre>
+</div>
+</div>
+</section>
+<section id="인스턴스-변수" class="level3">
+<h3 class="anchored" data-anchor-id="인스턴스-변수">인스턴스 변수</h3>
+<p>인스턴스 변수(Instance Variable)는 <strong>각 객체(인스턴스)마다 독립적으로 존재하는 변수</strong>, <code>self.변수명</code> 형태로 선언하고 사용한다.</p>
+<p><strong>인스턴스 변수 예제</strong></p>
+<div id="eed41dd8" class="cell" data-execution_count="10">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># 인스턴스 변수</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color</span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Hyundai"</span>, <span class="st">"Red"</span>)</span>
+<span id="cb18-8"><a href="#cb18-8" aria-hidden="true" tabindex="-1"></a>car2 <span class="op">=</span> Car(<span class="st">"Toyota"</span>, <span class="st">"Blue"</span>)</span>
+<span id="cb18-9"><a href="#cb18-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-10"><a href="#cb18-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 인스턴스 변수 접근</span></span>
+<span id="cb18-11"><a href="#cb18-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.brand)  <span class="co"># Hyundai 출력</span></span>
+<span id="cb18-12"><a href="#cb18-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.brand)  <span class="co"># Toyota 출력</span></span>
+<span id="cb18-13"><a href="#cb18-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-14"><a href="#cb18-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 개별 인스턴스 변수 변경</span></span>
+<span id="cb18-15"><a href="#cb18-15" aria-hidden="true" tabindex="-1"></a>car1.color <span class="op">=</span> <span class="st">"Black"</span></span>
+<span id="cb18-16"><a href="#cb18-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car1.color)  <span class="co"># Black 출력</span></span>
+<span id="cb18-17"><a href="#cb18-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(car2.color)  <span class="co"># Blue 출력 (car1과 독립적)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Hyundai
+Toyota
+Black
+Blue</code></pre>
+</div>
+</div>
+</section>
+<section id="클래스-변수와-인스턴스-변수의-차이" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-변수와-인스턴스-변수의-차이">클래스 변수와 인스턴스 변수의 차이</h3>
+<div id="77f1a664" class="cell" data-execution_count="11">
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    species <span class="op">=</span> <span class="st">"Mammal"</span>  <span class="co"># 클래스 변수 (모든 인스턴스가 공유)</span></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># 인스턴스 변수 (각 인스턴스마다 다름)</span></span>
+<span id="cb20-6"><a href="#cb20-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-7"><a href="#cb20-7" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb20-8"><a href="#cb20-8" aria-hidden="true" tabindex="-1"></a>dog <span class="op">=</span> Animal(<span class="st">"Dog"</span>)</span>
+<span id="cb20-9"><a href="#cb20-9" aria-hidden="true" tabindex="-1"></a>cat <span class="op">=</span> Animal(<span class="st">"Cat"</span>)</span>
+<span id="cb20-10"><a href="#cb20-10" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-11"><a href="#cb20-11" aria-hidden="true" tabindex="-1"></a><span class="co"># 클래스 변수 접근</span></span>
+<span id="cb20-12"><a href="#cb20-12" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog.species)  <span class="co"># Mammal 출력</span></span>
+<span id="cb20-13"><a href="#cb20-13" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat.species)  <span class="co"># Mammal 출력</span></span>
+<span id="cb20-14"><a href="#cb20-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-15"><a href="#cb20-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 인스턴스 변수 접근</span></span>
+<span id="cb20-16"><a href="#cb20-16" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog.name)  <span class="co"># Dog 출력</span></span>
+<span id="cb20-17"><a href="#cb20-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat.name)  <span class="co"># Cat 출력</span></span>
+<span id="cb20-18"><a href="#cb20-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-19"><a href="#cb20-19" aria-hidden="true" tabindex="-1"></a><span class="co"># 클래스 변수 변경 (모든 인스턴스에 영향)</span></span>
+<span id="cb20-20"><a href="#cb20-20" aria-hidden="true" tabindex="-1"></a>Animal.species <span class="op">=</span> <span class="st">"Reptile"</span></span>
+<span id="cb20-21"><a href="#cb20-21" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog.species)  <span class="co"># Reptile 출력</span></span>
+<span id="cb20-22"><a href="#cb20-22" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat.species)  <span class="co"># Reptile 출력</span></span>
+<span id="cb20-23"><a href="#cb20-23" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-24"><a href="#cb20-24" aria-hidden="true" tabindex="-1"></a><span class="co"># 인스턴스 변수 변경 (다른 인스턴스에 영향 없음)</span></span>
+<span id="cb20-25"><a href="#cb20-25" aria-hidden="true" tabindex="-1"></a>dog.name <span class="op">=</span> <span class="st">"Wolf"</span></span>
+<span id="cb20-26"><a href="#cb20-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(dog.name)  <span class="co"># Wolf 출력</span></span>
+<span id="cb20-27"><a href="#cb20-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(cat.name)  <span class="co"># Cat 출력 (영향 없음)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mammal
+Mammal
+Dog
+Cat
+Reptile
+Reptile
+Wolf
+Cat</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="메서드의-종류" class="level2">
+<h2 class="anchored" data-anchor-id="메서드의-종류">메서드의 종류</h2>
+<p>파이썬 클래스에는 <strong>인스턴스 메서드</strong>(Instance Method), <strong>클래스 메서드</strong>(Class Method), <strong>정적 메서드</strong>(Static Method)의 세 가지 종류가 있다.</p>
+<table class="caption-top table">
+<caption>메서드 종류</caption>
+<colgroup>
+<col style="width: 23%">
+<col style="width: 23%">
+<col style="width: 29%">
+<col style="width: 23%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>메서드 종류</th>
+<th>정의 방식</th>
+<th>첫 번째 매개변수</th>
+<th>주요 특징</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>인스턴스 메서드</strong></td>
+<td><code>def method(self):</code></td>
+<td><code>self</code></td>
+<td>인스턴스 속성 및 메서드에 접근 가능</td>
+</tr>
+<tr class="even">
+<td><strong>클래스 메서드</strong></td>
+<td><code>@classmethod</code> 사용</td>
+<td><code>cls</code></td>
+<td>클래스 변수 및 메서드에 접근 가능</td>
+</tr>
+<tr class="odd">
+<td><strong>정적 메서드</strong></td>
+<td><code>@staticmethod</code> 사용</td>
+<td>없음</td>
+<td>클래스, 인스턴스와 무관하게 독립적으로 실행</td>
+</tr>
+</tbody>
+</table>
+<table class="caption-top table">
+<caption>메서드와 변수</caption>
+<thead>
+<tr class="header">
+<th>메서드 종류</th>
+<th><code>self</code> 사용 여부</th>
+<th><code>cls</code> 사용 여부</th>
+<th>접근 가능한 변수</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>인스턴스 메서드</strong></td>
+<td>O</td>
+<td>X</td>
+<td>인스턴스 변수, 클래스 변수</td>
+</tr>
+<tr class="even">
+<td><strong>클래스 메서드</strong></td>
+<td>X</td>
+<td>O</td>
+<td>클래스 변수</td>
+</tr>
+<tr class="odd">
+<td><strong>정적 메서드</strong></td>
+<td>X</td>
+<td>X</td>
+<td>클래스 및 인스턴스와 무관</td>
+</tr>
+</tbody>
+</table>
+<p>각 메서드의 역할에 따라 적절히 활용하면 <strong>객체지향 프로그래밍(OOP)</strong>을 더욱 효율적으로 설계할 수 있다.</p>
+<section id="인스턴스-메서드" class="level3">
+<h3 class="anchored" data-anchor-id="인스턴스-메서드">인스턴스 메서드</h3>
+<p><code>self</code> 매개변수를 사용하여 <strong>인스턴스 변수 및 다른 인스턴스 메서드에 접근</strong>할 수 있다. 일반적인 메서드이며, 대부분의 메서드는 인스턴스 메서드로 작성된다.</p>
+<p><strong>예제</strong></p>
+<div id="13eb5227" class="cell" data-execution_count="12">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, brand, color):</span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.brand <span class="op">=</span> brand  <span class="co"># 인스턴스 변수</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.color <span class="op">=</span> color  </span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-6"><a href="#cb22-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> drive(<span class="va">self</span>):  <span class="co"># 인스턴스 메서드</span></span>
+<span id="cb22-7"><a href="#cb22-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>color<span class="sc">}</span><span class="ss"> </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>brand<span class="sc">}</span><span class="ss">가 주행 중입니다."</span>)</span>
+<span id="cb22-8"><a href="#cb22-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-9"><a href="#cb22-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb22-10"><a href="#cb22-10" aria-hidden="true" tabindex="-1"></a>car1 <span class="op">=</span> Car(<span class="st">"Hyundai"</span>, <span class="st">"Red"</span>)</span>
+<span id="cb22-11"><a href="#cb22-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb22-12"><a href="#cb22-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 인스턴스 메서드 호출</span></span>
+<span id="cb22-13"><a href="#cb22-13" aria-hidden="true" tabindex="-1"></a>car1.drive()  <span class="co"># Red Hyundai가 주행 중입니다.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Red Hyundai가 주행 중입니다.</code></pre>
+</div>
+</div>
+</section>
+<section id="클래스-메서드" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-메서드">클래스 메서드</h3>
+<p><code>@classmethod</code> 데코레이터를 사용하며, 첫 번째 매개변수로 <code>cls</code>를 받는다. 클래스 변수에 접근 가능하며, <strong>클래스 레벨에서 동작하는 메서드</strong>이다.</p>
+<p><strong>예제</strong></p>
+<div id="db01f75c" class="cell" data-execution_count="13">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb24-1"><a href="#cb24-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb24-2"><a href="#cb24-2" aria-hidden="true" tabindex="-1"></a>    wheels <span class="op">=</span> <span class="dv">4</span>  <span class="co"># 클래스 변수</span></span>
+<span id="cb24-3"><a href="#cb24-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-4"><a href="#cb24-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb24-5"><a href="#cb24-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_wheels(cls, num):</span>
+<span id="cb24-6"><a href="#cb24-6" aria-hidden="true" tabindex="-1"></a>        cls.wheels <span class="op">=</span> num  <span class="co"># 클래스 변수 변경</span></span>
+<span id="cb24-7"><a href="#cb24-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"모든 자동차의 바퀴 수가 </span><span class="sc">{</span>cls<span class="sc">.</span>wheels<span class="sc">}</span><span class="ss">로 변경되었습니다."</span>)</span>
+<span id="cb24-8"><a href="#cb24-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb24-9"><a href="#cb24-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 클래스 메서드 호출</span></span>
+<span id="cb24-10"><a href="#cb24-10" aria-hidden="true" tabindex="-1"></a>Car.set_wheels(<span class="dv">6</span>)  <span class="co"># 모든 자동차의 바퀴 수가 6로 변경되었습니다.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>모든 자동차의 바퀴 수가 6로 변경되었습니다.</code></pre>
+</div>
+</div>
+<ul>
+<li>클래스 변수 <code>wheels</code>를 수정할 수 있으며, <strong>모든 인스턴스에 영향을 줌</strong></li>
+</ul>
+</section>
+<section id="정적-메서드" class="level3">
+<h3 class="anchored" data-anchor-id="정적-메서드">정적 메서드</h3>
+<p><code>@staticmethod</code> 데코레이터를 사용하며, 클래스나 인스턴스와 관계없이 독립적으로 동작한다. <code>self</code>나 <code>cls</code>를 사용하지 않으며, 일반적으로 <strong>단순한 유틸리티 기능을 제공할 때 사용</strong>한다.</p>
+<p><strong>예제</strong></p>
+<div id="6bdab60b" class="cell" data-execution_count="14">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Car:</span>
+<span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> general_info():</span>
+<span id="cb26-4"><a href="#cb26-4" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"자동차는 도로에서 운행되는 일반적인 교통수단입니다."</span>)</span>
+<span id="cb26-5"><a href="#cb26-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="#cb26-6" aria-hidden="true" tabindex="-1"></a><span class="co"># 정적 메서드 호출</span></span>
+<span id="cb26-7"><a href="#cb26-7" aria-hidden="true" tabindex="-1"></a>Car.general_info()  <span class="co"># 자동차는 도로에서 운행되는 일반적인 교통수단입니다.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>자동차는 도로에서 운행되는 일반적인 교통수단입니다.</code></pre>
+</div>
+</div>
+<ul>
+<li>인스턴스나 클래스 변수를 사용하지 않으므로 <strong>독립적인 기능을 수행</strong>함</li>
+</ul>
+<p><strong>메서드 비교 예제</strong></p>
+<div id="1dd6c797" class="cell" data-execution_count="15">
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Example:</span>
+<span id="cb28-2"><a href="#cb28-2" aria-hidden="true" tabindex="-1"></a>    class_var <span class="op">=</span> <span class="st">"클래스 변수"</span></span>
+<span id="cb28-3"><a href="#cb28-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-4"><a href="#cb28-4" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, value):</span>
+<span id="cb28-5"><a href="#cb28-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.instance_var <span class="op">=</span> value  <span class="co"># 인스턴스 변수</span></span>
+<span id="cb28-6"><a href="#cb28-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-7"><a href="#cb28-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> instance_method(<span class="va">self</span>):  <span class="co"># 인스턴스 메서드</span></span>
+<span id="cb28-8"><a href="#cb28-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"인스턴스 변수: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>instance_var<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb28-9"><a href="#cb28-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-10"><a href="#cb28-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">@classmethod</span></span>
+<span id="cb28-11"><a href="#cb28-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> class_method(cls):  <span class="co"># 클래스 메서드</span></span>
+<span id="cb28-12"><a href="#cb28-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"클래스 변수: </span><span class="sc">{</span>cls<span class="sc">.</span>class_var<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb28-13"><a href="#cb28-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-14"><a href="#cb28-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
+<span id="cb28-15"><a href="#cb28-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> static_method():  <span class="co"># 정적 메서드</span></span>
+<span id="cb28-16"><a href="#cb28-16" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"정적 메서드 실행"</span>)</span>
+<span id="cb28-17"><a href="#cb28-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-18"><a href="#cb28-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb28-19"><a href="#cb28-19" aria-hidden="true" tabindex="-1"></a>obj <span class="op">=</span> Example(<span class="st">"Hello"</span>)</span>
+<span id="cb28-20"><a href="#cb28-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb28-21"><a href="#cb28-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 메서드 호출</span></span>
+<span id="cb28-22"><a href="#cb28-22" aria-hidden="true" tabindex="-1"></a>obj.instance_method()  <span class="co"># 인스턴스 변수: Hello</span></span>
+<span id="cb28-23"><a href="#cb28-23" aria-hidden="true" tabindex="-1"></a>Example.class_method()  <span class="co"># 클래스 변수: 클래스 변수</span></span>
+<span id="cb28-24"><a href="#cb28-24" aria-hidden="true" tabindex="-1"></a>Example.static_method()  <span class="co"># 정적 메서드 실행</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>인스턴스 변수: Hello
+클래스 변수: 클래스 변수
+정적 메서드 실행</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="접근-제어자와-캡슐화" class="level2">
+<h2 class="anchored" data-anchor-id="접근-제어자와-캡슐화">접근 제어자와 캡슐화</h2>
+<p>접근 제어자(Access Modifier)는 접근 수준에 따라 <code>Public</code>, ’Protected<code>,</code>Private`으로 나뉜다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 23%">
+<col style="width: 37%">
+<col style="width: 13%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>접근 수준</th>
+<th>사용 방법</th>
+<th>외부 접근 가능 여부</th>
+<th>활용</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Public</strong></td>
+<td><code>변수명</code></td>
+<td>O</td>
+<td>일반적인 속성 및 메서드</td>
+</tr>
+<tr class="even">
+<td><strong>Protected</strong></td>
+<td><code>_변수명</code></td>
+<td>O (권장 X)</td>
+<td>내부적 용도 또는 상속 클래스에서 사용</td>
+</tr>
+<tr class="odd">
+<td><strong>Private</strong></td>
+<td><code>__변수명</code></td>
+<td>X</td>
+<td>데이터 보호 및 보안 강화</td>
+</tr>
+</tbody>
+</table>
+<p><strong>캡슐화</strong>(Encapsulation)를 통해 중요한 데이터를 보호하고, <code>getter</code>와 <code>setter</code>를 활용하면 보다 안전한 객체지향 프로그래밍이 가능하다.</p>
+<section id="접근-제어자" class="level3">
+<h3 class="anchored" data-anchor-id="접근-제어자">접근 제어자</h3>
+<p>파이썬에서 클래스의 속성과 메서드는 <strong>접근 수준</strong>을 설정할 수 있으며, 접근 제어자는 다음과 같이 구분된다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 30%">
+<col style="width: 15%">
+<col style="width: 38%">
+<col style="width: 15%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>접근 제어자</th>
+<th>기호</th>
+<th>접근 가능 범위</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>공개(Public)</strong></td>
+<td><code>변수명</code></td>
+<td>어디서든 접근 가능</td>
+<td>기본적으로 모든 속성과 메서드는 public</td>
+</tr>
+<tr class="even">
+<td><strong>보호(Protected)</strong></td>
+<td><code>_변수명</code></td>
+<td>클래스 내부 및 상속받은 클래스에서 접근 가능</td>
+<td>암묵적인 규칙으로, 강제적인 제한은 없음</td>
+</tr>
+<tr class="odd">
+<td><strong>비공개(Private)</strong></td>
+<td><code>__변수명</code></td>
+<td>클래스 내부에서만 접근 가능</td>
+<td>이름이 변경되어 <code>_클래스명__변수명</code> 형태로 변환됨</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="캡슐화" class="level3">
+<h3 class="anchored" data-anchor-id="캡슐화">캡슐화</h3>
+<p><strong>캡슐화</strong>는 객체의 속성(데이터)을 <strong>외부에서 직접 접근하지 못하도록 보호</strong>하는 개념으로 데이터를 숨기고(<code>private</code>), 메서드를 통해 안전하게 접근하도록 하는 방식이다.</p>
+<p><strong>접근 제어자 예제</strong></p>
+<div id="24f46458" class="cell" data-execution_count="16">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Person:</span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, age):</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name        <span class="co"># 공개(Public)</span></span>
+<span id="cb30-4"><a href="#cb30-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._age <span class="op">=</span> age         <span class="co"># 보호(Protected)</span></span>
+<span id="cb30-5"><a href="#cb30-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__password <span class="op">=</span> <span class="st">"1234"</span>  <span class="co"># 비공개(Private)</span></span>
+<span id="cb30-6"><a href="#cb30-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-7"><a href="#cb30-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> display_info(<span class="va">self</span>):</span>
+<span id="cb30-8"><a href="#cb30-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"이름: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, 나이: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>_age<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb30-9"><a href="#cb30-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-10"><a href="#cb30-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> __get_password(<span class="va">self</span>):  <span class="co"># 비공개 메서드</span></span>
+<span id="cb30-11"><a href="#cb30-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__password</span>
+<span id="cb30-12"><a href="#cb30-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-13"><a href="#cb30-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb30-14"><a href="#cb30-14" aria-hidden="true" tabindex="-1"></a>p <span class="op">=</span> Person(<span class="st">"Alice"</span>, <span class="dv">30</span>)</span>
+<span id="cb30-15"><a href="#cb30-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-16"><a href="#cb30-16" aria-hidden="true" tabindex="-1"></a><span class="co"># Public 변수 접근 (가능)</span></span>
+<span id="cb30-17"><a href="#cb30-17" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p.name)  <span class="co"># Alice 출력</span></span>
+<span id="cb30-18"><a href="#cb30-18" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-19"><a href="#cb30-19" aria-hidden="true" tabindex="-1"></a><span class="co"># Protected 변수 접근 (가능하지만 권장되지 않음)</span></span>
+<span id="cb30-20"><a href="#cb30-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p._age)  <span class="co"># 30 출력</span></span>
+<span id="cb30-21"><a href="#cb30-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-22"><a href="#cb30-22" aria-hidden="true" tabindex="-1"></a><span class="co"># Private 변수 접근 (불가능)</span></span>
+<span id="cb30-23"><a href="#cb30-23" aria-hidden="true" tabindex="-1"></a><span class="co"># print(p.__password)  # AttributeError 발생</span></span>
+<span id="cb30-24"><a href="#cb30-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb30-25"><a href="#cb30-25" aria-hidden="true" tabindex="-1"></a><span class="co"># Private 변수는 아래처럼 접근 가능 (권장되지 않음)</span></span>
+<span id="cb30-26"><a href="#cb30-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(p._Person__password)  <span class="co"># 1234 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Alice
+30
+1234</code></pre>
+</div>
+</div>
+<ul>
+<li><strong>Public</strong> 속성은 외부에서 자유롭게 접근 가능<br>
+</li>
+<li><strong>Protected</strong> 속성은 <code>_</code>로 시작하며, 관례적으로 내부에서만 사용 (접근 가능하지만 직접 사용은 지양)<br>
+</li>
+<li><strong>Private</strong> 속성은 <code>__</code>로 시작하며, <strong>외부에서 직접 접근 불가능</strong> (<code>_클래스명__변수명</code>으로 접근 가능)</li>
+</ul>
+</section>
+<section id="캡슐화를-활용한-getter-setter" class="level3">
+<h3 class="anchored" data-anchor-id="캡슐화를-활용한-getter-setter">캡슐화를 활용한 Getter / Setter</h3>
+<p>비공개 속성(<code>private</code>)에 접근하려면 <strong>Getter와 Setter 메서드</strong>를 사용해야 한다.</p>
+<div id="f9e05772" class="cell" data-execution_count="17">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BankAccount:</span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, owner, balance):</span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.owner <span class="op">=</span> owner</span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__balance <span class="op">=</span> balance  <span class="co"># Private 변수</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-6"><a href="#cb32-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_balance(<span class="va">self</span>):  <span class="co"># Getter</span></span>
+<span id="cb32-7"><a href="#cb32-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__balance</span>
+<span id="cb32-8"><a href="#cb32-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-9"><a href="#cb32-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> set_balance(<span class="va">self</span>, amount):  <span class="co"># Setter</span></span>
+<span id="cb32-10"><a href="#cb32-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> amount <span class="op">&gt;=</span> <span class="dv">0</span>:</span>
+<span id="cb32-11"><a href="#cb32-11" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.__balance <span class="op">=</span> amount</span>
+<span id="cb32-12"><a href="#cb32-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb32-13"><a href="#cb32-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"잔액은 음수가 될 수 없습니다."</span>)</span>
+<span id="cb32-14"><a href="#cb32-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-15"><a href="#cb32-15" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb32-16"><a href="#cb32-16" aria-hidden="true" tabindex="-1"></a>account <span class="op">=</span> BankAccount(<span class="st">"Alice"</span>, <span class="dv">1000</span>)</span>
+<span id="cb32-17"><a href="#cb32-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-18"><a href="#cb32-18" aria-hidden="true" tabindex="-1"></a><span class="co"># Getter 사용</span></span>
+<span id="cb32-19"><a href="#cb32-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(account.get_balance())  <span class="co"># 1000 출력</span></span>
+<span id="cb32-20"><a href="#cb32-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-21"><a href="#cb32-21" aria-hidden="true" tabindex="-1"></a><span class="co"># Setter 사용</span></span>
+<span id="cb32-22"><a href="#cb32-22" aria-hidden="true" tabindex="-1"></a>account.set_balance(<span class="dv">2000</span>)</span>
+<span id="cb32-23"><a href="#cb32-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(account.get_balance())  <span class="co"># 2000 출력</span></span>
+<span id="cb32-24"><a href="#cb32-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb32-25"><a href="#cb32-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 직접 접근 불가</span></span>
+<span id="cb32-26"><a href="#cb32-26" aria-hidden="true" tabindex="-1"></a><span class="co"># print(account.__balance)  # AttributeError 발생</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>1000
+2000</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="상속-개념과-활용" class="level2">
+<h2 class="anchored" data-anchor-id="상속-개념과-활용">상속 개념과 활용</h2>
+<p><strong>상속</strong>(Inheritance)은 부모 클래스 속성과 메서드를 자식 클래스가 사용할 수 있도록 하는 방법이다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>개념</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>단일 상속</strong></td>
+<td>하나의 부모 클래스를 상속</td>
+</tr>
+<tr class="even">
+<td><strong>다중 상속</strong></td>
+<td>여러 개의 부모 클래스를 상속</td>
+</tr>
+<tr class="odd">
+<td><strong>메서드 오버라이딩</strong></td>
+<td>부모 클래스의 메서드를 자식 클래스에서 재정의</td>
+</tr>
+<tr class="even">
+<td><strong>super()</strong></td>
+<td>부모 클래스의 메서드를 호출할 때 사용</td>
+</tr>
+</tbody>
+</table>
+<p><strong>상속은 코드의 재사용성과 유지보수성을 높이지만, 불필요한 상속은 코드 복잡성을 증가시킬 수 있으므로 신중하게 설계해야 한다.</strong></p>
+<section id="상속-개념" class="level3">
+<h3 class="anchored" data-anchor-id="상속-개념">상속 개념</h3>
+<p><strong>상속</strong>은 기존 클래스(부모 클래스, <code>superclass</code>)의 속성과 메서드를 새로운 클래스(자식 클래스, <code>subclass</code>)가 물려받아 사용할 수 있도록 하는 개념으로 코드의 <strong>재사용성을 높이고</strong>, 클래스 간의 <strong>관계를 구조화</strong>할 수 있다.</p>
+</section>
+<section id="상속-기본-문법-sec-inheritance-syntax" class="level3">
+<h3 class="anchored" data-anchor-id="상속-기본-문법-sec-inheritance-syntax">상속 기본 문법 {#sec-inheritance-syntax)</h3>
+<div class="sourceCode" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> 부모클래스:</span>
+<span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 부모 클래스 정의</span></span>
+<span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb34-4"><a href="#cb34-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> 자식클래스(부모클래스):</span>
+<span id="cb34-5"><a href="#cb34-5" aria-hidden="true" tabindex="-1"></a>    <span class="co"># 부모 클래스를 상속받은 자식 클래스 정의</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p><strong>상속 기본 예제</strong></p>
+<div id="641018d7" class="cell" data-execution_count="18">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 부모 클래스 정의</span></span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb35-4"><a href="#cb35-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb35-5"><a href="#cb35-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-6"><a href="#cb35-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb35-7"><a href="#cb35-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"동물이 소리를 냅니다."</span>)</span>
+<span id="cb35-8"><a href="#cb35-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-9"><a href="#cb35-9" aria-hidden="true" tabindex="-1"></a><span class="co"># 자식 클래스 (Animal을 상속)</span></span>
+<span id="cb35-10"><a href="#cb35-10" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb35-11"><a href="#cb35-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):  <span class="co"># 메서드 오버라이딩 (재정의)</span></span>
+<span id="cb35-12"><a href="#cb35-12" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">가 멍멍 짖습니다."</span>)</span>
+<span id="cb35-13"><a href="#cb35-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-14"><a href="#cb35-14" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb35-15"><a href="#cb35-15" aria-hidden="true" tabindex="-1"></a>dog <span class="op">=</span> Dog(<span class="st">"바둑이"</span>)</span>
+<span id="cb35-16"><a href="#cb35-16" aria-hidden="true" tabindex="-1"></a>dog.speak()  <span class="co"># 바둑이가 멍멍 짖습니다.</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>바둑이가 멍멍 짖습니다.</code></pre>
+</div>
+</div>
+<ul>
+<li><code>Dog</code> 클래스는 <code>Animal</code> 클래스를 상속받아 <strong><code>name</code> 속성과 <code>speak()</code> 메서드를 그대로 사용 가능</strong><br>
+</li>
+<li><code>speak()</code> 메서드는 자식 클래스에서 <strong>재정의(오버라이딩, <code>overriding</code>) 가능</strong></li>
+</ul>
+</section>
+<section id="super를-사용한-부모-클래스-접근" class="level3">
+<h3 class="anchored" data-anchor-id="super를-사용한-부모-클래스-접근"><code>super()</code>를 사용한 부모 클래스 접근</h3>
+<p><code>super()</code>를 사용하면 부모 클래스의 메서드를 자식 클래스에서 호출 가능하다.</p>
+<div id="3cc2afd3" class="cell" data-execution_count="19">
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name</span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb37-6"><a href="#cb37-6" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"동물이 소리를 냅니다."</span>)</span>
+<span id="cb37-7"><a href="#cb37-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-8"><a href="#cb37-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb37-9"><a href="#cb37-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, breed):</span>
+<span id="cb37-10"><a href="#cb37-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(name)  <span class="co"># 부모 클래스의 __init__() 호출</span></span>
+<span id="cb37-11"><a href="#cb37-11" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.breed <span class="op">=</span> breed</span>
+<span id="cb37-12"><a href="#cb37-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-13"><a href="#cb37-13" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb37-14"><a href="#cb37-14" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().speak()  <span class="co"># 부모 클래스의 speak() 호출</span></span>
+<span id="cb37-15"><a href="#cb37-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">가 멍멍 짖습니다."</span>)</span>
+<span id="cb37-16"><a href="#cb37-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb37-17"><a href="#cb37-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb37-18"><a href="#cb37-18" aria-hidden="true" tabindex="-1"></a>dog <span class="op">=</span> Dog(<span class="st">"바둑이"</span>, <span class="st">"진돗개"</span>)</span>
+<span id="cb37-19"><a href="#cb37-19" aria-hidden="true" tabindex="-1"></a>dog.speak()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>동물이 소리를 냅니다.
+바둑이가 멍멍 짖습니다.</code></pre>
+</div>
+</div>
+</section>
+<section id="다중-상속" class="level3">
+<h3 class="anchored" data-anchor-id="다중-상속">다중 상속</h3>
+<p>파이썬에서는 <strong>여러 개의 부모 클래스를 동시에 상속</strong>(Multiple Inheritance)받을 수 있다. 다중 상속 시 <strong>MRO(Method Resolution Order, 메서드 탐색 순서)</strong>가 적용된다.</p>
+<div id="c0253064" class="cell" data-execution_count="20">
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> A:</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> method_a(<span class="va">self</span>):</span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"A 클래스의 메서드"</span>)</span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> B:</span>
+<span id="cb39-6"><a href="#cb39-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> method_b(<span class="va">self</span>):</span>
+<span id="cb39-7"><a href="#cb39-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"B 클래스의 메서드"</span>)</span>
+<span id="cb39-8"><a href="#cb39-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-9"><a href="#cb39-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> C(A, B):  <span class="co"># A와 B를 동시에 상속</span></span>
+<span id="cb39-10"><a href="#cb39-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> method_c(<span class="va">self</span>):</span>
+<span id="cb39-11"><a href="#cb39-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"C 클래스의 메서드"</span>)</span>
+<span id="cb39-12"><a href="#cb39-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb39-13"><a href="#cb39-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb39-14"><a href="#cb39-14" aria-hidden="true" tabindex="-1"></a>obj <span class="op">=</span> C()</span>
+<span id="cb39-15"><a href="#cb39-15" aria-hidden="true" tabindex="-1"></a>obj.method_a()  <span class="co"># A 클래스의 메서드</span></span>
+<span id="cb39-16"><a href="#cb39-16" aria-hidden="true" tabindex="-1"></a>obj.method_b()  <span class="co"># B 클래스의 메서드</span></span>
+<span id="cb39-17"><a href="#cb39-17" aria-hidden="true" tabindex="-1"></a>obj.method_c()  <span class="co"># C 클래스의 메서드</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>A 클래스의 메서드
+B 클래스의 메서드
+C 클래스의 메서드</code></pre>
+</div>
+</div>
+</section>
+<section id="메서드-오버라이딩과-오버로딩" class="level3">
+<h3 class="anchored" data-anchor-id="메서드-오버라이딩과-오버로딩">메서드 오버라이딩과 오버로딩</h3>
+<table class="caption-top table">
+<caption>오버라이딩과 오버로딩</caption>
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>개념</th>
+<th>설명</th>
+<th>예제</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>오버라이딩 (Overriding)</strong></td>
+<td>부모 클래스의 메서드를 <strong>자식 클래스에서 재정의</strong></td>
+<td><code>speak()</code> 메서드 재정의</td>
+</tr>
+<tr class="even">
+<td><strong>오버로딩 (Overloading)</strong></td>
+<td>동일한 메서드명을 가지되 <strong>매개변수가 다름</strong></td>
+<td>파이썬에서는 직접 지원하지 않지만, 기본값을 설정하여 구현 가능</td>
+</tr>
+</tbody>
+</table>
+<div id="f8d9703e" class="cell" data-execution_count="21">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent:</span>
+<span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show(<span class="va">self</span>):</span>
+<span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"부모 클래스의 메서드"</span>)</span>
+<span id="cb41-4"><a href="#cb41-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-5"><a href="#cb41-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb41-6"><a href="#cb41-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show(<span class="va">self</span>):  <span class="co"># 오버라이딩</span></span>
+<span id="cb41-7"><a href="#cb41-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"자식 클래스에서 오버라이딩한 메서드"</span>)</span>
+<span id="cb41-8"><a href="#cb41-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb41-9"><a href="#cb41-9" aria-hidden="true" tabindex="-1"></a>obj <span class="op">=</span> Child()</span>
+<span id="cb41-10"><a href="#cb41-10" aria-hidden="true" tabindex="-1"></a>obj.show()  <span class="co"># 자식 클래스에서 오버라이딩한 메서드</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>자식 클래스에서 오버라이딩한 메서드</code></pre>
+</div>
+</div>
+</section>
+<section id="상속-활용-예제" class="level3">
+<h3 class="anchored" data-anchor-id="상속-활용-예제">상속 활용 예제</h3>
+<p><strong>은행 시스템 예제</strong></p>
+<div id="e3a86358" class="cell" data-execution_count="22">
+<div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BankAccount:</span>
+<span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, owner, balance):</span>
+<span id="cb43-3"><a href="#cb43-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.owner <span class="op">=</span> owner</span>
+<span id="cb43-4"><a href="#cb43-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.balance <span class="op">=</span> balance</span>
+<span id="cb43-5"><a href="#cb43-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-6"><a href="#cb43-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> deposit(<span class="va">self</span>, amount):</span>
+<span id="cb43-7"><a href="#cb43-7" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.balance <span class="op">+=</span> amount</span>
+<span id="cb43-8"><a href="#cb43-8" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>amount<span class="sc">}</span><span class="ss">원 입금되었습니다. 현재 잔액: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>balance<span class="sc">}</span><span class="ss">원"</span>)</span>
+<span id="cb43-9"><a href="#cb43-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-10"><a href="#cb43-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> withdraw(<span class="va">self</span>, amount):</span>
+<span id="cb43-11"><a href="#cb43-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> <span class="va">self</span>.balance <span class="op">&gt;=</span> amount:</span>
+<span id="cb43-12"><a href="#cb43-12" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.balance <span class="op">-=</span> amount</span>
+<span id="cb43-13"><a href="#cb43-13" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>amount<span class="sc">}</span><span class="ss">원 출금되었습니다. 현재 잔액: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>balance<span class="sc">}</span><span class="ss">원"</span>)</span>
+<span id="cb43-14"><a href="#cb43-14" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb43-15"><a href="#cb43-15" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"잔액이 부족합니다."</span>)</span>
+<span id="cb43-16"><a href="#cb43-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-17"><a href="#cb43-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 자식 클래스 (이자 기능 추가)</span></span>
+<span id="cb43-18"><a href="#cb43-18" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> SavingsAccount(BankAccount):</span>
+<span id="cb43-19"><a href="#cb43-19" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, owner, balance, interest_rate):</span>
+<span id="cb43-20"><a href="#cb43-20" aria-hidden="true" tabindex="-1"></a>        <span class="bu">super</span>().<span class="fu">__init__</span>(owner, balance)</span>
+<span id="cb43-21"><a href="#cb43-21" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.interest_rate <span class="op">=</span> interest_rate</span>
+<span id="cb43-22"><a href="#cb43-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-23"><a href="#cb43-23" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_interest(<span class="va">self</span>):</span>
+<span id="cb43-24"><a href="#cb43-24" aria-hidden="true" tabindex="-1"></a>        interest <span class="op">=</span> <span class="va">self</span>.balance <span class="op">*</span> <span class="va">self</span>.interest_rate</span>
+<span id="cb43-25"><a href="#cb43-25" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.balance <span class="op">+=</span> interest</span>
+<span id="cb43-26"><a href="#cb43-26" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"이자 </span><span class="sc">{</span>interest<span class="sc">}</span><span class="ss">원이 추가되었습니다. 현재 잔액: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>balance<span class="sc">}</span><span class="ss">원"</span>)</span>
+<span id="cb43-27"><a href="#cb43-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb43-28"><a href="#cb43-28" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb43-29"><a href="#cb43-29" aria-hidden="true" tabindex="-1"></a>account <span class="op">=</span> SavingsAccount(<span class="st">"홍길동"</span>, <span class="dv">10000</span>, <span class="fl">0.05</span>)</span>
+<span id="cb43-30"><a href="#cb43-30" aria-hidden="true" tabindex="-1"></a>account.deposit(<span class="dv">5000</span>)   <span class="co"># 5000원 입금</span></span>
+<span id="cb43-31"><a href="#cb43-31" aria-hidden="true" tabindex="-1"></a>account.add_interest()  <span class="co"># 이자 추가</span></span>
+<span id="cb43-32"><a href="#cb43-32" aria-hidden="true" tabindex="-1"></a>account.withdraw(<span class="dv">3000</span>)  <span class="co"># 3000원 출금</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>5000원 입금되었습니다. 현재 잔액: 15000원
+이자 750.0원이 추가되었습니다. 현재 잔액: 15750.0원
+3000원 출금되었습니다. 현재 잔액: 12750.0원</code></pre>
+</div>
+</div>
+</section>
+<section id="상속-장점과-단점" class="level3">
+<h3 class="anchored" data-anchor-id="상속-장점과-단점">상속 장점과 단점</h3>
+<table class="caption-top table">
+<caption>상속 장점과 단점</caption>
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>코드 재사용성이 높아짐</td>
+<td>다중 상속 시 복잡성이 증가</td>
+</tr>
+<tr class="even">
+<td>유지보수성이 향상됨</td>
+<td>부모 클래스가 변경되면 자식 클래스도 영향을 받을 수 있음</td>
+</tr>
+<tr class="odd">
+<td>코드 중복을 줄일 수 있음</td>
+<td>잘못된 설계 시 불필요한 상속이 발생할 수 있음</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="상속과-캡슐화-결합" class="level3">
+<h3 class="anchored" data-anchor-id="상속과-캡슐화-결합">상속과 캡슐화 결합</h3>
+<p>상속을 사용할 때는 <strong>캡슐화(Private, Protected 변수)</strong>와 함께 활용하여 <strong>데이터 보호</strong>를 강화할 수 있다.</p>
+<div id="e34862fa" class="cell" data-execution_count="23">
+<div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Parent:</span>
+<span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>):</span>
+<span id="cb45-3"><a href="#cb45-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._protected_var <span class="op">=</span> <span class="st">"보호된 변수"</span>  <span class="co"># Protected</span></span>
+<span id="cb45-4"><a href="#cb45-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.__private_var <span class="op">=</span> <span class="st">"비공개 변수"</span>  <span class="co"># Private</span></span>
+<span id="cb45-5"><a href="#cb45-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-6"><a href="#cb45-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_private_var(<span class="va">self</span>):</span>
+<span id="cb45-7"><a href="#cb45-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.__private_var  <span class="co"># Getter 메서드</span></span>
+<span id="cb45-8"><a href="#cb45-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-9"><a href="#cb45-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Child(Parent):</span>
+<span id="cb45-10"><a href="#cb45-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> show_vars(<span class="va">self</span>):</span>
+<span id="cb45-11"><a href="#cb45-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">self</span>._protected_var)  <span class="co"># 접근 가능</span></span>
+<span id="cb45-12"><a href="#cb45-12" aria-hidden="true" tabindex="-1"></a>        <span class="co"># print(self.__private_var)  # 접근 불가 (AttributeError 발생)</span></span>
+<span id="cb45-13"><a href="#cb45-13" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="va">self</span>.get_private_var())  <span class="co"># Getter를 통해 접근 가능</span></span>
+<span id="cb45-14"><a href="#cb45-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb45-15"><a href="#cb45-15" aria-hidden="true" tabindex="-1"></a>obj <span class="op">=</span> Child()</span>
+<span id="cb45-16"><a href="#cb45-16" aria-hidden="true" tabindex="-1"></a>obj.show_vars()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>보호된 변수
+비공개 변수</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="다형성과-추상-클래스" class="level2">
+<h2 class="anchored" data-anchor-id="다형성과-추상-클래스">다형성과 추상 클래스</h2>
+<p><strong>다형성</strong>을 사용하면 동일한 메서드가 여러 객체에서 <strong>다르게 동작</strong>할 수 있다. <strong>추상 클래스</strong>는 자식 클래스가 공통된 메서드를 <strong>구현하도록 강제</strong>하며, <strong>구체적인 동작</strong>은 자식 클래스에 위임한다. 다형성과 추상 클래스를 결합하면 <strong>유연하고 확장 가능한 코드</strong>를 작성할 수 있다.</p>
+<section id="sec-polymorhpism" class="level3">
+<h3 class="anchored" data-anchor-id="sec-polymorhpism">다형성 개념</h3>
+<p><strong>다형성</strong>(Polymorphism)은 동일한 이름의 메서드나 함수가 <strong>여러 다른 방식</strong>으로 동작할 수 있게 하는 개념이다. 객체 지향 프로그래밍에서 <strong>다양한 객체들이 동일한 인터페이스(메서드)를 통해 서로 다른 동작을 수행</strong>할 수 있도록 한다. <strong>메서드 오버라이딩(Method Overriding)</strong>과 <strong>메서드 오버로딩(Method Overloading)</strong>이 다형성의 주요 기법이다.</p>
+<dl>
+<dt>메서드 오버라이딩 (Method Overriding)</dt>
+<dd>
+<ul>
+<li>부모 클래스의 메서드를 자식 클래스에서 <strong>재정의</strong>하여, 자식 클래스 객체가 호출할 때 다른 동작을 할 수 있도록 한다.</li>
+</ul>
+</dd>
+<dt>메서드 오버로딩 (Method Overloading)</dt>
+<dd>
+<ul>
+<li>동일한 이름의 메서드를 <strong>다양한 매개변수</strong>로 정의하는 방식이다. 하지만, 파이썬은 메서드 오버로딩을 기본적으로 지원하지 않으므로, 보통 <strong>기본값 인수</strong>나 <strong>가변 인수</strong>를 사용하여 구현한다.</li>
+</ul>
+</dd>
+</dl>
+<p>** 다형성 예제 (Method Overriding)**</p>
+<div id="bca4b903" class="cell" data-execution_count="24">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal:</span>
+<span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):</span>
+<span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"동물이 소리를 냅니다."</span>)</span>
+<span id="cb47-4"><a href="#cb47-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-5"><a href="#cb47-5" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb47-6"><a href="#cb47-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):  <span class="co"># 메서드 오버라이딩</span></span>
+<span id="cb47-7"><a href="#cb47-7" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"멍멍!"</span>)</span>
+<span id="cb47-8"><a href="#cb47-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-9"><a href="#cb47-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cat(Animal):</span>
+<span id="cb47-10"><a href="#cb47-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):  <span class="co"># 메서드 오버라이딩</span></span>
+<span id="cb47-11"><a href="#cb47-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"야옹!"</span>)</span>
+<span id="cb47-12"><a href="#cb47-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-13"><a href="#cb47-13" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb47-14"><a href="#cb47-14" aria-hidden="true" tabindex="-1"></a>animals <span class="op">=</span> [Dog(), Cat()]</span>
+<span id="cb47-15"><a href="#cb47-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb47-16"><a href="#cb47-16" aria-hidden="true" tabindex="-1"></a><span class="co"># 다형성: 동일한 인터페이스(speak())지만 각기 다른 동작을 함</span></span>
+<span id="cb47-17"><a href="#cb47-17" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> animal <span class="kw">in</span> animals:</span>
+<span id="cb47-18"><a href="#cb47-18" aria-hidden="true" tabindex="-1"></a>    animal.speak()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>멍멍!
+야옹!</code></pre>
+</div>
+</div>
+<ul>
+<li><code>Dog</code>와 <code>Cat</code> 객체가 각각 <code>speak()</code> 메서드를 오버라이딩하여 <strong>각기 다른 방식</strong>으로 동작함.</li>
+</ul>
+</section>
+<section id="추상-클래스-개념" class="level3">
+<h3 class="anchored" data-anchor-id="추상-클래스-개념">추상 클래스 개념</h3>
+<p><strong>추상 클래스</strong>(Abstract Class)는 <strong>직접 인스턴스를 생성할 수 없고</strong>, 자식 클래스에서 반드시 구현해야 하는 메서드를 정의하는 클래스이다. <strong>추상 메서드</strong>를 포함하고 있으며, 자식 클래스에서 이를 <strong>구현(Override)</strong>하도록 강제한다. 추상 클래스는 <code>abc</code> 모듈을 사용하여 정의할 수 있다.</p>
+<dl>
+<dt>추상 클래스 사용 이유</dt>
+<dd>
+<ul>
+<li>공통된 인터페이스를 강제하고, 구체적인 구현은 자식 클래스에 맡겨 <strong>구현의 일관성</strong>을 유지할 수 있다.</li>
+<li>여러 클래스에서 공통적으로 구현해야 하는 메서드를 정의하고, 이를 자식 클래스에서 구체화하도록 한다.</li>
+</ul>
+</dd>
+</dl>
+<p><strong>추상 클래스 예제</strong></p>
+<div id="1852babb" class="cell" data-execution_count="25">
+<div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> abc <span class="im">import</span> ABC, abstractmethod</span>
+<span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-3"><a href="#cb49-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 추상 클래스 정의</span></span>
+<span id="cb49-4"><a href="#cb49-4" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Animal(ABC):</span>
+<span id="cb49-5"><a href="#cb49-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">@abstractmethod</span></span>
+<span id="cb49-6"><a href="#cb49-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):  <span class="co"># 추상 메서드</span></span>
+<span id="cb49-7"><a href="#cb49-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb49-8"><a href="#cb49-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-9"><a href="#cb49-9" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Dog(Animal):</span>
+<span id="cb49-10"><a href="#cb49-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):  <span class="co"># 추상 메서드 구현</span></span>
+<span id="cb49-11"><a href="#cb49-11" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"멍멍!"</span>)</span>
+<span id="cb49-12"><a href="#cb49-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-13"><a href="#cb49-13" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Cat(Animal):</span>
+<span id="cb49-14"><a href="#cb49-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> speak(<span class="va">self</span>):  <span class="co"># 추상 메서드 구현</span></span>
+<span id="cb49-15"><a href="#cb49-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"야옹!"</span>)</span>
+<span id="cb49-16"><a href="#cb49-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-17"><a href="#cb49-17" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb49-18"><a href="#cb49-18" aria-hidden="true" tabindex="-1"></a>dog <span class="op">=</span> Dog()</span>
+<span id="cb49-19"><a href="#cb49-19" aria-hidden="true" tabindex="-1"></a>cat <span class="op">=</span> Cat()</span>
+<span id="cb49-20"><a href="#cb49-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb49-21"><a href="#cb49-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 추상 클래스의 메서드를 자식 클래스에서 구현해야 하므로 오류가 발생하지 않음</span></span>
+<span id="cb49-22"><a href="#cb49-22" aria-hidden="true" tabindex="-1"></a>dog.speak()  <span class="co"># 멍멍!</span></span>
+<span id="cb49-23"><a href="#cb49-23" aria-hidden="true" tabindex="-1"></a>cat.speak()  <span class="co"># 야옹!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>멍멍!
+야옹!</code></pre>
+</div>
+</div>
+<ul>
+<li><code>Animal</code> 클래스는 추상 클래스로 정의되어 있고, <code>speak()</code> 메서드는 자식 클래스에서 반드시 구현해야 한다.<br>
+</li>
+<li><code>Dog</code>와 <code>Cat</code> 클래스에서 <code>speak()</code> 메서드를 <strong>구현</strong>하여 오류 없이 동작한다.</li>
+</ul>
+</section>
+<section id="추상-클래스와-인스턴스화" class="level3">
+<h3 class="anchored" data-anchor-id="추상-클래스와-인스턴스화">추상 클래스와 인스턴스화</h3>
+<p>추상 클래스는 <strong>직접 인스턴스화</strong>할 수 없다.</p>
+<div id="04d65255" class="cell" data-execution_count="26">
+<div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 직접 인스턴스를 생성할 수 없음</span></span>
+<span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a><span class="co"># animal = Animal()  # TypeError 발생: Can't instantiate abstract class Animal with abstract methods speak</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<ul>
+<li>추상 클래스는 <strong>인스턴스를 생성할 수 없고</strong>, 반드시 이를 상속받은 자식 클래스에서 <strong>구체적인 구현</strong>을 해야만 인스턴스를 생성하고 사용할 수 있음</li>
+</ul>
+</section>
+<section id="다형성과-추상-클래스의-결합" class="level3">
+<h3 class="anchored" data-anchor-id="다형성과-추상-클래스의-결합">다형성과 추상 클래스의 결합</h3>
+<p>다형성을 활용하여 추상 클래스를 <strong>공통된 인터페이스</strong>로 사용하고, <strong>구체적인 구현</strong>은 자식 클래스에서 제공하도록 할 수 있다.</p>
+<div id="e85fd14f" class="cell" data-execution_count="27">
+<div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> abc <span class="im">import</span> ABC, abstractmethod</span>
+<span id="cb52-2"><a href="#cb52-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-3"><a href="#cb52-3" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Shape(ABC):</span>
+<span id="cb52-4"><a href="#cb52-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">@abstractmethod</span></span>
+<span id="cb52-5"><a href="#cb52-5" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb52-6"><a href="#cb52-6" aria-hidden="true" tabindex="-1"></a>        <span class="cf">pass</span></span>
+<span id="cb52-7"><a href="#cb52-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-8"><a href="#cb52-8" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Circle(Shape):</span>
+<span id="cb52-9"><a href="#cb52-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, radius):</span>
+<span id="cb52-10"><a href="#cb52-10" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.radius <span class="op">=</span> radius</span>
+<span id="cb52-11"><a href="#cb52-11" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb52-12"><a href="#cb52-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb52-13"><a href="#cb52-13" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="fl">3.14</span> <span class="op">*</span> <span class="va">self</span>.radius <span class="op">*</span> <span class="va">self</span>.radius</span>
+<span id="cb52-14"><a href="#cb52-14" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-15"><a href="#cb52-15" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Rectangle(Shape):</span>
+<span id="cb52-16"><a href="#cb52-16" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, width, height):</span>
+<span id="cb52-17"><a href="#cb52-17" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.width <span class="op">=</span> width</span>
+<span id="cb52-18"><a href="#cb52-18" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.height <span class="op">=</span> height</span>
+<span id="cb52-19"><a href="#cb52-19" aria-hidden="true" tabindex="-1"></a>    </span>
+<span id="cb52-20"><a href="#cb52-20" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> area(<span class="va">self</span>):</span>
+<span id="cb52-21"><a href="#cb52-21" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.width <span class="op">*</span> <span class="va">self</span>.height</span>
+<span id="cb52-22"><a href="#cb52-22" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-23"><a href="#cb52-23" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb52-24"><a href="#cb52-24" aria-hidden="true" tabindex="-1"></a>shapes <span class="op">=</span> [Circle(<span class="dv">5</span>), Rectangle(<span class="dv">4</span>, <span class="dv">6</span>)]</span>
+<span id="cb52-25"><a href="#cb52-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb52-26"><a href="#cb52-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 다형성을 통한 추상 클래스 메서드 호출</span></span>
+<span id="cb52-27"><a href="#cb52-27" aria-hidden="true" tabindex="-1"></a><span class="cf">for</span> shape <span class="kw">in</span> shapes:</span>
+<span id="cb52-28"><a href="#cb52-28" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(shape.area())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>78.5
+24</code></pre>
+</div>
+</div>
+<ul>
+<li><code>Shape</code>는 추상 클래스로 정의되고, <code>Circle</code>과 <code>Rectangle</code> 클래스에서 <strong><code>area()</code> 메서드를 구체화</strong>함.</li>
+<li><code>shapes</code> 리스트에서 <code>Circle</code>과 <code>Rectangle</code> 객체들을 다루며, <strong>다형성을 통해 동일한 인터페이스</strong>로 각기 다른 방식으로 <code>area()</code> 메서드를 호출</li>
+</ul>
+</section>
+<section id="다형성-추상-클래스-상속-결합" class="level3">
+<h3 class="anchored" data-anchor-id="다형성-추상-클래스-상속-결합">다형성, 추상 클래스, 상속 결합</h3>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>개념</th>
+<th>설명</th>
+<th>예시</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>다형성</strong></td>
+<td>같은 이름의 메서드가 객체의 종류에 따라 다르게 동작</td>
+<td><code>speak()</code> 메서드</td>
+</tr>
+<tr class="even">
+<td><strong>추상 클래스</strong></td>
+<td>자식 클래스에 공통적인 인터페이스를 강제, 직접 인스턴스화 불가</td>
+<td><code>Animal</code> 추상 클래스</td>
+</tr>
+<tr class="odd">
+<td><strong>상속</strong></td>
+<td>부모 클래스에서 자식 클래스가 속성이나 메서드를 물려받음</td>
+<td><code>Dog</code>, <code>Cat</code> 클래스</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="연산자-오버로딩" class="level2">
+<h2 class="anchored" data-anchor-id="연산자-오버로딩">연산자 오버로딩</h2>
+<p><strong>연산자 오버로딩</strong>(Operator Overloading)은 객체 지향 프로그래밍에서 연산자를 <strong>커스터마이즈</strong>하여 클래스에 맞게 동작하게 만드는 기법이다. 이를 통해 <strong>직관적이고 유연한 객체 연산</strong>이 가능하지만, 과용하면 코드의 <strong>가독성</strong>과 <strong>유지보수성</strong>에 문제가 될 수 있다.</p>
+<section id="연산자-오버로딩-개념" class="level3">
+<h3 class="anchored" data-anchor-id="연산자-오버로딩-개념">연산자 오버로딩 개념</h3>
+<p><strong>연산자 오버로딩</strong>은 기존의 연산자가 클래스에 대해 <strong>새로운 의미로 동작</strong>하도록 만드는 기능이다. <strong>기본 연산자</strong>(예: <code>+</code>, <code>-</code>, <code>*</code>, <code>==</code>)의 동작 방식을 <strong>사용자가 정의한 클래스에 맞게 재정의</strong>할 수 있다. 이를 통해 <strong>자체적으로 정의한 객체들</strong> 간의 연산을 직관적으로 사용할 수 있게 된다.</p>
+</section>
+<section id="연산자-오버로딩의-예시" class="level3">
+<h3 class="anchored" data-anchor-id="연산자-오버로딩의-예시">연산자 오버로딩의 예시</h3>
+<p>파이썬에서는 연산자에 해당하는 특수 메서드(매직 메서드)를 정의함으로써 연산자 오버로딩을 구현한다. 예를 들어, <code>+</code> 연산자는 <code>__add__()</code> 메서드를 통해 오버로딩할 수 있다.</p>
+<table class="caption-top table">
+<caption>주요 연산자 오버로딩 메서드</caption>
+<thead>
+<tr class="header">
+<th>연산자</th>
+<th>메서드</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><code>+</code></td>
+<td><code>__add__(self, other)</code></td>
+</tr>
+<tr class="even">
+<td><code>-</code></td>
+<td><code>__sub__(self, other)</code></td>
+</tr>
+<tr class="odd">
+<td><code>*</code></td>
+<td><code>__mul__(self, other)</code></td>
+</tr>
+<tr class="even">
+<td><code>/</code></td>
+<td><code>__truediv__(self, other)</code></td>
+</tr>
+<tr class="odd">
+<td><code>==</code></td>
+<td><code>__eq__(self, other)</code></td>
+</tr>
+<tr class="even">
+<td><code>!=</code></td>
+<td><code>__ne__(self, other)</code></td>
+</tr>
+<tr class="odd">
+<td><code>&lt;</code></td>
+<td><code>__lt__(self, other)</code></td>
+</tr>
+<tr class="even">
+<td><code>&gt;</code></td>
+<td><code>__gt__(self, other)</code></td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="연산자-오버로딩-예제" class="level3">
+<h3 class="anchored" data-anchor-id="연산자-오버로딩-예제">연산자 오버로딩 예제</h3>
+<p><strong><code>+</code> 연산자 오버로딩 예제</strong></p>
+<div id="36098e0d" class="cell" data-execution_count="28">
+<div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb54-2"><a href="#cb54-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb54-3"><a href="#cb54-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb54-4"><a href="#cb54-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb54-5"><a href="#cb54-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-6"><a href="#cb54-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, other):  <span class="co"># + 연산자 오버로딩</span></span>
+<span id="cb54-7"><a href="#cb54-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Point(<span class="va">self</span>.x <span class="op">+</span> other.x, <span class="va">self</span>.y <span class="op">+</span> other.y)</span>
+<span id="cb54-8"><a href="#cb54-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-9"><a href="#cb54-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):  <span class="co"># 출력 형식 지정</span></span>
+<span id="cb54-10"><a href="#cb54-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>y<span class="sc">}</span><span class="ss">)"</span></span>
+<span id="cb54-11"><a href="#cb54-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-12"><a href="#cb54-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb54-13"><a href="#cb54-13" aria-hidden="true" tabindex="-1"></a>point1 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb54-14"><a href="#cb54-14" aria-hidden="true" tabindex="-1"></a>point2 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb54-15"><a href="#cb54-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb54-16"><a href="#cb54-16" aria-hidden="true" tabindex="-1"></a><span class="co"># + 연산자를 사용하여 두 점을 더하기</span></span>
+<span id="cb54-17"><a href="#cb54-17" aria-hidden="true" tabindex="-1"></a>result <span class="op">=</span> point1 <span class="op">+</span> point2</span>
+<span id="cb54-18"><a href="#cb54-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(result)  <span class="co"># (4, 6)</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(4, 6)</code></pre>
+</div>
+</div>
+<ul>
+<li><code>__add__()</code> 메서드는 두 <code>Point</code> 객체의 <code>x</code>와 <code>y</code> 좌표를 더하여 새로운 <code>Point</code> 객체를 반환</li>
+<li>이처럼 <code>+</code> 연산자를 오버로딩하면, 두 객체 간에 더하기 연산을 직관적으로 사용</li>
+</ul>
+<p><strong><code>==</code> 연산자 오버로딩 예제</strong></p>
+<div id="89fbaa5a" class="cell" data-execution_count="29">
+<div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Point:</span>
+<span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb56-4"><a href="#cb56-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb56-5"><a href="#cb56-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-6"><a href="#cb56-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__eq__</span>(<span class="va">self</span>, other):  <span class="co"># == 연산자 오버로딩</span></span>
+<span id="cb56-7"><a href="#cb56-7" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.x <span class="op">==</span> other.x <span class="kw">and</span> <span class="va">self</span>.y <span class="op">==</span> other.y</span>
+<span id="cb56-8"><a href="#cb56-8" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-9"><a href="#cb56-9" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb56-10"><a href="#cb56-10" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>y<span class="sc">}</span><span class="ss">)"</span></span>
+<span id="cb56-11"><a href="#cb56-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-12"><a href="#cb56-12" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb56-13"><a href="#cb56-13" aria-hidden="true" tabindex="-1"></a>point1 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb56-14"><a href="#cb56-14" aria-hidden="true" tabindex="-1"></a>point2 <span class="op">=</span> Point(<span class="dv">1</span>, <span class="dv">2</span>)</span>
+<span id="cb56-15"><a href="#cb56-15" aria-hidden="true" tabindex="-1"></a>point3 <span class="op">=</span> Point(<span class="dv">3</span>, <span class="dv">4</span>)</span>
+<span id="cb56-16"><a href="#cb56-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb56-17"><a href="#cb56-17" aria-hidden="true" tabindex="-1"></a><span class="co"># == 연산자 사용</span></span>
+<span id="cb56-18"><a href="#cb56-18" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(point1 <span class="op">==</span> point2)  <span class="co"># True</span></span>
+<span id="cb56-19"><a href="#cb56-19" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(point1 <span class="op">==</span> point3)  <span class="co"># False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>True
+False</code></pre>
+</div>
+</div>
+<ul>
+<li><code>__eq__()</code> 메서드를 오버로딩하여 두 <code>Point</code> 객체가 같은지 비교</li>
+</ul>
+</section>
+<section id="다양한-연산자-오버로딩-예제" class="level3">
+<h3 class="anchored" data-anchor-id="다양한-연산자-오버로딩-예제">다양한 연산자 오버로딩 예제</h3>
+<div id="ff8fae08" class="cell" data-execution_count="30">
+<div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Vector:</span>
+<span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, x, y):</span>
+<span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.x <span class="op">=</span> x</span>
+<span id="cb58-4"><a href="#cb58-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.y <span class="op">=</span> y</span>
+<span id="cb58-5"><a href="#cb58-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-6"><a href="#cb58-6" aria-hidden="true" tabindex="-1"></a>    <span class="co"># + 연산자 오버로딩</span></span>
+<span id="cb58-7"><a href="#cb58-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__add__</span>(<span class="va">self</span>, other):</span>
+<span id="cb58-8"><a href="#cb58-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Vector(<span class="va">self</span>.x <span class="op">+</span> other.x, <span class="va">self</span>.y <span class="op">+</span> other.y)</span>
+<span id="cb58-9"><a href="#cb58-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-10"><a href="#cb58-10" aria-hidden="true" tabindex="-1"></a>    <span class="co"># * 연산자 오버로딩 (스칼라 곱)</span></span>
+<span id="cb58-11"><a href="#cb58-11" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__mul__</span>(<span class="va">self</span>, scalar):</span>
+<span id="cb58-12"><a href="#cb58-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> Vector(<span class="va">self</span>.x <span class="op">*</span> scalar, <span class="va">self</span>.y <span class="op">*</span> scalar)</span>
+<span id="cb58-13"><a href="#cb58-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-14"><a href="#cb58-14" aria-hidden="true" tabindex="-1"></a>    <span class="co"># == 연산자 오버로딩</span></span>
+<span id="cb58-15"><a href="#cb58-15" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__eq__</span>(<span class="va">self</span>, other):</span>
+<span id="cb58-16"><a href="#cb58-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.x <span class="op">==</span> other.x <span class="kw">and</span> <span class="va">self</span>.y <span class="op">==</span> other.y</span>
+<span id="cb58-17"><a href="#cb58-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-18"><a href="#cb58-18" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(<span class="va">self</span>):</span>
+<span id="cb58-19"><a href="#cb58-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"(</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>x<span class="sc">}</span><span class="ss">, </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>y<span class="sc">}</span><span class="ss">)"</span></span>
+<span id="cb58-20"><a href="#cb58-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-21"><a href="#cb58-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 객체 생성</span></span>
+<span id="cb58-22"><a href="#cb58-22" aria-hidden="true" tabindex="-1"></a>v1 <span class="op">=</span> Vector(<span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb58-23"><a href="#cb58-23" aria-hidden="true" tabindex="-1"></a>v2 <span class="op">=</span> Vector(<span class="dv">1</span>, <span class="dv">1</span>)</span>
+<span id="cb58-24"><a href="#cb58-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb58-25"><a href="#cb58-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 연산자 사용</span></span>
+<span id="cb58-26"><a href="#cb58-26" aria-hidden="true" tabindex="-1"></a>v3 <span class="op">=</span> v1 <span class="op">+</span> v2  <span class="co"># Vector(3, 4)</span></span>
+<span id="cb58-27"><a href="#cb58-27" aria-hidden="true" tabindex="-1"></a>v4 <span class="op">=</span> v1 <span class="op">*</span> <span class="dv">3</span>   <span class="co"># Vector(6, 9)</span></span>
+<span id="cb58-28"><a href="#cb58-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v3)  <span class="co"># (3, 4)</span></span>
+<span id="cb58-29"><a href="#cb58-29" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v4)  <span class="co"># (6, 9)</span></span>
+<span id="cb58-30"><a href="#cb58-30" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(v1 <span class="op">==</span> v2)  <span class="co"># False</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>(3, 4)
+(6, 9)
+False</code></pre>
+</div>
+</div>
+<ul>
+<li><code>+</code>, <code>*</code>, <code>==</code> 연산자를 오버로딩하여 <code>Vector</code> 객체에 대해 벡터 덧셈, 스칼라 곱, 비교 연산 가능</li>
+</ul>
+</section>
+<section id="연산자-오버로딩-시-주의사항" class="level3">
+<h3 class="anchored" data-anchor-id="연산자-오버로딩-시-주의사항">연산자 오버로딩 시 주의사항</h3>
+<p>연산자 오버로딩을 너무 남용하면 <strong>코드의 가독성</strong>이 떨어질 수 있다. 연산자 오버로딩을 사용한 코드가 직관적이어야 한다. <strong>기본 연산자들의 의미</strong>를 지나치게 변경하면 예상치 못한 동작을 할 수 있으므로, 명확한 목적을 가지고 오버로딩을 활용하는 것이 중요하다.</p>
+</section>
+<section id="연산자-오버로딩-장단점" class="level3">
+<h3 class="anchored" data-anchor-id="연산자-오버로딩-장단점">연산자 오버로딩 장단점</h3>
+<table class="caption-top table">
+<caption>연산자 오버로딩 장점과 단점</caption>
+<colgroup>
+<col style="width: 49%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>장점</th>
+<th>단점</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>객체 간의 <strong>직관적이고 간결한 연산</strong>을 가능하게 한다.</td>
+<td>연산자 오버로딩이 지나치면 <strong>코드의 직관성</strong>이 떨어질 수 있다.</td>
+</tr>
+<tr class="even">
+<td>객체의 <strong>구체적인 동작을 추상화</strong>할 수 있어 코드의 <strong>가독성</strong>을 높일 수 있다.</td>
+<td>각 연산자의 의미가 명확히 정의되지 않으면, <strong>의도치 않은 오류</strong>가 발생할 수 있다.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</section>
+<section id="클래스-활용-및-실전-예제" class="level2">
+<h2 class="anchored" data-anchor-id="클래스-활용-및-실전-예제">클래스 활용 및 실전 예제</h2>
+<section id="클래스-활용-개념" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-활용-개념">클래스 활용 개념</h3>
+<p>클래스는 <strong>객체 지향 프로그래밍(OOP)</strong>에서 중요한 개념으로, 데이터와 이를 처리하는 메서드를 하나의 <strong>단위</strong>로 묶을 수 있다. 이를 통해 <strong>재사용성</strong>, <strong>확장성</strong>, <strong>유지보수 용이성</strong> 등의 장점이 생긴다. 클래스는 특히 <strong>복잡한 시스템</strong>을 개발할 때 <strong>코드를 모듈화</strong>하고, <strong>구체화</strong>하는 데 큰 도움이 된다.</p>
+</section>
+<section id="클래스-활용-중요성" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-활용-중요성">클래스 활용 중요성</h3>
+<p>클래스 활용 중요성은 다음과 같다.</p>
+<ul>
+<li><strong>코드 재사용</strong>: 동일한 구조를 가진 여러 객체를 만들 때 클래스는 코드의 재사용을 가능하게 한다.</li>
+<li><strong>추상화</strong>: 현실 세계의 복잡한 객체를 <strong>단순화</strong>하여 중요한 정보만을 다룰 수 있게 한다.</li>
+<li><strong>캡슐화</strong>: 데이터를 하나로 묶어 내부 구현을 숨기고, <strong>외부와의 인터페이스</strong>만을 제공한다.</li>
+<li><strong>상속과 다형성</strong>: 부모 클래스의 기능을 자식 클래스에 물려주어, 기존 코드를 수정하지 않고 새로운 기능을 추가할 수 있다.</li>
+</ul>
+</section>
+<section id="실전-예제-1-은행-계좌-관리-시스템" class="level3">
+<h3 class="anchored" data-anchor-id="실전-예제-1-은행-계좌-관리-시스템"><strong>3. 실전 예제 1: 은행 계좌 관리 시스템</strong></h3>
+<p><strong>목표</strong>: 은행 계좌를 클래스화하여 입금, 출금, 잔액 조회 등의 기능을 구현.</p>
+<div id="588db999" class="cell" data-execution_count="31">
+<div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> BankAccount:</span>
+<span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, owner, balance<span class="op">=</span><span class="dv">0</span>):</span>
+<span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.owner <span class="op">=</span> owner  <span class="co"># 계좌 소유자</span></span>
+<span id="cb60-4"><a href="#cb60-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.balance <span class="op">=</span> balance  <span class="co"># 계좌 잔액</span></span>
+<span id="cb60-5"><a href="#cb60-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-6"><a href="#cb60-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> deposit(<span class="va">self</span>, amount):</span>
+<span id="cb60-7"><a href="#cb60-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""입금 메서드"""</span></span>
+<span id="cb60-8"><a href="#cb60-8" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> amount <span class="op">&gt;</span> <span class="dv">0</span>:</span>
+<span id="cb60-9"><a href="#cb60-9" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.balance <span class="op">+=</span> amount</span>
+<span id="cb60-10"><a href="#cb60-10" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"입금액: </span><span class="sc">{</span>amount<span class="sc">}</span><span class="ss">, 현재 잔액: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>balance<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb60-11"><a href="#cb60-11" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb60-12"><a href="#cb60-12" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"입금액은 0보다 커야 합니다."</span>)</span>
+<span id="cb60-13"><a href="#cb60-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-14"><a href="#cb60-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> withdraw(<span class="va">self</span>, amount):</span>
+<span id="cb60-15"><a href="#cb60-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""출금 메서드"""</span></span>
+<span id="cb60-16"><a href="#cb60-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> amount <span class="op">&gt;</span> <span class="dv">0</span> <span class="kw">and</span> amount <span class="op">&lt;=</span> <span class="va">self</span>.balance:</span>
+<span id="cb60-17"><a href="#cb60-17" aria-hidden="true" tabindex="-1"></a>            <span class="va">self</span>.balance <span class="op">-=</span> amount</span>
+<span id="cb60-18"><a href="#cb60-18" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="ss">f"출금액: </span><span class="sc">{</span>amount<span class="sc">}</span><span class="ss">, 현재 잔액: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>balance<span class="sc">}</span><span class="ss">"</span>)</span>
+<span id="cb60-19"><a href="#cb60-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">else</span>:</span>
+<span id="cb60-20"><a href="#cb60-20" aria-hidden="true" tabindex="-1"></a>            <span class="bu">print</span>(<span class="st">"출금액이 부적합합니다."</span>)</span>
+<span id="cb60-21"><a href="#cb60-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-22"><a href="#cb60-22" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> get_balance(<span class="va">self</span>):</span>
+<span id="cb60-23"><a href="#cb60-23" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""잔액 조회 메서드"""</span></span>
+<span id="cb60-24"><a href="#cb60-24" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="va">self</span>.balance</span>
+<span id="cb60-25"><a href="#cb60-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-26"><a href="#cb60-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 계좌 객체 생성</span></span>
+<span id="cb60-27"><a href="#cb60-27" aria-hidden="true" tabindex="-1"></a>account1 <span class="op">=</span> BankAccount(<span class="st">"김철수"</span>, <span class="dv">1000</span>)</span>
+<span id="cb60-28"><a href="#cb60-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb60-29"><a href="#cb60-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 입금, 출금, 잔액 조회</span></span>
+<span id="cb60-30"><a href="#cb60-30" aria-hidden="true" tabindex="-1"></a>account1.deposit(<span class="dv">500</span>)</span>
+<span id="cb60-31"><a href="#cb60-31" aria-hidden="true" tabindex="-1"></a>account1.withdraw(<span class="dv">200</span>)</span>
+<span id="cb60-32"><a href="#cb60-32" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="ss">f"최종 잔액: </span><span class="sc">{</span>account1<span class="sc">.</span>get_balance()<span class="sc">}</span><span class="ss">"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>입금액: 500, 현재 잔액: 1500
+출금액: 200, 현재 잔액: 1300
+최종 잔액: 1300</code></pre>
+</div>
+</div>
+<ul>
+<li><code>BankAccount</code> 클래스는 은행 계좌의 기본적인 기능인 입금, 출금, 잔액 조회를 구현한다.</li>
+<li><strong>입금</strong>, <strong>출금</strong>은 조건을 통해 <strong>올바른 금액</strong>만 처리하도록 한다.</li>
+<li><code>__init__()</code> 메서드를 통해 <strong>초기값</strong>인 계좌 소유자와 잔액을 설정할 수 있다.</li>
+</ul>
+</section>
+<section id="실전-예제-2-쇼핑몰-제품-관리-시스템" class="level3">
+<h3 class="anchored" data-anchor-id="실전-예제-2-쇼핑몰-제품-관리-시스템">실전 예제 2: 쇼핑몰 제품 관리 시스템</h3>
+<p><strong>목표</strong>: 제품을 관리하는 클래스를 작성하고, 제품 정보 등록 및 가격 변경 기능을 구현</p>
+<div id="02882e6b" class="cell" data-execution_count="32">
+<div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Product:</span>
+<span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, price, stock):</span>
+<span id="cb62-3"><a href="#cb62-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># 제품명</span></span>
+<span id="cb62-4"><a href="#cb62-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.price <span class="op">=</span> price  <span class="co"># 가격</span></span>
+<span id="cb62-5"><a href="#cb62-5" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stock <span class="op">=</span> stock  <span class="co"># 재고</span></span>
+<span id="cb62-6"><a href="#cb62-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-7"><a href="#cb62-7" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update_price(<span class="va">self</span>, new_price):</span>
+<span id="cb62-8"><a href="#cb62-8" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""가격 변경 메서드"""</span></span>
+<span id="cb62-9"><a href="#cb62-9" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.price <span class="op">=</span> new_price</span>
+<span id="cb62-10"><a href="#cb62-10" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">의 가격이 </span><span class="sc">{</span>new_price<span class="sc">}</span><span class="ss">로 변경되었습니다."</span>)</span>
+<span id="cb62-11"><a href="#cb62-11" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-12"><a href="#cb62-12" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> update_stock(<span class="va">self</span>, amount):</span>
+<span id="cb62-13"><a href="#cb62-13" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""재고 업데이트 메서드"""</span></span>
+<span id="cb62-14"><a href="#cb62-14" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.stock <span class="op">+=</span> amount</span>
+<span id="cb62-15"><a href="#cb62-15" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">의 재고가 </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>stock<span class="sc">}</span><span class="ss">개로 변경되었습니다."</span>)</span>
+<span id="cb62-16"><a href="#cb62-16" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-17"><a href="#cb62-17" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> product_info(<span class="va">self</span>):</span>
+<span id="cb62-18"><a href="#cb62-18" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""제품 정보 출력 메서드"""</span></span>
+<span id="cb62-19"><a href="#cb62-19" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"제품명: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, 가격: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>price<span class="sc">}</span><span class="ss">, 재고: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>stock<span class="sc">}</span><span class="ss">"</span></span>
+<span id="cb62-20"><a href="#cb62-20" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-21"><a href="#cb62-21" aria-hidden="true" tabindex="-1"></a><span class="co"># 제품 객체 생성</span></span>
+<span id="cb62-22"><a href="#cb62-22" aria-hidden="true" tabindex="-1"></a>product1 <span class="op">=</span> Product(<span class="st">"노트북"</span>, <span class="dv">1000000</span>, <span class="dv">10</span>)</span>
+<span id="cb62-23"><a href="#cb62-23" aria-hidden="true" tabindex="-1"></a>product2 <span class="op">=</span> Product(<span class="st">"스마트폰"</span>, <span class="dv">800000</span>, <span class="dv">20</span>)</span>
+<span id="cb62-24"><a href="#cb62-24" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-25"><a href="#cb62-25" aria-hidden="true" tabindex="-1"></a><span class="co"># 제품 정보 출력</span></span>
+<span id="cb62-26"><a href="#cb62-26" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(product1.product_info())</span>
+<span id="cb62-27"><a href="#cb62-27" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(product2.product_info())</span>
+<span id="cb62-28"><a href="#cb62-28" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb62-29"><a href="#cb62-29" aria-hidden="true" tabindex="-1"></a><span class="co"># 가격 및 재고 변경</span></span>
+<span id="cb62-30"><a href="#cb62-30" aria-hidden="true" tabindex="-1"></a>product1.update_price(<span class="dv">950000</span>)</span>
+<span id="cb62-31"><a href="#cb62-31" aria-hidden="true" tabindex="-1"></a>product2.update_stock(<span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>제품명: 노트북, 가격: 1000000, 재고: 10
+제품명: 스마트폰, 가격: 800000, 재고: 20
+노트북의 가격이 950000로 변경되었습니다.
+스마트폰의 재고가 25개로 변경되었습니다.</code></pre>
+</div>
+</div>
+<ul>
+<li><code>Product</code> 클래스는 <strong>제품명</strong>, <strong>가격</strong>, <strong>재고</strong>를 속성으로 가진다.</li>
+<li>가격과 재고 변경은 <strong>update_price()</strong>와 <strong>update_stock()</strong> 메서드를 통해 이루어진다.</li>
+<li><strong>제품 정보 출력</strong> 메서드를 통해 제품 정보를 쉽게 확인할 수 있다.</li>
+</ul>
+</section>
+<section id="실전-예제-3-학생-성적-관리-시스템" class="level3">
+<h3 class="anchored" data-anchor-id="실전-예제-3-학생-성적-관리-시스템">실전 예제 3: 학생 성적 관리 시스템</h3>
+<p><strong>목표</strong>: 학생의 성적을 관리하고, 평균 성적을 계산하는 클래스를 작성</p>
+<div id="f9c5410e" class="cell" data-execution_count="33">
+<div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Student:</span>
+<span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name, grades):</span>
+<span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.name <span class="op">=</span> name  <span class="co"># 학생 이름</span></span>
+<span id="cb64-4"><a href="#cb64-4" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.grades <span class="op">=</span> grades  <span class="co"># 성적 리스트</span></span>
+<span id="cb64-5"><a href="#cb64-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-6"><a href="#cb64-6" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add_grade(<span class="va">self</span>, grade):</span>
+<span id="cb64-7"><a href="#cb64-7" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""성적 추가 메서드"""</span></span>
+<span id="cb64-8"><a href="#cb64-8" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.grades.append(grade)</span>
+<span id="cb64-9"><a href="#cb64-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-10"><a href="#cb64-10" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> average_grade(<span class="va">self</span>):</span>
+<span id="cb64-11"><a href="#cb64-11" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""평균 성적 계산 메서드"""</span></span>
+<span id="cb64-12"><a href="#cb64-12" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="bu">sum</span>(<span class="va">self</span>.grades) <span class="op">/</span> <span class="bu">len</span>(<span class="va">self</span>.grades) <span class="cf">if</span> <span class="va">self</span>.grades <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb64-13"><a href="#cb64-13" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-14"><a href="#cb64-14" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> student_info(<span class="va">self</span>):</span>
+<span id="cb64-15"><a href="#cb64-15" aria-hidden="true" tabindex="-1"></a>        <span class="co">"""학생 정보 및 성적 출력 메서드"""</span></span>
+<span id="cb64-16"><a href="#cb64-16" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="ss">f"학생명: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>name<span class="sc">}</span><span class="ss">, 성적: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>grades<span class="sc">}</span><span class="ss">, 평균 성적: </span><span class="sc">{</span><span class="va">self</span><span class="sc">.</span>average_grade()<span class="sc">:.2f}</span><span class="ss">"</span></span>
+<span id="cb64-17"><a href="#cb64-17" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-18"><a href="#cb64-18" aria-hidden="true" tabindex="-1"></a><span class="co"># 학생 객체 생성</span></span>
+<span id="cb64-19"><a href="#cb64-19" aria-hidden="true" tabindex="-1"></a>student1 <span class="op">=</span> Student(<span class="st">"홍길동"</span>, [<span class="dv">85</span>, <span class="dv">90</span>, <span class="dv">78</span>])</span>
+<span id="cb64-20"><a href="#cb64-20" aria-hidden="true" tabindex="-1"></a>student2 <span class="op">=</span> Student(<span class="st">"김유진"</span>, [<span class="dv">92</span>, <span class="dv">88</span>, <span class="dv">95</span>])</span>
+<span id="cb64-21"><a href="#cb64-21" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-22"><a href="#cb64-22" aria-hidden="true" tabindex="-1"></a><span class="co"># 학생 정보 출력</span></span>
+<span id="cb64-23"><a href="#cb64-23" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student1.student_info())</span>
+<span id="cb64-24"><a href="#cb64-24" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student2.student_info())</span>
+<span id="cb64-25"><a href="#cb64-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb64-26"><a href="#cb64-26" aria-hidden="true" tabindex="-1"></a><span class="co"># 성적 추가 및 정보 갱신</span></span>
+<span id="cb64-27"><a href="#cb64-27" aria-hidden="true" tabindex="-1"></a>student1.add_grade(<span class="dv">80</span>)</span>
+<span id="cb64-28"><a href="#cb64-28" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(student1.student_info())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>학생명: 홍길동, 성적: [85, 90, 78], 평균 성적: 84.33
+학생명: 김유진, 성적: [92, 88, 95], 평균 성적: 91.67
+학생명: 홍길동, 성적: [85, 90, 78, 80], 평균 성적: 83.25</code></pre>
+</div>
+</div>
+<ul>
+<li><code>Student</code> 클래스는 학생의 <strong>이름</strong>과 <strong>성적</strong> 리스트를 속성으로 가진다.</li>
+<li>성적을 추가할 수 있는 <strong>add_grade()</strong> 메서드와, 평균 성적을 계산하는 <strong>average_grade()</strong> 메서드를 제공한다.</li>
+</ul>
+</section>
+<section id="클래스-활용-시-주의사항" class="level3">
+<h3 class="anchored" data-anchor-id="클래스-활용-시-주의사항">클래스 활용 시 주의사항</h3>
+<p>클래스 활용 시 주의사항은 다음과 같다.</p>
+<ul>
+<li><strong>책임 분리</strong>: 클래스는 하나의 <strong>책임</strong>만 가지도록 설계하는 것이 좋다. 여러 가지 기능이 혼합되면 유지보수와 확장이 어려워진다.</li>
+<li><strong>적절한 추상화</strong>: 클래스는 필요한 정보를 <strong>추상화</strong>하여 복잡성을 줄이고, 객체들 간의 상호작용을 <strong>단순화</strong>해야 한다.</li>
+<li><strong>상속과 다형성 활용</strong>: 공통된 기능을 부모 클래스에 정의하고, <strong>상속</strong>을 통해 자식 클래스에서 기능을 확장할 수 있다.</li>
+</ul>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./70exception.html" class="pagination-link" aria-label="예외처리">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">예외처리</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./90library.html" class="pagination-link" aria-label="패키지">
+        <span class="nav-page-text"><span class="chapter-title">패키지</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">
+<p>Copyright(c) 2025 YK</p>
+</div>   
+    <div class="nav-footer-center">
+      &nbsp;
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/80class.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="nav-footer-right">
+<p>Python Handling</p>
+</div>
+  </div>
+</footer>
+
+
+
+
+</body></html>
