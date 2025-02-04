@@ -256,7 +256,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#파이쎤-소개" id="toc-파이쎤-소개" class="nav-link active" data-scroll-target="#파이쎤-소개">파이쎤 소개</a>
+  <li><a href="#프로그래밍-언어" id="toc-프로그래밍-언어" class="nav-link active" data-scroll-target="#프로그래밍-언어">프로그래밍 언어</a></li>
+  <li><a href="#프로그래밍-언어란" id="toc-프로그래밍-언어란" class="nav-link" data-scroll-target="#프로그래밍-언어란">프로그래밍 언어란?</a>
+  <ul>
+  <li><a href="#프로그래밍-언어의-종류" id="toc-프로그래밍-언어의-종류" class="nav-link" data-scroll-target="#프로그래밍-언어의-종류">프로그래밍 언어의 종류</a></li>
+  <li><a href="#프로그래밍-언어의-실행-방식" id="toc-프로그래밍-언어의-실행-방식" class="nav-link" data-scroll-target="#프로그래밍-언어의-실행-방식">프로그래밍 언어의 실행 방식</a></li>
+  <li><a href="#대표적인-프로그래밍-언어-및-특징" id="toc-대표적인-프로그래밍-언어-및-특징" class="nav-link" data-scroll-target="#대표적인-프로그래밍-언어-및-특징">대표적인 프로그래밍 언어 및 특징</a></li>
+  </ul></li>
+  <li><a href="#파이쎤-소개" id="toc-파이쎤-소개" class="nav-link" data-scroll-target="#파이쎤-소개">파이쎤 소개</a>
   <ul>
   <li><a href="#파이썬의-특징" id="toc-파이썬의-특징" class="nav-link" data-scroll-target="#파이썬의-특징">파이썬의 특징</a></li>
   <li><a href="#파이썬의-활용-분야" id="toc-파이썬의-활용-분야" class="nav-link" data-scroll-target="#파이썬의-활용-분야">파이썬의 활용 분야</a></li>
@@ -325,19 +332,115 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
+<section id="프로그래밍-언어" class="level2">
+<h2 class="anchored" data-anchor-id="프로그래밍-언어">프로그래밍 언어</h2>
+<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3VG2OgkRJK0?si=b3rPeVR7VSEUMBm8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+</section>
+<section id="프로그래밍-언어란" class="level2">
+<h2 class="anchored" data-anchor-id="프로그래밍-언어란">프로그래밍 언어란?</h2>
+<p>프로그래밍 언어는 <strong>컴퓨터가 이해하고 실행할 수 있는 명령을 작성하기 위한 언어</strong>이다. 사람이 이해할 수 있는 문법과 구조를 사용하여 컴퓨터에게 특정 작업을 수행하도록 지시한다.</p>
+<section id="프로그래밍-언어의-종류" class="level3">
+<h3 class="anchored" data-anchor-id="프로그래밍-언어의-종류">프로그래밍 언어의 종류</h3>
+<p><strong>저급 언어 (Low-Level Language)</strong> - 기계어와 가까운 언어로, 컴퓨터가 직접 실행할 수 있는 코드에 가깝다. - <strong>예시</strong>: 기계어(Machine Code), 어셈블리어(Assembly Language) - <strong>특징</strong>: 실행 속도가 빠르지만 사람이 이해하고 작성하기 어렵다.</p>
+<p><strong>고급 언어 (High-Level Language)</strong> - 사람이 이해하기 쉬운 문법을 사용하며, 컴파일러나 인터프리터를 통해 기계어로 변환된다. - <strong>예시</strong>: Python, Java, C++, JavaScript 등 - <strong>특징</strong>: 직관적인 문법을 제공하며, 생산성이 높고 유지보수가 용이하다.</p>
+</section>
+<section id="프로그래밍-언어의-실행-방식" class="level3">
+<h3 class="anchored" data-anchor-id="프로그래밍-언어의-실행-방식">프로그래밍 언어의 실행 방식</h3>
+<table class="caption-top table">
+<caption>프로그래밍 언어 실행 방식</caption>
+<colgroup>
+<col style="width: 18%">
+<col style="width: 81%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>실행 방식</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>컴파일 언어</strong></td>
+<td>소스 코드를 기계어로 변환한 후 실행 파일을 생성하여 실행하는 방식. 실행 속도가 빠름. <br> <strong>예시</strong>: C, C++, Java (JVM 사용)</td>
+</tr>
+<tr class="even">
+<td><strong>인터프리터 언어</strong></td>
+<td>소스 코드를 한 줄씩 해석하며 실행하는 방식. 개발 속도가 빠르지만 실행 속도가 비교적 느림. <br> <strong>예시</strong>: Python, JavaScript, Ruby</td>
+</tr>
+<tr class="odd">
+<td><strong>혼합형 (JIT 컴파일)</strong></td>
+<td>컴파일과 인터프리팅 방식을 혼합하여 실행 성능을 최적화한 방식. <br> <strong>예시</strong>: Java (JIT 컴파일을 사용하여 실행 속도를 높임)</td>
+</tr>
+</tbody>
+</table>
+</section>
+<section id="대표적인-프로그래밍-언어-및-특징" class="level3">
+<h3 class="anchored" data-anchor-id="대표적인-프로그래밍-언어-및-특징">대표적인 프로그래밍 언어 및 특징</h3>
+<table class="caption-top table">
+<caption>대표적인 프로그래밍 언어</caption>
+<colgroup>
+<col style="width: 9%">
+<col style="width: 90%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>언어</th>
+<th>특징</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>C</strong></td>
+<td>하드웨어 제어가 가능하고 성능이 뛰어나며, 운영체제 및 시스템 프로그래밍에 많이 사용됨.</td>
+</tr>
+<tr class="even">
+<td><strong>C++</strong></td>
+<td>객체지향 프로그래밍(OOP) 기능을 추가한 C 기반 언어로, 게임 개발 및 고성능 애플리케이션에 많이 사용됨.</td>
+</tr>
+<tr class="odd">
+<td><strong>Python</strong></td>
+<td>문법이 간결하고 배우기 쉬우며, 데이터 과학, 인공지능(AI), 웹 개발 등 다양한 분야에서 활용됨.</td>
+</tr>
+<tr class="even">
+<td><strong>Java</strong></td>
+<td>플랫폼 독립적(Write Once, Run Anywhere)이며, 기업용 소프트웨어 및 안드로이드 앱 개발에 많이 사용됨.</td>
+</tr>
+<tr class="odd">
+<td><strong>JavaScript</strong></td>
+<td>웹 개발에서 주로 사용되며, 브라우저에서 실행되는 동적 언어. Node.js를 통해 서버 개발도 가능함.</td>
+</tr>
+<tr class="even">
+<td><strong>Ruby</strong></td>
+<td>문법이 간결하고 직관적이며, 웹 개발에서 인기 있는 프레임워크인 Ruby on Rails를 제공함.</td>
+</tr>
+<tr class="odd">
+<td><strong>Go</strong></td>
+<td>구글이 개발한 언어로, 높은 성능과 간결한 문법을 제공하며, 대규모 네트워크 및 서버 애플리케이션에 적합함.</td>
+</tr>
+<tr class="even">
+<td><strong>Swift</strong></td>
+<td>애플이 iOS 및 macOS 개발을 위해 만든 언어로, 성능이 뛰어나고 안전성을 고려한 설계를 가짐.</td>
+</tr>
+</tbody>
+</table>
+<p>프로그래밍 언어는 목적에 따라 선택해야 하며, 특정 분야(웹 개발, 데이터 분석, 시스템 프로그래밍 등)에 적합한 언어를 배우는 것이 중요하다.</p>
+<p>2025년 1월 기준, Python이 TIOBE 순위<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 1위를 차지 하였다.</p>
+<p><img src="images/tiobe_01.png" class="img-fluid"></p>
+<p><img src="images/tiobe_02.png" class="img-fluid"></p>
+</section>
+</section>
 <section id="파이쎤-소개" class="level2">
 <h2 class="anchored" data-anchor-id="파이쎤-소개">파이쎤 소개</h2>
-<center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://www.python.org/static/img/python-logo.png" class="img-fluid figure-img"></p>
 <figcaption>python</figcaption>
 </figure>
 </div>
-</center>
 <p>파이썬(Python)은 배우기 쉽고 강력한 기능을 갖춘 프로그래밍 언어이다. 문법이 간결하고 가독성이 높아 초보자부터 전문가까지 폭넓게 사용하고 있다.</p>
 <section id="파이썬의-특징" class="level3">
 <h3 class="anchored" data-anchor-id="파이썬의-특징">파이썬의 특징</h3>
+<p>파이썬은 다음과 같은 특징을 갖는다.</p>
 <ul>
 <li><strong>쉬운 문법</strong>: 영어와 비슷한 구문 구조를 가지고 있어 처음 배우는 사람도 쉽게 익힐 수 있다.<br>
 </li>
@@ -350,6 +453,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="파이썬의-활용-분야" class="level3">
 <h3 class="anchored" data-anchor-id="파이썬의-활용-분야">파이썬의 활용 분야</h3>
+<p>파이썬 주요 활용 분야는 다음과 같다.</p>
 <ul>
 <li><strong>웹 개발</strong>: Django, Flask와 같은 프레임워크를 활용하여 웹사이트와 API를 개발할 수 있다.<br>
 </li>
@@ -639,12 +743,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ageekisborn.png" class="img-fluid figure-img"></p>
-<figcaption>Hello, World<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></figcaption>
+<figcaption>Hello, World<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></figcaption>
 </figure>
 </div>
 </center>
-<p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></p>
-<div id="eaddc7bb" class="cell" data-execution_count="1">
+<p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
+<div id="85f395c3" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World</code></pre>
@@ -741,8 +845,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p>https://geek-and-poke.com/geekandpoke/2011/2/11/a-geek-is-born.html<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><a href="https://namu.wiki/w/Hello%2C%20world%21" target="_blank">https://namu.wiki/w/Hello%2C%20world%21</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="https://www.tiobe.com/tiobe-index/" target="blank">https://www.tiobe.com/tiobe-index/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p>https://geek-and-poke.com/geekandpoke/2011/2/11/a-geek-is-born.html<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p><a href="https://namu.wiki/w/Hello%2C%20world%21" target="_blank">https://namu.wiki/w/Hello%2C%20world%21</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
