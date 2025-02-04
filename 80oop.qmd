@@ -1,5 +1,0 @@
----
-title: "클래스"
-format: html
----
-

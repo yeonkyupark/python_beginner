@@ -1,0 +1,1157 @@
+---
+title: "클래스"
+format: html
+---
+
+## 클래스 개념 이해  
+
+### 객체지향 프로그래밍(OOP) 개념  
+**객체지향 프로그래밍(OOP, Object-Oriented Programming)**은 현실 세계를 객체(Object) 단위로 나누어 프로그램을 설계하는 방식이다. OOP의 주요 특징은 다음과 같다.  
+
+  - **캡슐화(Encapsulation)**: 데이터와 기능(메서드)을 하나로 묶어 보호하는 개념  
+  - **상속(Inheritance)**: 기존 클래스(부모)에서 기능을 물려받아 새로운 클래스(자식)를 만드는 개념  
+  - **다형성(Polymorphism)**: 같은 이름의 메서드가 다른 기능을 할 수 있는 개념  
+  - **추상화(Abstraction)**: 객체의 중요한 속성만 표현하여 단순화하는 개념  
+
+### 클래스와 객체의 정의
+
+- **클래스(Class)**: 객체를 만들기 위한 설계도  
+- **객체(Object)**: 클래스에서 생성된 실체(인스턴스)  
+
+**클래스와 객체**
+
+```{python}
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand  # 속성(변수)
+        self.color = color
+
+    def drive(self):  # 메서드(함수)
+        print(f"{self.color} {self.brand}가 주행 중입니다.")
+
+# 객체 생성
+my_car = Car("Hyundai", "Red")
+
+# 객체 사용
+print(my_car.brand)  # Hyundai 출력
+my_car.drive()       # "Red Hyundai가 주행 중입니다." 출력
+```
+
+### 클래스와 인스턴스의 차이  
+
+| 구분 | 설명 | 예제 |
+|------|------|------|
+| **클래스** | 객체를 만들기 위한 설계도 | `class Car:` |
+| **인스턴스(객체)** | 클래스로부터 생성된 개별 실체 | `my_car = Car("Hyundai", "Red")` |
+
+**클래스와 인스턴스의 관계 예제**
+
+```{python}
+class Dog:
+    def __init__(self, name):
+        self.name = name
+
+# 인스턴스 생성
+dog1 = Dog("Buddy")
+dog2 = Dog("Charlie")
+
+print(dog1.name)  # Buddy 출력
+print(dog2.name)  # Charlie 출력
+```
+- `Dog` 클래스는 하나지만, `dog1`, `dog2`처럼 여러 개의 인스턴스를 생성할 수 있다.  
+- 각 인스턴스는 독립적으로 동작한다.  
+
+이 개념을 이해하면 **객체지향 프로그래밍(OOP)**을 기반으로 한 클래스 설계를 할 수 있다.
+
+## 클래스 정의와 객체 생성  
+
+객체지향 프로그래밍(OOP)의 기본이 되는 **클래스와 객체 개념**을 이해하면 더욱 효율적인 프로그램을 작성할 수 있다.
+ 
+| 개념 | 설명 | 예제 |
+|------|------|------|
+| **클래스** | 객체를 만들기 위한 설계도 | `class Car:` |
+| **객체(인스턴스)** | 클래스로부터 생성된 실체 | `my_car = Car("Hyundai", "Red")` |
+| **속성(변수)** | 객체가 가지는 데이터 | `self.brand = brand` |
+| **메서드(함수)** | 객체가 수행할 동작 | `def drive(self):` |
+
+### 클래스 정의
+
+클래스는 `class` 키워드를 사용하여 정의하며, 객체의 속성(변수)과 동작(메서드)을 포함할 수 있다.  
+
+```{python}
+class 클래스이름:
+    def __init__(self, 속성1, 속성2):
+        self.속성1 = 속성1
+        self.속성2 = 속성2
+    
+    def 메서드(self):
+        print("이것은 클래스의 메서드입니다.")
+```
+
+### 객체(인스턴스) 생성  
+클래스를 정의한 후, 인스턴스를 만들어 사용할 수 있다.  
+
+**클래스 정의와 객체 생성 **  
+
+```{python}
+class Car:
+    def __init__(self, brand, color):  # 생성자
+        self.brand = brand  # 속성
+        self.color = color
+
+    def drive(self):  # 메서드
+        print(f"{self.color} {self.brand}가 주행 중입니다.")
+
+# 객체 생성
+car1 = Car("Hyundai", "Red")  # Car 클래스의 인스턴스 생성
+car2 = Car("Toyota", "Blue")
+
+# 객체 사용
+print(car1.brand)  # Hyundai 출력
+print(car2.color)  # Blue 출력
+
+car1.drive()  # "Red Hyundai가 주행 중입니다." 출력
+car2.drive()  # "Blue Toyota가 주행 중입니다." 출력
+```
+
+### self 키워드 이해  
+
+`self`는 **현재 인스턴스를 가리키는 변수**이고, 메서드에서 `self`를 사용하여 **인스턴스 변수에 접근**할 수 있다.  
+
+```{python}
+class Person:
+    def __init__(self, name):
+        self.name = name  # self.name은 인스턴스 변수
+
+    def greet(self):
+        print(f"안녕하세요, 저는 {self.name}입니다.")
+
+# 객체 생성
+p1 = Person("철수")
+p2 = Person("영희")
+
+# 메서드 호출
+p1.greet()  # "안녕하세요, 저는 철수입니다." 출력
+p2.greet()  # "안녕하세요, 저는 영희입니다." 출력
+```
+
+### 여러 개의 객체 생성 가능
+
+클래스를 한 번 정의하면 **여러 개의 객체(인스턴스)를 생성**할 수 있다.  
+
+```{python}
+class Animal:
+    def __init__(self, species, sound):
+        self.species = species
+        self.sound = sound
+
+    def make_sound(self):
+        print(f"{self.species}가 '{self.sound}' 소리를 냅니다.")
+
+# 객체 생성
+dog = Animal("강아지", "멍멍")
+cat = Animal("고양이", "야옹")
+
+# 메서드 호출
+dog.make_sound()  # "강아지가 '멍멍' 소리를 냅니다." 출력
+cat.make_sound()  # "고양이가 '야옹' 소리를 냅니다." 출력
+```
+
+## 생성자와 소멸자  
+ 
+| 개념 | 설명 | 예제 |
+|------|------|------|
+| **생성자 (`__init__`)** | 객체가 생성될 때 자동 실행 | `car1 = Car("Hyundai", "Red")` |
+| **소멸자 (`__del__`)** | 객체가 삭제될 때 자동 실행 | `del car1` 또는 프로그램 종료 시 |
+: 생성자와 소멸자
+
+- **생성자는 객체가 생성될 때 호출**되며, 속성을 초기화하는 역할을 한다.  
+- **소멸자는 객체가 삭제되거나 프로그램이 종료될 때 호출**되며, 메모리에서 해제될 때 필요한 작업을 수행할 수 있다.  
+
+소멸자는 직접 호출하는 경우는 드물지만, **파일을 닫거나 리소스를 정리하는 용도로 활용**될 수 있다.
+
+### 생성자 __init__()
+
+**생성자(Constructor)**는 객체가 생성될 때 자동으로 실행되는 특별한 메서드이다.  
+- `__init__()` 메서드를 사용하여 정의한다.  
+- 객체의 속성을 초기화하는 역할을 한다.  
+
+**생성자 예제**  
+
+```{python}
+class Car:
+    def __init__(self, brand, color):  # 생성자
+        self.brand = brand  # 속성 초기화
+        self.color = color
+        print(f"{self.color} {self.brand} 자동차가 생성되었습니다.")
+
+# 객체 생성
+car1 = Car("Hyundai", "Red")  
+car2 = Car("Toyota", "Blue")  
+```
+
+### 소멸자 __del__() 
+
+**소멸자(Destructor)**는 객체가 삭제될 때 자동으로 호출되는 특별한 메서드이다.  
+- `__del__()` 메서드를 사용하여 정의한다.  
+- 객체가 메모리에서 제거될 때 수행할 동작을 정의할 수 있다.  
+
+**소멸자 예제**  
+
+```{python}
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand
+        self.color = color
+        print(f"{self.color} {self.brand} 자동차가 생성되었습니다.")
+
+    def __del__(self):  # 소멸자
+        print(f"{self.color} {self.brand} 자동차가 삭제되었습니다.")
+
+# 객체 생성
+car1 = Car("Hyundai", "Red")  
+car2 = Car("Toyota", "Blue")  
+
+# 객체 삭제
+del car1  
+del car2  
+```
+
+## 클래스 변수와 인스턴스 변수  
+ 
+| 구분 | 클래스 변수 | 인스턴스 변수 |
+|------|------------|--------------|
+| **정의 위치** | 클래스 내부에서 `self` 없이 선언 | `__init__()` 내부에서 `self.변수명` 형태로 선언 |
+| **공유 여부** | 모든 인스턴스가 공유 | 각 인스턴스마다 독립적 |
+| **접근 방법** | `클래스명.변수명` 또는 `self.변수명` | `self.변수명` |
+| **변경 시 영향** | 모든 인스턴스에 적용 | 해당 인스턴스에만 적용 |
+
+클래스 변수는 **공통 속성**을 저장하는 데 사용하고, 인스턴스 변수는 **개별 속성**을 저장하는 데 사용하면 된다.
+
+### 클래스 변수와 인스턴스 변수  
+
+| 구분 | 클래스 변수 (Class Variable) | 인스턴스 변수 (Instance Variable) |
+|------|------------|--------------|
+| **정의 위치** | 클래스 내부, `self` 없이 선언 | 클래스 내부, `self`를 사용하여 선언 |
+| **공유 여부** | 모든 인스턴스가 공유 | 각 인스턴스마다 개별적으로 존재 |
+| **접근 방법** | `클래스명.변수명` 또는 `self.변수명` | `self.변수명` |
+
+
+### 클래스 변수  
+클래스 변수(Class Variable)는 **모든 인스턴스가 공유하는 변수**로 클래스 내부에서 `self` 없이 선언하며, `클래스명.변수명`으로 접근할 수 있다.  
+
+**클래스 변수 예제**
+
+```{python}
+class Car:
+    wheels = 4  # 클래스 변수 (모든 자동차가 공유)
+
+    def __init__(self, brand, color):
+        self.brand = brand  # 인스턴스 변수
+        self.color = color
+
+# 객체 생성
+car1 = Car("Hyundai", "Red")
+car2 = Car("Toyota", "Blue")
+
+# 클래스 변수 접근
+print(Car.wheels)   # 4 출력 (클래스 변수 직접 접근)
+print(car1.wheels)  # 4 출력 (인스턴스를 통해 접근)
+print(car2.wheels)  # 4 출력
+
+# 클래스 변수 변경
+Car.wheels = 6
+print(car1.wheels)  # 6 출력
+print(car2.wheels)  # 6 출력
+```
+
+### 인스턴스 변수  
+인스턴스 변수(Instance Variable)는 **각 객체(인스턴스)마다 독립적으로 존재하는 변수**, `self.변수명` 형태로 선언하고 사용한다.  
+
+**인스턴스 변수 예제**
+
+```{python}
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand  # 인스턴스 변수
+        self.color = color
+
+# 객체 생성
+car1 = Car("Hyundai", "Red")
+car2 = Car("Toyota", "Blue")
+
+# 인스턴스 변수 접근
+print(car1.brand)  # Hyundai 출력
+print(car2.brand)  # Toyota 출력
+
+# 개별 인스턴스 변수 변경
+car1.color = "Black"
+print(car1.color)  # Black 출력
+print(car2.color)  # Blue 출력 (car1과 독립적)
+```
+
+### 클래스 변수와 인스턴스 변수의 차이  
+
+```{python}
+class Animal:
+    species = "Mammal"  # 클래스 변수 (모든 인스턴스가 공유)
+
+    def __init__(self, name):
+        self.name = name  # 인스턴스 변수 (각 인스턴스마다 다름)
+
+# 객체 생성
+dog = Animal("Dog")
+cat = Animal("Cat")
+
+# 클래스 변수 접근
+print(dog.species)  # Mammal 출력
+print(cat.species)  # Mammal 출력
+
+# 인스턴스 변수 접근
+print(dog.name)  # Dog 출력
+print(cat.name)  # Cat 출력
+
+# 클래스 변수 변경 (모든 인스턴스에 영향)
+Animal.species = "Reptile"
+print(dog.species)  # Reptile 출력
+print(cat.species)  # Reptile 출력
+
+# 인스턴스 변수 변경 (다른 인스턴스에 영향 없음)
+dog.name = "Wolf"
+print(dog.name)  # Wolf 출력
+print(cat.name)  # Cat 출력 (영향 없음)
+```
+
+## 메서드의 종류  
+
+파이썬 클래스에는 **인스턴스 메서드**(Instance Method), **클래스 메서드**(Class Method), **정적 메서드**(Static Method)의 세 가지 종류가 있다.  
+
+| 메서드 종류 | 정의 방식 | 첫 번째 매개변수 | 주요 특징 |
+|------------|------------|---------------|------------|
+| **인스턴스 메서드** | `def method(self):` | `self` | 인스턴스 속성 및 메서드에 접근 가능 |
+| **클래스 메서드** | `@classmethod` 사용 | `cls` | 클래스 변수 및 메서드에 접근 가능 |
+| **정적 메서드** | `@staticmethod` 사용 | 없음 | 클래스, 인스턴스와 무관하게 독립적으로 실행 |
+:메서드 종류
+ 
+| 메서드 종류 | `self` 사용 여부 | `cls` 사용 여부 | 접근 가능한 변수 |
+|------------|---------------|---------------|----------------|
+| **인스턴스 메서드** | O | X | 인스턴스 변수, 클래스 변수 |
+| **클래스 메서드** | X | O | 클래스 변수 |
+| **정적 메서드** | X | X | 클래스 및 인스턴스와 무관 |
+: 메서드와 변수
+
+각 메서드의 역할에 따라 적절히 활용하면 **객체지향 프로그래밍(OOP)**을 더욱 효율적으로 설계할 수 있다.
+
+### 인스턴스 메서드   
+`self` 매개변수를 사용하여 **인스턴스 변수 및 다른 인스턴스 메서드에 접근**할 수 있다. 일반적인 메서드이며, 대부분의 메서드는 인스턴스 메서드로 작성된다.  
+
+**예제**
+
+```{python}
+class Car:
+    def __init__(self, brand, color):
+        self.brand = brand  # 인스턴스 변수
+        self.color = color  
+
+    def drive(self):  # 인스턴스 메서드
+        print(f"{self.color} {self.brand}가 주행 중입니다.")
+
+# 객체 생성
+car1 = Car("Hyundai", "Red")
+
+# 인스턴스 메서드 호출
+car1.drive()  # Red Hyundai가 주행 중입니다.
+```
+
+### 클래스 메서드   
+`@classmethod` 데코레이터를 사용하며, 첫 번째 매개변수로 `cls`를 받는다. 클래스 변수에 접근 가능하며, **클래스 레벨에서 동작하는 메서드**이다.  
+
+**예제**
+
+```{python}
+class Car:
+    wheels = 4  # 클래스 변수
+
+    @classmethod
+    def set_wheels(cls, num):
+        cls.wheels = num  # 클래스 변수 변경
+        print(f"모든 자동차의 바퀴 수가 {cls.wheels}로 변경되었습니다.")
+
+# 클래스 메서드 호출
+Car.set_wheels(6)  # 모든 자동차의 바퀴 수가 6로 변경되었습니다.
+```
+
+- 클래스 변수 `wheels`를 수정할 수 있으며, **모든 인스턴스에 영향을 줌**  
+
+
+### 정적 메서드   
+`@staticmethod` 데코레이터를 사용하며, 클래스나 인스턴스와 관계없이 독립적으로 동작한다. `self`나 `cls`를 사용하지 않으며, 일반적으로 **단순한 유틸리티 기능을 제공할 때 사용**한다.  
+
+**예제**
+
+```{python}
+class Car:
+    @staticmethod
+    def general_info():
+        print("자동차는 도로에서 운행되는 일반적인 교통수단입니다.")
+
+# 정적 메서드 호출
+Car.general_info()  # 자동차는 도로에서 운행되는 일반적인 교통수단입니다.
+```
+
+- 인스턴스나 클래스 변수를 사용하지 않으므로 **독립적인 기능을 수행**함  
+
+
+**메서드 비교 예제**
+
+```{python}
+class Example:
+    class_var = "클래스 변수"
+
+    def __init__(self, value):
+        self.instance_var = value  # 인스턴스 변수
+
+    def instance_method(self):  # 인스턴스 메서드
+        print(f"인스턴스 변수: {self.instance_var}")
+
+    @classmethod
+    def class_method(cls):  # 클래스 메서드
+        print(f"클래스 변수: {cls.class_var}")
+
+    @staticmethod
+    def static_method():  # 정적 메서드
+        print("정적 메서드 실행")
+
+# 객체 생성
+obj = Example("Hello")
+
+# 메서드 호출
+obj.instance_method()  # 인스턴스 변수: Hello
+Example.class_method()  # 클래스 변수: 클래스 변수
+Example.static_method()  # 정적 메서드 실행
+```
+
+
+## 접근 제어자와 캡슐화  
+
+접근 제어자(Access Modifier)는 접근 수준에 따라 `Public`, 'Protected`, `Private`으로 나뉜다.
+
+| 접근 수준 | 사용 방법 | 외부 접근 가능 여부 | 활용 |
+|-----------|----------|----------------|------|
+| **Public** | `변수명` | O | 일반적인 속성 및 메서드 |
+| **Protected** | `_변수명` | O (권장 X) | 내부적 용도 또는 상속 클래스에서 사용 |
+| **Private** | `__변수명` | X | 데이터 보호 및 보안 강화 |
+
+**캡슐화**(Encapsulation)를 통해 중요한 데이터를 보호하고, `getter`와 `setter`를 활용하면 보다 안전한 객체지향 프로그래밍이 가능하다.
+
+### 접근 제어자  
+
+파이썬에서 클래스의 속성과 메서드는 **접근 수준**을 설정할 수 있으며, 접근 제어자는 다음과 같이 구분된다.  
+
+| 접근 제어자 | 기호 | 접근 가능 범위 | 특징 |
+|------------|------|---------------|------|
+| **공개(Public)** | `변수명` | 어디서든 접근 가능 | 기본적으로 모든 속성과 메서드는 public |
+| **보호(Protected)** | `_변수명` | 클래스 내부 및 상속받은 클래스에서 접근 가능 | 암묵적인 규칙으로, 강제적인 제한은 없음 |
+| **비공개(Private)** | `__변수명` | 클래스 내부에서만 접근 가능 | 이름이 변경되어 `_클래스명__변수명` 형태로 변환됨 |
+
+
+### 캡슐화  
+
+**캡슐화**는 객체의 속성(데이터)을 **외부에서 직접 접근하지 못하도록 보호**하는 개념으로 데이터를 숨기고(`private`), 메서드를 통해 안전하게 접근하도록 하는 방식이다.  
+
+
+**접근 제어자 예제**  
+
+```{python}
+class Person:
+    def __init__(self, name, age):
+        self.name = name        # 공개(Public)
+        self._age = age         # 보호(Protected)
+        self.__password = "1234"  # 비공개(Private)
+
+    def display_info(self):
+        print(f"이름: {self.name}, 나이: {self._age}")
+
+    def __get_password(self):  # 비공개 메서드
+        return self.__password
+
+# 객체 생성
+p = Person("Alice", 30)
+
+# Public 변수 접근 (가능)
+print(p.name)  # Alice 출력
+
+# Protected 변수 접근 (가능하지만 권장되지 않음)
+print(p._age)  # 30 출력
+
+# Private 변수 접근 (불가능)
+# print(p.__password)  # AttributeError 발생
+
+# Private 변수는 아래처럼 접근 가능 (권장되지 않음)
+print(p._Person__password)  # 1234 출력
+```
+
+- **Public** 속성은 외부에서 자유롭게 접근 가능  
+- **Protected** 속성은 `_`로 시작하며, 관례적으로 내부에서만 사용 (접근 가능하지만 직접 사용은 지양)  
+- **Private** 속성은 `__`로 시작하며, **외부에서 직접 접근 불가능** (`_클래스명__변수명`으로 접근 가능)  
+
+
+### 캡슐화를 활용한 Getter / Setter
+
+비공개 속성(`private`)에 접근하려면 **Getter와 Setter 메서드**를 사용해야 한다.  
+
+```{python}
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.__balance = balance  # Private 변수
+
+    def get_balance(self):  # Getter
+        return self.__balance
+
+    def set_balance(self, amount):  # Setter
+        if amount >= 0:
+            self.__balance = amount
+        else:
+            print("잔액은 음수가 될 수 없습니다.")
+
+# 객체 생성
+account = BankAccount("Alice", 1000)
+
+# Getter 사용
+print(account.get_balance())  # 1000 출력
+
+# Setter 사용
+account.set_balance(2000)
+print(account.get_balance())  # 2000 출력
+
+# 직접 접근 불가
+# print(account.__balance)  # AttributeError 발생
+```
+
+
+## 상속 개념과 활용  
+ 
+**상속**(Inheritance)은 부모 클래스 속성과 메서드를 자식 클래스가 사용할 수 있도록 하는 방법이다.
+
+| 개념 | 설명 |
+|------|------|
+| **단일 상속** | 하나의 부모 클래스를 상속 |
+| **다중 상속** | 여러 개의 부모 클래스를 상속 |
+| **메서드 오버라이딩** | 부모 클래스의 메서드를 자식 클래스에서 재정의 |
+| **super()** | 부모 클래스의 메서드를 호출할 때 사용 |
+
+**상속은 코드의 재사용성과 유지보수성을 높이지만, 불필요한 상속은 코드 복잡성을 증가시킬 수 있으므로 신중하게 설계해야 한다.**
+
+### 상속 개념  
+
+**상속**은 기존 클래스(부모 클래스, `superclass`)의 속성과 메서드를 새로운 클래스(자식 클래스, `subclass`)가 물려받아 사용할 수 있도록 하는 개념으로 코드의 **재사용성을 높이고**, 클래스 간의 **관계를 구조화**할 수 있다.
+
+### 상속 기본 문법 {#sec-inheritance-syntax)  
+
+```{python}
+class 부모클래스:
+    # 부모 클래스 정의
+
+class 자식클래스(부모클래스):
+    # 부모 클래스를 상속받은 자식 클래스 정의
+```
+
+**상속 기본 예제**  
+
+```{python}
+# 부모 클래스 정의
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print("동물이 소리를 냅니다.")
+
+# 자식 클래스 (Animal을 상속)
+class Dog(Animal):
+    def speak(self):  # 메서드 오버라이딩 (재정의)
+        print(f"{self.name}가 멍멍 짖습니다.")
+
+# 객체 생성
+dog = Dog("바둑이")
+dog.speak()  # 바둑이가 멍멍 짖습니다.
+```
+- `Dog` 클래스는 `Animal` 클래스를 상속받아 **`name` 속성과 `speak()` 메서드를 그대로 사용 가능**  
+- `speak()` 메서드는 자식 클래스에서 **재정의(오버라이딩, `overriding`) 가능**  
+
+
+### `super()`를 사용한 부모 클래스 접근  
+
+`super()`를 사용하면 부모 클래스의 메서드를 자식 클래스에서 호출 가능하다.  
+
+```{python}
+class Animal:
+    def __init__(self, name):
+        self.name = name
+
+    def speak(self):
+        print("동물이 소리를 냅니다.")
+
+class Dog(Animal):
+    def __init__(self, name, breed):
+        super().__init__(name)  # 부모 클래스의 __init__() 호출
+        self.breed = breed
+
+    def speak(self):
+        super().speak()  # 부모 클래스의 speak() 호출
+        print(f"{self.name}가 멍멍 짖습니다.")
+
+# 객체 생성
+dog = Dog("바둑이", "진돗개")
+dog.speak()
+```
+
+### 다중 상속   
+파이썬에서는 **여러 개의 부모 클래스를 동시에 상속**(Multiple Inheritance)받을 수 있다. 다중 상속 시 **MRO(Method Resolution Order, 메서드 탐색 순서)**가 적용된다.  
+
+```{python}
+class A:
+    def method_a(self):
+        print("A 클래스의 메서드")
+
+class B:
+    def method_b(self):
+        print("B 클래스의 메서드")
+
+class C(A, B):  # A와 B를 동시에 상속
+    def method_c(self):
+        print("C 클래스의 메서드")
+
+# 객체 생성
+obj = C()
+obj.method_a()  # A 클래스의 메서드
+obj.method_b()  # B 클래스의 메서드
+obj.method_c()  # C 클래스의 메서드
+```
+
+
+### 메서드 오버라이딩과 오버로딩  
+
+| 개념 | 설명 | 예제 |
+|------|------|------|
+| **오버라이딩 (Overriding)** | 부모 클래스의 메서드를 **자식 클래스에서 재정의** | `speak()` 메서드 재정의 |
+| **오버로딩 (Overloading)** | 동일한 메서드명을 가지되 **매개변수가 다름** | 파이썬에서는 직접 지원하지 않지만, 기본값을 설정하여 구현 가능 |
+: 오버라이딩과 오버로딩
+
+```{python}
+class Parent:
+    def show(self):
+        print("부모 클래스의 메서드")
+
+class Child(Parent):
+    def show(self):  # 오버라이딩
+        print("자식 클래스에서 오버라이딩한 메서드")
+
+obj = Child()
+obj.show()  # 자식 클래스에서 오버라이딩한 메서드
+```
+
+
+### 상속 활용 예제
+
+**은행 시스템 예제**
+
+```{python}
+class BankAccount:
+    def __init__(self, owner, balance):
+        self.owner = owner
+        self.balance = balance
+
+    def deposit(self, amount):
+        self.balance += amount
+        print(f"{amount}원 입금되었습니다. 현재 잔액: {self.balance}원")
+
+    def withdraw(self, amount):
+        if self.balance >= amount:
+            self.balance -= amount
+            print(f"{amount}원 출금되었습니다. 현재 잔액: {self.balance}원")
+        else:
+            print("잔액이 부족합니다.")
+
+# 자식 클래스 (이자 기능 추가)
+class SavingsAccount(BankAccount):
+    def __init__(self, owner, balance, interest_rate):
+        super().__init__(owner, balance)
+        self.interest_rate = interest_rate
+
+    def add_interest(self):
+        interest = self.balance * self.interest_rate
+        self.balance += interest
+        print(f"이자 {interest}원이 추가되었습니다. 현재 잔액: {self.balance}원")
+
+# 객체 생성
+account = SavingsAccount("홍길동", 10000, 0.05)
+account.deposit(5000)   # 5000원 입금
+account.add_interest()  # 이자 추가
+account.withdraw(3000)  # 3000원 출금
+```
+
+### 상속 장점과 단점  
+
+| 장점 | 단점 |
+|------|------|
+| 코드 재사용성이 높아짐 | 다중 상속 시 복잡성이 증가 |
+| 유지보수성이 향상됨 | 부모 클래스가 변경되면 자식 클래스도 영향을 받을 수 있음 |
+| 코드 중복을 줄일 수 있음 | 잘못된 설계 시 불필요한 상속이 발생할 수 있음 |
+:상속 장점과 단점
+
+
+### 상속과 캡슐화 결합  
+
+상속을 사용할 때는 **캡슐화(Private, Protected 변수)**와 함께 활용하여 **데이터 보호**를 강화할 수 있다.  
+
+```{python}
+class Parent:
+    def __init__(self):
+        self._protected_var = "보호된 변수"  # Protected
+        self.__private_var = "비공개 변수"  # Private
+
+    def get_private_var(self):
+        return self.__private_var  # Getter 메서드
+
+class Child(Parent):
+    def show_vars(self):
+        print(self._protected_var)  # 접근 가능
+        # print(self.__private_var)  # 접근 불가 (AttributeError 발생)
+        print(self.get_private_var())  # Getter를 통해 접근 가능
+
+obj = Child()
+obj.show_vars()
+```
+
+
+## 다형성과 추상 클래스  
+
+**다형성**을 사용하면 동일한 메서드가 여러 객체에서 **다르게 동작**할 수 있다. **추상 클래스**는 자식 클래스가 공통된 메서드를 **구현하도록 강제**하며, **구체적인 동작**은 자식 클래스에 위임한다. 다형성과 추상 클래스를 결합하면 **유연하고 확장 가능한 코드**를 작성할 수 있다.
+
+
+### 다형성 개념 {#sec-polymorhpism}
+
+ **다형성**(Polymorphism)은 동일한 이름의 메서드나 함수가 **여러 다른 방식**으로 동작할 수 있게 하는 개념이다. 객체 지향 프로그래밍에서 **다양한 객체들이 동일한 인터페이스(메서드)를 통해 서로 다른 동작을 수행**할 수 있도록 한다. **메서드 오버라이딩(Method Overriding)**과 **메서드 오버로딩(Method Overloading)**이 다형성의 주요 기법이다.
+
+메서드 오버라이딩 (Method Overriding)
+: - 부모 클래스의 메서드를 자식 클래스에서 **재정의**하여, 자식 클래스 객체가 호출할 때 다른 동작을 할 수 있도록 한다.
+
+메서드 오버로딩 (Method Overloading)
+: - 동일한 이름의 메서드를 **다양한 매개변수**로 정의하는 방식이다. 하지만, 파이썬은 메서드 오버로딩을 기본적으로 지원하지 않으므로, 보통 **기본값 인수**나 **가변 인수**를 사용하여 구현한다.
+
+
+** 다형성 예제 (Method Overriding)**
+
+```{python}
+class Animal:
+    def speak(self):
+        print("동물이 소리를 냅니다.")
+
+class Dog(Animal):
+    def speak(self):  # 메서드 오버라이딩
+        print("멍멍!")
+
+class Cat(Animal):
+    def speak(self):  # 메서드 오버라이딩
+        print("야옹!")
+
+# 객체 생성
+animals = [Dog(), Cat()]
+
+# 다형성: 동일한 인터페이스(speak())지만 각기 다른 동작을 함
+for animal in animals:
+    animal.speak()
+```
+
+- `Dog`와 `Cat` 객체가 각각 `speak()` 메서드를 오버라이딩하여 **각기 다른 방식**으로 동작함.
+
+
+### 추상 클래스 개념
+
+**추상 클래스**(Abstract Class)는 **직접 인스턴스를 생성할 수 없고**, 자식 클래스에서 반드시 구현해야 하는 메서드를 정의하는 클래스이다. **추상 메서드**를 포함하고 있으며, 자식 클래스에서 이를 **구현(Override)**하도록 강제한다. 추상 클래스는 `abc` 모듈을 사용하여 정의할 수 있다.
+
+추상 클래스 사용 이유
+: - 공통된 인터페이스를 강제하고, 구체적인 구현은 자식 클래스에 맡겨 **구현의 일관성**을 유지할 수 있다.
+- 여러 클래스에서 공통적으로 구현해야 하는 메서드를 정의하고, 이를 자식 클래스에서 구체화하도록 한다.
+
+**추상 클래스 예제**
+
+```{python}
+from abc import ABC, abstractmethod
+
+# 추상 클래스 정의
+class Animal(ABC):
+    @abstractmethod
+    def speak(self):  # 추상 메서드
+        pass
+
+class Dog(Animal):
+    def speak(self):  # 추상 메서드 구현
+        print("멍멍!")
+
+class Cat(Animal):
+    def speak(self):  # 추상 메서드 구현
+        print("야옹!")
+
+# 객체 생성
+dog = Dog()
+cat = Cat()
+
+# 추상 클래스의 메서드를 자식 클래스에서 구현해야 하므로 오류가 발생하지 않음
+dog.speak()  # 멍멍!
+cat.speak()  # 야옹!
+```
+
+- `Animal` 클래스는 추상 클래스로 정의되어 있고, `speak()` 메서드는 자식 클래스에서 반드시 구현해야 한다.  
+- `Dog`와 `Cat` 클래스에서 `speak()` 메서드를 **구현**하여 오류 없이 동작한다.
+
+
+### 추상 클래스와 인스턴스화
+
+추상 클래스는 **직접 인스턴스화**할 수 없다.
+
+```{python}
+#| error: true
+
+# 직접 인스턴스를 생성할 수 없음
+# animal = Animal()  # TypeError 발생: Can't instantiate abstract class Animal with abstract methods speak
+```
+
+- 추상 클래스는 **인스턴스를 생성할 수 없고**, 반드시 이를 상속받은 자식 클래스에서 **구체적인 구현**을 해야만 인스턴스를 생성하고 사용할 수 있음
+
+
+### 다형성과 추상 클래스의 결합
+
+다형성을 활용하여 추상 클래스를 **공통된 인터페이스**로 사용하고, **구체적인 구현**은 자식 클래스에서 제공하도록 할 수 있다.
+
+```{python}
+from abc import ABC, abstractmethod
+
+class Shape(ABC):
+    @abstractmethod
+    def area(self):
+        pass
+
+class Circle(Shape):
+    def __init__(self, radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius * self.radius
+
+class Rectangle(Shape):
+    def __init__(self, width, height):
+        self.width = width
+        self.height = height
+    
+    def area(self):
+        return self.width * self.height
+
+# 객체 생성
+shapes = [Circle(5), Rectangle(4, 6)]
+
+# 다형성을 통한 추상 클래스 메서드 호출
+for shape in shapes:
+    print(shape.area())
+```
+
+- `Shape`는 추상 클래스로 정의되고, `Circle`과 `Rectangle` 클래스에서 **`area()` 메서드를 구체화**함.
+- `shapes` 리스트에서 `Circle`과 `Rectangle` 객체들을 다루며, **다형성을 통해 동일한 인터페이스**로 각기 다른 방식으로 `area()` 메서드를 호출
+
+
+### 다형성, 추상 클래스, 상속 결합
+
+| 개념 | 설명 | 예시 |
+|------|------|------|
+| **다형성** | 같은 이름의 메서드가 객체의 종류에 따라 다르게 동작 | `speak()` 메서드 |
+| **추상 클래스** | 자식 클래스에 공통적인 인터페이스를 강제, 직접 인스턴스화 불가 | `Animal` 추상 클래스 |
+| **상속** | 부모 클래스에서 자식 클래스가 속성이나 메서드를 물려받음 | `Dog`, `Cat` 클래스 |
+
+
+
+## 연산자 오버로딩  
+
+**연산자 오버로딩**(Operator Overloading)은 객체 지향 프로그래밍에서 연산자를 **커스터마이즈**하여 클래스에 맞게 동작하게 만드는 기법이다. 이를 통해 **직관적이고 유연한 객체 연산**이 가능하지만, 과용하면 코드의 **가독성**과 **유지보수성**에 문제가 될 수 있다.
+  
+
+### 연산자 오버로딩 개념  
+
+**연산자 오버로딩**은 기존의 연산자가 클래스에 대해 **새로운 의미로 동작**하도록 만드는 기능이다. **기본 연산자**(예: `+`, `-`, `*`, `==`)의 동작 방식을 **사용자가 정의한 클래스에 맞게 재정의**할 수 있다. 이를 통해 **자체적으로 정의한 객체들** 간의 연산을 직관적으로 사용할 수 있게 된다.
+
+
+### 연산자 오버로딩의 예시
+파이썬에서는 연산자에 해당하는 특수 메서드(매직 메서드)를 정의함으로써 연산자 오버로딩을 구현한다. 예를 들어, `+` 연산자는 `__add__()` 메서드를 통해 오버로딩할 수 있다.
+
+| 연산자 | 메서드 |
+|--------|--------|
+| `+`    | `__add__(self, other)` |
+| `-`    | `__sub__(self, other)` |
+| `*`    | `__mul__(self, other)` |
+| `/`    | `__truediv__(self, other)` |
+| `==`   | `__eq__(self, other)` |
+| `!=`   | `__ne__(self, other)` |
+| `<`    | `__lt__(self, other)` |
+| `>`    | `__gt__(self, other)` |
+: 주요 연산자 오버로딩 메서드
+
+
+### 연산자 오버로딩 예제
+
+**`+` 연산자 오버로딩 예제**
+
+```{python}
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __add__(self, other):  # + 연산자 오버로딩
+        return Point(self.x + other.x, self.y + other.y)
+
+    def __str__(self):  # 출력 형식 지정
+        return f"({self.x}, {self.y})"
+
+# 객체 생성
+point1 = Point(1, 2)
+point2 = Point(3, 4)
+
+# + 연산자를 사용하여 두 점을 더하기
+result = point1 + point2
+print(result)  # (4, 6)
+```
+
+- `__add__()` 메서드는 두 `Point` 객체의 `x`와 `y` 좌표를 더하여 새로운 `Point` 객체를 반환
+- 이처럼 `+` 연산자를 오버로딩하면, 두 객체 간에 더하기 연산을 직관적으로 사용
+
+
+**`==` 연산자 오버로딩 예제**
+
+```{python}
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    def __eq__(self, other):  # == 연산자 오버로딩
+        return self.x == other.x and self.y == other.y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+# 객체 생성
+point1 = Point(1, 2)
+point2 = Point(1, 2)
+point3 = Point(3, 4)
+
+# == 연산자 사용
+print(point1 == point2)  # True
+print(point1 == point3)  # False
+```
+
+- `__eq__()` 메서드를 오버로딩하여 두 `Point` 객체가 같은지 비교
+
+
+### 다양한 연산자 오버로딩 예제
+
+```{python}
+class Vector:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+    # + 연산자 오버로딩
+    def __add__(self, other):
+        return Vector(self.x + other.x, self.y + other.y)
+
+    # * 연산자 오버로딩 (스칼라 곱)
+    def __mul__(self, scalar):
+        return Vector(self.x * scalar, self.y * scalar)
+
+    # == 연산자 오버로딩
+    def __eq__(self, other):
+        return self.x == other.x and self.y == other.y
+
+    def __str__(self):
+        return f"({self.x}, {self.y})"
+
+# 객체 생성
+v1 = Vector(2, 3)
+v2 = Vector(1, 1)
+
+# 연산자 사용
+v3 = v1 + v2  # Vector(3, 4)
+v4 = v1 * 3   # Vector(6, 9)
+print(v3)  # (3, 4)
+print(v4)  # (6, 9)
+print(v1 == v2)  # False
+```
+
+- `+`, `*`, `==` 연산자를 오버로딩하여 `Vector` 객체에 대해 벡터 덧셈, 스칼라 곱, 비교 연산 가능
+
+
+### 연산자 오버로딩 시 주의사항
+
+연산자 오버로딩을 너무 남용하면 **코드의 가독성**이 떨어질 수 있다. 연산자 오버로딩을 사용한 코드가 직관적이어야 한다. **기본 연산자들의 의미**를 지나치게 변경하면 예상치 못한 동작을 할 수 있으므로, 명확한 목적을 가지고 오버로딩을 활용하는 것이 중요하다.
+
+
+### 연산자 오버로딩 장단점
+
+| 장점                                                       | 단점                                                         |
+|----------------------------------------------------------|------------------------------------------------------------|
+| 객체 간의 **직관적이고 간결한 연산**을 가능하게 한다.            | 연산자 오버로딩이 지나치면 **코드의 직관성**이 떨어질 수 있다.     |
+| 객체의 **구체적인 동작을 추상화**할 수 있어 코드의 **가독성**을 높일 수 있다. | 각 연산자의 의미가 명확히 정의되지 않으면, **의도치 않은 오류**가 발생할 수 있다. |
+: 연산자 오버로딩 장점과 단점
+
+
+## 클래스 활용 및 실전 예제  
+
+### 클래스 활용 개념
+클래스는 **객체 지향 프로그래밍(OOP)**에서 중요한 개념으로, 데이터와 이를 처리하는 메서드를 하나의 **단위**로 묶을 수 있다. 이를 통해 **재사용성**, **확장성**, **유지보수 용이성** 등의 장점이 생긴다. 클래스는 특히 **복잡한 시스템**을 개발할 때 **코드를 모듈화**하고, **구체화**하는 데 큰 도움이 된다.
+
+
+### 클래스 활용 중요성
+
+클래스 활용 중요성은 다음과 같다.
+
+- **코드 재사용**: 동일한 구조를 가진 여러 객체를 만들 때 클래스는 코드의 재사용을 가능하게 한다.
+- **추상화**: 현실 세계의 복잡한 객체를 **단순화**하여 중요한 정보만을 다룰 수 있게 한다.
+- **캡슐화**: 데이터를 하나로 묶어 내부 구현을 숨기고, **외부와의 인터페이스**만을 제공한다.
+- **상속과 다형성**: 부모 클래스의 기능을 자식 클래스에 물려주어, 기존 코드를 수정하지 않고 새로운 기능을 추가할 수 있다.
+
+
+### **3. 실전 예제 1: 은행 계좌 관리 시스템**
+
+**목표**: 은행 계좌를 클래스화하여 입금, 출금, 잔액 조회 등의 기능을 구현.
+
+```{python}
+class BankAccount:
+    def __init__(self, owner, balance=0):
+        self.owner = owner  # 계좌 소유자
+        self.balance = balance  # 계좌 잔액
+
+    def deposit(self, amount):
+        """입금 메서드"""
+        if amount > 0:
+            self.balance += amount
+            print(f"입금액: {amount}, 현재 잔액: {self.balance}")
+        else:
+            print("입금액은 0보다 커야 합니다.")
+
+    def withdraw(self, amount):
+        """출금 메서드"""
+        if amount > 0 and amount <= self.balance:
+            self.balance -= amount
+            print(f"출금액: {amount}, 현재 잔액: {self.balance}")
+        else:
+            print("출금액이 부적합합니다.")
+
+    def get_balance(self):
+        """잔액 조회 메서드"""
+        return self.balance
+
+# 계좌 객체 생성
+account1 = BankAccount("김철수", 1000)
+
+# 입금, 출금, 잔액 조회
+account1.deposit(500)
+account1.withdraw(200)
+print(f"최종 잔액: {account1.get_balance()}")
+```
+
+- `BankAccount` 클래스는 은행 계좌의 기본적인 기능인 입금, 출금, 잔액 조회를 구현한다.
+- **입금**, **출금**은 조건을 통해 **올바른 금액**만 처리하도록 한다.
+- `__init__()` 메서드를 통해 **초기값**인 계좌 소유자와 잔액을 설정할 수 있다.
+
+
+### 실전 예제 2: 쇼핑몰 제품 관리 시스템
+
+**목표**: 제품을 관리하는 클래스를 작성하고, 제품 정보 등록 및 가격 변경 기능을 구현
+
+```{python}
+class Product:
+    def __init__(self, name, price, stock):
+        self.name = name  # 제품명
+        self.price = price  # 가격
+        self.stock = stock  # 재고
+
+    def update_price(self, new_price):
+        """가격 변경 메서드"""
+        self.price = new_price
+        print(f"{self.name}의 가격이 {new_price}로 변경되었습니다.")
+
+    def update_stock(self, amount):
+        """재고 업데이트 메서드"""
+        self.stock += amount
+        print(f"{self.name}의 재고가 {self.stock}개로 변경되었습니다.")
+
+    def product_info(self):
+        """제품 정보 출력 메서드"""
+        return f"제품명: {self.name}, 가격: {self.price}, 재고: {self.stock}"
+
+# 제품 객체 생성
+product1 = Product("노트북", 1000000, 10)
+product2 = Product("스마트폰", 800000, 20)
+
+# 제품 정보 출력
+print(product1.product_info())
+print(product2.product_info())
+
+# 가격 및 재고 변경
+product1.update_price(950000)
+product2.update_stock(5)
+```
+
+- `Product` 클래스는 **제품명**, **가격**, **재고**를 속성으로 가진다.
+- 가격과 재고 변경은 **update_price()**와 **update_stock()** 메서드를 통해 이루어진다.
+- **제품 정보 출력** 메서드를 통해 제품 정보를 쉽게 확인할 수 있다.
+
+
+### 실전 예제 3: 학생 성적 관리 시스템
+
+**목표**: 학생의 성적을 관리하고, 평균 성적을 계산하는 클래스를 작성
+
+```{python}
+class Student:
+    def __init__(self, name, grades):
+        self.name = name  # 학생 이름
+        self.grades = grades  # 성적 리스트
+
+    def add_grade(self, grade):
+        """성적 추가 메서드"""
+        self.grades.append(grade)
+
+    def average_grade(self):
+        """평균 성적 계산 메서드"""
+        return sum(self.grades) / len(self.grades) if self.grades else 0
+
+    def student_info(self):
+        """학생 정보 및 성적 출력 메서드"""
+        return f"학생명: {self.name}, 성적: {self.grades}, 평균 성적: {self.average_grade():.2f}"
+
+# 학생 객체 생성
+student1 = Student("홍길동", [85, 90, 78])
+student2 = Student("김유진", [92, 88, 95])
+
+# 학생 정보 출력
+print(student1.student_info())
+print(student2.student_info())
+
+# 성적 추가 및 정보 갱신
+student1.add_grade(80)
+print(student1.student_info())
+```
+
+- `Student` 클래스는 학생의 **이름**과 **성적** 리스트를 속성으로 가진다.
+- 성적을 추가할 수 있는 **add_grade()** 메서드와, 평균 성적을 계산하는 **average_grade()** 메서드를 제공한다.
+
+
+### 클래스 활용 시 주의사항
+
+클래스 활용 시 주의사항은 다음과 같다.
+
+- **책임 분리**: 클래스는 하나의 **책임**만 가지도록 설계하는 것이 좋다. 여러 가지 기능이 혼합되면 유지보수와 확장이 어려워진다.
+- **적절한 추상화**: 클래스는 필요한 정보를 **추상화**하여 복잡성을 줄이고, 객체들 간의 상호작용을 **단순화**해야 한다.
+- **상속과 다형성 활용**: 공통된 기능을 부모 클래스에 정의하고, **상속**을 통해 자식 클래스에서 기능을 확장할 수 있다.
+
