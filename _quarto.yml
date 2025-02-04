@@ -31,7 +31,7 @@ book:
         - 50function.qmd
         - 60file.qmd
         - 70exception.qmd
-        - 80oop.qmd
+        - 80class.qmd
         - 90library.qmd
     - part: "파이썬 패키지"
       chapters:
