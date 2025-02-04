@@ -53,9 +53,9 @@ format: html
 
 [^tiobe]: [https://www.tiobe.com/tiobe-index/](https://www.tiobe.com/tiobe-index/){target="blank"}
 
-![](images/tiobe_01.png)
+![프로그래밍 언어 순위](images/tiobe_01.jpg)
 
-![](images/tiobe_02.png)
+![년도별 언어 순위 추이](images/tiobe_02.jpg)
 
 
 ## 파이쎤 소개
@@ -66,6 +66,18 @@ format: html
 파이썬(Python)은 배우기 쉽고 강력한 기능을 갖춘 프로그래밍 언어이다. 문법이 간결하고 가독성이 높아 초보자부터 전문가까지 폭넓게 사용하고 있다.
 
 ### 파이썬의 특징
+
+ ## C 코드 vs. Python 코드 비교  
+
+| 동작 | C 코드 | Python 코드 |
+|------|--------|------------|
+| **"Hello, World!" 출력** | ```c #include <stdio.h> int main() { printf("Hello, World!\n"); return 0; } ``` | ```python print("Hello, World!") ``` |
+| **파일에서 문자열 읽기** | ```c #include <stdio.h> int main() { FILE *file = fopen("text.txt", "r"); char line[100]; if (file) { while (fgets(line, sizeof(line), file)) { printf("%s", line); } fclose(file); } return 0; } ``` | ```python with open("text.txt", "r") as file: print(file.read()) ``` |
+| **숫자의 제곱 계산** | ```c #include <stdio.h> int square(int x) { return x * x; } int main() { int num = 5; printf("Square: %d\n", square(num)); return 0; } ``` | ```python def square(x): return x * x print("Square:", square(5)) ``` |
+
+### **비교 요점**
+- **C 코드**는 변수를 선언하고, 루프 및 파일 입출력에서 명시적으로 처리해야 하며, 포인터 및 메모리 관리를 고려해야 한다.  
+- **Python 코드**는 직관적이고 간결하여 코드 작성이 쉽고, 내장 함수 및 고수준 라이브러리를 활용할 수 있다.
 
 파이썬은 다음과 같은 특징을 갖는다.
 
