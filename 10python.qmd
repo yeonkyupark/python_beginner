@@ -1,5 +1,5 @@
 ---
-title: "파이썬 소개"
+title: "파이썬 개요"
 format: html
 ---
 
@@ -79,20 +79,20 @@ format: html
 ::: {.callout-note icon=false title="파일 내용 읽어 오기"}
 
 C 코드
-: 
-   ```c
-   #include <stdio.h> 
-   int main() { 
-      FILE *file = fopen("text.txt", "r"); 
-      char line[100]; 
-      if (file) { 
-         while (fgets(line, sizeof(line), file)) { 
-            printf("%s", line); 
-         } 
-         fclose(file); 
+ 
+```c
+#include <stdio.h> 
+int main() { 
+   FILE *file = fopen("text.txt", "r"); 
+   char line[100]; 
+   if (file) { 
+      while (fgets(line, sizeof(line), file)) { 
+         printf("%s", line); 
       } 
-      return 0; 
-   }
+      fclose(file); 
+   } 
+   return 0; 
+}
    ```
 
 ----
@@ -357,7 +357,7 @@ Linux
 3. 원하는 플러그인을 설치한 후 **Start using PyCharm**을 클릭하여 IDE를 시작한다.
 4. **새 프로젝트 생성** 또는 **기존 프로젝트 열기**를 선택하여 개발을 시작한다.
 
-PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프로젝트를 생성하여 코딩을 시작할 수 있다.
+PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프로젝트를 생성하여 코딩을 시작할 수 있다(@sec-pycharm-guide 참고).
 
 
 ## 첫 번째 프로그램
@@ -420,7 +420,7 @@ IDLE(Integrated Development and Learning Environment)은 파이썬에 기본적�
 IDLE은 파이썬을 처음 배우는 사람에게 적합한 개발 환경이며, 간단한 코드 실습이나 테스트를 할 때 유용하다. 하지만 규모가 큰 프로젝트를 진행할 경우 VS Code, PyCharm 같은 다른 개발 도구를 사용하는 것이 더 효율적이다.
 
 
-### PyCharm 사용법
+### PyCharm 사용법 {#sec-pycharm-guide}
 
 PyCharm은 파이썬 개발을 위한 강력한 **IDE(통합 개발 환경)**로, 코드 작성, 디버깅, 패키지 관리 등을 쉽게 할 수 있다.  
 
@@ -464,9 +464,8 @@ PyCharm은 파이썬 개발을 위한 강력한 **IDE(통합 개발 환경)**로
 
 #### 새 프로젝트 생성 및 Python 환경 설정  
 
-** 새 프로젝트 생성**
-
-1. PyCharm을 실행하고 **"New Project"**를 선택한다.
+새 프로젝트 생성
+: 1. PyCharm을 실행하고 **"New Project"**를 선택한다.
 2. 프로젝트 위치(폴더)를 설정한다.
 3. **Python 인터프리터** 선택:
    - **기본 인터프리터 사용**: `Existing Interpreter`에서 현재 설치된 Python을 선택
@@ -476,16 +475,14 @@ PyCharm은 파이썬 개발을 위한 강력한 **IDE(통합 개발 환경)**로
 
 #### 코드 작성 및 실행
 
-**1) 새로운 파이썬 파일 생성**
-
-1. **Project 창**에서 프로젝트 폴더를 우클릭 → **New → Python File** 선택
+새로운 파이썬 파일 생성
+: 1. **Project 창**에서 프로젝트 폴더를 우클릭 → **New → Python File** 선택
 2. 파일 이름을 입력하고 `.py` 확장자를 지정한 후 **Enter** 키를 누른다.
 3. 생성된 파일에서 코드 작성
 
 
-**2) 코드 실행**
-
-- **방법 1**: 상단 **Run 버튼**(▶) 클릭
+코드 실행
+: - **방법 1**: 상단 **Run 버튼**(▶) 클릭
 - **방법 2**: 코드 파일에서 **우클릭 → Run '파일명'** 선택
 - **방법 3**: `Shift + F10` 키를 눌러 실행
 
@@ -498,16 +495,14 @@ print("Hello, PyCharm!")
 
 #### 패키지 설치 및 관리
 
-**1) 내장 터미널 사용**
-
-- `pip` 명령어를 사용하여 패키지 설치 가능:
+내장 터미널 사용
+: - `pip` 명령어를 사용하여 패키지 설치 가능:
   ```bash
   pip install numpy
   ```
 
-**2) PyCharm의 패키지 관리자 사용**
-
-1. **File → Settings → Project → Python Interpreter**로 이동.
+PyCharm의 패키지 관리자 사용
+: 1. **File → Settings → Project → Python Interpreter**로 이동.
 2. **"+" 버튼**을 클릭하여 설치할 패키지를 검색한 후 **Install** 버튼을 누름.
 
 #### 디버깅 (Debugging)
@@ -521,15 +516,11 @@ PyCharm에서는 **중단점(Breakpoint)**을 설정하여 코드를 단계별�
 
 #### 코드 자동 완성 및 리팩토링
 
-**1) 코드 자동 완성**
+코드 자동 완성
+: - `Ctrl + Space`를 누르면 함수 및 변수 자동 완성 기능 제공
 
-- `Ctrl + Space`를 누르면 함수 및 변수 자동 완성 기능 제공
-
-**2) 코드 리팩토링**
-
-- 변수 또는 함수명을 변경할 때 **우클릭 → Refactor → Rename** 사용
-
----
+코드 리팩토링
+: - 변수 또는 함수명을 변경할 때 **우클릭 → Refactor → Rename** 사용
 
 #### 버전 관리(Git 연동)
 1. **VCS → Enable Version Control Integration**을 클릭
