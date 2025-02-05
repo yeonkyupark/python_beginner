@@ -293,7 +293,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#jupyter-notebook-설치-전-준비" id="toc-jupyter-notebook-설치-전-준비" class="nav-link" data-scroll-target="#jupyter-notebook-설치-전-준비">Jupyter Notebook 설치 전 준비</a></li>
   <li><a href="#jupyter-notebook-설치" id="toc-jupyter-notebook-설치" class="nav-link" data-scroll-target="#jupyter-notebook-설치">Jupyter Notebook 설치</a></li>
   <li><a href="#jupyter-notebook-실행" id="toc-jupyter-notebook-실행" class="nav-link" data-scroll-target="#jupyter-notebook-실행">Jupyter Notebook 실행</a></li>
-  <li><a href="#jupyter-notebook-사용-방법" id="toc-jupyter-notebook-사용-방법" class="nav-link" data-scroll-target="#jupyter-notebook-사용-방법">4. Jupyter Notebook 사용 방법</a></li>
+  <li><a href="#jupyter-notebook-사용-방법" id="toc-jupyter-notebook-사용-방법" class="nav-link" data-scroll-target="#jupyter-notebook-사용-방법">Jupyter Notebook 사용 방법</a></li>
+  </ul></li>
+  <li><a href="#sec-pycharm" id="toc-sec-pycharm" class="nav-link" data-scroll-target="#sec-pycharm">PyCharm</a>
+  <ul class="collapse">
+  <li><a href="#pycharm-다운로드" id="toc-pycharm-다운로드" class="nav-link" data-scroll-target="#pycharm-다운로드">PyCharm 다운로드</a></li>
   </ul></li>
   </ul></li>
   <li><a href="#첫-번째-프로그램" id="toc-첫-번째-프로그램" class="nav-link" data-scroll-target="#첫-번째-프로그램">첫 번째 프로그램</a></li>
@@ -466,8 +470,18 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li><strong>강력한 커뮤니티</strong>: 많은 개발자가 사용하며 다양한 라이브러리와 자료가 제공된다.</li>
 </ul>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="C vs. Python">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+C vs.&nbsp;Python
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <div class="columns">
-<div class="column" style="width:50%;">
+<div class="column" height="320px" style="width:50%;">
 <div class="sourceCode" id="cb1"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span><span class="pp"> </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span> </span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">FILE</span> <span class="op">*</span>file <span class="op">=</span> fopen<span class="op">(</span><span class="st">"text.txt"</span><span class="op">,</span> <span class="st">"r"</span><span class="op">);</span> </span>
@@ -480,9 +494,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span> </span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span> </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</div><div class="column" style="width:50%;">
+</div><div class="column" height="320px" style="width:50%;">
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"text.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>: </span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="bu">file</span>.read())</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -602,14 +618,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="sec-vsc" class="level3">
 <h3 class="anchored" data-anchor-id="sec-vsc">VS Code</h3>
 <p>VS Code(Visual Studio Code)는 마이크로소프트에서 제공하는 무료 코드 편집기로, 파이썬 개발 환경으로 많이 사용된다. 가벼우면서도 확장성이 뛰어나 초보자부터 전문가까지 널리 활용된다.</p>
-<center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://code.visualstudio.com/assets/docs/getstarted/getting-started/open-folder.png" class="img-fluid figure-img"></p>
 <figcaption>Visual Studio Code</figcaption>
 </figure>
 </div>
-</center>
 <section id="vs-code-다운로드" class="level4">
 <h4 class="anchored" data-anchor-id="vs-code-다운로드">VS Code 다운로드</h4>
 <ul>
@@ -744,7 +758,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 </section>
 <section id="jupyter-notebook-사용-방법" class="level4">
-<h4 class="anchored" data-anchor-id="jupyter-notebook-사용-방법">4. Jupyter Notebook 사용 방법</h4>
+<h4 class="anchored" data-anchor-id="jupyter-notebook-사용-방법">Jupyter Notebook 사용 방법</h4>
 <section id="새-노트북-생성" class="level5">
 <h5 class="anchored" data-anchor-id="새-노트북-생성">1) 새 노트북 생성</h5>
 <ul>
@@ -772,20 +786,87 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 </section>
 </section>
+<section id="sec-pycharm" class="level3">
+<h3 class="anchored" data-anchor-id="sec-pycharm">PyCharm</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://i.namu.wiki/i/pdAZVLjJIKjgRqk40zbRvUOMaDkhfXmsaLU-j4Cz104Q9BuV_BQUdgOPlkFimNadDEEMsSFFpLbvqiwJXVkVFdpQAfK-591zUdH3q6OJL51v9nTxKish8Cy0Apob6LQ-xOoIVL1Q-xaYbg2tx9fCqkdkoSyYNIuVcd6NaTI-FeU.svg" class="img-fluid figure-img"></p>
+<figcaption>PyCharm</figcaption>
+</figure>
+</div>
+<section id="pycharm-다운로드" class="level4">
+<h4 class="anchored" data-anchor-id="pycharm-다운로드">PyCharm 다운로드</h4>
+<ol type="1">
+<li>웹 브라우저를 열고 <strong>PyCharm 공식 웹사이트</strong>(<a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a>)에 접속한다.</li>
+<li><strong>“Download”</strong> 버튼을 클릭한다.</li>
+<li>운영체제(Windows, macOS, Linux)에 맞는 버전을 선택한다.</li>
+<li><strong>버전 선택</strong>:
+<ul>
+<li><strong>Community Edition (무료)</strong>: 기본적인 기능을 제공하며, 일반적인 파이썬 개발에 충분하다.</li>
+<li><strong>Professional Edition (유료, 30일 체험 가능)</strong>: 웹 개발, 데이터베이스, 과학 연산 등 고급 기능이 포함되어 있다.</li>
+</ul></li>
+<li>원하는 버전을 선택한 후 <strong>“Download”</strong> 버튼을 클릭하여 설치 파일을 다운로드한다.</li>
+</ol>
+<section id="pycharm-설치" class="level5">
+<h5 class="anchored" data-anchor-id="pycharm-설치">PyCharm 설치</h5>
+<dl>
+<dt>Windows</dt>
+<dd>
+<ol type="1">
+<li>다운로드한 <code>pycharm-community-*.exe</code> 또는 <code>pycharm-professional-*.exe</code> 파일을 실행한다.</li>
+<li>설치 마법사가 나타나면 <strong>“Next”</strong> 버튼을 클릭한다.</li>
+<li>설치 경로를 선택한 후 <strong>“Next”</strong> 버튼을 클릭한다.</li>
+<li>선택 옵션에서 필요에 따라 다음을 설정한다.
+<ul>
+<li><strong>“Create Desktop Shortcut”</strong>: 바탕화면에 바로 가기 아이콘 생성</li>
+<li><strong>“Update PATH variable”</strong>: 명령 프롬프트에서 <code>pycharm</code> 명령어 실행 가능하도록 설정</li>
+</ul></li>
+<li><strong>“Install”</strong> 버튼을 클릭하여 설치를 진행한다.</li>
+<li>설치가 완료되면 <strong>“Run PyCharm Community”</strong> 옵션을 선택한 후 <strong>“Finish”</strong> 버튼을 클릭한다.</li>
+</ol>
+</dd>
+<dt>macOS</dt>
+<dd>
+<ol type="1">
+<li>다운로드한 <code>.dmg</code> 파일을 열어 PyCharm 아이콘을 Applications 폴더로 드래그앤드롭한다.</li>
+<li><strong>응용 프로그램(Applications)</strong> 폴더에서 PyCharm을 실행한다.</li>
+</ol>
+</dd>
+<dt>Linux</dt>
+<dd>
+<ol type="1">
+<li><p><code>.tar.gz</code> 파일을 다운로드한 후 압축을 해제한다.</p></li>
+<li><p>터미널에서 PyCharm 실행 파일을 실행한다.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">cd</span> pycharm-community-<span class="pp">*</span>/bin</span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="ex">./pycharm.sh</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ol>
+</dd>
+</dl>
+</section>
+<section id="pycharm-첫-실행-및-설정" class="level5">
+<h5 class="anchored" data-anchor-id="pycharm-첫-실행-및-설정">PyCharm 첫 실행 및 설정</h5>
+<ol type="1">
+<li>처음 실행하면 <strong>설정 마이그레이션</strong> 옵션이 나타나는데, 기존 설정이 없다면 <strong>“Do not import settings”</strong>를 선택한다.</li>
+<li><strong>UI 테마 선택</strong> (Darcula 또는 Light) 후 <strong>Next</strong> 버튼을 클릭한다.</li>
+<li>원하는 플러그인을 설치한 후 <strong>Start using PyCharm</strong>을 클릭하여 IDE를 시작한다.</li>
+<li><strong>새 프로젝트 생성</strong> 또는 <strong>기존 프로젝트 열기</strong>를 선택하여 개발을 시작한다.</li>
+</ol>
+<p>PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프로젝트를 생성하여 코딩을 시작할 수 있다.</p>
+</section>
+</section>
+</section>
 </section>
 <section id="첫-번째-프로그램" class="level2">
 <h2 class="anchored" data-anchor-id="첫-번째-프로그램">첫 번째 프로그램</h2>
-<center>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ageekisborn.png" class="img-fluid figure-img"></p>
 <figcaption>Hello, World<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></figcaption>
 </figure>
 </div>
-</center>
 <p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div id="8418c013" class="cell" data-execution_count="1">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="cddc4535" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World</code></pre>
 </div>
@@ -833,8 +914,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <ul>
 <li><p><strong>대화형 셸(Interactive Shell)</strong>:<br>
 실행 후 나타나는 창에서 바로 파이썬 코드를 입력하고 실행할 수 있다.</p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hello, Python!"</span>)</span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>Hello, Python<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hello, Python!"</span>)</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>Hello, Python<span class="op">!</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><strong>스크립트 작성 및 실행</strong>:<br>
 <code>File &gt; New File</code>을 선택하여 새 파일을 만들고 코드를 작성한 후, <code>F5</code> 키를 눌러 실행할 수 있다.</p></li>
 </ul>
