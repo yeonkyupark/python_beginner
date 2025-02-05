@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>파이썬 소개 – 파이썬 다루기</title>
+<title>파이썬 개요 – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 소개</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 개요</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -164,7 +164,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">파이썬 소개</span></a>
+  <a href="./10python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">파이썬 개요</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -310,7 +310,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#idle-사용-방법" id="toc-idle-사용-방법" class="nav-link" data-scroll-target="#idle-사용-방법">IDLE 사용 방법</a></li>
   <li><a href="#idle의-장점과-단점" id="toc-idle의-장점과-단점" class="nav-link" data-scroll-target="#idle의-장점과-단점">IDLE의 장점과 단점</a></li>
   </ul></li>
-  <li><a href="#pycharm-사용법" id="toc-pycharm-사용법" class="nav-link" data-scroll-target="#pycharm-사용법">PyCharm 사용법</a>
+  <li><a href="#sec-pycharm-guide" id="toc-sec-pycharm-guide" class="nav-link" data-scroll-target="#sec-pycharm-guide">PyCharm 사용법</a>
   <ul class="collapse">
   <li><a href="#pycharm-기본-화면-구성" id="toc-pycharm-기본-화면-구성" class="nav-link" data-scroll-target="#pycharm-기본-화면-구성">PyCharm 기본 화면 구성</a></li>
   <li><a href="#새-프로젝트-생성-및-python-환경-설정" id="toc-새-프로젝트-생성-및-python-환경-설정" class="nav-link" data-scroll-target="#새-프로젝트-생성-및-python-환경-설정">새 프로젝트 생성 및 Python 환경 설정</a></li>
@@ -327,9 +327,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 소개</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 개요</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">파이썬 소개</span></h1>
+<h1 class="title"><span class="chapter-title">파이썬 개요</span></h1>
 </div>
 
 
@@ -490,23 +490,19 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<dl>
-<dt>C 코드</dt>
-<dd>
+<p>C 코드</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span><span class="pp"> </span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="dt">FILE</span> <span class="op">*</span>file <span class="op">=</span> fopen<span class="op">(</span><span class="st">"text.txt"</span><span class="op">,</span> <span class="st">"r"</span><span class="op">);</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="dt">char</span> line<span class="op">[</span><span class="dv">100</span><span class="op">];</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> <span class="op">(</span>file<span class="op">)</span> <span class="op">{</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>  <span class="cf">while</span> <span class="op">(</span>fgets<span class="op">(</span>line<span class="op">,</span> <span class="kw">sizeof</span><span class="op">(</span>line<span class="op">),</span> file<span class="op">))</span> <span class="op">{</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>     printf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> line<span class="op">);</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>  <span class="op">}</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>  fclose<span class="op">(</span>file<span class="op">);</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="op">}</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="cf">return</span> <span class="dv">0</span><span class="op">;</span> </span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">FILE</span> <span class="op">*</span>file <span class="op">=</span> fopen<span class="op">(</span><span class="st">"text.txt"</span><span class="op">,</span> <span class="st">"r"</span><span class="op">);</span> </span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="dt">char</span> line<span class="op">[</span><span class="dv">100</span><span class="op">];</span> </span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> <span class="op">(</span>file<span class="op">)</span> <span class="op">{</span> </span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">while</span> <span class="op">(</span>fgets<span class="op">(</span>line<span class="op">,</span> <span class="kw">sizeof</span><span class="op">(</span>line<span class="op">),</span> file<span class="op">))</span> <span class="op">{</span> </span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         printf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> line<span class="op">);</span> </span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span> </span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      fclose<span class="op">(</span>file<span class="op">);</span> </span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span> </span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span> </span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</dd>
-</dl>
 <hr>
 <p><strong>파이썬 코드</strong></p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"text.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>: </span>
@@ -863,7 +859,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>원하는 플러그인을 설치한 후 <strong>Start using PyCharm</strong>을 클릭하여 IDE를 시작한다.</li>
 <li><strong>새 프로젝트 생성</strong> 또는 <strong>기존 프로젝트 열기</strong>를 선택하여 개발을 시작한다.</li>
 </ol>
-<p>PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프로젝트를 생성하여 코딩을 시작할 수 있다.</p>
+<p>PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프로젝트를 생성하여 코딩을 시작할 수 있다(<a href="#sec-pycharm-guide" class="quarto-xref"><span>PyCharm 사용법</span></a> 참고).</p>
 </section>
 </section>
 </section>
@@ -877,7 +873,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </figure>
 </div>
 <p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div id="c7861bab" class="cell" data-execution_count="1">
+<div id="849b4e0f" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World</code></pre>
@@ -968,8 +964,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>IDLE은 파이썬을 처음 배우는 사람에게 적합한 개발 환경이며, 간단한 코드 실습이나 테스트를 할 때 유용하다. 하지만 규모가 큰 프로젝트를 진행할 경우 VS Code, PyCharm 같은 다른 개발 도구를 사용하는 것이 더 효율적이다.</p>
 </section>
 </section>
-<section id="pycharm-사용법" class="level3">
-<h3 class="anchored" data-anchor-id="pycharm-사용법">PyCharm 사용법</h3>
+<section id="sec-pycharm-guide" class="level3">
+<h3 class="anchored" data-anchor-id="sec-pycharm-guide">PyCharm 사용법</h3>
 <p>PyCharm은 파이썬 개발을 위한 강력한 <strong>IDE(통합 개발 환경)</strong>로, 코드 작성, 디버깅, 패키지 관리 등을 쉽게 할 수 있다.</p>
 <section id="pycharm-기본-화면-구성" class="level4">
 <h4 class="anchored" data-anchor-id="pycharm-기본-화면-구성">PyCharm 기본 화면 구성</h4>
@@ -1030,7 +1026,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="새-프로젝트-생성-및-python-환경-설정" class="level4">
 <h4 class="anchored" data-anchor-id="새-프로젝트-생성-및-python-환경-설정">새 프로젝트 생성 및 Python 환경 설정</h4>
-<p>** 새 프로젝트 생성**</p>
+<dl>
+<dt>새 프로젝트 생성</dt>
+<dd>
 <ol type="1">
 <li>PyCharm을 실행하고 <strong>“New Project”</strong>를 선택한다.</li>
 <li>프로젝트 위치(폴더)를 설정한다.</li>
@@ -1041,36 +1039,50 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul></li>
 <li><strong>Create</strong> 버튼을 클릭하여 프로젝트를 생성한다.</li>
 </ol>
+</dd>
+</dl>
 </section>
 <section id="코드-작성-및-실행" class="level4">
 <h4 class="anchored" data-anchor-id="코드-작성-및-실행">코드 작성 및 실행</h4>
-<p><strong>1) 새로운 파이썬 파일 생성</strong></p>
+<dl>
+<dt>새로운 파이썬 파일 생성</dt>
+<dd>
 <ol type="1">
 <li><strong>Project 창</strong>에서 프로젝트 폴더를 우클릭 → <strong>New → Python File</strong> 선택</li>
 <li>파일 이름을 입력하고 <code>.py</code> 확장자를 지정한 후 <strong>Enter</strong> 키를 누른다.</li>
 <li>생성된 파일에서 코드 작성</li>
 </ol>
-<p><strong>2) 코드 실행</strong></p>
+</dd>
+<dt>코드 실행</dt>
+<dd>
 <ul>
 <li><strong>방법 1</strong>: 상단 <strong>Run 버튼</strong>(▶) 클릭</li>
 <li><strong>방법 2</strong>: 코드 파일에서 <strong>우클릭 → Run ‘파일명’</strong> 선택</li>
 <li><strong>방법 3</strong>: <code>Shift + F10</code> 키를 눌러 실행</li>
 </ul>
+</dd>
+</dl>
 <p><strong>예제 코드</strong></p>
 <div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, PyCharm!"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="패키지-설치-및-관리" class="level4">
 <h4 class="anchored" data-anchor-id="패키지-설치-및-관리">패키지 설치 및 관리</h4>
-<p><strong>1) 내장 터미널 사용</strong></p>
+<dl>
+<dt>내장 터미널 사용</dt>
+<dd>
 <ul>
 <li><p><code>pip</code> 명령어를 사용하여 패키지 설치 가능:</p>
 <div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 </ul>
-<p><strong>2) PyCharm의 패키지 관리자 사용</strong></p>
+</dd>
+<dt>PyCharm의 패키지 관리자 사용</dt>
+<dd>
 <ol type="1">
 <li><strong>File → Settings → Project → Python Interpreter</strong>로 이동.</li>
 <li><strong>“+” 버튼</strong>을 클릭하여 설치할 패키지를 검색한 후 <strong>Install</strong> 버튼을 누름.</li>
 </ol>
+</dd>
+</dl>
 </section>
 <section id="디버깅-debugging" class="level4">
 <h4 class="anchored" data-anchor-id="디버깅-debugging">디버깅 (Debugging)</h4>
@@ -1083,15 +1095,20 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="코드-자동-완성-및-리팩토링" class="level4">
 <h4 class="anchored" data-anchor-id="코드-자동-완성-및-리팩토링">코드 자동 완성 및 리팩토링</h4>
-<p><strong>1) 코드 자동 완성</strong></p>
+<dl>
+<dt>코드 자동 완성</dt>
+<dd>
 <ul>
 <li><code>Ctrl + Space</code>를 누르면 함수 및 변수 자동 완성 기능 제공</li>
 </ul>
-<p><strong>2) 코드 리팩토링</strong></p>
+</dd>
+<dt>코드 리팩토링</dt>
+<dd>
 <ul>
 <li>변수 또는 함수명을 변경할 때 <strong>우클릭 → Refactor → Rename</strong> 사용</li>
 </ul>
-<hr>
+</dd>
+</dl>
 </section>
 <section id="버전-관리git-연동" class="level4">
 <h4 class="anchored" data-anchor-id="버전-관리git-연동">버전 관리(Git 연동)</h4>
