@@ -76,7 +76,7 @@ format: html
 -   **다양한 활용 분야**: 웹 개발, 데이터 분석, 인공지능, 자동화 등 다양한 분야에서 사용된다.\
 -   **강력한 커뮤니티**: 많은 개발자가 사용하며 다양한 라이브러리와 자료가 제공된다.
 
-::::: {.callout-note icon=false title="파일 내용 읽어 오기"}
+::: {.callout-note icon=false title="파일 내용 읽어 오기"}
 
 **C 코드**
 
@@ -103,6 +103,7 @@ int main() {
 with open("text.txt", "r") as file: 
    print(file.read())
 ```
+:::
 
 ### 파이썬의 활용 분야
 
