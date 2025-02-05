@@ -78,22 +78,22 @@ format: html
 
 ::: {.callout-note icon=false title="파일 내용 읽어 오기"}
 
-**C 코드**
-
-```c
-#include <stdio.h> 
-int main() { 
-   FILE *file = fopen("text.txt", "r"); 
-   char line[100]; 
-   if (file) { 
-      while (fgets(line, sizeof(line), file)) { 
-         printf("%s", line); 
+C 코드
+: 
+   ```c
+   #include <stdio.h> 
+   int main() { 
+      FILE *file = fopen("text.txt", "r"); 
+      char line[100]; 
+      if (file) { 
+         while (fgets(line, sizeof(line), file)) { 
+            printf("%s", line); 
+         } 
+         fclose(file); 
       } 
-      fclose(file); 
-   } 
-   return 0; 
-}
-```
+      return 0; 
+   }
+   ```
 
 ----
 
