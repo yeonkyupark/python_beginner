@@ -379,7 +379,7 @@ print(result)
 
 #### 위치 인자와 키워드 인자 사용
 
-```python
+```{python}
 result = "Name: {0}, Age: {1}".format(name, age)
 print(result)  # 출력: Name: Alice, Age: 30
 
@@ -483,11 +483,42 @@ print(type(b))  # <class 'bool'>
 
 **논리 연산자(`and`, `or`, `not`)**를 사용하여 조합 가능하다.
 
+AND (논리곱)
+: - `AND` 연산은 두 값이 모두 `True`일 때만 결과가 `True`가 된다.
+
+| A     | B     | A AND B |
+|-------|-------|---------|
+| False | False | False   |
+| False | True  | False   |
+| True  | False | False   |
+| True  | True  | True    |
+
+OR (논리합)
+: - `OR` 연산은 두 값 중 하나라도 `True`일 때 결과가 `True`가 된다.
+
+| A     | B     | A OR B  |
+|-------|-------|---------|
+| False | False | False   |
+| False | True  | True    |
+| True  | False | True    |
+| True  | True  | True    |
+
+NOT (부정)
+: - `NOT` 연산은 입력 값이 `True`이면 `False`로, `False`이면 `True`로 바꾼다.
+
+| A     | NOT A  |
+|-------|--------|
+| False | True   |
+| True  | False  |
+
+이 표들은 **불리언 논리**에서 사용하는 기본적인 연산들로, 프로그래밍에서 조건문이나 제어 흐름을 처리할 때 자주 사용된다.
+
 | 연산자 | 설명 | 예제 |
 |--------|------|------|
 | `and` | 두 값이 모두 참이면 `True` | `True and True → True` |
 | `or` | 하나라도 참이면 `True` | `True or False → True` |
 | `not` | 값을 반대로 변환 | `not True → False` |
+: 파이썬 논리 연산자
 
 ```{python}
 print(True and False)  # False
@@ -505,8 +536,9 @@ print(bool(1))     # True
 print(bool(0))     # False
 ```
 
-### `bool()`을 사용한 참/거짓 판별  
-아래 값들은 **False**로 간주된다.
+### 참/거짓 판별  
+
+`bool()` 함수를 사용해 참과 거짓을 판별할 수 있다. 아래 값들은 **False**(거짓)로 간주된다.
 
   - `0`
   - `0.0`
@@ -1152,6 +1184,9 @@ print(add(3, 5))  # 8 출력
 - **2진수(컴퓨터)**: 컴퓨터는 **2진수**로 숫자를 저장하는데, **0.1(10진수)**는 **2진수로 정확히 표현할 수 없다.**
 
 #### 간단한 예  
+
+![소수점을 2진수로 변환](images/floattobin.png)
+
 - **1/3**을 10진수로 나타내면 **0.3333...** (무한 반복)  
 - 마찬가지로, 컴퓨터가 **0.1**을 2진수로 변환하면 무한하게 반복되는 값이 되어 **정확히 저장할 수 없다.** [^floattobin]
 
@@ -1161,9 +1196,9 @@ print(add(3, 5))  # 8 출력
 - 컴퓨터는 이런 무한한 숫자를 저장할 수 없으므로 **가까운 값으로 반올림**해서 저장한다.  
 - 그래서 **0.1 + 0.2 != 0.3** 같은 이상한 결과가 나오기도 한다.
 
-    ```{python}
-    print(0.1 + 0.2)
-    ```
+```{python}
+print(0.1 + 0.2)
+```
 
 #### 해결 방법  
 - **정밀한 계산**이 필요할 때는 **`decimal`** 모듈(파이썬) 같은 **고정 소수점** 방식을 사용하거나, **부동소수점 오차**를 고려해서 코드를 작성한다.
