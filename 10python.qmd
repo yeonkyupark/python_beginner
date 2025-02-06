@@ -5,21 +5,44 @@ format: html
 
 ## 프로그래밍 언어
 
+### 언어
+
+![언어](images/language.png)
+
+언어(言語)에 대한 정의는 여러 가지 시도가 있었다. 아래는 그러한 예의 일부이다.[^language]
+
+[^language]: [https://ko.m.wikipedia.org/wiki/언어](https://ko.m.wikipedia.org/wiki/%EC%96%B8%EC%96%B4){target="_blank"}
+
+- **사람들이 자신의 생각을 다른 사람들에게 나타내고 전달하기 위해 사용하는 체계**
+- 사물, 행동, 생각, 그리고 상태를 나타내는 체계.
+- 사람들 사이에 공유되는 의미들의 체계.
+- 문법적으로 맞는 말의 집합.
+- 언어 공동체 내에서 이해될 수 있는 말의 집합.
+
+
+### 의사전달
+
 {{< video https://youtu.be/3VG2OgkRJK0?si=b3rPeVR7VSEUMBm8 >}}
 
+![통역](images/translator.png)
+
 ## 프로그래밍 언어란?  
+
+
 프로그래밍 언어는 **컴퓨터가 이해하고 실행할 수 있는 명령을 작성하기 위한 언어**이다. 사람이 이해할 수 있는 문법과 구조를 사용하여 컴퓨터에게 특정 작업을 수행하도록 지시한다.
+
+![프로그래밍 언어](images/interpreter.png) 
 
 
 ### 프로그래밍 언어의 종류  
 
 **저급 언어 (Low-Level Language)**
-   - 기계어와 가까운 언어로, 컴퓨터가 직접 실행할 수 있는 코드에 가깝다.
+:   - 기계어와 가까운 언어로, **컴퓨터가 직접 실행**할 수 있는 코드에 가깝다.
    - **예시**: 기계어(Machine Code), 어셈블리어(Assembly Language)
    - **특징**: 실행 속도가 빠르지만 사람이 이해하고 작성하기 어렵다.
 
 **고급 언어 (High-Level Language)**
-   - 사람이 이해하기 쉬운 문법을 사용하며, 컴파일러나 인터프리터를 통해 기계어로 변환된다.
+:   - 사람이 이해하기 쉬운 문법을 사용하며, **컴파일러나 인터프리터를 통해** 기계어로 변환된다.
    - **예시**: Python, Java, C++, JavaScript 등
    - **특징**: 직관적인 문법을 제공하며, 생산성이 높고 유지보수가 용이하다.
 
@@ -67,7 +90,7 @@ format: html
 
 ### 파이썬의 특징
 
-![https://xkcd.com/353/](https://i.namu.wiki/i/kNTQp1L2D8Zw3mLh2pFXd0htUjDB9soWo8HzZaLjDWVDhp_i_Rdf9fp05DqvVn1Lw3f1lPqdzCixvlpgoqulH3Ou9eygp0dklGR0YdUfbAolhj33si8G_Fv9FrcxNYjreSjUdviyeEYttegmslNmSdFy7ONyLzNxafQe0Pp4W6Y.webp)
+![https://xkcd.com/353/](https://i.namu.wiki/i/kNTQp1L2D8Zw3mLh2pFXd0htUjDB9soWo8HzZaLjDWVDhp_i_Rdf9fp05DqvVn1Lw3f1lPqdzCixvlpgoqulH3Ou9eygp0dklGR0YdUfbAolhj33si8G_Fv9FrcxNYjreSjUdviyeEYttegmslNmSdFy7ONyLzNxafQe0Pp4W6Y.webp){height="480px"}
 
 파이썬은 다음과 같은 특징을 갖는다.
 
@@ -76,7 +99,7 @@ format: html
 -   **다양한 활용 분야**: 웹 개발, 데이터 분석, 인공지능, 자동화 등 다양한 분야에서 사용된다.\
 -   **강력한 커뮤니티**: 많은 개발자가 사용하며 다양한 라이브러리와 자료가 제공된다.
 
-::: {.callout-note icon=false title="파일 내용 읽어 오기"}
+::: {.callout-note icon=false title="C vs. Python: 파일 내용 읽어 오기"}
 
 C 코드
  
