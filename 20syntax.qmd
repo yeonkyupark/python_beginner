@@ -67,7 +67,7 @@ print("Python")  # 문자열 리터럴
 ### 파이썬에서 주요 자료형
 
 ```{mermaid}
-graph TD
+graph LR
     A[Python Data Types] --> B[Numeric Types]
     A --> C[Sequence Types]
     A --> D[Mapping Type]
@@ -129,7 +129,7 @@ graph TD
 
 ### 자료형의 예제
 
-```python
+```{python}
 # 숫자형
 x = 10
 y = 3.14
@@ -154,17 +154,21 @@ unique_numbers = {1, 2, 3, 4}
 ```
 
 ### 쉽게 기억하는 법
+
 - **숫자**: 계산할 수 있는 데이터  
 - **문자열**: 글자나 단어를 표현  
 - **리스트/튜플**: 여러 개의 데이터를 하나로 묶기  
 - **딕셔너리**: "단어: 뜻"처럼 짝지어진 데이터  
 - **불리언**: 맞다/틀리다(True/False)로 답하는 데이터  
 
+
 ## 숫자형 {#sec-numeric}
 
 파이썬에서 숫자형 자료형은 **숫자를 저장하고 연산할 수 있는 데이터 타입**이다. 크게 **정수형, 실수형, 복소수형**으로 나뉜다.
 
-### 정수형 (Integer, `int`)  
+### 정수형  
+
+정수형(Integer, `int`) ..., -1, 0, 1, ...과 같이 정수를 표현하는 자료형이다.
 
 - 소수점이 없는 정수 값을 저장하는 자료형  
 - 크기의 제한 없이 매우 큰 정수도 표현 가능  
@@ -179,7 +183,9 @@ unique_numbers = {1, 2, 3, 4}
   print(type(a))  # <class 'int'>
   ```
 
-### 실수형 (Floating Point, `float`)  
+### 실수형   
+
+실수형(Floating Point, `float`)은 실수를 표현하는 자료형이다.
 
 - 소수점이 있는 숫자를 표현하는 자료형  
 - 부동소수점(floating point) 방식으로 저장됨  
@@ -189,12 +195,15 @@ unique_numbers = {1, 2, 3, 4}
   ```{python}
   x = 3.14   # 일반적인 실수
   y = -2.71  # 음수 실수
-  z = 1.2e3  # 1.2 × 10³ = 1200.0
-  w = 5e-4   # 5 × 10⁻⁴ = 0.0005
+  z = 1.2e3  # 1.2 × 10^3 = 1200.0
+  w = 5e-4   # 5 × 10^(-4) = 0.0005
   print(type(x))  # <class 'float'>
   ```
 
-### 복소수형 (Complex Number, `complex`)  
+### 복소수형   
+
+복소수형(Complex Number, `complex`)은 복소수를 표현하는 자료형이다.
+
 - 수학에서 사용하는 복소수를 표현하는 자료형  
 - 실수부(real)와 허수부(imag)로 구성됨  
 - 허수부는 `j`를 사용하여 표현  
@@ -228,7 +237,7 @@ unique_numbers = {1, 2, 3, 4}
 | `divmod(x, y)` | `(몫, 나머지)` 튜플 반환 | `divmod(10, 3) → (3, 1)` |
 
 ```{python}
-print(abs(-7))        # 7
+print(abs(-7))        # 7t
 print(round(3.14159, 2)) # 3.14
 print(pow(2, 3))      # 8
 print(divmod(10, 3))  # (3, 1)
@@ -265,6 +274,8 @@ print(multi_line)
 
 #### 인덱싱
 
+![인덱싱](images/string_indexing.png)
+
 ```{python}
 text = "Python"
 print(text[0])   # 'P'
@@ -272,6 +283,8 @@ print(text[-1])  # 'n' (뒤에서 첫 번째 문자)
 ```
 
 #### 슬라이싱
+
+![슬라이싱](images/string_slicing.png)
 
 ```{python}
 text = "Python"
@@ -338,36 +351,78 @@ print("banana".count("a"))  # 3
 
 ### 문자열 포맷팅 (Formatting)  
 
-문자열 안에 **변수를 삽입하는 방법**으로 `f-문자열`, `format()`, `%` 기법이 있다.
+파이썬에서 문자열 포맷팅은 변수 값을 문자열에 삽입하는 방법이다. 여러 가지 방식으로 문자열을 포맷할 수 있으며, 각 방식은 특정한 사용 사례에 따라 적합하다. 아래는 파이썬에서 문자열 포맷팅을 위한 주요 방법들이다.
 
-#### `f-문자열` (Python 3.6 이상)
-
-```{python}
-name = "Alice"
-age = 25
-print(f"이름: {name}, 나이: {age}")  # "이름: Alice, 나이: 25"
-```
-
-#### `format()` 사용
+#### % 포맷팅 
+이 방식(구식 방식)은 C 언어 스타일의 포맷팅으로, 문자열 안에 `%` 기호를 사용하여 변수를 삽입한다.
 
 ```{python}
 name = "Alice"
-age = 25
-print("이름: {}, 나이: {}".format(name, age))  # "이름: Alice, 나이: 25"
-print("이름: {0}, 나이: {1}".format(name, age))  # "이름: Alice, 나이: 25"
+age = 30
+result = "Name: %s, Age: %d" % (name, age)
+print(result)
 ```
 
-#### `%` 기법 (옛날 방식)
+- `%s`: 문자열 삽입
+- `%d`: 정수 삽입
+- `%f`: 부동소수점 숫자 삽입
+
+#### str.format()   
+`str.format()`은 더 직관적인 방식(중간 방식)으로, `{}` 플레이스홀더를 사용하여 변수 값을 삽입한다. 포맷팅할 자리에 `{}`를 넣고, `format()` 메서드 안에 변수 값을 전달한다.
 
 ```{python}
 name = "Alice"
-age = 25
-print("이름: %s, 나이: %d" % (name, age))  # "이름: Alice, 나이: 25"
+age = 30
+result = "Name: {}, Age: {}".format(name, age)
+print(result)
 ```
+
+#### 위치 인자와 키워드 인자 사용
+
+```python
+result = "Name: {0}, Age: {1}".format(name, age)
+print(result)  # 출력: Name: Alice, Age: 30
+
+result = "Name: {name}, Age: {age}".format(name="Alice", age=30)
+print(result)
+```
+
+#### f-strings    
+f-string은 가장 최신의 방식(Python 3.6 이상)으로, 문자열 앞에 `f`를 붙이고, 중괄호 `{}` 안에 변수나 표현식을 직접 삽입하는 방법이다. 가독성이 좋고 성능도 우수하다.
+
+```{python}
+name = "Alice"
+age = 30
+result = f"Name: {name}, Age: {age}"
+print(result)  # 출력: Name: Alice, Age: 30
+```
+
+표현식 삽입
+: - f-string에서는 변수뿐만 아니라 **표현식**도 바로 삽입할 수 있다.
+
+```{python}
+x = 5
+result = f"5 * 2 = {x * 2}"
+print(result)  # 출력: 5 * 2 = 10
+```
+
+| 방식             | 설명                                  | 장점                   | 단점                 |
+|------------------|---------------------------------------|------------------------|----------------------|
+| `%` 포맷팅       | C 스타일 포맷팅                       | 간단하고 직관적        | 가독성이 떨어짐      |
+| `str.format()`    | `{}`와 `format()` 메서드 사용         | 위치 인자, 키워드 인자 지원 | 비교적 오래된 방식    |
+| f-strings        | `f"{}"`를 사용하여 변수를 직접 삽입   | 가독성, 성능, 간결함  | Python 3.6 이상만 지원 |
+: 각 방식의 장단점
+
+- **가장 최신의 방식은 f-string**이다. Python 3.6 이상에서 사용할 수 있으며, 성능과 가독성이 뛰어나 대부분의 경우 이 방식을 사용한다.
+- **`str.format()`**은 여전히 유용하지만, 최신 코드에서는 f-string으로 대체되고 있다.
+- **`%` 포맷팅**은 구식 방식이며, 가독성 및 유지보수 측면에서 추천되지 않는다.
+
 
 ### 문자열 비교  
 
-파이썬에서는 문자열을 **사전 순서(ASCII 값 기준)**로 비교한다.  
+파이썬에서는 문자열을 **사전 순서(ASCII[^ascii] 값 기준)**로 비교한다.  
+
+[^ascii]: [https://ko.wikipedia.org/wiki/ASCII](https://ko.wikipedia.org/wiki/ASCII){target="_blank"}
 
 | 연산자 | 설명 | 예제 |
 |--------|------|------|
@@ -1086,3 +1141,29 @@ print(add(3, 5))  # 8 출력
 참고  
 : - **Python, Ruby**처럼 상수 전용 키워드는 없지만 **대문자 변수명** 사용으로 상수를 표현하는 언어도 있음  
 - **JavaScript**의 `const`는 값 재할당은 불가능하지만, 객체나 배열 내부의 데이터는 변경 가능
+
+### 실수 표현 {#sec-exp-floating-point}
+
+컴퓨터 프로그래밍에서 **실수(소수)**를 정확히 표현할 수 없다. 이유는 **컴퓨터가 2진수(0과 1)**로 숫자를 저장하기 때문이다.
+
+#### 비유로 이해하기  
+
+- **10진수(사람)**: 우리는 0.1, 0.5처럼 소수를 **10진수**로 쉽게 표현할 수 있다.  
+- **2진수(컴퓨터)**: 컴퓨터는 **2진수**로 숫자를 저장하는데, **0.1(10진수)**는 **2진수로 정확히 표현할 수 없다.**
+
+#### 간단한 예  
+- **1/3**을 10진수로 나타내면 **0.3333...** (무한 반복)  
+- 마찬가지로, 컴퓨터가 **0.1**을 2진수로 변환하면 무한하게 반복되는 값이 되어 **정확히 저장할 수 없다.** [^floattobin]
+
+[^floattobin]: [https://www.h-schmidt.net/FloatConverter/IEEE754.html](https://www.h-schmidt.net/FloatConverter/IEEE754.html){target="_blank"}
+
+#### 결과  
+- 컴퓨터는 이런 무한한 숫자를 저장할 수 없으므로 **가까운 값으로 반올림**해서 저장한다.  
+- 그래서 **0.1 + 0.2 != 0.3** 같은 이상한 결과가 나오기도 한다.
+
+    ```{python}
+    print(0.1 + 0.2)
+    ```
+
+#### 해결 방법  
+- **정밀한 계산**이 필요할 때는 **`decimal`** 모듈(파이썬) 같은 **고정 소수점** 방식을 사용하거나, **부동소수점 오차**를 고려해서 코드를 작성한다.
