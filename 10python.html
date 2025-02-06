@@ -256,7 +256,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#프로그래밍-언어" id="toc-프로그래밍-언어" class="nav-link active" data-scroll-target="#프로그래밍-언어">프로그래밍 언어</a></li>
+  <li><a href="#프로그래밍-언어" id="toc-프로그래밍-언어" class="nav-link active" data-scroll-target="#프로그래밍-언어">프로그래밍 언어</a>
+  <ul>
+  <li><a href="#언어" id="toc-언어" class="nav-link" data-scroll-target="#언어">언어</a></li>
+  <li><a href="#의사전달" id="toc-의사전달" class="nav-link" data-scroll-target="#의사전달">의사전달</a></li>
+  </ul></li>
   <li><a href="#프로그래밍-언어란" id="toc-프로그래밍-언어란" class="nav-link" data-scroll-target="#프로그래밍-언어란">프로그래밍 언어란?</a>
   <ul>
   <li><a href="#프로그래밍-언어의-종류" id="toc-프로그래밍-언어의-종류" class="nav-link" data-scroll-target="#프로그래밍-언어의-종류">프로그래밍 언어의 종류</a></li>
@@ -348,15 +352,67 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 <section id="프로그래밍-언어" class="level2">
 <h2 class="anchored" data-anchor-id="프로그래밍-언어">프로그래밍 언어</h2>
+<section id="언어" class="level3">
+<h3 class="anchored" data-anchor-id="언어">언어</h3>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/language.png" class="img-fluid figure-img"></p>
+<figcaption>언어</figcaption>
+</figure>
+</div>
+<p>언어(言語)에 대한 정의는 여러 가지 시도가 있었다. 아래는 그러한 예의 일부이다.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
+<ul>
+<li><strong>사람들이 자신의 생각을 다른 사람들에게 나타내고 전달하기 위해 사용하는 체계</strong></li>
+<li>사물, 행동, 생각, 그리고 상태를 나타내는 체계.</li>
+<li>사람들 사이에 공유되는 의미들의 체계.</li>
+<li>문법적으로 맞는 말의 집합.</li>
+<li>언어 공동체 내에서 이해될 수 있는 말의 집합.</li>
+</ul>
+</section>
+<section id="의사전달" class="level3">
+<h3 class="anchored" data-anchor-id="의사전달">의사전달</h3>
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3VG2OgkRJK0?si=b3rPeVR7VSEUMBm8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/translator.png" class="img-fluid figure-img"></p>
+<figcaption>통역</figcaption>
+</figure>
+</div>
+</section>
 </section>
 <section id="프로그래밍-언어란" class="level2">
 <h2 class="anchored" data-anchor-id="프로그래밍-언어란">프로그래밍 언어란?</h2>
 <p>프로그래밍 언어는 <strong>컴퓨터가 이해하고 실행할 수 있는 명령을 작성하기 위한 언어</strong>이다. 사람이 이해할 수 있는 문법과 구조를 사용하여 컴퓨터에게 특정 작업을 수행하도록 지시한다.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="images/interpreter.png" class="img-fluid figure-img"></p>
+<figcaption>프로그래밍 언어</figcaption>
+</figure>
+</div>
 <section id="프로그래밍-언어의-종류" class="level3">
 <h3 class="anchored" data-anchor-id="프로그래밍-언어의-종류">프로그래밍 언어의 종류</h3>
-<p><strong>저급 언어 (Low-Level Language)</strong> - 기계어와 가까운 언어로, 컴퓨터가 직접 실행할 수 있는 코드에 가깝다. - <strong>예시</strong>: 기계어(Machine Code), 어셈블리어(Assembly Language) - <strong>특징</strong>: 실행 속도가 빠르지만 사람이 이해하고 작성하기 어렵다.</p>
-<p><strong>고급 언어 (High-Level Language)</strong> - 사람이 이해하기 쉬운 문법을 사용하며, 컴파일러나 인터프리터를 통해 기계어로 변환된다. - <strong>예시</strong>: Python, Java, C++, JavaScript 등 - <strong>특징</strong>: 직관적인 문법을 제공하며, 생산성이 높고 유지보수가 용이하다.</p>
+<dl>
+<dt><strong>저급 언어 (Low-Level Language)</strong></dt>
+<dd>
+<ul>
+<li>기계어와 가까운 언어로, <strong>컴퓨터가 직접 실행</strong>할 수 있는 코드에 가깝다.
+<ul>
+<li><strong>예시</strong>: 기계어(Machine Code), 어셈블리어(Assembly Language)</li>
+<li><strong>특징</strong>: 실행 속도가 빠르지만 사람이 이해하고 작성하기 어렵다.</li>
+</ul></li>
+</ul>
+</dd>
+<dt><strong>고급 언어 (High-Level Language)</strong></dt>
+<dd>
+<ul>
+<li>사람이 이해하기 쉬운 문법을 사용하며, <strong>컴파일러나 인터프리터를 통해</strong> 기계어로 변환된다.
+<ul>
+<li><strong>예시</strong>: Python, Java, C++, JavaScript 등</li>
+<li><strong>특징</strong>: 직관적인 문법을 제공하며, 생산성이 높고 유지보수가 용이하다.</li>
+</ul></li>
+</ul>
+</dd>
+</dl>
 </section>
 <section id="프로그래밍-언어의-실행-방식" class="level3">
 <h3 class="anchored" data-anchor-id="프로그래밍-언어의-실행-방식">프로그래밍 언어의 실행 방식</h3>
@@ -438,7 +494,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </tbody>
 </table>
 <p>프로그래밍 언어는 목적에 따라 선택해야 하며, 특정 분야(웹 개발, 데이터 분석, 시스템 프로그래밍 등)에 적합한 언어를 배우는 것이 중요하다.</p>
-<p>2025년 1월 기준, Python이 TIOBE 순위<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a> 1위를 차지 하였다.</p>
+<p>2025년 1월 기준, Python이 TIOBE 순위<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> 1위를 차지 하였다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/tiobe_01.jpg" class="img-fluid figure-img"></p>
@@ -466,7 +522,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h3 class="anchored" data-anchor-id="파이썬의-특징">파이썬의 특징</h3>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="https://i.namu.wiki/i/kNTQp1L2D8Zw3mLh2pFXd0htUjDB9soWo8HzZaLjDWVDhp_i_Rdf9fp05DqvVn1Lw3f1lPqdzCixvlpgoqulH3Ou9eygp0dklGR0YdUfbAolhj33si8G_Fv9FrcxNYjreSjUdviyeEYttegmslNmSdFy7ONyLzNxafQe0Pp4W6Y.webp" class="img-fluid figure-img"></p>
+<p><img src="https://i.namu.wiki/i/kNTQp1L2D8Zw3mLh2pFXd0htUjDB9soWo8HzZaLjDWVDhp_i_Rdf9fp05DqvVn1Lw3f1lPqdzCixvlpgoqulH3Ou9eygp0dklGR0YdUfbAolhj33si8G_Fv9FrcxNYjreSjUdviyeEYttegmslNmSdFy7ONyLzNxafQe0Pp4W6Y.webp" height="480" class="figure-img"></p>
 <figcaption>https://xkcd.com/353/</figcaption>
 </figure>
 </div>
@@ -480,13 +536,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
 <li><strong>강력한 커뮤니티</strong>: 많은 개발자가 사용하며 다양한 라이브러리와 자료가 제공된다.</li>
 </ul>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="파일 내용 읽어 오기">
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="C vs. Python: 파일 내용 읽어 오기">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-파일 내용 읽어 오기
+C vs.&nbsp;Python: 파일 내용 읽어 오기
 </div>
 </div>
 <div class="callout-body-container callout-body">
@@ -869,11 +925,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ageekisborn.png" class="img-fluid figure-img"></p>
-<figcaption>Hello, World<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a></figcaption>
+<figcaption>Hello, World<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></figcaption>
 </figure>
 </div>
-<p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a></p>
-<div id="e46bd5d5" class="cell" data-execution_count="1">
+<p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
+<div id="a249401a" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World</code></pre>
@@ -1126,9 +1182,10 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
 <hr>
 <ol>
-<li id="fn1"><p><a href="https://www.tiobe.com/tiobe-index/" target="blank">https://www.tiobe.com/tiobe-index/</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p>https://geek-and-poke.com/geekandpoke/2011/2/11/a-geek-is-born.html<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://namu.wiki/w/Hello%2C%20world%21" target="_blank">https://namu.wiki/w/Hello%2C%20world%21</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn1"><p><a href="https://ko.m.wikipedia.org/wiki/%EC%96%B8%EC%96%B4" target="_blank">https://ko.m.wikipedia.org/wiki/언어</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2"><p><a href="https://www.tiobe.com/tiobe-index/" target="blank">https://www.tiobe.com/tiobe-index/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3"><p>https://geek-and-poke.com/geekandpoke/2011/2/11/a-geek-is-born.html<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4"><p><a href="https://namu.wiki/w/Hello%2C%20world%21" target="_blank">https://namu.wiki/w/Hello%2C%20world%21</a><a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
 </ol>
 </section>
 
