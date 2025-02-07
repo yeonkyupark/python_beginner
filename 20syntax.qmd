@@ -1481,17 +1481,19 @@ print(x * y)  # 200 출력
 #### 함수 설명으로 활용  
 함수의 설명(docstring)을 추가할 때 `"""` 또는 `'''`를 사용하면 **문서화 문자열(docstring)**로 활용할 수 있다. 
 
-```python
+```{python}
 def add(a, b):
     """두 수를 더하는 함수"""
     return a + b
 
 print(add(3, 5))  # 8 출력
-help(add)
 ```
 
 `help(add)`를 실행하면 함수의 설명이 출력된다.
 
+```{python}  
+help(add)
+```
 
 ### 주석 작성 시 주의할 점  
 
