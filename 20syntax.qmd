@@ -3,17 +3,38 @@ title: "문법"
 format: html
 ---
 
-## 변수와 상수 
+## 저장장치
 
-변수, 상수, 리터럴은 프로그래밍에서 데이터를 저장하고 관리하는 개념이다. 데이터 저장은 일반적으로 저장장치계층에 따라 CPU, 메모리(RAM), 저장장치(HDD, SSD 등)을 이용한다.
+데이터 저장은 일반적으로 저장장치계층에 따라 CPU, 메모리(RAM), 저장장치(HDD, SSD 등)을 이용한다. 이중 프로그래밍에 있어 밀접한 관련이 있는 저장소는 메모리(RAM)이다.
 
 ![저장장치 계층 구조](images/cpuramrom.jpg)
+
+
+| **구분**         | **컴퓨터 저장 장치 (RAM)**                                  | **프로그래밍 언어의 변수**                              |
+|----------------|-----------------------------------------------------------|----------------------------------------------------|
+| **역할**         | **데이터를 임시로 저장**하여 CPU가 빠르게 접근할 수 있도록 함         | 특정 데이터를 저장하기 위해 **이름(참조)**을 붙여서 관리 |
+| **데이터 저장 위치** | **메모리 주소(숫자 형태)**로 데이터를 저장함                        | 변수 이름을 통해 **메모리 주소**를 간접적으로 참조함       |
+| **접근 방식**     | CPU가 **메모리 주소**를 이용해 데이터에 직접 접근                  | 프로그래머는 **변수 이름**으로 데이터를 쉽게 접근 및 수정 |
+| **예시**         | 메모리 주소 `0x7ffeefbff4c0`에 값 `10` 저장                    | 변수 `x = 10` → `x`는 내부적으로 메모리 주소에 연결됨    |
+: 메모리와 변수 관계
+
+
+변수와 메모리 동작 과정
+: 1. **변수 선언**: 프로그래머가 변수를 선언하면, 컴퓨터는 **RAM의 빈 공간(메모리 주소)**에 데이터를 저장  
+2. **변수 참조**: 변수 이름을 사용하면, 프로그램은 해당 변수에 연결된 **메모리 주소를 참조**하여 값을 읽거나 수정  
+3. **변수 값 변경**: 변수를 통해 값을 변경하면, **같은 메모리 주소의 데이터**가 갱신됨
+
+
+## 변수와 상수 
+
+변수, 상수는 프로그래밍에서 데이터를 저장하고 관리하는 개념이다. 
+
 
 ### 변수  
 
 ![https://pixabay.com/ko/](https://cdn.pixabay.com/photo/2013/07/12/12/44/file-cabinet-146158_1280.png)
 
-변수란 값을 변경할 수 있는 저장 공간을 말한다.
+변수란 값을 변경할 수 있는 저장 공간에 붙여 높은 이름(태그, 주소 등)을 말한다. 이 변수를 통해 데이터를 쉽게 읽고 수정할 수 있다.
 
 - 프로그램에서 데이터를 저장하고 변경할 수 있는 공간  
 - 특정한 값이 할당되며, 필요에 따라 변경할 수 있음  
@@ -153,9 +174,8 @@ person = {"name": "Alice", "age": 25}
 unique_numbers = {1, 2, 3, 4}
 ```
 
-### 쉽게 기억하는 법
-
-- **숫자**: 계산할 수 있는 데이터  
+쉽게 기억하는 법
+: - **숫자**: 계산할 수 있는 데이터  
 - **문자열**: 글자나 단어를 표현  
 - **리스트/튜플**: 여러 개의 데이터를 하나로 묶기  
 - **딕셔너리**: "단어: 뜻"처럼 짝지어진 데이터  
@@ -173,15 +193,16 @@ unique_numbers = {1, 2, 3, 4}
 - 소수점이 없는 정수 값을 저장하는 자료형  
 - 크기의 제한 없이 매우 큰 정수도 표현 가능  
 - 양수, 음수, 0을 포함  
-- 예제  
 
-  ```{python}
-  a = 10   # 양의 정수
-  b = -5   # 음의 정수
-  c = 0    # 0도 정수
-  d = 999999999999999999999  # 매우 큰 정수도 가능
-  print(type(a))  # <class 'int'>
-  ```
+예제 
+:  
+```{python}
+a = 10   # 양의 정수
+b = -5   # 음의 정수
+c = 0    # 0도 정수
+d = 999999999999999999999  # 매우 큰 정수도 가능
+print(type(a))  # <class 'int'>
+```
 
 ### 실수형   
 
@@ -190,15 +211,16 @@ unique_numbers = {1, 2, 3, 4}
 - 소수점이 있는 숫자를 표현하는 자료형  
 - 부동소수점(floating point) 방식으로 저장됨  
 - 지수 표현(e 표기법)을 사용하여 매우 큰 숫자나 매우 작은 숫자도 표현 가능  
-- 예제  
 
-  ```{python}
-  x = 3.14   # 일반적인 실수
-  y = -2.71  # 음수 실수
-  z = 1.2e3  # 1.2 × 10^3 = 1200.0
-  w = 5e-4   # 5 × 10^(-4) = 0.0005
-  print(type(x))  # <class 'float'>
-  ```
+예제  
+:
+```{python}
+x = 3.14   # 일반적인 실수
+y = -2.71  # 음수 실수
+z = 1.2e3  # 1.2 × 10^3 = 1200.0
+w = 5e-4   # 5 × 10^(-4) = 0.0005
+print(type(x))  # <class 'float'>
+```
 
 ### 복소수형   
 
@@ -207,27 +229,44 @@ unique_numbers = {1, 2, 3, 4}
 - 수학에서 사용하는 복소수를 표현하는 자료형  
 - 실수부(real)와 허수부(imag)로 구성됨  
 - 허수부는 `j`를 사용하여 표현  
-- 예제  
 
-  ```{python}
-  num1 = 3 + 4j  # 3 + 4i (수학에서의 허수 i를 j로 표현)
-  num2 = -2 - 5j
-  print(num1.real)  # 실수부: 3.0
-  print(num1.imag)  # 허수부: 4.0
-  print(type(num1)) # <class 'complex'>
-  ```
+예제  
+:  
+```{python}
+num1 = 3 + 4j  # 3 + 4i (수학에서의 허수 i를 j로 표현)
+num2 = -2 - 5j
+print(num1.real)  # 실수부: 3.0
+```
+
+```{python}
+print(num1.imag)  # 허수부: 4.0
+```
+
+```{python} 
+print(type(num1)) # <class 'complex'>
+```
 
 ### 형 변환 (Type Conversion)  
-- 숫자형 간 변환이 가능하며, `int()`, `float()`, `complex()`를 사용함  
-- 예제  
 
-  ```{python}
-  print(int(3.14))     # 3 (실수를 정수로 변환)
-  print(float(5))      # 5.0 (정수를 실수로 변환)
-  print(complex(2))    # (2+0j) (정수를 복소수로 변환)
-  ```
+숫자형 간 변환이 가능하며, `int()`, `float()`, `complex()`를 사용한다.
+
+예제  
+:  
+```{python}
+print(int(3.14))     # 3 (실수를 정수로 변환)
+```
+
+```{python} 
+print(float(5))      # 5.0 (정수를 실수로 변환)
+```
+
+```{python} 
+print(complex(2))    # (2+0j) (정수를 복소수로 변환)
+```
 
 ### 숫자형과 관련된 내장 함수  
+
+숫자형과 관련된 내장함수 예이다.
 
 | 함수 | 설명 | 예제 |
 |------|------|------|
@@ -235,11 +274,21 @@ unique_numbers = {1, 2, 3, 4}
 | `round(x, n)` | 반올림 (소수점 n자리까지) | `round(3.14159, 2) → 3.14` |
 | `pow(x, y)` | `x`의 `y`제곱 (거듭제곱) | `pow(2, 3) → 8` |
 | `divmod(x, y)` | `(몫, 나머지)` 튜플 반환 | `divmod(10, 3) → (3, 1)` |
+: 숫자형 관련 내장 함수
 
 ```{python}
 print(abs(-7))        # 7t
+```
+
+```{python}
 print(round(3.14159, 2)) # 3.14
+```
+
+```{python} 
 print(pow(2, 3))      # 8
+```
+
+```{python} 
 print(divmod(10, 3))  # (3, 1)
 ```
  
@@ -248,6 +297,8 @@ print(divmod(10, 3))  # (3, 1)
 파이썬에서 **문자열(String, `str`)**은 **문자들의 연속된 집합**으로, 텍스트 데이터를 저장하는 자료형이다. 작은따옴표(`'`)나 큰따옴표(`"`)로 감싸서 표현한다.
 
 ### 문자열 생성  
+
+문자열은 따옴표를 사용하여 생성할 수 있다.
 
 ```{python}
 text1 = 'Hello'       # 작은따옴표 사용
@@ -258,8 +309,8 @@ text4 = """Python"""  # 큰따옴표 세 개 사용
 print(type(text1))  # <class 'str'>
 ```
 
-- 작은따옴표와 큰따옴표는 동일하게 작동한다.
-- 세 개의 따옴표(`'''` 또는 `"""`)는 **여러 줄 문자열**을 만들 때 사용한다.
+- 작은따옴표와 큰따옴표는 동일
+- 세 개의 따옴표(`'''` 또는 `"""`)는 **여러 줄 문자열**을 만들 때 사용
 
 ```{python}
 multi_line = """이것은
@@ -268,9 +319,9 @@ multi_line = """이것은
 print(multi_line)
 ```
 
-### 문자열 인덱싱(Indexing)과 슬라이싱(Slicing)  
+### 문자열 인덱싱과 슬라이싱
 
-**문자열은 인덱스를 사용하여 개별 문자에 접근할 수 있다.**  **인덱스는 0부터 시작**하며, 음수 인덱스를 사용하면 뒤에서부터 접근 가능하다.  
+**문자열은 인덱스를 사용하여 개별 문자에 접근할 수 있다**(인덱싱). **인덱스는 0부터 시작**하며, 음수 인덱스를 사용하면 뒤에서부터 접근 가능하다.  
 
 #### 인덱싱
 
@@ -279,6 +330,9 @@ print(multi_line)
 ```{python}
 text = "Python"
 print(text[0])   # 'P'
+```
+
+```{python} 
 print(text[-1])  # 'n' (뒤에서 첫 번째 문자)
 ```
 
@@ -289,9 +343,21 @@ print(text[-1])  # 'n' (뒤에서 첫 번째 문자)
 ```{python}
 text = "Python"
 print(text[0:4])  # 'Pyth' (0부터 3까지)
+```
+
+```{python} 
 print(text[:3])   # 'Pyt' (처음부터 2까지)
+```
+
+```{python}  
 print(text[2:])   # 'thon' (2부터 끝까지)
+```
+
+```{python} 
 print(text[-4:-1])# 'tho' (뒤에서 4번째부터 뒤에서 2번째까지)
+```
+
+```{python}  
 print(text[::-1]) # 'nohtyP' (문자열 뒤집기)
 ```
 
@@ -303,12 +369,15 @@ print(text[::-1]) # 'nohtyP' (문자열 뒤집기)
 |--------|------|------|
 | `+` | 문자열 연결 | `'Hello' + 'World' → 'HelloWorld'` |
 | `*` | 문자열 반복 | `'Python' * 3 → 'PythonPythonPython'` |
+: 문자열 연산자
 
 ```{python}
 a = "Hello"
 b = "World"
 print(a + " " + b)  # "Hello World"
+```
 
+```{python} 
 c = "Python"
 print(c * 3)  # "PythonPythonPython"
 ```
@@ -324,7 +393,7 @@ print(len(text))  # 12
 
 ### 문자열 내장 함수  
 
-문자열 조작을 위한 다양한 함수가 제공된다.  
+파이썬에선 문자열 조작을 위한 다양한 함수가 제공된다.  
 
 | 함수 | 설명 | 예제 |
 |------|------|------|
@@ -342,10 +411,25 @@ print(len(text))  # 12
 ```{python}
 text = " hello python "
 print(text.upper())    # " HELLO PYTHON "
+```
+
+```{python} 
 print(text.strip())    # "hello python"
+```
+
+```{python} 
 print(text.replace("python", "world"))  # " hello world "
+```
+
+```{python}  
 print("apple,banana,grape".split(","))  # ['apple', 'banana', 'grape']
+```
+
+```{python}  
 print("-".join(["2025", "01", "30"]))   # "2025-01-30"
+```
+
+```{python}  
 print("banana".count("a"))  # 3
 ```
 
@@ -382,7 +466,9 @@ print(result)
 ```{python}
 result = "Name: {0}, Age: {1}".format(name, age)
 print(result)  # 출력: Name: Alice, Age: 30
+```
 
+```{python} 
 result = "Name: {name}, Age: {age}".format(name="Alice", age=30)
 print(result)
 ```
@@ -398,7 +484,7 @@ print(result)  # 출력: Name: Alice, Age: 30
 ```
 
 표현식 삽입
-: - f-string에서는 변수뿐만 아니라 **표현식**도 바로 삽입할 수 있다.
+: - f-string에서는 변수뿐만 아니라 **표현식**도 바로 삽입 가능
 
 ```{python}
 x = 5
@@ -413,9 +499,9 @@ print(result)  # 출력: 5 * 2 = 10
 | f-strings        | `f"{}"`를 사용하여 변수를 직접 삽입   | 가독성, 성능, 간결함  | Python 3.6 이상만 지원 |
 : 각 방식의 장단점
 
-- **가장 최신의 방식은 f-string**이다. Python 3.6 이상에서 사용할 수 있으며, 성능과 가독성이 뛰어나 대부분의 경우 이 방식을 사용한다.
-- **`str.format()`**은 여전히 유용하지만, 최신 코드에서는 f-string으로 대체되고 있다.
-- **`%` 포맷팅**은 구식 방식이며, 가독성 및 유지보수 측면에서 추천되지 않는다.
+- **가장 최신의 방식은 f-string**이다. Python 3.6 이상에서 사용할 수 있으며, 성능과 가독성이 뛰어나 대부분의 경우 이 방식을 사용
+- **`str.format()`**은 여전히 유용하지만, 최신 코드에서는 f-string으로 대체
+- **`%` 포맷팅**은 구식 방식이며, 가독성 및 유지보수 측면에서 추천되지 않음
 
 
 ### 문자열 비교  
@@ -432,10 +518,51 @@ print(result)  # 출력: 5 * 2 = 10
 
 ```{python}
 print("apple" == "apple")  # True
+```
+
+```{python}  
 print("apple" != "banana") # True
+```
+
+```{python} 
 print("apple" < "banana")  # True (사전순 비교)
+```
+
+```{python}  
 print("Zebra" > "apple")   # False ('Z'의 ASCII 값이 'a'보다 작음)
 ```
+
+::: {#nte-ascii .callout-note icon=false title="`a`가 `A`보다 큰 이유"}
+
+파이썬에서 문자 `'a'`가 `'A'`보다 큰 이유는 **문자의 내부 코드 값(ASCII 또는 유니코드)** 때문이다.  
+
+- **소문자**는 **대문자**보다 **큰 숫자 값**을 가지므로, 파이썬에서 `'a' > 'A'`는 **참(True)**으로 평가됨
+
+ASCII 코드란?  
+: - **문자를 숫자로 변환**하는 표준 체계로, 컴퓨터가 문자를 이해할 수 있도록 **숫자 코드**로 저장함.  
+- **'A'**의 ASCII 값: **65**  
+- **'a'**의 ASCII 값: **97**
+
+파이썬 코드로 확인하기
+:  
+```{python}
+# ord() 함수로 문자에 해당하는 숫자 코드(ASCII 값)를 확인
+uppercase_A = ord('A')
+lowercase_a = ord('a')
+
+print(f"'A'의 ASCII 값: {uppercase_A}")  # 65
+print(f"'a'의 ASCII 값: {lowercase_a}")  # 97
+
+# 비교 결과 확인
+print(f"'a' > 'A' 결과: {'a' > 'A'}")  # True
+```
+
+정리하면 다음과 같다.
+
+- 파이썬은 문자를 비교할 때 **문자 내부의 숫자 값(ASCII/유니코드)**을 기준으로 비교함  
+- 따라서 **소문자**의 코드 값이 **대문자**보다 크기 때문에, `'a' > 'A'`는 **True**가 됨
+
+:::
 
 ### 문자열을 숫자로 변환  
 
@@ -444,7 +571,9 @@ print("Zebra" > "apple")   # False ('Z'의 ASCII 값이 'a'보다 작음)
 ```{python}
 num_str = "100"
 print(int(num_str) + 5)  # 105 (문자열 → 정수)
+```
 
+```{python}  
 float_str = "3.14"
 print(float(float_str) * 2)  # 6.28 (문자열 → 실수)
 ```
@@ -462,7 +591,7 @@ print(float(float_str) * 2)  # 6.28 (문자열 → 실수)
 | **비교** | 문자열 비교 | `"apple" < "banana" → True` |
 : {tbl-colwidths="[20,40,40]"}
 
-파이썬의 문자열은 **변경할 수 없는(Immutable) 객체**이지만, 다양한 함수와 연산을 활용하여 쉽게 다룰 수 있다.
+파이썬의 문자열은 **변경할 수 없는(Immutable) 객체** (@sec-mutable-immutable 참고)이지만, 다양한 함수와 연산을 활용하여 쉽게 다룰 수 있다.
 
 ## 논리형 {#sec-boolean}
 
@@ -470,7 +599,7 @@ print(float(float_str) * 2)  # 6.28 (문자열 → 실수)
 
 ### 불리언 값과 생성  
 
-`True` 또는 `False` 값을 가지며, 첫 글자는 반드시 대문자로 작성한다(`true`, `false`는 오류 발생)  .
+`True` 또는 `False` 값을 가지며, 첫 글자는 반드시 대문자로 작성한다(`true`, `false`는 오류 발생).
 
 ```{python}
 a = True
@@ -522,7 +651,13 @@ NOT (부정)
 
 ```{python}
 print(True and False)  # False
+```
+
+```{python}  
 print(True or False)   # True
+```
+
+```{python}  
 print(not True)        # False
 ```
 
@@ -531,8 +666,17 @@ print(not True)        # False
 
 ```{python}
 print(int(True))   # 1
+```
+
+```{python}  
 print(int(False))  # 0
+```
+
+```{python}  
 print(bool(1))     # True
+```
+
+```{python}  
 print(bool(0))     # False
 ```
 
@@ -550,11 +694,29 @@ print(bool(0))     # False
 
 ```{python}
 print(bool(0))       # False
+```
+
+```{python}  
 print(bool(0.0))     # False
+```
+
+```{python}  
 print(bool(""))      # False
+```
+
+```{python}  
 print(bool([]))      # False
+```
+
+```{python}  
 print(bool(None))    # False
+```
+
+```{python}   
 print(bool("Python"))  # True (문자가 있으면 True)
+```
+
+```{python}  
 print(bool([1, 2, 3]))  # True (리스트에 요소가 있으면 True)
 ```
 
@@ -630,11 +792,18 @@ print(9 ** 0.5) # 3.0 (제곱근)
 ```
 
 #### 산술 연산과 자료형  
+
 `int`와 `float`이 함께 연산되면 결과는 `float`이 된다.  
 
 ```{python}
 print(5 + 2.5)       # 7.5 (int + float = float)
+```
+
+```{python}  
 print(10 / 2)        # 5.0 (나눗셈 결과는 항상 float)
+```
+
+```{python}  
 print(int(10 / 2))   # 5   (int형 변환)
 ```
 
@@ -672,7 +841,13 @@ print(int(10 / 2))   # 5   (int형 변환)
 
 ```{python}
 print(2 + 3 * 4)     # 14 (* 먼저 계산)
+```
+
+```{python}  
 print((2 + 3) * 4)   # 20 (괄호 안 먼저 계산)
+```
+
+```{python}  
 print(2 ** 3 * 4)    # 32 (** 먼저 계산)
 ```
 우선 순위가 있는 연산시 혼동을 피하기 위해 괄로로 묶어 계산한다.
@@ -685,6 +860,7 @@ print(2 ** 3 * 4)    # 32 (** 먼저 계산)
 result = 2 ** 3 ** 2
 print(result)  # 출력: 512
 ```
+
 거듭제곱 `**` 연산자는 **오른쪽 결합**(right-associative)이다.  따라서 `2 ** (3 ** 2)`로 계산되어 `2 ** 9 = 512`가 된다.
 
 곱셈과 덧셈 우선순위
@@ -778,7 +954,7 @@ print(result)  # 출력: True
 #### 비교 연산자의 특징  
 
 - **문자열 비교**  
-  : 문자열도 비교 연산자로 비교할 수 있으며, **사전 순서(ASCII 코드 값)** 에 따라 결과가 결정된다. 
+  : 문자열도 비교 연산자로 비교할 수 있으며, **사전 순서(ASCII 코드 값)**(@nte-ascii 참고) 에 따라 결과가 결정된다. 
   
   ```{python}
   print("apple" < "banana")  # True ("a"가 "b"보다 앞에 있음)
@@ -816,6 +992,7 @@ print(result)  # 출력: True
 | `and` | **둘 다 `True`일 때만 `True`**, 하나라도 `False`이면 `False` | `True and True` | `True` |
 | `or` | **둘 중 하나라도 `True`이면 `True`** | `True or False` | `True` |
 | `not` | **`True`를 `False`로, `False`를 `True`로 변환** | `not True` | `False` |
+: 논리 연산자
 
 #### and 연산자
 
@@ -823,8 +1000,17 @@ print(result)  # 출력: True
 
 ```{python}
 print(True and True)   # True
+```
+
+```{python}   
 print(True and False)  # False
+```
+
+```{python}  
 print(False and True)  # False
+```
+
+```{python}  
 print(False and False) # False
 ```
 
@@ -840,15 +1026,30 @@ print(x > 5 and x > 20)  # False (하나가 False)
 
 ```{python}
 print(True or True)   # True
+```
+
+```{python}   
 print(True or False)  # True
+```
+
+```{python}  
 print(False or True)  # True
+```
+
+```{python}  
 print(False or False) # False
 ```
 
 ```{python}
 y = 7
 print(y < 5 or y > 6)   # True (하나가 True)
+```
+
+```{python}  
 print(y < 5 or y == 7)  # True (하나가 True)
+```
+
+```{python}  
 print(y < 5 or y > 10)  # False (둘 다 False)
 ```
 
@@ -873,11 +1074,18 @@ print(not (a > 10))  # True (a > 10이 False이므로 not을 적용하면 True)
 ```{python}
 age = 25
 print(age > 18 and age < 30)  # True (두 조건이 모두 참)
+```
+
+```{python}  
 print(age < 18 or age > 30)   # False (둘 다 거짓)
+```
+
+```{python}  
 print(not age > 18)           # False (age가 18보다 크므로 not을 적용하면 False)
 ```
 
 #### 논리연산 단축 평가  
+
 파이썬은 논리 연산을 수행할 때 **불필요한 연산을 생략**하는 **단축 평가(short-circuit evaluation)** 를 적용한다.
 
 `and` 연산자에서 단축 평가
@@ -900,8 +1108,17 @@ print(True or print("실행되지 않음"))  # True만 출력됨
 
 ```{python}
 print(bool(0))    # False
+```
+
+```{python}  
 print(bool(1))    # True
+```
+
+```{python}  
 print(bool(""))   # False
+```
+
+```{python}  
 print(bool("Hi")) # True
 ```
 
@@ -913,6 +1130,9 @@ print(bool("Hi")) # True
 
 ```{python}
 print(10 and 20)  # 20 (10이 True이므로 20 반환)
+```
+
+```{python}   
 print(0 and 20)   # 0 (0이 False이므로 0 반환)
 ```
 
@@ -921,6 +1141,9 @@ print(0 and 20)   # 0 (0이 False이므로 0 반환)
 
 ```{python}
 print(10 or 20)  # 10 (첫 번째 값이 True이므로 그대로 반환)
+```
+
+```{python}  
 print(0 or 20)   # 20 (첫 번째 값이 False이므로 두 번째 값 반환)
 ```
 
@@ -931,6 +1154,7 @@ print(0 or 20)   # 20 (첫 번째 값이 False이므로 두 번째 값 반환)
 | `and` | 둘 다 `True`일 때 `True` | `True and False` | `False` |
 | `or` | 하나라도 `True`이면 `True` | `True or False` | `True` |
 | `not` | `True ↔ False` 변환 | `not True` | `False` |
+: 논리 연산자
 
 논리 연산자는 **조건문, 반복문, 복잡한 조건을 평가할 때 필수적으로 사용**되며, **단축 평가**와 **값 반환 방식**을 이해하면 더욱 효율적으로 활용할 수 있다.
 
@@ -952,47 +1176,67 @@ print(0 or 20)   # 20 (첫 번째 값이 False이므로 두 번째 값 반환)
 
 #### 기본 대입 연산자
 
+우측항을 좌측 좌측항에 대입한다.
+
 - `=`  
 
-```{python}
-x = 10
-y = 5
-print(x)  # 10
-print(y)  # 5
-```
+    ```{python}
+    x = 10
+    y = 5
+    print(x)  # 10
+    print(y)  # 5
+    ```
 
 #### 복합 대입 연산자
 
+연산자 둘 이상을 함께 사용하는 경우이다.
+
 - `+=`, `-=`, `*=`, `/=`, `//=`, `%=`, `**=`
 
-```{python}
-a = 10
-
-a += 5   # a = a + 5
-print(a)  # 15
-
-a -= 3   # a = a - 3
-print(a)  # 12
-
-a *= 2   # a = a * 2
-print(a)  # 24
-
-a /= 4   # a = a / 4
-print(a)  # 6.0 (나눗셈 결과는 항상 float)
-
-a //= 2  # a = a // 2
-print(a)  # 3 (정수 나눗셈)
-
-a %= 2   # a = a % 2
-print(a)  # 1 (나머지 연산)
-
-a **= 3  # a = a ** 3
-print(a)  # 1 (1의 3제곱)
-```
+    ```{python}
+    a = 10
+    
+    a += 5   # a = a + 5
+    print(a)  # 15
+    ```
+    
+    ```{python}      
+    a -= 3   # a = a - 3
+    print(a)  # 12
+    ```
+    
+    ```{python} 
+    a *= 2   # a = a * 2
+    print(a)  # 24
+    ```
+    
+    ```{python}      
+    a /= 4   # a = a / 4
+    print(a)  # 6.0 (나눗셈 결과는 항상 float)
+    ```
+    
+    ```{python}     
+    a //= 2  # a = a // 2
+    print(a)  # 3 (정수 나눗셈)
+    ```
+    
+    ```{python}      
+    a %= 2   # a = a % 2
+    print(a)  # 1 (나머지 연산)
+    ```
+    
+    ```{python}     
+    a **= 3  # a = a ** 3
+    print(a)  # 1 (1의 3제곱)
+    ```
 
 #### 여러 개의 변수에 값 대입  
 
+여러 변수에 값을 한번에 대입하는 경우이다.
+
 ##### 여러 변수에 한 번에 대입 
+
+가장 우측항을 좌측이로 대입 연산을 이어 나간다. 
 
 ```{python}
 x = y = z = 100
@@ -1000,6 +1244,8 @@ print(x, y, z)  # 100 100 100
 ```
 
 ##### 여러 변수에 각각 다른 값 대입 (튜플 형태)
+
+좌측항과 우측항 순서에 맞춰 값을 대입한다.
 
 ```{python}
 a, b, c = 1, 2, 3
@@ -1015,6 +1261,29 @@ a, b = 10, 20
 a, b = b, a
 print(a, b)  # 20 10
 ```
+
+::: {.callout-note icon=false title="스왑(Swap)"}
+
+컴퓨터 프로그래밍에서 교체 연산(swap) 또는 스왑 알고리즘(swap algorithm)은 두 변수에 들어 있는 값을 서로 맞바꾸는 연산 또는 이러한 연산을 사용하는 알고리즘이다.[^swap]
+
+[^swap]: [https://ko.m.wikipedia.org/wiki/교체_연산](https://ko.m.wikipedia.org/wiki/%EA%B5%90%EC%B2%B4_%EC%97%B0%EC%82%B0){target="_blank"}
+
+```{python}
+A = 5
+B = 10
+
+# 일반적인 스왑 방법 (임시 변수 사용)
+TEMP = A
+A = B
+B = TEMP
+
+print(f"A: {A}, B: {B}")  # A: 10, B: 5
+
+# 파이썬에서는 한 줄로 스왑 가능 (튜플 언패킹)
+A, B = B, A
+print(f"A: {A}, B: {B}")  # A: 5, B: 10 
+```
+:::
 
 #### 리스트에서 값을 대입하는 언패킹(unpacking)
 
@@ -1044,9 +1313,9 @@ print(x, y, z)  # 1 2 3
 | `>>` | 오른쪽 시프트 (비트 이동, `2^n` 배 감소) | `a >> 1` | `2 (10)` |
 
 
-![& | ^ 연산](images/bitandorxor.png)
+![AND, OR, XOR 연산](images/bitandorxor.png)
 
-![시프트 연산](images/bitshiftnot.png)
+![시프트 연산](images/bitandorxor.png)
 
 
 ```{python}
@@ -1054,10 +1323,25 @@ a = 5  # 101 (2진수)
 b = 3  # 011 (2진수)
 
 print(a & b)  # 1  (001)
+```
+
+```{python} 
 print(a | b)  # 7  (111)
+```
+
+```{python}  
 print(a ^ b)  # 6  (110)
+```
+
+```{python}  
 print(~a)     # -6 (음수 표현 방식)
+```
+
+```{python}  
 print(a << 1) # 10 (1010) → 2배 증가
+```
+
+```{python}  
 print(a >> 1) # 2  (10)   → 2배 감소
 ```
 
@@ -1074,7 +1358,9 @@ print(a >> 1) # 2  (10)   → 2배 감소
 text = "hello"
 print('h' in text)     # True
 print('z' not in text) # True
+```
 
+```{python} 
 numbers = [1, 2, 3, 4]
 print(3 in numbers)    # True
 print(5 not in numbers) # True
@@ -1082,6 +1368,7 @@ print(5 not in numbers) # True
 
 
 #### 식별 연산자 (Identity Operators)  
+
 식별 연산자는 **두 변수가 같은 객체를 가리키는지 확인**할 때 사용한다(==은 값 비교, `is`는 객체 비교).  
 
 | 연산자 | 설명 | 예제 | 결과 |
@@ -1095,8 +1382,17 @@ b = a
 c = [1, 2, 3]
 
 print(a is b)   # True (같은 객체를 가리킴)
+```
+
+```{python} 
 print(a is c)   # False (같은 값이지만 다른 객체)
+```
+
+```{python} 
 print(a == c)   # True (값이 같음)
+```
+
+```{python}  
 print(a is not c) # True (다른 객체)
 ```
 
@@ -1111,12 +1407,13 @@ print(a is not c) # True (다른 객체)
 | 한 줄 주석 | `#`을 사용하여 작성 | `# 변수 선언` |
 | 여러 줄 주석 | `"""` 또는 `'''`로 감싸서 작성 | `""" 여러 줄 주석 """` |
 | 여러 줄 `#` 주석 | 여러 줄에 걸쳐 `#` 사용 | `# 첫 번째 줄` <br> `# 두 번째 줄` |
+: 주석 유형 {tbl-colwidths="[20,40,40]"}
 
 
 ### 한 줄 주석   
 한 줄 주석(Single-line Comment)은 `#` 기호를 사용하여 작성한다.  
 
-```{python}
+```python
 # 변수 선언
 x = 10  # x에 10을 할당
 print(x)  # x 값을 출력
@@ -1131,7 +1428,7 @@ print(x)  # x 값을 출력
 
 여러 줄에 걸쳐 주석을 추가하는 경우 `"""` 또는 `'''` 사용한다.
 
-```{python}
+```python
 """
 이 코드는 사칙연산을 수행하는 코드입니다.
 각 연산 결과를 출력합니다.
@@ -1143,7 +1440,7 @@ print(a + b)  # 덧셈
 print(a - b)  # 뺄셈
 ```
 
-```{python}
+```python
 '''
 여러 줄 주석을 사용하여
 설명을 추가할 수 있습니다.
@@ -1153,12 +1450,11 @@ print("Hello, World!")
 
 `"""` 또는 `'''`로 감싸면 여러 줄을 주석 처리할 수 있다.  다만, `"""`와 `'''`는 **문자열 리터럴로도 사용될 수 있으므로**, 문서화 문자열(docstring)로 인식될 수 있다.
 
----
 
-#### 여러 줄 주석 - 여러 개의 `#` 사용  
+#### 여러 줄 주석 - 여러 개의 # 사용  
 여러 줄을 주석 처리할 때, `#`을 각 줄마다 붙이는 방법도 있다.  
 
-```{python}
+```python
 # 이 코드는 두 숫자를 더하는 코드입니다.
 # 결과를 출력합니다.
 
@@ -1185,7 +1481,7 @@ print(x * y)  # 200 출력
 #### 함수 설명으로 활용  
 함수의 설명(docstring)을 추가할 때 `"""` 또는 `'''`를 사용하면 **문서화 문자열(docstring)**로 활용할 수 있다. 
 
-```{python}
+```python
 def add(a, b):
     """두 수를 더하는 함수"""
     return a + b
@@ -1194,6 +1490,10 @@ print(add(3, 5))  # 8 출력
 ```
 
 `help(add)`를 실행하면 함수의 설명이 출력된다.
+
+```{python} 
+help(add)
+```
 
 
 ### 주석 작성 시 주의할 점  
