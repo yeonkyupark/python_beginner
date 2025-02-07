@@ -683,6 +683,101 @@ C vs.&nbsp;Python: 파일 내용 읽어 오기
 <li><p>설치된 파이썬 버전이 출력되면 정상적으로 설치된 것이다.</p></li>
 </ul>
 <p>설치 후에는 <a href="#sec-idle" class="quarto-xref"><span>IDLE</span></a>, <a href="#sec-vsc" class="quarto-xref"><span>VS Code</span></a>, <a href="#sec-jupyter-notebook" class="quarto-xref"><span>Jupyter Notebook</span></a> 등의 개발 환경을 설정하여 코딩을 시작할 수 있다.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled" title="코딩 vs. 프로그래밍">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+코딩 vs.&nbsp;프로그래밍
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>코딩</strong>과 <strong>프로그래밍</strong>은 종종 혼용되지만, 둘은 의미와 범위에서 차이가 있다. 아래 표를 통해 두 개념의 차이점을 비교할 수 있다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 40%">
+<col style="width: 45%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>구분</th>
+<th>코딩 (Coding)</th>
+<th>프로그래밍 (Programming)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>정의</strong></td>
+<td>특정 프로그래밍 언어의 문법에 따라 코드를 작성하는 과정</td>
+<td>문제 해결을 위해 소프트웨어를 설계하고 개발하는 전체 과정</td>
+</tr>
+<tr class="even">
+<td><strong>목적</strong></td>
+<td>컴퓨터가 이해할 수 있는 명령어를 작성하는 것</td>
+<td>문제를 분석하고, 알고리즘을 설계하여 최적의 솔루션을 개발하는 것</td>
+</tr>
+<tr class="odd">
+<td><strong>범위</strong></td>
+<td>프로그래밍의 하위 개념으로, 코드 작성에 국한됨</td>
+<td>요구사항 분석, 설계, 코딩, 테스트, 디버깅, 유지보수 등 전체 소프트웨어 개발 과정 포함</td>
+</tr>
+<tr class="even">
+<td><strong>요구 능력</strong></td>
+<td>프로그래밍 언어의 문법 및 기초적인 논리 이해</td>
+<td>문제 해결 능력, 알고리즘 설계, 시스템 설계, 최적화 기술 등 종합적 사고 필요</td>
+</tr>
+<tr class="odd">
+<td><strong>도구</strong></td>
+<td>텍스트 에디터, IDE(통합 개발 환경)</td>
+<td>IDE, 버전 관리 시스템, 디버깅 도구, 테스트 프레임워크 등 다양한 개발 도구</td>
+</tr>
+<tr class="even">
+<td><strong>출력 결과</strong></td>
+<td>코드 파일 및 스크립트</td>
+<td>작동하는 소프트웨어, 애플리케이션 또는 시스템</td>
+</tr>
+</tbody>
+</table>
+<dl>
+<dt>예시</dt>
+<dd>
+<ol type="1">
+<li><strong>코딩</strong>
+<ul>
+<li><strong>파이썬으로 숫자를 더하는 코드 작성</strong></li>
+</ul></li>
+</ol>
+<p>::: {#e31189f2 .cell execution_count=1} <code>{.python .cell-code}  a = 5  b = 3  print(a + b)</code></p>
+<p>::: {.cell-output .cell-output-stdout} <code>8</code> ::: :::</p>
+</dd>
+</dl>
+<ul>
+<li>주어진 문제를 <strong>단순히 코드로 변환</strong>하는 과정</li>
+</ul>
+<ol start="2" type="1">
+<li><strong>프로그래밍</strong>
+<ul>
+<li><strong>가계부 애플리케이션 개발</strong>
+<ul>
+<li>요구사항 분석: 사용자가 수입과 지출을 입력할 수 있도록 설계<br>
+</li>
+<li>데이터 구조 설계: 수입, 지출을 관리할 데이터베이스 설계<br>
+</li>
+<li>인터페이스 설계: 사용자 친화적인 화면 개발<br>
+</li>
+<li><strong>코딩 포함</strong>: 기능을 구현하기 위한 코드 작성<br>
+</li>
+<li>테스트 및 디버깅: 오류 수정과 최적화<br>
+</li>
+<li>유지보수: 기능 추가 및 업데이트</li>
+</ul></li>
+</ul></li>
+</ol>
+<p>즉, <strong>코딩</strong>은 <strong>프로그래밍의 일부</strong>로, <strong>명령어를 작성</strong>하는 행위에 집중하고, <strong>프로그래밍</strong>은 <strong>전체 개발 과정</strong>을 포괄하는 개념으로, 문제 해결을 위한 <strong>설계, 개발, 유지보수</strong>까지 포함한다. 따라서 코딩은 프로그래밍의 첫걸음이며, 프로그래밍은 더 넓고 복잡한 과정이다.</p>
+</div>
+</div>
 </section>
 </section>
 <section id="개발-환경-설정" class="level2">
@@ -937,7 +1032,7 @@ C vs.&nbsp;Python: 파일 내용 읽어 오기
 </figure>
 </div>
 <p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div id="16ae9dba" class="cell" data-execution_count="1">
+<div id="f4b97c82" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World</code></pre>
