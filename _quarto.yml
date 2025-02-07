@@ -26,6 +26,12 @@ book:
       chapters:
         - 10python.qmd
         - 20syntax.qmd
+        - part: "문법"
+          chapters:
+            - 20syntax.qmd
+            - 21variable.qmd
+            - 22basicdatatype.qmd
+            - 23operator.qmd
         - 30datatype.qmd
         - 40controlflow.qmd
         - 50function.qmd
