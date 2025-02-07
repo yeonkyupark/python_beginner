@@ -1487,13 +1487,10 @@ def add(a, b):
     return a + b
 
 print(add(3, 5))  # 8 출력
+help(add)
 ```
 
 `help(add)`를 실행하면 함수의 설명이 출력된다.
-
-```{python} 
-help(add)
-```
 
 
 ### 주석 작성 시 주의할 점  
