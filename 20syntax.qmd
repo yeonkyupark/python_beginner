@@ -3,6 +3,17 @@ title: "문법"
 format: html
 ---
 
+
+## 변수
+{{< include 21variable.qmd >}}
+
+## 기본 데이터 타입
+{{< include 22basicdatatype.qmd >}}
+
+## 연산자
+{{< include 23operator.qmd >}}
+
+
 ## 저장장치
 
 데이터 저장은 일반적으로 저장장치계층에 따라 CPU, 메모리(RAM), 저장장치(HDD, SSD 등)을 이용한다. 이중 프로그래밍에 있어 밀접한 관련이 있는 저장소는 메모리(RAM)이다.
