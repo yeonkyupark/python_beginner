@@ -2191,6 +2191,7 @@ print(my_set)
 ```
 
 ```{python} 
+#| error: true
 # '3'이 존재하지 않으면 오류 발생
 my_set.remove(3)  # KeyError: 3
 
@@ -2388,6 +2389,8 @@ print(my_set)
 ```
 
 ```{python}
+#| error: true
+
 # 원소가 존재하지 않으면 오류 발생
 my_set.remove(10)  # KeyError: 10
 ```
@@ -2432,6 +2435,8 @@ print(my_set)
 ```
 
 ```{python}
+#| error: true
+
 # 집합이 비어있을 경우 오류 발생
 empty_set = set()
 empty_set.pop()  # KeyError: 'pop from an empty set'
