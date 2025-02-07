@@ -40,6 +40,16 @@ format: html
 
 #### 기본 if 문
 
+```{mermaid}
+%%| fig-cap: "기본 if문"
+
+flowchart TD
+    A[Start] --> B{x > 5?}
+    B -- 참(True) --> C["x는 5보다 크다" 출력] --> D[End]
+    B -- 거짓(False) --> D[End]
+
+``` 
+
 `if`문은 조건식이 `True`일 때 실행된다.
 
 ```{python}
@@ -53,6 +63,16 @@ if x > 5:
 - `if`문에 속하는 코드 블록은 반드시 **들여쓰기**해야 한다.
 
 #### if-else 문
+
+```{mermaid}
+%%| fig-cap: "if-else문"
+
+flowchart TD
+    A[Start] --> B{x > 5?}
+    B -- 참(True) --> C["x는 5보다 크다" 출력] --> D[End]
+    B -- 거짓(False) --> E["x는 5 이하이다" 출력] --> D[End]
+
+``` 
 
 `if`문 뒤에 `else`를 추가하면 조건이 거짓(`False`)일 때 실행할 코드를 지정할 수 있다.
 
@@ -68,6 +88,19 @@ else:
 - `if`의 조건이 `False`이면 `else` 블록의 코드가 실행된다.
 
 #### if-elif-else 문
+
+```{mermaid}
+flowchart TD
+%%| fig-cap: "if-elif-else문"
+
+flowchart TD
+    A[Start] --> B{x > 10?}
+    B -- 참(True) --> C["x는 10보다 크다" 출력] --> F[End]
+    B -- 거짓(False) --> D{x > 5?}
+    D -- 참(True) --> E["x는 5보다 크다" 출력] --> F[End]
+    D -- 거짓(False) --> G["x는 5 이하이다" 출력] --> F[End]
+
+```
 
 여러 개의 조건을 검사할 때 `elif`(else if)를 사용하여 **다중 조건문**을 만들 수 있다.
 
@@ -87,6 +120,18 @@ else:
 - 모든 조건이 `False`이면 `else` 블록이 실행된다.
 
 #### 중첩 if문
+
+```{mermaid}
+%%| fig-cap: "중첩 if문"
+
+flowchart TD
+    A[Start] --> B{x > 10?}
+    B -- 참(True) --> C["x는 10보다 크다" 출력] --> D{x > 20?}
+    D -- 참(True) --> E["x는 20보다 크다" 출력] --> F[End]
+    D -- 거짓(False) --> G["x는 10보다 크지만 20 이하는 아니다" 출력] --> F[End]
+    B -- 거짓(False) --> H[End]
+
+}
 
 `if`문 내부에 또 다른 `if`문을 포함하여 **조건을 중첩**할 수 있다.
 
