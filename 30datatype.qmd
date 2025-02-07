@@ -413,10 +413,9 @@ print(numbers)  # [10, 20, 0, 0, 0]
 `map()`[^map] 함수를 사용하면 리스트의 모든 원소를 변경할 수 있다.
 
 [^map]: 반복 가능한 모든 객체에 대해 주어진 함수를 수행
-
-```python
-map(function, iterable)
-```
+    ```python
+    map(function, iterable)
+    ```
 
 ```{python}
 numbers = [1, 2, 3, 4, 5]
