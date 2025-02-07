@@ -274,10 +274,23 @@ else:
 | `enumerate()` 사용 | `for i, v in enumerate(lst): print(i, v)` |
 | `zip()` 사용 | `for x, y in zip(lst1, lst2): print(x, y)` |
 | 중첩 반복문 | `for i in range(3): for j in range(2): print(i, j)` |
+: for문 사용 방식
 
 `for` 문을 활용하면 데이터를 **효율적으로 반복 처리**할 수 있다.
 
-#### 기본 `for` 문
+#### 기본 for 문
+
+```{mermaid}
+%%| fig-cap: "for문"
+
+flowchart TD
+    A[Start] --> B[Initialize loop variables]
+    B --> C{Condition check}
+    C -->|True| D[Execute loop body]
+    D --> E[Update loop variable]
+    E --> C
+    C -->|False| F[End]
+```
 
 리스트의 각 요소를 하나씩 가져와서 변수에 할당한 후, 코드 블록을 실행한다.
 
@@ -291,7 +304,7 @@ for fruit in fruits:
 - `for 변수 in iterable:` 형식으로 작성된다.
 - `iterable`의 각 요소가 `변수`에 차례대로 할당되면서 반복 실행된다.
 
-#### `range()` 함수와 함께 사용
+#### range() 함수와 함께 사용
 
 `range()` 함수는 일정 범위의 숫자를 생성하며, `for` 문과 함께 자주 사용된다.
 
@@ -300,7 +313,7 @@ for i in range(5):  # 0부터 4까지 반복
     print(i)
 ```
 
-##### `range(start, end, step)` 사용
+##### range(start, end, step) 사용
 - `range(시작, 끝, 증가값)` 형식으로 사용하면 특정 범위에서 일정 간격으로 값을 생성할 수 있다.
 
 ```{python}
@@ -342,7 +355,7 @@ for key in person:
     print(key)  # 키만 출력
 ```
 
-###### 값(value) 순회
+##### 값(value) 순회
 ```{python}
 for value in person.values():
     print(value)  # 값만 출력
@@ -354,7 +367,7 @@ for key, value in person.items():
     print(f"{key}: {value}")
 ```
 
-#### `enumerate()`를 사용하여 인덱스와 함께 순회
+#### enumerate()를 사용하여 인덱스와 함께 순회
 
 `enumerate()` 함수는 반복 가능한 객체를 순회하면서 **인덱스와 요소를 함께 제공**한다.
 
@@ -365,7 +378,7 @@ for index, fruit in enumerate(fruits):
     print(f"{index}: {fruit}")
 ```
 
-#### `zip()`을 사용하여 여러 리스트 동시에 순회
+#### zip()을 사용하여 여러 리스트 동시에 순회
 
 `zip()` 함수는 여러 리스트를 묶어서 동시에 순회할 때 사용한다.
 
@@ -387,9 +400,9 @@ for i in range(3):  # 0, 1, 2
         print(f"i={i}, j={j}")
 ```
 
-#### 반복문 제어문 (`break`, `continue`, `pass`)
+#### 반복문 제어문 
 
-##### `break` 문
+##### break 문
 `break` 문은 반복문을 즉시 종료한다.
 
 ```{python}
@@ -399,7 +412,7 @@ for i in range(5):
     print(i)
 ```
 
-##### `continue` 문
+##### continue 문
 `continue` 문은 현재 반복을 건너뛰고 다음 반복을 수행한다.
 
 ```{python}
@@ -409,7 +422,7 @@ for i in range(5):
     print(i)
 ```
 
-##### `pass` 문
+##### pass 문
 `pass` 문은 실행할 코드가 없을 때 사용하며, 문법적으로 오류가 발생하지 않도록 한다.
 
 ```{python}
@@ -420,7 +433,7 @@ for i in range(5):
         print(i)
 ```
 
-#### 반복문과 `else`
+#### 반복문과 else
 
 반복문에 `else`를 추가하면, **반복문이 정상적으로 끝났을 때** 실행된다. (`break`로 종료되면 실행되지 않음)
 
@@ -440,9 +453,9 @@ else:
     print("반복이 끝났습니다.")  # 실행되지 않음
 ```
 
-#### 리스트 내포 (List Comprehension)
+#### 리스트 내포 
 
-`for` 문을 사용하여 **리스트를 간결하게 생성**할 수 있다.
+`for` 문을 사용하여 **리스트를 간결하게 생성**(List Comprehension)할 수 있다.
 
 ```{python}
 # 기존 방식
@@ -462,6 +475,21 @@ print(squares)
 
 ### while문
 
+```{mermaid}
+%%| fig-cap: "while문"
+
+flowchart TD
+    A[Start] --> B[Initialize variables]
+    B --> C{While condition check}
+    
+    C -->|True| D[Execute loop body]
+    D --> E[Update variables]
+    E --> C
+    
+    C -->|False| F[End]
+
+```
+
 `while` 문은 **조건이 참(`True`)인 동안 반복 실행하는 루프**이다. 반복 횟수가 정해지지 않았거나, 특정 조건이 만족될 때까지 실행해야 하는 경우에 유용하다.
 
 
@@ -476,10 +504,12 @@ print(squares)
 `while` 문은 특정 조건이 만족될 때까지 실행되므로, **종료 조건을 명확히 설정**하는 것이 중요하다.
 
 #### 기본 구조
+
 ```python
 while 조건:
     실행할 코드
 ```
+
 - `조건`이 **참(True)**이면 블록 내부의 코드가 실행된다.
 - 실행이 끝나면 다시 `조건`을 검사하며, **조건이 거짓(False)이 될 때까지 반복**한다.
 
@@ -493,7 +523,8 @@ while count < 5:  # count가 5보다 작을 때까지 반복
 
 - `count`가 5가 되면 `count < 5` 조건이 거짓(False)이므로 반복문이 종료된다.
 
-#### 무한 루프 (`while True`)
+#### 무한 루프
+
 `while True`를 사용하면 **무한 루프**가 생성된다. 특정 조건을 만족하면 `break` 문을 사용하여 종료해야 한다.
 
 ```python
@@ -504,9 +535,10 @@ while True:
         break  # 루프 종료
 ```
 
-- 사용자가 `"exit"`을 입력하면 `break`가 실행되어 루프가 종료된다.
+- 사용자가 `"exit"`을 입력하면 `break`가 실행되어 루프가 종료
 
-#### `break` 문을 이용한 반복문 종료
+#### break 문을 이용한 반복문 종료
+
 `break` 문은 **조건을 만족하면 반복문을 즉시 종료**한다.
 
 ```{python}
@@ -519,7 +551,8 @@ while num <= 10:
     num += 1
 ```
 
-#### `continue` 문을 이용한 반복 건너뛰기
+#### continue 문을 이용한 반복 건너뛰기
+
 `continue` 문은 **특정 조건을 만나면 현재 반복을 건너뛰고 다음 반복으로 이동**한다.
 
 ```{python}
@@ -532,9 +565,10 @@ while num < 5:
     print(num)
 ```
 
-- `num == 3`일 때 `continue`가 실행되므로 `print(num)`이 실행되지 않는다.
+- `num == 3`일 때 `continue`가 실행되므로 `print(num)`이 실행되지 않음
 
-#### `else` 블록 사용
+#### else 블록 사용
+
 `while` 문이 정상적으로 종료되었을 때(즉, `break` 없이 종료) 실행된다.
 
 ```{python}
@@ -547,8 +581,8 @@ else:
     print("반복이 정상적으로 종료됨")
 ```
 
-- `num`이 5가 되어 `while` 조건이 `False`가 되면 `else` 블록이 실행된다.
-- 만약 `break`로 `while`을 중단하면 `else` 블록은 실행되지 않는다.
+- `num`이 5가 되어 `while` 조건이 `False`가 되면 `else` 블록이 실행
+- 만약 `break`로 `while`을 중단하면 `else` 블록은 실행되지 않음
 
 ```{python}
 num = 1
@@ -562,11 +596,12 @@ else:
     print("반복이 정상적으로 종료됨")  # 실행되지 않음
 ```
 
-- `num == 3`일 때 `break`가 실행되었으므로 `else` 블록은 실행되지 않는다.
+- `num == 3`일 때 `break`가 실행되었으므로 `else` 블록은 실행되지 않음
 
-#### `while` 문 활용 예제
+#### while 문 활용 예제
 
 ##### 사용자 입력을 받을 때까지 반복
+
 ```python
 password = "python123"
 
@@ -598,7 +633,7 @@ while True:
         print("더 작은 숫자를 입력하세요.")
 ```
 
-- 사용자가 정답을 맞힐 때까지 반복된다.
+- 사용자가 정답을 맞힐 때까지 반복
 
 
 ## 기타 제어문
@@ -614,10 +649,11 @@ while True:
 | `pass` | 실행할 코드가 없을 때 사용 | `if 조건: pass` |
 | `assert` | 조건 검증 및 예외 발생 | `assert x > 0, "오류 메시지"` |
 | `with` | 리소스 자동 관리 | `with open("파일") as f:` |
+: 기타 제어문
 
 이러한 제어문을 활용하면 **코드를 더 효율적으로 관리하고, 오류를 방지**할 수 있다.
 
-### `break` 문: 반복문 강제 종료
+### break 문: 반복문 강제 종료
 `break` 문은 **현재 실행 중인 반복문(`for`, `while`)을 즉시 종료**한다.
 
 ```{python}
@@ -627,9 +663,10 @@ for i in range(1, 6):
     print(i)
 ```
 
-- `i == 3`일 때 `break`가 실행되어 반복문이 종료된다.
+- `i == 3`일 때 `break`가 실행되어 반복문이 종료
 
-#### `while` 문에서 `break` 사용
+#### while 문에서 break 사용
+
 ```{python}
 count = 0
 
@@ -640,7 +677,8 @@ while count < 10:
     count += 1
 ```
 
-### `continue` 문: 현재 반복 건너뛰기
+### continue 문: 현재 반복 건너뛰기
+
 `continue` 문은 **현재 반복을 건너뛰고 다음 반복으로 이동**한다.
 
 ```{python}
@@ -650,9 +688,10 @@ for i in range(1, 6):
     print(i)
 ```
 
-- `i == 3`일 때 `print(i)`가 실행되지 않고 다음 반복으로 넘어간다.
+- `i == 3`일 때 `print(i)`가 실행되지 않고 다음 반복으로 넘어감감
 
-#### `while` 문에서 `continue` 사용
+#### while 문에서 continue 사용
+
 ```{python}
 count = 0
 
@@ -663,12 +702,14 @@ while count < 5:
     print(count)
 ```
 
-- `count == 3`일 때 `print(count)`가 실행되지 않는다.
+- `count == 3`일 때 `print(count)`가 실행되지 않음
 
-### `else` 문과 반복문
+### else 문과 반복문
+
 `for` 또는 `while` 반복문에서 **정상적으로 종료되었을 때(`break` 없이 종료될 때)** `else` 블록이 실행된다.
 
-#### `for` 문에서 `else` 사용
+#### for 문에서 else 사용
+
 ```{python}
 for i in range(1, 6):
     print(i)
@@ -676,7 +717,7 @@ else:
     print("반복문이 정상적으로 종료됨")
 ```
 
-- `break`가 발생하지 않았기 때문에 `else` 블록이 실행된다.
+- `break`가 발생하지 않았기 때문에 `else` 블록이 실행
 
 ```{python}
 for i in range(1, 6):
@@ -687,9 +728,10 @@ else:
     print("반복문이 정상적으로 종료됨")  # 실행되지 않음
 ```
 
-- `break`로 종료되었기 때문에 `else` 블록이 실행되지 않는다.
+- `break`로 종료되었기 때문에 `else` 블록이 실행되지 않음
 
-#### `while` 문에서 `else` 사용
+#### while 문에서 else 사용
+
 ```{python}
 count = 0
 
@@ -700,9 +742,10 @@ else:
     print("반복문이 정상적으로 종료됨")
 ```
 
-- `while` 조건이 `False`가 되어 정상 종료되었으므로 `else`가 실행된다.
+- `while` 조건이 `False`가 되어 정상 종료되었으므로 `else`가 실행
 
-### `pass` 문: 코드 실행을 미룸
+### pass 문: 코드 실행을 미룸
+
 `pass` 문은 **아무 동작도 하지 않는 문장**으로, 문법적으로 코드가 필요하지만 실행할 내용이 없을 때 사용한다.
 
 ```{python}
@@ -712,7 +755,7 @@ for i in range(5):
     print(i)
 ```
 
-- `pass` 문이 있어도 프로그램 흐름에는 영향을 주지 않는다.
+- `pass` 문이 있어도 프로그램 흐름에는 영향을 주지 않음
 
 ```{python}
 for i in range(5):
@@ -721,9 +764,10 @@ for i in range(5):
     print(i)
 ```
 
-- `continue`문을 사용하게 되면 `i == 2`인 경우 실행하지 않고 다음 반복을 진행하게 된다.
+- `continue`문을 사용하게 되면 `i == 2`인 경우 실행하지 않고 다음 반복을 진행하게 됨
 
 #### 예제: 함수 또는 클래스의 구조만 미리 작성
+
 ```{python}
 def my_function():
     pass  # 함수 구현은 나중에 작성
@@ -732,13 +776,15 @@ class MyClass:
     pass  # 클래스 구현은 나중에 작성
 ```
 
-- `pass`를 사용하면 **추후 구현할 내용을 미리 작성해둘 수 있다.**
+- `pass`를 사용하면 **추후 구현할 내용을 미리 작성해둘 수 있음**
 
-### `assert` 문: 조건 검증
+### assert 문: 조건 검증
+
 `assert` 문은 **조건이 참(`True`)인지 확인**하고, 거짓(`False`)이면 `AssertionError` 예외를 발생시킨다. 주로 **디버깅이나 테스트용**으로 사용된다.
 
 ```{python}
 #| error: true
+
 x = 10
 assert x > 0  # 정상 실행됨
 
@@ -746,9 +792,10 @@ y = -5
 assert y > 0, "y는 0보다 커야 합니다."  # AssertionError 발생
 ```
 
-- `assert`는 **개발 중 오류를 조기에 감지하는 용도로 활용**된다.
+- `assert`는 **개발 중 오류를 조기에 감지하는 용도로 활용**
 
-#### `with` 문: 리소스 자동 관리
+#### with 문: 리소스 자동 관리
+
 `with` 문은 **파일, 네트워크 연결 등 리소스를 자동으로 관리**한다. `with` 문을 사용하면 **파일을 자동으로 닫을 수 있어 `close()`를 직접 호출할 필요가 없다.**
 
 ```python
@@ -756,7 +803,7 @@ with open("example.txt", "w") as file:
     file.write("Hello, World!")
 ```
 
-- `with` 문이 끝나면 파일이 자동으로 닫힌다.
+- `with` 문이 끝나면 파일이 자동으로 닫힘0
 
 ```python
 file = open("example.txt", "w")
@@ -765,7 +812,7 @@ try:
 finally:
     file.close()  # 직접 파일을 닫아야 함
 ```
-- `with` 문을 사용하면 `try-finally` 없이 리소스를 안전하게 정리할 수 있다.
+- `with` 문을 사용하면 `try-finally` 없이 리소스를 안전하게 정리 가능
 
 
 
