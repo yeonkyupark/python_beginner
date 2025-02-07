@@ -1432,6 +1432,7 @@ print(t)  # (10, 40)
 딕셔너리는 **키와 값의 쌍으로 데이터를 저장하며, 키를 통해 빠르게 값에 접근**할 수 있는 자료형이다. `dict()` 함수나 중괄호 `{}`를 사용하여 다양한 방식으로 딕셔너리를 생성할 수 있다.
 
 #### 기본 딕셔너리 생성
+
 딕셔너리를 **중괄호** `{}`로 생성하고, **각 키와 값을 콜론 `:`**으로 구분하여 정의한다. 여러 쌍을 추가할 때는 쉼표 `,`로 구분한다.
 
 ```{python}
@@ -1441,7 +1442,7 @@ person = {"name": "John", "age": 30, "city": "New York"}
 print(person)
 ```
 
-#### `dict()` 함수 사용
+#### dict() 함수 사용
 
 `dict()` 함수를 사용하여 딕셔너리를 생성할 수도 있다. 이 방법은 **키와 값을 튜플의 형태로 전달**하거나 **키워드 인자를 사용**하는 방식이다.
 
@@ -1469,15 +1470,17 @@ print(person)
 ```{python}
 # 빈 딕셔너리 생성
 empty_dict = {}
+print(empty_dict)   # 출력: {}
+```
 
+```{python} 
 # 또는
 empty_dict2 = dict()
-
-print(empty_dict)   # 출력: {}
 print(empty_dict2)  # 출력: {}
 ```
 
 #### 딕셔너리 생성 시 기본값 설정
+
 딕셔너리의 값으로 **기본값**을 설정할 수도 있다. **`defaultdict`**는 **`collections` 모듈**에서 제공하는 클래스인데, 특정 키가 존재하지 않으면 **기본값을 설정**해준다.
 
 ```{python}
@@ -1494,6 +1497,7 @@ print(d)
 ```
 
 #### 딕셔너리 컴프리헨션 사용
+
 딕셔너리 컴프리헨션(dictionary comprehension)을 사용하여 짧고 간결하게 딕셔너리를 생성할 수 있다.
 
 ```{python}
@@ -1517,6 +1521,7 @@ print(squares)
 | 키-값 쌍 가져오기 | `person.items()` | (키, 값) 튜플 목록 반환 |
 | 키 존재 여부 확인 | `"name" in person` | 키가 존재하는지 확인 |
 | 반복문에서 활용 | `for key, value in person.items():` | 모든 키-값 순회 |
+:딕셔너리 접근 방법
 
 딕셔너리는 키를 사용하여 데이터를 빠르게 조회할 수 있으며, `get()`을 사용하면 **KeyError를 방지**할 수 있다.
 
@@ -1528,7 +1533,13 @@ print(squares)
 person = {"name": "Alice", "age": 25, "city": "Seoul"}
 
 print(person["name"])  # Alice
+```
+
+```{python} 
 print(person["age"])   # 25
+```
+
+```{python} 
 print(person["city"])  # Seoul
 ```
 
@@ -1537,23 +1548,31 @@ print(person["city"])  # Seoul
 
 ```{python}
 #| error: true
+
 print(person["job"])  # KeyError 발생
 ```
 
-#### `get()` 메서드를 이용한 접근
+#### get() 메서드를 이용한 접근
 
 `get()` 메서드는 키가 존재하지 않을 경우 **기본값(default value)을 반환**할 수 있어 안전하게 값을 가져올 수 있다.
 
 ```{python}
 print(person.get("name"))     # Alice
+```
+
+```{python} 
 print(person.get("job"))      # None (KeyError 발생하지 않음)
+```
+
+```{python}
 print(person.get("job", "N/A"))  # 기본값 "N/A" 반환
+print(person.get("job", "찾는 키가 없습니다.")) 
 ```
 
 - `get("키", "기본값")` 형식으로 사용하며, 키가 없을 경우 기본값을 반환한다.
 - `get()`을 사용하면 **KeyError를 방지**할 수 있다.
 
-#### `keys()`를 이용한 키 목록 접근
+#### keys()를 이용한 키 목록 접근
 
 `keys()` 메서드는 **딕셔너리의 모든 키 목록**을 반환한다.
 
@@ -1568,7 +1587,7 @@ keys_list = list(person.keys())
 print(keys_list)  # ['name', 'age', 'city']
 ```
 
-#### `values()`를 이용한 값 목록 접근
+#### values()를 이용한 값 목록 접근
 
 `values()` 메서드는 **딕셔너리의 모든 값 목록**을 반환한다.
 
@@ -1583,7 +1602,7 @@ values_list = list(person.values())
 print(values_list)  # ['Alice', 25, 'Seoul']
 ```
 
-#### `items()`를 이용한 키-값 쌍 접근
+#### items()를 이용한 키-값 쌍 접근
 
 `items()` 메서드는 **딕셔너리의 모든 (키, 값) 쌍을 튜플로 반환**한다.
 
@@ -1598,33 +1617,38 @@ for key, value in person.items():
     print(f"{key}: {value}")
 ```
 
-#### `in` 연산자를 이용한 키 존재 여부 확인
+#### in 연산자를 이용한 키 존재 여부 확인
 
 딕셔너리에 특정 키가 존재하는지 확인하려면 `in` 연산자를 사용한다.
 
 ```{python}
 if "name" in person:
     print("name 키가 존재합니다.")  # 출력됨
+```
 
+```{python} 
 if "job" not in person:
     print("job 키가 존재하지 않습니다.")  # 출력됨
 ```
 
-#### 딕셔너리를 이용한 반복문(`for` 문)
+#### 딕셔너리를 이용한 반복문
 
-##### 키를 반복
+키를 반복
+:  
 ```{python}
 for key in person:
     print(key)  # name, age, city
 ```
 
-##### 값만 반복
+값을 반복
+:  
 ```{python}
 for value in person.values():
     print(value)  # Alice, 25, Seoul
 ```
 
-##### 키와 값을 동시에 반복
+키와 값을 동시에 반복
+:  
 ```{python}
 for key, value in person.items():
     print(f"{key}: {value}")
@@ -1641,10 +1665,12 @@ for key, value in person.items():
 | `setdefault()` 메서드 | 키가 존재하면 값 수정 안 하고, 없으면 기본값을 추가 | `person.setdefault("city", "New York")` |
 | 딕셔너리 컴프리헨션 | 조건에 맞는 키-값 쌍을 업데이트 | `{key: value + 1 for key, value in person.items()}` |
 | `dict()`와 `update()` 사용 | 기존 딕셔너리를 복사하고 업데이트 | `new_person = dict(person)` |
+: 딕셔너리 원소 수정
 
 딕셔너리에서는 **키를 사용하여 값을 수정**하거나 **`update()` 메서드를 사용하여 여러 값을 동시에 수정**할 수 있으며, **`setdefault()` 메서드를 통해 키가 없으면 추가**할 수 있다.
 
 #### 키를 이용한 값 수정
+
 딕셔너리에서 특정 **키의 값을 수정**하려면 해당 **키**를 사용하여 새로운 **값**을 할당하면 된다.
 
 ```{python}
@@ -1658,9 +1684,7 @@ print(person)
 ```
 
 #### `update()` 메서드 사용
-`update()` 메서드는 **기존 딕셔너리에 다른 딕셔너리나 키-값 쌍을 추가하거나 수정**하는 데 사용된다.  
-- 만약 **기존에 있는 키**가 있다면 **값을 수정**하고, 
-- **존재하지 않는 키**가 있다면 **새로운 키-값 쌍을 추가**한다.
+`update()` 메서드는 **기존 딕셔너리에 다른 딕셔너리나 키-값 쌍을 추가하거나 수정**하는 데 사용된다.  만약 **기존에 있는 키**가 있다면 **값을 수정**하고, **존재하지 않는 키**가 있다면 **새로운 키-값 쌍을 추가**한다.
 
 ```{python}
 # 딕셔너리 생성
@@ -1681,9 +1705,9 @@ person.update({"email": "john@example.com", "phone": "123-456-7890"})
 print(person)
 ```
 
-#### `setdefault()` 메서드 사용
-`setdefault()` 메서드는 딕셔너리에서 특정 **키가 존재하지 않으면 값이 추가되도록** 하는 메서드이다.  
-**키가 존재하면 값을 수정하지 않으며**, **키가 없다면 지정된 기본값을 추가**한다.
+#### setdefault() 메서드 사용
+
+`setdefault()` 메서드는 딕셔너리에서 특정 **키가 존재하지 않으면 값이 추가되도록** 하는 메서드이다. **키가 존재하면 값을 수정하지 않으며**, **키가 없다면 지정된 기본값을 추가**한다.
 
 ```{python}
 # 딕셔너리 생성
@@ -1697,6 +1721,7 @@ print(person)
 ```
 
 #### 딕셔너리 컴프리헨션 사용
+
 딕셔너리 컴프리헨션을 사용하여 **조건에 맞는 키-값 쌍을 업데이트**할 수도 있다.
 
 ```{python}
@@ -1709,7 +1734,8 @@ person = {key: (value + 1 if key == "age" else value) for key, value in person.i
 print(person)
 ```
 
-#### `dict()`와 `update()`로 새로운 딕셔너리 생성
+#### dict()와 update()로 새로운 딕셔너리 생성
+
 기존 딕셔너리를 기반으로 **새로운 딕셔너리를 만들고 업데이트**할 수도 있다.
 
 ```{python}
@@ -1733,10 +1759,12 @@ print(new_person)
 | `update()` 메서드 | 여러 키-값 쌍을 한 번에 추가 | `person.update({"city": "New York"})` |
 | `setdefault()` 메서드 | 키가 존재하지 않으면 값을 추가, 존재하면 값 유지 | `person.setdefault("city", "New York")` |
 | 딕셔너리 컴프리헨션 | 조건에 맞는 동적 추가 | `{**person, **{"city": "New York"}}` |
+: 딕셔너리 원소 추가 방법
 
 딕셔너리는 **새로운 키-값 쌍을 추가**하는 데 매우 유연하다. `update()`나 `setdefault()`를 사용하면 여러 키-값 쌍을 동시에 추가하거나 기존 값을 수정할 수 있으며, **딕셔너리 컴프리헨션**을 사용하여 동적으로 새로운 원소를 추가할 수 있다.
 
 #### 키-값 쌍을 직접 추가
+
 딕셔너리에서 **새로운 키-값 쌍을 추가**하려면, **새로운 키**를 지정하고 **값**을 할당하면 된다.
 
 ```{python}
@@ -1749,7 +1777,8 @@ person["city"] = "New York"
 print(person)
 ```
 
-#### `update()` 메서드 사용
+#### update() 메서드 사용
+
 `update()` 메서드는 기존 딕셔너리에 **새로운 키-값 쌍을 추가**하거나 **기존 키의 값을 수정**하는 데 사용된다. **새로운 키**가 있을 경우, **그 키와 값이 추가**된다.
 
 ```{python}
@@ -1771,7 +1800,8 @@ person.update({"phone": "123-456-7890", "address": "123 Street, NY"})
 print(person)
 ```
 
-#### `setdefault()` 메서드 사용
+#### setdefault() 메서드 사용
+
 `setdefault()` 메서드는 **새로운 키-값 쌍을 추가**하는 방법 중 하나다. 만약 키가 **존재하지 않으면 값을 추가**하고, **존재하면 기존 값을 그대로 두는** 방식이다. 이 메서드는 **기존 키의 값을 수정하지 않으며, 키가 없으면 기본값을 추가**한다.
 
 ```{python}
@@ -1794,6 +1824,7 @@ print(person)
 ```
 
 #### 딕셔너리 컴프리헨션을 사용한 추가
+
 딕셔너리 컴프리헨션(dictionary comprehension)을 사용하여 **조건에 맞는 키-값 쌍을 추가**할 수 있다. 예를 들어, 특정 조건에 맞는 **새로운 키-값 쌍을 동적으로 생성**할 수 있다.
 
 ```{python}
@@ -1817,10 +1848,12 @@ print(person)
 | `popitem()` 메서드 | 마지막 키-값 쌍을 삭제하고 반환 | `person.popitem()` |
 | `clear()` 메서드 | 모든 원소를 삭제 | `person.clear()` |
 | `del` 키워드 (전체 삭제) | 딕셔너리 자체를 삭제 | `del person` |
+: 딕셔너리 원소 삭제 방법
 
 딕셔너리에서 원소를 삭제하는 방법은 다양한데, **`del` 키워드**, **`pop()`**, **`popitem()`**, **`clear()`** 메서드를 적절히 사용하여 원소나 전체 딕셔너리를 삭제할 수 있다.
 
-#### `del` 키워드 사용
+#### del 키워드 사용
+
 `del` 키워드는 딕셔너리에서 **특정 키-값 쌍을 삭제**하는 데 사용된다.  
 
 ```{python}
@@ -1841,7 +1874,7 @@ print(person)
 del person["email"]  # KeyError: 'email'
 ```
 
-#### `pop()` 메서드 사용
+#### pop() 메서드 사용
 `pop()` 메서드는 딕셔너리에서 **특정 키에 해당하는 값을 삭제하고, 그 값을 반환**한다. 이 메서드는 삭제하려는 키가 존재하지 않으면 **`KeyError`**를 발생시킨다. 또한, 두 번째 인자로 **기본값**을 설정할 수 있어, 키가 없을 때 기본값을 반환하도록 할 수 있다.
 
 ```{python}
@@ -1855,17 +1888,23 @@ print(person)
 print(removed_value)
 ```
 
-**기본값을 설정하는 경우**:
+기본값을 설정하는 경우
+:  
 ```{python}
 #| error: true
+
 # 존재하지 않는 키에 대해 기본값 반환
 removed_value = person.pop("email", "Not Found")
 
 print(removed_value)
 ```
 
-#### `popitem()` 메서드 사용
-`popitem()` 메서드는 **딕셔너리에서 마지막 키-값 쌍을 삭제하고, 그 쌍을 반환**한다. 이 메서드는 **LIFO(Last-In-First-Out)** 방식으로 작동한다. 즉, 딕셔너리에서 가장 마지막에 삽입된 원소를 삭제한다.
+#### popitem() 메서드 사용
+
+`popitem()` 메서드는 **딕셔너리에서 마지막 키-값 쌍을 삭제하고, 그 쌍을 반환**한다. 이 메서드는 **LIFO(Last-In-First-Out)**[^:lifo] 방식으로 작동한다. 즉, 딕셔너리에서 가장 마지막에 삽입된 원소를 삭제한다.
+
+[^lifo]: **LIFO (Last In, First Out)**  
+: 마지막에 들어온 데이터가 가장 먼저 나가는 자료 처리 방식. 스택(stack) 구조에서 주로 사용되며, **접시 쌓기**나 **문서 더미**와 같은 일상적인 예시로 설명 가능. 파이썬에서는 `list` 자료형의 `append()`와 `pop()` 메서드를 통해 쉽게 구현할 수 있음. LIFO는 **재귀 호출 처리**, **되돌리기(undo) 기능** 등에 활용됨.
 
 ```{python}
 # 딕셔너리 생성
@@ -1883,12 +1922,13 @@ print(removed_item)
 
 ```{python}
 #| error: true
+
 # 빈 딕셔너리에서 popitem() 호출 시 오류 발생
 empty_dict = {}
 empty_dict.popitem()  # KeyError
 ```
 
-#### `clear()` 메서드 사용
+#### clear() 메서드 사용
 `clear()` 메서드는 **딕셔너리의 모든 원소를 삭제**하는 데 사용된다. 이 메서드는 **딕셔너리를 비우고** 빈 딕셔너리를 반환한다.
 
 ```{python}
@@ -1901,11 +1941,12 @@ person.clear()
 print(person)
 ```
 
-#### `del`로 딕셔너리 전체 삭제
+#### del로 딕셔너리 전체 삭제
 `del` 키워드를 사용하여 **딕셔너리 자체를 삭제**할 수도 있다. 이렇게 삭제하면, 딕셔너리가 메모리에서 완전히 사라지므로 **더 이상 사용할 수 없다**.
 
 ```{python}
 #| error: true
+
 # 딕셔너리 생성
 person = {"name": "John", "age": 30, "city": "New York"}
 
