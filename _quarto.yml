@@ -32,7 +32,7 @@ book:
         - 60file.qmd
         - 70exception.qmd
         - 80class.qmd
-        - 90library.qmd
+        - 90package.qmd
     - part: "파이썬 패키지"
       chapters:
         - pkg_numpy.qmd

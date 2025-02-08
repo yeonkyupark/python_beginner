@@ -1,60 +1,77 @@
 # 들어가기 {.unnumbered}
 
-## 1. 파이썬 소개
+## 1. 파이썬 개요
 
--   파이썬이란?\
--   파이썬의 특징과 장점\
--   설치 및 개발 환경 설정(VS Code, Jupyter Notebook)\
--   첫 번째 프로그램: "Hello, World!" 출력
+- @sec-language
+- @sec-programming-language
+- @sec-python-intro
+- @sec-python-installation
+- @sec-dev-environment
+- @sec-1st-program
+- @sec-10-ref
+- 
 
-## 2. 기본 문법
+## 2. 문법
 
--   변수와 데이터 타입(숫자, 문자열, 불리언)\
--   연산자(산술, 비교, 논리, 대입 연산자)\
--   주석 사용법
+- @sec-storage
+- @sec-variable
+- @sec-datatype
+- @sec-operator
+- @sec-comment
+- @sec-20-ref
 
-## 3. 자료형과 자료 구조
+## 3. 자료형
 
--   리스트(List)\
--   튜플(Tuple)\
--   딕셔너리(Dictionary)\
--   집합(Set)\
--   문자열(String) 다루기
+- @sec-list
+- @sec-tuple
+- @sec-dictionary
+- @sec-set
+- @sec-30-ref
 
 ## 4. 제어문
 
--   조건문(if-elif-else)\
--   반복문(for, while)\
--   반복문 제어문(break, continue)
+- @sec-condition-statement (@sec-if, ...)
+- @sec-loop (@sec-for, @sec-while, ...)
+- @sec-other-control-statement
+- @sec-40-ref
 
 ## 5. 함수와 모듈
 
--   함수 정의 및 호출\
--   매개변수와 반환값\
--   내장 함수 활용\
--   모듈과 패키지(import 사용법)
+- @sec-function
+- @sec-module
+- @sec-package
+- @sec-50-ref
 
 ## 6. 파일 입출력
 
--   파일 열기와 닫기(`open`, `close`)\
--   파일 읽기(`read`, `readline`, `readlines`)\
--   파일 쓰기(`write`)
+- @sec-file-open
+- @sec-file-write
+- @sec-file-read
+- @sec-60-ref
 
-## 7. 예외 처리
+## 7. 예외 처리와 디버깅깅
 
--   예외 발생과 처리(`try-except`)\
--   다양한 예외 종류
+- @sec-exception
+- @sec-debugging
+- @sec-70-ref
 
-## 8. 클래스 기초
+## 8. 클래스
 
--   클래스와 객체 개념\
--   생성자(`__init__`)와 속성\
--   메서드 정의 및 호출
+- @sec-class-intro
+- @sec-class-definition
+- @sec-class-init-del
+- @sec-class-variable
+- @sec-class-method
+- @sec-class-access
+- @sec-class-inheritance
+- @sec-class-polymorphism
+- @sec-class-operator-overloading
+- @sec-class-example
 
 ## 9. 주요 패키지 
 
--   유용한 표준 라이브러리(os, datetime, random 등)\
--   데이터 분석 기초(pandas, numpy 간단 사용법)
+- @sec-package
+- @sec-package-search
 
 ## 참고자료 {.unlisted}
 

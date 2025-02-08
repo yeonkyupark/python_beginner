@@ -3,7 +3,7 @@ title: "파이썬 개요"
 format: html
 ---
 
-## 언어
+## 언어{#sec-language}
 
 ### 언어 정의
 
@@ -36,7 +36,7 @@ format: html
 {{< video https://youtu.be/3VG2OgkRJK0?si=b3rPeVR7VSEUMBm8 >}}
 
 
-## 프로그래밍 언어  
+## 프로그래밍 언어 {#sec-programming-language} 
 
 
 프로그래밍 언어는 **컴퓨터가 이해하고 실행할 수 있는 명령을 작성하기 위한 언어**이다. 사람이 이해할 수 있는 문법과 구조를 사용하여 컴퓨터에게 특정 작업을 수행하도록 지시한다.
@@ -91,7 +91,7 @@ format: html
 ![년도별 언어 순위 추이](images/tiobe_02.jpg)
 
 
-## 파이쎤 소개
+## 파이쎤 소개 {#sec-python-intro}
 
 ![python](https://www.python.org/static/img/python-logo.png)
 
@@ -164,7 +164,7 @@ with open("text.txt", "r") as file:
 
 파이썬은 배우기 쉽고 다양한 활용이 가능하다는 점에서 강력한 언어지만, 실행 속도나 멀티스레딩 제한과 같은 단점도 존재한다. 따라서 사용 목적에 따라 적절한 언어를 선택하는 것이 중요하다.
 
-## 파이썬 설치 {#sec-install-python}
+## 파이썬 설치 {#sec-python-installation}
 
 파이썬을 설치하는 방법은 운영 체제에 따라 다를 수 있지만, 일반적으로 공식 웹사이트에서 설치 파일을 다운로드하여 설치하는 방식이 가장 쉽다.
 
@@ -240,7 +240,7 @@ with open("text.txt", "r") as file:
 즉, **코딩**은 **프로그래밍의 일부**로, **명령어를 작성**하는 행위에 집중하고, **프로그래밍**은 **전체 개발 과정**을 포괄하는 개념으로, 문제 해결을 위한 **설계, 개발, 유지보수**까지 포함한다. 따라서 코딩은 프로그래밍의 첫걸음이며, 프로그래밍은 더 넓고 복잡한 과정이다.
 :::
 
-## 개발 환경 설정
+## 개발 환경 설정 {#sec-dev-environment}
 
 ### VS Code {#sec-vsc}
 
@@ -427,7 +427,7 @@ Linux
 PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프로젝트를 생성하여 코딩을 시작할 수 있다(@sec-pycharm-guide 참고).
 
 
-## 첫 번째 프로그램
+## 첫 번째 프로그램 {#sec-1st-program}
 
 ![Hello, World[^ageekisborn]](images/ageekisborn.png)
 
@@ -441,7 +441,7 @@ PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프
 print("Hello, World")
 ```
 
-## 참고자료
+## 참고자료 {#sec-10-ref}
 
 ### IDLE {#sec-idle}
 

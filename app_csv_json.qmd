@@ -1,6 +1,6 @@
 # CSV 파일과 JSON 파일
 
-## CSV 파일  
+## CSV 파일  {#sec-csv-file}
 
 CSV(**Comma-Separated Values**) 파일은 데이터를 **쉼표(`,`)로 구분하여 저장**하는 텍스트 파일 형식이다. 주로 **엑셀(Excel), 데이터베이스, 웹 애플리케이션** 등에서 데이터를 저장하고 교환하는 데 사용된다. CSV 파일은 일반적으로 **행(row)과 열(column) 형태**로 데이터를 저장하며, 각 행은 줄바꿈 문자(`\n`), 각 열은 쉼표(`,`)로 구분된다.  
 
@@ -218,7 +218,7 @@ with open("data_tab.csv", "w", newline="", encoding="utf-8") as file:
     writer.writerows(data)
 ```
 
-## JSON 파일  
+## JSON 파일 {#sec-json-file} 
 
 JSON(**JavaScript Object Notation**)은 데이터를 저장하고 전송하기 위한 **경량 데이터 형식**으로, Python에서는 `json` 모듈을 사용하여 JSON 파일을 읽고 쓸 수 있다. JSON은 **키-값 쌍으로 이루어진 구조**이며, Python의 `dict`와 유사하다. 따라서 **Python의 딕셔너리, 리스트 등의 자료형을 JSON 파일로 저장하거나 불러올 수 있다.**  
 

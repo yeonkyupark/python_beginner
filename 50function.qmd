@@ -1261,7 +1261,7 @@ my_package/
 
 1. **패키지 불러오기**
 
-```{python}
+```python
 # 패키지 내 모듈 불러오기
 import my_package.module1
 ```
@@ -1337,7 +1337,7 @@ sub_module1.sub_function()
   ```
 
 - **패키지 버전 확인:**  
-  ```{python}
+  ```python
   import numpy
   print(numpy.__version__)
   ```
@@ -1369,4 +1369,8 @@ setup(
 ```bash
 pip install .
 ```
+
+
+## 참고자료 {#sec-50-ref}
+
 
