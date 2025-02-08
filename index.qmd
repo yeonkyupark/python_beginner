@@ -9,7 +9,6 @@
 - @sec-dev-environment
 - @sec-1st-program
 - @sec-10-ref
-- 
 
 ## 2. 문법
 

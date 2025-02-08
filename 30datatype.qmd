@@ -1411,7 +1411,7 @@ t = t[:1] + t[3:]
 print(t)  # (10, 40)
 ```
 
-## 딕셔너리 {#sec-dictionay}
+## 딕셔너리 {#sec-dictionary}
 
 ![딕셔너리](images/dictionary.png)
 
