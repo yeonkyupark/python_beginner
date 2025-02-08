@@ -562,7 +562,7 @@ print(account.get_balance())  # 2000 출력
 ```
 
 ```{python}
-#| error: ture
+#| error: true
 
 # 직접 접근 불가
 print(account.__balance)  # AttributeError 발생
