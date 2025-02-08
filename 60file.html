@@ -265,13 +265,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#with-문을-사용한-파일-열기" id="toc-with-문을-사용한-파일-열기" class="nav-link" data-scroll-target="#with-문을-사용한-파일-열기">with 문을 사용한 파일 열기</a></li>
   <li><a href="#파일-존재-여부-확인" id="toc-파일-존재-여부-확인" class="nav-link" data-scroll-target="#파일-존재-여부-확인">파일 존재 여부 확인</a></li>
   </ul></li>
-  <li><a href="#파일-쓰기" id="toc-파일-쓰기" class="nav-link" data-scroll-target="#파일-쓰기">파일 쓰기</a>
+  <li><a href="#sec-file-write" id="toc-sec-file-write" class="nav-link" data-scroll-target="#sec-file-write">파일 쓰기</a>
   <ul class="collapse">
   <li><a href="#with-문을-사용한-파일-쓰기" id="toc-with-문을-사용한-파일-쓰기" class="nav-link" data-scroll-target="#with-문을-사용한-파일-쓰기">with 문을 사용한 파일 쓰기</a></li>
   <li><a href="#여러-줄-쓰기" id="toc-여러-줄-쓰기" class="nav-link" data-scroll-target="#여러-줄-쓰기">여러 줄 쓰기</a></li>
   <li><a href="#숫자-데이터-쓰기" id="toc-숫자-데이터-쓰기" class="nav-link" data-scroll-target="#숫자-데이터-쓰기">숫자 데이터 쓰기</a></li>
   </ul></li>
-  <li><a href="#파일-읽기" id="toc-파일-읽기" class="nav-link" data-scroll-target="#파일-읽기">파일 읽기</a>
+  <li><a href="#sec-file-read" id="toc-sec-file-read" class="nav-link" data-scroll-target="#sec-file-read">파일 읽기</a>
   <ul class="collapse">
   <li><a href="#파일-열기-모드-1" id="toc-파일-열기-모드-1" class="nav-link" data-scroll-target="#파일-열기-모드-1">파일 열기 모드</a></li>
   <li><a href="#파일-읽기-방법" id="toc-파일-읽기-방법" class="nav-link" data-scroll-target="#파일-읽기-방법">파일 읽기 방법</a></li>
@@ -508,8 +508,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"파일이 존재하지 않습니다."</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="파일-쓰기" class="level3">
-<h3 class="anchored" data-anchor-id="파일-쓰기">파일 쓰기</h3>
+<section id="sec-file-write" class="level3">
+<h3 class="anchored" data-anchor-id="sec-file-write">파일 쓰기</h3>
 <p>Python에서 파일에 데이터를 저장하려면 <strong><code>open("파일명", "w")</code> 또는 <code>"a"</code> 모드를 사용하여 파일을 연 후, <code>write()</code> 함수를 사용</strong>하면 된다. 파일 작업이 끝난 후에는 반드시 <strong><code>close()</code> 또는 <code>with open()</code>을 사용하여 파일을 닫아야 한다.</strong></p>
 <table class="caption-top table">
 <caption>파일 쓰기</caption>
@@ -686,8 +686,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </dl>
 </section>
 </section>
-<section id="파일-읽기" class="level3">
-<h3 class="anchored" data-anchor-id="파일-읽기">파일 읽기</h3>
+<section id="sec-file-read" class="level3">
+<h3 class="anchored" data-anchor-id="sec-file-read">파일 읽기</h3>
 <p>Python에서 파일을 읽을 때는 <strong><code>open()</code> 함수</strong>로 파일을 연 후, 다양한 방법으로 파일을 읽을 수 있다. 파일을 읽은 후에는 반드시 <strong><code>close()</code></strong>를 호출하거나 <strong><code>with open()</code></strong>을 사용해 자동으로 파일을 닫아야 한다.</p>
 <table class="caption-top table">
 <caption>파일 읽기</caption>
