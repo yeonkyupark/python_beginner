@@ -11,3 +11,4 @@
 /.obsidian
 /_freeze
 *.quarto_ipynb
+/images/*.md
