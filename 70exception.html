@@ -356,7 +356,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="기본-예제" class="level3">
 <h3 class="anchored" data-anchor-id="기본-예제">기본 예제</h3>
 <p><strong>1. 0으로 나누기 예외 (<code>ZeroDivisionError</code>)</strong></p>
-<div id="c5f63388" class="cell" data-execution_count="1">
+<div id="dea696de" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># num = int(input("숫자를 입력하세요: "))</span></span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    num <span class="op">=</span> <span class="dv">0</span></span>
@@ -369,7 +369,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>2. 입력값이 숫자가 아닐 때 예외 (<code>ValueError</code>)</strong></p>
-<div id="80eaef28" class="cell" data-execution_count="2">
+<div id="d9845893" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># num = int(input("숫자를 입력하세요: "))  # 문자를 입력하면 예외 발생</span></span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>    num <span class="op">=</span> <span class="bu">int</span>(<span class="st">'abc'</span>)</span>
@@ -381,7 +381,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>3. 여러 개의 예외 처리</strong></p>
-<div id="558178c7" class="cell" data-execution_count="3">
+<div id="f19c1c0a" class="cell" data-execution_count="3">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># num = int(input("숫자를 입력하세요: "))</span></span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>    num <span class="op">=</span> <span class="dv">0</span> <span class="co"># num = 'abc'</span></span>
@@ -397,7 +397,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>4. <code>else</code>와 <code>finally</code> 사용</strong></p>
-<div id="f71be3b3" class="cell" data-execution_count="4">
+<div id="f20095d1" class="cell" data-execution_count="4">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="co"># num = int(input("숫자를 입력하세요: "))</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>    num <span class="op">=</span> <span class="dv">0</span></span>
@@ -421,7 +421,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><strong><code>finally</code></strong>: 예외 발생 여부와 관계없이 항상 실행</li>
 </ul>
 <p><strong>5. 사용자 정의 예외 (<code>raise</code>)</strong></p>
-<div id="270474ff" class="cell" data-execution_count="5">
+<div id="056e6f8d" class="cell" data-execution_count="5">
 <div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> NegativeNumberError(<span class="pp">Exception</span>):</span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">pass</span></span>
 <span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -441,7 +441,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>6. 파일 읽기 예외 (<code>FileNotFoundError</code>)</strong></p>
-<div id="f40354c4" class="cell" data-execution_count="6">
+<div id="aa802764" class="cell" data-execution_count="6">
 <div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="cf">try</span>:</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">with</span> <span class="bu">open</span>(<span class="st">"nonexistent.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        content <span class="op">=</span> <span class="bu">file</span>.read()</span>
@@ -462,7 +462,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="print-함수-사용" class="level4">
 <h4 class="anchored" data-anchor-id="print-함수-사용">print() 함수 사용</h4>
 <p>가장 간단한 디버깅 방법으로, 변수의 값이나 코드 진행 상황을 출력하여 문제를 파악한다.</p>
-<div id="51f8b602" class="cell" data-execution_count="7">
+<div id="20c13b7b" class="cell" data-execution_count="7">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add_numbers(a, b):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"a: </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b: </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">"</span>)  <span class="co"># 변수 값 출력</span></span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
@@ -500,7 +500,7 @@ Cell <span class="ansi-green-fg">In[7], line 3</span>, in <span class="ansi-cyan
 <section id="assert-문-사용" class="level4">
 <h4 class="anchored" data-anchor-id="assert-문-사용">assert 문 사용</h4>
 <p>특정 조건이 <strong>참(True)</strong>인지 확인하고, 그렇지 않으면 오류를 발생시켜 디버깅에 도움을 준다.</p>
-<div id="0babeba3" class="cell" data-execution_count="8">
+<div id="aef1f21a" class="cell" data-execution_count="8">
 <div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
 <span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">assert</span> b <span class="op">!=</span> <span class="dv">0</span>, <span class="st">"0으로 나눌 수 없습니다!"</span>  <span class="co"># 조건이 False일 경우 AssertionError 발생</span></span>
 <span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span>
@@ -602,7 +602,7 @@ Cell <span class="ansi-green-fg">In[8], line 2</span>, in <span class="ansi-cyan
 <section id="logging-모듈-사용" class="level4">
 <h4 class="anchored" data-anchor-id="logging-모듈-사용">logging 모듈 사용</h4>
 <p><strong><code>print()</code></strong>보다 더 강력하고 유연한 <strong>로그 기록</strong>을 통해 디버깅을 수행할 수 있다. 로그 레벨을 설정하여 필요한 정보만 출력 가능하다.</p>
-<div id="854caa3a" class="cell" data-execution_count="9">
+<div id="9106dcdf" class="cell" data-execution_count="9">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> logging</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 로그 레벨 설정</span></span>
@@ -655,7 +655,7 @@ ERROR:root:0으로 나눌 수 없습니다!</code></pre>
 <section id="예외-처리-활용" class="level4">
 <h4 class="anchored" data-anchor-id="예외-처리-활용">예외 처리 활용</h4>
 <p>예외 처리로 오류 발생 시 프로그램이 강제 종료되지 않도록 방지하고, 오류 메시지를 출력하여 문제를 분석한다.</p>
-<div id="1abdb17d" class="cell" data-execution_count="10">
+<div id="8534df9e" class="cell" data-execution_count="10">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">try</span>:</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> a <span class="op">/</span> b</span>
