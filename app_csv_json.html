@@ -193,7 +193,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리</span></a>
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리와 디버깅깅</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -203,7 +203,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
+  <a href="./90package.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
   </div>
 </li>
       </ul>
@@ -255,7 +255,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#csv-파일" id="toc-csv-파일" class="nav-link active" data-scroll-target="#csv-파일">CSV 파일</a>
+  <li><a href="#sec-csv-file" id="toc-sec-csv-file" class="nav-link active" data-scroll-target="#sec-csv-file">CSV 파일</a>
   <ul>
   <li><a href="#csv-파일-형식" id="toc-csv-파일-형식" class="nav-link" data-scroll-target="#csv-파일-형식">CSV 파일 형식</a></li>
   <li><a href="#csv-파일-쓰기" id="toc-csv-파일-쓰기" class="nav-link" data-scroll-target="#csv-파일-쓰기">CSV 파일 쓰기</a></li>
@@ -265,7 +265,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#csv-파일에서-특정-열만-읽기" id="toc-csv-파일에서-특정-열만-읽기" class="nav-link" data-scroll-target="#csv-파일에서-특정-열만-읽기">CSV 파일에서 특정 열만 읽기</a></li>
   <li><a href="#csv-파일-구분자-변경" id="toc-csv-파일-구분자-변경" class="nav-link" data-scroll-target="#csv-파일-구분자-변경">CSV 파일 구분자 변경</a></li>
   </ul></li>
-  <li><a href="#json-파일" id="toc-json-파일" class="nav-link" data-scroll-target="#json-파일">JSON 파일</a>
+  <li><a href="#sec-json-file" id="toc-sec-json-file" class="nav-link" data-scroll-target="#sec-json-file">JSON 파일</a>
   <ul>
   <li><a href="#json-파일-형식" id="toc-json-파일-형식" class="nav-link" data-scroll-target="#json-파일-형식">JSON 파일 형식</a></li>
   <li><a href="#json-파일-쓰기" id="toc-json-파일-쓰기" class="nav-link" data-scroll-target="#json-파일-쓰기">JSON 파일 쓰기</a></li>
@@ -298,8 +298,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="csv-파일" class="level2">
-<h2 class="anchored" data-anchor-id="csv-파일">CSV 파일</h2>
+<section id="sec-csv-file" class="level2">
+<h2 class="anchored" data-anchor-id="sec-csv-file">CSV 파일</h2>
 <p>CSV(<strong>Comma-Separated Values</strong>) 파일은 데이터를 <strong>쉼표(<code>,</code>)로 구분하여 저장</strong>하는 텍스트 파일 형식이다. 주로 <strong>엑셀(Excel), 데이터베이스, 웹 애플리케이션</strong> 등에서 데이터를 저장하고 교환하는 데 사용된다. CSV 파일은 일반적으로 <strong>행(row)과 열(column) 형태</strong>로 데이터를 저장하며, 각 행은 줄바꿈 문자(<code>\n</code>), 각 열은 쉼표(<code>,</code>)로 구분된다.</p>
 <table class="caption-top table">
 <caption>CSV 관련 함수</caption>
@@ -513,8 +513,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    writer.writerows(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="json-파일" class="level2">
-<h2 class="anchored" data-anchor-id="json-파일">JSON 파일</h2>
+<section id="sec-json-file" class="level2">
+<h2 class="anchored" data-anchor-id="sec-json-file">JSON 파일</h2>
 <p>JSON(<strong>JavaScript Object Notation</strong>)은 데이터를 저장하고 전송하기 위한 <strong>경량 데이터 형식</strong>으로, Python에서는 <code>json</code> 모듈을 사용하여 JSON 파일을 읽고 쓸 수 있다. JSON은 <strong>키-값 쌍으로 이루어진 구조</strong>이며, Python의 <code>dict</code>와 유사하다. 따라서 <strong>Python의 딕셔너리, 리스트 등의 자료형을 JSON 파일로 저장하거나 불러올 수 있다.</strong></p>
 <table class="caption-top table">
 <caption>JSON 관련 함수</caption>
@@ -641,7 +641,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>JSON 파일이 아닌 <strong>문자열</strong> 데이터를 다룰 때 <code>json.dumps()</code>와 <code>json.loads()</code>를 사용한다.</li>
 </ul>
 <p><strong>(1) Python 객체 → JSON 문자열 (<code>dumps()</code>)</strong></p>
-<div id="a2f65dca" class="cell" data-execution_count="1">
+<div id="7e705e5b" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">"이름"</span>: <span class="st">"영희"</span>, <span class="st">"나이"</span>: <span class="dv">30</span>}</span>
@@ -657,7 +657,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>(2) JSON 문자열 → Python 객체 (<code>loads()</code>)</strong></p>
-<div id="aefba2aa" class="cell" data-execution_count="2">
+<div id="ba04e7e4" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>json_str <span class="op">=</span> <span class="st">'{"이름": "영희", "나이": 30}'</span></span>

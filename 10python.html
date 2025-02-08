@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리</span></a>
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리와 디버깅깅</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90library.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
+  <a href="./90package.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">패키지</span></a>
   </div>
 </li>
       </ul>
@@ -256,24 +256,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#언어" id="toc-언어" class="nav-link active" data-scroll-target="#언어">언어</a>
+  <li><a href="#sec-language" id="toc-sec-language" class="nav-link active" data-scroll-target="#sec-language">언어</a>
   <ul>
   <li><a href="#언어-정의" id="toc-언어-정의" class="nav-link" data-scroll-target="#언어-정의">언어 정의</a></li>
   <li><a href="#의사전달" id="toc-의사전달" class="nav-link" data-scroll-target="#의사전달">의사전달</a></li>
   </ul></li>
-  <li><a href="#프로그래밍-언어" id="toc-프로그래밍-언어" class="nav-link" data-scroll-target="#프로그래밍-언어">프로그래밍 언어</a>
+  <li><a href="#sec-programming-language" id="toc-sec-programming-language" class="nav-link" data-scroll-target="#sec-programming-language">프로그래밍 언어</a>
   <ul>
   <li><a href="#프로그래밍-언어의-종류" id="toc-프로그래밍-언어의-종류" class="nav-link" data-scroll-target="#프로그래밍-언어의-종류">프로그래밍 언어의 종류</a></li>
   <li><a href="#프로그래밍-언어의-실행-방식" id="toc-프로그래밍-언어의-실행-방식" class="nav-link" data-scroll-target="#프로그래밍-언어의-실행-방식">프로그래밍 언어의 실행 방식</a></li>
   <li><a href="#대표적인-프로그래밍-언어-및-특징" id="toc-대표적인-프로그래밍-언어-및-특징" class="nav-link" data-scroll-target="#대표적인-프로그래밍-언어-및-특징">대표적인 프로그래밍 언어 및 특징</a></li>
   </ul></li>
-  <li><a href="#파이쎤-소개" id="toc-파이쎤-소개" class="nav-link" data-scroll-target="#파이쎤-소개">파이쎤 소개</a>
+  <li><a href="#sec-python-intro" id="toc-sec-python-intro" class="nav-link" data-scroll-target="#sec-python-intro">파이쎤 소개</a>
   <ul>
   <li><a href="#파이썬의-특징" id="toc-파이썬의-특징" class="nav-link" data-scroll-target="#파이썬의-특징">파이썬의 특징</a></li>
   <li><a href="#파이썬의-활용-분야" id="toc-파이썬의-활용-분야" class="nav-link" data-scroll-target="#파이썬의-활용-분야">파이썬의 활용 분야</a></li>
   <li><a href="#파이썬의-장점과-단점" id="toc-파이썬의-장점과-단점" class="nav-link" data-scroll-target="#파이썬의-장점과-단점">파이썬의 장점과 단점</a></li>
   </ul></li>
-  <li><a href="#sec-install-python" id="toc-sec-install-python" class="nav-link" data-scroll-target="#sec-install-python">파이썬 설치</a>
+  <li><a href="#sec-python-installation" id="toc-sec-python-installation" class="nav-link" data-scroll-target="#sec-python-installation">파이썬 설치</a>
   <ul>
   <li><a href="#파이썬-다운로드" id="toc-파이썬-다운로드" class="nav-link" data-scroll-target="#파이썬-다운로드">파이썬 다운로드</a></li>
   <li><a href="#windows에서-설치" id="toc-windows에서-설치" class="nav-link" data-scroll-target="#windows에서-설치">Windows에서 설치</a></li>
@@ -281,7 +281,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#linuxubuntu에서-설치" id="toc-linuxubuntu에서-설치" class="nav-link" data-scroll-target="#linuxubuntu에서-설치">Linux(Ubuntu)에서 설치</a></li>
   <li><a href="#설치-확인" id="toc-설치-확인" class="nav-link" data-scroll-target="#설치-확인">설치 확인</a></li>
   </ul></li>
-  <li><a href="#개발-환경-설정" id="toc-개발-환경-설정" class="nav-link" data-scroll-target="#개발-환경-설정">개발 환경 설정</a>
+  <li><a href="#sec-dev-environment" id="toc-sec-dev-environment" class="nav-link" data-scroll-target="#sec-dev-environment">개발 환경 설정</a>
   <ul>
   <li><a href="#sec-vsc" id="toc-sec-vsc" class="nav-link" data-scroll-target="#sec-vsc">VS Code</a>
   <ul class="collapse">
@@ -304,8 +304,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#pycharm-다운로드" id="toc-pycharm-다운로드" class="nav-link" data-scroll-target="#pycharm-다운로드">PyCharm 다운로드</a></li>
   </ul></li>
   </ul></li>
-  <li><a href="#첫-번째-프로그램" id="toc-첫-번째-프로그램" class="nav-link" data-scroll-target="#첫-번째-프로그램">첫 번째 프로그램</a></li>
-  <li><a href="#참고자료" id="toc-참고자료" class="nav-link" data-scroll-target="#참고자료">참고자료</a>
+  <li><a href="#sec-1st-program" id="toc-sec-1st-program" class="nav-link" data-scroll-target="#sec-1st-program">첫 번째 프로그램</a></li>
+  <li><a href="#sec-10-ref" id="toc-sec-10-ref" class="nav-link" data-scroll-target="#sec-10-ref">참고자료</a>
   <ul>
   <li><a href="#sec-idle" id="toc-sec-idle" class="nav-link" data-scroll-target="#sec-idle">IDLE</a>
   <ul class="collapse">
@@ -350,8 +350,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="언어" class="level2">
-<h2 class="anchored" data-anchor-id="언어">언어</h2>
+<section id="sec-language" class="level2">
+<h2 class="anchored" data-anchor-id="sec-language">언어</h2>
 <section id="언어-정의" class="level3">
 <h3 class="anchored" data-anchor-id="언어-정의">언어 정의</h3>
 <div class="quarto-figure quarto-figure-center">
@@ -388,8 +388,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3VG2OgkRJK0?si=b3rPeVR7VSEUMBm8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
 </section>
 </section>
-<section id="프로그래밍-언어" class="level2">
-<h2 class="anchored" data-anchor-id="프로그래밍-언어">프로그래밍 언어</h2>
+<section id="sec-programming-language" class="level2">
+<h2 class="anchored" data-anchor-id="sec-programming-language">프로그래밍 언어</h2>
 <p>프로그래밍 언어는 <strong>컴퓨터가 이해하고 실행할 수 있는 명령을 작성하기 위한 언어</strong>이다. 사람이 이해할 수 있는 문법과 구조를 사용하여 컴퓨터에게 특정 작업을 수행하도록 지시한다.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -517,8 +517,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="파이쎤-소개" class="level2">
-<h2 class="anchored" data-anchor-id="파이쎤-소개">파이쎤 소개</h2>
+<section id="sec-python-intro" class="level2">
+<h2 class="anchored" data-anchor-id="sec-python-intro">파이쎤 소개</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://www.python.org/static/img/python-logo.png" class="img-fluid figure-img"></p>
@@ -636,8 +636,8 @@ C vs.&nbsp;Python: 파일 내용 읽어 오기
 <p>파이썬은 배우기 쉽고 다양한 활용이 가능하다는 점에서 강력한 언어지만, 실행 속도나 멀티스레딩 제한과 같은 단점도 존재한다. 따라서 사용 목적에 따라 적절한 언어를 선택하는 것이 중요하다.</p>
 </section>
 </section>
-<section id="sec-install-python" class="level2">
-<h2 class="anchored" data-anchor-id="sec-install-python">파이썬 설치</h2>
+<section id="sec-python-installation" class="level2">
+<h2 class="anchored" data-anchor-id="sec-python-installation">파이썬 설치</h2>
 <p>파이썬을 설치하는 방법은 운영 체제에 따라 다를 수 있지만, 일반적으로 공식 웹사이트에서 설치 파일을 다운로드하여 설치하는 방식이 가장 쉽다.</p>
 <section id="파이썬-다운로드" class="level3">
 <h3 class="anchored" data-anchor-id="파이썬-다운로드">파이썬 다운로드</h3>
@@ -756,8 +756,8 @@ C vs.&nbsp;Python: 파일 내용 읽어 오기
 </div>
 </section>
 </section>
-<section id="개발-환경-설정" class="level2">
-<h2 class="anchored" data-anchor-id="개발-환경-설정">개발 환경 설정</h2>
+<section id="sec-dev-environment" class="level2">
+<h2 class="anchored" data-anchor-id="sec-dev-environment">개발 환경 설정</h2>
 <section id="sec-vsc" class="level3">
 <h3 class="anchored" data-anchor-id="sec-vsc">VS Code</h3>
 <p>VS Code(Visual Studio Code)는 마이크로소프트에서 제공하는 무료 코드 편집기로, 파이썬 개발 환경으로 많이 사용된다. 가벼우면서도 확장성이 뛰어나 초보자부터 전문가까지 널리 활용된다.</p>
@@ -868,7 +868,7 @@ C vs.&nbsp;Python: 파일 내용 읽어 오기
 <ul>
 <li><p>아래 명령어를 실행하여 파이썬이 설치되어 있는지 확인한다.</p>
 <div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
-<li><p>설치되어 있지 않다면 <a href="https://www.python.org/">파이썬 공식 사이트</a>에서 설치한다(<a href="#sec-install-python" class="quarto-xref"><span>파이썬 설치</span></a> 참고).</p></li>
+<li><p>설치되어 있지 않다면 <a href="https://www.python.org/">파이썬 공식 사이트</a>에서 설치한다(<span class="quarto-unresolved-ref">?sec-install-python</span> 참고).</p></li>
 </ul>
 </section>
 <section id="jupyter-notebook-설치" class="level4">
@@ -999,8 +999,8 @@ C vs.&nbsp;Python: 파일 내용 읽어 오기
 </section>
 </section>
 </section>
-<section id="첫-번째-프로그램" class="level2">
-<h2 class="anchored" data-anchor-id="첫-번째-프로그램">첫 번째 프로그램</h2>
+<section id="sec-1st-program" class="level2">
+<h2 class="anchored" data-anchor-id="sec-1st-program">첫 번째 프로그램</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="images/ageekisborn.png" class="img-fluid figure-img"></p>
@@ -1008,15 +1008,15 @@ C vs.&nbsp;Python: 파일 내용 읽어 오기
 </figure>
 </div>
 <p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a></p>
-<div id="6241e18b" class="cell" data-execution_count="1">
+<div id="111db31c" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Hello, World</code></pre>
 </div>
 </div>
 </section>
-<section id="참고자료" class="level2">
-<h2 class="anchored" data-anchor-id="참고자료">참고자료</h2>
+<section id="sec-10-ref" class="level2">
+<h2 class="anchored" data-anchor-id="sec-10-ref">참고자료</h2>
 <section id="sec-idle" class="level3">
 <h3 class="anchored" data-anchor-id="sec-idle">IDLE</h3>
 <p>IDLE(Integrated Development and Learning Environment)은 파이썬에 기본적으로 포함된 통합 개발 환경(IDE)으로, 초보자가 쉽게 파이썬을 실행하고 학습할 수 있도록 설계된 프로그램이다.</p>

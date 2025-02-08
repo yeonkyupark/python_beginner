@@ -117,7 +117,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./90library.html"><span class="chapter-title">패키지</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./90package.html"><span class="chapter-title">패키지</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -194,7 +194,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리</span></a>
+  <a href="./70exception.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">예외처리와 디버깅깅</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -204,7 +204,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./90library.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">패키지</span></a>
+  <a href="./90package.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">패키지</span></a>
   </div>
 </li>
       </ul>
@@ -256,15 +256,15 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#파이썬에서-사용하는-주요-패키지" id="toc-파이썬에서-사용하는-주요-패키지" class="nav-link active" data-scroll-target="#파이썬에서-사용하는-주요-패키지">파이썬에서 사용하는 주요 패키지</a></li>
-  <li><a href="#패키지-검색" id="toc-패키지-검색" class="nav-link" data-scroll-target="#패키지-검색">패키지 검색</a></li>
+  <li><a href="#sec-package" id="toc-sec-package" class="nav-link active" data-scroll-target="#sec-package">주요 패키지</a></li>
+  <li><a href="#sec-package-search" id="toc-sec-package-search" class="nav-link" data-scroll-target="#sec-package-search">패키지 검색</a></li>
   </ul>
-<div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/90library.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
+<div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/90package.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./90library.html"><span class="chapter-title">패키지</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./90package.html"><span class="chapter-title">패키지</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title"><span class="chapter-title">패키지</span></h1>
 </div>
@@ -283,8 +283,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="파이썬에서-사용하는-주요-패키지" class="level2">
-<h2 class="anchored" data-anchor-id="파이썬에서-사용하는-주요-패키지">파이썬에서 사용하는 주요 패키지</h2>
+<section id="sec-package" class="level2">
+<h2 class="anchored" data-anchor-id="sec-package">주요 패키지</h2>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 21%">
@@ -361,8 +361,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>이 외에도 파이썬에는 다양한 패키지가 있어, 특정 용도에 맞는 패키지를 선택하여 활용할 수 있다.</p>
 </section>
-<section id="패키지-검색" class="level2">
-<h2 class="anchored" data-anchor-id="패키지-검색">패키지 검색</h2>
+<section id="sec-package-search" class="level2">
+<h2 class="anchored" data-anchor-id="sec-package-search">패키지 검색</h2>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://pypi.org/static/images/logo-large.516e776d.svg" class="img-fluid figure-img"></p>
@@ -831,7 +831,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/90library.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/90package.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Python Handling</p>
 </div>

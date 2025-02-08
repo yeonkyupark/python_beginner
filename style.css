@@ -33,6 +33,18 @@ div.cell-output.cell-output-stdout {
   padding-top: 0.2em;
 }
 
+div.cell-output.cell-output-stderr {
+  margin-left: 0.8em;
+  margin-top: 0;
+  background: none;
+  border-left: 3px solid rgba(255,128,128,.65);
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  font-size: 1em;
+  padding-left: 1em;
+  padding-top: 0.2em;
+}
+
 div.cell-output.cell-output-error {
   margin-left: 0.8em;
   margin-top: 0;
