@@ -294,6 +294,9 @@ flowchart TD
 
 리스트의 각 요소를 하나씩 가져와서 변수에 할당한 후, 코드 블록을 실행한다.
 
+![](images/for_fruits.png)
+
+
 ```{python}
 fruits = ["apple", "banana", "cherry"]
 
@@ -393,6 +396,9 @@ for name, age in zip(names, ages):
 #### 중첩 for 문
 
 `for` 문 안에 또 다른 `for` 문을 넣어서 **이중 반복문**을 만들 수 있다.
+
+![이중 반복문](images/for_nested.png)
+
 
 ```{python}
 for i in range(3):  # 0, 1, 2
@@ -513,6 +519,8 @@ while 조건:
 - `조건`이 **참(True)**이면 블록 내부의 코드가 실행된다.
 - 실행이 끝나면 다시 `조건`을 검사하며, **조건이 거짓(False)이 될 때까지 반복**한다.
 
+![](images/while_default.png)
+
 ```{python}
 count = 0
 
@@ -526,6 +534,9 @@ while count < 5:  # count가 5보다 작을 때까지 반복
 #### 무한 루프
 
 `while True`를 사용하면 **무한 루프**가 생성된다. 특정 조건을 만족하면 `break` 문을 사용하여 종료해야 한다.
+
+![](images/while_break.png)
+
 
 ```python
 while True:
@@ -555,6 +566,9 @@ while num <= 10:
 
 `continue` 문은 **특정 조건을 만나면 현재 반복을 건너뛰고 다음 반복으로 이동**한다.
 
+![](images/while_continue.png)
+
+
 ```{python}
 num = 0
 
@@ -570,6 +584,9 @@ while num < 5:
 #### else 블록 사용
 
 `while` 문이 정상적으로 종료되었을 때(즉, `break` 없이 종료) 실행된다.
+
+![while-else 문](images/while_else.png)
+
 
 ```{python}
 num = 1
@@ -602,6 +619,11 @@ else:
 
 ##### 사용자 입력을 받을 때까지 반복
 
+:::{.callout-important icon=false title="순서도" collapse="true"}
+![](images/while_pass.png)
+
+:::
+
 ```python
 password = "python123"
 
@@ -616,6 +638,13 @@ while True:
 - 올바른 비밀번호를 입력할 때까지 반복한다.
 
 ##### 숫자 맞히기 게임
+
+:::{.callout-important icon=false title="순서도" collapse="true"}
+
+![](images/while_game.png)
+
+
+:::
 
 ```python
 import random
