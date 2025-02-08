@@ -100,7 +100,7 @@ format: html
 
 ### 파이썬의 특징
 
-![https://xkcd.com/353/](https://i.namu.wiki/i/kNTQp1L2D8Zw3mLh2pFXd0htUjDB9soWo8HzZaLjDWVDhp_i_Rdf9fp05DqvVn1Lw3f1lPqdzCixvlpgoqulH3Ou9eygp0dklGR0YdUfbAolhj33si8G_Fv9FrcxNYjreSjUdviyeEYttegmslNmSdFy7ONyLzNxafQe0Pp4W6Y.webp){height="480px"}
+![https://xkcd.com/353/](images/python_feature.png)
 
 파이썬은 다음과 같은 특징을 갖는다.
 
