@@ -50,18 +50,21 @@ ChatGPT는 특정 주제에 대한 조언을 제공하거나 창의적인 작업
 
 ### 2. **디버깅 및 오류 해결**  
 - *"이 Python 코드에서 오류가 발생하는데 원인이 뭔지 분석해줘."*  
+
     ```python
     def divide(a, b):
         return a / b
 
     print(divide(10, 0))
     ```
+    
 - *"TypeScript에서 ‘Property does not exist on type’ 오류가 나는데 해결 방법이 뭐야?"*  
 
 ---
 
 ### 3. **코드 최적화 및 성능 개선**  
 - *"아래 코드의 성능을 향상시킬 방법이 있을까?"*  
+
     ```python
     def find_duplicates(lst):
         duplicates = []
@@ -71,6 +74,7 @@ ChatGPT는 특정 주제에 대한 조언을 제공하거나 창의적인 작업
                     duplicates.append(lst[i])
         return duplicates
     ```
+    
 - *"Python으로 대용량 데이터를 처리할 때 메모리를 절약할 방법을 알려줘."*  
 
 ---
