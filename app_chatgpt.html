@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -321,9 +355,11 @@ ul.task-list li input[type="checkbox"] {
 <section id="디버깅-및-오류-해결" class="level3">
 <h3 class="anchored" data-anchor-id="디버깅-및-오류-해결">2. <strong>디버깅 및 오류 해결</strong></h3>
 <ul>
-<li><p><em>“이 Python 코드에서 오류가 발생하는데 원인이 뭔지 분석해줘.”</em><br>
-```python def divide(a, b): return a / b</p>
-<p>print(divide(10, 0)) ```</p></li>
+<li><p><em>“이 Python 코드에서 오류가 발생하는데 원인이 뭔지 분석해줘.”</em></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(a, b):</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">/</span> b</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(divide(<span class="dv">10</span>, <span class="dv">0</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
 <li><p><em>“TypeScript에서 ‘Property does not exist on type’ 오류가 나는데 해결 방법이 뭐야?”</em></p></li>
 </ul>
 <hr>
@@ -331,9 +367,15 @@ ul.task-list li input[type="checkbox"] {
 <section id="코드-최적화-및-성능-개선" class="level3">
 <h3 class="anchored" data-anchor-id="코드-최적화-및-성능-개선">3. <strong>코드 최적화 및 성능 개선</strong></h3>
 <ul>
-<li><em>“아래 코드의 성능을 향상시킬 방법이 있을까?”</em><br>
-<code>python     def find_duplicates(lst):         duplicates = []         for i in range(len(lst)):             for j in range(i + 1, len(lst)):                 if lst[i] == lst[j] and lst[i] not in duplicates:                     duplicates.append(lst[i])         return duplicates</code></li>
-<li><em>“Python으로 대용량 데이터를 처리할 때 메모리를 절약할 방법을 알려줘.”</em></li>
+<li><p><em>“아래 코드의 성능을 향상시킬 방법이 있을까?”</em></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> find_duplicates(lst):</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    duplicates <span class="op">=</span> []</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="bu">len</span>(lst)):</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>        <span class="cf">for</span> j <span class="kw">in</span> <span class="bu">range</span>(i <span class="op">+</span> <span class="dv">1</span>, <span class="bu">len</span>(lst)):</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>            <span class="cf">if</span> lst[i] <span class="op">==</span> lst[j] <span class="kw">and</span> lst[i] <span class="kw">not</span> <span class="kw">in</span> duplicates:</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>                duplicates.append(lst[i])</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> duplicates</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><em>“Python으로 대용량 데이터를 처리할 때 메모리를 절약할 방법을 알려줘.”</em></p></li>
 </ul>
 <hr>
 </section>
