@@ -39,6 +39,7 @@ book:
   appendices: 
     - app_markdown.qmd
     - app_csv_json.qmd
+    - app_chatgpt.qmd
 
 language:
   crossref-apx-prefix: 참고자료
