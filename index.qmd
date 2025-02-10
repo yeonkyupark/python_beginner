@@ -72,6 +72,3 @@
 - @sec-package
 - @sec-package-search
 
-## 참고자료 {.unlisted}
-
-1. 코드 시각화 - [https://pythontutor.com/visualize.html#mode=edit](https://pythontutor.com/visualize.html#mode=edit){target="_blank"}
