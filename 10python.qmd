@@ -669,3 +669,7 @@ PyCharm에서는 **중단점(Breakpoint)**을 설정하여 코드를 단계별�
 1. **VCS → Enable Version Control Integration**을 클릭
 2. Git을 선택하고 연동하면 프로젝트를 GitHub 등과 연결 가능
 
+### 참고 사이트
+
+1. Online Python - [https://www.online-python.com/](https://www.online-python.com/){target="_blank"}
+1. D2 Coding 글꼴 - [https://github.com/naver/d2codingfont](https://github.com/naver/d2codingfont){target="_blank"}
