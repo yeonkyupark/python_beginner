@@ -2469,6 +2469,9 @@ print(my_set) # 빈 집합으로 변경됨
 
 ## 참고자료 {#sec-30-ref}
 
+### 참고 사이트
+
+1. 코드 시각화 - [https://pythontutor.com/visualize.html#mode=edit](https://pythontutor.com/visualize.html#mode=edit){target="_blank"}
 
 ### 이터러블 {#sec-iterable}
 
