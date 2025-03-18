@@ -6,6 +6,7 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="keywords" content="python, numpy, pandas, 기초, 문법">
 
 <title>참고자료 B: CSV 파일과 JSON 파일 – 파이썬 다루기</title>
 <style>
@@ -103,6 +104,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     "search-label": "Search"
   }
 }</script>
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" crossorigin="anonymous"></script>
+<meta name="google-adsense-account" content="pub-8759553852956796">
 
 
 <link rel="stylesheet" href="style.css">
@@ -117,7 +120,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">참고자료</a></li><li class="breadcrumb-item"><a href="./app_csv_json.html"><span class="chapter-title">CSV 파일과 JSON 파일</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">참고자료</a></li><li class="breadcrumb-item"><a href="./app_csv_json.html"><span class="chapter-title">파이썬 다루기</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -150,7 +153,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./index.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">들어가기</span></a>
+ <span class="menu-text">파이썬 다루기</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -220,7 +223,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pkg_numpy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Numpy</span></a>
+  <a href="./pkg_numpy.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파이썬 다루기</span></a>
   </div>
 </li>
       </ul>
@@ -241,7 +244,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./app_csv_json.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">CSV 파일과 JSON 파일</span></a>
+  <a href="./app_csv_json.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">파이썬 다루기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -285,7 +288,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">참고자료</a></li><li class="breadcrumb-item"><a href="./app_csv_json.html"><span class="chapter-title">CSV 파일과 JSON 파일</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./app_markdown.html">참고자료</a></li><li class="breadcrumb-item"><a href="./app_csv_json.html"><span class="chapter-title">파이썬 다루기</span></a></li></ol></nav>
 <div class="quarto-title">
 <h1 class="title">참고자료 B: CSV 파일과 JSON 파일</h1>
 </div>
@@ -300,6 +303,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   </div>
   
 
+<div>
+  <div class="keywords">
+    <div class="block-title">Keywords</div>
+    <p>python, numpy, pandas, 기초, 문법</p>
+  </div>
+</div>
 
 </header>
 
@@ -647,7 +656,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li>JSON 파일이 아닌 <strong>문자열</strong> 데이터를 다룰 때 <code>json.dumps()</code>와 <code>json.loads()</code>를 사용한다.</li>
 </ul>
 <p><strong>(1) Python 객체 → JSON 문자열 (<code>dumps()</code>)</strong></p>
-<div id="d9289b03" class="cell" data-execution_count="1">
+<div id="9f97a53e" class="cell" data-execution_count="1">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">"이름"</span>: <span class="st">"영희"</span>, <span class="st">"나이"</span>: <span class="dv">30</span>}</span>
@@ -663,7 +672,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </div>
 <p><strong>(2) JSON 문자열 → Python 객체 (<code>loads()</code>)</strong></p>
-<div id="661240dc" class="cell" data-execution_count="2">
+<div id="d190ae72" class="cell" data-execution_count="2">
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> json</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>json_str <span class="op">=</span> <span class="st">'{"이름": "영희", "나이": 30}'</span></span>
@@ -712,6 +721,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 
 </main> <!-- /main -->
+<script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8759553852956796" crossorigin="anonymous"></script>
+<!-- display-horizontal -->
+<ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-8759553852956796" data-ad-slot="1446193043" data-ad-format="auto" data-full-width-responsive="true"></ins>
+<script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+</script>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -802,7 +817,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
-      var filterRegex = new RegExp("https:\/\/github\.com\/yeonkyupark\/pepc2e");
+      var filterRegex = new RegExp("https:\/\/github\.com\/yeonkyupark\/python_beginner");
     var isInternal = (href) => {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
