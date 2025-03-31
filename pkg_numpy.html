@@ -6,9 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="keywords" content="python, numpy, pandas, 기초, 문법">
+<meta name="keywords" content="python, numpy, np, arange, arrays">
+<meta name="description" content="파이썬에서 배열을 처리하기 위한 numpy 패키지 사용법을 알아본다.">
 
-<title>Numpy – 파이썬 다루기</title>
+<title>NumPy – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +21,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -86,7 +121,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkg_numpy.html">파이썬 패키지</a></li><li class="breadcrumb-item"><a href="./pkg_numpy.html"><span class="chapter-title">파이썬 다루기</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkg_numpy.html">파이썬 패키지</a></li><li class="breadcrumb-item"><a href="./pkg_numpy.html"><span class="chapter-title">NumPy</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -189,7 +224,7 @@ ul.task-list li input[type="checkbox"] {
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./pkg_numpy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">파이썬 다루기</span></a>
+  <a href="./pkg_numpy.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">NumPy</span></a>
   </div>
 </li>
       </ul>
@@ -225,15 +260,43 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">목차</h2>
+   
+  <ul>
+  <li><a href="#numpy-개요" id="toc-numpy-개요" class="nav-link active" data-scroll-target="#numpy-개요"><strong>1. NumPy 개요</strong></a>
+  <ul>
+  <li><a href="#numpy란-무엇인가" id="toc-numpy란-무엇인가" class="nav-link" data-scroll-target="#numpy란-무엇인가"><strong>NumPy란 무엇인가?</strong></a></li>
+  <li><a href="#numpy의-특징과-장점" id="toc-numpy의-특징과-장점" class="nav-link" data-scroll-target="#numpy의-특징과-장점"><strong>NumPy의 특징과 장점</strong></a></li>
+  <li><a href="#왜-numpy를-사용하는가-리스트와의-차이점" id="toc-왜-numpy를-사용하는가-리스트와의-차이점" class="nav-link" data-scroll-target="#왜-numpy를-사용하는가-리스트와의-차이점"><strong>왜 NumPy를 사용하는가? (리스트와의 차이점)</strong></a>
+  <ul class="collapse">
+  <li><a href="#메모리-사용량-비교" id="toc-메모리-사용량-비교" class="nav-link" data-scroll-target="#메모리-사용량-비교"><strong>1) 메모리 사용량 비교</strong></a></li>
+  <li><a href="#연산-속도-비교" id="toc-연산-속도-비교" class="nav-link" data-scroll-target="#연산-속도-비교"><strong>2) 연산 속도 비교</strong></a></li>
+  <li><a href="#편리한-수학-연산-지원" id="toc-편리한-수학-연산-지원" class="nav-link" data-scroll-target="#편리한-수학-연산-지원"><strong>3) 편리한 수학 연산 지원</strong></a></li>
+  </ul></li>
+  <li><a href="#numpy-설치-및-기본-사용법" id="toc-numpy-설치-및-기본-사용법" class="nav-link" data-scroll-target="#numpy-설치-및-기본-사용법"><strong>NumPy 설치 및 기본 사용법</strong></a>
+  <ul class="collapse">
+  <li><a href="#numpy-설치" id="toc-numpy-설치" class="nav-link" data-scroll-target="#numpy-설치"><strong>1) NumPy 설치</strong></a></li>
+  <li><a href="#numpy-기본-사용법" id="toc-numpy-기본-사용법" class="nav-link" data-scroll-target="#numpy-기본-사용법"><strong>2) NumPy 기본 사용법</strong></a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#numpy-배열-생성" id="toc-numpy-배열-생성" class="nav-link" data-scroll-target="#numpy-배열-생성"><strong>2. NumPy 배열 생성</strong></a></li>
+  <li><a href="#배열의-인덱싱과-슬라이싱" id="toc-배열의-인덱싱과-슬라이싱" class="nav-link" data-scroll-target="#배열의-인덱싱과-슬라이싱"><strong>3. 배열의 인덱싱과 슬라이싱</strong></a></li>
+  <li><a href="#numpy의-주요-연산" id="toc-numpy의-주요-연산" class="nav-link" data-scroll-target="#numpy의-주요-연산"><strong>4. NumPy의 주요 연산</strong></a></li>
+  <li><a href="#배열-변형-및-조작" id="toc-배열-변형-및-조작" class="nav-link" data-scroll-target="#배열-변형-및-조작"><strong>5. 배열 변형 및 조작</strong></a></li>
+  <li><a href="#numpy-고급-기능" id="toc-numpy-고급-기능" class="nav-link" data-scroll-target="#numpy-고급-기능"><strong>6. NumPy 고급 기능</strong></a></li>
+  <li><a href="#실전-예제-및-활용-사례" id="toc-실전-예제-및-활용-사례" class="nav-link" data-scroll-target="#실전-예제-및-활용-사례"><strong>7. 실전 예제 및 활용 사례</strong></a></li>
+  <li><a href="#참고자료" id="toc-참고자료" class="nav-link" data-scroll-target="#참고자료">참고자료</a></li>
+  </ul>
+<div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/pkg_numpy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkg_numpy.html">파이썬 패키지</a></li><li class="breadcrumb-item"><a href="./pkg_numpy.html"><span class="chapter-title">파이썬 다루기</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./pkg_numpy.html">파이썬 패키지</a></li><li class="breadcrumb-item"><a href="./pkg_numpy.html"><span class="chapter-title">NumPy</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="sec-numpy" class="quarto-section-identifier"><span class="chapter-title">Numpy</span></span></h1>
+<h1 class="title"><span class="chapter-title">NumPy</span></h1>
 </div>
 
 
@@ -249,15 +312,287 @@ ul.task-list li input[type="checkbox"] {
 <div>
   <div class="keywords">
     <div class="block-title">Keywords</div>
-    <p>python, numpy, pandas, 기초, 문법</p>
+    <p>python, numpy, np, arange, arrays</p>
   </div>
 </div>
 
 </header>
 
 
+<section id="numpy-개요" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-개요"><strong>1. NumPy 개요</strong></h2>
+<p>NumPy(Numerical Python)는 <strong>대규모 다차원 배열과 행렬 연산을 효율적으로 수행하는 라이브러리</strong>이다. 과학 계산, 데이터 분석, 머신러닝 등의 분야에서 널리 사용된다.</p>
+<hr>
+<section id="numpy란-무엇인가" class="level3">
+<h3 class="anchored" data-anchor-id="numpy란-무엇인가"><strong>NumPy란 무엇인가?</strong></h3>
+<p>NumPy는 <strong>대량의 숫자 데이터를 빠르고 효율적으로 처리하기 위해 개발된 라이브러리</strong>이다. Python의 기본 리스트보다 <strong>메모리 사용량이 적고, 연산 속도가 빠르며, 다양한 수학 연산을 지원</strong>한다.</p>
+<p>NumPy는 다음과 같은 기능을 제공한다.<br>
+- <strong>다차원 배열 객체(<code>ndarray</code>)</strong><br>
+- 리스트와 유사하지만, <strong>행렬처럼 연산이 가능하고 빠르다.</strong><br>
+- <strong>벡터화 연산 (Vectorized Operations)</strong><br>
+- 반복문 없이 <strong>배열 단위의 연산을 수행</strong>하여 속도를 향상한다.<br>
+- <strong>수학, 선형대수, 통계 함수 제공</strong><br>
+- <code>sum()</code>, <code>mean()</code>, <code>std()</code>, <code>dot()</code> 등<br>
+- <strong>다양한 데이터 파일 입출력 지원</strong><br>
+- <code>.csv</code>, <code>.txt</code>, <code>.npy</code> 등 파일을 쉽게 저장 및 로드 가능</p>
+<hr>
+</section>
+<section id="numpy의-특징과-장점" class="level3">
+<h3 class="anchored" data-anchor-id="numpy의-특징과-장점"><strong>NumPy의 특징과 장점</strong></h3>
+<p>NumPy는 Python의 기본 리스트보다 <strong>빠르고 효율적</strong>이며, 수학 및 과학 계산을 위한 다양한 기능을 제공한다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>특징</th>
+<th>설명</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>빠른 연산 속도</strong></td>
+<td>내부적으로 C언어로 구현되어 있어 <strong>리스트보다 연산 속도가 훨씬 빠름</strong></td>
+</tr>
+<tr class="even">
+<td><strong>메모리 효율성</strong></td>
+<td>같은 데이터를 저장할 때 <strong>리스트보다 적은 메모리를 사용</strong></td>
+</tr>
+<tr class="odd">
+<td><strong>벡터 연산 지원</strong></td>
+<td>반복문 없이 <strong>배열 단위로 연산이 가능</strong></td>
+</tr>
+<tr class="even">
+<td><strong>다차원 배열 처리</strong></td>
+<td>1차원, 2차원, N차원 배열을 쉽게 다룰 수 있음</td>
+</tr>
+<tr class="odd">
+<td><strong>다양한 수학/통계 함수 제공</strong></td>
+<td>행렬 연산, 난수 생성, 변환 함수 등 <strong>수학 계산 기능 내장</strong></td>
+</tr>
+<tr class="even">
+<td><strong>외부 라이브러리와 연동</strong></td>
+<td>Pandas, SciPy, Scikit-learn, TensorFlow 등과 호환 가능</td>
+</tr>
+</tbody>
+</table>
+<hr>
+</section>
+<section id="왜-numpy를-사용하는가-리스트와의-차이점" class="level3">
+<h3 class="anchored" data-anchor-id="왜-numpy를-사용하는가-리스트와의-차이점"><strong>왜 NumPy를 사용하는가? (리스트와의 차이점)</strong></h3>
+<p>Python의 리스트와 NumPy 배열을 비교하면 NumPy의 장점이 더욱 명확해진다.</p>
+<section id="메모리-사용량-비교" class="level4">
+<h4 class="anchored" data-anchor-id="메모리-사용량-비교"><strong>1) 메모리 사용량 비교</strong></h4>
+<p>NumPy 배열은 같은 데이터를 저장할 때 <strong>더 적은 메모리를 사용</strong>한다.</p>
+<div id="a5884540" class="cell" data-execution_count="1">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> sys</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 크기 5인 리스트와 NumPy 배열 생성</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>list_data <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>numpy_array <span class="op">=</span> np.array(list_data)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 메모리 크기 비교</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"리스트 메모리 크기:"</span>, sys.getsizeof(list_data) <span class="op">*</span> <span class="bu">len</span>(list_data), <span class="st">"bytes"</span>)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NumPy 배열 메모리 크기:"</span>, numpy_array.nbytes, <span class="st">"bytes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>리스트 메모리 크기: 520 bytes
+NumPy 배열 메모리 크기: 40 bytes</code></pre>
+</div>
+</div>
+<p>NumPy 배열은 <strong>데이터 타입을 통일하여 메모리 사용량을 줄인다.</strong></p>
+</section>
+<section id="연산-속도-비교" class="level4">
+<h4 class="anchored" data-anchor-id="연산-속도-비교"><strong>2) 연산 속도 비교</strong></h4>
+<p>NumPy는 <strong>벡터 연산</strong>을 지원하여 리스트보다 연산 속도가 빠르다.</p>
+<div id="65a0ec55" class="cell" data-execution_count="2">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> time</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 크기 100만의 리스트와 NumPy 배열 생성</span></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>size <span class="op">=</span> <span class="dv">1_000_000</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>list1 <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(size))</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>list2 <span class="op">=</span> <span class="bu">list</span>(<span class="bu">range</span>(size))</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a>array1 <span class="op">=</span> np.arange(size)</span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a>array2 <span class="op">=</span> np.arange(size)</span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co"># 리스트 연산 속도 측정</span></span>
+<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>result_list <span class="op">=</span> [x <span class="op">+</span> y <span class="cf">for</span> x, y <span class="kw">in</span> <span class="bu">zip</span>(list1, list2)]</span>
+<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"리스트 연산 시간:"</span>, end <span class="op">-</span> start)</span>
+<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co"># NumPy 배열 연산 속도 측정</span></span>
+<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a>start <span class="op">=</span> time.time()</span>
+<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a>result_array <span class="op">=</span> array1 <span class="op">+</span> array2</span>
+<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a>end <span class="op">=</span> time.time()</span>
+<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"NumPy 연산 시간:"</span>, end <span class="op">-</span> start)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>리스트 연산 시간: 0.06434035301208496
+NumPy 연산 시간: 0.0019116401672363281</code></pre>
+</div>
+</div>
+<p><strong>결과:</strong> NumPy 배열 연산이 리스트보다 <strong>수십 배 빠르게 실행</strong>된다.</p>
+</section>
+<section id="편리한-수학-연산-지원" class="level4">
+<h4 class="anchored" data-anchor-id="편리한-수학-연산-지원"><strong>3) 편리한 수학 연산 지원</strong></h4>
+<p>리스트는 기본적으로 <strong>수학 연산을 직접 지원하지 않음</strong></p>
+<div id="f12a1bc9" class="cell" data-execution_count="3">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>list_a <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>list_b <span class="op">=</span> [<span class="dv">5</span>, <span class="dv">6</span>, <span class="dv">7</span>, <span class="dv">8</span>]</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="co"># 리스트 연산 (에러 발생)</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># print(list_a + 10)  # TypeError</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>반면 NumPy 배열은 <strong>벡터 연산이 가능</strong></p>
+<div id="b4bd25a0" class="cell" data-execution_count="4">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>array_a <span class="op">=</span> np.array(list_a)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(array_a <span class="op">+</span> <span class="dv">10</span>)  <span class="co"># 배열의 모든 요소에 10을 더함</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[11 12 13 14]</code></pre>
+</div>
+</div>
+<hr>
+</section>
+</section>
+<section id="numpy-설치-및-기본-사용법" class="level3">
+<h3 class="anchored" data-anchor-id="numpy-설치-및-기본-사용법"><strong>NumPy 설치 및 기본 사용법</strong></h3>
+<section id="numpy-설치" class="level4">
+<h4 class="anchored" data-anchor-id="numpy-설치"><strong>1) NumPy 설치</strong></h4>
+<p>NumPy는 <code>pip</code>을 사용하여 설치할 수 있다.</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>설치 확인</p>
+<div id="21b6f4af" class="cell" data-execution_count="5">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(np.__version__)  <span class="co"># NumPy 버전 출력</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>2.2.0</code></pre>
+</div>
+</div>
+</section>
+<section id="numpy-기본-사용법" class="level4">
+<h4 class="anchored" data-anchor-id="numpy-기본-사용법"><strong>2) NumPy 기본 사용법</strong></h4>
+<p>NumPy를 사용하려면 <code>numpy</code>를 <strong><code>np</code>로 줄여서</strong> 불러오는 것이 일반적이다.</p>
+<div id="d81191c9" class="cell" data-execution_count="6">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 1차원 배열 생성</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>arr <span class="op">=</span> np.array([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>])</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(arr)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="bu">type</span>(arr))  <span class="co"># &lt;class 'numpy.ndarray'&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># 배열의 속성 확인</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"배열 크기:"</span>, arr.shape)</span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"배열 차원:"</span>, arr.ndim)</span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"배열 데이터 타입:"</span>, arr.dtype)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1 2 3 4 5]
+&lt;class 'numpy.ndarray'&gt;
+배열 크기: (5,)
+배열 차원: 1
+배열 데이터 타입: int64</code></pre>
+</div>
+</div>
+<p>NumPy 배열은 리스트와 달리 <strong>배열 크기(<code>shape</code>), 차원(<code>ndim</code>), 데이터 타입(<code>dtype</code>)</strong> 등의 속성을 가진다.</p>
+<hr>
+</section>
+</section>
+</section>
+<section id="numpy-배열-생성" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-배열-생성"><strong>2. NumPy 배열 생성</strong></h2>
+<ul>
+<li><code>numpy.array()</code>를 이용한 배열 생성<br>
+</li>
+<li>다양한 배열 생성 방법
+<ul>
+<li><code>np.zeros()</code>, <code>np.ones()</code>, <code>np.full()</code>, <code>np.eye()</code><br>
+</li>
+<li><code>np.arange()</code>, <code>np.linspace()</code><br>
+</li>
+<li>난수 배열 생성 (<code>np.random</code>)<br>
+</li>
+</ul></li>
+<li>배열의 속성 (<code>shape</code>, <code>dtype</code>, <code>size</code>, <code>ndim</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="배열의-인덱싱과-슬라이싱" class="level2">
+<h2 class="anchored" data-anchor-id="배열의-인덱싱과-슬라이싱"><strong>3. 배열의 인덱싱과 슬라이싱</strong></h2>
+<ul>
+<li>기본적인 인덱싱 (<code>1D</code>, <code>2D</code>, <code>3D</code> 배열)<br>
+</li>
+<li>슬라이싱을 이용한 부분 배열 추출<br>
+</li>
+<li>불리언 인덱싱과 조건 검색 (<code>arr[arr &gt; 5]</code>)<br>
+</li>
+<li>팬시 인덱싱 (<code>arr[[0, 2, 4]]</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="numpy의-주요-연산" class="level2">
+<h2 class="anchored" data-anchor-id="numpy의-주요-연산"><strong>4. NumPy의 주요 연산</strong></h2>
+<ul>
+<li>기본적인 산술 연산 (<code>+, -, *, /, **, %</code>)<br>
+</li>
+<li>브로드캐스팅 개념<br>
+</li>
+<li>배열 간 연산 (<code>np.add</code>, <code>np.subtract</code>, <code>np.multiply</code>, <code>np.divide</code>)<br>
+</li>
+<li>통계 연산 (<code>np.mean</code>, <code>np.sum</code>, <code>np.min</code>, <code>np.max</code>, <code>np.std</code>, <code>np.var</code>)<br>
+</li>
+<li>행렬 연산 (<code>np.dot</code>, <code>np.matmul</code>, <code>np.linalg.inv</code>, <code>np.linalg.det</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="배열-변형-및-조작" class="level2">
+<h2 class="anchored" data-anchor-id="배열-변형-및-조작"><strong>5. 배열 변형 및 조작</strong></h2>
+<ul>
+<li>배열의 형태 변경 (<code>reshape</code>, <code>ravel</code>, <code>flatten</code>)<br>
+</li>
+<li>차원 변경 (<code>np.newaxis</code>, <code>squeeze</code>)<br>
+</li>
+<li>배열 연결 (<code>np.concatenate</code>, <code>np.hstack</code>, <code>np.vstack</code>)<br>
+</li>
+<li>배열 분할 (<code>np.split</code>, <code>np.hsplit</code>, <code>np.vsplit</code>)<br>
+</li>
+<li>배열 정렬 (<code>np.sort</code>, <code>np.argsort</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="numpy-고급-기능" class="level2">
+<h2 class="anchored" data-anchor-id="numpy-고급-기능"><strong>6. NumPy 고급 기능</strong></h2>
+<ul>
+<li>고급 인덱싱 (<code>np.where</code>, <code>np.take</code>, <code>np.put</code>)<br>
+</li>
+<li>유니버설 함수 (<code>np.exp</code>, <code>np.log</code>, <code>np.sin</code>, <code>np.cos</code>)<br>
+</li>
+<li>마스크 연산 (<code>np.ma.masked_array</code>)<br>
+</li>
+<li>메모리 절약 기법 (<code>dtype</code> 변경, <code>astype</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="실전-예제-및-활용-사례" class="level2">
+<h2 class="anchored" data-anchor-id="실전-예제-및-활용-사례"><strong>7. 실전 예제 및 활용 사례</strong></h2>
+<ul>
+<li>NumPy를 활용한 간단한 데이터 분석<br>
+</li>
+<li>이미지 데이터 처리 (PIL, OpenCV 연동)<br>
+</li>
+<li>CSV 파일 읽기 (<code>np.loadtxt</code>, <code>np.genfromtxt</code>)<br>
+</li>
+<li>Pandas와의 연동 (<code>pd.DataFrame(np.array)</code>)</li>
+</ul>
+<hr>
+</section>
+<section id="참고자료" class="level2">
+<h2 class="anchored" data-anchor-id="참고자료">참고자료</h2>
+<hr>
+<p><strong>각주</strong></p>
 
 
+</section>
 
 </main> <!-- /main -->
 <script async="" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8759553852956796" crossorigin="anonymous"></script>
@@ -703,7 +1038,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </div>   
     <div class="nav-footer-center">
       &nbsp;
-    <div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/pkg_numpy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
+    <div class="toc-actions d-sm-block d-md-none"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/pkg_numpy.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></div>
     <div class="nav-footer-right">
 <p>Python Handling</p>
 </div>
