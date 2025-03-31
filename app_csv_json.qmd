@@ -1,4 +1,8 @@
-# CSV 파일과 JSON 파일
+---
+title: CSV 파일과 JSON 파일
+format: html
+description: 파이썬에서 CSV 파일을 읽고 쓰는 방법을 알아 본다.
+---
 
 ## CSV 파일  {#sec-csv-file}
 
