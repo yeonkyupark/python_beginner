@@ -1,0 +1,1043 @@
+---
+title: Pandas
+format: html
+description: python pandas 패키지에 대해 알아 본다.
+keywords: python pandas pd
+---
+
+## Pandas 소개  
+
+### Pandas 개요  
+
+Pandas는 Python에서 데이터 분석과 조작을 위한 라이브러리로, 특히 테이블 형태(행과 열)로 구성된 데이터를 효율적으로 처리할 수 있도록 설계되었다. Pandas는 다음과 같은 특징을 가진다.  
+
+- **데이터 구조 제공**
+: Pandas는 `Series`(1차원)와 `DataFrame`(2차원)이라는 핵심 데이터 구조를 제공하여 데이터 저장 및 조작을 쉽게 할 수 있다.  
+
+- **데이터 처리 기능**
+: 결측값 처리, 데이터 정렬, 필터링, 그룹화, 변환 등의 다양한 기능을 지원한다.  
+
+- **다양한 데이터 소스 지원**
+: CSV, Excel, JSON, SQL 등 여러 형식의 데이터를 불러오고 저장할 수 있다.  
+
+- **NumPy 및 기타 라이브러리와의 호환성**
+: Pandas는 NumPy 기반으로 만들어졌으며, SciPy, Matplotlib, Scikit-learn 등의 라이브러리와 함께 사용하기 용이하다.  
+
+### 데이터 분석에서 Pandas의 역할  
+
+Pandas는 데이터 분석 과정에서 다양한 용도로 활용된다.  
+
+- **데이터 로드 및 저장**
+: 다양한 형식의 데이터를 불러와서 Python 환경에서 분석할 수 있도록 지원한다.  
+
+- **데이터 정리 및 전처리**
+: 누락된 값 처리, 중복 제거, 이상치 탐지 등 데이터 정제 작업을 수행할 수 있다.  
+
+- **데이터 조작 및 변환**
+: 데이터를 정렬, 필터링, 그룹화, 피벗 테이블 등의 방식으로 변형할 수 있다.  
+
+- **통계 및 요약 분석**
+: 평균, 분산, 최댓값, 최솟값 등의 기본적인 통계 분석이 가능하다.  
+
+- **데이터 시각화**
+: 기본적인 그래프 출력 기능을 제공하며, Matplotlib 및 Seaborn과 함께 사용하면 더 다양한 시각화가 가능하다.  
+
+### 설치 및 기본 설정  
+
+Pandas는 Python 패키지 관리자(PIP)를 통해 쉽게 설치할 수 있다.  
+
+1. **Pandas 설치**  
+   ```python
+   pip install pandas
+   ```  
+
+2. **Pandas 불러오기**  
+   Pandas를 사용하기 위해서는 먼저 라이브러리를 임포트해야 한다.  
+
+   ```python
+   import pandas as pd
+   ```  
+   일반적으로 `pd`라는 축약형(alias)으로 불러와서 사용한다.  
+
+3. **기본 데이터 구조 생성**  
+
+   ```{python}
+   import pandas as pd
+
+   # Series 생성
+   s = pd.Series([1, 2, 3, 4, 5])
+   print(s)
+
+   # DataFrame 생성
+   data = {'Name': ['Alice', 'Bob', 'Charlie'], 'Age': [25, 30, 35]}
+   df = pd.DataFrame(data)
+   print(df)
+   ```  
+
+   - `Series`는 1차원 배열과 비슷한 구조이며, 인덱스를 포함한다.  
+   - `DataFrame`은 2차원 테이블 구조로, 여러 개의 `Series`가 모여 있는 형태이다.  
+
+
+## Pandas 데이터 구조  
+
+### Series와 DataFrame 개념  
+
+Pandas의 핵심 데이터 구조는 `Series`와 `DataFrame`이다.  
+
+- **Series**: 1차원 배열과 유사한 구조로, 인덱스와 함께 데이터를 저장한다.  
+- **DataFrame**: 2차원 테이블 형태의 데이터 구조로, 여러 개의 `Series`가 모여서 행과 열을 이루는 형태이다.  
+
+| 구조 | 설명 | 예제 |
+|------|------|------|
+| **Series** | 1차원 데이터 구조 (인덱스 포함) | `pd.Series([10, 20, 30])` |
+| **DataFrame** | 2차원 테이블 형태 데이터 구조 | `pd.DataFrame({'A': [1, 2], 'B': [3, 4]})` |
+
+---
+
+### 데이터 생성 및 변환  
+
+#### 1. Series 생성
+
+```{python}
+import pandas as pd
+
+# 리스트를 이용한 Series 생성
+s = pd.Series([10, 20, 30, 40], index=['a', 'b', 'c', 'd'])
+print(s)
+```
+- 인덱스를 지정할 수 있으며, 기본적으로 `0, 1, 2, ...` 형태로 자동 생성됨  
+
+#### 2. DataFrame 생성  
+
+```{python}
+# 딕셔너리를 이용한 DataFrame 생성
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['Seoul', 'Busan', 'Incheon']}
+
+df = pd.DataFrame(data)
+print(df)
+```
+- 딕셔너리를 활용하면 `Key`가 컬럼명이 되고, 리스트가 해당 컬럼의 값으로 매핑됨  
+
+#### 3. 리스트에서 DataFrame 변환
+
+```{python}
+# 리스트를 활용한 DataFrame 생성
+data = [[1, 'Alice', 25], [2, 'Bob', 30], [3, 'Charlie', 35]]
+df = pd.DataFrame(data, columns=['ID', 'Name', 'Age'])
+print(df)
+```
+
+#### 4. CSV 파일을 DataFrame으로 변환  
+
+```python
+df = pd.read_csv('data.csv')  # CSV 파일 불러오기
+print(df.head())  # 상위 5개 행 출력
+```
+
+---
+
+### 기본 데이터 탐색 및 인덱싱  
+#### 1. 기본 정보 조회  
+
+```{python}
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['Seoul', 'Busan', 'Incheon']}
+
+df = pd.DataFrame(data)
+
+print(df.info())   # 데이터프레임 정보 출력
+print(df.describe())  # 기본 통계 요약 정보
+print(df.shape)    # 데이터프레임 크기 확인 (행, 열)
+print(df.columns)  # 컬럼명 출력
+```
+
+#### 2. 데이터 선택 (인덱싱 및 슬라이싱)  
+
+```{python}
+# 특정 컬럼 선택
+print(df['Name'])
+
+# 여러 개의 컬럼 선택
+print(df[['Name', 'Age']])
+
+# 특정 행 선택 (iloc 사용: 위치 기반 인덱싱)
+print(df.iloc[0])  # 첫 번째 행 출력
+print(df.iloc[1:3])  # 1~2번째 행 출력
+
+# 특정 행 선택 (loc 사용: 라벨 기반 인덱싱)
+print(df.loc[0])  # 첫 번째 행 출력
+print(df.loc[:, ['Name', 'Age']])  # 모든 행에서 'Name'과 'Age' 컬럼 선택
+```
+
+- `iloc[]`은 숫자 인덱스를 기반으로 데이터를 선택  
+- `loc[]`은 라벨(컬럼명, 인덱스명)을 기반으로 데이터를 선택  
+
+
+## 데이터 입출력  
+
+Pandas는 다양한 파일 형식의 데이터를 읽고 저장할 수 있는 기능을 제공한다.  
+
+---
+
+### CSV, Excel, JSON 파일 읽기 및 저장  
+
+#### 1. CSV 파일 입출력  
+
+CSV(Comma-Separated Values)는 가장 많이 사용되는 데이터 저장 형식 중 하나이다.  
+
+```python
+import pandas as pd
+
+# CSV 파일 읽기
+df = pd.read_csv('data.csv')  # 기본적으로 첫 번째 행을 컬럼명으로 인식
+print(df.head())  # 상위 5개 행 출력
+
+# CSV 파일 저장
+df.to_csv('output.csv', index=False)  # index=False 옵션을 사용하면 인덱스 저장 안 함
+```
+
+- `read_csv()` 함수는 CSV 파일을 DataFrame으로 변환  
+- `to_csv()` 함수는 DataFrame을 CSV 파일로 저장  
+
+---
+
+#### 2. Excel 파일 입출력  
+
+Excel 파일은 `.xlsx` 확장자로 저장되며, Pandas는 `openpyxl` 라이브러리를 사용하여 엑셀 데이터를 처리할 수 있다.  
+
+```python
+# Excel 파일 읽기
+df = pd.read_excel('data.xlsx', sheet_name='Sheet1')  # 특정 시트 읽기
+print(df.head())
+
+# Excel 파일 저장
+df.to_excel('output.xlsx', sheet_name='Result', index=False)
+```
+
+- `sheet_name` 옵션을 사용하여 특정 시트의 데이터를 불러올 수 있음  
+- 엑셀 파일을 저장할 때도 `index=False` 옵션을 활용하여 인덱스 저장을 방지할 수 있음  
+
+---
+
+#### 3. JSON 파일 입출력  
+
+JSON(JavaScript Object Notation)은 웹에서 데이터를 주고받을 때 많이 사용하는 형식이다.  
+
+```python
+# JSON 파일 읽기
+df = pd.read_json('data.json')
+print(df.head())
+
+# JSON 파일 저장
+df.to_json('output.json', orient='records', lines=True)  # 줄 단위 저장 (개별 JSON 객체)
+```
+
+- `orient='records'`를 사용하면 리스트 형태로 저장됨  
+- `lines=True`를 추가하면 각 행이 별도의 JSON 객체로 저장됨  
+
+---
+
+### SQL 데이터베이스 연결  
+
+Pandas는 `sqlite3` 또는 `SQLAlchemy`를 사용하여 SQL 데이터베이스와 연동할 수 있다.  
+
+```python
+import sqlite3
+
+# SQLite 데이터베이스 연결
+conn = sqlite3.connect('example.db')
+
+# SQL 쿼리를 이용하여 데이터 읽기
+df = pd.read_sql_query("SELECT * FROM users", conn)
+print(df.head())
+
+# DataFrame을 SQL 테이블로 저장
+df.to_sql('users_backup', conn, if_exists='replace', index=False)
+```
+
+- `pd.read_sql_query()`를 사용하면 SQL 쿼리 결과를 DataFrame으로 변환 가능  
+- `df.to_sql()`을 이용해 DataFrame을 데이터베이스 테이블로 저장할 수 있으며, `if_exists='replace'`를 설정하면 기존 데이터를 덮어쓴다.  
+
+---
+
+### 웹 데이터 가져오기  
+
+웹에서 데이터를 가져올 때는 `read_html()` 또는 `requests`와 `BeautifulSoup`을 사용할 수 있다.  
+
+#### 1. HTML 테이블 데이터 가져오기  
+
+```python
+url = 'https://example.com/table_page'
+df_list = pd.read_html(url)  # 웹 페이지 내 모든 테이블을 리스트로 반환
+df = df_list[0]  # 첫 번째 테이블 선택
+print(df.head())
+```
+
+- `pd.read_html()`은 HTML 페이지에서 `<table>` 태그를 자동으로 찾아 DataFrame으로 변환  
+
+#### 2. 웹 스크래핑 (requests + BeautifulSoup)  
+
+웹 페이지에서 특정 데이터를 가져오려면 `requests`와 `BeautifulSoup`을 사용할 수 있다.  
+
+```python
+import requests
+from bs4 import BeautifulSoup
+
+url = 'https://example.com'
+response = requests.get(url)
+soup = BeautifulSoup(response.text, 'html.parser')
+
+# 특정 요소 가져오기 (예: 제목 텍스트)
+titles = soup.find_all('h2')
+for title in titles:
+    print(title.text)
+```
+
+- `requests.get()`을 사용하여 웹 페이지의 HTML을 가져오고, `BeautifulSoup`을 사용해 원하는 요소를 추출  
+
+
+## 데이터 탐색 및 전처리  
+
+데이터를 분석하기 전에 데이터의 구조를 이해하고, 결측값이나 중복 데이터를 정리하는 과정이 필요하다.  
+
+---
+
+### 데이터프레임 기초 정보 확인   
+
+데이터의 기본적인 정보를 확인하는 방법은 다음과 같다(`info`, `describe`).  
+
+```{python}
+import pandas as pd
+
+# 예제 데이터프레임 생성
+data = {'Name': ['Alice', 'Bob', 'Charlie', 'David'],
+        'Age': [25, 30, 35, None],
+        'Salary': [50000, 60000, 70000, 80000]}
+
+df = pd.DataFrame(data)
+```
+
+#### 1. 기본 정보 확인  
+
+```{python}
+print(df.info())
+```
+- 각 열의 데이터 타입, 결측값 개수, 총 데이터 개수를 확인할 수 있다.  
+
+#### 2. 기본 통계 정보 확인  
+
+```{python}
+print(df.describe())
+```
+- 수치형 데이터에 대한 평균, 표준편차, 최댓값, 최솟값 등의 통계를 제공  
+- `df.describe(include='all')`을 사용하면 범주형 데이터도 함께 확인 가능  
+
+---
+
+### 결측값 처리   
+
+데이터에서 결측값(NaN)을 처리하는 방법은 크게 두 가지이다(`dropna`, `fillna`).  
+
+#### 1. 결측값 제거  
+
+```{python}
+df_cleaned = df.dropna()
+print(df_cleaned)
+```
+- 결측값이 있는 행을 삭제  
+- `df.dropna(axis=1)`을 사용하면 결측값이 포함된 열을 삭제  
+
+#### 2. 결측값 채우기  
+
+```{python}
+df_filled = df.fillna({'Age': df['Age'].mean()})  # 결측값을 평균으로 대체
+print(df_filled)
+```
+- `fillna(value)`를 사용하면 특정 값으로 결측값을 채울 수 있다.  
+- 평균값, 중앙값 또는 특정 값으로 채우는 방식이 일반적이다.  
+
+---
+
+### 중복 데이터 처리   
+
+데이터에 중복된 값이 존재하는지 확인하고 제거할 수 있다(`duplicated`, `drop_duplicates`).  
+
+#### 1. 중복 데이터 확인  
+
+```{python}
+print(df.duplicated())  # 각 행이 중복인지 여부 반환
+```
+
+#### 2. 중복 데이터 제거  
+
+```{python}
+df_unique = df.drop_duplicates()
+print(df_unique)
+```
+- 기본적으로 모든 컬럼을 기준으로 중복을 판단  
+- 특정 컬럼을 기준으로 중복을 제거하려면 `df.drop_duplicates(subset=['Name'])`을 사용  
+
+---
+
+### 데이터 정렬 및 필터링  
+
+데이터를 특정 기준으로 정렬(`sort_values`)하거나 원하는 조건에 맞는 데이터를 추출(`조건부 선택`)할 수 있다.  
+
+#### 1. 데이터 정렬 
+
+```{python}
+df_sorted = df.sort_values(by='Salary', ascending=False)  # 급여 내림차순 정렬
+print(df_sorted)
+```
+- 여러 개의 컬럼 기준으로 정렬하려면 `df.sort_values(by=['Age', 'Salary'])` 사용  
+
+#### 2. 데이터 필터링  
+
+```{python}
+df_filtered = df[df['Age'] > 30]  # 30세 이상 데이터만 선택
+print(df_filtered)
+```
+- 여러 조건을 조합하려면 `df[(df['Age'] > 30) & (df['Salary'] > 60000)]`을 사용  
+
+
+## 데이터 변환 및 조작  
+
+데이터 분석을 위해 데이터프레임의 특정 부분을 선택하고, 필요한 변형을 수행하는 것이 중요하다.  
+
+---
+
+### 데이터프레임 인덱싱 및 슬라이싱  
+
+Pandas에서 데이터를 선택하는 방법은 `loc[]`, `iloc[]`, 직접 컬럼명을 지정하는 방식 등이 있다.  
+
+#### 1. 단일 컬럼 선택  
+
+```{python}
+import pandas as pd
+
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'Salary': [50000, 60000, 70000]}
+
+df = pd.DataFrame(data)
+
+# 특정 컬럼 선택
+print(df['Name'])  # Series 형태 반환
+print(df[['Name', 'Age']])  # DataFrame 형태 반환
+```
+
+#### 2. 행 선택 
+
+행 선택하는 방법에는 라벨 기반으로 선택하는 `loc[]`, 위치(숫자) 기반으로 선택하는 `iloc[]`가 있다.
+
+```{python}
+# 라벨(이름) 기반 선택
+print(df.loc[0])  # 첫 번째 행 선택
+print(df.loc[:, ['Name', 'Salary']])  # 모든 행에서 특정 열 선택
+
+# 위치(숫자) 기반 선택
+print(df.iloc[1])  # 두 번째 행 선택
+print(df.iloc[0:2, 1:3])  # 첫 번째~두 번째 행, 두 번째~세 번째 열 선택
+```
+
+- `loc[]`은 **라벨(컬럼명, 인덱스명)** 기반  
+- `iloc[]`은 **숫자 인덱스** 기반  
+
+---
+
+### 행과 열 추가 및 삭제  
+
+#### 1. 행 추가  
+
+```{python}
+df.loc[3] = ['David', 40, 80000]  # 새 행 추가
+print(df)
+```
+
+#### 2. 열 추가  
+
+```{python}
+df['Bonus'] = df['Salary'] * 0.1  # 기존 컬럼을 활용해 새 컬럼 생성
+print(df)
+```
+
+#### 3. 행 삭제   
+```{python}
+# (`drop`)
+df = df.drop(1)  # 인덱스 1인 행 삭제
+print(df)
+```
+
+#### 4. 열 삭제  
+
+```{python}
+df = df.drop(columns=['Bonus'])  # 'Bonus' 컬럼 삭제
+print(df)
+```
+
+- `drop()`을 사용할 때 `inplace=True`를 설정하면 원본 데이터프레임이 변경됨  
+
+---
+
+### 데이터 타입 변환  
+
+데이터 타입을 변환하면 분석 및 연산 과정에서 오류를 방지할 수 있다.  
+
+#### 1. 기본적인 데이터 타입 변환  
+
+```{python}
+# (`astype`)
+df['Age'] = df['Age'].astype(int)  # Age 컬럼을 정수형(int)으로 변환
+print(df.dtypes)
+```
+
+#### 2. 날짜형 데이터 변환   
+
+```{python}
+# (`to_datetime`)
+df['JoinDate'] = ['2023-01-01', '2022-12-15', '2021-08-10']
+df['JoinDate'] = pd.to_datetime(df['JoinDate'])  # 문자열을 날짜형으로 변환
+print(df.dtypes)
+```
+
+---
+
+### Apply 함수 활용  
+
+`apply()` 함수는 행 또는 열 단위로 함수를 적용할 때 사용한다.  
+
+#### 1. 각 행에 함수 적용 (열 기준)  
+
+```{python}
+df['Salary After Tax'] = df['Salary'].apply(lambda x: x * 0.8)  # 세금 20% 공제
+print(df)
+```
+
+#### 2. 각 행 또는 열을 기준으로 연산   
+
+```{python}
+# (`axis` 옵션 사용)
+def categorize_age(age):
+    return 'Young' if age < 30 else 'Old'
+
+df['Age Group'] = df['Age'].apply(categorize_age)
+print(df)
+```
+
+- `apply()`를 활용하면 복잡한 연산을 손쉽게 처리할 수 있다.  
+
+
+## 데이터 집계 및 그룹화  
+
+Pandas는 데이터를 효과적으로 요약하고 분석할 수 있는 다양한 집계 및 그룹화 기능을 제공한다.  
+
+---
+
+### 기본 통계 함수   
+
+Pandas는 데이터의 기본적인 통계값을 계산하는 다양한 함수(`mean`, `sum`, `count` 등)를 제공한다.  
+
+#### 1. 기본 통계 함수  
+
+```{python}
+import pandas as pd
+
+data = {'Department': ['HR', 'IT', 'IT', 'HR', 'Finance'],
+        'Salary': [50000, 60000, 70000, 48000, 75000],
+        'Experience': [5, 8, 10, 3, 12]}
+
+df = pd.DataFrame(data)
+
+# 평균
+print(df['Salary'].mean())  # 급여 평균
+
+# 합계
+print(df['Salary'].sum())  # 급여 총합
+
+# 개수
+print(df['Department'].count())  # 행 개수
+
+# 최댓값, 최솟값
+print(df['Salary'].max())  # 최고 급여
+print(df['Salary'].min())  # 최저 급여
+```
+
+#### 2. 여러 개의 통계 함수 적용   
+
+```{python}
+# (`agg`)
+df.agg({'Salary': ['mean', 'sum'], 'Experience': ['min', 'max']})
+```
+- 여러 개의 컬럼에 대해 다양한 통계값을 한 번에 계산할 수 있다.  
+
+---
+
+### 그룹화   
+
+`groupby()`를 사용하면 특정 컬럼을 기준으로 데이터를 그룹화하여 요약할 수 있다.  
+
+#### 1. 기본 그룹화  
+
+```{python}
+df_grouped = df.groupby('Department')['Salary'].mean()  # 부서별 급여 평균 계산
+print(df_grouped)
+```
+
+#### 2. 여러 개의 집계 함수 적용  
+
+```{python}
+df_grouped = df.groupby('Department').agg({'Salary': ['mean', 'sum'], 'Experience': 'max'})
+print(df_grouped)
+```
+- `agg()`를 사용하면 각 그룹에 대해 여러 개의 집계 연산을 수행할 수 있다.  
+
+#### 3. 여러 개의 컬럼을 기준으로 그룹화  
+
+```{python}
+df_grouped = df.groupby(['Department', 'Experience'])['Salary'].mean()
+print(df_grouped)
+```
+- 부서와 경력을 기준으로 그룹화하여 급여 평균을 계산할 수 있다.  
+
+---
+
+### Pivot Table 활용  
+
+Pandas의 `pivot_table()`을 사용하면 엑셀의 피벗 테이블과 유사한 분석이 가능하다.  
+
+#### 1. 기본 Pivot Table  
+
+```{python}
+df_pivot = df.pivot_table(index='Department', values='Salary', aggfunc='mean')
+print(df_pivot)
+```
+- 부서를 기준으로 급여 평균을 계산  
+
+#### 2. 여러 개의 값과 함수 적용  
+
+```{python}
+df_pivot = df.pivot_table(index='Department', values=['Salary', 'Experience'], aggfunc=['mean', 'sum'])
+print(df_pivot)
+```
+- 여러 개의 컬럼에 대해 평균과 합계를 동시에 계산 가능  
+
+#### 3. 행, 열, 값 지정  
+
+```{python}
+df_pivot = df.pivot_table(index='Department', columns='Experience', values='Salary', aggfunc='sum', fill_value=0)
+print(df_pivot)
+```
+- `fill_value=0` 옵션을 추가하면 NaN 대신 0을 채울 수 있다.  
+ 
+
+## 데이터 결합 및 병합  
+
+Pandas는 여러 개의 데이터프레임을 결합할 수 있는 다양한 방법을 제공한다. 대표적인 방법으로 `concat`, `merge`, `join`이 있다.  
+
+---
+
+### concat을 이용한 데이터 연결  
+
+`concat()` 함수는 여러 개의 데이터프레임을 **세로(행 기준) 또는 가로(열 기준)** 로 연결할 때 사용한다.  
+
+#### 1. 세로 방향(행 기준) 연결  
+
+```{python}
+import pandas as pd
+
+df1 = pd.DataFrame({'ID': [1, 2, 3], 'Name': ['Alice', 'Bob', 'Charlie']})
+df2 = pd.DataFrame({'ID': [4, 5], 'Name': ['David', 'Eve']})
+
+df_concat = pd.concat([df1, df2])  # 기본적으로 행 기준으로 연결
+print(df_concat)
+```
+- **인덱스가 그대로 유지**되므로, 필요하면 `ignore_index=True`를 추가하여 인덱스를 재정렬할 수 있다.  
+
+```{python}
+df_concat = pd.concat([df1, df2], ignore_index=True)
+print(df_concat)
+```
+
+#### 2. 가로 방향(열 기준) 연결  
+
+```{python}
+df3 = pd.DataFrame({'Age': [25, 30, 35]})
+df_concat_col = pd.concat([df1, df3], axis=1)
+print(df_concat_col)
+```
+- `axis=1` 옵션을 사용하면 열 기준으로 데이터가 결합된다.  
+- 두 데이터프레임의 행 개수가 다르면 `NaN` 값이 채워진다.  
+
+---
+
+### merge를 활용한 데이터 병합  
+
+`merge()` 함수는 **공통 컬럼(키 값)을 기준으로 데이터프레임을 병합**할 때 사용된다.  
+
+#### 1. 기본적인 merge() 사용법  
+
+```{python}
+df_a = pd.DataFrame({'ID': [1, 2, 3], 'Name': ['Alice', 'Bob', 'Charlie']})
+df_b = pd.DataFrame({'ID': [1, 2, 4], 'Salary': [50000, 60000, 70000]})
+
+df_merged = pd.merge(df_a, df_b, on='ID')  # ID를 기준으로 병합
+print(df_merged)
+```
+- 기본적으로 **내부 조인(inner join, 교집합)** 방식으로 병합됨  
+
+#### 2. 다양한 병합 방식  
+| 병합 방식 | 설명 |
+|-----------|------|
+| `inner` | 공통된 키 값이 있는 행만 병합 (기본값) |
+| `outer` | 공통 키 여부와 관계없이 모든 데이터를 포함 (합집합) |
+| `left` | 왼쪽 데이터프레임의 모든 행을 유지 |
+| `right` | 오른쪽 데이터프레임의 모든 행을 유지 |
+: `how` 옵션
+
+```{python}
+df_outer = pd.merge(df_a, df_b, on='ID', how='outer')  # 전체 데이터 포함
+df_left = pd.merge(df_a, df_b, on='ID', how='left')  # df_a 기준 병합
+df_right = pd.merge(df_a, df_b, on='ID', how='right')  # df_b 기준 병합
+
+print(df_outer)
+print(df_left)
+print(df_right)
+```
+
+#### 3. 여러 개의 키를 기준으로 병합  
+
+```{python}
+df_c = pd.DataFrame({'ID': [1, 2, 2], 'Dept': ['HR', 'IT', 'HR'], 'Salary': [50000, 60000, 55000]})
+
+df_multi_merge = pd.merge(df_a, df_c, on=['ID', 'Dept'], how='inner')
+print(df_multi_merge)
+```
+- 여러 개의 키(컬럼)를 기준으로 병합할 수도 있다.  
+
+---
+
+### join을 이용한 데이터 결합  
+
+`join()` 함수는 **인덱스를 기준으로 데이터프레임을 병합**할 때 사용된다.  
+
+#### 1. 기본적인 join() 사용법  
+
+```{python}
+df_x = pd.DataFrame({'Name': ['Alice', 'Bob', 'Charlie']}, index=[1, 2, 3])
+df_y = pd.DataFrame({'Salary': [50000, 60000, 70000]}, index=[1, 2, 4])
+
+df_joined = df_x.join(df_y)  # 기본적으로 왼쪽 조인(left join)
+print(df_joined)
+```
+- `join()`은 인덱스를 기준으로 병합  
+- `on` 옵션을 사용하여 특정 컬럼을 기준으로 병합할 수도 있다.  
+
+#### 2. 병합 방식 지정 
+
+```{python}
+# (`how` 옵션)  
+df_outer_join = df_x.join(df_y, how='outer')  # 전체 데이터 포함
+df_inner_join = df_x.join(df_y, how='inner')  # 공통된 인덱스만 포함
+```
+
+Pandas의 `concat`, `merge`, `join` 기능을 활용하면 다양한 방식으로 데이터를 결합하고 병합할 수 있다.
+
+
+## 시계열 데이터 처리  
+
+Pandas는 날짜 및 시간을 다루는 강력한 기능을 제공하며, 시계열 데이터를 분석하고 변환하는 데 유용하다.  
+
+---
+
+### 날짜 데이터 다루기   
+
+Pandas에서는 `to_datetime()`을 사용하여 날짜 데이터를 변환할 수 있으며, `resample()`을 활용해 시계열 데이터를 재구성할 수 있다.  
+
+#### 1. 날짜 문자열을 날짜 타입으로 변환  
+
+```{python}
+import pandas as pd
+
+df = pd.DataFrame({'Date': ['2024-01-01', '2024-02-15', '2024-03-10']})
+df['Date'] = pd.to_datetime(df['Date'])  # 문자열을 날짜형 데이터로 변환
+print(df.dtypes)  # Date 컬럼이 datetime64 타입으로 변환됨
+```
+
+#### 2. 날짜를 인덱스로 설정  
+
+```{python}
+df.set_index('Date', inplace=True)  # 날짜를 인덱스로 설정
+```
+- 날짜를 인덱스로 설정하면 시계열 분석이 용이하다.  
+
+#### 3. 날짜 데이터에서 연, 월, 일 추출  
+
+```{python}
+df['Year'] = df.index.year
+df['Month'] = df.index.month
+df['Day'] = df.index.day
+print(df)
+```
+- 날짜 데이터를 연도, 월, 일 단위로 나눠서 활용할 수 있다.  
+
+#### 4. 주기별 데이터 재구성   
+
+```{python}
+date_rng = pd.date_range(start='2024-01-01', periods=10, freq='D')
+df = pd.DataFrame({'Date': date_rng, 'Value': range(10)})
+df.set_index('Date', inplace=True)
+
+# 주 단위 평균 계산
+df_weekly = df.resample('W').mean()
+print(df_weekly)
+```
+- `resample('W')`: 주 단위로 데이터 집계  
+- `resample('M')`: 월 단위로 데이터 집계  
+- `resample('Q')`: 분기별 데이터 집계  
+
+---
+
+### 시계열 데이터 변환 및 분석  
+
+Pandas는 시간 기반 데이터를 변환하고 분석하는 다양한 기능을 제공한다.  
+
+#### 1. 시간 차이 계산 
+
+시간 차이 계산은 `diff()`, `shift()`를 이용할 수 있다.
+
+```{python}
+df['Value_Diff'] = df['Value'].diff()  # 전날 대비 변화량 계산
+df['Value_Shift'] = df['Value'].shift(1)  # 이전 날짜의 값 가져오기
+print(df)
+```
+- `diff()`: 데이터의 변화량 계산  
+- `shift(n)`: `n`일 전 데이터 가져오기  
+
+#### 2. 시간 필터링 및 슬라이싱  
+
+```{python}
+# 특정 기간 데이터 선택
+df_filtered = df['2024-01-03':'2024-01-07']  # 날짜 범위 필터링
+print(df_filtered)
+```
+
+#### 3. 날짜 간격 계산 
+
+```{python}
+# (`timedelta`)
+df['Next_Date'] = df.index + pd.Timedelta(days=7)  # 일주일 뒤 날짜 계산
+```
+- `Timedelta(days=n)`: 날짜를 `n`일 뒤로 이동  
+
+## 데이터 시각화  
+
+Pandas는 기본적인 데이터 시각화 기능을 제공하며, Matplotlib 및 Seaborn과 결합하면 더욱 정교한 그래프를 만들 수 있다.  
+
+---
+
+### Pandas의 기본 그래프 기능  
+
+Pandas는 `plot()` 메서드를 통해 간단한 그래프를 생성할 수 있으며, 내부적으로 Matplotlib을 활용한다.  
+
+#### 1. 라인 차트 (Line Plot)  
+
+```{python}
+import pandas as pd
+import matplotlib.pyplot as plt
+
+# 샘플 데이터 생성
+df = pd.DataFrame({'Date': pd.date_range(start='2024-01-01', periods=10, freq='D'),
+                   'Value': [10, 15, 20, 18, 25, 30, 28, 35, 40, 38]})
+df.set_index('Date', inplace=True)
+
+# 라인 차트 그리기
+df.plot(y='Value', kind='line', title="Line Chart", ylabel="Value", xlabel="Date", grid=True)
+plt.show()
+```
+- `kind='line'`: 선 그래프(Line Chart) 생성  
+- `grid=True`: 격자 표시  
+- `title`, `xlabel`, `ylabel`: 그래프 제목 및 축 레이블 설정  
+
+#### 2. 막대 그래프 (Bar Chart)  
+
+```{python}
+df.plot(y='Value', kind='bar', title="Bar Chart", color='skyblue')
+plt.show()
+```
+- `kind='bar'`: 막대 그래프 생성  
+- `color='skyblue'`: 색상 지정  
+
+#### 3. 히스토그램 (Histogram)  
+
+```{python}
+df.plot(y='Value', kind='hist', bins=5, title="Histogram")
+plt.show()
+```
+- `kind='hist'`: 히스토그램 생성  
+- `bins=5`: 5개의 구간으로 나눔  
+
+#### 4. 산점도 (Scatter Plot)  
+
+```{python}
+df['Another_Value'] = df['Value'] * 1.5  # 새로운 컬럼 추가
+df.plot(x='Value', y='Another_Value', kind='scatter', title="Scatter Plot")
+plt.show()
+```
+- `kind='scatter'`: 산점도 생성  
+- `x`, `y` 옵션을 사용하여 두 변수 간 관계 표현  
+
+---
+
+### Matplotlib, Seaborn과의 연계  
+
+Pandas의 `plot()` 기능은 Matplotlib을 기반으로 하므로 Matplotlib의 기능을 함께 사용할 수 있다.  
+또한 Seaborn을 활용하면 보다 세련된 시각화가 가능하다.  
+
+#### 1. Matplotlib과 함께 사용  
+
+```{python}
+fig, ax = plt.subplots(figsize=(8, 5))
+df.plot(y='Value', kind='line', ax=ax, color='red', linestyle='--', marker='o')
+ax.set_title("Customized Line Chart")
+ax.set_xlabel("Date")
+ax.set_ylabel("Value")
+plt.show()
+```
+- `figsize=(8, 5)`: 그래프 크기 조절  
+- `color='red'`, `linestyle='--'`, `marker='o'`: 스타일 지정  
+
+#### 2. Seaborn을 활용한 고급 시각화  
+
+```{python}
+import seaborn as sns
+
+sns.set(style="whitegrid")
+sns.lineplot(data=df, x=df.index, y='Value', marker="o")
+plt.title("Seaborn Line Chart")
+plt.show()
+```
+- `sns.set(style="whitegrid")`: 스타일 설정  
+- `sns.lineplot()`: Seaborn을 이용한 선 그래프  
+
+Pandas의 기본 `plot()` 기능을 활용하면 간단한 시각화를 쉽게 만들 수 있으며, Matplotlib과 Seaborn을 함께 사용하면 더욱 세련된 그래프를 생성할 수 있다. 
+
+
+## 고급 데이터 처리 기법  
+
+Pandas는 다양한 고급 기능을 제공하여 복잡한 데이터 처리와 최적화를 지원한다. 여기서는 `MultiIndex`, 성능 최적화 기법, 그리고 대용량 데이터 처리 방법에 대해 다룬다.  
+
+---
+
+### MultiIndex 활용  
+
+`MultiIndex`는 여러 개의 인덱스를 사용하여 데이터프레임의 구조를 더 복잡하고 유연하게 만드는 기능이다.  
+
+#### 1. MultiIndex 생성  
+
+```{python}
+import pandas as pd
+
+# MultiIndex 생성
+arrays = [['A', 'A', 'B', 'B'], [1, 2, 1, 2]]
+index = pd.MultiIndex.from_arrays(arrays, names=('Category', 'ID'))
+
+df = pd.DataFrame({'Value': [10, 20, 30, 40]}, index=index)
+print(df)
+```
+- `MultiIndex.from_arrays()`: 리스트 또는 배열을 이용해 MultiIndex 생성  
+- `names=('Category', 'ID')`: 각 레벨에 이름 부여  
+
+#### 2. **MultiIndex 데이터 접근**  
+
+```{python}
+# 'A' 카테고리의 1번 ID에 해당하는 데이터 접근
+print(df.loc[('A', 1)])
+
+# 전체 'A' 카테고리 데이터 접근
+print(df.xs('A', level='Category'))
+```
+- `xs()`는 특정 레벨의 데이터를 선택할 때 유용하다.  
+
+#### 3. MultiIndex 활용한 집계  
+
+```{python}
+df_grouped = df.groupby(['Category']).sum()  # 카테고리별 합계 계산
+print(df_grouped)
+```
+- `groupby()`와 함께 사용하여 복잡한 그룹화 작업을 쉽게 처리할 수 있다.  
+
+---
+
+### 성능 최적화 (벡터화 연산, 메모리 절약)  
+
+Pandas는 벡터화된 연산을 사용하여 계산 성능을 향상시킬 수 있으며, 메모리 효율적인 방법을 통해 데이터 처리 속도를 높일 수 있다.  
+
+#### 1. 벡터화 연산
+
+벡터화 연산은 파이썬의 반복문을 사용하지 않고, 데이터프레임의 컬럼에 대해 일괄 연산을 수행하는 방법이다. 이를 통해 처리 속도를 크게 개선할 수 있다.  
+
+```{python}
+df['Value_squared'] = df['Value'] ** 2  # 벡터화 연산으로 값 제곱 계산
+```
+- 벡터화 연산은 NumPy 기반으로 빠르게 처리된다.  
+
+#### 2. 메모리 절약 (데이터 타입 변경)
+
+Pandas에서 데이터의 타입을 적절히 변경하면 메모리 사용량을 절약할 수 있다. 예를 들어, 정수형 데이터를 `int8`로 변경하면 메모리를 적게 사용한다.  
+
+```{python}
+df['Value'] = df['Value'].astype('int8')  # 데이터 타입을 'int8'로 변경
+```
+- `astype()`을 사용하여 메모리를 절약할 수 있다.  
+
+#### 3. Categorical 자료형 활용  
+
+카테고리형 데이터는 메모리 절약에 효과적이다.  
+
+```{python}
+df['Category'] = df['Category'].astype('category')  # 'Category' 컬럼을 카테고리형으로 변환
+```
+- 카테고리형 데이터는 중복되는 값을 메모리 내에서 효율적으로 처리할 수 있다.  
+
+---
+
+### 데이터 샘플링 및 대용량 데이터 처리  
+
+대용량 데이터를 처리할 때는 효율적인 샘플링과 메모리 관리를 통해 성능을 개선할 수 있다.  
+
+#### 1. 무작위 샘플링  
+
+```{python}
+df_sample = df.sample(n=5)  # 데이터에서 무작위로 5개의 샘플 선택
+print(df_sample)
+```
+- `sample(n=5)`를 사용하여 임의의 샘플을 선택할 수 있다.  
+
+#### 2. 대용량 데이터 읽기 및 처리
+
+대용량 데이터를 처리할 때는 `chunksize` 옵션을 사용하여 데이터를 작은 덩어리로 나누어 처리할 수 있다.  
+
+```python
+chunk_size = 100000  # 한 번에 처리할 데이터 크기 설정
+chunks = pd.read_csv('large_file.csv', chunksize=chunk_size)
+
+for chunk in chunks:
+    # 각 청크를 처리하는 코드
+    print(chunk.head())
+```
+- `read_csv()`의 `chunksize`를 사용하면 파일을 한 번에 메모리로 로드하지 않고, 작은 부분씩 읽어들이면서 처리할 수 있다.  
+
+#### 3. dtypes 최적화  
+대용량 데이터를 처리할 때는 데이터 타입을 최적화하여 메모리 사용량을 줄일 수 있다. 예를 들어, `float64`를 `float32`로 변경하면 메모리 사용을 절감할 수 있다.  
+
+```{python}
+df['Value'] = df['Value'].astype('float32')  # 데이터 타입 최적화
+```
+
+## 참고자료 {.unlisted}
+
+**각주**
+
