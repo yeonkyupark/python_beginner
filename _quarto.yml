@@ -41,6 +41,7 @@ book:
     - part: "파이썬 패키지"
       chapters:
         - pkg_numpy.qmd
+        - pkg_pandas.qmd
   appendices: 
     - app_markdown.qmd
     - app_csv_json.qmd
