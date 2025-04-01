@@ -709,7 +709,7 @@ print(df_right)
 
 #### 3. 여러 개의 키를 기준으로 병합  
 
-```{python}
+```python
 df_c = pd.DataFrame({'ID': [1, 2, 2], 'Dept': ['HR', 'IT', 'HR'], 'Salary': [50000, 60000, 55000]})
 
 df_multi_merge = pd.merge(df_a, df_c, on=['ID', 'Dept'], how='inner')
