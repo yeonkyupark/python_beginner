@@ -997,7 +997,7 @@ df['Value'] = df['Value'].astype('int8')  # 데이터 타입을 'int8'로 변경
 
 카테고리형 데이터는 메모리 절약에 효과적이다.  
 
-```{python}
+```python
 df['Category'] = df['Category'].astype('category')  # 'Category' 컬럼을 카테고리형으로 변환
 ```
 - 카테고리형 데이터는 중복되는 값을 메모리 내에서 효율적으로 처리할 수 있다.  
