@@ -1011,7 +1011,7 @@ df['Category'] = df['Category'].astype('category')  # 'Category' 컬럼을 카�
 #### 1. 무작위 샘플링  
 
 ```{python}
-df_sample = df.sample(n=5)  # 데이터에서 무작위로 5개의 샘플 선택
+df_sample = df.sample(n=5, replace = True)  # 데이터에서 무작위로 5개의 샘플 선택
 print(df_sample)
 ```
 - `sample(n=5)`를 사용하여 임의의 샘플을 선택할 수 있다.  
