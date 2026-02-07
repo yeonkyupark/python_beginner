@@ -8,7 +8,7 @@
 
 <meta name="keywords" content="python, numpy, pandas, 기초, 문법">
 
-<title>파이썬 개요 – 파이썬 다루기</title>
+<title>제1장. 파이썬 개요 및 환경 설정 – 파이썬 다루기</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -122,7 +122,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 개요</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 다루기</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -169,7 +169,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">파이썬 개요</span></a>
+  <a href="./10python.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">파이썬 다루기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -271,86 +271,37 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">목차</h2>
    
   <ul>
-  <li><a href="#sec-language" id="toc-sec-language" class="nav-link active" data-scroll-target="#sec-language">언어</a>
+  <li><a href="#sec-language" id="toc-sec-language" class="nav-link active" data-scroll-target="#sec-language">1. 언어의 이해</a>
   <ul>
-  <li><a href="#언어-정의" id="toc-언어-정의" class="nav-link" data-scroll-target="#언어-정의">언어 정의</a></li>
-  <li><a href="#의사전달" id="toc-의사전달" class="nav-link" data-scroll-target="#의사전달">의사전달</a></li>
+  <li><a href="#언어의-정의와-목적" id="toc-언어의-정의와-목적" class="nav-link" data-scroll-target="#언어의-정의와-목적">1.1 언어의 정의와 목적</a></li>
+  <li><a href="#의사전달과-통역" id="toc-의사전달과-통역" class="nav-link" data-scroll-target="#의사전달과-통역">1.2 의사전달과 통역</a></li>
   </ul></li>
-  <li><a href="#sec-programming-language" id="toc-sec-programming-language" class="nav-link" data-scroll-target="#sec-programming-language">프로그래밍 언어</a>
+  <li><a href="#sec-programming-language" id="toc-sec-programming-language" class="nav-link" data-scroll-target="#sec-programming-language">2. 프로그래밍 언어</a>
   <ul>
-  <li><a href="#프로그래밍-언어의-종류" id="toc-프로그래밍-언어의-종류" class="nav-link" data-scroll-target="#프로그래밍-언어의-종류">프로그래밍 언어의 종류</a></li>
-  <li><a href="#프로그래밍-언어의-실행-방식" id="toc-프로그래밍-언어의-실행-방식" class="nav-link" data-scroll-target="#프로그래밍-언어의-실행-방식">프로그래밍 언어의 실행 방식</a></li>
-  <li><a href="#대표적인-프로그래밍-언어-및-특징" id="toc-대표적인-프로그래밍-언어-및-특징" class="nav-link" data-scroll-target="#대표적인-프로그래밍-언어-및-특징">대표적인 프로그래밍 언어 및 특징</a></li>
+  <li><a href="#실행-방식에-따른-분류" id="toc-실행-방식에-따른-분류" class="nav-link" data-scroll-target="#실행-방식에-따른-분류">2.1 실행 방식에 따른 분류</a></li>
+  <li><a href="#주요-언어별-특징" id="toc-주요-언어별-특징" class="nav-link" data-scroll-target="#주요-언어별-특징">2.2 주요 언어별 특징</a></li>
   </ul></li>
-  <li><a href="#sec-python-intro" id="toc-sec-python-intro" class="nav-link" data-scroll-target="#sec-python-intro">파이쎤 소개</a>
+  <li><a href="#sec-python-intro" id="toc-sec-python-intro" class="nav-link" data-scroll-target="#sec-python-intro">3. 파이썬(Python) 소개</a>
   <ul>
-  <li><a href="#파이썬의-특징" id="toc-파이썬의-특징" class="nav-link" data-scroll-target="#파이썬의-특징">파이썬의 특징</a></li>
-  <li><a href="#파이썬의-활용-분야" id="toc-파이썬의-활용-분야" class="nav-link" data-scroll-target="#파이썬의-활용-분야">파이썬의 활용 분야</a></li>
-  <li><a href="#파이썬의-장점과-단점" id="toc-파이썬의-장점과-단점" class="nav-link" data-scroll-target="#파이썬의-장점과-단점">파이썬의 장점과 단점</a></li>
+  <li><a href="#파이썬의-주요-특징" id="toc-파이썬의-주요-특징" class="nav-link" data-scroll-target="#파이썬의-주요-특징">3.1 파이썬의 주요 특징</a></li>
+  <li><a href="#타-언어와의-비교-예제" id="toc-타-언어와의-비교-예제" class="nav-link" data-scroll-target="#타-언어와의-비교-예제">3.2 타 언어와의 비교 예제</a></li>
   </ul></li>
-  <li><a href="#sec-python-installation" id="toc-sec-python-installation" class="nav-link" data-scroll-target="#sec-python-installation">파이썬 설치</a>
+  <li><a href="#sec-dev-environment" id="toc-sec-dev-environment" class="nav-link" data-scroll-target="#sec-dev-environment">4. 환경 설정 및 실습 준비</a>
   <ul>
-  <li><a href="#파이썬-다운로드" id="toc-파이썬-다운로드" class="nav-link" data-scroll-target="#파이썬-다운로드">파이썬 다운로드</a></li>
-  <li><a href="#windows에서-설치" id="toc-windows에서-설치" class="nav-link" data-scroll-target="#windows에서-설치">Windows에서 설치</a></li>
-  <li><a href="#macos에서-설치" id="toc-macos에서-설치" class="nav-link" data-scroll-target="#macos에서-설치">macOS에서 설치</a></li>
-  <li><a href="#linuxubuntu에서-설치" id="toc-linuxubuntu에서-설치" class="nav-link" data-scroll-target="#linuxubuntu에서-설치">Linux(Ubuntu)에서 설치</a></li>
-  <li><a href="#설치-확인" id="toc-설치-확인" class="nav-link" data-scroll-target="#설치-확인">설치 확인</a></li>
+  <li><a href="#파이썬-설치-및-확인" id="toc-파이썬-설치-및-확인" class="nav-link" data-scroll-target="#파이썬-설치-및-확인">4.1 파이썬 설치 및 확인</a></li>
+  <li><a href="#주요-개발-환경-비교" id="toc-주요-개발-환경-비교" class="nav-link" data-scroll-target="#주요-개발-환경-비교">4.2 주요 개발 환경 비교</a></li>
   </ul></li>
-  <li><a href="#sec-dev-environment" id="toc-sec-dev-environment" class="nav-link" data-scroll-target="#sec-dev-environment">개발 환경 설정</a>
-  <ul>
-  <li><a href="#sec-vsc" id="toc-sec-vsc" class="nav-link" data-scroll-target="#sec-vsc">VS Code</a>
-  <ul class="collapse">
-  <li><a href="#vs-code-다운로드" id="toc-vs-code-다운로드" class="nav-link" data-scroll-target="#vs-code-다운로드">VS Code 다운로드</a></li>
-  <li><a href="#windows에서-설치-1" id="toc-windows에서-설치-1" class="nav-link" data-scroll-target="#windows에서-설치-1">Windows에서 설치</a></li>
-  <li><a href="#macos에서-설치-1" id="toc-macos에서-설치-1" class="nav-link" data-scroll-target="#macos에서-설치-1">macOS에서 설치</a></li>
-  <li><a href="#linuxubuntu에서-설치-1" id="toc-linuxubuntu에서-설치-1" class="nav-link" data-scroll-target="#linuxubuntu에서-설치-1">Linux(Ubuntu)에서 설치</a></li>
-  <li><a href="#vs-code에서-파이썬-개발-환경-설정" id="toc-vs-code에서-파이썬-개발-환경-설정" class="nav-link" data-scroll-target="#vs-code에서-파이썬-개발-환경-설정">VS Code에서 파이썬 개발 환경 설정</a></li>
-  <li><a href="#설치-확인-1" id="toc-설치-확인-1" class="nav-link" data-scroll-target="#설치-확인-1">설치 확인</a></li>
-  </ul></li>
-  <li><a href="#sec-jupyter-notebook" id="toc-sec-jupyter-notebook" class="nav-link" data-scroll-target="#sec-jupyter-notebook">Jupyter Notebook</a>
-  <ul class="collapse">
-  <li><a href="#jupyter-notebook-설치-전-준비" id="toc-jupyter-notebook-설치-전-준비" class="nav-link" data-scroll-target="#jupyter-notebook-설치-전-준비">Jupyter Notebook 설치 전 준비</a></li>
-  <li><a href="#jupyter-notebook-설치" id="toc-jupyter-notebook-설치" class="nav-link" data-scroll-target="#jupyter-notebook-설치">Jupyter Notebook 설치</a></li>
-  <li><a href="#jupyter-notebook-실행" id="toc-jupyter-notebook-실행" class="nav-link" data-scroll-target="#jupyter-notebook-실행">Jupyter Notebook 실행</a></li>
-  <li><a href="#jupyter-notebook-사용-방법" id="toc-jupyter-notebook-사용-방법" class="nav-link" data-scroll-target="#jupyter-notebook-사용-방법">Jupyter Notebook 사용 방법</a></li>
-  </ul></li>
-  <li><a href="#sec-pycharm" id="toc-sec-pycharm" class="nav-link" data-scroll-target="#sec-pycharm">PyCharm</a>
-  <ul class="collapse">
-  <li><a href="#pycharm-다운로드" id="toc-pycharm-다운로드" class="nav-link" data-scroll-target="#pycharm-다운로드">PyCharm 다운로드</a></li>
-  <li><a href="#pycharm-설치" id="toc-pycharm-설치" class="nav-link" data-scroll-target="#pycharm-설치">PyCharm 설치</a></li>
-  <li><a href="#pycharm-첫-실행-및-설정" id="toc-pycharm-첫-실행-및-설정" class="nav-link" data-scroll-target="#pycharm-첫-실행-및-설정">PyCharm 첫 실행 및 설정</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#sec-1st-program" id="toc-sec-1st-program" class="nav-link" data-scroll-target="#sec-1st-program">첫 번째 프로그램</a></li>
-  <li><a href="#sec-10-ref" id="toc-sec-10-ref" class="nav-link" data-scroll-target="#sec-10-ref">참고자료</a>
-  <ul>
-  <li><a href="#sec-idle" id="toc-sec-idle" class="nav-link" data-scroll-target="#sec-idle">IDLE</a>
-  <ul class="collapse">
-  <li><a href="#idle의-특징" id="toc-idle의-특징" class="nav-link" data-scroll-target="#idle의-특징">IDLE의 특징</a></li>
-  <li><a href="#idle-실행-방법" id="toc-idle-실행-방법" class="nav-link" data-scroll-target="#idle-실행-방법">IDLE 실행 방법</a></li>
-  <li><a href="#idle-사용-방법" id="toc-idle-사용-방법" class="nav-link" data-scroll-target="#idle-사용-방법">IDLE 사용 방법</a></li>
-  <li><a href="#idle의-장점과-단점" id="toc-idle의-장점과-단점" class="nav-link" data-scroll-target="#idle의-장점과-단점">IDLE의 장점과 단점</a></li>
-  </ul></li>
-  <li><a href="#sec-pycharm-guide" id="toc-sec-pycharm-guide" class="nav-link" data-scroll-target="#sec-pycharm-guide">PyCharm 사용법</a>
-  <ul class="collapse">
-  <li><a href="#pycharm-기본-화면-구성" id="toc-pycharm-기본-화면-구성" class="nav-link" data-scroll-target="#pycharm-기본-화면-구성">PyCharm 기본 화면 구성</a></li>
-  <li><a href="#새-프로젝트-생성-및-python-환경-설정" id="toc-새-프로젝트-생성-및-python-환경-설정" class="nav-link" data-scroll-target="#새-프로젝트-생성-및-python-환경-설정">새 프로젝트 생성 및 Python 환경 설정</a></li>
-  <li><a href="#코드-작성-및-실행" id="toc-코드-작성-및-실행" class="nav-link" data-scroll-target="#코드-작성-및-실행">코드 작성 및 실행</a></li>
-  <li><a href="#패키지-설치-및-관리" id="toc-패키지-설치-및-관리" class="nav-link" data-scroll-target="#패키지-설치-및-관리">패키지 설치 및 관리</a></li>
-  <li><a href="#디버깅-debugging" id="toc-디버깅-debugging" class="nav-link" data-scroll-target="#디버깅-debugging">디버깅 (Debugging)</a></li>
-  <li><a href="#코드-자동-완성-및-리팩토링" id="toc-코드-자동-완성-및-리팩토링" class="nav-link" data-scroll-target="#코드-자동-완성-및-리팩토링">코드 자동 완성 및 리팩토링</a></li>
-  <li><a href="#버전-관리git-연동" id="toc-버전-관리git-연동" class="nav-link" data-scroll-target="#버전-관리git-연동">버전 관리(Git 연동)</a></li>
-  </ul></li>
-  </ul></li>
+  <li><a href="#부록-주요-용어-사전" id="toc-부록-주요-용어-사전" class="nav-link" data-scroll-target="#부록-주요-용어-사전">5. [부록] 주요 용어 사전</a></li>
+  <li><a href="#제1장-요약" id="toc-제1장-요약" class="nav-link" data-scroll-target="#제1장-요약">6. 제1장 요약</a></li>
   </ul>
 <div class="toc-actions"><ul><li><a href="https://github.com/yeonkyupark/python_beginner/edit/main/10python.qmd" class="toc-action"><i class="bi bi-github"></i>Edit this page</a></li></ul></div></nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 개요</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./10python.html">파이썬 기초</a></li><li class="breadcrumb-item"><a href="./10python.html"><span class="chapter-title">파이썬 다루기</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">파이썬 개요</span></h1>
+<h1 class="title"><span class="chapter-title">제1장. 파이썬 개요 및 환경 설정</span></h1>
 </div>
 
 
@@ -374,737 +325,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <section id="sec-language" class="level2">
-<h2 class="anchored" data-anchor-id="sec-language">언어</h2>
-<p>프로그래밍 언어를 다루기 전 언어에 대해 생각해 보는 시간을 가진다.</p>
-<section id="언어-정의" class="level3">
-<h3 class="anchored" data-anchor-id="언어-정의">언어 정의</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/language.png" class="img-fluid figure-img"></p>
-<figcaption>언어</figcaption>
-</figure>
-</div>
-<hr>
-<p>언어(言語)에 대한 정의는 여러 가지 시도가 있었다. 아래는 그러한 예의 일부이다.<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a></p>
-<ul>
-<li><font color="blue"><strong>사람들이 자신의 생각을 다른 사람들에게 나타내고 전달하기 위해 사용하는 체계</strong></font></li>
-<li>사물, 행동, 생각, 그리고 상태를 나타내는 체계.</li>
-<li>사람들 사이에 공유되는 의미들의 체계.</li>
-<li>문법적으로 맞는 말의 집합.</li>
-<li>언어 공동체 내에서 이해될 수 있는 말의 집합.</li>
-</ul>
-<hr>
-<p>언어를 사용하는 목적은 다음과 같다.</p>
-<ul>
-<li><font color="blue"><strong>의사소통</strong></font>: 개인 간의 생각, 감정, 정보 등을 효과적으로 전달하는 수단</li>
-<li>사고의 도구: 복잡한 개념을 정리하고 논리적으로 사고하는 데 기여</li>
-<li>사회적 결속: 공동체 구성원 간의 유대감을 형성하고 유지하는 역할</li>
-<li>문화 전달: 세대 간 지식, 가치관, 전통 등을 전승하는 수단</li>
-<li>자아 표현: 개인의 정체성과 개성을 드러내는 수단</li>
-</ul>
-<hr>
-</section>
-<section id="의사전달" class="level3">
-<h3 class="anchored" data-anchor-id="의사전달">의사전달</h3>
-<p>서로 언어가 다를 경우, 상대방 언어를 배워서 의사소통을 할 수도 있지만 누군가 통역을 해 준다면 보다 수월하게 의사를 전달할 수 있다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/translator.png" class="img-fluid figure-img"></p>
-<figcaption>통역</figcaption>
-</figure>
-</div>
-<hr>
-<p>의사를 전달할 대상이 컴퓨터라면 보다 구체적이고 명확하게 의사를 전달해야 해야 한다.</p>
-<div class="quarto-video ratio ratio-16x9"><iframe data-external="1" src="https://www.youtube.com/embed/3VG2OgkRJK0?si=b3rPeVR7VSEUMBm8" title="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe></div>
-<hr>
-</section>
-</section>
-<section id="sec-programming-language" class="level2">
-<h2 class="anchored" data-anchor-id="sec-programming-language">프로그래밍 언어</h2>
-<p>프로그래밍 언어는 <font color="blue"><strong>컴퓨터가 이해하고 실행할 수 있는 명령을 작성하기 위한 언어</strong></font>이다. 사람이 이해할 수 있는 문법과 구조를 사용하여 컴퓨터에게 특정 작업을 수행하도록 지시한다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/interpreter.png" class="img-fluid figure-img"></p>
-<figcaption>프로그래밍 언어</figcaption>
-</figure>
-</div>
-<hr>
-<section id="프로그래밍-언어의-종류" class="level3">
-<h3 class="anchored" data-anchor-id="프로그래밍-언어의-종류">프로그래밍 언어의 종류</h3>
-<dl>
-<dt><strong>저급 언어 (Low-Level Language)</strong></dt>
-<dd>
-<ul>
-<li>기계어와 가까운 언어로, <strong>컴퓨터가 직접 실행</strong>할 수 있는 코드에 가깝다.</li>
-<li><strong>예시</strong>: 기계어(Machine Code), 어셈블리어(Assembly Language)</li>
-<li><strong>특징</strong>: 실행 속도가 빠르지만 사람이 이해하고 작성하기 어렵다.</li>
-</ul>
-</dd>
-<dt><strong>고급 언어 (High-Level Language)</strong></dt>
-<dd>
-<ul>
-<li>사람이 이해하기 쉬운 문법을 사용하며, <strong>컴파일러나 인터프리터를 통해</strong> 기계어로 변환된다.</li>
-<li><strong>예시</strong>: Python, Java, C++, JavaScript 등</li>
-<li><strong>특징</strong>: 직관적인 문법을 제공하며, 생산성이 높고 유지보수가 용이하다.</li>
-</ul>
-</dd>
-</dl>
-<hr>
-</section>
-<section id="프로그래밍-언어의-실행-방식" class="level3">
-<h3 class="anchored" data-anchor-id="프로그래밍-언어의-실행-방식">프로그래밍 언어의 실행 방식</h3>
+<h2 class="anchored" data-anchor-id="sec-language">1. 언어의 이해</h2>
+<p>프로그래밍 언어를 학습하기에 앞서, 우리가 일상에서 사용하는 ’언어’의 본질적인 의미와 역할을 고찰해 본다. 언어는 단순히 정보를 전달하는 수단을 넘어 사고의 틀을 형성하는 핵심적인 요소이다.</p>
+<section id="언어의-정의와-목적" class="level3">
+<h3 class="anchored" data-anchor-id="언어의-정의와-목적">1.1 언어의 정의와 목적</h3>
+<p>언어(言語)는 인간 사회에서 정보를 교환하고 사고를 공유하기 위한 체계적인 약속이다. 학술적 관점에 따른 정의와 언어를 사용하는 주요 목적은 다음과 같다.</p>
 <table class="caption-top table">
-<caption>프로그래밍 언어 실행 방식</caption>
 <colgroup>
-<col style="width: 18%">
-<col style="width: 81%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>실행 방식</th>
-<th>설명</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>컴파일 언어</strong></td>
-<td>소스 코드를 기계어로 변환한 후 실행 파일을 생성하여 실행하는 방식. 실행 속도가 빠름. <br> <strong>예시</strong>: C, C++, Java (JVM 사용)</td>
-</tr>
-<tr class="even">
-<td><strong>인터프리터 언어</strong></td>
-<td>소스 코드를 한 줄씩 해석하며 실행하는 방식. 개발 속도가 빠르지만 실행 속도가 비교적 느림. <br> <strong>예시</strong>: Python, JavaScript, Ruby</td>
-</tr>
-<tr class="odd">
-<td><strong>혼합형 (JIT 컴파일)</strong></td>
-<td>컴파일과 인터프리팅 방식을 혼합하여 실행 성능을 최적화한 방식. <br> <strong>예시</strong>: Java (JIT 컴파일을 사용하여 실행 속도를 높임)</td>
-</tr>
-</tbody>
-</table>
-<hr>
-</section>
-<section id="대표적인-프로그래밍-언어-및-특징" class="level3">
-<h3 class="anchored" data-anchor-id="대표적인-프로그래밍-언어-및-특징">대표적인 프로그래밍 언어 및 특징</h3>
-<table class="caption-top table">
-<caption>대표적인 프로그래밍 언어</caption>
-<colgroup>
-<col style="width: 9%">
-<col style="width: 90%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>언어</th>
-<th>특징</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>C</strong></td>
-<td>하드웨어 제어가 가능하고 성능이 뛰어나며, 운영체제 및 시스템 프로그래밍에 많이 사용됨.</td>
-</tr>
-<tr class="even">
-<td><strong>C++</strong></td>
-<td>객체지향 프로그래밍(OOP) 기능을 추가한 C 기반 언어로, 게임 개발 및 고성능 애플리케이션에 많이 사용됨.</td>
-</tr>
-<tr class="odd">
-<td><strong>Python</strong></td>
-<td>문법이 간결하고 배우기 쉬우며, 데이터 과학, 인공지능(AI), 웹 개발 등 다양한 분야에서 활용됨.</td>
-</tr>
-<tr class="even">
-<td><strong>Java</strong></td>
-<td>플랫폼 독립적(Write Once, Run Anywhere)이며, 기업용 소프트웨어 및 안드로이드 앱 개발에 많이 사용됨.</td>
-</tr>
-<tr class="odd">
-<td><strong>JavaScript</strong></td>
-<td>웹 개발에서 주로 사용되며, 브라우저에서 실행되는 동적 언어. Node.js를 통해 서버 개발도 가능함.</td>
-</tr>
-<tr class="even">
-<td><strong>Ruby</strong></td>
-<td>문법이 간결하고 직관적이며, 웹 개발에서 인기 있는 프레임워크인 Ruby on Rails를 제공함.</td>
-</tr>
-<tr class="odd">
-<td><strong>Go</strong></td>
-<td>구글이 개발한 언어로, 높은 성능과 간결한 문법을 제공하며, 대규모 네트워크 및 서버 애플리케이션에 적합함.</td>
-</tr>
-<tr class="even">
-<td><strong>Swift</strong></td>
-<td>애플이 iOS 및 macOS 개발을 위해 만든 언어로, 성능이 뛰어나고 안전성을 고려한 설계를 가짐.</td>
-</tr>
-</tbody>
-</table>
-<p>프로그래밍 언어는 목적에 따라 선택해야 하며, 특정 분야(웹 개발, 데이터 분석, 시스템 프로그래밍 등)에 적합한 언어를 배우는 것이 중요하다.</p>
-<hr>
-<p>2025년 1월 기준, Python이 TIOBE 순위<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a> 1위를 차지 하였다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/tiobe_01.jpg" class="img-fluid figure-img"></p>
-<figcaption>프로그래밍 언어 순위</figcaption>
-</figure>
-</div>
-<hr>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/tiobe_02.jpg" class="img-fluid figure-img"></p>
-<figcaption>년도별 언어 순위 추이</figcaption>
-</figure>
-</div>
-</section>
-</section>
-<section id="sec-python-intro" class="level2">
-<h2 class="anchored" data-anchor-id="sec-python-intro">파이쎤 소개</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://www.python.org/static/img/python-logo.png" class="img-fluid figure-img"></p>
-<figcaption>python</figcaption>
-</figure>
-</div>
-<p>파이썬(Python)은 배우기 쉽고 강력한 기능을 갖춘 프로그래밍 언어이다. 문법이 간결하고 가독성이 높아 초보자부터 전문가까지 폭넓게 사용하고 있다.</p>
-<hr>
-<section id="파이썬의-특징" class="level3">
-<h3 class="anchored" data-anchor-id="파이썬의-특징">파이썬의 특징</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/python_feature.png" class="img-fluid figure-img"></p>
-<figcaption>https://xkcd.com/353/</figcaption>
-</figure>
-</div>
-<hr>
-<p>파이썬은 다음과 같은 특징을 갖는다.</p>
-<ul>
-<li><strong>쉬운 문법</strong>: 영어와 비슷한 구문 구조를 가지고 있어 처음 배우는 사람도 쉽게 익힐 수 있다.<br>
-</li>
-<li><strong>높은 생산성</strong>: 적은 코드로 강력한 기능을 구현할 수 있어 개발 속도가 빠르다.<br>
-</li>
-<li><strong>다양한 활용 분야</strong>: 웹 개발, 데이터 분석, 인공지능, 자동화 등 다양한 분야에서 사용된다.<br>
-</li>
-<li><strong>강력한 커뮤니티</strong>: 많은 개발자가 사용하며 다양한 라이브러리와 자료가 제공된다.</li>
-</ul>
-<hr>
-<div class="callout callout-style-default callout-note no-icon callout-titled" title="C vs. Python: 파일 내용 읽어 오기">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Note</span>C vs.&nbsp;Python: 파일 내용 읽어 오기
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>C 코드</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode c code-with-copy"><code class="sourceCode c"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="pp">#include </span><span class="im">&lt;stdio.h&gt;</span><span class="pp"> </span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="dt">int</span> main<span class="op">()</span> <span class="op">{</span> </span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>   <span class="dt">FILE</span> <span class="op">*</span>file <span class="op">=</span> fopen<span class="op">(</span><span class="st">"text.txt"</span><span class="op">,</span> <span class="st">"r"</span><span class="op">);</span> </span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>   <span class="dt">char</span> line<span class="op">[</span><span class="dv">100</span><span class="op">];</span> </span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>   <span class="cf">if</span> <span class="op">(</span>file<span class="op">)</span> <span class="op">{</span> </span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>      <span class="cf">while</span> <span class="op">(</span>fgets<span class="op">(</span>line<span class="op">,</span> <span class="kw">sizeof</span><span class="op">(</span>line<span class="op">),</span> file<span class="op">))</span> <span class="op">{</span> </span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>         printf<span class="op">(</span><span class="st">"</span><span class="sc">%s</span><span class="st">"</span><span class="op">,</span> line<span class="op">);</span> </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>      <span class="op">}</span> </span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>      fclose<span class="op">(</span>file<span class="op">);</span> </span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>   <span class="op">}</span> </span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>   <span class="cf">return</span> <span class="dv">0</span><span class="op">;</span> </span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="op">}</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<hr>
-<p><strong>파이썬 코드</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"text.txt"</span>, <span class="st">"r"</span>) <span class="im">as</span> <span class="bu">file</span>: </span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>   <span class="bu">print</span>(<span class="bu">file</span>.read())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-<hr>
-</section>
-<section id="파이썬의-활용-분야" class="level3">
-<h3 class="anchored" data-anchor-id="파이썬의-활용-분야">파이썬의 활용 분야</h3>
-<p>파이썬 주요 활용 분야는 다음과 같다.</p>
-<ul>
-<li><strong>웹 개발</strong>: Django, Flask와 같은 프레임워크를 활용하여 웹사이트와 API를 개발할 수 있다.<br>
-</li>
-<li><strong>데이터 분석 및 인공지능</strong>: pandas, NumPy, TensorFlow 등 라이브러리를 이용하여 데이터 처리와 머신러닝 모델을 만들 수 있다.<br>
-</li>
-<li><strong>자동화 및 스크립트</strong>: 반복 작업을 자동화하는 데 유용하며, 파일 처리 및 웹 스크래핑 등에 활용된다.<br>
-</li>
-<li><strong>게임 개발</strong>: Pygame과 같은 라이브러리를 이용하여 간단한 게임을 만들 수 있다.</li>
-</ul>
-<p>파이썬은 초보자도 쉽게 배울 수 있으면서도 강력한 기능을 제공하는 언어로, 프로그래밍을 처음 접하는 사람에게 추천할 만한 언어이다.</p>
-<hr>
-</section>
-<section id="파이썬의-장점과-단점" class="level3">
-<h3 class="anchored" data-anchor-id="파이썬의-장점과-단점">파이썬의 장점과 단점</h3>
-<p>파이썬은 쉽고 강력한 프로그래밍 언어지만, 다른 언어와 비교했을 때 장점과 단점이 존재한다. 아래 표를 통해 주요 특징을 정리한다.</p>
-<table class="caption-top table">
-<caption>파이썬 장단점</caption>
-<colgroup>
-<col style="width: 20%">
-<col style="width: 40%">
-<col style="width: 40%">
+<col style="width: 50%">
+<col style="width: 50%">
 </colgroup>
 <thead>
 <tr class="header">
 <th>구분</th>
-<th>장점</th>
-<th>단점</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td>문법</td>
-<td>코드가 간결하고 가독성이 높아 초보자도 쉽게 배울 수 있다.</td>
-<td>동적 타이핑(dynamic typing)으로 인해 대규모 프로젝트에서 예상치 못한 오류가 발생할 수 있다.</td>
-</tr>
-<tr class="even">
-<td>속도</td>
-<td>인터프리터 언어로 개발 속도가 빠르고 유지보수가 용이하다.</td>
-<td>컴파일 언어(C, C++)보다 실행 속도가 느리다.</td>
-</tr>
-<tr class="odd">
-<td>확장성</td>
-<td>다양한 라이브러리와 프레임워크가 제공되어 다양한 분야에서 활용 가능하다.</td>
-<td>모바일 앱 개발에 적합한 프레임워크와 지원이 부족하다.</td>
-</tr>
-<tr class="even">
-<td>다중 패러다임</td>
-<td>객체 지향, 절차적, 함수형 프로그래밍을 모두 지원한다.</td>
-<td>다중 스레드 성능이 GIL(Global Interpreter Lock)으로 인해 제한된다.</td>
-</tr>
-<tr class="odd">
-<td>활용 분야</td>
-<td>웹 개발, 데이터 분석, 인공지능, 자동화 등 다양한 분야에서 사용된다.</td>
-<td>실시간 시스템, 임베디드 시스템과 같은 성능이 중요한 환경에서는 부적절할 수 있다.</td>
-</tr>
-</tbody>
-</table>
-<p>파이썬은 배우기 쉽고 다양한 활용이 가능하다는 점에서 강력한 언어지만, 실행 속도나 멀티스레딩 제한과 같은 단점도 존재한다. 따라서 사용 목적에 따라 적절한 언어를 선택하는 것이 중요하다.</p>
-<hr>
-</section>
-</section>
-<section id="sec-python-installation" class="level2">
-<h2 class="anchored" data-anchor-id="sec-python-installation">파이썬 설치</h2>
-<p>파이썬을 설치하는 방법은 운영 체제에 따라 다를 수 있지만, 일반적으로 공식 웹사이트에서 설치 파일을 다운로드하여 설치하는 방식이 가장 쉽다.</p>
-<section id="파이썬-다운로드" class="level3">
-<h3 class="anchored" data-anchor-id="파이썬-다운로드">파이썬 다운로드</h3>
-<ul>
-<li><a href="https://www.python.org/">파이썬 공식 웹사이트</a>에 접속한다.<br>
-</li>
-<li>상단 메뉴에서 <strong>Downloads</strong>를 클릭한 후, 사용 중인 운영 체제(Windows, macOS, Linux)에 맞는 최신 버전의 파이썬을 다운로드한다.</li>
-</ul>
-</section>
-<section id="windows에서-설치" class="level3">
-<h3 class="anchored" data-anchor-id="windows에서-설치">Windows에서 설치</h3>
-<ul>
-<li>다운로드한 <code>python-버전번호.exe</code> 파일을 실행한다.<br>
-</li>
-<li><strong>“Add Python to PATH”</strong> 옵션을 체크한 후 <strong>“Install Now”</strong> 버튼을 클릭한다.<br>
-</li>
-<li>설치가 완료되면 <strong>“Close”</strong> 버튼을 클릭한다.</li>
-</ul>
-<hr>
-</section>
-<section id="macos에서-설치" class="level3">
-<h3 class="anchored" data-anchor-id="macos에서-설치">macOS에서 설치</h3>
-<ul>
-<li>다운로드한 <code>python-버전번호.pkg</code> 파일을 실행한다.<br>
-</li>
-<li>설치 마법사의 안내에 따라 진행한다.<br>
-</li>
-<li>설치가 완료되면 터미널을 열어 아래 명령어를 실행하여 설치를 확인한다.</li>
-</ul>
-</section>
-<section id="linuxubuntu에서-설치" class="level3">
-<h3 class="anchored" data-anchor-id="linuxubuntu에서-설치">Linux(Ubuntu)에서 설치</h3>
-<ul>
-<li><p>터미널을 열고 다음 명령어를 실행한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>sudo apt update</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>sudo apt install python3</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-<hr>
-</section>
-<section id="설치-확인" class="level3">
-<h3 class="anchored" data-anchor-id="설치-확인">설치 확인</h3>
-<ul>
-<li><p>터미널(또는 명령 프롬프트, PowerShell)을 열고 아래 명령어를 입력한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>python <span class="op">--</span>version</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>설치된 파이썬 버전이 출력되면 정상적으로 설치된 것이다.</p></li>
-</ul>
-<p>설치 후에는 <a href="#sec-idle" class="quarto-xref"><span>IDLE</span></a>, <a href="#sec-vsc" class="quarto-xref"><span>VS Code</span></a>, <a href="#sec-jupyter-notebook" class="quarto-xref"><span>Jupyter Notebook</span></a> 등의 개발 환경을 설정하여 코딩(<a href="#nte-coding-programming" class="quarto-xref">Note&nbsp;<span>1.1</span></a> 참고)을 시작할 수 있다.</p>
-<hr>
-<div id="nte-coding-programming" class="callout callout-style-default callout-note no-icon callout-titled" title="코딩 vs. 프로그래밍">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Note&nbsp;1.1: 코딩 vs.&nbsp;프로그래밍
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>코딩</strong>과 <strong>프로그래밍</strong>은 종종 혼용되지만, 둘은 의미와 범위에서 차이가 있다. 아래 표를 통해 두 개념의 차이점을 비교할 수 있다.</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 14%">
-<col style="width: 40%">
-<col style="width: 45%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>구분</th>
-<th>코딩 (Coding)</th>
-<th>프로그래밍 (Programming)</th>
+<th>내용</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td><strong>정의</strong></td>
-<td>특정 프로그래밍 언어의 문법에 따라 코드를 작성하는 과정</td>
-<td>문제 해결을 위해 소프트웨어를 설계하고 개발하는 전체 과정</td>
+<td>생각이나 감정을 나타내고 전달하기 위해 사용하는 체계적인 상징의 집합</td>
 </tr>
 <tr class="even">
-<td><strong>목적</strong></td>
-<td>컴퓨터가 이해할 수 있는 명령어를 작성하는 것</td>
-<td>문제를 분석하고, 알고리즘을 설계하여 최적의 솔루션을 개발하는 것</td>
+<td><strong>의사소통</strong></td>
+<td>개인 간의 정보, 감정, 의도를 효과적으로 교환하는 수단</td>
 </tr>
 <tr class="odd">
-<td><strong>범위</strong></td>
-<td>프로그래밍의 하위 개념으로, 코드 작성에 국한됨</td>
-<td>요구사항 분석, 설계, 코딩, 테스트, 디버깅, 유지보수 등 전체 소프트웨어 개발 과정 포함</td>
+<td><strong>사고의 도구</strong></td>
+<td>복잡한 개념을 논리적으로 정리하고 구체화하는 지적 기반</td>
 </tr>
 <tr class="even">
-<td><strong>요구 능력</strong></td>
-<td>프로그래밍 언어의 문법 및 기초적인 논리 이해</td>
-<td>문제 해결 능력, 알고리즘 설계, 시스템 설계, 최적화 기술 등 종합적 사고 필요</td>
-</tr>
-<tr class="odd">
-<td><strong>도구</strong></td>
-<td>텍스트 에디터, IDE(통합 개발 환경)</td>
-<td>IDE, 버전 관리 시스템, 디버깅 도구, 테스트 프레임워크 등 다양한 개발 도구</td>
-</tr>
-<tr class="even">
-<td><strong>출력 결과</strong></td>
-<td>코드 파일 및 스크립트</td>
-<td>작동하는 소프트웨어, 애플리케이션 또는 시스템</td>
+<td><strong>문화/사회</strong></td>
+<td>공동체의 유대감을 형성하고 세대 간 지식과 가치관을 전승하는 매체</td>
 </tr>
 </tbody>
 </table>
-<hr>
-<p><strong>코딩</strong></p>
-<ul>
-<li><p><strong>파이썬으로 숫자를 더하는 코드 작성</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>a <span class="op">=</span> <span class="dv">5</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>b <span class="op">=</span> <span class="dv">3</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(a <span class="op">+</span> b)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>주어진 문제를 <strong>단순히 코드로 변환</strong>하는 과정</p></li>
-</ul>
-<p><strong>프로그래밍</strong></p>
-<ul>
-<li><strong>가계부 애플리케이션 개발</strong>
-<ul>
-<li>요구사항 분석: 사용자가 수입과 지출을 입력할 수 있도록 설계<br>
-</li>
-<li>데이터 구조 설계: 수입, 지출을 관리할 데이터베이스 설계<br>
-</li>
-<li>인터페이스 설계: 사용자 친화적인 화면 개발<br>
-</li>
-<li><strong>코딩 포함</strong>: 기능을 구현하기 위한 코드 작성<br>
-</li>
-<li>테스트 및 디버깅: 오류 수정과 최적화<br>
-</li>
-<li>유지보수: 기능 추가 및 업데이트</li>
-</ul></li>
-</ul>
-<p>즉, <strong>코딩</strong>은 <strong>프로그래밍의 일부</strong>로, <strong>명령어를 작성</strong>하는 행위에 집중하고, <strong>프로그래밍</strong>은 <strong>전체 개발 과정</strong>을 포괄하는 개념으로, 문제 해결을 위한 <strong>설계, 개발, 유지보수</strong>까지 포함한다. 따라서 코딩은 프로그래밍의 첫걸음이며, 프로그래밍은 더 넓고 복잡한 과정이다.</p>
-</div>
-</div>
+</section>
+<section id="의사전달과-통역" class="level3">
+<h3 class="anchored" data-anchor-id="의사전달과-통역">1.2 의사전달과 통역</h3>
+<p>서로 다른 언어를 사용하는 화자 사이에서 통역사가 가교 역할을 하듯, 인간이 컴퓨터와 소통하기 위해서는 컴퓨터가 이해할 수 있는 언어와 이를 전달할 방식이 필요하다. 특히 컴퓨터는 모호한 표현을 처리하지 못하므로 매우 명확하고 구체적인 명령 체계를 사용해야 한다.</p>
 <hr>
 </section>
 </section>
-<section id="sec-dev-environment" class="level2">
-<h2 class="anchored" data-anchor-id="sec-dev-environment">개발 환경 설정</h2>
-<p>파이썬 개발환경은 기본 에디터나 파이썬에서 제공하는 IDLE을 이용하여 간단히 프로그램 작성이 가능하다. 하지만 복잡한 코드와 효율적인 개발을 위해서는 IDE 설치를 권한다. 상황이 여이치 않은 경우 온라인 상<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>에서도 파이썬 코드를 작성 실행할 수 있다.</p>
-<section id="sec-vsc" class="level3">
-<h3 class="anchored" data-anchor-id="sec-vsc">VS Code</h3>
-<p>VS Code(Visual Studio Code)는 마이크로소프트에서 제공하는 무료 코드 편집기로, 파이썬 개발 환경으로 많이 사용된다. 가벼우면서도 확장성이 뛰어나 초보자부터 전문가까지 널리 활용된다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://code.visualstudio.com/assets/docs/getstarted/getting-started/open-folder.png" class="img-fluid figure-img"></p>
-<figcaption>Visual Studio Code</figcaption>
-</figure>
-</div>
-<hr>
-<section id="vs-code-다운로드" class="level4">
-<h4 class="anchored" data-anchor-id="vs-code-다운로드">VS Code 다운로드</h4>
-<p>개발자 상황에 맞춰 설치 파일을 다운로드 한다.</p>
-<ul>
-<li><a href="https://code.visualstudio.com/">VS Code 공식 웹사이트, https://code.visualstudio.com/</a>에 접속한다.<br>
-</li>
-<li>사용 중인 운영 체제(Windows, macOS, Linux)에 맞는 설치 파일을 다운로드한다.</li>
-</ul>
-</section>
-<section id="windows에서-설치-1" class="level4">
-<h4 class="anchored" data-anchor-id="windows에서-설치-1">Windows에서 설치</h4>
-<p>아래 절차에 따라 설치를 진행한다.</p>
-<ul>
-<li>다운로드한 <code>VSCodeUserSetup.exe</code> 파일을 실행한다.<br>
-</li>
-<li>설치 마법사가 실행되면 <strong>“Next”</strong>를 눌러 진행한다.<br>
-</li>
-<li>설치 옵션에서 <strong>“Add to PATH”</strong> 항목을 체크한다.<br>
-</li>
-<li><strong>“Install”</strong> 버튼을 클릭하여 설치를 완료한 후, <strong>“Finish”</strong>를 눌러 실행한다.</li>
-</ul>
-<hr>
-</section>
-<section id="macos에서-설치-1" class="level4">
-<h4 class="anchored" data-anchor-id="macos에서-설치-1">macOS에서 설치</h4>
-<p>아래 절차에 따라 설치를 진행한다.</p>
-<ul>
-<li><p>다운로드한 <code>VSCode-darwin.zip</code> 파일을 압축 해제한다.<br>
-</p></li>
-<li><p><code>Visual Studio Code.app</code>을 <strong>응용 프로그램(Applications) 폴더</strong>로 이동한다.<br>
-</p></li>
-<li><p>터미널에서 VS Code를 쉽게 실행하려면 아래 명령어를 입력하여 <code>code</code> 명령어를 등록한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb6"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> ln <span class="at">-s</span> /Applications/Visual\ Studio\ Code.app/Contents/Resources/app/bin/code /usr/local/bin/code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-</section>
-<section id="linuxubuntu에서-설치-1" class="level4">
-<h4 class="anchored" data-anchor-id="linuxubuntu에서-설치-1">Linux(Ubuntu)에서 설치</h4>
-<p>아래 절차에 따라 설치를 진행한다.</p>
-<ul>
-<li><p>터미널을 열고 다음 명령어를 실행하여 설치한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb7"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt update</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">sudo</span> apt install code</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>설치가 완료되면 아래 명령어를 입력하여 실행한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb8"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="ex">code</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-<hr>
-</section>
-<section id="vs-code에서-파이썬-개발-환경-설정" class="level4">
-<h4 class="anchored" data-anchor-id="vs-code에서-파이썬-개발-환경-설정">VS Code에서 파이썬 개발 환경 설정</h4>
-<p>VS Code 설치가 완료되면 필요에 따라 일부 환경을 설정한다.</p>
-<p><strong>파이썬 확장 프로그램 설치</strong><br>
-- VS Code를 실행하고 <strong>확장(Extensions)</strong> 메뉴(<code>Ctrl + Shift + X</code>)를 연다.<br>
-- 검색창에 <strong>“Python”</strong>을 입력하고 <strong>Microsoft 제공 Python 확장 프로그램</strong>을 설치한다.</p>
-<p><strong>기본 인터프리터 설정</strong><br>
-- <code>Ctrl + Shift + P</code>를 눌러 <strong>명령 팔레트(Command Palette)</strong>를 연다.<br>
-- <strong>“Python: Select Interpreter”</strong>를 선택한 후 설치된 파이썬 경로를 선택한다.<br>
-- 터미널에서 <code>python --version</code>을 실행하여 정상적으로 설정되었는지 확인한다.</p>
-<p><strong>실행 및 디버깅</strong><br>
-- <code>.py</code> 파일을 만들고 파이썬 코드를 작성한다.<br>
-- <code>F5</code> 키를 눌러 실행하고 결과를 확인한다.</p>
-<p>코드 가독성을 위해 별도 폰트(예, D2Coding<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a> 등)를 추가로 설치할 수 있다.</p>
-</section>
-<section id="설치-확인-1" class="level4">
-<h4 class="anchored" data-anchor-id="설치-확인-1">설치 확인</h4>
-<p>VSCode 설치와 파이썬 연결까지 정상동작하는지 아래와 같이 확인한다.</p>
-<ul>
-<li><p>VS Code에서 <code>Ctrl + `</code> 키를 눌러 터미널을 연다.<br>
-</p></li>
-<li><p>아래 명령어를 입력하여 파이썬이 정상적으로 동작하는지 확인한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb9"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-<p>설치가 완료되면 VS Code를 활용하여 편리하게 파이썬 프로그래밍을 진행할 수 있다. 자세한 사용법은 VS Code 튜토리얼을 참고한다.</p>
-<ul>
-<li><a href="https://code.visualstudio.com/docs/getstarted/getting-started" target="_blank">https://code.visualstudio.com/docs/getstarted/getting-started</a></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="sec-jupyter-notebook" class="level3">
-<h3 class="anchored" data-anchor-id="sec-jupyter-notebook">Jupyter Notebook</h3>
-<p>Jupyter Notebook은 웹 기반의 대화형 개발 환경으로, 파이썬 코드 실행과 문서화를 동시에 할 수 있어 데이터 분석 및 머신러닝 작업에 많이 사용된다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://jupyter-notebook.readthedocs.io/en/latest/_images/notebook-running-code.png" class="img-fluid figure-img"></p>
-<figcaption>https://jupyter-notebook.readthedocs.io/en/latest/</figcaption>
-</figure>
-</div>
-<hr>
-<section id="jupyter-notebook-설치-전-준비" class="level4">
-<h4 class="anchored" data-anchor-id="jupyter-notebook-설치-전-준비">Jupyter Notebook 설치 전 준비</h4>
-<p>Jupyter Notebook을 사용하려면 먼저 파이썬이 설치되어 있어야 한다.</p>
-<ul>
-<li><p>아래 명령어를 실행하여 파이썬이 설치되어 있는지 확인한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb10"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>설치되어 있지 않다면 <a href="https://www.python.org/">파이썬 공식 사이트</a>에서 설치한다(<a href="#sec-python-installation" class="quarto-xref"><span>파이썬 설치</span></a> 참고).</p></li>
-</ul>
-<hr>
-</section>
-<section id="jupyter-notebook-설치" class="level4">
-<h4 class="anchored" data-anchor-id="jupyter-notebook-설치">Jupyter Notebook 설치</h4>
-<p><strong>pip을 이용한 설치</strong></p>
-<ul>
-<li><p>터미널(또는 명령 프롬프트)을 열고 아래 명령어를 입력한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb11"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>설치가 완료되면 <code>jupyter --version</code>을 실행하여 정상적으로 설치되었는지 확인한다.</p></li>
-</ul>
-<p><strong>Anaconda를 이용한 설치</strong></p>
-<ul>
-<li><p><a href="https://www.anaconda.com/">Anaconda 공식 사이트</a>에서 설치 파일을 다운로드한다.<br>
-</p></li>
-<li><p>설치 후, 터미널(또는 Anaconda Prompt)에서 아래 명령어를 입력한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb12"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="ex">conda</span> install jupyter</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p>설치가 완료되면 <code>jupyter --version</code>을 실행하여 확인한다.</p></li>
-</ul>
-<hr>
-</section>
-<section id="jupyter-notebook-실행" class="level4">
-<h4 class="anchored" data-anchor-id="jupyter-notebook-실행">Jupyter Notebook 실행</h4>
-<p>Jupyter Notebook이 정상적으로 설치되면 아래와 같이 실행할 수 있다.</p>
-<ul>
-<li>터미널 또는 명령 프롬프트에서 아래 명령어를 입력한다.</li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb13"><pre class="sourceCode sh code-with-copy"><code class="sourceCode bash"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="ex">jupyter</span> notebook</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>자동으로 웹 브라우저가 열리며 Jupyter Notebook 인터페이스가 실행된다.</li>
-</ul>
-<hr>
-</section>
-<section id="jupyter-notebook-사용-방법" class="level4">
-<h4 class="anchored" data-anchor-id="jupyter-notebook-사용-방법">Jupyter Notebook 사용 방법</h4>
-<p><strong>새 노트북 생성</strong></p>
-<ul>
-<li>Jupyter Notebook 실행 후, <strong>New &gt; Python 3</strong>을 클릭하여 새로운 노트북을 만든다.</li>
-</ul>
-<p><strong>코드 실행</strong></p>
-<ul>
-<li><p>코드 셀에 파이썬 코드를 입력한 후, <code>Shift + Enter</code>를 눌러 실행한다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, Jupyter Notebook!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-<p><strong>저장 및 종료</strong><br>
-- <strong>파일 &gt; Save and Checkpoint</strong>를 선택하여 작업을 저장한다.<br>
-- Jupyter Notebook을 종료하려면 터미널에서 <code>Ctrl + C</code>를 누르고 <code>y</code>를 입력한다.</p>
-<p>설치가 완료되면 Jupyter Notebook을 활용하여 데이터 분석, 머신러닝, 문서 작성 등을 편리하게 수행할 수 있다. 자세한 사용법은 Jupyter Notebook 튜토리얼을 참고한다.</p>
-<ul>
-<li><a href="https://docs.jupyter.org/en/latest/start/index.html" target="_blank">https://docs.jupyter.org/en/latest/start/index.html</a></li>
-</ul>
-<hr>
-</section>
-</section>
-<section id="sec-pycharm" class="level3">
-<h3 class="anchored" data-anchor-id="sec-pycharm">PyCharm</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://i.namu.wiki/i/pdAZVLjJIKjgRqk40zbRvUOMaDkhfXmsaLU-j4Cz104Q9BuV_BQUdgOPlkFimNadDEEMsSFFpLbvqiwJXVkVFdpQAfK-591zUdH3q6OJL51v9nTxKish8Cy0Apob6LQ-xOoIVL1Q-xaYbg2tx9fCqkdkoSyYNIuVcd6NaTI-FeU.svg" class="img-fluid figure-img"></p>
-<figcaption>PyCharm</figcaption>
-</figure>
-</div>
-<section id="pycharm-다운로드" class="level4">
-<h4 class="anchored" data-anchor-id="pycharm-다운로드">PyCharm 다운로드</h4>
-<p>설치 파일을 아래와 같이 다운로드 한다.</p>
-<ol type="1">
-<li>웹 브라우저를 열고 <strong>PyCharm 공식 웹사이트</strong>(<a href="https://www.jetbrains.com/pycharm/">https://www.jetbrains.com/pycharm/</a>)에 접속한다.</li>
-<li><strong>“Download”</strong> 버튼을 클릭한다.</li>
-<li>운영체제(Windows, macOS, Linux)에 맞는 버전을 선택한다.</li>
-<li><strong>버전 선택</strong>:
-<ul>
-<li><strong>Community Edition (무료)</strong>: 기본적인 기능을 제공하며, 일반적인 파이썬 개발에 충분</li>
-<li><strong>Professional Edition (유료, 30일 체험 가능)</strong>: 웹 개발, 데이터베이스, 과학 연산 등 고급 기능이 포함</li>
-</ul></li>
-<li>원하는 버전을 선택한 후 <strong>“Download”</strong> 버튼을 클릭하여 설치 파일을 다운로드한다.</li>
-</ol>
-<hr>
-</section>
-<section id="pycharm-설치" class="level4">
-<h4 class="anchored" data-anchor-id="pycharm-설치">PyCharm 설치</h4>
-<p><strong>Windows</strong></p>
-<ol type="1">
-<li>다운로드한 <code>pycharm-community-*.exe</code> 또는 <code>pycharm-professional-*.exe</code> 파일을 실행한다.</li>
-<li>설치 마법사가 나타나면 <strong>“Next”</strong> 버튼을 클릭한다.</li>
-<li>설치 경로를 선택한 후 <strong>“Next”</strong> 버튼을 클릭한다.</li>
-<li>선택 옵션에서 필요에 따라 다음을 설정한다.
-<ul>
-<li><strong>“Create Desktop Shortcut”</strong>: 바탕화면에 바로 가기 아이콘 생성</li>
-<li><strong>“Update PATH variable”</strong>: 명령 프롬프트에서 <code>pycharm</code> 명령어 실행 가능하도록 설정</li>
-</ul></li>
-<li><strong>“Install”</strong> 버튼을 클릭하여 설치를 진행한다.</li>
-<li>설치가 완료되면 <strong>“Run PyCharm Community”</strong> 옵션을 선택한 후 <strong>“Finish”</strong> 버튼을 클릭한다.</li>
-</ol>
-<hr>
-<p><strong>macOS</strong></p>
-<ol type="1">
-<li>다운로드한 <code>.dmg</code> 파일을 열어 PyCharm 아이콘을 Applications 폴더로 드래그앤드롭한다.</li>
-<li><strong>응용 프로그램(Applications)</strong> 폴더에서 PyCharm을 실행한다.</li>
-</ol>
-<p><strong>Linux</strong> 1. <code>.tar.gz</code> 파일을 다운로드한 후 압축을 해제한다. 2. 터미널에서 PyCharm 실행 파일을 실행한다. <code>bash    cd pycharm-community-*/bin    ./pycharm.sh</code></p>
-<hr>
-</section>
-<section id="pycharm-첫-실행-및-설정" class="level4">
-<h4 class="anchored" data-anchor-id="pycharm-첫-실행-및-설정">PyCharm 첫 실행 및 설정</h4>
-<p>PyCharm을 실행하고 필요에 따라 환결설정을 한다.</p>
-<ol type="1">
-<li>처음 실행하면 <strong>설정 마이그레이션</strong> 옵션이 나타나는데, 기존 설정이 없다면 <strong>“Do not import settings”</strong>를 선택한다.</li>
-<li><strong>UI 테마 선택</strong> (Darcula 또는 Light) 후 <strong>Next</strong> 버튼을 클릭한다.</li>
-<li>원하는 플러그인을 설치한 후 <strong>Start using PyCharm</strong>을 클릭하여 IDE를 시작한다.</li>
-<li><strong>새 프로젝트 생성</strong> 또는 <strong>기존 프로젝트 열기</strong>를 선택하여 개발을 시작한다.</li>
-</ol>
-<p>PyCharm이 정상적으로 실행되면 Python 개발 환경을 구성하고 프로젝트를 생성하여 코딩을 시작할 수 있다(<a href="#sec-pycharm-guide" class="quarto-xref"><span>PyCharm 사용법</span></a> 참고).</p>
-<hr>
-</section>
-</section>
-</section>
-<section id="sec-1st-program" class="level2">
-<h2 class="anchored" data-anchor-id="sec-1st-program">첫 번째 프로그램</h2>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/ageekisborn.png" class="img-fluid figure-img"></p>
-<figcaption>Hello, World<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a></figcaption>
-</figure>
-</div>
-<p>화면에 “Hello, World”를 출력하는 프로그램을 작성한다.<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a></p>
-<div id="32aa3fc6" class="cell" data-execution_count="1">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, World"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Hello, World</code></pre>
-</div>
-</div>
-<hr>
-</section>
-<section id="sec-10-ref" class="level2">
-<h2 class="anchored" data-anchor-id="sec-10-ref">참고자료</h2>
-<section id="sec-idle" class="level3">
-<h3 class="anchored" data-anchor-id="sec-idle">IDLE</h3>
-<p>IDLE(Integrated Development and Learning Environment)은 파이썬에 기본적으로 포함된 통합 개발 환경(IDE)으로, 초보자가 쉽게 파이썬을 실행하고 학습할 수 있도록 설계된 프로그램이다.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="images/idle_run.png" class="img-fluid figure-img"></p>
-<figcaption>IDLE</figcaption>
-</figure>
-</div>
-<section id="idle의-특징" class="level4">
-<h4 class="anchored" data-anchor-id="idle의-특징">IDLE의 특징</h4>
-<ul>
-<li><strong>기본 제공</strong>: 파이썬을 설치하면 자동으로 포함되므로 별도의 설치가 필요하지 않다.<br>
-</li>
-<li><strong>GUI 환경</strong>: 코드 편집기와 실행 창을 제공하여 사용자가 쉽게 코드를 작성하고 실행할 수 있다.<br>
-</li>
-<li><strong>대화형 인터프리터</strong>: 즉시 코드를 실행하고 결과를 확인할 수 있는 인터랙티브 셸을 제공한다.<br>
-</li>
-<li><strong>문법 강조</strong>: 코드 편집 시 색상을 적용하여 가독성을 높여준다.<br>
-</li>
-<li><strong>디버깅 기능</strong>: 간단한 디버깅 도구를 제공하여 오류를 찾고 수정할 수 있다.</li>
-</ul>
-<hr>
-</section>
-<section id="idle-실행-방법" class="level4">
-<h4 class="anchored" data-anchor-id="idle-실행-방법">IDLE 실행 방법</h4>
-<ul>
-<li><strong>Windows</strong>: <code>시작 메뉴 &gt; Python &gt; IDLE (Python 버전)</code> 선택<br>
-</li>
-<li><strong>macOS</strong>: <code>응용 프로그램 &gt; Python 폴더 &gt; IDLE</code> 실행<br>
-</li>
-<li><strong>Linux</strong>: 터미널에서 <code>idle3</code> 명령어 입력</li>
-</ul>
-<hr>
-</section>
-<section id="idle-사용-방법" class="level4">
-<h4 class="anchored" data-anchor-id="idle-사용-방법">IDLE 사용 방법</h4>
-<ul>
-<li><p><strong>대화형 셸(Interactive Shell)</strong>:<br>
-실행 후 나타나는 창에서 바로 파이썬 코드를 입력하고 실행할 수 있다.</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb17"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="op">&gt;&gt;&gt;</span> <span class="bu">print</span>(<span class="st">"Hello, Python!"</span>)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>Hello, Python<span class="op">!</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-<li><p><strong>스크립트 작성 및 실행</strong>:<br>
-<code>File &gt; New File</code>을 선택하여 새 파일을 만들고 코드를 작성한 후, <code>F5</code> 키를 눌러 실행할 수 있다.</p></li>
-</ul>
-<hr>
-</section>
-<section id="idle의-장점과-단점" class="level4">
-<h4 class="anchored" data-anchor-id="idle의-장점과-단점">IDLE의 장점과 단점</h4>
+<section id="sec-programming-language" class="level2">
+<h2 class="anchored" data-anchor-id="sec-programming-language">2. 프로그래밍 언어</h2>
+<p>프로그래밍 언어는 컴퓨터가 특정 작업을 수행하도록 지시하기 위해 고안된 인공적인 언어이다. 인간의 언어와 기계어 사이에서 중재 역할을 하며, 하드웨어와의 거리에 따라 저급 언어와 고급 언어로 분류된다.</p>
+<section id="실행-방식에-따른-분류" class="level3">
+<h3 class="anchored" data-anchor-id="실행-방식에-따른-분류">2.1 실행 방식에 따른 분류</h3>
+<p>소스 코드가 컴퓨터에서 실행되는 방식은 크게 컴파일 방식과 인터프리터 방식으로 나뉜다. 파이썬은 대표적인 인터프리터 언어에 해당한다.</p>
 <table class="caption-top table">
 <colgroup>
 <col style="width: 33%">
@@ -1113,211 +381,135 @@ Note&nbsp;1.1: 코딩 vs.&nbsp;프로그래밍
 </colgroup>
 <thead>
 <tr class="header">
-<th>구분</th>
-<th>장점</th>
-<th>단점</th>
+<th>방식</th>
+<th>설명</th>
+<th>주요 언어</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>사용 편의성</td>
-<td>별도 설치 없이 바로 사용 가능하다.</td>
-<td>기능이 제한적이어서 대형 프로젝트에는 부적합하다.</td>
+<td><strong>컴파일(Compile)</strong></td>
+<td>코드 전체를 기계어로 번역한 후 실행 파일을 생성. 실행 속도가 빠름.</td>
+<td>C, C++, Rust</td>
 </tr>
 <tr class="even">
-<td>학습 도구</td>
-<td>초보자가 배우기에 적합한 환경을 제공한다.</td>
-<td>자동 완성 기능이 부족하여 코드 작성 시 불편할 수 있다.</td>
+<td><strong>인터프리터(Interpreter)</strong></td>
+<td>코드를 한 줄씩 읽어 들이며 즉시 실행. 개발 및 디버깅이 용이함.</td>
+<td><strong>Python</strong>, JS, Ruby</td>
 </tr>
 <tr class="odd">
-<td>인터랙티브 실행</td>
-<td>코드 실행 결과를 즉시 확인할 수 있다.</td>
-<td>여러 파일을 관리하는 데 비효율적이다.</td>
+<td><strong>혼합형(JIT)</strong></td>
+<td>컴파일과 인터프리팅의 장점을 결합하여 실행 성능을 최적화함.</td>
+<td>Java, C#</td>
 </tr>
 </tbody>
 </table>
-<p>IDLE은 파이썬을 처음 배우는 사람에게 적합한 개발 환경이며, 간단한 코드 실습이나 테스트를 할 때 유용하다. 하지만 규모가 큰 프로젝트를 진행할 경우 VS Code, PyCharm 같은 다른 개발 도구를 사용하는 것이 더 효율적이다.</p>
-<hr>
 </section>
-</section>
-<section id="sec-pycharm-guide" class="level3">
-<h3 class="anchored" data-anchor-id="sec-pycharm-guide">PyCharm 사용법</h3>
-<p>PyCharm은 파이썬 개발을 위한 강력한 <strong>IDE(통합 개발 환경)</strong>로, 파이썬 개발을 더욱 효율적으로 할 수 있으며, 기본적인 코드 작성부터 디버깅, 패키지 관리, Git 연동까지 다양한 기능을 사용할 수 있다.</p>
-<p>자세한 사용법은 PyCharm 튜토리얼을 참고한다.</p>
+<section id="주요-언어별-특징" class="level3">
+<h3 class="anchored" data-anchor-id="주요-언어별-특징">2.2 주요 언어별 특징</h3>
+<p>현대 소프트웨어 개발 환경에서는 목적에 따라 다양한 언어가 사용되고 있으며, 파이썬은 그중에서도 독보적인 범용성을 자랑한다.</p>
 <ul>
-<li><a href="https://www.jetbrains.com/help/pycharm/quick-start-guide.html" target="_blank">https://www.jetbrains.com/help/pycharm/quick-start-guide.html</a></li>
+<li><strong>C / C++</strong>: 시스템 자원 제어 및 고성능 연산(게임 엔진, 운영체제)에 적합</li>
+<li><strong>Java</strong>: 대규모 기업용 시스템 및 안드로이드 앱 개발에 널리 사용</li>
+<li><strong>Python</strong>: 간결한 문법을 바탕으로 인공지능, 데이터 과학, 업무 자동화에 최적화</li>
+<li><strong>JavaScript</strong>: 웹 브라우저의 동적 기능을 구현하는 웹 개발의 필수 언어</li>
 </ul>
 <hr>
-<section id="pycharm-기본-화면-구성" class="level4">
-<h4 class="anchored" data-anchor-id="pycharm-기본-화면-구성">PyCharm 기본 화면 구성</h4>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://resources.jetbrains.com/help/img/idea/2024.3/py_main_window_overview.png" class="img-fluid figure-img"></p>
-<figcaption>https://www.jetbrains.com/help/pycharm/quick-start-guide.html#ui</figcaption>
-</figure>
-</div>
-<ol type="1">
-<li><p><strong>윈도우 헤더</strong>: 가장 인기 있는 기능을 빠르게 사용할 수 있도록 여러 도구가 포함된 영역</p>
-<ul>
-<li><strong>프로젝트 위젯</strong>: 현재 열려 있는 프로젝트 관리<br>
-</li>
-<li><strong>VCS(버전 관리 시스템) 위젯</strong>: 코드 변경 사항 추적<br>
-</li>
-<li><strong>실행 위젯</strong>: 코드 실행 및 디버깅<br>
-</li>
-<li><strong>기타 기능</strong>: <em>Code With Me</em> (협업 도구), <em>Search Everywhere</em> (전체 검색), <em>설정</em> 열기</li>
-</ul></li>
-<li><p><strong>프로젝트 도구 창</strong>: 화면 왼쪽에 위치하며, 프로젝트에 포함된 파일들을 보여줌</p></li>
-<li><p><strong>에디터</strong>: 화면 오른쪽에 위치하며, 실제로 코드를 작성하는 공간</p>
-<ul>
-<li>여러 파일을 동시에 열어둘 수 있도록 탭 방식으로 구성됨</li>
-</ul></li>
-<li><p><strong>컨텍스트 메뉴</strong>: 인터페이스 요소나 코드 조각을 <strong>오른쪽 클릭</strong>하면 열리는 메뉴</p>
-<ul>
-<li>해당 요소에서 사용할 수 있는 다양한 기능 제공</li>
-</ul></li>
-<li><p><strong>네비게이션 바</strong>: 프로젝트의 폴더와 파일을 빠르게 탐색할 수 있도록 도와주는 도구</p></li>
-<li><p><strong>거터(Gutter)</strong>: 에디터 왼쪽의 세로 줄</p>
-<ul>
-<li>브레이크포인트(디버깅을 위해 코드 실행을 멈추는 지점) 표시<br>
-</li>
-<li>코드의 계층 구조(정의/선언 위치) 탐색 지원<br>
-</li>
-<li><strong>라인 번호 및 VCS 변경 내역</strong> 표시</li>
-</ul></li>
-<li><p><strong>스크롤바</strong>: 에디터 오른쪽에 위치하며 코드 이동을 지원</p>
-<ul>
-<li><strong>코드 품질 검사 결과</strong>가 표시됨<br>
-</li>
-<li>오른쪽 상단의 <strong>인디케이터</strong>를 통해 파일 전체의 코드 품질 상태 확인 가능</li>
-</ul></li>
-<li><p><strong>도구 창</strong>: 작업 공간의 하단 및 측면에 위치한 특수 창</p>
-<ul>
-<li>프로젝트 관리, 코드 검색 및 탐색, 버전 관리, 실행, 테스트, 디버깅 등의 기능 제공</li>
-</ul></li>
-<li><p><strong>상태 표시줄(Status Bar)</strong></p>
-<ul>
-<li>현재 프로젝트 및 전체 IDE 상태를 표시<br>
-</li>
-<li>파일 인코딩, 줄 구분자, 코드 검사 프로필 등 다양한 정보 제공<br>
-</li>
-<li><strong>Python 인터프리터 설정</strong>을 빠르게 변경할 수 있는 기능 포함</li>
-</ul></li>
-</ol>
-<hr>
 </section>
-<section id="새-프로젝트-생성-및-python-환경-설정" class="level4">
-<h4 class="anchored" data-anchor-id="새-프로젝트-생성-및-python-환경-설정">새 프로젝트 생성 및 Python 환경 설정</h4>
-<dl>
-<dt>새 프로젝트 생성</dt>
-<dd>
-<ol type="1">
-<li>PyCharm을 실행하고 <strong>“New Project”</strong>를 선택한다.</li>
-<li>프로젝트 위치(폴더)를 설정한다.</li>
-<li><strong>Python 인터프리터</strong> 선택:
-<ul>
-<li><strong>기본 인터프리터 사용</strong>: <code>Existing Interpreter</code>에서 현재 설치된 Python을 선택</li>
-<li><strong>새로운 가상 환경 생성</strong>: <code>Virtualenv Environment</code>를 선택하여 가상 환경 생성</li>
-</ul></li>
-<li><strong>Create</strong> 버튼을 클릭하여 프로젝트를 생성한다.</li>
-</ol>
-</dd>
-</dl>
-<hr>
 </section>
-<section id="코드-작성-및-실행" class="level4">
-<h4 class="anchored" data-anchor-id="코드-작성-및-실행">코드 작성 및 실행</h4>
-<dl>
-<dt>새로운 파이썬 파일 생성</dt>
-<dd>
-<ol type="1">
-<li><strong>Project 창</strong>에서 프로젝트 폴더를 우클릭 → <strong>New → Python File</strong> 선택</li>
-<li>파일 이름을 입력하고 <code>.py</code> 확장자를 지정한 후 <strong>Enter</strong> 키를 누른다.</li>
-<li>생성된 파일에서 코드 작성</li>
-</ol>
-</dd>
-<dt>코드 실행</dt>
-<dd>
+<section id="sec-python-intro" class="level2">
+<h2 class="anchored" data-anchor-id="sec-python-intro">3. 파이썬(Python) 소개</h2>
+<p>파이썬은 “인생은 짧으니, 파이썬이 필요하다(Life is short, you need Python)”는 슬로건으로 유명할 만큼 생산성이 높은 언어이다. 본 교재는 최신 표준인 <strong>Python 3.x</strong>를 기준으로 설명한다.</p>
+<section id="파이썬의-주요-특징" class="level3">
+<h3 class="anchored" data-anchor-id="파이썬의-주요-특징">3.1 파이썬의 주요 특징</h3>
+<p>파이썬은 입문자에게 친숙하면서도 전문가에게는 강력한 도구를 제공하는 이중적인 매력을 가지고 있다.</p>
 <ul>
-<li><strong>방법 1</strong>: 상단 <strong>Run 버튼</strong>(▶) 클릭</li>
-<li><strong>방법 2</strong>: 코드 파일에서 <strong>우클릭 → Run ‘파일명’</strong> 선택</li>
-<li><strong>방법 3</strong>: <code>Shift + F10</code> 키를 눌러 실행</li>
+<li><strong>간결성</strong>: 영어 문법과 유사하여 코드를 읽고 이해하기 쉬움</li>
+<li><strong>확장성</strong>: 수많은 라이브러리와 프레임워크를 통해 다양한 분야에 즉시 적용 가능</li>
+<li><strong>플랫폼 독립성</strong>: 운영체제(Windows, macOS, Linux)에 상관없이 동일한 코드 실행 가능</li>
 </ul>
-</dd>
-</dl>
-<p><strong>예제 코드</strong></p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(<span class="st">"Hello, PyCharm!"</span>)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="타-언어와의-비교-예제" class="level3">
+<h3 class="anchored" data-anchor-id="타-언어와의-비교-예제">3.2 타 언어와의 비교 예제</h3>
+<p>동일한 기능을 구현할 때 파이썬의 간결함을 아래의 파일 읽기 예제를 통해 확인할 수 있다.</p>
+<p><strong>[예제] 텍스트 파일 내용을 읽어 화면에 출력하기</strong></p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Python 3.x 예제 코드</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="cf">with</span> <span class="bu">open</span>(<span class="st">"sample.txt"</span>, <span class="st">"r"</span>, encoding<span class="op">=</span><span class="st">"utf-8"</span>) <span class="im">as</span> <span class="bu">file</span>:</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>    content <span class="op">=</span> <span class="bu">file</span>.read()</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(content)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <hr>
 </section>
-<section id="패키지-설치-및-관리" class="level4">
-<h4 class="anchored" data-anchor-id="패키지-설치-및-관리">패키지 설치 및 관리</h4>
-<dl>
-<dt>내장 터미널 사용</dt>
-<dd>
-<ul>
-<li><p><code>pip</code> 명령어를 사용하여 패키지 설치 가능:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb19"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="ex">pip</span> install numpy</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div></li>
-</ul>
-</dd>
-<dt>PyCharm의 패키지 관리자 사용</dt>
-<dd>
+</section>
+<section id="sec-dev-environment" class="level2">
+<h2 class="anchored" data-anchor-id="sec-dev-environment">4. 환경 설정 및 실습 준비</h2>
+<p>파이썬 프로그램을 작성하고 실행하기 위해서는 인터프리터 설치와 함께 적절한 개발 도구(IDE)를 선택하는 것이 중요하다.</p>
+<section id="파이썬-설치-및-확인" class="level3">
+<h3 class="anchored" data-anchor-id="파이썬-설치-및-확인">4.1 파이썬 설치 및 확인</h3>
 <ol type="1">
-<li><strong>File → Settings → Project → Python Interpreter</strong>로 이동.</li>
-<li><strong>“+” 버튼</strong>을 클릭하여 설치할 패키지를 검색한 후 <strong>Install</strong> 버튼을 누름.</li>
+<li><strong>다운로드</strong>: <a href="https://www.python.org">python.org</a>에서 운영체제에 맞는 3.x 버전을 다운로드한다.</li>
+<li><strong>주의사항</strong>: Windows 설치 시 <strong>“Add Python to PATH”</strong> 항목을 반드시 체크한다.</li>
+<li><strong>버전 확인</strong>: 터미널 또는 명령 프롬프트에서 아래 명령어를 입력한다.</li>
 </ol>
-</dd>
-</dl>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="ex">python</span> <span class="at">--version</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
+</section>
+<section id="주요-개발-환경-비교" class="level3">
+<h3 class="anchored" data-anchor-id="주요-개발-환경-비교">4.2 주요 개발 환경 비교</h3>
+<p>학습자의 목적과 프로젝트 규모에 따라 적합한 도구를 선택한다.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 33%">
+<col style="width: 33%">
+<col style="width: 33%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>도구</th>
+<th>특징</th>
+<th>추천 용도</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>VS Code</strong></td>
+<td>가볍고 확장 프로그램이 풍부한 범용 에디터</td>
+<td>일반적인 프로그래밍, 웹 개발</td>
+</tr>
+<tr class="even">
+<td><strong>PyCharm</strong></td>
+<td>파이썬 전용의 강력한 기능을 제공하는 전문 IDE</td>
+<td>대규모 프로젝트, 전문 개발</td>
+</tr>
+<tr class="odd">
+<td><strong>Jupyter</strong></td>
+<td>코드와 실행 결과, 설명을 블록 단위로 관리</td>
+<td>데이터 분석, 연구, 교육</td>
+</tr>
+</tbody>
+</table>
 <hr>
 </section>
-<section id="디버깅-debugging" class="level4">
-<h4 class="anchored" data-anchor-id="디버깅-debugging">디버깅 (Debugging)</h4>
-<p>PyCharm에서는 <strong>중단점(Breakpoint)</strong>을 설정하여 코드를 단계별로 실행할 수 있다.</p>
-<ol type="1">
-<li>코드 줄 번호 왼쪽을 클릭하여 중단점 설정.</li>
-<li>상단 메뉴에서 <strong>“Run → Debug ‘파일명’”</strong>을 선택.</li>
-<li>실행이 멈추면 <strong>변수 값 확인, 단계별 실행(F8), 함수 내부 진입(F7)</strong> 등을 활용하여 문제를 찾는다.</li>
-</ol>
-<hr>
 </section>
-<section id="코드-자동-완성-및-리팩토링" class="level4">
-<h4 class="anchored" data-anchor-id="코드-자동-완성-및-리팩토링">코드 자동 완성 및 리팩토링</h4>
-<dl>
-<dt>코드 자동 완성</dt>
-<dd>
+<section id="부록-주요-용어-사전" class="level2">
+<h2 class="anchored" data-anchor-id="부록-주요-용어-사전">5. [부록] 주요 용어 사전</h2>
+<p>대학생 독자들이 프로그래밍 학습 시 혼동하기 쉬운 용어들을 정리한다.</p>
 <ul>
-<li><code>Ctrl + Space</code>를 누르면 함수 및 변수 자동 완성 기능 제공</li>
+<li><strong>인터프리터(Interpreter)</strong>: 소스 코드를 기계어로 미리 번역하지 않고, 실행 시점에 한 줄씩 해석하여 결과를 출력하는 프로그램이다.</li>
+<li><strong>라이브러리(Library)</strong>: 특정 기능을 수행하는 코드들을 미리 작성하여 모아놓은 꾸러미이다. 도서관에서 책을 빌리듯 필요한 기능을 불러와 사용할 수 있다.</li>
+<li><strong>프레임워크(Framework)</strong>: 소프트웨어 개발을 위한 기본 구조(뼈대)를 제공한다. 라이브러리가 도구라면, 프레임워크는 도구가 갖춰진 작업장과 같다.</li>
+<li><strong>IDE(Integrated Development Environment)</strong>: 코딩, 디버깅, 컴파일 등 개발에 필요한 모든 과정을 하나의 프로그램 안에서 처리할 수 있는 통합 개발 환경이다.</li>
 </ul>
-</dd>
-<dt>코드 리팩토링</dt>
-<dd>
-<ul>
-<li>변수 또는 함수명을 변경할 때 <strong>우클릭 → Refactor → Rename</strong> 사용</li>
-</ul>
-</dd>
-</dl>
 <hr>
 </section>
-<section id="버전-관리git-연동" class="level4">
-<h4 class="anchored" data-anchor-id="버전-관리git-연동">버전 관리(Git 연동)</h4>
+<section id="제1장-요약" class="level2">
+<h2 class="anchored" data-anchor-id="제1장-요약">6. 제1장 요약</h2>
 <ol type="1">
-<li><strong>VCS → Enable Version Control Integration</strong>을 클릭</li>
-<li>Git을 선택하고 연동하면 프로젝트를 GitHub 등과 연결 가능</li>
+<li><strong>언어의 역할</strong>: 인간과 컴퓨터 사이의 명확한 의사소통을 위해 프로그래밍 언어가 존재한다.</li>
+<li><strong>파이썬의 위치</strong>: 인터프리터 방식의 고급 언어로, 간결한 문법과 높은 생산성이 특징이다.</li>
+<li><strong>학습 기준</strong>: 본 과정은 <strong>Python 3.x</strong> 버전을 사용하며, 이는 이전 버전(2.x)과 호환되지 않는 현대적 표준이다.</li>
+<li><strong>준비 사항</strong>: 파이썬 인터프리터를 설치하고, 본인의 성향에 맞는 IDE(VS Code 등)를 갖추는 것이 실습의 시작이다.</li>
 </ol>
 
 
-</section>
-</section>
-</section>
-<section id="footnotes" class="footnotes footnotes-end-of-document" role="doc-endnotes">
-<hr>
-<ol>
-<li id="fn1"><p><a href="https://ko.m.wikipedia.org/wiki/%EC%96%B8%EC%96%B4" target="_blank">https://ko.m.wikipedia.org/wiki/언어</a><a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn2"><p><a href="https://www.tiobe.com/tiobe-index/" target="blank">https://www.tiobe.com/tiobe-index/</a><a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn3"><p><a href="https://www.online-python.com/" target="_blank">https://www.online-python.com/</a><a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn4"><p><a href="https://github.com/naver/d2codingfont" target="_blank">https://github.com/naver/d2codingfont</a> vsd —<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn5"><p>https://geek-and-poke.com/geekandpoke/2011/2/11/a-geek-is-born.html<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-<li id="fn6"><p><a href="https://namu.wiki/w/Hello%2C%20world%21" target="_blank">https://namu.wiki/w/Hello%2C%20world%21</a><a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
-</ol>
 </section>
 
 </main> <!-- /main -->

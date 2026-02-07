@@ -173,7 +173,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./10python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파이썬 개요</span></a>
+  <a href="./10python.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">파이썬 다루기</span></a>
   </div>
 </li>
           <li class="sidebar-item">
@@ -561,7 +561,7 @@ Pandas를 사용하기 위해서는 먼저 라이브러리를 임포트해야 �
 <div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <p>일반적으로 <code>pd</code>라는 축약형(alias)으로 불러와서 사용한다.</p></li>
 <li><p><strong>기본 데이터 구조 생성</strong></p>
-<div id="e54849d0" class="cell" data-execution_count="1">
+<div id="6acd4b9c" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="co"># Series 생성</span></span>
@@ -635,7 +635,7 @@ dtype: int64
 <h3 class="anchored" data-anchor-id="데이터-생성-및-변환">데이터 생성 및 변환</h3>
 <section id="series-생성" class="level4">
 <h4 class="anchored" data-anchor-id="series-생성">1. Series 생성</h4>
-<div id="78faa1af" class="cell" data-execution_count="2">
+<div id="cce9bb2b" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb5"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 리스트를 이용한 Series 생성</span></span>
@@ -655,7 +655,7 @@ dtype: int64</code></pre>
 </section>
 <section id="dataframe-생성" class="level4">
 <h4 class="anchored" data-anchor-id="dataframe-생성">2. DataFrame 생성</h4>
-<div id="536f53c9" class="cell" data-execution_count="3">
+<div id="d411014b" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb7"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 딕셔너리를 이용한 DataFrame 생성</span></span>
 <span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>],</span>
 <span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>],</span>
@@ -676,7 +676,7 @@ dtype: int64</code></pre>
 </section>
 <section id="리스트에서-dataframe-변환" class="level4">
 <h4 class="anchored" data-anchor-id="리스트에서-dataframe-변환">3. 리스트에서 DataFrame 변환</h4>
-<div id="868458a0" class="cell" data-execution_count="4">
+<div id="1cfe5198" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 리스트를 활용한 DataFrame 생성</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> [[<span class="dv">1</span>, <span class="st">'Alice'</span>, <span class="dv">25</span>], [<span class="dv">2</span>, <span class="st">'Bob'</span>, <span class="dv">30</span>], [<span class="dv">3</span>, <span class="st">'Charlie'</span>, <span class="dv">35</span>]]</span>
 <span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame(data, columns<span class="op">=</span>[<span class="st">'ID'</span>, <span class="st">'Name'</span>, <span class="st">'Age'</span>])</span>
@@ -700,7 +700,7 @@ dtype: int64</code></pre>
 <h3 class="anchored" data-anchor-id="기본-데이터-탐색-및-인덱싱">기본 데이터 탐색 및 인덱싱</h3>
 <section id="기본-정보-조회" class="level4">
 <h4 class="anchored" data-anchor-id="기본-정보-조회">1. 기본 정보 조회</h4>
-<div id="2ec673c9" class="cell" data-execution_count="5">
+<div id="dd175547" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>],</span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>        <span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>],</span>
 <span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>        <span class="st">'City'</span>: [<span class="st">'Seoul'</span>, <span class="st">'Busan'</span>, <span class="st">'Incheon'</span>]}</span>
@@ -739,7 +739,7 @@ Index(['Name', 'Age', 'City'], dtype='object')</code></pre>
 </section>
 <section id="데이터-선택-인덱싱-및-슬라이싱" class="level4">
 <h4 class="anchored" data-anchor-id="데이터-선택-인덱싱-및-슬라이싱">2. 데이터 선택 (인덱싱 및 슬라이싱)</h4>
-<div id="a74dd068" class="cell" data-execution_count="6">
+<div id="7df19e33" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 특정 컬럼 선택</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df[<span class="st">'Name'</span>])</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -905,7 +905,7 @@ Name: 0, dtype: object
 <section id="데이터프레임-기초-정보-확인" class="level3">
 <h3 class="anchored" data-anchor-id="데이터프레임-기초-정보-확인">데이터프레임 기초 정보 확인</h3>
 <p>데이터의 기본적인 정보를 확인하는 방법은 다음과 같다(<code>info</code>, <code>describe</code>).</p>
-<div id="f0712e9d" class="cell" data-execution_count="7">
+<div id="bb3970a5" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a><span class="co"># 예제 데이터프레임 생성</span></span>
@@ -917,7 +917,7 @@ Name: 0, dtype: object
 </div>
 <section id="기본-정보-확인" class="level4">
 <h4 class="anchored" data-anchor-id="기본-정보-확인">1. 기본 정보 확인</h4>
-<div id="88d7edc1" class="cell" data-execution_count="8">
+<div id="15efa7e9" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.info())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>&lt;class 'pandas.core.frame.DataFrame'&gt;
@@ -939,7 +939,7 @@ None</code></pre>
 </section>
 <section id="기본-통계-정보-확인" class="level4">
 <h4 class="anchored" data-anchor-id="기본-통계-정보-확인">2. 기본 통계 정보 확인</h4>
-<div id="0ab9db10" class="cell" data-execution_count="9">
+<div id="33969f7c" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.describe())</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>        Age        Salary
@@ -966,7 +966,7 @@ max    35.0  80000.000000</code></pre>
 <p>데이터에서 결측값(NaN)을 처리하는 방법은 크게 두 가지이다(<code>dropna</code>, <code>fillna</code>).</p>
 <section id="결측값-제거" class="level4">
 <h4 class="anchored" data-anchor-id="결측값-제거">1. 결측값 제거</h4>
-<div id="4f664d18" class="cell" data-execution_count="10">
+<div id="edfd29d8" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb27"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a>df_cleaned <span class="op">=</span> df.dropna()</span>
 <span id="cb27-2"><a href="#cb27-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_cleaned)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -984,7 +984,7 @@ max    35.0  80000.000000</code></pre>
 </section>
 <section id="결측값-채우기" class="level4">
 <h4 class="anchored" data-anchor-id="결측값-채우기">2. 결측값 채우기</h4>
-<div id="5d81f018" class="cell" data-execution_count="11">
+<div id="9b279842" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb29"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a>df_filled <span class="op">=</span> df.fillna({<span class="st">'Age'</span>: df[<span class="st">'Age'</span>].mean()})  <span class="co"># 결측값을 평균으로 대체</span></span>
 <span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_filled)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1008,7 +1008,7 @@ max    35.0  80000.000000</code></pre>
 <p>데이터에 중복된 값이 존재하는지 확인하고 제거할 수 있다(<code>duplicated</code>, <code>drop_duplicates</code>).</p>
 <section id="중복-데이터-확인" class="level4">
 <h4 class="anchored" data-anchor-id="중복-데이터-확인">1. 중복 데이터 확인</h4>
-<div id="26e5042e" class="cell" data-execution_count="12">
+<div id="61474a7d" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.duplicated())  <span class="co"># 각 행이 중복인지 여부 반환</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>0    False
@@ -1021,7 +1021,7 @@ dtype: bool</code></pre>
 </section>
 <section id="중복-데이터-제거" class="level4">
 <h4 class="anchored" data-anchor-id="중복-데이터-제거">2. 중복 데이터 제거</h4>
-<div id="588ab391" class="cell" data-execution_count="13">
+<div id="4aa6004c" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb33"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a>df_unique <span class="op">=</span> df.drop_duplicates()</span>
 <span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_unique)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1045,7 +1045,7 @@ dtype: bool</code></pre>
 <p>데이터를 특정 기준으로 정렬(<code>sort_values</code>)하거나 원하는 조건에 맞는 데이터를 추출(<code>조건부 선택</code>)할 수 있다.</p>
 <section id="데이터-정렬" class="level4">
 <h4 class="anchored" data-anchor-id="데이터-정렬">1. 데이터 정렬</h4>
-<div id="7463fb27" class="cell" data-execution_count="14">
+<div id="e19deed5" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb35"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a>df_sorted <span class="op">=</span> df.sort_values(by<span class="op">=</span><span class="st">'Salary'</span>, ascending<span class="op">=</span><span class="va">False</span>)  <span class="co"># 급여 내림차순 정렬</span></span>
 <span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sorted)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1062,7 +1062,7 @@ dtype: bool</code></pre>
 </section>
 <section id="데이터-필터링" class="level4">
 <h4 class="anchored" data-anchor-id="데이터-필터링">2. 데이터 필터링</h4>
-<div id="c74fd20e" class="cell" data-execution_count="15">
+<div id="8d2f237e" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb37"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df[df[<span class="st">'Age'</span>] <span class="op">&gt;</span> <span class="dv">30</span>]  <span class="co"># 30세 이상 데이터만 선택</span></span>
 <span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_filtered)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1085,7 +1085,7 @@ dtype: bool</code></pre>
 <p>Pandas에서 데이터를 선택하는 방법은 <code>loc[]</code>, <code>iloc[]</code>, 직접 컬럼명을 지정하는 방식 등이 있다.</p>
 <section id="단일-컬럼-선택" class="level4">
 <h4 class="anchored" data-anchor-id="단일-컬럼-선택">1. 단일 컬럼 선택</h4>
-<div id="1330b8be" class="cell" data-execution_count="16">
+<div id="a6133424" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb39"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>],</span>
@@ -1112,7 +1112,7 @@ Name: Name, dtype: object
 <section id="행-선택" class="level4">
 <h4 class="anchored" data-anchor-id="행-선택">2. 행 선택</h4>
 <p>행 선택하는 방법에는 라벨 기반으로 선택하는 <code>loc[]</code>, 위치(숫자) 기반으로 선택하는 <code>iloc[]</code>가 있다.</p>
-<div id="49b19d2d" class="cell" data-execution_count="17">
+<div id="04a9b580" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb41"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb41-1"><a href="#cb41-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 라벨(이름) 기반 선택</span></span>
 <span id="cb41-2"><a href="#cb41-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[<span class="dv">0</span>])  <span class="co"># 첫 번째 행 선택</span></span>
 <span id="cb41-3"><a href="#cb41-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[:, [<span class="st">'Name'</span>, <span class="st">'Salary'</span>]])  <span class="co"># 모든 행에서 특정 열 선택</span></span>
@@ -1150,7 +1150,7 @@ Name: 1, dtype: object
 <h3 class="anchored" data-anchor-id="행과-열-추가-및-삭제">행과 열 추가 및 삭제</h3>
 <section id="행-추가" class="level4">
 <h4 class="anchored" data-anchor-id="행-추가">1. 행 추가</h4>
-<div id="fadcb623" class="cell" data-execution_count="18">
+<div id="f82c585d" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb43"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb43-1"><a href="#cb43-1" aria-hidden="true" tabindex="-1"></a>df.loc[<span class="dv">3</span>] <span class="op">=</span> [<span class="st">'David'</span>, <span class="dv">40</span>, <span class="dv">80000</span>]  <span class="co"># 새 행 추가</span></span>
 <span id="cb43-2"><a href="#cb43-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1164,7 +1164,7 @@ Name: 1, dtype: object
 </section>
 <section id="열-추가" class="level4">
 <h4 class="anchored" data-anchor-id="열-추가">2. 열 추가</h4>
-<div id="c4495752" class="cell" data-execution_count="19">
+<div id="11d6c330" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb45"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb45-1"><a href="#cb45-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Bonus'</span>] <span class="op">=</span> df[<span class="st">'Salary'</span>] <span class="op">*</span> <span class="fl">0.1</span>  <span class="co"># 기존 컬럼을 활용해 새 컬럼 생성</span></span>
 <span id="cb45-2"><a href="#cb45-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1178,7 +1178,7 @@ Name: 1, dtype: object
 </section>
 <section id="행-삭제" class="level4">
 <h4 class="anchored" data-anchor-id="행-삭제">3. 행 삭제</h4>
-<div id="a477ed07" class="cell" data-execution_count="20">
+<div id="5f17a823" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb47"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb47-1"><a href="#cb47-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (`drop`)</span></span>
 <span id="cb47-2"><a href="#cb47-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(<span class="dv">1</span>)  <span class="co"># 인덱스 1인 행 삭제</span></span>
 <span id="cb47-3"><a href="#cb47-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1192,7 +1192,7 @@ Name: 1, dtype: object
 </section>
 <section id="열-삭제" class="level4">
 <h4 class="anchored" data-anchor-id="열-삭제">4. 열 삭제</h4>
-<div id="97bb524a" class="cell" data-execution_count="21">
+<div id="ed70a0f9" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb49"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb49-1"><a href="#cb49-1" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> df.drop(columns<span class="op">=</span>[<span class="st">'Bonus'</span>])  <span class="co"># 'Bonus' 컬럼 삭제</span></span>
 <span id="cb49-2"><a href="#cb49-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1213,7 +1213,7 @@ Name: 1, dtype: object
 <p>데이터 타입을 변환하면 분석 및 연산 과정에서 오류를 방지할 수 있다.</p>
 <section id="기본적인-데이터-타입-변환" class="level4">
 <h4 class="anchored" data-anchor-id="기본적인-데이터-타입-변환">1. 기본적인 데이터 타입 변환</h4>
-<div id="96804901" class="cell" data-execution_count="22">
+<div id="0ad26453" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb51"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb51-1"><a href="#cb51-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (`astype`)</span></span>
 <span id="cb51-2"><a href="#cb51-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Age'</span>] <span class="op">=</span> df[<span class="st">'Age'</span>].astype(<span class="bu">int</span>)  <span class="co"># Age 컬럼을 정수형(int)으로 변환</span></span>
 <span id="cb51-3"><a href="#cb51-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.dtypes)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1227,7 +1227,7 @@ dtype: object</code></pre>
 </section>
 <section id="날짜형-데이터-변환" class="level4">
 <h4 class="anchored" data-anchor-id="날짜형-데이터-변환">2. 날짜형 데이터 변환</h4>
-<div id="fc26338c" class="cell" data-execution_count="23">
+<div id="fd70c46f" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb53"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb53-1"><a href="#cb53-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (`to_datetime`)</span></span>
 <span id="cb53-2"><a href="#cb53-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'JoinDate'</span>] <span class="op">=</span> [<span class="st">'2023-01-01'</span>, <span class="st">'2022-12-15'</span>, <span class="st">'2021-08-10'</span>]</span>
 <span id="cb53-3"><a href="#cb53-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'JoinDate'</span>] <span class="op">=</span> pd.to_datetime(df[<span class="st">'JoinDate'</span>])  <span class="co"># 문자열을 날짜형으로 변환</span></span>
@@ -1248,7 +1248,7 @@ dtype: object</code></pre>
 <p><code>apply()</code> 함수는 행 또는 열 단위로 함수를 적용할 때 사용한다.</p>
 <section id="각-행에-함수-적용-열-기준" class="level4">
 <h4 class="anchored" data-anchor-id="각-행에-함수-적용-열-기준">1. 각 행에 함수 적용 (열 기준)</h4>
-<div id="68a361f4" class="cell" data-execution_count="24">
+<div id="d817a27f" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb55"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb55-1"><a href="#cb55-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Salary After Tax'</span>] <span class="op">=</span> df[<span class="st">'Salary'</span>].<span class="bu">apply</span>(<span class="kw">lambda</span> x: x <span class="op">*</span> <span class="fl">0.8</span>)  <span class="co"># 세금 20% 공제</span></span>
 <span id="cb55-2"><a href="#cb55-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1261,7 +1261,7 @@ dtype: object</code></pre>
 </section>
 <section id="각-행-또는-열을-기준으로-연산" class="level4">
 <h4 class="anchored" data-anchor-id="각-행-또는-열을-기준으로-연산">2. 각 행 또는 열을 기준으로 연산</h4>
-<div id="a4fd651c" class="cell" data-execution_count="25">
+<div id="686e5a84" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb57"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb57-1"><a href="#cb57-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (`axis` 옵션 사용)</span></span>
 <span id="cb57-2"><a href="#cb57-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> categorize_age(age):</span>
 <span id="cb57-3"><a href="#cb57-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> <span class="st">'Young'</span> <span class="cf">if</span> age <span class="op">&lt;</span> <span class="dv">30</span> <span class="cf">else</span> <span class="st">'Old'</span></span>
@@ -1290,7 +1290,7 @@ dtype: object</code></pre>
 <p>Pandas는 데이터의 기본적인 통계값을 계산하는 다양한 함수(<code>mean</code>, <code>sum</code>, <code>count</code> 등)를 제공한다.</p>
 <section id="기본-통계-함수-1" class="level4">
 <h4 class="anchored" data-anchor-id="기본-통계-함수-1">1. 기본 통계 함수</h4>
-<div id="dc505141" class="cell" data-execution_count="26">
+<div id="4fb850b6" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb59"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb59-1"><a href="#cb59-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb59-2"><a href="#cb59-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb59-3"><a href="#cb59-3" aria-hidden="true" tabindex="-1"></a>data <span class="op">=</span> {<span class="st">'Department'</span>: [<span class="st">'HR'</span>, <span class="st">'IT'</span>, <span class="st">'IT'</span>, <span class="st">'HR'</span>, <span class="st">'Finance'</span>],</span>
@@ -1322,7 +1322,7 @@ dtype: object</code></pre>
 </section>
 <section id="여러-개의-통계-함수-적용" class="level4">
 <h4 class="anchored" data-anchor-id="여러-개의-통계-함수-적용">2. 여러 개의 통계 함수 적용</h4>
-<div id="d7cee6b7" class="cell" data-execution_count="27">
+<div id="4eb8b6ee" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb61"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb61-1"><a href="#cb61-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (`agg`)</span></span>
 <span id="cb61-2"><a href="#cb61-2" aria-hidden="true" tabindex="-1"></a>df.agg({<span class="st">'Salary'</span>: [<span class="st">'mean'</span>, <span class="st">'sum'</span>], <span class="st">'Experience'</span>: [<span class="st">'min'</span>, <span class="st">'max'</span>]})</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display" data-execution_count="27">
@@ -1375,7 +1375,7 @@ dtype: object</code></pre>
 <p><code>groupby()</code>를 사용하면 특정 컬럼을 기준으로 데이터를 그룹화하여 요약할 수 있다.</p>
 <section id="기본-그룹화" class="level4">
 <h4 class="anchored" data-anchor-id="기본-그룹화">1. 기본 그룹화</h4>
-<div id="e4470854" class="cell" data-execution_count="28">
+<div id="aa7d938b" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a>df_grouped <span class="op">=</span> df.groupby(<span class="st">'Department'</span>)[<span class="st">'Salary'</span>].mean()  <span class="co"># 부서별 급여 평균 계산</span></span>
 <span id="cb62-2"><a href="#cb62-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_grouped)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1389,7 +1389,7 @@ Name: Salary, dtype: float64</code></pre>
 </section>
 <section id="여러-개의-집계-함수-적용" class="level4">
 <h4 class="anchored" data-anchor-id="여러-개의-집계-함수-적용">2. 여러 개의 집계 함수 적용</h4>
-<div id="7aed31df" class="cell" data-execution_count="29">
+<div id="eea91347" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a>df_grouped <span class="op">=</span> df.groupby(<span class="st">'Department'</span>).agg({<span class="st">'Salary'</span>: [<span class="st">'mean'</span>, <span class="st">'sum'</span>], <span class="st">'Experience'</span>: <span class="st">'max'</span>})</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_grouped)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1407,7 +1407,7 @@ IT          65000.0  130000         10</code></pre>
 </section>
 <section id="여러-개의-컬럼을-기준으로-그룹화" class="level4">
 <h4 class="anchored" data-anchor-id="여러-개의-컬럼을-기준으로-그룹화">3. 여러 개의 컬럼을 기준으로 그룹화</h4>
-<div id="7aa83582" class="cell" data-execution_count="30">
+<div id="da67a2d4" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a>df_grouped <span class="op">=</span> df.groupby([<span class="st">'Department'</span>, <span class="st">'Experience'</span>])[<span class="st">'Salary'</span>].mean()</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_grouped)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1431,7 +1431,7 @@ Name: Salary, dtype: float64</code></pre>
 <p>Pandas의 <code>pivot_table()</code>을 사용하면 엑셀의 피벗 테이블과 유사한 분석이 가능하다.</p>
 <section id="기본-pivot-table" class="level4">
 <h4 class="anchored" data-anchor-id="기본-pivot-table">1. 기본 Pivot Table</h4>
-<div id="bf0f5f00" class="cell" data-execution_count="31">
+<div id="0c26a958" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a>df_pivot <span class="op">=</span> df.pivot_table(index<span class="op">=</span><span class="st">'Department'</span>, values<span class="op">=</span><span class="st">'Salary'</span>, aggfunc<span class="op">=</span><span class="st">'mean'</span>)</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_pivot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1448,7 +1448,7 @@ IT          65000.0</code></pre>
 </section>
 <section id="여러-개의-값과-함수-적용" class="level4">
 <h4 class="anchored" data-anchor-id="여러-개의-값과-함수-적용">2. 여러 개의 값과 함수 적용</h4>
-<div id="4aad716d" class="cell" data-execution_count="32">
+<div id="5dcc702e" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a>df_pivot <span class="op">=</span> df.pivot_table(index<span class="op">=</span><span class="st">'Department'</span>, values<span class="op">=</span>[<span class="st">'Salary'</span>, <span class="st">'Experience'</span>], aggfunc<span class="op">=</span>[<span class="st">'mean'</span>, <span class="st">'sum'</span>])</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_pivot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1466,7 +1466,7 @@ IT                9.0  65000.0         18  130000</code></pre>
 </section>
 <section id="행-열-값-지정" class="level4">
 <h4 class="anchored" data-anchor-id="행-열-값-지정">3. 행, 열, 값 지정</h4>
-<div id="5a5927b8" class="cell" data-execution_count="33">
+<div id="02cabd50" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb72"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb72-1"><a href="#cb72-1" aria-hidden="true" tabindex="-1"></a>df_pivot <span class="op">=</span> df.pivot_table(index<span class="op">=</span><span class="st">'Department'</span>, columns<span class="op">=</span><span class="st">'Experience'</span>, values<span class="op">=</span><span class="st">'Salary'</span>, aggfunc<span class="op">=</span><span class="st">'sum'</span>, fill_value<span class="op">=</span><span class="dv">0</span>)</span>
 <span id="cb72-2"><a href="#cb72-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_pivot)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1492,7 +1492,7 @@ IT              0      0  60000  70000      0</code></pre>
 <p><code>concat()</code> 함수는 여러 개의 데이터프레임을 <strong>세로(행 기준) 또는 가로(열 기준)</strong> 로 연결할 때 사용한다.</p>
 <section id="세로-방향행-기준-연결" class="level4">
 <h4 class="anchored" data-anchor-id="세로-방향행-기준-연결">1. 세로 방향(행 기준) 연결</h4>
-<div id="7b5c8b21" class="cell" data-execution_count="34">
+<div id="15e589a6" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb74"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb74-1"><a href="#cb74-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb74-2"><a href="#cb74-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb74-3"><a href="#cb74-3" aria-hidden="true" tabindex="-1"></a>df1 <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]})</span>
@@ -1512,7 +1512,7 @@ IT              0      0  60000  70000      0</code></pre>
 <ul>
 <li><strong>인덱스가 그대로 유지</strong>되므로, 필요하면 <code>ignore_index=True</code>를 추가하여 인덱스를 재정렬할 수 있다.</li>
 </ul>
-<div id="d40ea1be" class="cell" data-execution_count="35">
+<div id="66ce2a1f" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb76"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb76-1"><a href="#cb76-1" aria-hidden="true" tabindex="-1"></a>df_concat <span class="op">=</span> pd.concat([df1, df2], ignore_index<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb76-2"><a href="#cb76-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_concat)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1527,7 +1527,7 @@ IT              0      0  60000  70000      0</code></pre>
 </section>
 <section id="가로-방향열-기준-연결" class="level4">
 <h4 class="anchored" data-anchor-id="가로-방향열-기준-연결">2. 가로 방향(열 기준) 연결</h4>
-<div id="5270fead" class="cell" data-execution_count="36">
+<div id="96dc69da" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb78"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb78-1"><a href="#cb78-1" aria-hidden="true" tabindex="-1"></a>df3 <span class="op">=</span> pd.DataFrame({<span class="st">'Age'</span>: [<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>]})</span>
 <span id="cb78-2"><a href="#cb78-2" aria-hidden="true" tabindex="-1"></a>df_concat_col <span class="op">=</span> pd.concat([df1, df3], axis<span class="op">=</span><span class="dv">1</span>)</span>
 <span id="cb78-3"><a href="#cb78-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_concat_col)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1551,7 +1551,7 @@ IT              0      0  60000  70000      0</code></pre>
 <p><code>merge()</code> 함수는 <strong>공통 컬럼(키 값)을 기준으로 데이터프레임을 병합</strong>할 때 사용된다.</p>
 <section id="기본적인-merge-사용법" class="level4">
 <h4 class="anchored" data-anchor-id="기본적인-merge-사용법">1. 기본적인 merge() 사용법</h4>
-<div id="054da71a" class="cell" data-execution_count="37">
+<div id="79061560" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb80"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb80-1"><a href="#cb80-1" aria-hidden="true" tabindex="-1"></a>df_a <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>], <span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]})</span>
 <span id="cb80-2"><a href="#cb80-2" aria-hidden="true" tabindex="-1"></a>df_b <span class="op">=</span> pd.DataFrame({<span class="st">'ID'</span>: [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>], <span class="st">'Salary'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>]})</span>
 <span id="cb80-3"><a href="#cb80-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1596,7 +1596,7 @@ IT              0      0  60000  70000      0</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="5adcb9f1" class="cell" data-execution_count="38">
+<div id="ef4d29e0" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb82"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb82-1"><a href="#cb82-1" aria-hidden="true" tabindex="-1"></a>df_outer <span class="op">=</span> pd.merge(df_a, df_b, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'outer'</span>)  <span class="co"># 전체 데이터 포함</span></span>
 <span id="cb82-2"><a href="#cb82-2" aria-hidden="true" tabindex="-1"></a>df_left <span class="op">=</span> pd.merge(df_a, df_b, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'left'</span>)  <span class="co"># df_a 기준 병합</span></span>
 <span id="cb82-3"><a href="#cb82-3" aria-hidden="true" tabindex="-1"></a>df_right <span class="op">=</span> pd.merge(df_a, df_b, on<span class="op">=</span><span class="st">'ID'</span>, how<span class="op">=</span><span class="st">'right'</span>)  <span class="co"># df_b 기준 병합</span></span>
@@ -1638,7 +1638,7 @@ IT              0      0  60000  70000      0</code></pre>
 <p><code>join()</code> 함수는 <strong>인덱스를 기준으로 데이터프레임을 병합</strong>할 때 사용된다.</p>
 <section id="기본적인-join-사용법" class="level4">
 <h4 class="anchored" data-anchor-id="기본적인-join-사용법">1. 기본적인 join() 사용법</h4>
-<div id="57540be0" class="cell" data-execution_count="39">
+<div id="e5e901b4" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb85"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb85-1"><a href="#cb85-1" aria-hidden="true" tabindex="-1"></a>df_x <span class="op">=</span> pd.DataFrame({<span class="st">'Name'</span>: [<span class="st">'Alice'</span>, <span class="st">'Bob'</span>, <span class="st">'Charlie'</span>]}, index<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>])</span>
 <span id="cb85-2"><a href="#cb85-2" aria-hidden="true" tabindex="-1"></a>df_y <span class="op">=</span> pd.DataFrame({<span class="st">'Salary'</span>: [<span class="dv">50000</span>, <span class="dv">60000</span>, <span class="dv">70000</span>]}, index<span class="op">=</span>[<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>])</span>
 <span id="cb85-3"><a href="#cb85-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1659,7 +1659,7 @@ IT              0      0  60000  70000      0</code></pre>
 </section>
 <section id="병합-방식-지정" class="level4">
 <h4 class="anchored" data-anchor-id="병합-방식-지정">2. 병합 방식 지정</h4>
-<div id="52e44632" class="cell" data-execution_count="40">
+<div id="4283c5d3" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (`how` 옵션)  </span></span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>df_outer_join <span class="op">=</span> df_x.join(df_y, how<span class="op">=</span><span class="st">'outer'</span>)  <span class="co"># 전체 데이터 포함</span></span>
 <span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>df_inner_join <span class="op">=</span> df_x.join(df_y, how<span class="op">=</span><span class="st">'inner'</span>)  <span class="co"># 공통된 인덱스만 포함</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1677,7 +1677,7 @@ IT              0      0  60000  70000      0</code></pre>
 <p>Pandas에서는 <code>to_datetime()</code>을 사용하여 날짜 데이터를 변환할 수 있으며, <code>resample()</code>을 활용해 시계열 데이터를 재구성할 수 있다.</p>
 <section id="날짜-문자열을-날짜-타입으로-변환" class="level4">
 <h4 class="anchored" data-anchor-id="날짜-문자열을-날짜-타입으로-변환">1. 날짜 문자열을 날짜 타입으로 변환</h4>
-<div id="a1aa9e61" class="cell" data-execution_count="41">
+<div id="a1c4c4d9" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb88"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb88-1"><a href="#cb88-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb88-2"><a href="#cb88-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb88-3"><a href="#cb88-3" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'Date'</span>: [<span class="st">'2024-01-01'</span>, <span class="st">'2024-02-15'</span>, <span class="st">'2024-03-10'</span>]})</span>
@@ -1691,7 +1691,7 @@ dtype: object</code></pre>
 </section>
 <section id="날짜를-인덱스로-설정" class="level4">
 <h4 class="anchored" data-anchor-id="날짜를-인덱스로-설정">2. 날짜를 인덱스로 설정</h4>
-<div id="90d79bb9" class="cell" data-execution_count="42">
+<div id="6b257a50" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>df.set_index(<span class="st">'Date'</span>, inplace<span class="op">=</span><span class="va">True</span>)  <span class="co"># 날짜를 인덱스로 설정</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -1700,7 +1700,7 @@ dtype: object</code></pre>
 </section>
 <section id="날짜-데이터에서-연-월-일-추출" class="level4">
 <h4 class="anchored" data-anchor-id="날짜-데이터에서-연-월-일-추출">3. 날짜 데이터에서 연, 월, 일 추출</h4>
-<div id="91bd4dc0" class="cell" data-execution_count="43">
+<div id="a4a51ed5" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb91"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb91-1"><a href="#cb91-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Year'</span>] <span class="op">=</span> df.index.year</span>
 <span id="cb91-2"><a href="#cb91-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Month'</span>] <span class="op">=</span> df.index.month</span>
 <span id="cb91-3"><a href="#cb91-3" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Day'</span>] <span class="op">=</span> df.index.day</span>
@@ -1719,7 +1719,7 @@ Date
 </section>
 <section id="주기별-데이터-재구성" class="level4">
 <h4 class="anchored" data-anchor-id="주기별-데이터-재구성">4. 주기별 데이터 재구성</h4>
-<div id="db25cfa6" class="cell" data-execution_count="44">
+<div id="c87d737a" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb93"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb93-1"><a href="#cb93-1" aria-hidden="true" tabindex="-1"></a>date_rng <span class="op">=</span> pd.date_range(start<span class="op">=</span><span class="st">'2024-01-01'</span>, periods<span class="op">=</span><span class="dv">10</span>, freq<span class="op">=</span><span class="st">'D'</span>)</span>
 <span id="cb93-2"><a href="#cb93-2" aria-hidden="true" tabindex="-1"></a>df <span class="op">=</span> pd.DataFrame({<span class="st">'Date'</span>: date_rng, <span class="st">'Value'</span>: <span class="bu">range</span>(<span class="dv">10</span>)})</span>
 <span id="cb93-3"><a href="#cb93-3" aria-hidden="true" tabindex="-1"></a>df.set_index(<span class="st">'Date'</span>, inplace<span class="op">=</span><span class="va">True</span>)</span>
@@ -1750,7 +1750,7 @@ Date
 <section id="시간-차이-계산" class="level4">
 <h4 class="anchored" data-anchor-id="시간-차이-계산">1. 시간 차이 계산</h4>
 <p>시간 차이 계산은 <code>diff()</code>, <code>shift()</code>를 이용할 수 있다.</p>
-<div id="87a7f8f1" class="cell" data-execution_count="45">
+<div id="5439e6d9" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb95"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb95-1"><a href="#cb95-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value_Diff'</span>] <span class="op">=</span> df[<span class="st">'Value'</span>].diff()  <span class="co"># 전날 대비 변화량 계산</span></span>
 <span id="cb95-2"><a href="#cb95-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value_Shift'</span>] <span class="op">=</span> df[<span class="st">'Value'</span>].shift(<span class="dv">1</span>)  <span class="co"># 이전 날짜의 값 가져오기</span></span>
 <span id="cb95-3"><a href="#cb95-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1777,7 +1777,7 @@ Date
 </section>
 <section id="시간-필터링-및-슬라이싱" class="level4">
 <h4 class="anchored" data-anchor-id="시간-필터링-및-슬라이싱">2. 시간 필터링 및 슬라이싱</h4>
-<div id="133dd43d" class="cell" data-execution_count="46">
+<div id="19cbc90e" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb97"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb97-1"><a href="#cb97-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 특정 기간 데이터 선택</span></span>
 <span id="cb97-2"><a href="#cb97-2" aria-hidden="true" tabindex="-1"></a>df_filtered <span class="op">=</span> df[<span class="st">'2024-01-03'</span>:<span class="st">'2024-01-07'</span>]  <span class="co"># 날짜 범위 필터링</span></span>
 <span id="cb97-3"><a href="#cb97-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_filtered)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1794,7 +1794,7 @@ Date
 </section>
 <section id="날짜-간격-계산" class="level4">
 <h4 class="anchored" data-anchor-id="날짜-간격-계산">3. 날짜 간격 계산</h4>
-<div id="9c864c94" class="cell" data-execution_count="47">
+<div id="d0c76153" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb99"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb99-1"><a href="#cb99-1" aria-hidden="true" tabindex="-1"></a><span class="co"># (`timedelta`)</span></span>
 <span id="cb99-2"><a href="#cb99-2" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Next_Date'</span>] <span class="op">=</span> df.index <span class="op">+</span> pd.Timedelta(days<span class="op">=</span><span class="dv">7</span>)  <span class="co"># 일주일 뒤 날짜 계산</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
@@ -1813,7 +1813,7 @@ Date
 <p>Pandas는 <code>plot()</code> 메서드를 통해 간단한 그래프를 생성할 수 있으며, 내부적으로 Matplotlib을 활용한다.</p>
 <section id="라인-차트-line-plot" class="level4">
 <h4 class="anchored" data-anchor-id="라인-차트-line-plot">1. 라인 차트 (Line Plot)</h4>
-<div id="9ba5b043" class="cell" data-execution_count="48">
+<div id="34495c89" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
 <span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1843,7 +1843,7 @@ Date
 </section>
 <section id="막대-그래프-bar-chart" class="level4">
 <h4 class="anchored" data-anchor-id="막대-그래프-bar-chart">2. 막대 그래프 (Bar Chart)</h4>
-<div id="6c88d80e" class="cell" data-execution_count="49">
+<div id="df1340d8" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb101"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb101-1"><a href="#cb101-1" aria-hidden="true" tabindex="-1"></a>df.plot(y<span class="op">=</span><span class="st">'Value'</span>, kind<span class="op">=</span><span class="st">'bar'</span>, title<span class="op">=</span><span class="st">"Bar Chart"</span>, color<span class="op">=</span><span class="st">'skyblue'</span>)</span>
 <span id="cb101-2"><a href="#cb101-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1862,7 +1862,7 @@ Date
 </section>
 <section id="히스토그램-histogram" class="level4">
 <h4 class="anchored" data-anchor-id="히스토그램-histogram">3. 히스토그램 (Histogram)</h4>
-<div id="0a9d3aa5" class="cell" data-execution_count="50">
+<div id="cf7273ac" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a>df.plot(y<span class="op">=</span><span class="st">'Value'</span>, kind<span class="op">=</span><span class="st">'hist'</span>, bins<span class="op">=</span><span class="dv">5</span>, title<span class="op">=</span><span class="st">"Histogram"</span>)</span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-display">
@@ -1881,7 +1881,7 @@ Date
 </section>
 <section id="산점도-scatter-plot" class="level4">
 <h4 class="anchored" data-anchor-id="산점도-scatter-plot">4. 산점도 (Scatter Plot)</h4>
-<div id="82570ca2" class="cell" data-execution_count="51">
+<div id="c3ce9dea" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb103"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb103-1"><a href="#cb103-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Another_Value'</span>] <span class="op">=</span> df[<span class="st">'Value'</span>] <span class="op">*</span> <span class="fl">1.5</span>  <span class="co"># 새로운 컬럼 추가</span></span>
 <span id="cb103-2"><a href="#cb103-2" aria-hidden="true" tabindex="-1"></a>df.plot(x<span class="op">=</span><span class="st">'Value'</span>, y<span class="op">=</span><span class="st">'Another_Value'</span>, kind<span class="op">=</span><span class="st">'scatter'</span>, title<span class="op">=</span><span class="st">"Scatter Plot"</span>)</span>
 <span id="cb103-3"><a href="#cb103-3" aria-hidden="true" tabindex="-1"></a>plt.show()</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1907,7 +1907,7 @@ Date
 또한 Seaborn을 활용하면 보다 세련된 시각화가 가능하다.</p>
 <section id="matplotlib과-함께-사용" class="level4">
 <h4 class="anchored" data-anchor-id="matplotlib과-함께-사용">1. Matplotlib과 함께 사용</h4>
-<div id="1e02bcec" class="cell" data-execution_count="52">
+<div id="1bfefac2" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a>fig, ax <span class="op">=</span> plt.subplots(figsize<span class="op">=</span>(<span class="dv">8</span>, <span class="dv">5</span>))</span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>df.plot(y<span class="op">=</span><span class="st">'Value'</span>, kind<span class="op">=</span><span class="st">'line'</span>, ax<span class="op">=</span>ax, color<span class="op">=</span><span class="st">'red'</span>, linestyle<span class="op">=</span><span class="st">'--'</span>, marker<span class="op">=</span><span class="st">'o'</span>)</span>
 <span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>ax.set_title(<span class="st">"Customized Line Chart"</span>)</span>
@@ -1930,7 +1930,7 @@ Date
 </section>
 <section id="seaborn을-활용한-고급-시각화" class="level4">
 <h4 class="anchored" data-anchor-id="seaborn을-활용한-고급-시각화">2. Seaborn을 활용한 고급 시각화</h4>
-<div id="f86776e6" class="cell" data-execution_count="53">
+<div id="53db7cc0" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb105"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb105-1"><a href="#cb105-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> seaborn <span class="im">as</span> sns</span>
 <span id="cb105-2"><a href="#cb105-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb105-3"><a href="#cb105-3" aria-hidden="true" tabindex="-1"></a>sns.<span class="bu">set</span>(style<span class="op">=</span><span class="st">"whitegrid"</span>)</span>
@@ -1963,7 +1963,7 @@ Date
 <p><code>MultiIndex</code>는 여러 개의 인덱스를 사용하여 데이터프레임의 구조를 더 복잡하고 유연하게 만드는 기능이다.</p>
 <section id="multiindex-생성" class="level4">
 <h4 class="anchored" data-anchor-id="multiindex-생성">1. MultiIndex 생성</h4>
-<div id="69f667c9" class="cell" data-execution_count="54">
+<div id="808eb842" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> pandas <span class="im">as</span> pd</span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a><span class="co"># MultiIndex 생성</span></span>
@@ -1989,7 +1989,7 @@ B        1      30
 </section>
 <section id="multiindex-데이터-접근" class="level4">
 <h4 class="anchored" data-anchor-id="multiindex-데이터-접근">2. <strong>MultiIndex 데이터 접근</strong></h4>
-<div id="7fb9e4b7" class="cell" data-execution_count="55">
+<div id="1c8b3419" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 'A' 카테고리의 1번 ID에 해당하는 데이터 접근</span></span>
 <span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df.loc[(<span class="st">'A'</span>, <span class="dv">1</span>)])</span>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -2010,7 +2010,7 @@ ID
 </section>
 <section id="multiindex-활용한-집계" class="level4">
 <h4 class="anchored" data-anchor-id="multiindex-활용한-집계">3. MultiIndex 활용한 집계</h4>
-<div id="e8626588" class="cell" data-execution_count="56">
+<div id="a856d598" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a>df_grouped <span class="op">=</span> df.groupby([<span class="st">'Category'</span>]).<span class="bu">sum</span>()  <span class="co"># 카테고리별 합계 계산</span></span>
 <span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_grouped)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2032,7 +2032,7 @@ B            70</code></pre>
 <section id="벡터화-연산" class="level4">
 <h4 class="anchored" data-anchor-id="벡터화-연산">1. 벡터화 연산</h4>
 <p>벡터화 연산은 파이썬의 반복문을 사용하지 않고, 데이터프레임의 컬럼에 대해 일괄 연산을 수행하는 방법이다. 이를 통해 처리 속도를 크게 개선할 수 있다.</p>
-<div id="d0172b3a" class="cell" data-execution_count="57">
+<div id="5e923063" class="cell" data-execution_count="57">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value_squared'</span>] <span class="op">=</span> df[<span class="st">'Value'</span>] <span class="op">**</span> <span class="dv">2</span>  <span class="co"># 벡터화 연산으로 값 제곱 계산</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -2042,7 +2042,7 @@ B            70</code></pre>
 <section id="메모리-절약-데이터-타입-변경" class="level4">
 <h4 class="anchored" data-anchor-id="메모리-절약-데이터-타입-변경">2. 메모리 절약 (데이터 타입 변경)</h4>
 <p>Pandas에서 데이터의 타입을 적절히 변경하면 메모리 사용량을 절약할 수 있다. 예를 들어, 정수형 데이터를 <code>int8</code>로 변경하면 메모리를 적게 사용한다.</p>
-<div id="25842d4f" class="cell" data-execution_count="58">
+<div id="f56c7590" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb113"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb113-1"><a href="#cb113-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value'</span>] <span class="op">=</span> df[<span class="st">'Value'</span>].astype(<span class="st">'int8'</span>)  <span class="co"># 데이터 타입을 'int8'로 변경</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <ul>
@@ -2064,17 +2064,17 @@ B            70</code></pre>
 <p>대용량 데이터를 처리할 때는 효율적인 샘플링과 메모리 관리를 통해 성능을 개선할 수 있다.</p>
 <section id="무작위-샘플링" class="level4">
 <h4 class="anchored" data-anchor-id="무작위-샘플링">1. 무작위 샘플링</h4>
-<div id="5141dab8" class="cell" data-execution_count="59">
+<div id="cdc43838" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb115"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb115-1"><a href="#cb115-1" aria-hidden="true" tabindex="-1"></a>df_sample <span class="op">=</span> df.sample(n<span class="op">=</span><span class="dv">5</span>, replace <span class="op">=</span> <span class="va">True</span>)  <span class="co"># 데이터에서 무작위로 5개의 샘플 선택</span></span>
 <span id="cb115-2"><a href="#cb115-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(df_sample)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>             Value  Value_squared
 Category ID                      
-A        2      20            400
-B        2      40           1600
 A        1      10            100
-B        2      40           1600
-A        1      10            100</code></pre>
+B        1      30            900
+         2      40           1600
+         1      30            900
+A        2      20            400</code></pre>
 </div>
 </div>
 <ul>
@@ -2097,7 +2097,7 @@ A        1      10            100</code></pre>
 <section id="dtypes-최적화" class="level4">
 <h4 class="anchored" data-anchor-id="dtypes-최적화">3. dtypes 최적화</h4>
 <p>대용량 데이터를 처리할 때는 데이터 타입을 최적화하여 메모리 사용량을 줄일 수 있다. 예를 들어, <code>float64</code>를 <code>float32</code>로 변경하면 메모리 사용을 절감할 수 있다.</p>
-<div id="c8e7b544" class="cell" data-execution_count="60">
+<div id="78cd3ce0" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a>df[<span class="st">'Value'</span>] <span class="op">=</span> df[<span class="st">'Value'</span>].astype(<span class="st">'float32'</span>)  <span class="co"># 데이터 타입 최적화</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
