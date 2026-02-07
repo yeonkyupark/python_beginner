@@ -139,7 +139,7 @@ window.Quarto = {
 };
 </script>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="styles.css">
 </head>
 
 <body class="nav-sidebar floating quarto-light">
@@ -451,7 +451,7 @@ Note&nbsp;5.1: 함수 문법
 <section id="함수-정의-및-호출" class="level3">
 <h3 class="anchored" data-anchor-id="함수-정의-및-호출">함수 정의 및 호출</h3>
 <p>함수 정의 및 호출 문법 <a href="#nte-function" class="quarto-xref">Note&nbsp;<span>5.1</span></a>에 따라 수행한다.</p>
-<div id="d7aa55c1" class="cell" data-execution_count="1">
+<div id="913a96fa" class="cell" data-execution_count="1">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -533,7 +533,7 @@ Note&nbsp;5.1: 함수 문법
 <section id="기본-매개변수" class="level4">
 <h4 class="anchored" data-anchor-id="기본-매개변수">기본 매개변수</h4>
 <p>함수를 정의할 때 매개변수를 지정하면, 해당 함수는 반드시 인자를 전달받아야 한다.</p>
-<div id="69f71b40" class="cell" data-execution_count="2">
+<div id="bcd5137e" class="cell" data-execution_count="2">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name):</span>
 <span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"안녕하세요, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">님!"</span>)</span>
 <span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -564,7 +564,7 @@ Cell <span class="ansi-green-fg">In[2], line 6</span>
 <section id="기본값-매개변수" class="level4">
 <h4 class="anchored" data-anchor-id="기본값-매개변수">기본값 매개변수</h4>
 <p>매개변수에 기본값(Default Parameters)을 설정하면, 호출 시 인자를 전달하지 않아도 된다.</p>
-<div id="8dd10558" class="cell" data-execution_count="3">
+<div id="5cf43185" class="cell" data-execution_count="3">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet(name<span class="op">=</span><span class="st">"손님"</span>):</span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"안녕하세요, </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">님!"</span>)</span>
 <span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -583,7 +583,7 @@ Cell <span class="ansi-green-fg">In[2], line 6</span>
 <section id="위치-인자" class="level4">
 <h4 class="anchored" data-anchor-id="위치-인자">위치 인자</h4>
 <p>함수 호출 시 인자의 순서(Positional Arguments)에 따라 매개변수에 값이 할당된다.</p>
-<div id="9490615e" class="cell" data-execution_count="4">
+<div id="23f48fff" class="cell" data-execution_count="4">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> introduce(name, age):</span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"제 이름은 </span><span class="sc">{</span>name<span class="sc">}</span><span class="ss">이고, </span><span class="sc">{</span>age<span class="sc">}</span><span class="ss">살입니다."</span>)</span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -592,7 +592,7 @@ Cell <span class="ansi-green-fg">In[2], line 6</span>
 <pre><code>제 이름은 영희이고, 25살입니다.</code></pre>
 </div>
 </div>
-<div id="d3762ef2" class="cell" data-execution_count="5">
+<div id="b54ee8ba" class="cell" data-execution_count="5">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>introduce(<span class="dv">25</span>, <span class="st">"영희"</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>제 이름은 25이고, 영희살입니다.</code></pre>
@@ -605,7 +605,7 @@ Cell <span class="ansi-green-fg">In[2], line 6</span>
 <section id="키워드-인자" class="level4">
 <h4 class="anchored" data-anchor-id="키워드-인자">키워드 인자</h4>
 <p>함수 호출 시 <code>매개변수명=값</code> 형식(Keyword Arguments)으로 지정하여 순서를 무시할 수 있다.</p>
-<div id="85dd12eb" class="cell" data-execution_count="6">
+<div id="f47fc951" class="cell" data-execution_count="6">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>introduce(age<span class="op">=</span><span class="dv">30</span>, name<span class="op">=</span><span class="st">"민수"</span>)  </span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="co"># 출력: 제 이름은 민수이고, 30살입니다.</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -619,7 +619,7 @@ Cell <span class="ansi-green-fg">In[2], line 6</span>
 <section id="가변-인자" class="level4">
 <h4 class="anchored" data-anchor-id="가변-인자">가변 인자</h4>
 <p>여러 개의 위치 인자(*args)를 튜플(tuple) 형태로 받을 수 있다.</p>
-<div id="177a47f6" class="cell" data-execution_count="7">
+<div id="8c9de9bf" class="cell" data-execution_count="7">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb14"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> sum_numbers(<span class="op">*</span>args):</span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>    total <span class="op">=</span> <span class="bu">sum</span>(args)</span>
 <span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"합계: </span><span class="sc">{</span>total<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -629,7 +629,7 @@ Cell <span class="ansi-green-fg">In[2], line 6</span>
 <pre><code>합계: 6</code></pre>
 </div>
 </div>
-<div id="865b1281" class="cell" data-execution_count="8">
+<div id="e705c7b5" class="cell" data-execution_count="8">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb16"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>sum_numbers(<span class="dv">10</span>, <span class="dv">20</span>, <span class="dv">30</span>, <span class="dv">40</span>, <span class="dv">50</span>) </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>합계: 150</code></pre>
@@ -643,7 +643,7 @@ Cell <span class="ansi-green-fg">In[2], line 6</span>
 <section id="키워드-가변-인자" class="level4">
 <h4 class="anchored" data-anchor-id="키워드-가변-인자">키워드 가변 인자</h4>
 <p>여러 개의 키워드 인자(**kwargs)를 딕셔너리(dict) 형태로 받을 수 있다.</p>
-<div id="ee039b0c" class="cell" data-execution_count="9">
+<div id="1b6e19fc" class="cell" data-execution_count="9">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb18"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> print_info(<span class="op">**</span>kwargs):</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> key, value <span class="kw">in</span> kwargs.items():</span>
 <span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="ss">f"</span><span class="sc">{</span>key<span class="sc">}</span><span class="ss">: </span><span class="sc">{</span>value<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -663,7 +663,7 @@ city: 서울</code></pre>
 <section id="위치-전용-매개변수" class="level4">
 <h4 class="anchored" data-anchor-id="위치-전용-매개변수">위치 전용 매개변수</h4>
 <p>Python 3.8부터 <code>/</code> 기호를 사용하여 특정 매개변수를 위치 인자(Positional-Only Parameters)로만 받을 수 있다.</p>
-<div id="a3ad6449" class="cell" data-execution_count="10">
+<div id="d545fd59" class="cell" data-execution_count="10">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb20"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> multiply(a, b, <span class="op">/</span>):</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">*</span> b</span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -673,7 +673,7 @@ city: 서울</code></pre>
 <pre><code>12</code></pre>
 </div>
 </div>
-<div id="80540f9a" class="cell" data-execution_count="11">
+<div id="a7f6362e" class="cell" data-execution_count="11">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb22"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(a<span class="op">=</span><span class="dv">3</span>, b<span class="op">=</span><span class="dv">4</span>))  <span class="co"># 오류 발생 (TypeError)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -693,7 +693,7 @@ Cell <span class="ansi-green-fg">In[11], line 1</span>
 <section id="키워드-전용-매개변수" class="level4">
 <h4 class="anchored" data-anchor-id="키워드-전용-매개변수">키워드 전용 매개변수</h4>
 <p><code>*</code> 기호 이후에 정의된 매개변수는 키워드 인자(Keyword-Only Parameters)로만 전달해야 한다.</p>
-<div id="afcd0158" class="cell" data-execution_count="12">
+<div id="75e2beac" class="cell" data-execution_count="12">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb23"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> divide(<span class="op">*</span>, x, y):</span>
 <span id="cb23-2"><a href="#cb23-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> x <span class="op">/</span> y</span>
 <span id="cb23-3"><a href="#cb23-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -703,7 +703,7 @@ Cell <span class="ansi-green-fg">In[11], line 1</span>
 <pre><code>5.0</code></pre>
 </div>
 </div>
-<div id="c5d3f85f" class="cell" data-execution_count="13">
+<div id="a2275cb6" class="cell" data-execution_count="13">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb25"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(divide(<span class="dv">10</span>, <span class="dv">2</span>))  <span class="co"># 오류 발생 (TypeError)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -723,7 +723,7 @@ Cell <span class="ansi-green-fg">In[13], line 1</span>
 <section id="위치-및-키워드-혼합" class="level4">
 <h4 class="anchored" data-anchor-id="위치-및-키워드-혼합">위치 및 키워드 혼합</h4>
 <p><code>/</code>와 <code>*</code>를 함께 사용하여 위치 인자, 키워드 인자, 일반 매개변수를 조합할 수 있다.</p>
-<div id="b1fc30c7" class="cell" data-execution_count="14">
+<div id="e93439d6" class="cell" data-execution_count="14">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb26"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> function(a, b, <span class="op">/</span>, c, <span class="op">*</span>, d):</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(a, b, c, d)</span>
 <span id="cb26-3"><a href="#cb26-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -732,13 +732,13 @@ Cell <span class="ansi-green-fg">In[13], line 1</span>
 <pre><code>1 2 3 4</code></pre>
 </div>
 </div>
-<div id="7a6317b2" class="cell" data-execution_count="15">
+<div id="fa499dd9" class="cell" data-execution_count="15">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb28"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb28-1"><a href="#cb28-1" aria-hidden="true" tabindex="-1"></a>function(<span class="dv">1</span>, <span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>, d<span class="op">=</span><span class="dv">4</span>)  </span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>1 2 3 4</code></pre>
 </div>
 </div>
-<div id="2dcfcb36" class="cell" data-execution_count="16">
+<div id="de4e2523" class="cell" data-execution_count="16">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb30"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a>function(a<span class="op">=</span><span class="dv">1</span>, b<span class="op">=</span><span class="dv">2</span>, c<span class="op">=</span><span class="dv">3</span>, d<span class="op">=</span><span class="dv">4</span>)  <span class="co"># 오류 발생 (TypeError)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-error">
 <div class="ansi-escaped-output">
@@ -760,7 +760,7 @@ Cell <span class="ansi-green-fg">In[16], line 1</span>
 <section id="매개변수의-기본값과-가변-인자-조합" class="level4">
 <h4 class="anchored" data-anchor-id="매개변수의-기본값과-가변-인자-조합">매개변수의 기본값과 가변 인자 조합</h4>
 <p>기본값이 있는 매개변수와 <code>*args</code>, <code>**kwargs</code>를 함께 사용할 수 있다.</p>
-<div id="c480829f" class="cell" data-execution_count="17">
+<div id="31d6ad9a" class="cell" data-execution_count="17">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb31"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example(a, b<span class="op">=</span><span class="dv">10</span>, <span class="op">*</span>args, c<span class="op">=</span><span class="dv">20</span>, <span class="op">**</span>kwargs):</span>
 <span id="cb31-2"><a href="#cb31-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"a: </span><span class="sc">{</span>a<span class="sc">}</span><span class="ss">, b: </span><span class="sc">{</span>b<span class="sc">}</span><span class="ss">, c: </span><span class="sc">{</span>c<span class="sc">}</span><span class="ss">"</span>)</span>
 <span id="cb31-3"><a href="#cb31-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="ss">f"args: </span><span class="sc">{</span>args<span class="sc">}</span><span class="ss">"</span>)</span>
@@ -795,7 +795,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 </section>
 <section id="lambda-함수-예제" class="level4">
 <h4 class="anchored" data-anchor-id="lambda-함수-예제">lambda 함수 예제</h4>
-<div id="5256aa77" class="cell" data-execution_count="18">
+<div id="ed3d2b47" class="cell" data-execution_count="18">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb34"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="co"># 일반적인 함수 정의</span></span>
 <span id="cb34-2"><a href="#cb34-2" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb34-3"><a href="#cb34-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
@@ -808,7 +808,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <pre><code>8</code></pre>
 </div>
 </div>
-<div id="d7e160d6" class="cell" data-execution_count="19">
+<div id="a0db0b4b" class="cell" data-execution_count="19">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb36"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(add_lambda(<span class="dv">3</span>, <span class="dv">5</span>)) <span class="co"># 8</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>8</code></pre>
@@ -826,7 +826,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 
 </dd>
 </dl>
-<div id="130ee752" class="cell" data-execution_count="20">
+<div id="469483d9" class="cell" data-execution_count="20">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb38"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a>multiply <span class="op">=</span> <span class="kw">lambda</span> x, y: x <span class="op">*</span> y</span>
 <span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(multiply(<span class="dv">4</span>, <span class="dv">5</span>))  <span class="co"># 20</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -837,7 +837,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <li><code>lambda x, y: x * y</code>는 두 숫자의 곱을 반환하는 함수</li>
 </ul>
 <p><strong>lambda와 <code>map()</code> 함수</strong></p>
-<div id="f9de6563" class="cell" data-execution_count="21">
+<div id="5f3d41d2" class="cell" data-execution_count="21">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb40"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb40-1"><a href="#cb40-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb40-2"><a href="#cb40-2" aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">**</span> <span class="dv">2</span>, numbers))</span>
 <span id="cb40-3"><a href="#cb40-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squared)  <span class="co"># [1, 4, 9, 16, 25]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -849,7 +849,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <li><code>map(lambda x: x ** 2, numbers)</code>는 리스트의 각 요소를 제곱</li>
 </ul>
 <p><strong>lambda와 <code>filter()</code> 함수</strong></p>
-<div id="5450c3e6" class="cell" data-execution_count="22">
+<div id="24ac9a56" class="cell" data-execution_count="22">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb42"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb42-1"><a href="#cb42-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>]</span>
 <span id="cb42-2"><a href="#cb42-2" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, numbers))</span>
 <span id="cb42-3"><a href="#cb42-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(even_numbers)  <span class="co"># [2, 4, 6]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -861,7 +861,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <li><code>filter(lambda x: x % 2 == 0, numbers)</code>는 리스트에서 짝수만 필터링</li>
 </ul>
 <p><strong>lambda와 <code>sorted()</code> 함수</strong></p>
-<div id="8dedbd52" class="cell" data-execution_count="23">
+<div id="6007403e" class="cell" data-execution_count="23">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb44"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb44-1"><a href="#cb44-1" aria-hidden="true" tabindex="-1"></a>students <span class="op">=</span> [(<span class="st">"철수"</span>, <span class="dv">90</span>), (<span class="st">"영희"</span>, <span class="dv">85</span>), (<span class="st">"민수"</span>, <span class="dv">95</span>)]</span>
 <span id="cb44-2"><a href="#cb44-2" aria-hidden="true" tabindex="-1"></a>sorted_students <span class="op">=</span> <span class="bu">sorted</span>(students, key<span class="op">=</span><span class="kw">lambda</span> x: x[<span class="dv">1</span>], reverse<span class="op">=</span><span class="va">True</span>)</span>
 <span id="cb44-3"><a href="#cb44-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(sorted_students)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -878,7 +878,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 
 </dd>
 </dl>
-<div id="f0b40360" class="cell" data-execution_count="24">
+<div id="ad1cbd9f" class="cell" data-execution_count="24">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb46"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb46-1"><a href="#cb46-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span></span>
 <span id="cb46-2"><a href="#cb46-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb46-3"><a href="#cb46-3" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
@@ -987,7 +987,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <p>Python의 <code>return</code> 문은 함수의 종료를 의미하며, 다양한 형태의 데이터를 반환할 수 있다.</p>
 <section id="기본적인-반환값" class="level4">
 <h4 class="anchored" data-anchor-id="기본적인-반환값">기본적인 반환값</h4>
-<div id="4a4fd7a6" class="cell" data-execution_count="25">
+<div id="70817672" class="cell" data-execution_count="25">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb48"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb48-1"><a href="#cb48-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> add(a, b):</span>
 <span id="cb48-2"><a href="#cb48-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> a <span class="op">+</span> b</span>
 <span id="cb48-3"><a href="#cb48-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1005,7 +1005,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <section id="여러-개의-반환값" class="level4">
 <h4 class="anchored" data-anchor-id="여러-개의-반환값">여러 개의 반환값</h4>
 <p>Python에서는 <strong>여러 개의 값을 반환</strong>할 수 있으며, 이는 <strong>튜플(tuple)</strong>로 반환된다.</p>
-<div id="717ae423" class="cell" data-execution_count="26">
+<div id="9be6dee0" class="cell" data-execution_count="26">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb50"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb50-1"><a href="#cb50-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_info():</span>
 <span id="cb50-2"><a href="#cb50-2" aria-hidden="true" tabindex="-1"></a>    name <span class="op">=</span> <span class="st">"철수"</span></span>
 <span id="cb50-3"><a href="#cb50-3" aria-hidden="true" tabindex="-1"></a>    age <span class="op">=</span> <span class="dv">25</span></span>
@@ -1017,13 +1017,13 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <pre><code>('철수', 25)</code></pre>
 </div>
 </div>
-<div id="4be023a3" class="cell" data-execution_count="27">
+<div id="cfd0b5b3" class="cell" data-execution_count="27">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb52"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb52-1"><a href="#cb52-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(info[<span class="dv">0</span>])    <span class="co"># 철수</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>철수</code></pre>
 </div>
 </div>
-<div id="6a88f261" class="cell" data-execution_count="28">
+<div id="b7313cc6" class="cell" data-execution_count="28">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb54"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb54-1"><a href="#cb54-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(info[<span class="dv">1</span>])    <span class="co"># 25</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>25</code></pre>
@@ -1033,7 +1033,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <li><code>return name, age</code>는 <code>(name, age)</code> 형태의 튜플을 반환</li>
 <li>반환값을 여러 변수에 <strong>언패킹(unpacking)</strong>하여 받을 수도 있음</li>
 </ul>
-<div id="477fbf67" class="cell" data-execution_count="29">
+<div id="fb6451e0" class="cell" data-execution_count="29">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb56"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb56-1"><a href="#cb56-1" aria-hidden="true" tabindex="-1"></a>name, age <span class="op">=</span> get_info()</span>
 <span id="cb56-2"><a href="#cb56-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(name)  <span class="co"># 철수</span></span>
 <span id="cb56-3"><a href="#cb56-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(age)   <span class="co"># 25</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -1048,7 +1048,7 @@ kwargs: {'d': 6, 'e': 7}</code></pre>
 <ul>
 <li><code>return</code> 문이 없거나, <code>return</code> 키워드만 사용하면 <strong><code>None</code>이 반환</strong>된다.</li>
 </ul>
-<div id="1ee7067d" class="cell" data-execution_count="30">
+<div id="a013ea0f" class="cell" data-execution_count="30">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb58"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb58-1"><a href="#cb58-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> greet():</span>
 <span id="cb58-2"><a href="#cb58-2" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(<span class="st">"안녕하세요!"</span>)</span>
 <span id="cb58-3"><a href="#cb58-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1068,7 +1068,7 @@ None</code></pre>
 <ul>
 <li>함수 내에서 특정 조건을 만족할 때만 값을 반환할 수 있다.</li>
 </ul>
-<div id="e910be10" class="cell" data-execution_count="31">
+<div id="e01626c3" class="cell" data-execution_count="31">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb60"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb60-1"><a href="#cb60-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> check_even(n):</span>
 <span id="cb60-2"><a href="#cb60-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb60-3"><a href="#cb60-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="st">"짝수"</span></span>
@@ -1079,7 +1079,7 @@ None</code></pre>
 <pre><code>짝수</code></pre>
 </div>
 </div>
-<div id="26dc5c08" class="cell" data-execution_count="32">
+<div id="282fd56c" class="cell" data-execution_count="32">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb62"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb62-1"><a href="#cb62-1" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(check_even(<span class="dv">7</span>))  <span class="co"># 홀수</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>홀수</code></pre>
@@ -1092,7 +1092,7 @@ None</code></pre>
 <section id="리스트나-딕셔너리-반환" class="level4">
 <h4 class="anchored" data-anchor-id="리스트나-딕셔너리-반환">리스트나 딕셔너리 반환</h4>
 <p><strong>리스트 반환</strong></p>
-<div id="e1e0fa7d" class="cell" data-execution_count="33">
+<div id="5e3a442f" class="cell" data-execution_count="33">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb64"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb64-1"><a href="#cb64-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_numbers():</span>
 <span id="cb64-2"><a href="#cb64-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>]</span>
 <span id="cb64-3"><a href="#cb64-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1102,7 +1102,7 @@ None</code></pre>
 </div>
 </div>
 <p><strong>딕셔너리 반환</strong></p>
-<div id="88c6f9cc" class="cell" data-execution_count="34">
+<div id="d4f10855" class="cell" data-execution_count="34">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb66"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb66-1"><a href="#cb66-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> get_student():</span>
 <span id="cb66-2"><a href="#cb66-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span> {<span class="st">"name"</span>: <span class="st">"영희"</span>, <span class="st">"age"</span>: <span class="dv">22</span>}</span>
 <span id="cb66-3"><a href="#cb66-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1137,7 +1137,7 @@ None</code></pre>
 </tr>
 </tbody>
 </table>
-<div id="deca3897" class="cell" data-execution_count="35">
+<div id="af217f6c" class="cell" data-execution_count="35">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb68"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb68-1"><a href="#cb68-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> example():</span>
 <span id="cb68-2"><a href="#cb68-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">return</span></span>
 <span id="cb68-3"><a href="#cb68-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1150,7 +1150,7 @@ None</code></pre>
 <section id="yield를-사용한-제너레이터-반환" class="level4">
 <h4 class="anchored" data-anchor-id="yield를-사용한-제너레이터-반환">yield를 사용한 제너레이터 반환</h4>
 <p><code>return</code> 대신 <code>yield</code>를 사용하면 <strong>제너레이터(generator)</strong>를 반환한다.</p>
-<div id="0d6e3613" class="cell" data-execution_count="36">
+<div id="95d7ef46" class="cell" data-execution_count="36">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb70"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> count_up(n):</span>
 <span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(n):</span>
 <span id="cb70-3"><a href="#cb70-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">yield</span> i</span>
@@ -1250,7 +1250,7 @@ None</code></pre>
 <p><strong>예제 비교: 팩토리얼 계산</strong></p>
 <ul>
 <li><p><strong>재귀 함수 이용</strong></p>
-<div id="82c1d8a5" class="cell" data-execution_count="37">
+<div id="0abb3d0f" class="cell" data-execution_count="37">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb73"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb73-1"><a href="#cb73-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorial_recursive(n):</span>
 <span id="cb73-2"><a href="#cb73-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">1</span>:</span>
 <span id="cb73-3"><a href="#cb73-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span>  <span class="co"># 기저 조건</span></span>
@@ -1262,7 +1262,7 @@ None</code></pre>
 </div>
 </div></li>
 <li><p><strong>반복문 이용</strong></p>
-<div id="500f4314" class="cell" data-execution_count="38">
+<div id="11a51e64" class="cell" data-execution_count="38">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb75"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb75-1"><a href="#cb75-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorial_iterative(n):</span>
 <span id="cb75-2"><a href="#cb75-2" aria-hidden="true" tabindex="-1"></a>    result <span class="op">=</span> <span class="dv">1</span></span>
 <span id="cb75-3"><a href="#cb75-3" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, n <span class="op">+</span> <span class="dv">1</span>):</span>
@@ -1370,7 +1370,7 @@ None</code></pre>
 <figcaption>재귀함수</figcaption>
 </figure>
 </div>
-<div id="09cda6c4" class="cell" data-execution_count="39">
+<div id="7ccb089a" class="cell" data-execution_count="39">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb77"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb77-1"><a href="#cb77-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countdown(n):</span>
 <span id="cb77-2"><a href="#cb77-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">&lt;=</span> <span class="dv">0</span>:  <span class="co"># 종료 조건</span></span>
 <span id="cb77-3"><a href="#cb77-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"끝!"</span>)</span>
@@ -1404,7 +1404,7 @@ None</code></pre>
 </div>
 <div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<div id="c18ed786" class="cell" data-execution_count="40">
+<div id="fe883e30" class="cell" data-execution_count="40">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb79"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb79-1"><a href="#cb79-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> countdown_iterative(n):</span>
 <span id="cb79-2"><a href="#cb79-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">reversed</span>(<span class="bu">range</span>(n<span class="op">+</span><span class="dv">1</span>)):</span>
 <span id="cb79-3"><a href="#cb79-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">if</span> i <span class="op">&lt;=</span> <span class="dv">0</span>: </span>
@@ -1436,7 +1436,7 @@ n! = n \times(n-1)\times ... 2 \times 1
 \]</span>
 </dd>
 </dl>
-<div id="73cadad2" class="cell" data-execution_count="41">
+<div id="b59aa6ca" class="cell" data-execution_count="41">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb81"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb81-1"><a href="#cb81-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> factorial(n):</span>
 <span id="cb81-2"><a href="#cb81-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span> <span class="kw">or</span> n <span class="op">==</span> <span class="dv">1</span>:  <span class="co"># 종료 조건</span></span>
 <span id="cb81-3"><a href="#cb81-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">1</span></span>
@@ -1460,7 +1460,7 @@ n! = n \times(n-1)\times ... 2 \times 1
 <span class="math display">\[F(n) = F(n-1) + F(n-2), \quad F(0) = 0, \quad F(1) = 1\]</span>
 </dd>
 </dl>
-<div id="43151aeb" class="cell" data-execution_count="42">
+<div id="a9c2aa8b" class="cell" data-execution_count="42">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb83"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb83-1"><a href="#cb83-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> fibonacci(n):</span>
 <span id="cb83-2"><a href="#cb83-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb83-3"><a href="#cb83-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> <span class="dv">0</span></span>
@@ -1496,7 +1496,7 @@ n! = n \times(n-1)\times ... 2 \times 1
 <section id="꼬리-재귀" class="level4">
 <h4 class="anchored" data-anchor-id="꼬리-재귀">꼬리 재귀</h4>
 <p><strong>꼬리 재귀(Tail Recursion)</strong>: 함수의 마지막 동작이 <strong>자기 자신을 호출하는 형태</strong>, 일반적으로 <strong>반복문으로 변환 가능</strong>하며, 일부 언어에서는 <strong>최적화(Tail Call Optimization, TCO)</strong>를 지원하지만, Python은 지원하지 않는다.</p>
-<div id="39e6aaf9" class="cell" data-execution_count="43">
+<div id="1b2d0a2e" class="cell" data-execution_count="43">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb87"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb87-1"><a href="#cb87-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> tail_recursive(n, result<span class="op">=</span><span class="dv">1</span>):</span>
 <span id="cb87-2"><a href="#cb87-2" aria-hidden="true" tabindex="-1"></a>    <span class="cf">if</span> n <span class="op">==</span> <span class="dv">0</span>:</span>
 <span id="cb87-3"><a href="#cb87-3" aria-hidden="true" tabindex="-1"></a>        <span class="cf">return</span> result</span>
@@ -1610,12 +1610,12 @@ n! = n \times(n-1)\times ... 2 \times 1
 <section id="지역local-범위" class="level4">
 <h4 class="anchored" data-anchor-id="지역local-범위">지역(Local) 범위</h4>
 <p>함수 내부에서 선언된 변수는 <strong>지역 변수</strong>이며, 함수 내부에서만 접근 가능하다.</p>
-<div id="69454546" class="cell" data-execution_count="44">
+<div id="9b474230" class="cell" data-execution_count="44">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb89"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb89-1"><a href="#cb89-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
 <span id="cb89-2"><a href="#cb89-2" aria-hidden="true" tabindex="-1"></a>    x <span class="op">=</span> <span class="dv">10</span>  <span class="co"># 지역 변수</span></span>
 <span id="cb89-3"><a href="#cb89-3" aria-hidden="true" tabindex="-1"></a>    <span class="bu">print</span>(x)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<div id="b6e4e0d5" class="cell" data-execution_count="45">
+<div id="96ff3295" class="cell" data-execution_count="45">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb90"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb90-1"><a href="#cb90-1" aria-hidden="true" tabindex="-1"></a>my_function()</span>
 <span id="cb90-2"><a href="#cb90-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(x)  <span class="co"># 오류 발생 (NameError)</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -1641,7 +1641,7 @@ Cell <span class="ansi-green-fg">In[45], line 2</span>
 <section id="전역global-범위" class="level4">
 <h4 class="anchored" data-anchor-id="전역global-범위">전역(Global) 범위</h4>
 <p>함수 바깥에서 선언된 변수는 <strong>전역 변수</strong>이며, 코드 전체에서 접근 가능하다.</p>
-<div id="30b41d13" class="cell" data-execution_count="46">
+<div id="da9bd927" class="cell" data-execution_count="46">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb92"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb92-1"><a href="#cb92-1" aria-hidden="true" tabindex="-1"></a>y <span class="op">=</span> <span class="dv">20</span>  <span class="co"># 전역 변수</span></span>
 <span id="cb92-2"><a href="#cb92-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb92-3"><a href="#cb92-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_function():</span>
@@ -1659,7 +1659,7 @@ Cell <span class="ansi-green-fg">In[45], line 2</span>
 <section id="global-키워드-전역-변수-변경" class="level4">
 <h4 class="anchored" data-anchor-id="global-키워드-전역-변수-변경">global 키워드 (전역 변수 변경)</h4>
 <p>함수 내부에서 전역 변수를 변경하려면 <strong><code>global</code> 키워드</strong>를 사용해야 한다.</p>
-<div id="10bb1552" class="cell" data-execution_count="47">
+<div id="fef66c4f" class="cell" data-execution_count="47">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb94"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb94-1"><a href="#cb94-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">10</span>  <span class="co"># 전역 변수</span></span>
 <span id="cb94-2"><a href="#cb94-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb94-3"><a href="#cb94-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> modify_global():</span>
@@ -1680,7 +1680,7 @@ Cell <span class="ansi-green-fg">In[45], line 2</span>
 <section id="비지역enclosing-범위" class="level4">
 <h4 class="anchored" data-anchor-id="비지역enclosing-범위">비지역(Enclosing) 범위</h4>
 <p><strong>중첩 함수(nested function)</strong>에서 바깥쪽 함수의 변수를 <strong>내부 함수에서 참조</strong>할 수 있다.</p>
-<div id="fa71d08f" class="cell" data-execution_count="48">
+<div id="aed7d2ba" class="cell" data-execution_count="48">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb96"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb96-1"><a href="#cb96-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> outer():</span>
 <span id="cb96-2"><a href="#cb96-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">5</span>  <span class="co"># 비지역 변수</span></span>
 <span id="cb96-3"><a href="#cb96-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1701,7 +1701,7 @@ Cell <span class="ansi-green-fg">In[45], line 2</span>
 <section id="nonlocal-키워드-비지역-변수-변경" class="level4">
 <h4 class="anchored" data-anchor-id="nonlocal-키워드-비지역-변수-변경">nonlocal 키워드 (비지역 변수 변경)</h4>
 <p>내부 함수에서 바깥 함수의 변수를 변경하려면 <strong><code>nonlocal</code> 키워드</strong>를 사용해야 한다.</p>
-<div id="2b19cc2e" class="cell" data-execution_count="49">
+<div id="09165f4e" class="cell" data-execution_count="49">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb98"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb98-1"><a href="#cb98-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> outer():</span>
 <span id="cb98-2"><a href="#cb98-2" aria-hidden="true" tabindex="-1"></a>    a <span class="op">=</span> <span class="dv">5</span></span>
 <span id="cb98-3"><a href="#cb98-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1724,7 +1724,7 @@ Cell <span class="ansi-green-fg">In[45], line 2</span>
 </section>
 <section id="legb-규칙-적용-예시" class="level4">
 <h4 class="anchored" data-anchor-id="legb-규칙-적용-예시">LEGB 규칙 적용 예시</h4>
-<div id="93609b4a" class="cell" data-execution_count="50">
+<div id="44d3f5c4" class="cell" data-execution_count="50">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb100"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb100-1"><a href="#cb100-1" aria-hidden="true" tabindex="-1"></a>x <span class="op">=</span> <span class="dv">100</span>  <span class="co"># 전역 변수</span></span>
 <span id="cb100-2"><a href="#cb100-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb100-3"><a href="#cb100-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> outer():</span>
@@ -1757,7 +1757,7 @@ Cell <span class="ansi-green-fg">In[45], line 2</span>
 <p>Python에서 <strong>데코레이터(Decorator)</strong>는 <strong>기존 함수나 메서드의 동작을 변경하거나 확장할 때 사용되는 기능</strong>이다. <code>@데코레이터_함수</code> 형식으로 사용하며, <strong>함수를 감싸는(wrapper) 역할을 수행</strong>한다.</p>
 <section id="기본적인-데코레이터-구조" class="level4">
 <h4 class="anchored" data-anchor-id="기본적인-데코레이터-구조">기본적인 데코레이터 구조</h4>
-<div id="4d162b43" class="cell" data-execution_count="51">
+<div id="34507e5f" class="cell" data-execution_count="51">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb102"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb102-1"><a href="#cb102-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_decorator(func):  <span class="co"># 데코레이터 함수</span></span>
 <span id="cb102-2"><a href="#cb102-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> wrapper():</span>
 <span id="cb102-3"><a href="#cb102-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"함수 실행 전"</span>)</span>
@@ -1789,7 +1789,7 @@ Hello, World!
 <section id="여러-개의-데코레이터-사용" class="level4">
 <h4 class="anchored" data-anchor-id="여러-개의-데코레이터-사용">여러 개의 데코레이터 사용</h4>
 <p>여러 개의 데코레이터를 적용하면 <strong>위에서부터 차례로 적용</strong>된다.</p>
-<div id="7fc5bbb7" class="cell" data-execution_count="52">
+<div id="acbe3dd5" class="cell" data-execution_count="52">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb104"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb104-1"><a href="#cb104-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> decorator1(func):</span>
 <span id="cb104-2"><a href="#cb104-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> wrapper():</span>
 <span id="cb104-3"><a href="#cb104-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"데코레이터 1 실행"</span>)</span>
@@ -1822,7 +1822,7 @@ Hello, World!
 <section id="인자가-있는-함수-데코레이팅" class="level4">
 <h4 class="anchored" data-anchor-id="인자가-있는-함수-데코레이팅">인자가 있는 함수 데코레이팅</h4>
 <p><strong>인자가 있는 함수</strong>를 데코레이터로 감싸려면 <code>*args</code>, <code>**kwargs</code>를 사용해야 한다.</p>
-<div id="4a0a291a" class="cell" data-execution_count="53">
+<div id="e578d677" class="cell" data-execution_count="53">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb106"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb106-1"><a href="#cb106-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_decorator(func):</span>
 <span id="cb106-2"><a href="#cb106-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
 <span id="cb106-3"><a href="#cb106-3" aria-hidden="true" tabindex="-1"></a>        <span class="bu">print</span>(<span class="st">"함수 실행 전"</span>)</span>
@@ -1849,7 +1849,7 @@ Hello, World!
 <section id="functools.wraps를-사용한-데코레이터" class="level4">
 <h4 class="anchored" data-anchor-id="functools.wraps를-사용한-데코레이터">functools.wraps를 사용한 데코레이터</h4>
 <p>데코레이터를 사용하면 <strong>원래 함수의 이름(name)과 문서(docstring)가 변경될 수 있다</strong>. 이를 방지하려면 <strong><code>functools.wraps()</code></strong>를 사용한다.</p>
-<div id="3da27a82" class="cell" data-execution_count="54">
+<div id="c9cb531b" class="cell" data-execution_count="54">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb108"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb108-1"><a href="#cb108-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> functools</span>
 <span id="cb108-2"><a href="#cb108-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb108-3"><a href="#cb108-3" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> my_decorator(func):</span>
@@ -1880,7 +1880,7 @@ Hello, World!
 <section id="클래스-기반-데코레이터" class="level4">
 <h4 class="anchored" data-anchor-id="클래스-기반-데코레이터">클래스 기반 데코레이터</h4>
 <p>데코레이터를 <strong>클래스로도 구현 가능</strong>하다.</p>
-<div id="bb68fb79" class="cell" data-execution_count="55">
+<div id="84758ca6" class="cell" data-execution_count="55">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb110"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb110-1"><a href="#cb110-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> MyDecorator:</span>
 <span id="cb110-2"><a href="#cb110-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, func):</span>
 <span id="cb110-3"><a href="#cb110-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>.func <span class="op">=</span> func</span>
@@ -1910,7 +1910,7 @@ Hello!
 <section id="매개변수가-있는-데코레이터" class="level4">
 <h4 class="anchored" data-anchor-id="매개변수가-있는-데코레이터">매개변수가 있는 데코레이터</h4>
 <p><strong>데코레이터에 인자를 전달하려면 함수 내부에 함수를 중첩</strong></p>
-<div id="2f315721" class="cell" data-execution_count="56">
+<div id="c256f938" class="cell" data-execution_count="56">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb112"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb112-1"><a href="#cb112-1" aria-hidden="true" tabindex="-1"></a><span class="kw">def</span> repeat(n):</span>
 <span id="cb112-2"><a href="#cb112-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> decorator(func):</span>
 <span id="cb112-3"><a href="#cb112-3" aria-hidden="true" tabindex="-1"></a>        <span class="kw">def</span> wrapper(<span class="op">*</span>args, <span class="op">**</span>kwargs):</span>
@@ -1939,7 +1939,7 @@ Hello!
 <p>Python에는 <strong>기본 제공 데코레이터</strong>가 있다.</p>
 <p><code>@staticmethod</code> (정적 메서드)<br>
 :- <strong>인스턴스(self) 없이 호출 가능한 메서드</strong></p>
-<div id="5446848d" class="cell" data-execution_count="57">
+<div id="ffda1c94" class="cell" data-execution_count="57">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb114"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb114-1"><a href="#cb114-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Math:</span>
 <span id="cb114-2"><a href="#cb114-2" aria-hidden="true" tabindex="-1"></a>    <span class="at">@staticmethod</span></span>
 <span id="cb114-3"><a href="#cb114-3" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> add(a, b):</span>
@@ -1958,7 +1958,7 @@ Hello!
 </ul>
 </dd>
 </dl>
-<div id="8914eda6" class="cell" data-execution_count="58">
+<div id="85bb600e" class="cell" data-execution_count="58">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb116"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb116-1"><a href="#cb116-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Example:</span>
 <span id="cb116-2"><a href="#cb116-2" aria-hidden="true" tabindex="-1"></a>    count <span class="op">=</span> <span class="dv">0</span></span>
 <span id="cb116-3"><a href="#cb116-3" aria-hidden="true" tabindex="-1"></a></span>
@@ -1980,7 +1980,7 @@ Hello!
 </ul>
 </dd>
 </dl>
-<div id="c361f520" class="cell" data-execution_count="59">
+<div id="256265ac" class="cell" data-execution_count="59">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb118"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb118-1"><a href="#cb118-1" aria-hidden="true" tabindex="-1"></a><span class="kw">class</span> Person:</span>
 <span id="cb118-2"><a href="#cb118-2" aria-hidden="true" tabindex="-1"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, name):</span>
 <span id="cb118-3"><a href="#cb118-3" aria-hidden="true" tabindex="-1"></a>        <span class="va">self</span>._name <span class="op">=</span> name</span>
@@ -2000,7 +2000,7 @@ Hello!
 <section id="함수형-프로그래밍-개념" class="level3">
 <h3 class="anchored" data-anchor-id="함수형-프로그래밍-개념">함수형 프로그래밍 개념</h3>
 <p><strong>map 함수</strong>: 리스트의 각 요소에 함수를 적용한다.</p>
-<div id="21d0c326" class="cell" data-execution_count="60">
+<div id="37371d7d" class="cell" data-execution_count="60">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb120"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb120-1"><a href="#cb120-1" aria-hidden="true" tabindex="-1"></a>numbers <span class="op">=</span> [<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]</span>
 <span id="cb120-2"><a href="#cb120-2" aria-hidden="true" tabindex="-1"></a>squared <span class="op">=</span> <span class="bu">list</span>(<span class="bu">map</span>(<span class="kw">lambda</span> x: x <span class="op">**</span> <span class="dv">2</span>, numbers))</span>
 <span id="cb120-3"><a href="#cb120-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(squared)</span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2009,7 +2009,7 @@ Hello!
 </div>
 </div>
 <p><strong>filter 함수</strong>: 리스트의 요소를 조건에 맞게 필터링한다.</p>
-<div id="4f395a8e" class="cell" data-execution_count="61">
+<div id="48684e7c" class="cell" data-execution_count="61">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb122"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb122-1"><a href="#cb122-1" aria-hidden="true" tabindex="-1"></a>even_numbers <span class="op">=</span> <span class="bu">list</span>(<span class="bu">filter</span>(<span class="kw">lambda</span> x: x <span class="op">%</span> <span class="dv">2</span> <span class="op">==</span> <span class="dv">0</span>, numbers))</span>
 <span id="cb122-2"><a href="#cb122-2" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(even_numbers)  <span class="co"># [2, 4]</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
@@ -2017,7 +2017,7 @@ Hello!
 </div>
 </div>
 <p><strong>reduce 함수</strong>: 리스트의 요소를 누적하여 하나의 결과를 만든다.</p>
-<div id="53a4cc4f" class="cell" data-execution_count="62">
+<div id="6d691916" class="cell" data-execution_count="62">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb124"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb124-1"><a href="#cb124-1" aria-hidden="true" tabindex="-1"></a><span class="im">from</span> functools <span class="im">import</span> <span class="bu">reduce</span></span>
 <span id="cb124-2"><a href="#cb124-2" aria-hidden="true" tabindex="-1"></a>total <span class="op">=</span> <span class="bu">reduce</span>(<span class="kw">lambda</span> x, y: x <span class="op">+</span> y, numbers)</span>
 <span id="cb124-3"><a href="#cb124-3" aria-hidden="true" tabindex="-1"></a><span class="bu">print</span>(total)  <span class="co"># 10</span></span></code></pre></div><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></div>
@@ -2190,7 +2190,7 @@ Hello!
 </tr>
 </tbody>
 </table>
-<div id="53cee3a3" class="cell" data-execution_count="63">
+<div id="b1d4a191" class="cell" data-execution_count="63">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb133"><pre class="sourceCode python code-with-copy"><code class="sourceCode python"><span id="cb133-1"><a href="#cb133-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> math</span>
 <span id="cb133-2"><a href="#cb133-2" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> random</span>
 <span id="cb133-3"><a href="#cb133-3" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> datetime</span>
