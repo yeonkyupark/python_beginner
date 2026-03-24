@@ -1,5 +1,5 @@
 ---
-title: "예외처리와 디버깅깅"
+title: "예외처리와 디버깅"
 format: html
 ---
 
